@@ -1,0 +1,50 @@
+name: Short diario
+
+on:
+  schedule:
+    - cron: "7 14 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  short:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar ffmpeg y librerías
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -r requirements.txt
+
+      - name: Generar y subir el Short
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python generate.py
+
+      - name: Guardar el video para descargar
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: short
+          path: output/*.mp4
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Marcar la idea como hecha
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add done.json
+          git commit -m "Short del día" || echo "nada para guardar"
+          git push
