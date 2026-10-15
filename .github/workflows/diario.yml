@@ -2,7 +2,7 @@ name: Short diario
 
 on:
   schedule:
-    - cron: "7 14 * * *"
+    - cron: "7 16 * * *"
   workflow_dispatch: {}
 
 permissions:
