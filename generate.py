@@ -37,8 +37,7 @@ def duration(p):
 # ---------------------------------------------------------------- Hugging Face
 def hf_client(space):
     from gradio_client import Client
-    return Client(space, hf_token=os.environ.get("HF_TOKEN"), verbose=False)
-
+    return Client(space, token=os.environ.get("HF_TOKEN"))
 
 def call_space(client, candidates, **kwargs):
     """Prueba los nombres de endpoint conocidos; si cambian, usa el primero que exista."""
