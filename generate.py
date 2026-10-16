@@ -39,6 +39,7 @@ def hf_client(space):
     from gradio_client import Client
     return Client(space, token=os.environ.get("HF_TOKEN"))
 
+
 def call_space(client, candidates, **kwargs):
     """Prueba los nombres de endpoint conocidos; si cambian, usa el primero que exista."""
     names = list(candidates)
@@ -130,8 +131,12 @@ def make_voice(text, work):
     run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", pause, gap])
     lst = work / "list.txt"
     lst.write_text("".join(f"file '{p.as_posix()}'\nfile '{gap.as_posix()}'\n" for p in parts))
+    raw = work / "voice_raw.wav"
+    run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, raw])
+    # normalizar el volumen en un paso aparte (dentro del armado cortaba el final de la voz)
     voice = work / "voice.wav"
-    run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, voice])
+    run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000",
+         "-ar", "48000", "-ac", "1", voice])
     return voice, timeline
 
 
@@ -200,13 +205,26 @@ def assemble(visuals, voice, subs, total, out):
     vf = ";".join(chains) + ";" + "".join(f"[s{i}]" for i in range(n)) + \
         f"concat=n={n}:v=1:a=0,ass={subs.as_posix()}:fontsdir={fontsdir}[v]"
     vi, ai = n, n + 1
-    af = (f"[{ai}:a]lowpass=f=320,volume={CFG['ambience_volume']}[amb];[{vi}:a]loudnorm=I=-14:TP=-1.5[vo];"
-          f"[vo][amb]amix=inputs=2:duration=first,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
-    run(["ffmpeg", "-v", "error", "-y", *inputs, "-i", voice,
-         "-f", "lavfi", "-i", "anoisesrc=color=brown:amplitude=0.5:r=48000",
+    tracks = sorted(p for p in (ROOT / "music").glob("*") if p.suffix.lower() in (".mp3", ".wav", ".m4a", ".ogg"))
+    if tracks:  # música de fondo: tema al azar, desde un punto al azar, que baja sola cuando habla la voz
+        import random
+        track = random.choice(tracks)
+        start = random.uniform(0, max(0.0, duration(track) - total - 2))
+        log(f"Música: {track.name}")
+        ain = ["-ss", f"{start:.2f}", "-stream_loop", "-1", "-i", track]
+        m = CFG["music"]
+        af = (f"[{vi}:a]aresample=48000,asplit=2[vo][key];"
+              f"[{ai}:a]aresample=48000,aformat=channel_layouts=mono,volume={m['volume']},afade=t=in:d=1[mus];"
+              f"[mus][key]sidechaincompress=threshold=0.03:ratio={m['duck_ratio']}:attack=20:release=400[duck];"
+              f"[vo][duck]amix=inputs=2:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
+    else:  # sin música: un zumbido ambiente muy bajo
+        ain = ["-f", "lavfi", "-i", "anoisesrc=color=brown:amplitude=0.5:r=48000"]
+        af = (f"[{ai}:a]lowpass=f=320,volume={CFG['ambience_volume']}[amb];[{vi}:a]aresample=48000[vo];"
+              f"[vo][amb]amix=inputs=2:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
+    run(["ffmpeg", "-v", "error", "-y", *inputs, "-i", voice, *ain,
          "-filter_complex", vf + ";" + af, "-map", "[v]", "-map", "[a]", "-t", f"{total:.2f}",
          "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-pix_fmt", "yuv420p",
-         "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out])
+         "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", out])
 
 
 # ---------------------------------------------------------------- YouTube
@@ -262,16 +280,25 @@ def main():
     make_subs(timeline, subs)
     log(f"Voz lista: {total:.1f}s")
 
-    # Escenas: imagen -> clip. Si se termina la cuota, la escena queda como imagen con zoom.
+    # Escenas: imagen -> clip. La cuota gratis alcanza para ~3 clips por día, así que se animan
+    # las primeras escenas (el gancho) y el resto va como imagen con zoom lento.
     scenes = idea["scenes"]
     per = total / len(scenes)
-    visuals, quota_out = [], False
+    visuals, quota_out, last_img = [], False, None
     for k, sc in enumerate(scenes, 1):
         img = work / f"scene{k}.png"
-        make_image(f"{CFG['style']} {sc['image']}. Vertical composition, no text.", img)
-        log(f"Imagen {k} lista")
+        try:
+            make_image(f"{CFG['style']} {sc['image']}. Vertical composition, no text.", img)
+            last_img = img
+            log(f"Imagen {k} lista")
+        except Exception as e:
+            if last_img is None:
+                raise
+            log(f"Imagen {k} falló ({e}); reuso la anterior")
+            shutil.copy(last_img, img)
         clip = work / f"scene{k}.mp4"
-        if not quota_out:
+        animate = sc.get("motion") and k <= CFG["max_clips"] and not quota_out
+        if animate:
             for attempt in range(2):
                 try:
                     make_clip(img, f"{sc['motion']}, {CFG['motion_style']}", CFG["clip_seconds"], clip)

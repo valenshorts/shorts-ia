@@ -1,212 +1,902 @@
 [
-  {"id": "001", "title": "¿Por qué las ventanas de los aviones son redondas?",
-   "narration": "Las ventanas de los aviones son redondas por una razón muy seria. Los primeros aviones a reacción tenían ventanas cuadradas. En las esquinas se juntaba toda la fuerza del aire, el metal se rajaba y los aviones se partían en pleno vuelo.",
-   "scenes": [
-     {"image": "a modern white passenger airplane flying above fluffy clouds at sunset", "motion": "the airplane glides forward slowly, clouds drift past, gentle camera follow"},
-     {"image": "an old 1950s silver jet airliner with square windows flying above clouds", "motion": "the old jet flies slowly, slight turbulence shake, camera slowly pushes in toward the square windows"},
-     {"image": "extreme close-up of a square airplane window corner with a thin crack spreading in the silver metal", "motion": "the crack slowly grows longer across the metal, camera slowly pushes in"}],
-   "tags": ["aviones", "curiosidades", "sabias que"]},
-  {"id": "002", "title": "¿Por qué el cielo es azul?",
-   "narration": "La luz del sol parece blanca, pero en realidad trae todos los colores mezclados. Cuando entra al aire, el azul choca contra el aire y rebota para todos lados mucho más que el resto. Por eso, mires para donde mires, el cielo se ve azul.",
-   "scenes": [
-     {"image": "a bright sun shining white light rays toward a small planet Earth in space", "motion": "light rays pulse gently from the sun toward the Earth, slow camera push in"},
-     {"image": "a white beam of light entering the atmosphere and splitting into rainbow colors, the blue light scattering in all directions", "motion": "small blue light particles bounce and scatter in every direction, slow camera drift"},
-     {"image": "a person lying on green grass looking up at a deep clear blue sky", "motion": "grass sways gently in the wind, camera slowly rises up toward the blue sky"}],
-   "tags": ["ciencia", "cielo", "curiosidades"]},
-  {"id": "003", "title": "¿Qué pasa si te tragás un chicle?",
-   "narration": "Si te tragás un chicle, no se queda pegado siete años en tu panza. Tu estómago no lo puede deshacer, pero tampoco lo necesita. Simplemente viaja por tus intestinos como cualquier otra cosa, y en un par de días sale solito.",
-   "scenes": [
-     {"image": "a person blowing a big pink bubble gum bubble, semi-realistic adult, simple room", "motion": "the pink bubble slowly grows bigger, then the person's eyes widen"},
-     {"image": "a see-through cross-section of a human stomach with a small pink piece of gum floating inside stomach acid", "motion": "the gum floats and slowly tumbles inside the stomach liquid, gentle bubbles rise"},
-     {"image": "a small pink piece of gum traveling through a long winding tube of intestines, clean medical 3D style", "motion": "the gum slides slowly along the winding intestine tube, camera follows it"}],
-   "tags": ["cuerpo humano", "mitos", "curiosidades"]},
-  {"id": "004", "title": "¿Por qué la cebolla te hace llorar?",
-   "narration": "Cuando cortás una cebolla, rompés sus células y sueltan un gas invisible. Ese gas sube flotando hasta tus ojos y los irrita. Tus ojos se defienden de la única forma que saben: largando lágrimas para lavarlo.",
-   "scenes": [
-     {"image": "a kitchen knife slicing a white onion on a wooden cutting board", "motion": "the knife slowly slices down through the onion, small droplets spray"},
-     {"image": "a faint glowing green mist rising from a cut onion on a cutting board", "motion": "the green mist slowly rises and swirls upward"},
-     {"image": "close-up of a semi-realistic adult face with watery eyes and a tear rolling down the cheek, kitchen background", "motion": "a tear slowly rolls down the cheek, the person blinks"}],
-   "tags": ["cocina", "ciencia", "curiosidades"]},
-  {"id": "005", "title": "¿Cómo flota un barco de acero?",
-   "narration": "Un clavo de acero se hunde, pero un barco de miles de toneladas flota. El truco es la forma. El barco es hueco y empuja hacia los costados una cantidad enorme de agua. Mientras ese agua pese más que el barco, el mar lo sostiene.",
-   "scenes": [
-     {"image": "a small steel nail sinking in a clear glass of water", "motion": "the nail slowly sinks to the bottom, small bubbles rise"},
-     {"image": "a giant cargo ship floating on calm blue ocean, aerial view", "motion": "the ship moves slowly forward, small waves ripple, slow aerial camera drift"},
-     {"image": "a cutaway view of a ship hull floating, showing the hollow inside and blue water pushed around it", "motion": "the water ripples around the hull, the ship gently bobs up and down"}],
-   "tags": ["física", "barcos", "curiosidades"]},
-  {"id": "006", "title": "¿Por qué los gatos caen de pie?",
-   "narration": "Si un gato se cae de espaldas, en menos de un segundo da vuelta la cabeza y mira el piso. Después gira el cuerpo de adelante, después el de atrás, y estira las patas. Su columna es tan flexible que aterriza parado casi siempre.",
-   "scenes": [
-     {"image": "an orange cat falling upside down in the air in a living room", "motion": "the cat twists its head to look down, slow motion, camera holds"},
-     {"image": "an orange cat mid-air twisting its body, front legs reaching down", "motion": "the cat rotates its body and stretches its legs downward"},
-     {"image": "an orange cat landing on its four paws on a wooden floor", "motion": "the cat lands softly and its tail swishes, camera slowly pushes in"}],
-   "tags": ["gatos", "animales", "curiosidades"]},
-  {"id": "007", "title": "¿Por qué se te arrugan los dedos en el agua?",
-   "narration": "Cuando estás mucho rato en el agua, los dedos se te arrugan. No es que absorban agua. Es tu cuerpo achicando a propósito los vasos debajo de la piel. Esas arrugas funcionan como las ruedas de un auto y te ayudan a agarrar cosas mojadas.",
-   "scenes": [
-     {"image": "a hand resting in a bathtub full of water with bubbles", "motion": "the water ripples gently around the fingers"},
-     {"image": "close-up of wrinkled wet fingertips", "motion": "camera slowly pushes in on the wrinkled skin, water drops slide down"},
-     {"image": "a wet hand gripping a wet glass marble firmly", "motion": "the fingers close slowly around the marble and hold it tight"}],
-   "tags": ["cuerpo humano", "agua", "curiosidades"]},
-  {"id": "008", "title": "¿Cómo calienta un microondas?",
-   "narration": "El microondas no calienta el plato, calienta el agua que tiene la comida. Lanza ondas invisibles que hacen girar las gotitas de agua millones de veces por segundo. Ese movimiento se transforma en calor, y la comida se calienta desde adentro.",
-   "scenes": [
-     {"image": "a plate of food inside a glowing microwave oven", "motion": "the plate slowly turns on the rotating tray, warm light glows"},
-     {"image": "microscopic view of tiny blue water molecules inside food", "motion": "the tiny water molecules spin and vibrate rapidly"},
-     {"image": "a steaming hot plate of pasta on a kitchen table", "motion": "steam slowly rises from the pasta, camera pushes in"}],
-   "tags": ["ciencia", "cocina", "curiosidades"]},
-  {"id": "009", "title": "¿Por qué los flamencos son rosas?",
-   "narration": "Los flamencos nacen grises. Se vuelven rosas por lo que comen: algas y camarones diminutos llenos de un pigmento rosado. Si un flamenco dejara de comerlos, con el tiempo se iría volviendo blanco otra vez.",
-   "scenes": [
-     {"image": "a fluffy gray baby flamingo chick standing in shallow water", "motion": "the chick wobbles and flaps tiny wings, water ripples"},
-     {"image": "a pink flamingo dipping its head into shallow water full of tiny red shrimp", "motion": "the flamingo slowly filters water with its beak, ripples spread"},
-     {"image": "a large flock of bright pink flamingos standing in a lagoon at sunset", "motion": "the flamingos shift slowly, one spreads its wings, slow camera pan"}],
-   "tags": ["animales", "naturaleza", "curiosidades"]},
-  {"id": "010", "title": "¿Qué pasa si cae un rayo en el mar?",
-   "narration": "Cuando un rayo cae en el mar, la electricidad no baja hasta el fondo. Se desparrama por la superficie, como una mancha. Los peces que están unos metros más abajo ni se enteran. El peligro es para el que está nadando arriba.",
-   "scenes": [
-     {"image": "a lightning bolt striking a dark stormy ocean at night", "motion": "the lightning flashes and the ocean surface glows brightly, waves roll"},
-     {"image": "glowing blue electricity spreading across the ocean surface in a wide circle", "motion": "the glowing electricity ripples outward across the surface"},
-     {"image": "underwater view of calm fish swimming in deep blue water, a bright flash far above at the surface", "motion": "the fish keep swimming calmly, light flickers at the surface above"}],
-   "tags": ["naturaleza", "rayos", "curiosidades"]},
-  {"id": "011", "title": "¿Para qué tienen rayas las cebras?",
-   "narration": "Científicos vistieron caballos con mantas a rayas para descubrirlo. Las moscas que pican se acercaban, pero las rayas las confundían y casi no podían aterrizar. Las rayas de la cebra funcionan como un repelente de moscas.",
-   "scenes": [
-     {"image": "a zebra standing in the African savanna grass", "motion": "the zebra's tail swishes, grass sways, slow camera push"},
-     {"image": "a brown horse wearing a black and white striped blanket in a field", "motion": "the horse walks slowly forward, the blanket moves"},
-     {"image": "close-up of flies hovering near black and white stripes, confused", "motion": "the flies circle and bump into each other above the stripes"}],
-   "tags": ["animales", "ciencia", "curiosidades"]},
-  {"id": "012", "title": "¿Cómo funciona un airbag?",
-   "narration": "En un choque, un sensor detecta el golpe en milésimas de segundo. Enciende una pequeña carga que produce gas de golpe y llena la bolsa. El airbag se infla más rápido de lo que tardás en pestañear.",
-   "scenes": [
-     {"image": "a car dashboard and steering wheel from the driver's view, a road ahead", "motion": "the car drives forward slowly, then the dashboard shakes suddenly"},
-     {"image": "a cutaway of a steering wheel showing a folded white airbag and a small canister inside", "motion": "the small canister glows and gas rushes out"},
-     {"image": "a white airbag fully inflated out of a steering wheel", "motion": "the airbag bursts out and expands, then slowly deflates"}],
-   "tags": ["autos", "tecnología", "curiosidades"]},
-  {"id": "013", "title": "¿Por qué el hielo flota?",
-   "narration": "Casi todo se vuelve más pesado cuando se congela, pero el agua hace lo contrario. Al congelarse, sus partículas se acomodan dejando huecos. El hielo ocupa más lugar, es más liviano, y por eso flota.",
-   "scenes": [
-     {"image": "ice cubes floating in a clear glass of water on a table", "motion": "the ice cubes bob gently and turn slowly"},
-     {"image": "a hexagonal lattice of tiny water molecules with open spaces between them, clean 3D", "motion": "the molecules lock into the hexagon pattern, camera slowly rotates"},
-     {"image": "a huge iceberg floating in a calm ocean, showing the part under water", "motion": "the iceberg drifts slowly, water ripples around it"}],
-   "tags": ["ciencia", "agua", "curiosidades"]},
-  {"id": "014", "title": "El pulpo tiene tres corazones",
-   "narration": "El pulpo tiene tres corazones. Dos mandan sangre a las branquias y el tercero al resto del cuerpo. Y lo más loco: cuando nada, ese tercer corazón se detiene. Por eso los pulpos prefieren arrastrarse antes que nadar.",
-   "scenes": [
-     {"image": "an orange octopus resting on a coral reef", "motion": "the octopus tentacles curl and move gently, small fish swim by"},
-     {"image": "a see-through octopus body showing three small glowing red hearts inside", "motion": "the three hearts pulse rhythmically"},
-     {"image": "an orange octopus crawling along the sandy sea floor with its tentacles", "motion": "the octopus crawls slowly forward along the sand"}],
-   "tags": ["animales", "mar", "curiosidades"]},
-  {"id": "015", "title": "¿Por qué ves estrellitas al pararte rápido?",
-   "narration": "Cuando te parás de golpe, la sangre se va hacia las piernas por la gravedad. Por un segundo le llega menos sangre a la cabeza, y tu vista se llena de puntitos. Tu cuerpo lo corrige enseguida apretando los vasos y acelerando el corazón.",
-   "scenes": [
-     {"image": "a semi-realistic young adult sitting on a couch in a living room", "motion": "the person stands up quickly from the couch"},
-     {"image": "a see-through human body with red blood flowing down toward the legs", "motion": "the red blood slowly flows downward through the body"},
-     {"image": "first-person view of a living room filled with tiny sparkling white dots", "motion": "the sparkles flicker and slowly fade away"}],
-   "tags": ["cuerpo humano", "salud", "curiosidades"]},
-  {"id": "016", "title": "¿Cómo duermen los delfines?",
-   "narration": "Si un delfín se durmiera del todo, se ahogaría, porque tiene que subir a respirar. Entonces duerme con la mitad del cerebro. Una mitad descansa mientras la otra lo mantiene nadando y atento, con un ojo abierto.",
-   "scenes": [
-     {"image": "a gray dolphin swimming near the surface of a calm blue ocean at night", "motion": "the dolphin glides slowly, moonlight ripples on the water"},
-     {"image": "a see-through dolphin head showing one half of the brain glowing blue and the other half dark", "motion": "the glowing half pulses softly, camera slowly orbits"},
-     {"image": "close-up of a dolphin with one eye open and one eye closed, underwater", "motion": "the dolphin swims slowly, its open eye blinks"}],
-   "tags": ["animales", "mar", "curiosidades"]},
-  {"id": "017", "title": "¿Por qué crujen los nudillos?",
-   "narration": "Entre tus huesos hay un líquido que tiene gas disuelto. Cuando estirás el dedo, el espacio se agranda de golpe y se forma una burbuja. Ese crac es la burbuja apareciendo. Y no, no te da artrosis.",
-   "scenes": [
-     {"image": "two hands with interlaced fingers about to crack knuckles", "motion": "the hands stretch forward and the fingers press outward"},
-     {"image": "a see-through finger joint showing two bones and clear liquid between them", "motion": "the joint slowly pulls apart, the gap widens"},
-     {"image": "a small bubble suddenly appearing inside the clear liquid of a finger joint", "motion": "the bubble pops into existence and wobbles"}],
-   "tags": ["cuerpo humano", "mitos", "curiosidades"]},
-  {"id": "018", "title": "¿Por qué explota el pochoclo?",
-   "narration": "Cada grano de maíz tiene una gotita de agua adentro. Cuando lo calentás, esa agua se vuelve vapor y empuja la cáscara dura hasta que no aguanta más. El grano revienta y se da vuelta como una nube blanca.",
-   "scenes": [
-     {"image": "yellow corn kernels in a hot pan on a stove", "motion": "the kernels shake and jiggle from the heat"},
-     {"image": "a see-through corn kernel with a tiny drop of water inside turning into steam", "motion": "the steam swirls and builds up inside the kernel"},
-     {"image": "a corn kernel bursting into fluffy white popcorn", "motion": "the kernel bursts open into popcorn and flips in the air"}],
-   "tags": ["cocina", "ciencia", "curiosidades"]},
-  {"id": "019", "title": "¿Cómo hacen miel las abejas?",
-   "narration": "La abeja chupa el néctar de las flores y lo guarda en un estómago especial. En la colmena se lo pasa a otras abejas, que lo van masticando. Después lo dejan en las celdas y lo abanican con las alas hasta que se seca y se vuelve miel.",
-   "scenes": [
-     {"image": "a honeybee drinking nectar from a bright yellow flower", "motion": "the bee moves on the flower, wings buzzing, petals sway"},
-     {"image": "honeybees passing droplets to each other inside a beehive", "motion": "the bees move around slowly, passing small golden droplets"},
-     {"image": "bees fanning their wings over golden honeycomb cells full of honey", "motion": "the bees fan their wings rapidly over the glowing honey"}],
-   "tags": ["animales", "naturaleza", "curiosidades"]},
-  {"id": "020", "title": "¿Por qué los aviones dejan rayas en el cielo?",
-   "narration": "Esas rayas blancas que dejan los aviones son nubes. El motor larga aire caliente y húmedo. Allá arriba hace cincuenta grados bajo cero, entonces ese vapor se congela al instante en cristalitos de hielo.",
-   "scenes": [
-     {"image": "a high flying airplane leaving long white contrails across a blue sky", "motion": "the airplane moves slowly across the sky, contrails stretch behind"},
-     {"image": "close-up of a jet engine releasing hot exhaust", "motion": "hot air shimmers and flows out of the engine"},
-     {"image": "tiny ice crystals forming in the cold air behind a jet engine", "motion": "the ice crystals sparkle and spread into a white trail"}],
-   "tags": ["aviones", "ciencia", "curiosidades"]},
-  {"id": "021", "title": "¿Por qué el mar es salado?",
-   "narration": "La lluvia desgasta las rocas y arrastra sus minerales a los ríos. Los ríos los llevan al mar. El agua del mar se evapora, pero la sal no, así que se va quedando. Después de millones de años, el mar terminó así de salado.",
-   "scenes": [
-     {"image": "rain falling on large gray rocks on a mountain", "motion": "raindrops fall and water trickles down the rocks"},
-     {"image": "a river flowing down into the ocean, aerial view", "motion": "the river water flows slowly into the sea, slow aerial drift"},
-     {"image": "white salt crystals left on rocks by the sea shore under the sun", "motion": "small waves wash in and out, the salt crystals sparkle"}],
-   "tags": ["naturaleza", "mar", "curiosidades"]},
-  {"id": "022", "title": "¿Cómo gira tanto la cabeza un búho?",
-   "narration": "Un búho puede girar la cabeza tres cuartos de vuelta. Tiene el doble de vértebras en el cuello que vos. Y sus venas tienen reservas de sangre, para que el cerebro no se quede sin sangre mientras gira.",
-   "scenes": [
-     {"image": "a brown owl perched on a tree branch at night", "motion": "the owl slowly rotates its head to look behind"},
-     {"image": "a see-through owl neck showing a long chain of small vertebrae bones", "motion": "the vertebrae twist smoothly one after another"},
-     {"image": "a see-through owl neck with red blood vessels and small pockets of blood", "motion": "the blood pockets fill and glow softly"}],
-   "tags": ["animales", "aves", "curiosidades"]},
-  {"id": "023", "title": "¿Cómo cambia de color un camaleón?",
-   "narration": "El camaleón no tiene pinturas en la piel. Tiene millones de cristales diminutos. Cuando se relaja o se pone nervioso, los separa o los junta, y eso cambia la luz que rebota. Así su color cambia en segundos.",
-   "scenes": [
-     {"image": "a green chameleon on a branch in a tropical forest", "motion": "the chameleon's eye swivels, the branch sways gently"},
-     {"image": "microscopic view of tiny shiny crystals in a grid inside skin", "motion": "the crystals spread apart and the color shifts from green to orange"},
-     {"image": "a bright orange and red chameleon on a branch", "motion": "the chameleon slowly walks along the branch"}],
-   "tags": ["animales", "naturaleza", "curiosidades"]},
-  {"id": "024", "title": "¿Por qué el agua oxigenada hace espuma?",
-   "narration": "Cuando ponés agua oxigenada en una herida, hace espuma. Tu sangre tiene una sustancia que la rompe en agua y oxígeno. Ese oxígeno sale en forma de burbujitas, y eso es la espuma blanca.",
-   "scenes": [
-     {"image": "a brown bottle of hydrogen peroxide pouring onto a small scrape on a knee", "motion": "the clear liquid pours slowly onto the knee"},
-     {"image": "white foam bubbling up on a small scrape on skin", "motion": "the foam grows and fizzes"},
-     {"image": "microscopic view of tiny oxygen bubbles forming and rising", "motion": "the bubbles form and rise upward"}],
-   "tags": ["cuerpo humano", "ciencia", "curiosidades"]},
-  {"id": "025", "title": "¿Cómo se inventó el velcro?",
-   "narration": "Un ingeniero volvió de pasear con su perro y vio que tenía el pelo lleno de abrojos. Los miró con un microscopio y vio miles de ganchitos. Copió esa idea, y así inventó el velcro.",
-   "scenes": [
-     {"image": "a man walking a dog through a field of tall dry grass", "motion": "the man and dog walk forward slowly, grass sways"},
-     {"image": "close-up of spiky burrs stuck in a dog's fur", "motion": "the fur moves slightly, camera pushes in on the burrs"},
-     {"image": "microscope view of tiny hooks catching tiny loops", "motion": "the hooks slowly catch onto the loops"}],
-   "tags": ["inventos", "historia", "curiosidades"]},
-  {"id": "026", "title": "¿Por qué algunos tiburones no paran de nadar?",
-   "narration": "Algunos tiburones no pueden dejar de nadar. Respiran dejando que el agua les entre por la boca mientras avanzan. Si se quedan quietos, no les entra oxígeno. Por eso hasta duermen moviéndose.",
-   "scenes": [
-     {"image": "a great white shark swimming in deep blue water", "motion": "the shark glides forward, slow camera follow"},
-     {"image": "water flowing into an open shark mouth and out through its gills", "motion": "the water flows through the mouth and out of the gills"},
-     {"image": "a shark slowly swimming near the sea floor at night", "motion": "the shark moves slowly forward in the dark water"}],
-   "tags": ["animales", "mar", "curiosidades"]},
-  {"id": "027", "title": "¿Qué es el hipo?",
-   "narration": "El hipo es un músculo que tenés debajo de los pulmones que se contrae solo, de golpe. Tomás aire de repente, y en ese instante se cierran tus cuerdas vocales. Ese cierre rápido es el sonido 'hip'.",
-   "scenes": [
-     {"image": "a semi-realistic adult hiccupping in a kitchen", "motion": "the person's shoulders jump up suddenly"},
-     {"image": "a see-through human chest showing the lungs and the dome-shaped diaphragm under them", "motion": "the diaphragm suddenly jerks down"},
-     {"image": "a see-through throat showing the vocal cords snapping shut", "motion": "the vocal cords snap shut quickly"}],
-   "tags": ["cuerpo humano", "curiosidades"]},
-  {"id": "028", "title": "¿Por qué la Coca explota con Mentos?",
-   "narration": "La Coca tiene gas disuelto esperando salir. La pastilla Mentos tiene la superficie llena de poros diminutos. En cada poro se forman burbujas al instante, millones a la vez, y la Coca sale disparada.",
-   "scenes": [
-     {"image": "a bottle of dark soda standing on grass outdoors", "motion": "the soda bottle stands still, small bubbles rise inside"},
-     {"image": "microscopic view of a mint candy surface full of tiny pores with bubbles forming", "motion": "bubbles form rapidly in every pore"},
-     {"image": "a tall fountain of brown foam shooting out of a soda bottle", "motion": "the foam fountain sprays upward"}],
-   "tags": ["ciencia", "experimentos", "curiosidades"]},
-  {"id": "029", "title": "¿Cómo respiran los peces?",
-   "narration": "Los peces toman agua por la boca y la sacan por las branquias. Las branquias están llenas de láminas finitas con sangre. Cuando el agua pasa, le roban el oxígeno que lleva disuelto.",
-   "scenes": [
-     {"image": "a goldfish swimming in a clear aquarium", "motion": "the goldfish opens and closes its mouth while swimming"},
-     {"image": "close-up of red fish gills with thin feathery layers", "motion": "the gill layers ripple as water flows through"},
-     {"image": "tiny oxygen bubbles moving from water into red blood vessels", "motion": "the bubbles drift into the vessels"}],
-   "tags": ["animales", "mar", "curiosidades"]},
-  {"id": "030", "title": "¿La luna es más grande en el horizonte?",
-   "narration": "La luna en el horizonte parece gigante, pero es un truco de tu cerebro. Si la medís con el dedo, tiene el mismo tamaño que cuando está arriba. Tu cerebro la compara con edificios y árboles, y la agranda.",
-   "scenes": [
-     {"image": "a huge orange full moon rising over a city skyline", "motion": "the moon slowly rises over the buildings"},
-     {"image": "a hand with an outstretched thumb next to a full moon in the sky", "motion": "the hand slowly moves the thumb up to cover the moon"},
-     {"image": "a small white full moon high in a dark night sky", "motion": "the camera slowly pulls back"}],
-   "tags": ["espacio", "ilusiones", "curiosidades"]}
+ {
+  "id": "001",
+  "title": "¿Por qué las ventanas de los aviones son redondas?",
+  "narration": "Las ventanas de los aviones son redondas, y la razón da miedo. En 1954, dos aviones Comet, los primeros jets de pasajeros del mundo, se partieron en pleno vuelo. Los ingenieros metieron un avión entero en un tanque de agua y lo inflaron y desinflaron miles de veces, hasta que se rajó. La grieta había empezado en una esquina. Una forma cuadrada junta toda la fuerza en las puntas. Un círculo la reparte. Por eso hoy ninguna ventana de avión tiene esquinas.",
+  "scenes": [
+   {
+    "image": "close-up of a rounded airplane window from inside the cabin, clouds and blue sky outside",
+    "motion": "clouds drift slowly past the window, camera slowly pushes in"
+   },
+   {
+    "image": "an old 1950s silver jet airliner with small square windows flying above clouds",
+    "motion": "the jet flies forward slowly, slight turbulence shake"
+   },
+   {
+    "image": "a whole silver airplane fuselage submerged inside a giant water tank in a 1950s test hangar, engineers watching",
+    "motion": "water ripples around the fuselage, small bubbles rise, camera slowly pans"
+   },
+   {
+    "image": "extreme close-up of the corner of a square window cutout in silver metal with a thin crack spreading from the corner"
+   },
+   {
+    "image": "a modern white passenger airplane with a row of rounded windows flying over clouds at golden sunset"
+   }
+  ],
+  "tags": [
+   "aviones",
+   "historia",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "002",
+  "title": "¿Por qué el cielo es azul? (y en Marte no)",
+  "narration": "La luz del sol parece blanca, pero trae todos los colores mezclados. Cuando entra al aire, la luz azul choca contra el aire y rebota para todos lados, mucho más que la roja. Por eso, mires donde mires, el cielo se ve azul. Al atardecer, la luz cruza tanto aire que el azul se pierde en el camino, y solo te llegan los rojos. Y en Marte pasa todo al revés: el cielo de día es color caramelo, y los atardeceres son azules.",
+  "scenes": [
+   {
+    "image": "a bright sun shining white light rays toward planet Earth in space",
+    "motion": "light rays pulse gently from the sun toward the Earth, slow camera push in"
+   },
+   {
+    "image": "a white beam of light entering Earth's atmosphere, tiny blue light particles scattering in every direction",
+    "motion": "blue light particles bounce and scatter in every direction"
+   },
+   {
+    "image": "a person lying on green grass looking up at a deep clear blue sky",
+    "motion": "grass sways gently in the wind, camera slowly rises toward the sky"
+   },
+   {
+    "image": "a beautiful orange and red sunset over the ocean"
+   },
+   {
+    "image": "the rocky red surface of Mars with a butterscotch colored sky and a small blue glowing sunset on the horizon"
+   }
+  ],
+  "tags": [
+   "ciencia",
+   "espacio",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "003",
+  "title": "¿Qué pasa si te tragás un chicle?",
+  "narration": "Dicen que si te tragás un chicle se queda siete años en la panza. Es mentira. Tu estómago no lo puede deshacer, pero tampoco lo necesita: viaja por los intestinos como todo lo demás y en un par de días sale solito. Pero hay un caso real que asusta. En 1998, médicos de Estados Unidos atendieron a un nene que se tragaba de cinco a siete chicles por día. Se le había formado una pelota de chicle que le tapaba el intestino.",
+  "scenes": [
+   {
+    "image": "a semi-realistic young adult blowing a big pink bubble gum bubble in a simple room",
+    "motion": "the pink bubble slowly grows bigger, the person's eyes widen"
+   },
+   {
+    "image": "a see-through cross-section of a human stomach with a small pink piece of gum floating in stomach liquid",
+    "motion": "the gum floats and slowly tumbles, gentle bubbles rise"
+   },
+   {
+    "image": "a small pink piece of gum traveling through a long winding tube of intestines, clean medical 3D style",
+    "motion": "the gum slides slowly along the winding intestine, camera follows it"
+   },
+   {
+    "image": "a worried doctor in a white coat looking at an x-ray on a lightbox in a hospital"
+   },
+   {
+    "image": "a see-through intestine blocked by a big lumpy pink ball of chewing gum, clean medical 3D style"
+   }
+  ],
+  "tags": [
+   "cuerpo humano",
+   "mitos",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "004",
+  "title": "El truco para no llorar con la cebolla",
+  "narration": "Cuando cortás una cebolla, rompés miles de sus células, y sueltan un gas invisible. Ese gas sube flotando hasta tus ojos, se mezcla con tus lágrimas y forma un ácido muy suave que te arde. Tus ojos se defienden de la única forma que saben: largando más lágrimas para lavarlo. Pero hay un truco que funciona de verdad. Meté la cebolla en la heladera media hora antes. Con el frío, ese gas sale mucho más lento y casi no llorás.",
+  "scenes": [
+   {
+    "image": "a kitchen knife slicing a white onion on a wooden cutting board",
+    "motion": "the knife slowly slices down through the onion, tiny droplets spray"
+   },
+   {
+    "image": "a faint glowing green mist rising from a cut onion on a cutting board",
+    "motion": "the green mist slowly rises and swirls upward"
+   },
+   {
+    "image": "close-up of a semi-realistic adult face with watery eyes and a tear on the cheek, kitchen background",
+    "motion": "a tear rolls down the cheek, the person blinks"
+   },
+   {
+    "image": "a white onion sitting on a shelf inside an open refrigerator, cool blue light"
+   },
+   {
+    "image": "a smiling semi-realistic adult calmly cutting an onion in a bright kitchen, no tears"
+   }
+  ],
+  "tags": [
+   "cocina",
+   "trucos",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "005",
+  "title": "¿Cómo flota un barco de acero?",
+  "narration": "Un clavo de acero se hunde, pero un barco de miles de toneladas flota. El truco es la forma. El barco es hueco, y empuja hacia los costados una cantidad enorme de agua. Mientras esa agua que empuja pese más que el barco, el mar lo sostiene. Y lo más loco: un barco gigante podría flotar en un dique apenas más grande que él, con muy poquita agua alrededor. Lo que importa no es cuánta agua hay, sino cuánta empuja.",
+  "scenes": [
+   {
+    "image": "a small steel nail sinking in a clear glass of water",
+    "motion": "the nail sinks to the bottom, small bubbles rise"
+   },
+   {
+    "image": "a giant cargo ship floating on a calm blue ocean, aerial view",
+    "motion": "the ship moves slowly forward, small waves ripple"
+   },
+   {
+    "image": "a cutaway view of a ship hull floating, showing the hollow inside and blue water pushed around it",
+    "motion": "the water ripples around the hull, the ship gently bobs"
+   },
+   {
+    "image": "a giant ship floating inside a narrow concrete dock just slightly bigger than the ship, a thin layer of water around it"
+   },
+   {
+    "image": "a toy boat floating in a glass container barely bigger than the boat with very little water"
+   }
+  ],
+  "tags": [
+   "física",
+   "barcos",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "006",
+  "title": "¿Por qué los gatos caen de pie?",
+  "narration": "Si un gato se cae de espaldas, en menos de un segundo gira la cabeza y mira el piso. Después gira la parte de adelante del cuerpo, después la de atrás, y estira las patas. Su columna es tan flexible que casi siempre aterriza parado. Y un estudio en Nueva York encontró algo increíble: muchos gatos que se cayeron de más de siete pisos se lastimaron menos que los que cayeron de cinco o seis. Con más altura, llegan a relajarse y abrir las patas como un paracaídas.",
+  "scenes": [
+   {
+    "image": "an orange cat falling upside down in the air in a living room",
+    "motion": "the cat twists its head to look down"
+   },
+   {
+    "image": "an orange cat mid-air twisting its body, front legs reaching down",
+    "motion": "the cat rotates its body and stretches its legs downward"
+   },
+   {
+    "image": "an orange cat landing on its four paws on a wooden floor",
+    "motion": "the cat lands softly, its tail swishes"
+   },
+   {
+    "image": "tall New York apartment buildings seen from the street, an open window high up"
+   },
+   {
+    "image": "an orange cat gliding through the air with its legs spread wide like a flying squirrel, city in the background"
+   }
+  ],
+  "tags": [
+   "gatos",
+   "animales",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "007",
+  "title": "¿Por qué se te arrugan los dedos en el agua?",
+  "narration": "Cuando estás mucho rato en el agua, se te arrugan los dedos. Parece que absorben agua, pero no. Es tu cerebro, que achica a propósito los vasos debajo de la piel. Esas arrugas funcionan como el dibujo de las ruedas de un auto y te ayudan a agarrar cosas mojadas. ¿Cómo se sabe que es el cerebro? Porque si una persona tiene cortado el nervio de un dedo, ese dedo nunca se arruga. Los médicos lo usan como prueba.",
+  "scenes": [
+   {
+    "image": "a hand resting in a bathtub full of water with bubbles",
+    "motion": "the water ripples gently around the fingers"
+   },
+   {
+    "image": "close-up of wrinkled wet fingertips",
+    "motion": "camera slowly pushes in on the wrinkled skin, water drops slide down"
+   },
+   {
+    "image": "a wet hand gripping a wet glass marble firmly",
+    "motion": "the fingers close slowly around the marble and hold it tight"
+   },
+   {
+    "image": "a see-through human hand showing glowing blue nerves running into the fingers"
+   },
+   {
+    "image": "a hand after a bath with four wrinkled fingertips and one perfectly smooth fingertip, close-up"
+   }
+  ],
+  "tags": [
+   "cuerpo humano",
+   "agua",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "008",
+  "title": "El microondas se inventó por accidente",
+  "narration": "El microondas no calienta el plato, calienta el agua que tiene la comida. Lanza ondas invisibles que hacen girar las gotitas de agua millones de veces por segundo. Ese movimiento se vuelve calor, y la comida se calienta. Y se inventó de casualidad. En 1945, un ingeniero que trabajaba con radares notó que la barra de chocolate que tenía en el bolsillo se había derretido sola. Probó con maíz, y se hizo pochoclo. Así nació el microondas.",
+  "scenes": [
+   {
+    "image": "a plate of food inside a glowing microwave oven",
+    "motion": "the plate slowly turns on the rotating tray, warm light glows"
+   },
+   {
+    "image": "microscopic view of tiny blue water molecules inside food",
+    "motion": "the tiny water molecules spin and vibrate rapidly"
+   },
+   {
+    "image": "a steaming hot plate of pasta on a kitchen table",
+    "motion": "steam slowly rises from the pasta, camera pushes in"
+   },
+   {
+    "image": "a 1940s engineer in a lab full of large radar equipment, holding a melted chocolate bar from his pocket, surprised"
+   },
+   {
+    "image": "popcorn exploding out of a paper bag next to old 1940s radar equipment"
+   }
+  ],
+  "tags": [
+   "inventos",
+   "historia",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "009",
+  "title": "Los flamencos nacen grises",
+  "narration": "Los flamencos nacen grises. Se vuelven rosas por lo que comen: algas y camarones diminutos llenos de un pigmento rosado. Si un flamenco dejara de comerlos, con el tiempo se volvería blanco. Pero lo más impresionante es cómo alimentan a sus crías. Los padres producen en la garganta una especie de leche roja y se la dan por el pico. Y les sale tanto color en esa leche, que mientras crían a su pichón, ellos mismos se van poniendo pálidos.",
+  "scenes": [
+   {
+    "image": "a fluffy gray baby flamingo chick standing in shallow water",
+    "motion": "the chick wobbles and flaps tiny wings, water ripples"
+   },
+   {
+    "image": "a pink flamingo dipping its head into shallow water full of tiny red shrimp",
+    "motion": "the flamingo filters water with its beak, ripples spread"
+   },
+   {
+    "image": "a large flock of bright pink flamingos standing in a lagoon at sunset",
+    "motion": "the flamingos shift slowly, one spreads its wings"
+   },
+   {
+    "image": "an adult flamingo gently feeding red liquid from its beak to a gray fluffy chick"
+   },
+   {
+    "image": "a pale almost white flamingo standing next to its gray chick in a lagoon"
+   }
+  ],
+  "tags": [
+   "animales",
+   "naturaleza",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "010",
+  "title": "¿Qué pasa si cae un rayo en el mar?",
+  "narration": "Cuando un rayo cae en el mar, la electricidad no baja hasta el fondo. Se desparrama por la superficie, como una mancha. Los peces que están unos metros más abajo ni se enteran. El peligro es para el que está nadando arriba. Y hay algo que nadie esperaba: científicos descubrieron que sobre las rutas por donde pasan los barcos caen casi el doble de rayos. El humo de los barcos llena el aire de partículas que ayudan a formar tormentas.",
+  "scenes": [
+   {
+    "image": "a lightning bolt striking a dark stormy ocean at night",
+    "motion": "the lightning flashes and the ocean surface glows, waves roll"
+   },
+   {
+    "image": "glowing blue electricity spreading across the ocean surface in a wide circle",
+    "motion": "the glowing electricity ripples outward across the surface"
+   },
+   {
+    "image": "underwater view of calm fish swimming in deep blue water, a bright flash far above at the surface",
+    "motion": "the fish keep swimming calmly, light flickers above"
+   },
+   {
+    "image": "a big cargo ship at sea releasing dark smoke from its chimney under storm clouds"
+   },
+   {
+    "image": "a world map seen from space at night with a bright glowing line of lightning flashes along a shipping route in the ocean"
+   }
+  ],
+  "tags": [
+   "naturaleza",
+   "rayos",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "011",
+  "title": "¿Para qué tienen rayas las cebras?",
+  "narration": "Durante años nadie sabía para qué tienen rayas las cebras. Entonces unos científicos vistieron caballos con mantas a rayas y los filmaron. Las moscas que pican se acercaban, pero las rayas las confundían tanto que no podían frenar ni aterrizar. Las rayas son un repelente de moscas. Y en Japón lo llevaron más lejos: le pintaron rayas blancas y negras a vacas de verdad. Las vacas pintadas recibieron más o menos la mitad de picaduras.",
+  "scenes": [
+   {
+    "image": "a zebra standing in the African savanna grass",
+    "motion": "the zebra's tail swishes, grass sways"
+   },
+   {
+    "image": "a brown horse wearing a black and white striped blanket in a field",
+    "motion": "the horse walks slowly forward, the blanket moves"
+   },
+   {
+    "image": "close-up of flies hovering near black and white stripes",
+    "motion": "the flies circle and bump into each other above the stripes"
+   },
+   {
+    "image": "a farmer painting white stripes on a black cow in a Japanese farm field"
+   },
+   {
+    "image": "a black cow with painted white zebra stripes standing proudly in a green field"
+   }
+  ],
+  "tags": [
+   "animales",
+   "ciencia",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "012",
+  "title": "El airbag es más rápido que un parpadeo",
+  "narration": "En un choque, un sensor detecta el golpe en milésimas de segundo. Enciende una pequeña carga, como un mini cohete, que produce gas de golpe y llena la bolsa. Todo pasa tan rápido que el airbag se infla en unos treinta milésimos de segundo. Es unas diez veces más rápido que un parpadeo. Si pestañeás justo cuando chocás, cuando abrís los ojos el airbag ya está inflado.",
+  "scenes": [
+   {
+    "image": "a car dashboard and steering wheel from the driver's view, a road ahead",
+    "motion": "the car drives forward, then the dashboard shakes suddenly"
+   },
+   {
+    "image": "a cutaway of a steering wheel showing a folded white airbag and a small canister inside",
+    "motion": "the small canister glows and gas rushes out"
+   },
+   {
+    "image": "a white airbag fully inflated out of a steering wheel",
+    "motion": "the airbag bursts out and expands"
+   },
+   {
+    "image": "extreme close-up of a human eye halfway through a blink"
+   },
+   {
+    "image": "a crash test dummy pressed into a fully inflated white airbag inside a car"
+   }
+  ],
+  "tags": [
+   "autos",
+   "tecnología",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "013",
+  "title": "¿Por qué el hielo flota?",
+  "narration": "Casi todo se vuelve más pesado cuando se congela. El agua hace lo contrario. Al congelarse, sus partículas se acomodan dejando huecos. El hielo ocupa más lugar, es más liviano, y por eso flota. Y ese detalle raro es lo que salva a los peces cada invierno. Si el hielo se hundiera, los lagos se congelarían desde el fondo hasta arriba, y los peces no tendrían dónde vivir. Gracias a que flota, el hielo hace de techo, y abajo el agua sigue líquida todo el invierno.",
+  "scenes": [
+   {
+    "image": "ice cubes floating in a clear glass of water on a table",
+    "motion": "the ice cubes bob gently and turn slowly"
+   },
+   {
+    "image": "a hexagonal lattice of tiny water molecules with open spaces between them",
+    "motion": "the molecules lock into the hexagon pattern, camera slowly rotates"
+   },
+   {
+    "image": "a huge iceberg floating in a calm ocean, showing the part under water",
+    "motion": "the iceberg drifts slowly, water ripples around it"
+   },
+   {
+    "image": "a frozen lake in winter covered with snow and a thick layer of ice"
+   },
+   {
+    "image": "underwater view below a frozen lake, fish swimming calmly under the thick ice ceiling, light coming through"
+   }
+  ],
+  "tags": [
+   "ciencia",
+   "agua",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "014",
+  "title": "El pulpo tiene tres corazones",
+  "narration": "El pulpo tiene tres corazones. Dos mandan sangre a las branquias, y el tercero al resto del cuerpo. Cuando nada, ese tercer corazón se detiene. Por eso prefieren arrastrarse. Además su sangre es azul. Pero lo más alucinante es esto: dos tercios de sus neuronas no están en la cabeza, sino en los brazos. Cada brazo puede tocar, probar y reaccionar casi por su cuenta. Es como tener ocho mini cerebros pegados al cuerpo.",
+  "scenes": [
+   {
+    "image": "an orange octopus resting on a coral reef",
+    "motion": "the octopus tentacles curl and move gently, small fish swim by"
+   },
+   {
+    "image": "a see-through octopus body showing three small glowing red hearts inside",
+    "motion": "the three hearts pulse rhythmically"
+   },
+   {
+    "image": "an orange octopus crawling along the sandy sea floor with its tentacles",
+    "motion": "the octopus crawls slowly forward along the sand"
+   },
+   {
+    "image": "a see-through octopus with glowing blue blood vessels"
+   },
+   {
+    "image": "an octopus with eight tentacles each glowing with a small network of bright neurons"
+   }
+  ],
+  "tags": [
+   "animales",
+   "mar",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "015",
+  "title": "¿Por qué ves estrellitas al pararte rápido?",
+  "narration": "Cuando te parás de golpe, la gravedad tira la sangre hacia tus piernas. Por un segundo le llega menos sangre a la cabeza, y la vista se te llena de puntitos. Tu cuerpo lo corrige enseguida apretando las venas y acelerando el corazón. Pero imaginate pasar meses sin gravedad. Eso les pasa a los astronautas. Cuando vuelven a la Tierra, su cuerpo se olvidó de hacer ese ajuste, y muchos se marean o se desmayan solo por pararse.",
+  "scenes": [
+   {
+    "image": "a semi-realistic young adult sitting on a couch in a living room",
+    "motion": "the person stands up quickly from the couch"
+   },
+   {
+    "image": "a see-through human body with red blood flowing down toward the legs",
+    "motion": "the red blood slowly flows downward"
+   },
+   {
+    "image": "first-person view of a living room filled with tiny sparkling white dots",
+    "motion": "the sparkles flicker and slowly fade away"
+   },
+   {
+    "image": "an astronaut floating inside the International Space Station"
+   },
+   {
+    "image": "an astronaut just returned to Earth sitting in a chair, dizzy, helped by two people in a field"
+   }
+  ],
+  "tags": [
+   "cuerpo humano",
+   "espacio",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "016",
+  "title": "Los delfines duermen con medio cerebro",
+  "narration": "Si un delfín se durmiera del todo, se ahogaría, porque tiene que subir a respirar. Entonces duerme con la mitad del cerebro. Una mitad descansa mientras la otra lo mantiene nadando y atento, con un ojo abierto. Después cambian de lado. Y hay algo todavía más extremo. Cuando nace una cría, la mamá y el bebé casi no duermen durante todo el primer mes. Están siempre en movimiento, para que el bebé respire y ningún tiburón los sorprenda.",
+  "scenes": [
+   {
+    "image": "a gray dolphin swimming near the surface of a calm ocean at night",
+    "motion": "the dolphin glides slowly, moonlight ripples on the water"
+   },
+   {
+    "image": "a see-through dolphin head showing one half of the brain glowing blue and the other half dark",
+    "motion": "the glowing half pulses softly, camera slowly orbits"
+   },
+   {
+    "image": "close-up of a dolphin underwater with one eye open and one eye closed",
+    "motion": "the dolphin swims slowly, its open eye blinks"
+   },
+   {
+    "image": "a mother dolphin and a tiny baby dolphin swimming side by side in blue water"
+   },
+   {
+    "image": "a shark silhouette far away in dark blue water behind a mother and baby dolphin"
+   }
+  ],
+  "tags": [
+   "animales",
+   "mar",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "017",
+  "title": "¿Hace mal tronarse los dedos?",
+  "narration": "Entre tus huesos hay un líquido con gas disuelto. Cuando estirás el dedo, el espacio se agranda de golpe y se forma una burbuja. Ese crac es la burbuja apareciendo. Y siempre te dijeron que te va a dar artrosis. Un médico quiso probarlo con su propio cuerpo. Durante más de sesenta años se tronó los dedos de una sola mano, y de la otra nunca. Al final, ninguna de las dos tenía artrosis. Por ese experimento le dieron un premio.",
+  "scenes": [
+   {
+    "image": "two hands with interlaced fingers about to crack knuckles",
+    "motion": "the hands stretch forward and the fingers press outward"
+   },
+   {
+    "image": "a see-through finger joint showing two bones and clear liquid between them",
+    "motion": "the joint slowly pulls apart, the gap widens"
+   },
+   {
+    "image": "a small bubble suddenly appearing inside the clear liquid of a finger joint",
+    "motion": "the bubble pops into existence and wobbles"
+   },
+   {
+    "image": "an old doctor in a white coat cracking the knuckles of only his left hand, his right hand resting"
+   },
+   {
+    "image": "an old doctor smiling and holding a small golden trophy, both hands healthy"
+   }
+  ],
+  "tags": [
+   "cuerpo humano",
+   "mitos",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "018",
+  "title": "¿Por qué explota el pochoclo?",
+  "narration": "Cada grano de maíz tiene una gotita de agua adentro. Cuando lo calentás, esa agua se convierte en vapor y empuja la cáscara dura desde adentro. Al llegar a unos ciento ochenta grados, la presión adentro del grano es como nueve veces la del aire que respirás. La cáscara no aguanta más, revienta, y el almidón se infla como espuma y se endurece en el aire. Todo eso pasa en una fracción de segundo.",
+  "scenes": [
+   {
+    "image": "yellow corn kernels in a hot pan on a stove",
+    "motion": "the kernels shake and jiggle from the heat"
+   },
+   {
+    "image": "a see-through corn kernel with a tiny drop of water inside turning into steam",
+    "motion": "the steam swirls and builds up inside the kernel"
+   },
+   {
+    "image": "a corn kernel bursting into fluffy white popcorn",
+    "motion": "the kernel bursts open into popcorn and flips in the air"
+   },
+   {
+    "image": "a glowing pressure gauge dial at maximum next to a single corn kernel"
+   },
+   {
+    "image": "a giant cloud of white popcorn exploding out of a pot in slow motion"
+   }
+  ],
+  "tags": [
+   "cocina",
+   "ciencia",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "019",
+  "title": "¿Cuánta miel hace una abeja en toda su vida?",
+  "narration": "La abeja chupa el néctar de las flores y lo guarda en un estómago especial. En la colmena se lo pasa a otras abejas, que lo van mezclando. Después lo dejan en las celdas y lo abanican con las alas hasta que se seca y se vuelve miel. Ahora, ¿cuánta miel hace una sola abeja en toda su vida? Apenas la doceava parte de una cucharadita. O sea, en cada cucharadita de miel hay el trabajo de toda la vida de unas doce abejas.",
+  "scenes": [
+   {
+    "image": "a honeybee drinking nectar from a bright yellow flower",
+    "motion": "the bee moves on the flower, wings buzzing, petals sway"
+   },
+   {
+    "image": "honeybees passing golden droplets to each other inside a beehive",
+    "motion": "the bees move around, passing small golden droplets"
+   },
+   {
+    "image": "bees fanning their wings over golden honeycomb cells full of honey",
+    "motion": "the bees fan their wings rapidly over the glowing honey"
+   },
+   {
+    "image": "a single tiny drop of honey on the tip of a metal teaspoon, macro shot"
+   },
+   {
+    "image": "twelve honeybees standing in a row next to a teaspoon full of golden honey"
+   }
+  ],
+  "tags": [
+   "animales",
+   "naturaleza",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "020",
+  "title": "¿Qué son las rayas blancas que dejan los aviones?",
+  "narration": "Esas rayas blancas que dejan los aviones son nubes. El motor larga aire caliente y húmedo. Allá arriba hace unos cincuenta grados bajo cero, y ese vapor se congela al instante en millones de cristalitos de hielo. Por eso la raya aparece un poquito atrás del avión, no pegada. Y a veces, si el aire está muy húmedo, esas rayas no desaparecen: se van estirando durante horas hasta convertirse en nubes de verdad que tapan el sol.",
+  "scenes": [
+   {
+    "image": "a high flying airplane leaving long white contrails across a blue sky",
+    "motion": "the airplane moves slowly across the sky, contrails stretch behind"
+   },
+   {
+    "image": "close-up of a jet engine releasing hot exhaust",
+    "motion": "hot air shimmers and flows out of the engine"
+   },
+   {
+    "image": "tiny ice crystals forming in the cold air behind a jet engine",
+    "motion": "the ice crystals sparkle and spread into a white trail"
+   },
+   {
+    "image": "a jet with a white trail starting a short distance behind its engines, gap clearly visible"
+   },
+   {
+    "image": "a sky full of wide crisscrossing contrails spreading into thin clouds partly covering the sun"
+   }
+  ],
+  "tags": [
+   "aviones",
+   "ciencia",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "021",
+  "title": "¿Por qué el mar es salado?",
+  "narration": "La lluvia va desgastando las rocas y arrastra sus minerales a los ríos. Los ríos los llevan al mar. El agua del mar se evapora, pero la sal no se va con ella, así que se queda. Y así durante millones de años. ¿Sabés cuánta sal hay? Si sacaras toda la sal del mar y la repartieras sobre todos los continentes, harías una capa de más de ciento cincuenta metros de alto. Como un edificio de cuarenta pisos.",
+  "scenes": [
+   {
+    "image": "rain falling on large gray rocks on a mountain",
+    "motion": "raindrops fall and water trickles down the rocks"
+   },
+   {
+    "image": "a river flowing down into the ocean, aerial view",
+    "motion": "the river water flows into the sea, slow aerial drift"
+   },
+   {
+    "image": "white salt crystals left on rocks by the sea shore under the sun",
+    "motion": "small waves wash in and out, the salt crystals sparkle"
+   },
+   {
+    "image": "a gigantic pile of white salt rising above the ocean"
+   },
+   {
+    "image": "a city covered by a layer of white salt as tall as a 40 story building, only the tallest skyscrapers sticking out"
+   }
+  ],
+  "tags": [
+   "naturaleza",
+   "mar",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "022",
+  "title": "¿Cómo gira tanto la cabeza un búho?",
+  "narration": "Un búho puede girar la cabeza tres cuartos de vuelta. Tiene el doble de vértebras en el cuello que vos, y sus venas tienen reservas de sangre para que el cerebro no se quede sin sangre mientras gira. Pero, ¿por qué necesita girar tanto la cabeza? Porque no puede mover los ojos. Los ojos del búho no son bolitas como los tuyos. Son tubos, metidos fijos en el cráneo. Para mirar a un costado, tiene que girar todo.",
+  "scenes": [
+   {
+    "image": "a brown owl perched on a tree branch at night",
+    "motion": "the owl slowly rotates its head to look behind"
+   },
+   {
+    "image": "a see-through owl neck showing a long chain of small vertebrae bones",
+    "motion": "the vertebrae twist smoothly one after another"
+   },
+   {
+    "image": "a see-through owl neck with red blood vessels and small pockets of blood",
+    "motion": "the blood pockets fill and glow softly"
+   },
+   {
+    "image": "close-up of the big round orange eyes of an owl staring forward"
+   },
+   {
+    "image": "a see-through owl skull showing long tube-shaped eyes fixed inside"
+   }
+  ],
+  "tags": [
+   "animales",
+   "aves",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "023",
+  "title": "El camaleón no cambia de color para esconderse",
+  "narration": "El camaleón no tiene pinturas en la piel. Tiene millones de cristales diminutos. Cuando se relaja o se pone nervioso, los separa o los junta, y eso cambia la luz que rebota. Así cambia de color en segundos. Pero acá viene la sorpresa: casi nunca lo hace para camuflarse. Cambia de color para mostrar lo que siente, para asustar a otro macho o conquistar a una hembra, y para calentarse o enfriarse.",
+  "scenes": [
+   {
+    "image": "a green chameleon on a branch in a tropical forest",
+    "motion": "the chameleon's eye swivels, the branch sways gently"
+   },
+   {
+    "image": "microscopic view of tiny shiny crystals in a grid inside skin",
+    "motion": "the crystals spread apart and the color shifts from green to orange"
+   },
+   {
+    "image": "a bright orange and red chameleon on a branch",
+    "motion": "the chameleon slowly walks along the branch"
+   },
+   {
+    "image": "two male chameleons facing each other on a branch, both bright red and yellow, angry"
+   },
+   {
+    "image": "a dark brown chameleon basking in warm sunlight on a branch"
+   }
+  ],
+  "tags": [
+   "animales",
+   "naturaleza",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "024",
+  "title": "¿Por qué el agua oxigenada hace espuma?",
+  "narration": "Cuando ponés agua oxigenada en una herida, hace espuma. Es que tu sangre y tu piel tienen una sustancia que la rompe al instante en agua y oxígeno. Ese oxígeno sale en burbujitas, y eso es la espuma blanca. Mucha gente cree que esa espuma significa que está matando gérmenes. Pero los médicos hoy recomiendan otra cosa: el agua oxigenada también daña las células que curan tu herida. Para una raspadura, lo mejor es agua y jabón.",
+  "scenes": [
+   {
+    "image": "a brown bottle of hydrogen peroxide pouring onto a small scrape on a knee",
+    "motion": "the clear liquid pours slowly onto the knee"
+   },
+   {
+    "image": "white foam bubbling up on a small scrape on skin",
+    "motion": "the foam grows and fizzes"
+   },
+   {
+    "image": "microscopic view of tiny oxygen bubbles forming and rising",
+    "motion": "the bubbles form and rise upward"
+   },
+   {
+    "image": "microscopic view of small healing skin cells being damaged by bubbles"
+   },
+   {
+    "image": "a hand washing a small scrape on a knee with soap and water under a faucet"
+   }
+  ],
+  "tags": [
+   "cuerpo humano",
+   "salud",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "025",
+  "title": "¿Cómo se inventó el velcro?",
+  "narration": "Un ingeniero suizo volvió de pasear con su perro y vio que el pelo del perro estaba lleno de abrojos. En vez de enojarse, los miró con un microscopio. Cada abrojo tenía cientos de ganchitos que se enganchaban en los pelos. Copió esa idea con dos tiras de tela: una con ganchitos y otra con rulitos. Así inventó el velcro. Y años después, la NASA lo hizo famoso: los astronautas lo usan para que las cosas no salgan flotando por la nave.",
+  "scenes": [
+   {
+    "image": "a man walking a dog through a field of tall dry grass in the Swiss mountains",
+    "motion": "the man and dog walk forward slowly, grass sways"
+   },
+   {
+    "image": "close-up of spiky burrs stuck in a dog's fur",
+    "motion": "the fur moves slightly, camera pushes in on the burrs"
+   },
+   {
+    "image": "microscope view of tiny hooks catching tiny loops",
+    "motion": "the hooks slowly catch onto the loops"
+   },
+   {
+    "image": "two strips of fabric, one with tiny hooks and one with tiny loops, about to stick together"
+   },
+   {
+    "image": "an astronaut inside a space station with tools stuck to the wall with velcro strips, floating"
+   }
+  ],
+  "tags": [
+   "inventos",
+   "historia",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "026",
+  "title": "Hay tiburones que no pueden dejar de nadar",
+  "narration": "Algunos tiburones, como el tiburón blanco, no pueden dejar de nadar nunca. No tienen cómo bombear agua a sus branquias, entonces respiran dejando que el agua les entre por la boca mientras avanzan. Si se quedan quietos, no les entra oxígeno. Por eso descansan nadando despacio. Y lo más irónico: si uno de estos tiburones queda atrapado en una red y no puede moverse, se ahoga, aunque esté rodeado de agua por todos lados.",
+  "scenes": [
+   {
+    "image": "a great white shark swimming in deep blue water",
+    "motion": "the shark glides forward, slow camera follow"
+   },
+   {
+    "image": "water flowing into an open shark mouth and out through its gills",
+    "motion": "the water flows through the mouth and out of the gills"
+   },
+   {
+    "image": "a shark slowly swimming near the sea floor at night",
+    "motion": "the shark moves slowly forward in the dark water"
+   },
+   {
+    "image": "a great white shark caught motionless in a fishing net underwater"
+   },
+   {
+    "image": "a diver gently cutting a fishing net to free a shark underwater"
+   }
+  ],
+  "tags": [
+   "animales",
+   "mar",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "027",
+  "title": "El hombre que tuvo hipo 68 años",
+  "narration": "El hipo empieza en el diafragma, un músculo que tenés debajo de los pulmones. De repente se contrae solo, y tomás aire de golpe. En ese mismo instante se cierran tus cuerdas vocales, y ese cierre rápido es el sonido hip. Casi siempre se pasa en minutos. Pero un hombre en Estados Unidos tuvo hipo durante sesenta y ocho años seguidos. Empezó en 1922, y un día de 1990 se le fue solo. Es récord mundial.",
+  "scenes": [
+   {
+    "image": "a semi-realistic adult hiccupping in a kitchen, hand on chest",
+    "motion": "the person's shoulders jump up suddenly"
+   },
+   {
+    "image": "a see-through human chest showing the lungs and the dome-shaped diaphragm under them",
+    "motion": "the diaphragm suddenly jerks down"
+   },
+   {
+    "image": "a see-through throat showing the vocal cords snapping shut",
+    "motion": "the vocal cords snap shut quickly"
+   },
+   {
+    "image": "an old 1920s black and white style photo look of a farmer in overalls on a farm, hiccupping"
+   },
+   {
+    "image": "a very old man smiling with a golden world record certificate"
+   }
+  ],
+  "tags": [
+   "cuerpo humano",
+   "récords",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "028",
+  "title": "¿Por qué la Coca explota con Mentos?",
+  "narration": "La gaseosa tiene gas disuelto que está esperando una excusa para salir. La pastilla de menta parece lisa, pero vista de cerca está llena de poros diminutos. En cada poro se forman burbujas al instante, millones a la vez, y la gaseosa sale disparada hasta varios metros. Y hay un detalle que pocos saben: con la gaseosa light sale mucho más alto. El endulzante ayuda a que se formen burbujas, y el azúcar de la común las frena.",
+  "scenes": [
+   {
+    "image": "a bottle of dark soda standing on grass outdoors",
+    "motion": "small bubbles rise inside the bottle"
+   },
+   {
+    "image": "microscopic view of a mint candy surface full of tiny pores with bubbles forming",
+    "motion": "bubbles form rapidly in every pore"
+   },
+   {
+    "image": "a tall fountain of brown foam shooting out of a soda bottle",
+    "motion": "the foam fountain sprays upward"
+   },
+   {
+    "image": "two soda bottles side by side on grass, one regular and one diet with a silver label"
+   },
+   {
+    "image": "a giant fountain of foam shooting very high out of a diet soda bottle next to a smaller fountain from a regular soda bottle"
+   }
+  ],
+  "tags": [
+   "ciencia",
+   "experimentos",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "029",
+  "title": "¿Por qué un pez se ahoga fuera del agua?",
+  "narration": "Los peces toman agua por la boca y la sacan por las branquias. Las branquias están llenas de láminas finitas con sangre, y cuando el agua pasa, le roban el oxígeno que lleva disuelto. Ahora, el aire tiene muchísimo más oxígeno que el agua. Entonces, ¿por qué un pez se ahoga fuera del agua? Porque sin agua que las sostenga, esas láminas finitas se pegan unas con otras y colapsan, y el pez ya no puede usar ese oxígeno.",
+  "scenes": [
+   {
+    "image": "a goldfish swimming in a clear aquarium",
+    "motion": "the goldfish opens and closes its mouth while swimming"
+   },
+   {
+    "image": "close-up of red fish gills with thin feathery layers",
+    "motion": "the gill layers ripple as water flows through"
+   },
+   {
+    "image": "tiny oxygen bubbles moving from water into red blood vessels",
+    "motion": "the bubbles drift into the vessels"
+   },
+   {
+    "image": "a goldfish jumping out of the water into the air above an aquarium"
+   },
+   {
+    "image": "close-up of fish gills collapsed and stuck together, out of water"
+   }
+  ],
+  "tags": [
+   "animales",
+   "mar",
+   "curiosidades"
+  ]
+ },
+ {
+  "id": "030",
+  "title": "La luna se está yendo",
+  "narration": "La luna en el horizonte parece gigante, pero es un truco de tu cerebro. Si la tapás con el dedo, mide lo mismo que cuando está bien arriba. Tu cerebro la compara con edificios y árboles, y la agranda. Pero hay algo de la luna que sí cambia de verdad: se está yendo. Cada año se aleja de la Tierra casi cuatro centímetros, más o menos lo que te crecen las uñas. Dentro de muchísimo tiempo, se verá cada vez más chica.",
+  "scenes": [
+   {
+    "image": "a huge orange full moon rising over a city skyline",
+    "motion": "the moon slowly rises over the buildings"
+   },
+   {
+    "image": "a hand with an outstretched thumb next to a full moon in the night sky",
+    "motion": "the thumb slowly moves up to cover the moon"
+   },
+   {
+    "image": "a small white full moon high in a dark night sky",
+    "motion": "the camera slowly pulls back"
+   },
+   {
+    "image": "the Earth and the Moon in space with a measuring tape stretched between them"
+   },
+   {
+    "image": "a very tiny distant moon in a dark sky over a quiet landscape"
+   }
+  ],
+  "tags": [
+   "espacio",
+   "ilusiones",
+   "curiosidades"
+  ]
+ }
 ]

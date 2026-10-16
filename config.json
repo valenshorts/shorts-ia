@@ -19,5 +19,15 @@
   },
   "privacy": "public",
   "description_footer": "Animación y voz generadas con IA.\n\n#curiosidades #sabiasque #ciencia #shorts",
-  "extra_tags": ["curiosidades", "sabias que", "datos curiosos", "shorts"]
+  "extra_tags": [
+    "curiosidades",
+    "sabias que",
+    "datos curiosos",
+    "shorts"
+  ],
+  "music": {
+    "volume": 0.35,
+    "duck_ratio": 6
+  },
+  "max_clips": 3
 }
