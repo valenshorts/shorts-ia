@@ -1,0 +1,37 @@
+{
+  "image_space": "mcp-tools/Qwen-Image-Fast",
+  "video_space": "zerogpu-aoti/wan2-2-fp8da-aoti-faster",
+  "clip_seconds": 4,
+  "video_steps": 6,
+  "style": "Stylized 3D CGI render, clean Pixar-like animation style, soft bright even studio lighting, simple clean background, highly detailed materials.",
+  "motion_style": "smooth 3D animation, natural real-life speed, steady lighting, objects stay solid and do not pass through each other",
+  "voice": "es-MX-JorgeNeural",
+  "voice_rate": "+8%",
+  "pause_between_sentences": 0.25,
+  "ambience_volume": 0.05,
+  "captions": {
+    "font": "Inter Black",
+    "size": 86,
+    "outline": 6,
+    "words_per_caption": 3,
+    "uppercase": true,
+    "margin_bottom": 340
+  },
+  "privacy": "public",
+  "description_footer": "Animación y voz generadas con IA.\n\n#curiosidades #sabiasque #ciencia #shorts",
+  "extra_tags": [
+    "curiosidades",
+    "sabias que",
+    "datos curiosos",
+    "shorts"
+  ],
+  "music": {
+    "volume": 0.35,
+    "duck_ratio": 6
+  },
+  "max_clips": 4,
+  "image_providers": [
+    "pollinations",
+    "hf"
+  ]
+}

@@ -79,7 +79,38 @@ def as_path(x):
     return None
 
 
+_last_pollinations = [0.0]
+
+
+def pollinations_image(prompt, dest, seed):
+    """Imágenes gratis sin cuota de GPU (pollinations.ai). Máx. 1 pedido cada 15 s."""
+    import urllib.parse, urllib.request
+    wait = 16 - (time.time() - _last_pollinations[0])
+    if wait > 0:
+        time.sleep(wait)
+    url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt) +
+           f"?width=1080&height=1920&nologo=true&seed={seed}&model=flux")
+    raw = Path(str(dest) + ".jpg")
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=180) as r, open(raw, "wb") as f:
+        f.write(r.read())
+    _last_pollinations[0] = time.time()
+    if raw.stat().st_size < 20000:
+        raise RuntimeError("imagen vacía")
+    # recorte leve de bordes por si trae marca de agua en una esquina
+    run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-vf", "crop=iw*0.92:ih*0.92:iw*0.04:ih*0.03", dest])
+    return dest
+
+
 def make_image(prompt, dest):
+    import random
+    if "pollinations" in CFG.get("image_providers", []):
+        for attempt in range(3):
+            try:
+                return pollinations_image(prompt, dest, random.randint(1, 10**6))
+            except Exception as e:
+                log(f"Pollinations falló ({e}); reintento" if attempt < 2 else "Pollinations no anda, uso Hugging Face")
+                time.sleep(10)
     c = hf_client(CFG["image_space"])
     res = call_space(c, ["/generate_image", "/infer", "/generate"],
                      prompt=prompt, aspect_ratio="9:16", randomize_seed=True)
@@ -198,8 +229,15 @@ def assemble(visuals, voice, subs, total, out):
         else:  # imagen fija con zoom lento
             frames = int(secs * FPS) + 1
             inputs += ["-loop", "1", "-t", f"{secs:.3f}", "-i", f]
+            moves = [  # zoom in, zoom out, paneo a la derecha, paneo hacia arriba
+                ("min(zoom+0.0012,1.18)", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"),
+                ("max(1.18-0.0012*on,1.0)", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"),
+                ("1.15", f"(iw-iw/zoom)*on/{frames}", "ih/2-(ih/zoom/2)"),
+                ("1.15", "iw/2-(iw/zoom/2)", f"(ih-ih/zoom)*(1-on/{frames})"),
+            ]
+            z, x, y = moves[i % len(moves)]
             chains.append(f"[{i}:v]scale={W*2}:{H*2}:force_original_aspect_ratio=increase,crop={W*2}:{H*2},"
-                          f"zoompan=z='min(zoom+0.0010,1.12)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={W}x{H}:fps={FPS},setsar=1[s{i}]")
+                          f"zoompan=z='{z}':x='{x}':y='{y}':d={frames}:s={W}x{H}:fps={FPS},setsar=1[s{i}]")
     n = len(visuals)
     fontsdir = (ROOT / "fonts").as_posix()
     vf = ";".join(chains) + ";" + "".join(f"[s{i}]" for i in range(n)) + \
@@ -312,8 +350,14 @@ def main():
                         break
                     log(f"Clip {k} falló ({e}); reintento" if attempt == 0 else f"Clip {k} falló otra vez")
                     time.sleep(20)
-        if len(visuals) < k:
-            visuals.append((img, False, per))
+        if not visuals or visuals[-1][0] != clip:
+            # escena sin animación: 2 tomas distintas (general + primer plano) para que no quede quieta
+            img2 = work / f"scene{k}b.png"
+            try:
+                make_image(f"{CFG['style']} {sc['image']}, dramatic close-up detail shot from a different angle. Vertical composition, no text.", img2)
+                visuals += [(img, False, per / 2), (img2, False, per / 2)]
+            except Exception:
+                visuals.append((img, False, per))
     if not any(v[1] for v in visuals):
         raise SystemExit("No salió ningún clip animado: se reintenta mañana con la misma idea.")
 
