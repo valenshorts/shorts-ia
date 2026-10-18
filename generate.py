@@ -253,7 +253,7 @@ def assemble(visuals, voice, subs, total, out):
         m = CFG["music"]
         af = (f"[{vi}:a]aresample=48000,asplit=2[vo][key];"
               f"[{ai}:a]aresample=48000,aformat=channel_layouts=mono,volume={m['volume']},afade=t=in:d=1[mus];"
-              f"[mus][key]sidechaincompress=threshold=0.03:ratio={m['duck_ratio']}:attack=20:release=400[duck];"
+              f"[mus][key]sidechaincompress=threshold=0.06:ratio={m['duck_ratio']}:attack=30:release=500[duck];"
               f"[vo][duck]amix=inputs=2:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
     else:  # sin música: un zumbido ambiente muy bajo
         ain = ["-f", "lavfi", "-i", "anoisesrc=color=brown:amplitude=0.5:r=48000"]

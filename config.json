@@ -26,8 +26,12 @@
     "shorts"
   ],
   "music": {
-    "volume": 0.35,
-    "duck_ratio": 6
+    "volume": 0.6,
+    "duck_ratio": 2.5
   },
-  "max_clips": 3
+  "max_clips": 4,
+  "image_providers": [
+    "pollinations",
+    "hf"
+  ]
 }
