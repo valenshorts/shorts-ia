@@ -31,7 +31,6 @@
   },
   "max_clips": 4,
   "image_providers": [
-    "pollinations",
     "hf"
   ]
 }
