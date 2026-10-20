@@ -63,8 +63,8 @@
  },
  {
   "id": "003",
-  "title": "¿Qué pasa si te tragás un chicle?",
-  "narration": "Dicen que si te tragás un chicle se queda siete años en la panza. Es mentira. Tu estómago no lo puede deshacer, pero tampoco lo necesita: viaja por los intestinos como todo lo demás y en un par de días sale solito. Pero hay un caso real que asusta. En 1998, médicos de Estados Unidos atendieron a un nene que se tragaba de cinco a siete chicles por día. Se le había formado una pelota de chicle que le tapaba el intestino.",
+  "title": "¿Qué pasa si te tragas un chicle?",
+  "narration": "Dicen que si te tragas un chicle se queda siete años en el estómago. Es mentira. Tu estómago no lo puede deshacer, pero tampoco lo necesita: viaja por los intestinos como todo lo demás y en un par de días sale solito. Pero hay un caso real que asusta. En 1998, médicos de Estados Unidos atendieron a un niño que se tragaba de cinco a siete chicles por día. Se le había formado una pelota de chicle que le tapaba el intestino.",
   "scenes": [
    {
     "image": "a semi-realistic young adult blowing a big pink bubble gum bubble in a simple room",
@@ -90,12 +90,12 @@
    "mitos",
    "curiosidades"
   ],
-  "yt_title": "¿Qué pasa si te tragás un chicle? 😳"
+  "yt_title": "¿Qué pasa si te tragas un chicle? 😳"
  },
  {
   "id": "004",
   "title": "El truco para no llorar con la cebolla",
-  "narration": "Cuando cortás una cebolla, rompés miles de sus células, y sueltan un gas invisible. Ese gas sube flotando hasta tus ojos, se mezcla con tus lágrimas y forma un ácido muy suave que te arde. Tus ojos se defienden de la única forma que saben: largando más lágrimas para lavarlo. Pero hay un truco que funciona de verdad. Meté la cebolla en la heladera media hora antes. Con el frío, ese gas sale mucho más lento y casi no llorás.",
+  "narration": "Cuando cortas una cebolla, rompes miles de sus células, y sueltan un gas invisible. Ese gas sube flotando hasta tus ojos, se mezcla con tus lágrimas y forma un ácido muy suave que te arde. Tus ojos se defienden de la única forma que saben: soltando más lágrimas para lavarlo. Pero hay un truco que funciona de verdad. Mete la cebolla en el refrigerador media hora antes. Con el frío, ese gas sale mucho más lento y casi no lloras.",
   "scenes": [
    {
     "image": "a kitchen knife slicing a white onion on a wooden cutting board",
@@ -219,7 +219,7 @@
  {
   "id": "008",
   "title": "El microondas se inventó por accidente",
-  "narration": "El microondas no calienta el plato, calienta el agua que tiene la comida. Lanza ondas invisibles que hacen girar las gotitas de agua millones de veces por segundo. Ese movimiento se vuelve calor, y la comida se calienta. Y se inventó de casualidad. En 1945, un ingeniero que trabajaba con radares notó que la barra de chocolate que tenía en el bolsillo se había derretido sola. Probó con maíz, y se hizo pochoclo. Así nació el microondas.",
+  "narration": "El microondas no calienta el plato, calienta el agua que tiene la comida. Lanza ondas invisibles que hacen girar las gotitas de agua millones de veces por segundo. Ese movimiento se vuelve calor, y la comida se calienta. Y se inventó de casualidad. En 1945, un ingeniero que trabajaba con radares notó que la barra de chocolate que tenía en el bolsillo se había derretido sola. Probó con maíz, y le salieron palomitas. Así nació el microondas.",
   "scenes": [
    {
     "image": "a plate of food inside a glowing microwave oven",
@@ -250,7 +250,7 @@
  {
   "id": "009",
   "title": "Los flamencos nacen grises",
-  "narration": "Los flamencos nacen grises. Se vuelven rosas por lo que comen: algas y camarones diminutos llenos de un pigmento rosado. Si un flamenco dejara de comerlos, con el tiempo se volvería blanco. Pero lo más impresionante es cómo alimentan a sus crías. Los padres producen en la garganta una especie de leche roja y se la dan por el pico. Y les sale tanto color en esa leche, que mientras crían a su pichón, ellos mismos se van poniendo pálidos.",
+  "narration": "Los flamencos nacen grises. Se vuelven rosas por lo que comen: algas y camarones diminutos llenos de un pigmento rosado. Si un flamenco dejara de comerlos, con el tiempo se volvería blanco. Pero lo más impresionante es cómo alimentan a sus crías. Los padres producen en la garganta una especie de leche roja y se la dan por el pico. Y les sale tanto color en esa leche, que mientras crían a su polluelo, ellos mismos se van poniendo pálidos.",
   "scenes": [
    {
     "image": "a fluffy gray baby flamingo chick standing in shallow water",
@@ -343,7 +343,7 @@
  {
   "id": "012",
   "title": "El airbag es más rápido que un parpadeo",
-  "narration": "En un choque, un sensor detecta el golpe en milésimas de segundo. Enciende una pequeña carga, como un mini cohete, que produce gas de golpe y llena la bolsa. Todo pasa tan rápido que el airbag se infla en unos treinta milésimos de segundo. Es unas diez veces más rápido que un parpadeo. Si pestañeás justo cuando chocás, cuando abrís los ojos el airbag ya está inflado.",
+  "narration": "En un choque, un sensor detecta el golpe en milésimas de segundo. Enciende una pequeña carga, como un mini cohete, que produce gas de golpe y llena la bolsa. Todo pasa tan rápido que el airbag se infla en unos treinta milésimos de segundo. Es unas diez veces más rápido que un parpadeo. Si parpadeas justo cuando chocas, cuando abres los ojos el airbag ya está inflado.",
   "scenes": [
    {
     "image": "a car dashboard and steering wheel from the driver's view, a road ahead",
@@ -436,7 +436,7 @@
  {
   "id": "015",
   "title": "¿Por qué ves estrellitas al pararte rápido?",
-  "narration": "Cuando te parás de golpe, la gravedad tira la sangre hacia tus piernas. Por un segundo le llega menos sangre a la cabeza, y la vista se te llena de puntitos. Tu cuerpo lo corrige enseguida apretando las venas y acelerando el corazón. Pero imaginate pasar meses sin gravedad. Eso les pasa a los astronautas. Cuando vuelven a la Tierra, su cuerpo se olvidó de hacer ese ajuste, y muchos se marean o se desmayan solo por pararse.",
+  "narration": "Cuando te paras de golpe, la gravedad tira la sangre hacia tus piernas. Por un segundo le llega menos sangre a la cabeza, y la vista se te llena de puntitos. Tu cuerpo lo corrige enseguida apretando las venas y acelerando el corazón. Pero imagínate pasar meses sin gravedad. Eso les pasa a los astronautas. Cuando vuelven a la Tierra, su cuerpo se olvidó de hacer ese ajuste, y muchos se marean o se desmayan solo por pararse.",
   "scenes": [
    {
     "image": "a semi-realistic young adult sitting on a couch in a living room",
@@ -498,7 +498,7 @@
  {
   "id": "017",
   "title": "¿Hace mal tronarse los dedos?",
-  "narration": "Entre tus huesos hay un líquido con gas disuelto. Cuando estirás el dedo, el espacio se agranda de golpe y se forma una burbuja. Ese crac es la burbuja apareciendo. Y siempre te dijeron que te va a dar artrosis. Un médico quiso probarlo con su propio cuerpo. Durante más de sesenta años se tronó los dedos de una sola mano, y de la otra nunca. Al final, ninguna de las dos tenía artrosis. Por ese experimento le dieron un premio.",
+  "narration": "Entre tus huesos hay un líquido con gas disuelto. Cuando estiras el dedo, el espacio se agranda de golpe y se forma una burbuja. Ese crac es la burbuja apareciendo. Y siempre te dijeron que te va a dar artrosis. Un médico quiso probarlo con su propio cuerpo. Durante más de sesenta años se tronó los dedos de una sola mano, y de la otra nunca. Al final, ninguna de las dos tenía artrosis. Por ese experimento le dieron un premio.",
   "scenes": [
    {
     "image": "two hands with interlaced fingers about to crack knuckles",
@@ -528,8 +528,8 @@
  },
  {
   "id": "018",
-  "title": "¿Por qué explota el pochoclo?",
-  "narration": "Cada grano de maíz tiene una gotita de agua adentro. Cuando lo calentás, esa agua se convierte en vapor y empuja la cáscara dura desde adentro. Al llegar a unos ciento ochenta grados, la presión adentro del grano es como nueve veces la del aire que respirás. La cáscara no aguanta más, revienta, y el almidón se infla como espuma y se endurece en el aire. Todo eso pasa en una fracción de segundo.",
+  "title": "¿Por qué explotan las palomitas de maíz?",
+  "narration": "Cada grano de maíz tiene una gotita de agua adentro. Cuando lo calientas, esa agua se convierte en vapor y empuja la cáscara dura desde adentro. Al llegar a unos ciento ochenta grados, la presión adentro del grano es como nueve veces la del aire que respiras. La cáscara no aguanta más, revienta, y el almidón se infla como espuma y se endurece en el aire. Todo eso pasa en una fracción de segundo.",
   "scenes": [
    {
     "image": "yellow corn kernels in a hot pan on a stove",
@@ -555,7 +555,7 @@
    "ciencia",
    "curiosidades"
   ],
-  "yt_title": "La presión dentro de un pochoclo te va a sorprender 🍿"
+  "yt_title": "La presión dentro de un grano de palomitas te va a sorprender 🍿"
  },
  {
   "id": "019",
@@ -591,7 +591,7 @@
  {
   "id": "020",
   "title": "¿Qué son las rayas blancas que dejan los aviones?",
-  "narration": "Esas rayas blancas que dejan los aviones son nubes. El motor larga aire caliente y húmedo. Allá arriba hace unos cincuenta grados bajo cero, y ese vapor se congela al instante en millones de cristalitos de hielo. Por eso la raya aparece un poquito atrás del avión, no pegada. Y a veces, si el aire está muy húmedo, esas rayas no desaparecen: se van estirando durante horas hasta convertirse en nubes de verdad que tapan el sol.",
+  "narration": "Esas rayas blancas que dejan los aviones son nubes. El motor suelta aire caliente y húmedo. Allá arriba hace unos cincuenta grados bajo cero, y ese vapor se congela al instante en millones de cristalitos de hielo. Por eso la raya aparece un poquito atrás del avión, no pegada. Y a veces, si el aire está muy húmedo, esas rayas no desaparecen: se van estirando durante horas hasta convertirse en nubes de verdad que tapan el sol.",
   "scenes": [
    {
     "image": "a high flying airplane leaving long white contrails across a blue sky",
@@ -622,7 +622,7 @@
  {
   "id": "021",
   "title": "¿Por qué el mar es salado?",
-  "narration": "La lluvia va desgastando las rocas y arrastra sus minerales a los ríos. Los ríos los llevan al mar. El agua del mar se evapora, pero la sal no se va con ella, así que se queda. Y así durante millones de años. ¿Sabés cuánta sal hay? Si sacaras toda la sal del mar y la repartieras sobre todos los continentes, harías una capa de más de ciento cincuenta metros de alto. Como un edificio de cuarenta pisos.",
+  "narration": "La lluvia va desgastando las rocas y arrastra sus minerales a los ríos. Los ríos los llevan al mar. El agua del mar se evapora, pero la sal no se va con ella, así que se queda. Y así durante millones de años. ¿Sabes cuánta sal hay? Si sacaras toda la sal del mar y la repartieras sobre todos los continentes, harías una capa de más de ciento cincuenta metros de alto. Como un edificio de cuarenta pisos.",
   "scenes": [
    {
     "image": "rain falling on large gray rocks on a mountain",
@@ -653,7 +653,7 @@
  {
   "id": "022",
   "title": "¿Cómo gira tanto la cabeza un búho?",
-  "narration": "Un búho puede girar la cabeza tres cuartos de vuelta. Tiene el doble de vértebras en el cuello que vos, y sus venas tienen reservas de sangre para que el cerebro no se quede sin sangre mientras gira. Pero, ¿por qué necesita girar tanto la cabeza? Porque no puede mover los ojos. Los ojos del búho no son bolitas como los tuyos. Son tubos, metidos fijos en el cráneo. Para mirar a un costado, tiene que girar todo.",
+  "narration": "Un búho puede girar la cabeza tres cuartos de vuelta. Tiene el doble de vértebras en el cuello que tú, y sus venas tienen reservas de sangre para que el cerebro no se quede sin sangre mientras gira. Pero, ¿por qué necesita girar tanto la cabeza? Porque no puede mover los ojos. Los ojos del búho no son bolitas como los tuyos. Son tubos, metidos fijos en el cráneo. Para mirar a un costado, tiene que girar todo.",
   "scenes": [
    {
     "image": "a brown owl perched on a tree branch at night",
@@ -684,7 +684,7 @@
  {
   "id": "023",
   "title": "El camaleón no cambia de color para esconderse",
-  "narration": "El camaleón no tiene pinturas en la piel. Tiene millones de cristales diminutos. Cuando se relaja o se pone nervioso, los separa o los junta, y eso cambia la luz que rebota. Así cambia de color en segundos. Pero acá viene la sorpresa: casi nunca lo hace para camuflarse. Cambia de color para mostrar lo que siente, para asustar a otro macho o conquistar a una hembra, y para calentarse o enfriarse.",
+  "narration": "El camaleón no tiene pinturas en la piel. Tiene millones de cristales diminutos. Cuando se relaja o se pone nervioso, los separa o los junta, y eso cambia la luz que rebota. Así cambia de color en segundos. Pero aquí viene la sorpresa: casi nunca lo hace para camuflarse. Cambia de color para mostrar lo que siente, para asustar a otro macho o conquistar a una hembra, y para calentarse o enfriarse.",
   "scenes": [
    {
     "image": "a green chameleon on a branch in a tropical forest",
@@ -715,7 +715,7 @@
  {
   "id": "024",
   "title": "¿Por qué el agua oxigenada hace espuma?",
-  "narration": "Cuando ponés agua oxigenada en una herida, hace espuma. Es que tu sangre y tu piel tienen una sustancia que la rompe al instante en agua y oxígeno. Ese oxígeno sale en burbujitas, y eso es la espuma blanca. Mucha gente cree que esa espuma significa que está matando gérmenes. Pero los médicos hoy recomiendan otra cosa: el agua oxigenada también daña las células que curan tu herida. Para una raspadura, lo mejor es agua y jabón.",
+  "narration": "Cuando pones agua oxigenada en una herida, hace espuma. Es que tu sangre y tu piel tienen una sustancia que la rompe al instante en agua y oxígeno. Ese oxígeno sale en burbujitas, y eso es la espuma blanca. Mucha gente cree que esa espuma significa que está matando gérmenes. Pero los médicos hoy recomiendan otra cosa: el agua oxigenada también daña las células que curan tu herida. Para una raspadura, lo mejor es agua y jabón.",
   "scenes": [
    {
     "image": "a brown bottle of hydrogen peroxide pouring onto a small scrape on a knee",
@@ -808,7 +808,7 @@
  {
   "id": "027",
   "title": "El hombre que tuvo hipo 68 años",
-  "narration": "El hipo empieza en el diafragma, un músculo que tenés debajo de los pulmones. De repente se contrae solo, y tomás aire de golpe. En ese mismo instante se cierran tus cuerdas vocales, y ese cierre rápido es el sonido hip. Casi siempre se pasa en minutos. Pero un hombre en Estados Unidos tuvo hipo durante sesenta y ocho años seguidos. Empezó en 1922, y un día de 1990 se le fue solo. Es récord mundial.",
+  "narration": "El hipo empieza en el diafragma, un músculo que tienes debajo de los pulmones. De repente se contrae solo, y tomas aire de golpe. En ese mismo instante se cierran tus cuerdas vocales, y ese cierre rápido es el sonido hip. Casi siempre se pasa en minutos. Pero un hombre en Estados Unidos tuvo hipo durante sesenta y ocho años seguidos. Empezó en 1922, y un día de 1990 se le fue solo. Es récord mundial.",
   "scenes": [
    {
     "image": "a semi-realistic adult hiccupping in a kitchen, hand on chest",
@@ -839,7 +839,7 @@
  {
   "id": "028",
   "title": "¿Por qué la Coca explota con Mentos?",
-  "narration": "La gaseosa tiene gas disuelto que está esperando una excusa para salir. La pastilla de menta parece lisa, pero vista de cerca está llena de poros diminutos. En cada poro se forman burbujas al instante, millones a la vez, y la gaseosa sale disparada hasta varios metros. Y hay un detalle que pocos saben: con la gaseosa light sale mucho más alto. El endulzante ayuda a que se formen burbujas, y el azúcar de la común las frena.",
+  "narration": "El refresco tiene gas disuelto que está esperando una excusa para salir. La pastilla de menta parece lisa, pero vista de cerca está llena de poros diminutos. En cada poro se forman burbujas al instante, millones a la vez, y el refresco sale disparado hasta varios metros. Y hay un detalle que pocos saben: con el refresco light sale mucho más alto. El endulzante ayuda a que se formen burbujas, y el azúcar del normal las frena.",
   "scenes": [
    {
     "image": "a bottle of dark soda standing on grass outdoors",
@@ -901,7 +901,7 @@
  {
   "id": "030",
   "title": "La luna se está yendo",
-  "narration": "La luna en el horizonte parece gigante, pero es un truco de tu cerebro. Si la tapás con el dedo, mide lo mismo que cuando está bien arriba. Tu cerebro la compara con edificios y árboles, y la agranda. Pero hay algo de la luna que sí cambia de verdad: se está yendo. Cada año se aleja de la Tierra casi cuatro centímetros, más o menos lo que te crecen las uñas. Dentro de muchísimo tiempo, se verá cada vez más chica.",
+  "narration": "La luna en el horizonte parece gigante, pero es un truco de tu cerebro. Si la tapas con el dedo, mide lo mismo que cuando está bien arriba. Tu cerebro la compara con edificios y árboles, y la agranda. Pero hay algo de la luna que sí cambia de verdad: se está yendo. Cada año se aleja de la Tierra casi cuatro centímetros, más o menos lo que te crecen las uñas. Dentro de muchísimo tiempo, se verá cada vez más chica.",
   "scenes": [
    {
     "image": "a huge orange full moon rising over a city skyline",
