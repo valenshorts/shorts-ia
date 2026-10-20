@@ -284,8 +284,7 @@ def youtube_description(idea):
     return (f"{hook}\n\n"
             "🤔 ¿Lo sabías? Cuéntalo en los comentarios 👇\n"
             "🔔 Suscríbete: un dato nuevo todos los días.\n\n"
-            f"{hashtags}\n\n"
-            "Animación y voz generadas con IA.")
+            f"{hashtags}")
 
 
 def upload(video, idea):
@@ -307,7 +306,7 @@ def upload(video, idea):
                     "tags": list(dict.fromkeys(idea.get("tags", []) + CFG["extra_tags"]))[:15],
                     "categoryId": "27", "defaultLanguage": "es", "defaultAudioLanguage": "es"},
         "status": {"privacyStatus": CFG["privacy"], "selfDeclaredMadeForKids": False,
-                   "containsSyntheticMedia": True},
+                   "containsSyntheticMedia": False},
     }
     req = yt.videos().insert(part="snippet,status", body=body,
                              media_body=MediaFileUpload(str(video), chunksize=-1, resumable=True))
