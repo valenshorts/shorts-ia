@@ -282,8 +282,8 @@ def youtube_description(idea):
     tags = [re.sub(r"[^\wáéíóúñü]", "", t.lower()) for t in idea.get("tags", [])]
     hashtags = " ".join(f"#{t}" for t in dict.fromkeys(tags + ["curiosidades", "sabiasque", "datoscuriosos", "shorts"]) if t)
     return (f"{hook}\n\n"
-            "🤔 ¿Lo sabías? Contalo en los comentarios 👇\n"
-            "🔔 Suscribite: un dato nuevo todos los días.\n\n"
+            "🤔 ¿Lo sabías? Cuéntalo en los comentarios 👇\n"
+            "🔔 Suscríbete: un dato nuevo todos los días.\n\n"
             f"{hashtags}\n\n"
             "Animación y voz generadas con IA.")
 
