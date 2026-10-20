@@ -9,7 +9,7 @@ Fábrica diaria de Shorts con IA gratis.
 
 Variables de entorno: HF_TOKEN (obligatoria), YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (opcionales)
 """
-import asyncio, json, os, re, shutil, subprocess, sys, time
+import asyncio, hashlib, json, os, re, shutil, subprocess, sys, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -216,6 +216,12 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 # ---------------------------------------------------------------- Armado
+def crop_variant(src, dest, where):
+    """Otra toma de la misma imagen: un acercamiento (centro) o la parte de abajo."""
+    y = {"center": "(ih-oh)/2", "bottom": "ih-oh"}[where]
+    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf",
+         f"crop=iw*0.62:ih*0.62:(iw-ow)/2:{y},scale={W}:{H}:flags=lanczos", dest])
+
 def assemble(visuals, voice, subs, total, out):
     """visuals: lista de (archivo, es_video, segundos en pantalla)."""
     inputs, chains = [], []
@@ -243,7 +249,7 @@ def assemble(visuals, voice, subs, total, out):
     vf = ";".join(chains) + ";" + "".join(f"[s{i}]" for i in range(n)) + \
         f"concat=n={n}:v=1:a=0,ass={subs.as_posix()}:fontsdir={fontsdir}[v]"
     vi, ai = n, n + 1
-    tracks = sorted(p for p in (ROOT / "music").glob("*") if p.suffix.lower() in (".mp3", ".wav", ".m4a", ".ogg"))
+    tracks = sorted(p for p in (ROOT / "music").rglob("*") if p.suffix.lower() in (".mp3", ".wav", ".m4a", ".ogg"))
     if tracks:  # música de fondo: tema al azar, desde un punto al azar, que baja sola cuando habla la voz
         import random
         track = random.choice(tracks)
@@ -266,6 +272,22 @@ def assemble(visuals, voice, subs, total, out):
 
 
 # ---------------------------------------------------------------- YouTube
+def youtube_title(idea):
+    t = idea.get("yt_title") or idea["title"]
+    return f"{t} #shorts"[:100]
+
+
+def youtube_description(idea):
+    hook = sentences(idea["narration"])[0]
+    tags = [re.sub(r"[^\wáéíóúñü]", "", t.lower()) for t in idea.get("tags", [])]
+    hashtags = " ".join(f"#{t}" for t in dict.fromkeys(tags + ["curiosidades", "sabiasque", "datoscuriosos", "shorts"]) if t)
+    return (f"{hook}\n\n"
+            "🤔 ¿Lo sabías? Contalo en los comentarios 👇\n"
+            "🔔 Suscribite: un dato nuevo todos los días.\n\n"
+            f"{hashtags}\n\n"
+            "Animación y voz generadas con IA.")
+
+
 def upload(video, idea):
     need = ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")
     if not all(os.environ.get(k) for k in need):
@@ -280,9 +302,9 @@ def upload(video, idea):
                         scopes=["https://www.googleapis.com/auth/youtube.upload"])
     yt = build("youtube", "v3", credentials=creds)
     body = {
-        "snippet": {"title": f"{idea['title']} #shorts"[:100],
-                    "description": f"{idea['title']}\n\n{CFG['description_footer']}",
-                    "tags": idea.get("tags", []) + CFG["extra_tags"],
+        "snippet": {"title": youtube_title(idea),
+                    "description": youtube_description(idea),
+                    "tags": list(dict.fromkeys(idea.get("tags", []) + CFG["extra_tags"]))[:15],
                     "categoryId": "27", "defaultLanguage": "es", "defaultAudioLanguage": "es"},
         "status": {"privacyStatus": CFG["privacy"], "selfDeclaredMadeForKids": False,
                    "containsSyntheticMedia": True},
@@ -318,29 +340,46 @@ def main():
     make_subs(timeline, subs)
     log(f"Voz lista: {total:.1f}s")
 
-    # Escenas: imagen -> clip. La cuota gratis alcanza para ~3 clips por día, así que se animan
-    # las primeras escenas (el gancho) y el resto va como imagen con zoom lento.
+    # 1) Primero todas las imágenes (gastan poca cuota), sin repetidas.
     scenes = idea["scenes"]
     per = total / len(scenes)
-    visuals, quota_out, last_img = [], False, None
+    imgs, hashes = [], set()
     for k, sc in enumerate(scenes, 1):
         img = work / f"scene{k}.png"
-        try:
-            make_image(f"{CFG['style']} {sc['image']}. Vertical composition, no text.", img)
-            last_img = img
-            log(f"Imagen {k} lista")
-        except Exception as e:
-            if last_img is None:
-                raise
-            log(f"Imagen {k} falló ({e}); reuso la anterior")
-            shutil.copy(last_img, img)
+        ok = False
+        for attempt in range(3):
+            try:
+                extra = "" if attempt == 0 else f", variation {attempt}, different composition"
+                make_image(f"{CFG['style']} {sc['image']}{extra}. Vertical composition, no text.", img)
+                h = hashlib.md5(img.read_bytes()).hexdigest()
+                if h in hashes:
+                    log(f"Imagen {k} salió repetida; pido otra")
+                    continue
+                hashes.add(h); ok = True
+                log(f"Imagen {k} lista")
+                break
+            except Exception as e:
+                log(f"Imagen {k} falló ({e})")
+                if "quota" in str(e).lower():
+                    break
+                time.sleep(10)
+        if not ok:
+            if not imgs:
+                raise SystemExit("No salió ninguna imagen: se reintenta mañana con la misma idea.")
+            log(f"Imagen {k}: uso un recorte de la anterior")
+            crop_variant(imgs[-1], img, "bottom")
+        imgs.append(img)
+
+    # 2) Animar las primeras escenas (el gancho) con la cuota que quede.
+    visuals, quota_out = [], False
+    for k, (sc, img) in enumerate(zip(scenes, imgs), 1):
         clip = work / f"scene{k}.mp4"
-        animate = sc.get("motion") and k <= CFG["max_clips"] and not quota_out
-        if animate:
+        done_clip = False
+        if sc.get("motion") and k <= CFG["max_clips"] and not quota_out:
             for attempt in range(2):
                 try:
                     make_clip(img, f"{sc['motion']}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
-                    visuals.append((clip, True, per))
+                    done_clip = True
                     log(f"Clip {k} listo")
                     break
                 except Exception as e:
@@ -350,14 +389,13 @@ def main():
                         break
                     log(f"Clip {k} falló ({e}); reintento" if attempt == 0 else f"Clip {k} falló otra vez")
                     time.sleep(20)
-        if not visuals or visuals[-1][0] != clip:
-            # escena sin animación: 2 tomas distintas (general + primer plano) para que no quede quieta
-            img2 = work / f"scene{k}b.png"
-            try:
-                make_image(f"{CFG['style']} {sc['image']}, dramatic close-up detail shot from a different angle. Vertical composition, no text.", img2)
-                visuals += [(img, False, per / 2), (img2, False, per / 2)]
-            except Exception:
-                visuals.append((img, False, per))
+        if done_clip:
+            visuals.append((clip, True, per))
+        else:
+            # escena quieta: dos tomas (plano general + acercamiento) para que no aburra
+            close = work / f"scene{k}b.png"
+            crop_variant(img, close, "center")
+            visuals += [(img, False, per / 2), (close, False, per / 2)]
     if not any(v[1] for v in visuals):
         raise SystemExit("No salió ningún clip animado: se reintenta mañana con la misma idea.")
 
