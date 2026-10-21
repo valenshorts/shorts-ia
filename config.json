@@ -33,7 +33,7 @@
   "image_providers": [
     "hf"
   ],
-  "handle": "@elporquedetodo",
+  "handle": "El Porqué de Todo",
   "sfx": true,
   "sfx_volume": 0.5,
   "end_card": true,
