@@ -1,932 +1,3122 @@
 [
- {
-  "id": "001",
-  "title": "¿Por qué las ventanas de los aviones son redondas?",
-  "narration": "Las ventanas de los aviones son redondas, y la razón da miedo. En 1954, dos aviones Comet, los primeros jets de pasajeros del mundo, se partieron en pleno vuelo. Los ingenieros metieron un avión entero en un tanque de agua y lo inflaron y desinflaron miles de veces, hasta que se rajó. La grieta había empezado en una esquina. Una forma cuadrada junta toda la fuerza en las puntas. Un círculo la reparte. Por eso hoy ninguna ventana de avión tiene esquinas.",
-  "scenes": [
-   {
-    "image": "close-up of a rounded airplane window from inside the cabin, clouds and blue sky outside",
-    "motion": "clouds drift slowly past the window, camera slowly pushes in"
-   },
-   {
-    "image": "an old 1950s silver jet airliner with small square windows flying above clouds",
-    "motion": "the jet flies forward slowly, slight turbulence shake"
-   },
-   {
-    "image": "a whole silver airplane fuselage submerged inside a giant water tank in a 1950s test hangar, engineers watching",
-    "motion": "water ripples around the fuselage, small bubbles rise, camera slowly pans"
-   },
-   {
-    "image": "extreme close-up of the corner of a square window cutout in silver metal with a thin crack spreading from the corner"
-   },
-   {
-    "image": "a modern white passenger airplane with a row of rounded windows flying over clouds at golden sunset"
-   }
-  ],
-  "tags": [
-   "aviones",
-   "historia",
-   "curiosidades"
-  ],
-  "yt_title": "Por esto las ventanas de los aviones son redondas ✈️"
- },
- {
-  "id": "002",
-  "title": "¿Por qué el cielo es azul? (y en Marte no)",
-  "narration": "La luz del sol parece blanca, pero trae todos los colores mezclados. Cuando entra al aire, la luz azul choca contra el aire y rebota para todos lados, mucho más que la roja. Por eso, mires donde mires, el cielo se ve azul. Al atardecer, la luz cruza tanto aire que el azul se pierde en el camino, y solo te llegan los rojos. Y en Marte pasa todo al revés: el cielo de día es color caramelo, y los atardeceres son azules.",
-  "scenes": [
-   {
-    "image": "a bright sun shining white light rays toward planet Earth in space",
-    "motion": "light rays pulse gently from the sun toward the Earth, slow camera push in"
-   },
-   {
-    "image": "a white beam of light entering Earth's atmosphere, tiny blue light particles scattering in every direction",
-    "motion": "blue light particles bounce and scatter in every direction"
-   },
-   {
-    "image": "a person lying on green grass looking up at a deep clear blue sky",
-    "motion": "grass sways gently in the wind, camera slowly rises toward the sky"
-   },
-   {
-    "image": "a beautiful orange and red sunset over the ocean"
-   },
-   {
-    "image": "the rocky red surface of Mars with a butterscotch colored sky and a small blue glowing sunset on the horizon"
-   }
-  ],
-  "tags": [
-   "ciencia",
-   "espacio",
-   "curiosidades"
-  ],
-  "yt_title": "¿Por qué el cielo es azul? En Marte es al revés 🤯"
- },
- {
-  "id": "003",
-  "title": "¿Qué pasa si te tragas un chicle?",
-  "narration": "Dicen que si te tragas un chicle se queda siete años en el estómago. Es mentira. Tu estómago no lo puede deshacer, pero tampoco lo necesita: viaja por los intestinos como todo lo demás y en un par de días sale solito. Pero hay un caso real que asusta. En 1998, médicos de Estados Unidos atendieron a un niño que se tragaba de cinco a siete chicles por día. Se le había formado una pelota de chicle que le tapaba el intestino.",
-  "scenes": [
-   {
-    "image": "a semi-realistic young adult blowing a big pink bubble gum bubble in a simple room",
-    "motion": "the pink bubble slowly grows bigger, the person's eyes widen"
-   },
-   {
-    "image": "a see-through cross-section of a human stomach with a small pink piece of gum floating in stomach liquid",
-    "motion": "the gum floats and slowly tumbles, gentle bubbles rise"
-   },
-   {
-    "image": "a small pink piece of gum traveling through a long winding tube of intestines, clean medical 3D style",
-    "motion": "the gum slides slowly along the winding intestine, camera follows it"
-   },
-   {
-    "image": "a worried doctor in a white coat looking at an x-ray on a lightbox in a hospital"
-   },
-   {
-    "image": "a see-through intestine blocked by a big lumpy pink ball of chewing gum, clean medical 3D style"
-   }
-  ],
-  "tags": [
-   "cuerpo humano",
-   "mitos",
-   "curiosidades"
-  ],
-  "yt_title": "¿Qué pasa si te tragas un chicle? 😳"
- },
- {
-  "id": "004",
-  "title": "El truco para no llorar con la cebolla",
-  "narration": "Cuando cortas una cebolla, rompes miles de sus células, y sueltan un gas invisible. Ese gas sube flotando hasta tus ojos, se mezcla con tus lágrimas y forma un ácido muy suave que te arde. Tus ojos se defienden de la única forma que saben: soltando más lágrimas para lavarlo. Pero hay un truco que funciona de verdad. Mete la cebolla en el refrigerador media hora antes. Con el frío, ese gas sale mucho más lento y casi no lloras.",
-  "scenes": [
-   {
-    "image": "a kitchen knife slicing a white onion on a wooden cutting board",
-    "motion": "the knife slowly slices down through the onion, tiny droplets spray"
-   },
-   {
-    "image": "a faint glowing green mist rising from a cut onion on a cutting board",
-    "motion": "the green mist slowly rises and swirls upward"
-   },
-   {
-    "image": "close-up of a semi-realistic adult face with watery eyes and a tear on the cheek, kitchen background",
-    "motion": "a tear rolls down the cheek, the person blinks"
-   },
-   {
-    "image": "a white onion sitting on a shelf inside an open refrigerator, cool blue light"
-   },
-   {
-    "image": "a smiling semi-realistic adult calmly cutting an onion in a bright kitchen, no tears"
-   }
-  ],
-  "tags": [
-   "cocina",
-   "trucos",
-   "curiosidades"
-  ],
-  "yt_title": "El truco para no llorar con la cebolla 🧅"
- },
- {
-  "id": "005",
-  "title": "¿Cómo flota un barco de acero?",
-  "narration": "Un clavo de acero se hunde, pero un barco de miles de toneladas flota. El truco es la forma. El barco es hueco, y empuja hacia los costados una cantidad enorme de agua. Mientras esa agua que empuja pese más que el barco, el mar lo sostiene. Y lo más loco: un barco gigante podría flotar en un dique apenas más grande que él, con muy poquita agua alrededor. Lo que importa no es cuánta agua hay, sino cuánta empuja.",
-  "scenes": [
-   {
-    "image": "a small steel nail sinking in a clear glass of water",
-    "motion": "the nail sinks to the bottom, small bubbles rise"
-   },
-   {
-    "image": "a giant cargo ship floating on a calm blue ocean, aerial view",
-    "motion": "the ship moves slowly forward, small waves ripple"
-   },
-   {
-    "image": "a cutaway view of a ship hull floating, showing the hollow inside and blue water pushed around it",
-    "motion": "the water ripples around the hull, the ship gently bobs"
-   },
-   {
-    "image": "a giant ship floating inside a narrow concrete dock just slightly bigger than the ship, a thin layer of water around it"
-   },
-   {
-    "image": "a toy boat floating in a glass container barely bigger than the boat with very little water"
-   }
-  ],
-  "tags": [
-   "física",
-   "barcos",
-   "curiosidades"
-  ],
-  "yt_title": "¿Cómo flota un barco de miles de toneladas? 🚢"
- },
- {
-  "id": "006",
-  "title": "¿Por qué los gatos caen de pie?",
-  "narration": "Si un gato se cae de espaldas, en menos de un segundo gira la cabeza y mira el piso. Después gira la parte de adelante del cuerpo, después la de atrás, y estira las patas. Su columna es tan flexible que casi siempre aterriza parado. Y un estudio en Nueva York encontró algo increíble: muchos gatos que se cayeron de más de siete pisos se lastimaron menos que los que cayeron de cinco o seis. Con más altura, llegan a relajarse y abrir las patas como un paracaídas.",
-  "scenes": [
-   {
-    "image": "an orange cat falling upside down in the air in a living room",
-    "motion": "the cat twists its head to look down"
-   },
-   {
-    "image": "an orange cat mid-air twisting its body, front legs reaching down",
-    "motion": "the cat rotates its body and stretches its legs downward"
-   },
-   {
-    "image": "an orange cat landing on its four paws on a wooden floor",
-    "motion": "the cat lands softly, its tail swishes"
-   },
-   {
-    "image": "tall New York apartment buildings seen from the street, an open window high up"
-   },
-   {
-    "image": "an orange cat gliding through the air with its legs spread wide like a flying squirrel, city in the background"
-   }
-  ],
-  "tags": [
-   "gatos",
-   "animales",
-   "curiosidades"
-  ],
-  "yt_title": "Los gatos que caen de más alto se lastiman MENOS 🐱"
- },
- {
-  "id": "007",
-  "title": "¿Por qué se te arrugan los dedos en el agua?",
-  "narration": "Cuando estás mucho rato en el agua, se te arrugan los dedos. Parece que absorben agua, pero no. Es tu cerebro, que achica a propósito los vasos debajo de la piel. Esas arrugas funcionan como el dibujo de las ruedas de un auto y te ayudan a agarrar cosas mojadas. ¿Cómo se sabe que es el cerebro? Porque si una persona tiene cortado el nervio de un dedo, ese dedo nunca se arruga. Los médicos lo usan como prueba.",
-  "scenes": [
-   {
-    "image": "a hand resting in a bathtub full of water with bubbles",
-    "motion": "the water ripples gently around the fingers"
-   },
-   {
-    "image": "close-up of wrinkled wet fingertips",
-    "motion": "camera slowly pushes in on the wrinkled skin, water drops slide down"
-   },
-   {
-    "image": "a wet hand gripping a wet glass marble firmly",
-    "motion": "the fingers close slowly around the marble and hold it tight"
-   },
-   {
-    "image": "a see-through human hand showing glowing blue nerves running into the fingers"
-   },
-   {
-    "image": "a hand after a bath with four wrinkled fingertips and one perfectly smooth fingertip, close-up"
-   }
-  ],
-  "tags": [
-   "cuerpo humano",
-   "agua",
-   "curiosidades"
-  ],
-  "yt_title": "Tus dedos se arrugan a propósito 🤯"
- },
- {
-  "id": "008",
-  "title": "El microondas se inventó por accidente",
-  "narration": "El microondas no calienta el plato, calienta el agua que tiene la comida. Lanza ondas invisibles que hacen girar las gotitas de agua millones de veces por segundo. Ese movimiento se vuelve calor, y la comida se calienta. Y se inventó de casualidad. En 1945, un ingeniero que trabajaba con radares notó que la barra de chocolate que tenía en el bolsillo se había derretido sola. Probó con maíz, y le salieron palomitas. Así nació el microondas.",
-  "scenes": [
-   {
-    "image": "a plate of food inside a glowing microwave oven",
-    "motion": "the plate slowly turns on the rotating tray, warm light glows"
-   },
-   {
-    "image": "microscopic view of tiny blue water molecules inside food",
-    "motion": "the tiny water molecules spin and vibrate rapidly"
-   },
-   {
-    "image": "a steaming hot plate of pasta on a kitchen table",
-    "motion": "steam slowly rises from the pasta, camera pushes in"
-   },
-   {
-    "image": "a 1940s engineer in a lab full of large radar equipment, holding a melted chocolate bar from his pocket, surprised"
-   },
-   {
-    "image": "popcorn exploding out of a paper bag next to old 1940s radar equipment"
-   }
-  ],
-  "tags": [
-   "inventos",
-   "historia",
-   "curiosidades"
-  ],
-  "yt_title": "El microondas se inventó por un chocolate derretido 🍫"
- },
- {
-  "id": "009",
-  "title": "Los flamencos nacen grises",
-  "narration": "Los flamencos nacen grises. Se vuelven rosas por lo que comen: algas y camarones diminutos llenos de un pigmento rosado. Si un flamenco dejara de comerlos, con el tiempo se volvería blanco. Pero lo más impresionante es cómo alimentan a sus crías. Los padres producen en la garganta una especie de leche roja y se la dan por el pico. Y les sale tanto color en esa leche, que mientras crían a su polluelo, ellos mismos se van poniendo pálidos.",
-  "scenes": [
-   {
-    "image": "a fluffy gray baby flamingo chick standing in shallow water",
-    "motion": "the chick wobbles and flaps tiny wings, water ripples"
-   },
-   {
-    "image": "a pink flamingo dipping its head into shallow water full of tiny red shrimp",
-    "motion": "the flamingo filters water with its beak, ripples spread"
-   },
-   {
-    "image": "a large flock of bright pink flamingos standing in a lagoon at sunset",
-    "motion": "the flamingos shift slowly, one spreads its wings"
-   },
-   {
-    "image": "an adult flamingo gently feeding red liquid from its beak to a gray fluffy chick"
-   },
-   {
-    "image": "a pale almost white flamingo standing next to its gray chick in a lagoon"
-   }
-  ],
-  "tags": [
-   "animales",
-   "naturaleza",
-   "curiosidades"
-  ],
-  "yt_title": "Los flamencos nacen grises 🦩"
- },
- {
-  "id": "010",
-  "title": "¿Qué pasa si cae un rayo en el mar?",
-  "narration": "Cuando un rayo cae en el mar, la electricidad no baja hasta el fondo. Se desparrama por la superficie, como una mancha. Los peces que están unos metros más abajo ni se enteran. El peligro es para el que está nadando arriba. Y hay algo que nadie esperaba: científicos descubrieron que sobre las rutas por donde pasan los barcos caen casi el doble de rayos. El humo de los barcos llena el aire de partículas que ayudan a formar tormentas.",
-  "scenes": [
-   {
-    "image": "a lightning bolt striking a dark stormy ocean at night",
-    "motion": "the lightning flashes and the ocean surface glows, waves roll"
-   },
-   {
-    "image": "glowing blue electricity spreading across the ocean surface in a wide circle",
-    "motion": "the glowing electricity ripples outward across the surface"
-   },
-   {
-    "image": "underwater view of calm fish swimming in deep blue water, a bright flash far above at the surface",
-    "motion": "the fish keep swimming calmly, light flickers above"
-   },
-   {
-    "image": "a big cargo ship at sea releasing dark smoke from its chimney under storm clouds"
-   },
-   {
-    "image": "a world map seen from space at night with a bright glowing line of lightning flashes along a shipping route in the ocean"
-   }
-  ],
-  "tags": [
-   "naturaleza",
-   "rayos",
-   "curiosidades"
-  ],
-  "yt_title": "Sobre los barcos caen el doble de rayos ⚡"
- },
- {
-  "id": "011",
-  "title": "¿Para qué tienen rayas las cebras?",
-  "narration": "Durante años nadie sabía para qué tienen rayas las cebras. Entonces unos científicos vistieron caballos con mantas a rayas y los filmaron. Las moscas que pican se acercaban, pero las rayas las confundían tanto que no podían frenar ni aterrizar. Las rayas son un repelente de moscas. Y en Japón lo llevaron más lejos: le pintaron rayas blancas y negras a vacas de verdad. Las vacas pintadas recibieron más o menos la mitad de picaduras.",
-  "scenes": [
-   {
-    "image": "a zebra standing in the African savanna grass",
-    "motion": "the zebra's tail swishes, grass sways"
-   },
-   {
-    "image": "a brown horse wearing a black and white striped blanket in a field",
-    "motion": "the horse walks slowly forward, the blanket moves"
-   },
-   {
-    "image": "close-up of flies hovering near black and white stripes",
-    "motion": "the flies circle and bump into each other above the stripes"
-   },
-   {
-    "image": "a farmer painting white stripes on a black cow in a Japanese farm field"
-   },
-   {
-    "image": "a black cow with painted white zebra stripes standing proudly in a green field"
-   }
-  ],
-  "tags": [
-   "animales",
-   "ciencia",
-   "curiosidades"
-  ],
-  "yt_title": "Le pintaron rayas a una vaca y pasó esto 🦓"
- },
- {
-  "id": "012",
-  "title": "El airbag es más rápido que un parpadeo",
-  "narration": "En un choque, un sensor detecta el golpe en milésimas de segundo. Enciende una pequeña carga, como un mini cohete, que produce gas de golpe y llena la bolsa. Todo pasa tan rápido que el airbag se infla en unos treinta milésimos de segundo. Es unas diez veces más rápido que un parpadeo. Si parpadeas justo cuando chocas, cuando abres los ojos el airbag ya está inflado.",
-  "scenes": [
-   {
-    "image": "a car dashboard and steering wheel from the driver's view, a road ahead",
-    "motion": "the car drives forward, then the dashboard shakes suddenly"
-   },
-   {
-    "image": "a cutaway of a steering wheel showing a folded white airbag and a small canister inside",
-    "motion": "the small canister glows and gas rushes out"
-   },
-   {
-    "image": "a white airbag fully inflated out of a steering wheel",
-    "motion": "the airbag bursts out and expands"
-   },
-   {
-    "image": "extreme close-up of a human eye halfway through a blink"
-   },
-   {
-    "image": "a crash test dummy pressed into a fully inflated white airbag inside a car"
-   }
-  ],
-  "tags": [
-   "autos",
-   "tecnología",
-   "curiosidades"
-  ],
-  "yt_title": "El airbag es 10 veces más rápido que un parpadeo 💥"
- },
- {
-  "id": "013",
-  "title": "¿Por qué el hielo flota?",
-  "narration": "Casi todo se vuelve más pesado cuando se congela. El agua hace lo contrario. Al congelarse, sus partículas se acomodan dejando huecos. El hielo ocupa más lugar, es más liviano, y por eso flota. Y ese detalle raro es lo que salva a los peces cada invierno. Si el hielo se hundiera, los lagos se congelarían desde el fondo hasta arriba, y los peces no tendrían dónde vivir. Gracias a que flota, el hielo hace de techo, y abajo el agua sigue líquida todo el invierno.",
-  "scenes": [
-   {
-    "image": "ice cubes floating in a clear glass of water on a table",
-    "motion": "the ice cubes bob gently and turn slowly"
-   },
-   {
-    "image": "a hexagonal lattice of tiny water molecules with open spaces between them",
-    "motion": "the molecules lock into the hexagon pattern, camera slowly rotates"
-   },
-   {
-    "image": "a huge iceberg floating in a calm ocean, showing the part under water",
-    "motion": "the iceberg drifts slowly, water ripples around it"
-   },
-   {
-    "image": "a frozen lake in winter covered with snow and a thick layer of ice"
-   },
-   {
-    "image": "underwater view below a frozen lake, fish swimming calmly under the thick ice ceiling, light coming through"
-   }
-  ],
-  "tags": [
-   "ciencia",
-   "agua",
-   "curiosidades"
-  ],
-  "yt_title": "Si el hielo se hundiera, no habría peces 🧊"
- },
- {
-  "id": "014",
-  "title": "El pulpo tiene tres corazones",
-  "narration": "El pulpo tiene tres corazones. Dos mandan sangre a las branquias, y el tercero al resto del cuerpo. Cuando nada, ese tercer corazón se detiene. Por eso prefieren arrastrarse. Además su sangre es azul. Pero lo más alucinante es esto: dos tercios de sus neuronas no están en la cabeza, sino en los brazos. Cada brazo puede tocar, probar y reaccionar casi por su cuenta. Es como tener ocho mini cerebros pegados al cuerpo.",
-  "scenes": [
-   {
-    "image": "an orange octopus resting on a coral reef",
-    "motion": "the octopus tentacles curl and move gently, small fish swim by"
-   },
-   {
-    "image": "a see-through octopus body showing three small glowing red hearts inside",
-    "motion": "the three hearts pulse rhythmically"
-   },
-   {
-    "image": "an orange octopus crawling along the sandy sea floor with its tentacles",
-    "motion": "the octopus crawls slowly forward along the sand"
-   },
-   {
-    "image": "a see-through octopus with glowing blue blood vessels"
-   },
-   {
-    "image": "an octopus with eight tentacles each glowing with a small network of bright neurons"
-   }
-  ],
-  "tags": [
-   "animales",
-   "mar",
-   "curiosidades"
-  ],
-  "yt_title": "El pulpo tiene 3 corazones y 8 mini cerebros 🐙"
- },
- {
-  "id": "015",
-  "title": "¿Por qué ves estrellitas al pararte rápido?",
-  "narration": "Cuando te paras de golpe, la gravedad tira la sangre hacia tus piernas. Por un segundo le llega menos sangre a la cabeza, y la vista se te llena de puntitos. Tu cuerpo lo corrige enseguida apretando las venas y acelerando el corazón. Pero imagínate pasar meses sin gravedad. Eso les pasa a los astronautas. Cuando vuelven a la Tierra, su cuerpo se olvidó de hacer ese ajuste, y muchos se marean o se desmayan solo por pararse.",
-  "scenes": [
-   {
-    "image": "a semi-realistic young adult sitting on a couch in a living room",
-    "motion": "the person stands up quickly from the couch"
-   },
-   {
-    "image": "a see-through human body with red blood flowing down toward the legs",
-    "motion": "the red blood slowly flows downward"
-   },
-   {
-    "image": "first-person view of a living room filled with tiny sparkling white dots",
-    "motion": "the sparkles flicker and slowly fade away"
-   },
-   {
-    "image": "an astronaut floating inside the International Space Station"
-   },
-   {
-    "image": "an astronaut just returned to Earth sitting in a chair, dizzy, helped by two people in a field"
-   }
-  ],
-  "tags": [
-   "cuerpo humano",
-   "espacio",
-   "curiosidades"
-  ],
-  "yt_title": "Por qué los astronautas se desmayan al volver 🚀"
- },
- {
-  "id": "016",
-  "title": "Los delfines duermen con medio cerebro",
-  "narration": "Si un delfín se durmiera del todo, se ahogaría, porque tiene que subir a respirar. Entonces duerme con la mitad del cerebro. Una mitad descansa mientras la otra lo mantiene nadando y atento, con un ojo abierto. Después cambian de lado. Y hay algo todavía más extremo. Cuando nace una cría, la mamá y el bebé casi no duermen durante todo el primer mes. Están siempre en movimiento, para que el bebé respire y ningún tiburón los sorprenda.",
-  "scenes": [
-   {
-    "image": "a gray dolphin swimming near the surface of a calm ocean at night",
-    "motion": "the dolphin glides slowly, moonlight ripples on the water"
-   },
-   {
-    "image": "a see-through dolphin head showing one half of the brain glowing blue and the other half dark",
-    "motion": "the glowing half pulses softly, camera slowly orbits"
-   },
-   {
-    "image": "close-up of a dolphin underwater with one eye open and one eye closed",
-    "motion": "the dolphin swims slowly, its open eye blinks"
-   },
-   {
-    "image": "a mother dolphin and a tiny baby dolphin swimming side by side in blue water"
-   },
-   {
-    "image": "a shark silhouette far away in dark blue water behind a mother and baby dolphin"
-   }
-  ],
-  "tags": [
-   "animales",
-   "mar",
-   "curiosidades"
-  ],
-  "yt_title": "Los delfines duermen con medio cerebro 🐬"
- },
- {
-  "id": "017",
-  "title": "¿Hace mal tronarse los dedos?",
-  "narration": "Entre tus huesos hay un líquido con gas disuelto. Cuando estiras el dedo, el espacio se agranda de golpe y se forma una burbuja. Ese crac es la burbuja apareciendo. Y siempre te dijeron que te va a dar artrosis. Un médico quiso probarlo con su propio cuerpo. Durante más de sesenta años se tronó los dedos de una sola mano, y de la otra nunca. Al final, ninguna de las dos tenía artrosis. Por ese experimento le dieron un premio.",
-  "scenes": [
-   {
-    "image": "two hands with interlaced fingers about to crack knuckles",
-    "motion": "the hands stretch forward and the fingers press outward"
-   },
-   {
-    "image": "a see-through finger joint showing two bones and clear liquid between them",
-    "motion": "the joint slowly pulls apart, the gap widens"
-   },
-   {
-    "image": "a small bubble suddenly appearing inside the clear liquid of a finger joint",
-    "motion": "the bubble pops into existence and wobbles"
-   },
-   {
-    "image": "an old doctor in a white coat cracking the knuckles of only his left hand, his right hand resting"
-   },
-   {
-    "image": "an old doctor smiling and holding a small golden trophy, both hands healthy"
-   }
-  ],
-  "tags": [
-   "cuerpo humano",
-   "mitos",
-   "curiosidades"
-  ],
-  "yt_title": "Se tronó los dedos 60 años para probar esto 😳"
- },
- {
-  "id": "018",
-  "title": "¿Por qué explotan las palomitas de maíz?",
-  "narration": "Cada grano de maíz tiene una gotita de agua adentro. Cuando lo calientas, esa agua se convierte en vapor y empuja la cáscara dura desde adentro. Al llegar a unos ciento ochenta grados, la presión adentro del grano es como nueve veces la del aire que respiras. La cáscara no aguanta más, revienta, y el almidón se infla como espuma y se endurece en el aire. Todo eso pasa en una fracción de segundo.",
-  "scenes": [
-   {
-    "image": "yellow corn kernels in a hot pan on a stove",
-    "motion": "the kernels shake and jiggle from the heat"
-   },
-   {
-    "image": "a see-through corn kernel with a tiny drop of water inside turning into steam",
-    "motion": "the steam swirls and builds up inside the kernel"
-   },
-   {
-    "image": "a corn kernel bursting into fluffy white popcorn",
-    "motion": "the kernel bursts open into popcorn and flips in the air"
-   },
-   {
-    "image": "a glowing pressure gauge dial at maximum next to a single corn kernel"
-   },
-   {
-    "image": "a giant cloud of white popcorn exploding out of a pot in slow motion"
-   }
-  ],
-  "tags": [
-   "cocina",
-   "ciencia",
-   "curiosidades"
-  ],
-  "yt_title": "La presión dentro de un grano de palomitas te va a sorprender 🍿"
- },
- {
-  "id": "019",
-  "title": "¿Cuánta miel hace una abeja en toda su vida?",
-  "narration": "La abeja chupa el néctar de las flores y lo guarda en un estómago especial. En la colmena se lo pasa a otras abejas, que lo van mezclando. Después lo dejan en las celdas y lo abanican con las alas hasta que se seca y se vuelve miel. Ahora, ¿cuánta miel hace una sola abeja en toda su vida? Apenas la doceava parte de una cucharadita. O sea, en cada cucharadita de miel hay el trabajo de toda la vida de unas doce abejas.",
-  "scenes": [
-   {
-    "image": "a honeybee drinking nectar from a bright yellow flower",
-    "motion": "the bee moves on the flower, wings buzzing, petals sway"
-   },
-   {
-    "image": "honeybees passing golden droplets to each other inside a beehive",
-    "motion": "the bees move around, passing small golden droplets"
-   },
-   {
-    "image": "bees fanning their wings over golden honeycomb cells full of honey",
-    "motion": "the bees fan their wings rapidly over the glowing honey"
-   },
-   {
-    "image": "a single tiny drop of honey on the tip of a metal teaspoon, macro shot"
-   },
-   {
-    "image": "twelve honeybees standing in a row next to a teaspoon full of golden honey"
-   }
-  ],
-  "tags": [
-   "animales",
-   "naturaleza",
-   "curiosidades"
-  ],
-  "yt_title": "Cuánta miel hace UNA abeja en toda su vida 🐝"
- },
- {
-  "id": "020",
-  "title": "¿Qué son las rayas blancas que dejan los aviones?",
-  "narration": "Esas rayas blancas que dejan los aviones son nubes. El motor suelta aire caliente y húmedo. Allá arriba hace unos cincuenta grados bajo cero, y ese vapor se congela al instante en millones de cristalitos de hielo. Por eso la raya aparece un poquito atrás del avión, no pegada. Y a veces, si el aire está muy húmedo, esas rayas no desaparecen: se van estirando durante horas hasta convertirse en nubes de verdad que tapan el sol.",
-  "scenes": [
-   {
-    "image": "a high flying airplane leaving long white contrails across a blue sky",
-    "motion": "the airplane moves slowly across the sky, contrails stretch behind"
-   },
-   {
-    "image": "close-up of a jet engine releasing hot exhaust",
-    "motion": "hot air shimmers and flows out of the engine"
-   },
-   {
-    "image": "tiny ice crystals forming in the cold air behind a jet engine",
-    "motion": "the ice crystals sparkle and spread into a white trail"
-   },
-   {
-    "image": "a jet with a white trail starting a short distance behind its engines, gap clearly visible"
-   },
-   {
-    "image": "a sky full of wide crisscrossing contrails spreading into thin clouds partly covering the sun"
-   }
-  ],
-  "tags": [
-   "aviones",
-   "ciencia",
-   "curiosidades"
-  ],
-  "yt_title": "Las rayas de los aviones son nubes de verdad ☁️"
- },
- {
-  "id": "021",
-  "title": "¿Por qué el mar es salado?",
-  "narration": "La lluvia va desgastando las rocas y arrastra sus minerales a los ríos. Los ríos los llevan al mar. El agua del mar se evapora, pero la sal no se va con ella, así que se queda. Y así durante millones de años. ¿Sabes cuánta sal hay? Si sacaras toda la sal del mar y la repartieras sobre todos los continentes, harías una capa de más de ciento cincuenta metros de alto. Como un edificio de cuarenta pisos.",
-  "scenes": [
-   {
-    "image": "rain falling on large gray rocks on a mountain",
-    "motion": "raindrops fall and water trickles down the rocks"
-   },
-   {
-    "image": "a river flowing down into the ocean, aerial view",
-    "motion": "the river water flows into the sea, slow aerial drift"
-   },
-   {
-    "image": "white salt crystals left on rocks by the sea shore under the sun",
-    "motion": "small waves wash in and out, the salt crystals sparkle"
-   },
-   {
-    "image": "a gigantic pile of white salt rising above the ocean"
-   },
-   {
-    "image": "a city covered by a layer of white salt as tall as a 40 story building, only the tallest skyscrapers sticking out"
-   }
-  ],
-  "tags": [
-   "naturaleza",
-   "mar",
-   "curiosidades"
-  ],
-  "yt_title": "Si sacaras la sal del mar, taparía ciudades enteras 🌊"
- },
- {
-  "id": "022",
-  "title": "¿Cómo gira tanto la cabeza un búho?",
-  "narration": "Un búho puede girar la cabeza tres cuartos de vuelta. Tiene el doble de vértebras en el cuello que tú, y sus venas tienen reservas de sangre para que el cerebro no se quede sin sangre mientras gira. Pero, ¿por qué necesita girar tanto la cabeza? Porque no puede mover los ojos. Los ojos del búho no son bolitas como los tuyos. Son tubos, metidos fijos en el cráneo. Para mirar a un costado, tiene que girar todo.",
-  "scenes": [
-   {
-    "image": "a brown owl perched on a tree branch at night",
-    "motion": "the owl slowly rotates its head to look behind"
-   },
-   {
-    "image": "a see-through owl neck showing a long chain of small vertebrae bones",
-    "motion": "the vertebrae twist smoothly one after another"
-   },
-   {
-    "image": "a see-through owl neck with red blood vessels and small pockets of blood",
-    "motion": "the blood pockets fill and glow softly"
-   },
-   {
-    "image": "close-up of the big round orange eyes of an owl staring forward"
-   },
-   {
-    "image": "a see-through owl skull showing long tube-shaped eyes fixed inside"
-   }
-  ],
-  "tags": [
-   "animales",
-   "aves",
-   "curiosidades"
-  ],
-  "yt_title": "Los búhos no pueden mover los ojos 🦉"
- },
- {
-  "id": "023",
-  "title": "El camaleón no cambia de color para esconderse",
-  "narration": "El camaleón no tiene pinturas en la piel. Tiene millones de cristales diminutos. Cuando se relaja o se pone nervioso, los separa o los junta, y eso cambia la luz que rebota. Así cambia de color en segundos. Pero aquí viene la sorpresa: casi nunca lo hace para camuflarse. Cambia de color para mostrar lo que siente, para asustar a otro macho o conquistar a una hembra, y para calentarse o enfriarse.",
-  "scenes": [
-   {
-    "image": "a green chameleon on a branch in a tropical forest",
-    "motion": "the chameleon's eye swivels, the branch sways gently"
-   },
-   {
-    "image": "microscopic view of tiny shiny crystals in a grid inside skin",
-    "motion": "the crystals spread apart and the color shifts from green to orange"
-   },
-   {
-    "image": "a bright orange and red chameleon on a branch",
-    "motion": "the chameleon slowly walks along the branch"
-   },
-   {
-    "image": "two male chameleons facing each other on a branch, both bright red and yellow, angry"
-   },
-   {
-    "image": "a dark brown chameleon basking in warm sunlight on a branch"
-   }
-  ],
-  "tags": [
-   "animales",
-   "naturaleza",
-   "curiosidades"
-  ],
-  "yt_title": "El camaleón NO cambia de color para esconderse 🦎"
- },
- {
-  "id": "024",
-  "title": "¿Por qué el agua oxigenada hace espuma?",
-  "narration": "Cuando pones agua oxigenada en una herida, hace espuma. Es que tu sangre y tu piel tienen una sustancia que la rompe al instante en agua y oxígeno. Ese oxígeno sale en burbujitas, y eso es la espuma blanca. Mucha gente cree que esa espuma significa que está matando gérmenes. Pero los médicos hoy recomiendan otra cosa: el agua oxigenada también daña las células que curan tu herida. Para una raspadura, lo mejor es agua y jabón.",
-  "scenes": [
-   {
-    "image": "a brown bottle of hydrogen peroxide pouring onto a small scrape on a knee",
-    "motion": "the clear liquid pours slowly onto the knee"
-   },
-   {
-    "image": "white foam bubbling up on a small scrape on skin",
-    "motion": "the foam grows and fizzes"
-   },
-   {
-    "image": "microscopic view of tiny oxygen bubbles forming and rising",
-    "motion": "the bubbles form and rise upward"
-   },
-   {
-    "image": "microscopic view of small healing skin cells being damaged by bubbles"
-   },
-   {
-    "image": "a hand washing a small scrape on a knee with soap and water under a faucet"
-   }
-  ],
-  "tags": [
-   "cuerpo humano",
-   "salud",
-   "curiosidades"
-  ],
-  "yt_title": "No uses agua oxigenada en las heridas ⚠️"
- },
- {
-  "id": "025",
-  "title": "¿Cómo se inventó el velcro?",
-  "narration": "Un ingeniero suizo volvió de pasear con su perro y vio que el pelo del perro estaba lleno de abrojos. En vez de enojarse, los miró con un microscopio. Cada abrojo tenía cientos de ganchitos que se enganchaban en los pelos. Copió esa idea con dos tiras de tela: una con ganchitos y otra con rulitos. Así inventó el velcro. Y años después, la NASA lo hizo famoso: los astronautas lo usan para que las cosas no salgan flotando por la nave.",
-  "scenes": [
-   {
-    "image": "a man walking a dog through a field of tall dry grass in the Swiss mountains",
-    "motion": "the man and dog walk forward slowly, grass sways"
-   },
-   {
-    "image": "close-up of spiky burrs stuck in a dog's fur",
-    "motion": "the fur moves slightly, camera pushes in on the burrs"
-   },
-   {
-    "image": "microscope view of tiny hooks catching tiny loops",
-    "motion": "the hooks slowly catch onto the loops"
-   },
-   {
-    "image": "two strips of fabric, one with tiny hooks and one with tiny loops, about to stick together"
-   },
-   {
-    "image": "an astronaut inside a space station with tools stuck to the wall with velcro strips, floating"
-   }
-  ],
-  "tags": [
-   "inventos",
-   "historia",
-   "curiosidades"
-  ],
-  "yt_title": "El velcro se inventó por un perro 🐕"
- },
- {
-  "id": "026",
-  "title": "Hay tiburones que no pueden dejar de nadar",
-  "narration": "Algunos tiburones, como el tiburón blanco, no pueden dejar de nadar nunca. No tienen cómo bombear agua a sus branquias, entonces respiran dejando que el agua les entre por la boca mientras avanzan. Si se quedan quietos, no les entra oxígeno. Por eso descansan nadando despacio. Y lo más irónico: si uno de estos tiburones queda atrapado en una red y no puede moverse, se ahoga, aunque esté rodeado de agua por todos lados.",
-  "scenes": [
-   {
-    "image": "a great white shark swimming in deep blue water",
-    "motion": "the shark glides forward, slow camera follow"
-   },
-   {
-    "image": "water flowing into an open shark mouth and out through its gills",
-    "motion": "the water flows through the mouth and out of the gills"
-   },
-   {
-    "image": "a shark slowly swimming near the sea floor at night",
-    "motion": "the shark moves slowly forward in the dark water"
-   },
-   {
-    "image": "a great white shark caught motionless in a fishing net underwater"
-   },
-   {
-    "image": "a diver gently cutting a fishing net to free a shark underwater"
-   }
-  ],
-  "tags": [
-   "animales",
-   "mar",
-   "curiosidades"
-  ],
-  "yt_title": "Este tiburón se ahoga si deja de nadar 🦈"
- },
- {
-  "id": "027",
-  "title": "El hombre que tuvo hipo 68 años",
-  "narration": "El hipo empieza en el diafragma, un músculo que tienes debajo de los pulmones. De repente se contrae solo, y tomas aire de golpe. En ese mismo instante se cierran tus cuerdas vocales, y ese cierre rápido es el sonido hip. Casi siempre se pasa en minutos. Pero un hombre en Estados Unidos tuvo hipo durante sesenta y ocho años seguidos. Empezó en 1922, y un día de 1990 se le fue solo. Es récord mundial.",
-  "scenes": [
-   {
-    "image": "a semi-realistic adult hiccupping in a kitchen, hand on chest",
-    "motion": "the person's shoulders jump up suddenly"
-   },
-   {
-    "image": "a see-through human chest showing the lungs and the dome-shaped diaphragm under them",
-    "motion": "the diaphragm suddenly jerks down"
-   },
-   {
-    "image": "a see-through throat showing the vocal cords snapping shut",
-    "motion": "the vocal cords snap shut quickly"
-   },
-   {
-    "image": "an old 1920s black and white style photo look of a farmer in overalls on a farm, hiccupping"
-   },
-   {
-    "image": "a very old man smiling with a golden world record certificate"
-   }
-  ],
-  "tags": [
-   "cuerpo humano",
-   "récords",
-   "curiosidades"
-  ],
-  "yt_title": "Tuvo hipo durante 68 años seguidos 😮"
- },
- {
-  "id": "028",
-  "title": "¿Por qué la Coca explota con Mentos?",
-  "narration": "El refresco tiene gas disuelto que está esperando una excusa para salir. La pastilla de menta parece lisa, pero vista de cerca está llena de poros diminutos. En cada poro se forman burbujas al instante, millones a la vez, y el refresco sale disparado hasta varios metros. Y hay un detalle que pocos saben: con el refresco light sale mucho más alto. El endulzante ayuda a que se formen burbujas, y el azúcar del normal las frena.",
-  "scenes": [
-   {
-    "image": "a bottle of dark soda standing on grass outdoors",
-    "motion": "small bubbles rise inside the bottle"
-   },
-   {
-    "image": "microscopic view of a mint candy surface full of tiny pores with bubbles forming",
-    "motion": "bubbles form rapidly in every pore"
-   },
-   {
-    "image": "a tall fountain of brown foam shooting out of a soda bottle",
-    "motion": "the foam fountain sprays upward"
-   },
-   {
-    "image": "two soda bottles side by side on grass, one regular and one diet with a silver label"
-   },
-   {
-    "image": "a giant fountain of foam shooting very high out of a diet soda bottle next to a smaller fountain from a regular soda bottle"
-   }
-  ],
-  "tags": [
-   "ciencia",
-   "experimentos",
-   "curiosidades"
-  ],
-  "yt_title": "Por qué la Coca Light explota más con Mentos 🥤"
- },
- {
-  "id": "029",
-  "title": "¿Por qué un pez se ahoga fuera del agua?",
-  "narration": "Los peces toman agua por la boca y la sacan por las branquias. Las branquias están llenas de láminas finitas con sangre, y cuando el agua pasa, le roban el oxígeno que lleva disuelto. Ahora, el aire tiene muchísimo más oxígeno que el agua. Entonces, ¿por qué un pez se ahoga fuera del agua? Porque sin agua que las sostenga, esas láminas finitas se pegan unas con otras y colapsan, y el pez ya no puede usar ese oxígeno.",
-  "scenes": [
-   {
-    "image": "a goldfish swimming in a clear aquarium",
-    "motion": "the goldfish opens and closes its mouth while swimming"
-   },
-   {
-    "image": "close-up of red fish gills with thin feathery layers",
-    "motion": "the gill layers ripple as water flows through"
-   },
-   {
-    "image": "tiny oxygen bubbles moving from water into red blood vessels",
-    "motion": "the bubbles drift into the vessels"
-   },
-   {
-    "image": "a goldfish jumping out of the water into the air above an aquarium"
-   },
-   {
-    "image": "close-up of fish gills collapsed and stuck together, out of water"
-   }
-  ],
-  "tags": [
-   "animales",
-   "mar",
-   "curiosidades"
-  ],
-  "yt_title": "Por qué un pez se ahoga fuera del agua 🐟"
- },
- {
-  "id": "030",
-  "title": "La luna se está yendo",
-  "narration": "La luna en el horizonte parece gigante, pero es un truco de tu cerebro. Si la tapas con el dedo, mide lo mismo que cuando está bien arriba. Tu cerebro la compara con edificios y árboles, y la agranda. Pero hay algo de la luna que sí cambia de verdad: se está yendo. Cada año se aleja de la Tierra casi cuatro centímetros, más o menos lo que te crecen las uñas. Dentro de muchísimo tiempo, se verá cada vez más chica.",
-  "scenes": [
-   {
-    "image": "a huge orange full moon rising over a city skyline",
-    "motion": "the moon slowly rises over the buildings"
-   },
-   {
-    "image": "a hand with an outstretched thumb next to a full moon in the night sky",
-    "motion": "the thumb slowly moves up to cover the moon"
-   },
-   {
-    "image": "a small white full moon high in a dark night sky",
-    "motion": "the camera slowly pulls back"
-   },
-   {
-    "image": "the Earth and the Moon in space with a measuring tape stretched between them"
-   },
-   {
-    "image": "a very tiny distant moon in a dark sky over a quiet landscape"
-   }
-  ],
-  "tags": [
-   "espacio",
-   "ilusiones",
-   "curiosidades"
-  ],
-  "yt_title": "La Luna se está yendo de la Tierra 🌙"
- }
+  {
+    "id": "001",
+    "title": "¿Por qué las ventanas de los aviones son redondas?",
+    "narration": "Las ventanas de los aviones son redondas, y la razón da miedo. En 1954, dos aviones Comet, los primeros jets de pasajeros del mundo, se partieron en pleno vuelo. Los ingenieros metieron un avión entero en un tanque de agua y lo inflaron y desinflaron miles de veces, hasta que se rajó. La grieta había empezado en una esquina. Una forma cuadrada junta toda la fuerza en las puntas. Un círculo la reparte. Por eso hoy ninguna ventana de avión tiene esquinas.",
+    "scenes": [
+      {
+        "image": "close-up of a rounded airplane window from inside the cabin, clouds and blue sky outside",
+        "motion": "clouds drift slowly past the window, camera slowly pushes in"
+      },
+      {
+        "image": "an old 1950s silver jet airliner with small square windows flying above clouds",
+        "motion": "the jet flies forward slowly, slight turbulence shake"
+      },
+      {
+        "image": "a whole silver airplane fuselage submerged inside a giant water tank in a 1950s test hangar, engineers watching",
+        "motion": "water ripples around the fuselage, small bubbles rise, camera slowly pans"
+      },
+      {
+        "image": "extreme close-up of the corner of a square window cutout in silver metal with a thin crack spreading from the corner"
+      },
+      {
+        "image": "a modern white passenger airplane with a row of rounded windows flying over clouds at golden sunset"
+      }
+    ],
+    "tags": [
+      "aviones",
+      "historia",
+      "curiosidades"
+    ],
+    "yt_title": "Por esto las ventanas de los aviones son redondas ✈️",
+    "playlist": "Inventos por accidente"
+  },
+  {
+    "id": "002",
+    "title": "¿Por qué el cielo es azul? (y en Marte no)",
+    "narration": "La luz del sol parece blanca, pero trae todos los colores mezclados. Cuando entra al aire, la luz azul choca contra el aire y rebota para todos lados, mucho más que la roja. Por eso, mires donde mires, el cielo se ve azul. Al atardecer, la luz cruza tanto aire que el azul se pierde en el camino, y solo te llegan los rojos. Y en Marte pasa todo al revés: el cielo de día es color caramelo, y los atardeceres son azules.",
+    "scenes": [
+      {
+        "image": "a bright sun shining white light rays toward planet Earth in space",
+        "motion": "light rays pulse gently from the sun toward the Earth, slow camera push in"
+      },
+      {
+        "image": "a white beam of light entering Earth's atmosphere, tiny blue light particles scattering in every direction",
+        "motion": "blue light particles bounce and scatter in every direction"
+      },
+      {
+        "image": "a person lying on green grass looking up at a deep clear blue sky",
+        "motion": "grass sways gently in the wind, camera slowly rises toward the sky"
+      },
+      {
+        "image": "a beautiful orange and red sunset over the ocean"
+      },
+      {
+        "image": "the rocky red surface of Mars with a butterscotch colored sky and a small blue glowing sunset on the horizon"
+      }
+    ],
+    "tags": [
+      "ciencia",
+      "espacio",
+      "curiosidades"
+    ],
+    "yt_title": "¿Por qué el cielo es azul? En Marte es al revés 🤯",
+    "playlist": "Espacio"
+  },
+  {
+    "id": "003",
+    "title": "¿Qué pasa si te tragas un chicle?",
+    "narration": "Dicen que si te tragas un chicle se queda siete años en el estómago. Es mentira. Tu estómago no lo puede deshacer, pero tampoco lo necesita: viaja por los intestinos como todo lo demás y en un par de días sale solito. Pero hay un caso real que asusta. En 1998, médicos de Estados Unidos atendieron a un niño que se tragaba de cinco a siete chicles por día. Se le había formado una pelota de chicle que le tapaba el intestino.",
+    "scenes": [
+      {
+        "image": "a semi-realistic young adult blowing a big pink bubble gum bubble in a simple room",
+        "motion": "the pink bubble slowly grows bigger, the person's eyes widen"
+      },
+      {
+        "image": "a see-through cross-section of a human stomach with a small pink piece of gum floating in stomach liquid",
+        "motion": "the gum floats and slowly tumbles, gentle bubbles rise"
+      },
+      {
+        "image": "a small pink piece of gum traveling through a long winding tube of intestines, clean medical 3D style",
+        "motion": "the gum slides slowly along the winding intestine, camera follows it"
+      },
+      {
+        "image": "a worried doctor in a white coat looking at an x-ray on a lightbox in a hospital"
+      },
+      {
+        "image": "a see-through intestine blocked by a big lumpy pink ball of chewing gum, clean medical 3D style"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "mitos",
+      "curiosidades"
+    ],
+    "yt_title": "¿Qué pasa si te tragas un chicle? 😳",
+    "playlist": "Mitos falsos"
+  },
+  {
+    "id": "004",
+    "title": "El truco para no llorar con la cebolla",
+    "narration": "Cuando cortas una cebolla, rompes miles de sus células, y sueltan un gas invisible. Ese gas sube flotando hasta tus ojos, se mezcla con tus lágrimas y forma un ácido muy suave que te arde. Tus ojos se defienden de la única forma que saben: soltando más lágrimas para lavarlo. Pero hay un truco que funciona de verdad. Mete la cebolla en el refrigerador media hora antes. Con el frío, ese gas sale mucho más lento y casi no lloras.",
+    "scenes": [
+      {
+        "image": "a kitchen knife slicing a white onion on a wooden cutting board",
+        "motion": "the knife slowly slices down through the onion, tiny droplets spray"
+      },
+      {
+        "image": "a faint glowing green mist rising from a cut onion on a cutting board",
+        "motion": "the green mist slowly rises and swirls upward"
+      },
+      {
+        "image": "close-up of a semi-realistic adult face with watery eyes and a tear on the cheek, kitchen background",
+        "motion": "a tear rolls down the cheek, the person blinks"
+      },
+      {
+        "image": "a white onion sitting on a shelf inside an open refrigerator, cool blue light"
+      },
+      {
+        "image": "a smiling semi-realistic adult calmly cutting an onion in a bright kitchen, no tears"
+      }
+    ],
+    "tags": [
+      "cocina",
+      "trucos",
+      "curiosidades"
+    ],
+    "yt_title": "El truco para no llorar con la cebolla 🧅",
+    "playlist": "Comida increíble"
+  },
+  {
+    "id": "005",
+    "title": "¿Cómo flota un barco de acero?",
+    "narration": "Un clavo de acero se hunde, pero un barco de miles de toneladas flota. El truco es la forma. El barco es hueco, y empuja hacia los costados una cantidad enorme de agua. Mientras esa agua que empuja pese más que el barco, el mar lo sostiene. Y lo más loco: un barco gigante podría flotar en un dique apenas más grande que él, con muy poquita agua alrededor. Lo que importa no es cuánta agua hay, sino cuánta empuja.",
+    "scenes": [
+      {
+        "image": "a small steel nail sinking in a clear glass of water",
+        "motion": "the nail sinks to the bottom, small bubbles rise"
+      },
+      {
+        "image": "a giant cargo ship floating on a calm blue ocean, aerial view",
+        "motion": "the ship moves slowly forward, small waves ripple"
+      },
+      {
+        "image": "a cutaway view of a ship hull floating, showing the hollow inside and blue water pushed around it",
+        "motion": "the water ripples around the hull, the ship gently bobs"
+      },
+      {
+        "image": "a giant ship floating inside a narrow concrete dock just slightly bigger than the ship, a thin layer of water around it"
+      },
+      {
+        "image": "a toy boat floating in a glass container barely bigger than the boat with very little water"
+      }
+    ],
+    "tags": [
+      "física",
+      "barcos",
+      "curiosidades"
+    ],
+    "yt_title": "¿Cómo flota un barco de miles de toneladas? 🚢",
+    "playlist": "Ciencia loca"
+  },
+  {
+    "id": "006",
+    "title": "¿Por qué los gatos caen de pie?",
+    "narration": "Si un gato se cae de espaldas, en menos de un segundo gira la cabeza y mira el piso. Después gira la parte de adelante del cuerpo, después la de atrás, y estira las patas. Su columna es tan flexible que casi siempre aterriza parado. Y un estudio en Nueva York encontró algo increíble: muchos gatos que se cayeron de más de siete pisos se lastimaron menos que los que cayeron de cinco o seis. Con más altura, llegan a relajarse y abrir las patas como un paracaídas.",
+    "scenes": [
+      {
+        "image": "an orange cat falling upside down in the air in a living room",
+        "motion": "the cat twists its head to look down"
+      },
+      {
+        "image": "an orange cat mid-air twisting its body, front legs reaching down",
+        "motion": "the cat rotates its body and stretches its legs downward"
+      },
+      {
+        "image": "an orange cat landing on its four paws on a wooden floor",
+        "motion": "the cat lands softly, its tail swishes"
+      },
+      {
+        "image": "tall New York apartment buildings seen from the street, an open window high up"
+      },
+      {
+        "image": "an orange cat gliding through the air with its legs spread wide like a flying squirrel, city in the background"
+      }
+    ],
+    "tags": [
+      "gatos",
+      "animales",
+      "curiosidades"
+    ],
+    "yt_title": "Los gatos que caen de más alto se lastiman MENOS 🐱",
+    "playlist": "Animales increíbles"
+  },
+  {
+    "id": "007",
+    "title": "¿Por qué se te arrugan los dedos en el agua?",
+    "narration": "Cuando estás mucho rato en el agua, se te arrugan los dedos. Parece que absorben agua, pero no. Es tu cerebro, que achica a propósito los vasos debajo de la piel. Esas arrugas funcionan como el dibujo de las ruedas de un auto y te ayudan a agarrar cosas mojadas. ¿Cómo se sabe que es el cerebro? Porque si una persona tiene cortado el nervio de un dedo, ese dedo nunca se arruga. Los médicos lo usan como prueba.",
+    "scenes": [
+      {
+        "image": "a hand resting in a bathtub full of water with bubbles",
+        "motion": "the water ripples gently around the fingers"
+      },
+      {
+        "image": "close-up of wrinkled wet fingertips",
+        "motion": "camera slowly pushes in on the wrinkled skin, water drops slide down"
+      },
+      {
+        "image": "a wet hand gripping a wet glass marble firmly",
+        "motion": "the fingers close slowly around the marble and hold it tight"
+      },
+      {
+        "image": "a see-through human hand showing glowing blue nerves running into the fingers"
+      },
+      {
+        "image": "a hand after a bath with four wrinkled fingertips and one perfectly smooth fingertip, close-up"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "agua",
+      "curiosidades"
+    ],
+    "yt_title": "Tus dedos se arrugan a propósito 🤯",
+    "playlist": "Cuerpo humano"
+  },
+  {
+    "id": "008",
+    "title": "El microondas se inventó por accidente",
+    "narration": "El microondas no calienta el plato, calienta el agua que tiene la comida. Lanza ondas invisibles que hacen girar las gotitas de agua millones de veces por segundo. Ese movimiento se vuelve calor, y la comida se calienta. Y se inventó de casualidad. En 1945, un ingeniero que trabajaba con radares notó que la barra de chocolate que tenía en el bolsillo se había derretido sola. Probó con maíz, y le salieron palomitas. Así nació el microondas.",
+    "scenes": [
+      {
+        "image": "a plate of food inside a glowing microwave oven",
+        "motion": "the plate slowly turns on the rotating tray, warm light glows"
+      },
+      {
+        "image": "microscopic view of tiny blue water molecules inside food",
+        "motion": "the tiny water molecules spin and vibrate rapidly"
+      },
+      {
+        "image": "a steaming hot plate of pasta on a kitchen table",
+        "motion": "steam slowly rises from the pasta, camera pushes in"
+      },
+      {
+        "image": "a 1940s engineer in a lab full of large radar equipment, holding a melted chocolate bar from his pocket, surprised"
+      },
+      {
+        "image": "popcorn exploding out of a paper bag next to old 1940s radar equipment"
+      }
+    ],
+    "tags": [
+      "inventos",
+      "historia",
+      "curiosidades"
+    ],
+    "yt_title": "El microondas se inventó por un chocolate derretido 🍫",
+    "playlist": "Inventos por accidente"
+  },
+  {
+    "id": "009",
+    "title": "Los flamencos nacen grises",
+    "narration": "Los flamencos nacen grises. Se vuelven rosas por lo que comen: algas y camarones diminutos llenos de un pigmento rosado. Si un flamenco dejara de comerlos, con el tiempo se volvería blanco. Pero lo más impresionante es cómo alimentan a sus crías. Los padres producen en la garganta una especie de leche roja y se la dan por el pico. Y les sale tanto color en esa leche, que mientras crían a su polluelo, ellos mismos se van poniendo pálidos.",
+    "scenes": [
+      {
+        "image": "a fluffy gray baby flamingo chick standing in shallow water",
+        "motion": "the chick wobbles and flaps tiny wings, water ripples"
+      },
+      {
+        "image": "a pink flamingo dipping its head into shallow water full of tiny red shrimp",
+        "motion": "the flamingo filters water with its beak, ripples spread"
+      },
+      {
+        "image": "a large flock of bright pink flamingos standing in a lagoon at sunset",
+        "motion": "the flamingos shift slowly, one spreads its wings"
+      },
+      {
+        "image": "an adult flamingo gently feeding red liquid from its beak to a gray fluffy chick"
+      },
+      {
+        "image": "a pale almost white flamingo standing next to its gray chick in a lagoon"
+      }
+    ],
+    "tags": [
+      "animales",
+      "naturaleza",
+      "curiosidades"
+    ],
+    "yt_title": "Los flamencos nacen grises 🦩",
+    "playlist": "Animales increíbles"
+  },
+  {
+    "id": "010",
+    "title": "¿Qué pasa si cae un rayo en el mar?",
+    "narration": "Cuando un rayo cae en el mar, la electricidad no baja hasta el fondo. Se desparrama por la superficie, como una mancha. Los peces que están unos metros más abajo ni se enteran. El peligro es para el que está nadando arriba. Y hay algo que nadie esperaba: científicos descubrieron que sobre las rutas por donde pasan los barcos caen casi el doble de rayos. El humo de los barcos llena el aire de partículas que ayudan a formar tormentas.",
+    "scenes": [
+      {
+        "image": "a lightning bolt striking a dark stormy ocean at night",
+        "motion": "the lightning flashes and the ocean surface glows, waves roll"
+      },
+      {
+        "image": "glowing blue electricity spreading across the ocean surface in a wide circle",
+        "motion": "the glowing electricity ripples outward across the surface"
+      },
+      {
+        "image": "underwater view of calm fish swimming in deep blue water, a bright flash far above at the surface",
+        "motion": "the fish keep swimming calmly, light flickers above"
+      },
+      {
+        "image": "a big cargo ship at sea releasing dark smoke from its chimney under storm clouds"
+      },
+      {
+        "image": "a world map seen from space at night with a bright glowing line of lightning flashes along a shipping route in the ocean"
+      }
+    ],
+    "tags": [
+      "naturaleza",
+      "rayos",
+      "curiosidades"
+    ],
+    "yt_title": "Sobre los barcos caen el doble de rayos ⚡",
+    "playlist": "Ciencia loca"
+  },
+  {
+    "id": "011",
+    "title": "¿Para qué tienen rayas las cebras?",
+    "narration": "Durante años nadie sabía para qué tienen rayas las cebras. Entonces unos científicos vistieron caballos con mantas a rayas y los filmaron. Las moscas que pican se acercaban, pero las rayas las confundían tanto que no podían frenar ni aterrizar. Las rayas son un repelente de moscas. Y en Japón lo llevaron más lejos: le pintaron rayas blancas y negras a vacas de verdad. Las vacas pintadas recibieron más o menos la mitad de picaduras.",
+    "scenes": [
+      {
+        "image": "a zebra standing in the African savanna grass",
+        "motion": "the zebra's tail swishes, grass sways"
+      },
+      {
+        "image": "a brown horse wearing a black and white striped blanket in a field",
+        "motion": "the horse walks slowly forward, the blanket moves"
+      },
+      {
+        "image": "close-up of flies hovering near black and white stripes",
+        "motion": "the flies circle and bump into each other above the stripes"
+      },
+      {
+        "image": "a farmer painting white stripes on a black cow in a Japanese farm field"
+      },
+      {
+        "image": "a black cow with painted white zebra stripes standing proudly in a green field"
+      }
+    ],
+    "tags": [
+      "animales",
+      "ciencia",
+      "curiosidades"
+    ],
+    "yt_title": "Le pintaron rayas a una vaca y pasó esto 🦓",
+    "playlist": "Animales increíbles"
+  },
+  {
+    "id": "012",
+    "title": "El airbag es más rápido que un parpadeo",
+    "narration": "¿Sabes qué es más rápido que un parpadeo? Un airbag. En un choque, un sensor detecta el golpe en milésimas de segundo. Enciende una pequeña carga, como un mini cohete, que produce gas de golpe y llena la bolsa. Todo pasa tan rápido que el airbag se infla en unos treinta milésimos de segundo. Es unas diez veces más rápido que un parpadeo. Si parpadeas justo cuando chocas, cuando abres los ojos el airbag ya está inflado.",
+    "scenes": [
+      {
+        "image": "a car dashboard and steering wheel from the driver's view, a road ahead",
+        "motion": "the car drives forward, then the dashboard shakes suddenly"
+      },
+      {
+        "image": "a cutaway of a steering wheel showing a folded white airbag and a small canister inside",
+        "motion": "the small canister glows and gas rushes out"
+      },
+      {
+        "image": "a white airbag fully inflated out of a steering wheel",
+        "motion": "the airbag bursts out and expands"
+      },
+      {
+        "image": "extreme close-up of a human eye halfway through a blink"
+      },
+      {
+        "image": "a crash test dummy pressed into a fully inflated white airbag inside a car"
+      }
+    ],
+    "tags": [
+      "autos",
+      "tecnología",
+      "curiosidades"
+    ],
+    "yt_title": "El airbag es 10 veces más rápido que un parpadeo 💥",
+    "playlist": "Ciencia loca"
+  },
+  {
+    "id": "013",
+    "title": "¿Por qué el hielo flota?",
+    "narration": "Casi todo se vuelve más pesado cuando se congela. El agua hace lo contrario. Al congelarse, sus partículas se acomodan dejando huecos. El hielo ocupa más lugar, es más liviano, y por eso flota. Y ese detalle raro es lo que salva a los peces cada invierno. Si el hielo se hundiera, los lagos se congelarían desde el fondo hasta arriba, y los peces no tendrían dónde vivir. Gracias a que flota, el hielo hace de techo, y abajo el agua sigue líquida todo el invierno.",
+    "scenes": [
+      {
+        "image": "ice cubes floating in a clear glass of water on a table",
+        "motion": "the ice cubes bob gently and turn slowly"
+      },
+      {
+        "image": "a hexagonal lattice of tiny water molecules with open spaces between them",
+        "motion": "the molecules lock into the hexagon pattern, camera slowly rotates"
+      },
+      {
+        "image": "a huge iceberg floating in a calm ocean, showing the part under water",
+        "motion": "the iceberg drifts slowly, water ripples around it"
+      },
+      {
+        "image": "a frozen lake in winter covered with snow and a thick layer of ice"
+      },
+      {
+        "image": "underwater view below a frozen lake, fish swimming calmly under the thick ice ceiling, light coming through"
+      }
+    ],
+    "tags": [
+      "ciencia",
+      "agua",
+      "curiosidades"
+    ],
+    "yt_title": "Si el hielo se hundiera, no habría peces 🧊",
+    "playlist": "Ciencia loca"
+  },
+  {
+    "id": "014",
+    "title": "El pulpo tiene tres corazones",
+    "narration": "El pulpo tiene tres corazones. Dos mandan sangre a las branquias, y el tercero al resto del cuerpo. Cuando nada, ese tercer corazón se detiene. Por eso prefieren arrastrarse. Además su sangre es azul. Pero lo más alucinante es esto: dos tercios de sus neuronas no están en la cabeza, sino en los brazos. Cada brazo puede tocar, probar y reaccionar casi por su cuenta. Es como tener ocho mini cerebros pegados al cuerpo.",
+    "scenes": [
+      {
+        "image": "an orange octopus resting on a coral reef",
+        "motion": "the octopus tentacles curl and move gently, small fish swim by"
+      },
+      {
+        "image": "a see-through octopus body showing three small glowing red hearts inside",
+        "motion": "the three hearts pulse rhythmically"
+      },
+      {
+        "image": "an orange octopus crawling along the sandy sea floor with its tentacles",
+        "motion": "the octopus crawls slowly forward along the sand"
+      },
+      {
+        "image": "a see-through octopus with glowing blue blood vessels"
+      },
+      {
+        "image": "an octopus with eight tentacles each glowing with a small network of bright neurons"
+      }
+    ],
+    "tags": [
+      "animales",
+      "mar",
+      "curiosidades"
+    ],
+    "yt_title": "El pulpo tiene 3 corazones y 8 mini cerebros 🐙",
+    "playlist": "Animales increíbles"
+  },
+  {
+    "id": "015",
+    "title": "¿Por qué ves estrellitas al pararte rápido?",
+    "narration": "Cuando te paras de golpe, la gravedad tira la sangre hacia tus piernas. Por un segundo le llega menos sangre a la cabeza, y la vista se te llena de puntitos. Tu cuerpo lo corrige enseguida apretando las venas y acelerando el corazón. Pero imagínate pasar meses sin gravedad. Eso les pasa a los astronautas. Cuando vuelven a la Tierra, su cuerpo se olvidó de hacer ese ajuste, y muchos se marean o se desmayan solo por pararse.",
+    "scenes": [
+      {
+        "image": "a semi-realistic young adult sitting on a couch in a living room",
+        "motion": "the person stands up quickly from the couch"
+      },
+      {
+        "image": "a see-through human body with red blood flowing down toward the legs",
+        "motion": "the red blood slowly flows downward"
+      },
+      {
+        "image": "first-person view of a living room filled with tiny sparkling white dots",
+        "motion": "the sparkles flicker and slowly fade away"
+      },
+      {
+        "image": "an astronaut floating inside the International Space Station"
+      },
+      {
+        "image": "an astronaut just returned to Earth sitting in a chair, dizzy, helped by two people in a field"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "espacio",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué los astronautas se desmayan al volver 🚀",
+    "playlist": "Cuerpo humano"
+  },
+  {
+    "id": "016",
+    "title": "Los delfines duermen con medio cerebro",
+    "narration": "Si un delfín se durmiera del todo, se ahogaría, porque tiene que subir a respirar. Entonces duerme con la mitad del cerebro. Una mitad descansa mientras la otra lo mantiene nadando y atento, con un ojo abierto. Después cambian de lado. Y hay algo todavía más extremo. Cuando nace una cría, la mamá y el bebé casi no duermen durante todo el primer mes. Están siempre en movimiento, para que el bebé respire y ningún tiburón los sorprenda.",
+    "scenes": [
+      {
+        "image": "a gray dolphin swimming near the surface of a calm ocean at night",
+        "motion": "the dolphin glides slowly, moonlight ripples on the water"
+      },
+      {
+        "image": "a see-through dolphin head showing one half of the brain glowing blue and the other half dark",
+        "motion": "the glowing half pulses softly, camera slowly orbits"
+      },
+      {
+        "image": "close-up of a dolphin underwater with one eye open and one eye closed",
+        "motion": "the dolphin swims slowly, its open eye blinks"
+      },
+      {
+        "image": "a mother dolphin and a tiny baby dolphin swimming side by side in blue water"
+      },
+      {
+        "image": "a shark silhouette far away in dark blue water behind a mother and baby dolphin"
+      }
+    ],
+    "tags": [
+      "animales",
+      "mar",
+      "curiosidades"
+    ],
+    "yt_title": "Los delfines duermen con medio cerebro 🐬",
+    "playlist": "Animales increíbles"
+  },
+  {
+    "id": "017",
+    "title": "¿Hace mal tronarse los dedos?",
+    "narration": "Entre tus huesos hay un líquido con gas disuelto. Cuando estiras el dedo, el espacio se agranda de golpe y se forma una burbuja. Ese crac es la burbuja apareciendo. Y siempre te dijeron que te va a dar artrosis. Un médico quiso probarlo con su propio cuerpo. Durante más de sesenta años se tronó los dedos de una sola mano, y de la otra nunca. Al final, ninguna de las dos tenía artrosis. Por ese experimento le dieron un premio.",
+    "scenes": [
+      {
+        "image": "two hands with interlaced fingers about to crack knuckles",
+        "motion": "the hands stretch forward and the fingers press outward"
+      },
+      {
+        "image": "a see-through finger joint showing two bones and clear liquid between them",
+        "motion": "the joint slowly pulls apart, the gap widens"
+      },
+      {
+        "image": "a small bubble suddenly appearing inside the clear liquid of a finger joint",
+        "motion": "the bubble pops into existence and wobbles"
+      },
+      {
+        "image": "an old doctor in a white coat cracking the knuckles of only his left hand, his right hand resting"
+      },
+      {
+        "image": "an old doctor smiling and holding a small golden trophy, both hands healthy"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "mitos",
+      "curiosidades"
+    ],
+    "yt_title": "Se tronó los dedos 60 años para probar esto 😳",
+    "playlist": "Mitos falsos"
+  },
+  {
+    "id": "018",
+    "title": "¿Por qué explotan las palomitas de maíz?",
+    "narration": "Cada grano de maíz tiene una gotita de agua adentro. Cuando lo calientas, esa agua se convierte en vapor y empuja la cáscara dura desde adentro. Al llegar a unos ciento ochenta grados, la presión adentro del grano es como nueve veces la del aire que respiras. La cáscara no aguanta más, revienta, y el almidón se infla como espuma y se endurece en el aire. Todo eso pasa en una fracción de segundo.",
+    "scenes": [
+      {
+        "image": "yellow corn kernels in a hot pan on a stove",
+        "motion": "the kernels shake and jiggle from the heat"
+      },
+      {
+        "image": "a see-through corn kernel with a tiny drop of water inside turning into steam",
+        "motion": "the steam swirls and builds up inside the kernel"
+      },
+      {
+        "image": "a corn kernel bursting into fluffy white popcorn",
+        "motion": "the kernel bursts open into popcorn and flips in the air"
+      },
+      {
+        "image": "a glowing pressure gauge dial at maximum next to a single corn kernel"
+      },
+      {
+        "image": "a giant cloud of white popcorn exploding out of a pot in slow motion"
+      }
+    ],
+    "tags": [
+      "cocina",
+      "ciencia",
+      "curiosidades"
+    ],
+    "yt_title": "La presión dentro de un grano de palomitas te va a sorprender 🍿",
+    "playlist": "Comida increíble"
+  },
+  {
+    "id": "019",
+    "title": "¿Cuánta miel hace una abeja en toda su vida?",
+    "narration": "Una abeja trabaja toda su vida para hacer miel. Y el resultado te va a sorprender. La abeja chupa el néctar de las flores y lo guarda en un estómago especial. En la colmena se lo pasa a otras abejas, que lo van mezclando. Después lo dejan en las celdas y lo abanican con las alas hasta que se seca y se vuelve miel. Ahora, ¿cuánta miel hace una sola abeja en toda su vida? Apenas la doceava parte de una cucharadita. O sea, en cada cucharadita de miel hay el trabajo de toda la vida de unas doce abejas.",
+    "scenes": [
+      {
+        "image": "a honeybee drinking nectar from a bright yellow flower",
+        "motion": "the bee moves on the flower, wings buzzing, petals sway"
+      },
+      {
+        "image": "honeybees passing golden droplets to each other inside a beehive",
+        "motion": "the bees move around, passing small golden droplets"
+      },
+      {
+        "image": "bees fanning their wings over golden honeycomb cells full of honey",
+        "motion": "the bees fan their wings rapidly over the glowing honey"
+      },
+      {
+        "image": "a single tiny drop of honey on the tip of a metal teaspoon, macro shot"
+      },
+      {
+        "image": "twelve honeybees standing in a row next to a teaspoon full of golden honey"
+      }
+    ],
+    "tags": [
+      "animales",
+      "naturaleza",
+      "curiosidades"
+    ],
+    "yt_title": "Cuánta miel hace UNA abeja en toda su vida 🐝",
+    "playlist": "Animales increíbles"
+  },
+  {
+    "id": "020",
+    "title": "¿Qué son las rayas blancas que dejan los aviones?",
+    "narration": "Esas rayas blancas que dejan los aviones son nubes. El motor suelta aire caliente y húmedo. Allá arriba hace unos cincuenta grados bajo cero, y ese vapor se congela al instante en millones de cristalitos de hielo. Por eso la raya aparece un poquito atrás del avión, no pegada. Y a veces, si el aire está muy húmedo, esas rayas no desaparecen: se van estirando durante horas hasta convertirse en nubes de verdad que tapan el sol.",
+    "scenes": [
+      {
+        "image": "a high flying airplane leaving long white contrails across a blue sky",
+        "motion": "the airplane moves slowly across the sky, contrails stretch behind"
+      },
+      {
+        "image": "close-up of a jet engine releasing hot exhaust",
+        "motion": "hot air shimmers and flows out of the engine"
+      },
+      {
+        "image": "tiny ice crystals forming in the cold air behind a jet engine",
+        "motion": "the ice crystals sparkle and spread into a white trail"
+      },
+      {
+        "image": "a jet with a white trail starting a short distance behind its engines, gap clearly visible"
+      },
+      {
+        "image": "a sky full of wide crisscrossing contrails spreading into thin clouds partly covering the sun"
+      }
+    ],
+    "tags": [
+      "aviones",
+      "ciencia",
+      "curiosidades"
+    ],
+    "yt_title": "Las rayas de los aviones son nubes de verdad ☁️",
+    "playlist": "Ciencia loca"
+  },
+  {
+    "id": "021",
+    "title": "¿Por qué el mar es salado?",
+    "narration": "La lluvia va desgastando las rocas y arrastra sus minerales a los ríos. Los ríos los llevan al mar. El agua del mar se evapora, pero la sal no se va con ella, así que se queda. Y así durante millones de años. ¿Sabes cuánta sal hay? Si sacaras toda la sal del mar y la repartieras sobre todos los continentes, harías una capa de más de ciento cincuenta metros de alto. Como un edificio de cuarenta pisos.",
+    "scenes": [
+      {
+        "image": "rain falling on large gray rocks on a mountain",
+        "motion": "raindrops fall and water trickles down the rocks"
+      },
+      {
+        "image": "a river flowing down into the ocean, aerial view",
+        "motion": "the river water flows into the sea, slow aerial drift"
+      },
+      {
+        "image": "white salt crystals left on rocks by the sea shore under the sun",
+        "motion": "small waves wash in and out, the salt crystals sparkle"
+      },
+      {
+        "image": "a gigantic pile of white salt rising above the ocean"
+      },
+      {
+        "image": "a city covered by a layer of white salt as tall as a 40 story building, only the tallest skyscrapers sticking out"
+      }
+    ],
+    "tags": [
+      "naturaleza",
+      "mar",
+      "curiosidades"
+    ],
+    "yt_title": "Si sacaras la sal del mar, taparía ciudades enteras 🌊",
+    "playlist": "Naturaleza"
+  },
+  {
+    "id": "022",
+    "title": "¿Cómo gira tanto la cabeza un búho?",
+    "narration": "Un búho puede girar la cabeza tres cuartos de vuelta. Tiene el doble de vértebras en el cuello que tú, y sus venas tienen reservas de sangre para que el cerebro no se quede sin sangre mientras gira. Pero, ¿por qué necesita girar tanto la cabeza? Porque no puede mover los ojos. Los ojos del búho no son bolitas como los tuyos. Son tubos, metidos fijos en el cráneo. Para mirar a un costado, tiene que girar todo.",
+    "scenes": [
+      {
+        "image": "a brown owl perched on a tree branch at night",
+        "motion": "the owl slowly rotates its head to look behind"
+      },
+      {
+        "image": "a see-through owl neck showing a long chain of small vertebrae bones",
+        "motion": "the vertebrae twist smoothly one after another"
+      },
+      {
+        "image": "a see-through owl neck with red blood vessels and small pockets of blood",
+        "motion": "the blood pockets fill and glow softly"
+      },
+      {
+        "image": "close-up of the big round orange eyes of an owl staring forward"
+      },
+      {
+        "image": "a see-through owl skull showing long tube-shaped eyes fixed inside"
+      }
+    ],
+    "tags": [
+      "animales",
+      "aves",
+      "curiosidades"
+    ],
+    "yt_title": "Los búhos no pueden mover los ojos 🦉",
+    "playlist": "Animales increíbles"
+  },
+  {
+    "id": "023",
+    "title": "El camaleón no cambia de color para esconderse",
+    "narration": "El camaleón no tiene pinturas en la piel. Tiene millones de cristales diminutos. Cuando se relaja o se pone nervioso, los separa o los junta, y eso cambia la luz que rebota. Así cambia de color en segundos. Pero aquí viene la sorpresa: casi nunca lo hace para camuflarse. Cambia de color para mostrar lo que siente, para asustar a otro macho o conquistar a una hembra, y para calentarse o enfriarse.",
+    "scenes": [
+      {
+        "image": "a green chameleon on a branch in a tropical forest",
+        "motion": "the chameleon's eye swivels, the branch sways gently"
+      },
+      {
+        "image": "microscopic view of tiny shiny crystals in a grid inside skin",
+        "motion": "the crystals spread apart and the color shifts from green to orange"
+      },
+      {
+        "image": "a bright orange and red chameleon on a branch",
+        "motion": "the chameleon slowly walks along the branch"
+      },
+      {
+        "image": "two male chameleons facing each other on a branch, both bright red and yellow, angry"
+      },
+      {
+        "image": "a dark brown chameleon basking in warm sunlight on a branch"
+      }
+    ],
+    "tags": [
+      "animales",
+      "naturaleza",
+      "curiosidades"
+    ],
+    "yt_title": "El camaleón NO cambia de color para esconderse 🦎",
+    "playlist": "Mitos falsos"
+  },
+  {
+    "id": "024",
+    "title": "¿Por qué el agua oxigenada hace espuma?",
+    "narration": "Cuando pones agua oxigenada en una herida, hace espuma. Es que tu sangre y tu piel tienen una sustancia que la rompe al instante en agua y oxígeno. Ese oxígeno sale en burbujitas, y eso es la espuma blanca. Mucha gente cree que esa espuma significa que está matando gérmenes. Pero los médicos hoy recomiendan otra cosa: el agua oxigenada también daña las células que curan tu herida. Para una raspadura, lo mejor es agua y jabón.",
+    "scenes": [
+      {
+        "image": "a brown bottle of hydrogen peroxide pouring onto a small scrape on a knee",
+        "motion": "the clear liquid pours slowly onto the knee"
+      },
+      {
+        "image": "white foam bubbling up on a small scrape on skin",
+        "motion": "the foam grows and fizzes"
+      },
+      {
+        "image": "microscopic view of tiny oxygen bubbles forming and rising",
+        "motion": "the bubbles form and rise upward"
+      },
+      {
+        "image": "microscopic view of small healing skin cells being damaged by bubbles"
+      },
+      {
+        "image": "a hand washing a small scrape on a knee with soap and water under a faucet"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "salud",
+      "curiosidades"
+    ],
+    "yt_title": "No uses agua oxigenada en las heridas ⚠️",
+    "playlist": "Mitos falsos"
+  },
+  {
+    "id": "025",
+    "title": "¿Cómo se inventó el velcro?",
+    "narration": "Un ingeniero suizo volvió de pasear con su perro y vio que el pelo del perro estaba lleno de abrojos. En vez de enojarse, los miró con un microscopio. Cada abrojo tenía cientos de ganchitos que se enganchaban en los pelos. Copió esa idea con dos tiras de tela: una con ganchitos y otra con rulitos. Así inventó el velcro. Y años después, la NASA lo hizo famoso: los astronautas lo usan para que las cosas no salgan flotando por la nave.",
+    "scenes": [
+      {
+        "image": "a man walking a dog through a field of tall dry grass in the Swiss mountains",
+        "motion": "the man and dog walk forward slowly, grass sways"
+      },
+      {
+        "image": "close-up of spiky burrs stuck in a dog's fur",
+        "motion": "the fur moves slightly, camera pushes in on the burrs"
+      },
+      {
+        "image": "microscope view of tiny hooks catching tiny loops",
+        "motion": "the hooks slowly catch onto the loops"
+      },
+      {
+        "image": "two strips of fabric, one with tiny hooks and one with tiny loops, about to stick together"
+      },
+      {
+        "image": "an astronaut inside a space station with tools stuck to the wall with velcro strips, floating"
+      }
+    ],
+    "tags": [
+      "inventos",
+      "historia",
+      "curiosidades"
+    ],
+    "yt_title": "El velcro se inventó por un perro 🐕",
+    "playlist": "Inventos por accidente"
+  },
+  {
+    "id": "026",
+    "title": "Hay tiburones que no pueden dejar de nadar",
+    "narration": "Algunos tiburones, como el tiburón blanco, no pueden dejar de nadar nunca. No tienen cómo bombear agua a sus branquias, entonces respiran dejando que el agua les entre por la boca mientras avanzan. Si se quedan quietos, no les entra oxígeno. Por eso descansan nadando despacio. Y lo más irónico: si uno de estos tiburones queda atrapado en una red y no puede moverse, se ahoga, aunque esté rodeado de agua por todos lados.",
+    "scenes": [
+      {
+        "image": "a great white shark swimming in deep blue water",
+        "motion": "the shark glides forward, slow camera follow"
+      },
+      {
+        "image": "water flowing into an open shark mouth and out through its gills",
+        "motion": "the water flows through the mouth and out of the gills"
+      },
+      {
+        "image": "a shark slowly swimming near the sea floor at night",
+        "motion": "the shark moves slowly forward in the dark water"
+      },
+      {
+        "image": "a great white shark caught motionless in a fishing net underwater"
+      },
+      {
+        "image": "a diver gently cutting a fishing net to free a shark underwater"
+      }
+    ],
+    "tags": [
+      "animales",
+      "mar",
+      "curiosidades"
+    ],
+    "yt_title": "Este tiburón se ahoga si deja de nadar 🦈",
+    "playlist": "Animales increíbles"
+  },
+  {
+    "id": "027",
+    "title": "El hombre que tuvo hipo 68 años",
+    "narration": "El hipo empieza en el diafragma, un músculo que tienes debajo de los pulmones. De repente se contrae solo, y tomas aire de golpe. En ese mismo instante se cierran tus cuerdas vocales, y ese cierre rápido es el sonido hip. Casi siempre se pasa en minutos. Pero un hombre en Estados Unidos tuvo hipo durante sesenta y ocho años seguidos. Empezó en 1922, y un día de 1990 se le fue solo. Es récord mundial.",
+    "scenes": [
+      {
+        "image": "a semi-realistic adult hiccupping in a kitchen, hand on chest",
+        "motion": "the person's shoulders jump up suddenly"
+      },
+      {
+        "image": "a see-through human chest showing the lungs and the dome-shaped diaphragm under them",
+        "motion": "the diaphragm suddenly jerks down"
+      },
+      {
+        "image": "a see-through throat showing the vocal cords snapping shut",
+        "motion": "the vocal cords snap shut quickly"
+      },
+      {
+        "image": "an old 1920s black and white style photo look of a farmer in overalls on a farm, hiccupping"
+      },
+      {
+        "image": "a very old man smiling with a golden world record certificate"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "récords",
+      "curiosidades"
+    ],
+    "yt_title": "Tuvo hipo durante 68 años seguidos 😮",
+    "playlist": "Cuerpo humano"
+  },
+  {
+    "id": "028",
+    "title": "¿Por qué la Coca explota con Mentos?",
+    "narration": "El refresco tiene gas disuelto que está esperando una excusa para salir. La pastilla de menta parece lisa, pero vista de cerca está llena de poros diminutos. En cada poro se forman burbujas al instante, millones a la vez, y el refresco sale disparado hasta varios metros. Y hay un detalle que pocos saben: con el refresco light sale mucho más alto. El endulzante ayuda a que se formen burbujas, y el azúcar del normal las frena.",
+    "scenes": [
+      {
+        "image": "a bottle of dark soda standing on grass outdoors",
+        "motion": "small bubbles rise inside the bottle"
+      },
+      {
+        "image": "microscopic view of a mint candy surface full of tiny pores with bubbles forming",
+        "motion": "bubbles form rapidly in every pore"
+      },
+      {
+        "image": "a tall fountain of brown foam shooting out of a soda bottle",
+        "motion": "the foam fountain sprays upward"
+      },
+      {
+        "image": "two soda bottles side by side on grass, one regular and one diet with a silver label"
+      },
+      {
+        "image": "a giant fountain of foam shooting very high out of a diet soda bottle next to a smaller fountain from a regular soda bottle"
+      }
+    ],
+    "tags": [
+      "ciencia",
+      "experimentos",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué la Coca Light explota más con Mentos 🥤",
+    "playlist": "Ciencia loca"
+  },
+  {
+    "id": "029",
+    "title": "¿Por qué un pez se ahoga fuera del agua?",
+    "narration": "Los peces toman agua por la boca y la sacan por las branquias. Las branquias están llenas de láminas finitas con sangre, y cuando el agua pasa, le roban el oxígeno que lleva disuelto. Ahora, el aire tiene muchísimo más oxígeno que el agua. Entonces, ¿por qué un pez se ahoga fuera del agua? Porque sin agua que las sostenga, esas láminas finitas se pegan unas con otras y colapsan, y el pez ya no puede usar ese oxígeno.",
+    "scenes": [
+      {
+        "image": "a goldfish swimming in a clear aquarium",
+        "motion": "the goldfish opens and closes its mouth while swimming"
+      },
+      {
+        "image": "close-up of red fish gills with thin feathery layers",
+        "motion": "the gill layers ripple as water flows through"
+      },
+      {
+        "image": "tiny oxygen bubbles moving from water into red blood vessels",
+        "motion": "the bubbles drift into the vessels"
+      },
+      {
+        "image": "a goldfish jumping out of the water into the air above an aquarium"
+      },
+      {
+        "image": "close-up of fish gills collapsed and stuck together, out of water"
+      }
+    ],
+    "tags": [
+      "animales",
+      "mar",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué un pez se ahoga fuera del agua 🐟",
+    "playlist": "Animales increíbles"
+  },
+  {
+    "id": "030",
+    "title": "La luna se está yendo",
+    "narration": "La luna en el horizonte parece gigante, pero es un truco de tu cerebro. Si la tapas con el dedo, mide lo mismo que cuando está bien arriba. Tu cerebro la compara con edificios y árboles, y la agranda. Pero hay algo de la luna que sí cambia de verdad: se está yendo. Cada año se aleja de la Tierra casi cuatro centímetros, más o menos lo que te crecen las uñas. Dentro de muchísimo tiempo, se verá cada vez más chica.",
+    "scenes": [
+      {
+        "image": "a huge orange full moon rising over a city skyline",
+        "motion": "the moon slowly rises over the buildings"
+      },
+      {
+        "image": "a hand with an outstretched thumb next to a full moon in the night sky",
+        "motion": "the thumb slowly moves up to cover the moon"
+      },
+      {
+        "image": "a small white full moon high in a dark night sky",
+        "motion": "the camera slowly pulls back"
+      },
+      {
+        "image": "the Earth and the Moon in space with a measuring tape stretched between them"
+      },
+      {
+        "image": "a very tiny distant moon in a dark sky over a quiet landscape"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "ilusiones",
+      "curiosidades"
+    ],
+    "yt_title": "La Luna se está yendo de la Tierra 🌙",
+    "playlist": "Espacio"
+  },
+  {
+    "id": "031",
+    "title": "Los plátanos son radiactivos",
+    "narration": "El plátano que comes es radiactivo. No es broma. Tiene mucho potasio, y una pequeña parte de ese potasio emite radiación de forma natural. Es tan poquita que no hace nada de daño. Pero es tan real que los científicos inventaron una medida en broma: la dosis equivalente a un plátano. Para que una dosis de plátanos te enfermara, tendrías que comerte unos diez millones de golpe. Y tu propio cuerpo también es un poco radiactivo, por el mismo potasio.",
+    "scenes": [
+      {
+        "image": "a bright yellow banana on a table glowing with a soft green radioactive aura",
+        "motion": "the green glow pulses softly around the banana"
+      },
+      {
+        "image": "a scientist holding a geiger counter next to a bunch of bananas, the needle moving",
+        "motion": "the needle of the counter twitches, the scientist leans closer"
+      },
+      {
+        "image": "tiny glowing particles floating out of a banana peel, macro view",
+        "motion": "the glowing particles drift slowly upward"
+      },
+      {
+        "image": "a gigantic mountain of millions of bananas next to a tiny person"
+      },
+      {
+        "image": "a human silhouette with a faint soft green glow, friendly style"
+      }
+    ],
+    "tags": [
+      "ciencia",
+      "comida",
+      "curiosidades"
+    ],
+    "yt_title": "Tu plátano es radiactivo (en serio) 🍌",
+    "playlist": "Ciencia loca",
+    "highlight": [
+      "radiactivo",
+      "diez millones"
+    ]
+  },
+  {
+    "id": "032",
+    "title": "La miel nunca se echa a perder",
+    "narration": "Hay una comida que puede durar miles de años sin pudrirse: la miel. Los arqueólogos encontraron vasijas de miel en tumbas egipcias de hace unos tres mil años, y seguía sin echarse a perder. El secreto es que tiene muy poquita agua y mucho azúcar, y además es un poco ácida. Ninguna bacteria puede vivir ahí: la miel les chupa el agua y se secan. Por eso, si tu miel se pone dura, no está vencida. Solo se cristalizó.",
+    "scenes": [
+      {
+        "image": "an ancient egyptian clay jar full of golden honey inside a tomb lit by torches",
+        "motion": "torch light flickers on the jar, golden honey glistens"
+      },
+      {
+        "image": "an archaeologist with a brush uncovering a sealed clay jar in the sand",
+        "motion": "the archaeologist gently brushes sand off the jar"
+      },
+      {
+        "image": "honey slowly dripping from a wooden honey dipper, macro",
+        "motion": "the honey drips slowly and thickly"
+      },
+      {
+        "image": "cartoon bacteria shriveling up and drying on a drop of honey, microscope view"
+      },
+      {
+        "image": "a jar of crystallized honey next to a jar of liquid honey on a kitchen table"
+      }
+    ],
+    "tags": [
+      "comida",
+      "historia",
+      "curiosidades"
+    ],
+    "yt_title": "Esta comida dura 3000 años sin pudrirse 🍯",
+    "playlist": "Comida increíble",
+    "highlight": [
+      "tres mil años",
+      "miel"
+    ]
+  },
+  {
+    "id": "033",
+    "title": "Los tiburones son más viejos que los árboles",
+    "narration": "Los tiburones son más viejos que los árboles. Los primeros tiburones aparecieron hace unos cuatrocientos cincuenta millones de años. Los primeros árboles, recién unos sesenta millones de años después. O sea, hubo tiburones nadando en un planeta donde en la tierra no había ni un solo bosque. Y sobrevivieron a cinco extinciones masivas, incluida la que terminó con los dinosaurios. Los tiburones vieron aparecer a los árboles, a los dinosaurios, y también a nosotros.",
+    "scenes": [
+      {
+        "image": "an ancient shark swimming in a prehistoric ocean, sunlight rays from above",
+        "motion": "the shark glides slowly through the water"
+      },
+      {
+        "image": "a barren rocky prehistoric land with no trees next to the sea",
+        "motion": "waves crash slowly against the empty rocks"
+      },
+      {
+        "image": "the first primitive tree growing alone on prehistoric land",
+        "motion": "the leaves of the tree sway gently in the wind"
+      },
+      {
+        "image": "a shark swimming under the shadow of a giant dinosaur standing at the shore"
+      },
+      {
+        "image": "a modern shark swimming past a diver in clear blue water"
+      }
+    ],
+    "tags": [
+      "animales",
+      "tiburones",
+      "curiosidades"
+    ],
+    "yt_title": "Los tiburones existían ANTES que los árboles 🦈",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "árboles",
+      "cinco extinciones"
+    ]
+  },
+  {
+    "id": "034",
+    "title": "En Venus un día dura más que un año",
+    "narration": "En Venus, un día dura más que un año. Venus tarda doscientos veinticinco días en dar la vuelta al Sol. Eso es su año. Pero gira sobre sí misma tan lento que una vuelta le lleva doscientos cuarenta y tres días. O sea, el año termina antes que el día. Y hay algo más raro todavía: gira al revés que casi todos los planetas. Si pudieras pararte en Venus, verías salir el Sol por el oeste.",
+    "scenes": [
+      {
+        "image": "the planet Venus glowing yellow orange in space next to the sun",
+        "motion": "Venus rotates very slowly"
+      },
+      {
+        "image": "a calendar floating in space next to Venus with pages flying",
+        "motion": "the calendar pages flip and fly away"
+      },
+      {
+        "image": "a giant clock with very slow hands over the surface of Venus",
+        "motion": "the clock hands move very slowly"
+      },
+      {
+        "image": "the sun rising on the left side over a yellow cloudy Venus landscape with a compass showing west"
+      },
+      {
+        "image": "an astronaut standing on Venus looking at a sunrise, orange sky"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "planetas",
+      "curiosidades"
+    ],
+    "yt_title": "En Venus un día dura más que un año 🪐",
+    "playlist": "Espacio",
+    "highlight": [
+      "más que un año",
+      "oeste"
+    ]
+  },
+  {
+    "id": "035",
+    "title": "Una cucharadita de estrella de neutrones",
+    "narration": "Una cucharadita de estrella de neutrones pesaría unos mil millones de toneladas. Cuando una estrella gigante se muere, explota, y su centro se aplasta con una fuerza increíble. Algo más grande que el Sol queda apretado en una bola del tamaño de una ciudad. Es tan denso que, si dejaras caer esa cucharadita sobre la Tierra, atravesaría el suelo como si fuera mantequilla y se hundiría hasta el centro del planeta.",
+    "scenes": [
+      {
+        "image": "a small silver teaspoon holding a tiny glowing blue star fragment",
+        "motion": "the glowing fragment pulses with blue light"
+      },
+      {
+        "image": "a giant red star exploding in a bright supernova in space",
+        "motion": "the star explodes outward in a bright flash"
+      },
+      {
+        "image": "a tiny spinning neutron star next to the outline of a city for scale",
+        "motion": "the neutron star spins fast, light beams sweep around"
+      },
+      {
+        "image": "a teaspoon with glowing material breaking through the ground into the earth"
+      },
+      {
+        "image": "cutaway of planet earth with a tiny glowing dot falling toward the core"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "estrellas",
+      "curiosidades"
+    ],
+    "yt_title": "Una cucharadita de esto pesa mil millones de toneladas 🌟",
+    "playlist": "Espacio",
+    "highlight": [
+      "mil millones",
+      "centro del planeta"
+    ]
+  },
+  {
+    "id": "036",
+    "title": "Los gatos no sienten lo dulce",
+    "narration": "Tu gato no puede sentir el sabor dulce. Nada. Le das azúcar y para él no sabe a nada. Los gatos perdieron el gen que arma los sensores de lo dulce en la lengua. Como comen casi solo carne, nunca lo necesitaron. Y no son los únicos: los leones y los tigres tampoco lo sienten. Entonces, si tu gato te roba el helado, no es por lo dulce. Lo que le gusta es la grasa y la leche.",
+    "scenes": [
+      {
+        "image": "a cute cat sniffing a sugar cube on a kitchen table",
+        "motion": "the cat sniffs the sugar cube and tilts its head"
+      },
+      {
+        "image": "a macro view of a cat tongue with tiny taste buds",
+        "motion": "the tongue moves slightly, soft light"
+      },
+      {
+        "image": "a lion and a tiger looking confused at a cupcake in the savanna",
+        "motion": "the lion sniffs the cupcake and looks away"
+      },
+      {
+        "image": "a cat licking an ice cream cone on a sunny balcony"
+      },
+      {
+        "image": "a cat happily drinking from a bowl of milk"
+      }
+    ],
+    "tags": [
+      "animales",
+      "gatos",
+      "curiosidades"
+    ],
+    "yt_title": "Tu gato no puede sentir lo dulce 🐱",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "dulce",
+      "grasa"
+    ]
+  },
+  {
+    "id": "037",
+    "title": "El corazón del colibrí",
+    "narration": "El corazón de un colibrí puede latir más de mil veces por minuto. El tuyo late unas setenta. Sus alas se mueven tan rápido que hacen ese zumbido, y gasta tanta energía que tiene que comer néctar cada pocos minutos. Pero de noche no puede comer. Entonces hace algo increíble: baja su temperatura, su corazón casi se detiene y entra en una especie de hibernación por unas horas. Por la mañana se despierta y vuelve a volar como si nada.",
+    "scenes": [
+      {
+        "image": "a hummingbird hovering in front of a red flower, wings blurred",
+        "motion": "the wings flap extremely fast while the bird hovers"
+      },
+      {
+        "image": "a glowing heart inside a tiny hummingbird, x-ray style",
+        "motion": "the tiny heart beats very fast"
+      },
+      {
+        "image": "a hummingbird drinking nectar from a tubular flower",
+        "motion": "the bird dips its beak into the flower"
+      },
+      {
+        "image": "a hummingbird sleeping still on a branch at night under moonlight"
+      },
+      {
+        "image": "a hummingbird waking up at sunrise and flying away from the branch"
+      }
+    ],
+    "tags": [
+      "animales",
+      "aves",
+      "curiosidades"
+    ],
+    "yt_title": "Su corazón late 1200 veces por minuto 🐦",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "mil veces",
+      "se detiene"
+    ]
+  },
+  {
+    "id": "038",
+    "title": "Por qué se te tapan los oídos en el avión",
+    "narration": "Detrás de cada oído tienes una cámara de aire, conectada a la garganta por un tubito muy finito. Cuando el avión sube o baja, la presión de afuera cambia rápido, pero el aire de adentro tarda en igualarse. Entonces el tímpano queda empujado y se te tapa el oído. Cuando tragas o bostezas, el tubito se abre y suena el famoso pop. Por eso lloran tanto los bebés en los aviones: todavía no saben destaparse los oídos solos.",
+    "scenes": [
+      {
+        "image": "an airplane taking off into the clouds",
+        "motion": "the airplane climbs into the sky"
+      },
+      {
+        "image": "a cutaway diagram of a human ear with a small air chamber and a thin tube to the throat, 3D medical style",
+        "motion": "the eardrum gently bulges in and out"
+      },
+      {
+        "image": "a passenger on a plane holding their ear with a slight grimace",
+        "motion": "the passenger yawns and their face relaxes"
+      },
+      {
+        "image": "a cartoon pop burst coming out of an ear"
+      },
+      {
+        "image": "a baby crying on a parent's lap in an airplane seat"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "aviones",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué se te tapan los oídos en el avión ✈️",
+    "playlist": "Cuerpo humano",
+    "highlight": [
+      "pop",
+      "bebés"
+    ]
+  },
+  {
+    "id": "039",
+    "title": "Las vacas tienen mejores amigas",
+    "narration": "Las vacas tienen mejores amigas. Una investigadora en Inglaterra midió el estrés de vacas cuando las separaban del grupo. Si las dejaban solas con una vaca cualquiera, se estresaban. Pero si las dejaban con su vaca preferida, el ritmo de su corazón bajaba y estaban mucho más tranquilas. Las vacas eligen con quién pasar el tiempo, y lo recuerdan. Así que la próxima vez que veas dos vacas siempre juntas en el campo, no es casualidad. Son amigas.",
+    "scenes": [
+      {
+        "image": "two cows standing close together in a green field, heads touching",
+        "motion": "the cows nuzzle each other gently"
+      },
+      {
+        "image": "a researcher with a clipboard watching cows in a barn",
+        "motion": "the researcher writes notes while the cows move"
+      },
+      {
+        "image": "a lonely cow standing alone in an empty field looking sad",
+        "motion": "the cow looks around slowly"
+      },
+      {
+        "image": "two happy cows lying down together in the grass under a tree"
+      },
+      {
+        "image": "two cows walking side by side across a field at sunset"
+      }
+    ],
+    "tags": [
+      "animales",
+      "vacas",
+      "curiosidades"
+    ],
+    "yt_title": "Las vacas tienen mejores amigas 🐄",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "mejores amigas",
+      "juntas"
+    ]
+  },
+  {
+    "id": "040",
+    "title": "El baile de las abejas",
+    "narration": "Cuando una abeja encuentra flores, vuelve a la colmena y baila. No es por diversión. Camina en línea recta moviendo la cola y después da la vuelta, una y otra vez. El ángulo de esa línea, comparado con el Sol, dice hacia dónde volar. Y cuanto más tiempo mueve la cola, más lejos están las flores. Las otras abejas la tocan con las antenas, leen el mensaje y salen directo. Es un GPS hecho con baile.",
+    "scenes": [
+      {
+        "image": "a honeybee doing a waggle dance on a honeycomb surrounded by other bees",
+        "motion": "the bee wiggles its body in a straight line while others watch"
+      },
+      {
+        "image": "a field of colorful flowers seen from a bee's point of view with the sun in the sky",
+        "motion": "the camera flies low over the flowers"
+      },
+      {
+        "image": "bees touching a dancing bee with their antennae on the honeycomb",
+        "motion": "the bees move their antennae, touching the dancer"
+      },
+      {
+        "image": "a glowing arrow drawn on a honeycomb pointing at the sun"
+      },
+      {
+        "image": "a swarm of bees flying straight toward distant flowers"
+      }
+    ],
+    "tags": [
+      "animales",
+      "abejas",
+      "curiosidades"
+    ],
+    "yt_title": "Las abejas dan direcciones bailando 🐝",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "baila",
+      "GPS"
+    ]
+  },
+  {
+    "id": "041",
+    "title": "La Torre Eiffel crece en verano",
+    "narration": "La Torre Eiffel no mide siempre lo mismo. En verano crece hasta unos quince centímetros. Está hecha de hierro, y el hierro se estira cuando se calienta. Con el calor, cada pieza se agranda un poquito, y sumadas todas, la torre sube. En invierno, con el frío, se encoge otra vez. Y como el sol le pega de un solo lado, a veces la punta se inclina unos centímetros hacia el lado contrario. La torre se mueve todo el día, y nadie lo nota.",
+    "scenes": [
+      {
+        "image": "the Eiffel Tower on a hot sunny summer day with heat shimmer",
+        "motion": "heat waves shimmer around the tower"
+      },
+      {
+        "image": "a giant measuring tape next to the top of the Eiffel Tower",
+        "motion": "the tape slowly extends upward"
+      },
+      {
+        "image": "macro view of iron beams of the Eiffel Tower in sunlight",
+        "motion": "the camera slowly slides along the beams"
+      },
+      {
+        "image": "the Eiffel Tower covered in snow in winter"
+      },
+      {
+        "image": "the top of the Eiffel Tower leaning slightly with the sun on one side, exaggerated cartoon style"
+      }
+    ],
+    "tags": [
+      "ciencia",
+      "lugares",
+      "curiosidades"
+    ],
+    "yt_title": "La Torre Eiffel crece 15 cm en verano 🗼",
+    "playlist": "Ciencia loca",
+    "highlight": [
+      "quince centímetros",
+      "se encoge"
+    ]
+  },
+  {
+    "id": "042",
+    "title": "La rana de cristal esconde su sangre",
+    "narration": "La rana de cristal es casi transparente. Le puedes ver los huesos y el corazón desde abajo. Pero la sangre es roja, y eso la delataría. Entonces, cuando se duerme, hace algo que nadie entendía: casi toda su sangre desaparece. En 2022 unos científicos descubrieron a dónde va. La rana guarda casi todos sus glóbulos rojos dentro del hígado, que tiene como un espejo que los tapa. Así, mientras duerme en una hoja, es casi invisible.",
+    "scenes": [
+      {
+        "image": "a translucent glass frog on a green leaf, its organs faintly visible",
+        "motion": "the frog breathes slowly on the leaf"
+      },
+      {
+        "image": "the underside of a glass frog showing its heart and bones through the skin, macro",
+        "motion": "the tiny heart beats inside the transparent body"
+      },
+      {
+        "image": "red blood cells flowing into a shiny reflective liver inside a translucent frog, 3D medical style",
+        "motion": "the red cells flow into the liver and disappear"
+      },
+      {
+        "image": "scientists with a flashlight looking at a leaf in a rainforest at night"
+      },
+      {
+        "image": "an almost invisible glass frog sleeping on a leaf, only its outline visible"
+      }
+    ],
+    "tags": [
+      "animales",
+      "ranas",
+      "curiosidades"
+    ],
+    "yt_title": "Esta rana se vuelve invisible al dormir 🐸",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "invisible",
+      "hígado"
+    ]
+  },
+  {
+    "id": "043",
+    "title": "Los bebés tienen más huesos que tú",
+    "narration": "Un bebé tiene casi cien huesos más que tú. Nace con unos trescientos, y un adulto tiene doscientos seis. ¿A dónde se van? No se pierden: se juntan. Muchos huesos del bebé son piezas separadas, unidas por cartílago blando, para poder doblarse al nacer. Con los años, esas piezas se sueldan. Por ejemplo, el cráneo del bebé tiene partes blandas en la cabeza. Si alguna vez tocaste esa zona suave, eran huesos que todavía no se habían unido.",
+    "scenes": [
+      {
+        "image": "a cute sleeping newborn baby wrapped in a blanket",
+        "motion": "the baby breathes softly while sleeping"
+      },
+      {
+        "image": "an x-ray style illustration of a baby skeleton with many small separate bones",
+        "motion": "the separate bones glow one by one"
+      },
+      {
+        "image": "small bone pieces slowly merging together into one bone, 3D medical animation style",
+        "motion": "the pieces slide together and fuse"
+      },
+      {
+        "image": "an adult skeleton standing next to a baby skeleton in a museum, friendly style"
+      },
+      {
+        "image": "a parent gently touching the top of a baby's head"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "bebés",
+      "curiosidades"
+    ],
+    "yt_title": "Un bebé tiene casi 100 huesos más que tú 👶",
+    "playlist": "Cuerpo humano",
+    "highlight": [
+      "trescientos",
+      "doscientos seis"
+    ]
+  },
+  {
+    "id": "044",
+    "title": "El osito de agua sobrevive en el espacio",
+    "narration": "Hay un animal que sobrevivió en el espacio sin ninguna protección: el tardígrado, también llamado osito de agua. Mide menos de un milímetro y vive en el musgo. En 2007 lo mandaron afuera de una nave, expuesto al vacío y a la radiación. Muchos volvieron vivos. Su truco es secarse por completo, encogerse como una pelotita y apagarse casi del todo. Así puede aguantar años. Le pones una gota de agua, y en un rato vuelve a caminar.",
+    "scenes": [
+      {
+        "image": "a cute chubby microscopic tardigrade walking on green moss, microscope view",
+        "motion": "the tardigrade slowly walks with its tiny legs"
+      },
+      {
+        "image": "a small capsule floating in space above the earth with tiny tardigrades on it",
+        "motion": "the capsule slowly rotates in space"
+      },
+      {
+        "image": "a tardigrade curling up into a dry tiny ball",
+        "motion": "the tardigrade shrinks and curls into a ball"
+      },
+      {
+        "image": "a single drop of water falling on a dried tardigrade, macro"
+      },
+      {
+        "image": "a tardigrade waking up and walking again in a drop of water"
+      }
+    ],
+    "tags": [
+      "animales",
+      "espacio",
+      "curiosidades"
+    ],
+    "yt_title": "Este animal sobrevivió en el espacio sin traje 🚀",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "vacío",
+      "gota de agua"
+    ]
+  },
+  {
+    "id": "045",
+    "title": "El rayo es más caliente que el Sol",
+    "narration": "Un rayo es unas cinco veces más caliente que la superficie del Sol. La superficie del Sol está a unos cinco mil quinientos grados. Un rayo puede llegar a treinta mil. Calienta el aire de golpe, en una fracción de segundo, y el aire se expande tan rápido que explota. Esa explosión es el trueno. Por eso, si cuentas los segundos entre el rayo y el trueno y los divides por tres, sabes a cuántos kilómetros cayó.",
+    "scenes": [
+      {
+        "image": "a giant lightning bolt striking down over a dark city at night",
+        "motion": "the lightning flashes and branches across the sky"
+      },
+      {
+        "image": "the surface of the sun with solar flares, close view",
+        "motion": "the solar flares slowly swirl"
+      },
+      {
+        "image": "a glowing thermometer exploding past its limit next to a lightning bolt",
+        "motion": "the thermometer red line shoots up and bursts"
+      },
+      {
+        "image": "a shockwave of air expanding around a lightning bolt, stylized"
+      },
+      {
+        "image": "a person counting on their fingers while looking at a storm from a window"
+      }
+    ],
+    "tags": [
+      "ciencia",
+      "clima",
+      "curiosidades"
+    ],
+    "yt_title": "Un rayo es 5 veces más caliente que el Sol ⚡",
+    "playlist": "Ciencia loca",
+    "highlight": [
+      "treinta mil",
+      "trueno"
+    ]
+  },
+  {
+    "id": "046",
+    "title": "Por qué las hojas cambian de color",
+    "narration": "Las hojas de otoño no se vuelven amarillas. Ya eran amarillas. Durante todo el año, las hojas tienen pigmentos amarillos y naranjas, pero el verde de la clorofila es tan fuerte que los tapa. Cuando llega el frío, el árbol deja de fabricar clorofila para ahorrar energía. El verde desaparece, y aparecen los colores que estaban escondidos todo el tiempo. Los rojos sí son nuevos: algunos árboles los fabrican al final, como protector solar para la hoja.",
+    "scenes": [
+      {
+        "image": "a tree with bright orange and yellow autumn leaves in a park, sunlight",
+        "motion": "leaves gently fall from the tree"
+      },
+      {
+        "image": "macro view of a green leaf with hidden yellow pigments glowing underneath",
+        "motion": "the green slowly fades revealing yellow underneath"
+      },
+      {
+        "image": "a single leaf changing from green to yellow to orange, time lapse style",
+        "motion": "the leaf changes color gradually"
+      },
+      {
+        "image": "a bright red maple leaf in front of the sun"
+      },
+      {
+        "image": "a forest in autumn with red, yellow and orange trees, aerial view"
+      }
+    ],
+    "tags": [
+      "naturaleza",
+      "plantas",
+      "curiosidades"
+    ],
+    "yt_title": "Las hojas ya son amarillas (y no lo sabías) 🍂",
+    "playlist": "Naturaleza",
+    "highlight": [
+      "ya eran amarillas",
+      "protector solar"
+    ]
+  },
+  {
+    "id": "047",
+    "title": "La fresa no es una baya, el plátano sí",
+    "narration": "Para la ciencia, la fresa no es una baya. Pero el plátano sí. Una baya es una fruta que sale de una sola flor y tiene las semillas adentro. El plátano, la uva y hasta el tomate cumplen la regla. La fresa no. Y lo más loco: esos puntitos que tiene por fuera no son semillas. Cada puntito es una fruta de verdad, con una semilla adentro. O sea, cuando comes una fresa, te estás comiendo cientos de frutitas pegadas.",
+    "scenes": [
+      {
+        "image": "a fresh red strawberry next to a yellow banana on a white table",
+        "motion": "the strawberry slowly rotates"
+      },
+      {
+        "image": "a scientist with a magnifying glass examining a strawberry",
+        "motion": "the scientist leans in with the magnifying glass"
+      },
+      {
+        "image": "a banana, grapes and a tomato with a green check mark floating above them",
+        "motion": "the check mark pops in above the fruits"
+      },
+      {
+        "image": "extreme macro of the tiny yellow dots on the surface of a strawberry"
+      },
+      {
+        "image": "a strawberry cut in half next to tiny fruits, 3D illustration"
+      }
+    ],
+    "tags": [
+      "comida",
+      "plantas",
+      "curiosidades"
+    ],
+    "yt_title": "La fresa no es una baya, pero el plátano sí 🍓",
+    "playlist": "Comida increíble",
+    "highlight": [
+      "el plátano sí",
+      "cientos de frutitas"
+    ]
+  },
+  {
+    "id": "048",
+    "title": "Hay 2 millones de hormigas por persona",
+    "narration": "Por cada persona en el mundo hay unos dos millones y medio de hormigas. Un estudio de 2022 calculó que en la Tierra viven unos veinte mil billones de hormigas. Si las pusieras todas en una balanza, pesarían más que todos los pájaros y mamíferos salvajes juntos. Y no están de adorno: mueven la tierra, reparten semillas y limpian el suelo. Sin las hormigas, muchos bosques no podrían existir. El planeta, en el fondo, es de ellas.",
+    "scenes": [
+      {
+        "image": "a line of ants walking across a leaf in a garden, macro",
+        "motion": "the ants march in a line across the leaf"
+      },
+      {
+        "image": "a giant pile of ants next to a single person for scale, cartoon style",
+        "motion": "the pile of ants moves and wiggles"
+      },
+      {
+        "image": "a giant scale with ants on one side and birds and wild mammals on the other",
+        "motion": "the scale tips toward the ants"
+      },
+      {
+        "image": "ants carrying seeds into an underground nest, cutaway view"
+      },
+      {
+        "image": "a lush green forest with tiny ants on the ground in the foreground"
+      }
+    ],
+    "tags": [
+      "animales",
+      "hormigas",
+      "curiosidades"
+    ],
+    "yt_title": "Hay 2 millones y medio de hormigas por cada persona 🐜",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "dos millones y medio",
+      "más que todos"
+    ]
+  },
+  {
+    "id": "049",
+    "title": "Los pingüinos regalan piedras",
+    "narration": "Algunos pingüinos se declaran con una piedra. El macho busca entre miles de piedritas en la playa hasta encontrar la más lisa y perfecta. Después se la lleva a la hembra y la deja a sus pies. Si ella la acepta, la usan para armar su nido juntos. Las piedras son tan valiosas que algunos pingüinos se las roban a sus vecinos cuando no miran. Encontrar la piedra perfecta es, para ellos, como un anillo de compromiso.",
+    "scenes": [
+      {
+        "image": "a cute penguin on a pebble beach holding a small smooth stone in its beak",
+        "motion": "the penguin waddles forward with the stone"
+      },
+      {
+        "image": "a penguin carefully searching through pebbles on a beach",
+        "motion": "the penguin picks up a pebble and inspects it"
+      },
+      {
+        "image": "a male penguin dropping a pebble at the feet of a female penguin",
+        "motion": "the female penguin looks down at the pebble"
+      },
+      {
+        "image": "two penguins building a nest of pebbles together"
+      },
+      {
+        "image": "a sneaky penguin stealing a pebble from a neighbor's nest"
+      }
+    ],
+    "tags": [
+      "animales",
+      "pingüinos",
+      "curiosidades"
+    ],
+    "yt_title": "Los pingüinos se declaran con una piedra 🐧",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "piedra",
+      "anillo"
+    ]
+  },
+  {
+    "id": "050",
+    "title": "Por qué se pone la piel de gallina",
+    "narration": "Cuando tienes frío o te emocionas, se te pone la piel de gallina. Cada pelito tiene un músculo diminuto en la base, y ese músculo lo levanta. En los animales con mucho pelo, eso sirve: el pelo parado atrapa aire caliente, o los hace ver más grandes cuando tienen miedo. Como cuando un gato se eriza. Nosotros ya casi no tenemos pelo, pero el cuerpo sigue haciendo lo mismo. Es un botón que quedó de cuando éramos mucho más peludos.",
+    "scenes": [
+      {
+        "image": "macro view of skin with goosebumps and tiny hairs standing up",
+        "motion": "the tiny hairs slowly rise"
+      },
+      {
+        "image": "a cutaway 3D view of a hair follicle with a tiny muscle pulling the hair up",
+        "motion": "the tiny muscle contracts and the hair stands up"
+      },
+      {
+        "image": "a scared cat with its fur standing up and its back arched",
+        "motion": "the cat puffs up its fur"
+      },
+      {
+        "image": "a fluffy monkey with fur puffed up in the cold snow"
+      },
+      {
+        "image": "a person shivering in the cold with arms crossed"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "evolución",
+      "curiosidades"
+    ],
+    "yt_title": "La piel de gallina es un resto de cuando teníamos pelo 🥶",
+    "playlist": "Cuerpo humano",
+    "highlight": [
+      "músculo diminuto",
+      "peludos"
+    ]
+  },
+  {
+    "id": "051",
+    "title": "Tu corazón late 100 mil veces por día",
+    "narration": "Tu corazón late unas cien mil veces por día. Sin descanso, sin que se lo pidas. En toda una vida, son más de dos mil quinientos millones de latidos. Cada latido empuja sangre por un camino de vasos sanguíneos tan largo que, si los pusieras en fila, darían más de dos vueltas a la Tierra. Y lo más impresionante: el corazón tiene su propio generador eléctrico. Late solo, aunque lo saquen del cuerpo, mientras tenga oxígeno.",
+    "scenes": [
+      {
+        "image": "a glowing red human heart beating inside a translucent chest, 3D medical style",
+        "motion": "the heart beats rhythmically"
+      },
+      {
+        "image": "a digital counter with fast increasing numbers next to a heart",
+        "motion": "the numbers spin up rapidly"
+      },
+      {
+        "image": "blood vessels wrapping twice around planet Earth like glowing red threads",
+        "motion": "the red threads slowly wrap around the planet"
+      },
+      {
+        "image": "a tiny electric spark inside a heart, 3D illustration"
+      },
+      {
+        "image": "a heart glowing with electric light in a dark background"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "corazón",
+      "curiosidades"
+    ],
+    "yt_title": "Tu corazón late 100.000 veces por día ❤️",
+    "playlist": "Cuerpo humano",
+    "highlight": [
+      "cien mil",
+      "dos vueltas"
+    ]
+  },
+  {
+    "id": "052",
+    "title": "Las huellas en la Luna duran millones de años",
+    "narration": "Las huellas que dejaron los astronautas en la Luna siguen ahí. Y podrían durar millones de años. En la Tierra, el viento y la lluvia borran cualquier pisada. Pero la Luna no tiene aire, así que no hay viento, ni lluvia, ni nada que las tape. Lo único que las puede borrar es la caída de pequeñas piedras del espacio, y eso pasa muy lento. Dentro de millones de años, esas huellas seguirán marcando el día que llegamos.",
+    "scenes": [
+      {
+        "image": "an astronaut boot print in grey moon dust, close up",
+        "motion": "the camera slowly pushes in on the footprint"
+      },
+      {
+        "image": "an astronaut walking on the moon leaving footprints, earth in the sky",
+        "motion": "the astronaut takes slow bouncy steps"
+      },
+      {
+        "image": "a footprint on a beach being erased by a wave",
+        "motion": "the wave washes over the footprint"
+      },
+      {
+        "image": "tiny meteorites slowly falling on the lunar surface"
+      },
+      {
+        "image": "footprints on the moon with the earth rising in the black sky"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "luna",
+      "curiosidades"
+    ],
+    "yt_title": "Las huellas de la Luna van a durar millones de años 👣",
+    "playlist": "Espacio",
+    "highlight": [
+      "millones de años",
+      "no tiene aire"
+    ]
+  },
+  {
+    "id": "053",
+    "title": "Las nutrias se toman de las manos",
+    "narration": "Las nutrias marinas duermen flotando de espaldas en el agua. Pero hay un problema: mientras duermen, las corrientes las podrían separar. Entonces se toman de las manos. A veces se enredan en algas, como si fueran un cinturón, para no irse a la deriva. Y hay algo más tierno todavía: muchas tienen una piedra favorita. La usan para romper conchas, y la guardan en un bolsillo de piel debajo del brazo, para no perderla nunca.",
+    "scenes": [
+      {
+        "image": "two cute sea otters floating on their backs holding hands in calm water",
+        "motion": "the otters float gently holding paws"
+      },
+      {
+        "image": "a group of sea otters sleeping in a kelp forest at the surface",
+        "motion": "the otters bob gently with the waves"
+      },
+      {
+        "image": "a sea otter wrapping itself in kelp",
+        "motion": "the otter rolls in the kelp"
+      },
+      {
+        "image": "a sea otter cracking a shell with a stone on its belly"
+      },
+      {
+        "image": "a sea otter holding a small round stone close to its chest"
+      }
+    ],
+    "tags": [
+      "animales",
+      "nutrias",
+      "curiosidades"
+    ],
+    "yt_title": "Las nutrias duermen de la mano 🦦",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "de las manos",
+      "piedra favorita"
+    ]
+  },
+  {
+    "id": "054",
+    "title": "Los koalas tienen huellas como las tuyas",
+    "narration": "Tus huellas digitales son únicas. Ni siquiera los gemelos idénticos tienen las mismas. Pero hay un animal con huellas casi iguales a las humanas: el koala. Son tan parecidas que, vistas al microscopio, cuesta muchísimo distinguirlas. Y lo raro es que los koalas no son parientes cercanos nuestros. Les aparecieron por su cuenta, seguramente para agarrar mejor las ramas y las hojas. Así que un koala podría dejar huellas en la escena de un crimen.",
+    "scenes": [
+      {
+        "image": "a close up of a human fingertip with fingerprint lines, soft light",
+        "motion": "the light slowly moves across the fingerprint ridges"
+      },
+      {
+        "image": "identical twins pressing their fingers on glass, showing different fingerprints",
+        "motion": "the twins press their fingers on the glass"
+      },
+      {
+        "image": "a cute koala holding a eucalyptus branch with its hand visible",
+        "motion": "the koala grabs the branch and chews a leaf"
+      },
+      {
+        "image": "a koala fingerprint and a human fingerprint side by side under a magnifying glass"
+      },
+      {
+        "image": "a koala inside a detective scene with fingerprint powder on a table, funny"
+      }
+    ],
+    "tags": [
+      "animales",
+      "koalas",
+      "curiosidades"
+    ],
+    "yt_title": "Los koalas tienen huellas como las tuyas 🐨",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "únicas",
+      "koala"
+    ]
+  },
+  {
+    "id": "055",
+    "title": "A qué huele el espacio",
+    "narration": "El espacio tiene olor. Los astronautas lo cuentan después de hacer caminatas afuera de la estación. Cuando vuelven a entrar y se sacan el casco, sus trajes huelen raro. Unos dicen que a carne asada. Otros, a pólvora o a metal caliente. Los científicos creen que ese olor viene de partículas que se forman cuando mueren las estrellas, y que se pegan a los trajes. O sea que, cuando un astronauta huele su traje, está oliendo restos de estrellas.",
+    "scenes": [
+      {
+        "image": "an astronaut floating outside the space station with earth below",
+        "motion": "the astronaut floats slowly with a tether"
+      },
+      {
+        "image": "an astronaut removing a helmet inside a space station, sniffing the suit",
+        "motion": "the astronaut lifts the helmet off and sniffs"
+      },
+      {
+        "image": "a steak sizzling on a grill with smoke",
+        "motion": "smoke rises from the sizzling steak"
+      },
+      {
+        "image": "a dying star releasing colorful dust into space"
+      },
+      {
+        "image": "tiny glowing stardust particles stuck on a white spacesuit, macro"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "astronautas",
+      "curiosidades"
+    ],
+    "yt_title": "Los astronautas dicen que el espacio huele a esto 👨‍🚀",
+    "playlist": "Espacio",
+    "highlight": [
+      "carne asada",
+      "estrellas"
+    ]
+  },
+  {
+    "id": "056",
+    "title": "Por qué pica el chile",
+    "narration": "El chile no está caliente. Engaña a tu cerebro. Tiene una sustancia que se pega a los mismos sensores de tu lengua que detectan el calor. Tu cerebro recibe la señal y cree que te estás quemando. Por eso sudas y te pones rojo. Pero lo más curioso: los pájaros no sienten nada. Se comen los chiles sin problema y reparten las semillas lejos. La planta inventó el picante para alejar a los mamíferos y dejar comer solo a los pájaros.",
+    "scenes": [
+      {
+        "image": "a bright red chili pepper on a wooden table with flames around it",
+        "motion": "the flames flicker around the chili"
+      },
+      {
+        "image": "a person eating a chili with a red face and sweat, cartoon style",
+        "motion": "the person's face turns red and steam comes out of their ears"
+      },
+      {
+        "image": "macro view of a tongue with glowing heat sensors",
+        "motion": "the sensors glow orange one by one"
+      },
+      {
+        "image": "a colorful bird happily eating red chili peppers on a plant"
+      },
+      {
+        "image": "a mouse looking at a chili pepper and walking away"
+      }
+    ],
+    "tags": [
+      "comida",
+      "plantas",
+      "curiosidades"
+    ],
+    "yt_title": "El chile engaña a tu cerebro 🌶️",
+    "playlist": "Comida increíble",
+    "highlight": [
+      "engaña",
+      "pájaros"
+    ]
+  },
+  {
+    "id": "057",
+    "title": "El golpe del camarón mantis",
+    "narration": "El camarón mantis tiene el golpe más rápido del mundo animal. Sus brazos se doblan como un resorte y se sueltan a una velocidad parecida a la de una bala. Es tan rápido que el agua alrededor se rompe y forma burbujas que explotan con un destello de luz y muchísimo calor. Así rompe las conchas de cangrejos y caracoles. En los acuarios a veces tienen que usar vidrio especial, porque pueden romper el vidrio común de un golpe.",
+    "scenes": [
+      {
+        "image": "a colorful mantis shrimp on the sea floor among coral",
+        "motion": "the mantis shrimp moves its eyes and claws"
+      },
+      {
+        "image": "a mantis shrimp punching a snail shell, with a burst of bubbles",
+        "motion": "the claw strikes and bubbles burst"
+      },
+      {
+        "image": "a tiny glowing bubble exploding with a flash of light underwater, macro",
+        "motion": "the bubble collapses with a bright flash"
+      },
+      {
+        "image": "a cracked crab shell on the sea floor next to a mantis shrimp"
+      },
+      {
+        "image": "a mantis shrimp in an aquarium with a crack on the glass"
+      }
+    ],
+    "tags": [
+      "animales",
+      "mar",
+      "curiosidades"
+    ],
+    "yt_title": "Su golpe es tan rápido como una bala 🦐",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "bala",
+      "vidrio"
+    ]
+  },
+  {
+    "id": "058",
+    "title": "Los elefantes escuchan con los pies",
+    "narration": "Los elefantes pueden escuchar con los pies. Cuando un elefante hace un sonido muy grave, la vibración no solo viaja por el aire. También viaja por el suelo, a varios kilómetros. Otros elefantes la sienten a través de sus patas, que tienen sensores especiales. A veces se quedan quietos, con una pata levantada, como si escucharan atentos. Así se avisan de peligros o se encuentran con su manada, sin verse ni oírse por el aire.",
+    "scenes": [
+      {
+        "image": "an elephant standing in the savanna at sunset",
+        "motion": "the elephant slowly flaps its ears"
+      },
+      {
+        "image": "vibration waves traveling through the ground from an elephant, stylized",
+        "motion": "the waves ripple through the ground"
+      },
+      {
+        "image": "close up of an elephant foot pressing on the dusty ground",
+        "motion": "the foot slowly presses down raising dust"
+      },
+      {
+        "image": "an elephant standing still with one foot raised listening"
+      },
+      {
+        "image": "a herd of elephants walking together toward a distant elephant"
+      }
+    ],
+    "tags": [
+      "animales",
+      "elefantes",
+      "curiosidades"
+    ],
+    "yt_title": "Los elefantes escuchan con los pies 🐘",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "pies",
+      "kilómetros"
+    ]
+  },
+  {
+    "id": "059",
+    "title": "Llueven diamantes en Neptuno",
+    "narration": "En Neptuno y en Urano podrían llover diamantes. Estos planetas tienen mucho metano, que está hecho de carbono. Muy adentro, la presión es tan enorme y el calor tan fuerte, que ese carbono se aprieta hasta volverse diamante. Los diamantes caerían lentamente hacia el centro, como una lluvia. Los científicos lo probaron en laboratorio, disparando láseres a plástico, y lograron fabricar diamantes diminutos. Un planeta entero donde llueven joyas.",
+    "scenes": [
+      {
+        "image": "the deep blue planet Neptune in space",
+        "motion": "Neptune rotates slowly with swirling clouds"
+      },
+      {
+        "image": "sparkling diamonds falling like rain through blue clouds inside a planet",
+        "motion": "the diamonds fall slowly through the blue clouds"
+      },
+      {
+        "image": "carbon atoms being squeezed into a diamond, 3D stylized",
+        "motion": "the atoms compress and form a sparkling crystal"
+      },
+      {
+        "image": "a laser beam hitting a piece of plastic in a high tech laboratory"
+      },
+      {
+        "image": "a tiny diamond on a scientist's fingertip with Neptune in the background"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "planetas",
+      "curiosidades"
+    ],
+    "yt_title": "En Neptuno podrían llover diamantes 💎",
+    "playlist": "Espacio",
+    "highlight": [
+      "diamantes",
+      "láseres"
+    ]
+  },
+  {
+    "id": "060",
+    "title": "Los días eran más cortos",
+    "narration": "En la época de los dinosaurios, el día duraba menos de veinticuatro horas. Hace setenta millones de años, un día duraba más o menos veintitrés horas y media. La razón es la Luna. Su fuerza tira del mar y frena a la Tierra muy despacito, como un freno de mano. Cada siglo, el día se alarga un poquito. Y no se detiene: dentro de millones de años, el día va a durar más de veinticinco horas.",
+    "scenes": [
+      {
+        "image": "a dinosaur standing in a prehistoric landscape with a sunset",
+        "motion": "the dinosaur slowly turns its head toward the sunset"
+      },
+      {
+        "image": "a giant clock in the sky above a prehistoric jungle",
+        "motion": "the clock hands spin quickly"
+      },
+      {
+        "image": "the moon pulling the ocean tides on earth, glowing lines",
+        "motion": "the tide lines pulse between the earth and the moon"
+      },
+      {
+        "image": "planet earth slowing down with a brake symbol, stylized"
+      },
+      {
+        "image": "a futuristic city at night with a clock showing 25 hours"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "dinosaurios",
+      "curiosidades"
+    ],
+    "yt_title": "En la época de los dinosaurios el día duraba menos 🦖",
+    "playlist": "Espacio",
+    "highlight": [
+      "veintitrés horas",
+      "veinticinco"
+    ]
+  },
+  {
+    "id": "061",
+    "title": "Por qué los mosquitos te pican más a ti",
+    "narration": "Si los mosquitos siempre te pican a ti, no es mala suerte. Te eligen. Los mosquitos encuentran a las personas por el aire que exhalan, por el calor del cuerpo y, sobre todo, por el olor de la piel. Un estudio de 2022 descubrió que las personas que más atraen a los mosquitos tienen en la piel más cantidad de ciertos ácidos. Y lo más injusto: ese olor no cambia. Si hoy eres un imán de mosquitos, lo vas a seguir siendo.",
+    "scenes": [
+      {
+        "image": "a mosquito flying toward a person's arm at night, macro",
+        "motion": "the mosquito flies closer with wings buzzing"
+      },
+      {
+        "image": "glowing trails of breath and heat coming from a sleeping person, mosquitoes following them",
+        "motion": "the glowing trails drift and mosquitoes follow"
+      },
+      {
+        "image": "a group of friends outdoors where only one person is surrounded by mosquitoes, cartoon",
+        "motion": "the mosquitoes circle around one person"
+      },
+      {
+        "image": "a scientist in a lab with a glass box full of mosquitoes"
+      },
+      {
+        "image": "a giant magnet attracting mosquitoes, funny 3D style"
+      }
+    ],
+    "tags": [
+      "animales",
+      "insectos",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué los mosquitos te eligen a ti 🦟",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "te eligen",
+      "imán"
+    ]
+  },
+  {
+    "id": "062",
+    "title": "El perezoso baja una vez por semana",
+    "narration": "El perezoso es tan lento que le crecen algas en el pelo. Se mueve tan poco que su pelaje se vuelve verde, y eso lo ayuda a esconderse entre los árboles. Gasta tan poquita energía que puede vivir comiendo solo hojas. Y hay algo increíble: casi nunca baja del árbol. Lo hace más o menos una vez por semana, y solo para hacer sus necesidades en el suelo. Es el momento más peligroso de su vida, y todavía nadie sabe bien por qué lo hace.",
+    "scenes": [
+      {
+        "image": "a cute sloth hanging from a tree branch in a rainforest",
+        "motion": "the sloth slowly turns its head and blinks"
+      },
+      {
+        "image": "close up of sloth fur with green algae growing in it",
+        "motion": "the camera slowly moves along the green fur"
+      },
+      {
+        "image": "a sloth slowly eating a leaf",
+        "motion": "the sloth slowly chews the leaf"
+      },
+      {
+        "image": "a sloth climbing down a tree trunk very slowly toward the ground"
+      },
+      {
+        "image": "a sloth on the forest floor looking around carefully"
+      }
+    ],
+    "tags": [
+      "animales",
+      "perezosos",
+      "curiosidades"
+    ],
+    "yt_title": "El perezoso es tan lento que le crecen plantas encima 🦥",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "algas",
+      "una vez por semana"
+    ]
+  },
+  {
+    "id": "063",
+    "title": "La Gran Muralla no se ve desde el espacio",
+    "narration": "Seguro escuchaste que la Gran Muralla China se ve desde el espacio. Es mentira. Es larguísima, pero muy angosta, y es del mismo color que la tierra que la rodea. Los astronautas lo dicen: a simple vista no se distingue. Es como intentar ver un cabello a varios metros de distancia. Lo que sí se ve de noche desde el espacio son las luces de las ciudades, las carreteras iluminadas y hasta los barcos de pesca en el mar.",
+    "scenes": [
+      {
+        "image": "the Great Wall of China winding over green mountains, aerial view",
+        "motion": "the camera flies slowly along the wall"
+      },
+      {
+        "image": "an astronaut looking out of a space station window at earth",
+        "motion": "the astronaut presses closer to the window"
+      },
+      {
+        "image": "a single human hair seen from far away against a light background",
+        "motion": "the camera pulls back from the hair"
+      },
+      {
+        "image": "earth at night from space with glowing city lights"
+      },
+      {
+        "image": "fishing boats with bright lights on a dark sea seen from above"
+      }
+    ],
+    "tags": [
+      "historia",
+      "espacio",
+      "curiosidades"
+    ],
+    "yt_title": "La Gran Muralla NO se ve desde el espacio 🧱",
+    "playlist": "Mitos falsos",
+    "highlight": [
+      "mentira",
+      "luces"
+    ]
+  },
+  {
+    "id": "064",
+    "title": "Por qué cantas mejor en la ducha",
+    "narration": "No es tu imaginación: en la ducha cantas mejor. Las paredes del baño son duras y lisas, así que tu voz rebota en ellas una y otra vez. Ese eco cortito hace que tu voz suene más llena y tape las notas desafinadas. Además, el vapor y el calor relajan la garganta. Los estudios de grabación usan el mismo truco, pero con efectos de sonido. Por eso, en la ducha, todos suenan un poco como un cantante famoso.",
+    "scenes": [
+      {
+        "image": "a person singing happily in a steamy shower with a shampoo bottle as microphone",
+        "motion": "the person sings and moves to the rhythm"
+      },
+      {
+        "image": "visible sound waves bouncing between shiny tiled bathroom walls, stylized",
+        "motion": "the waves bounce off the tiles"
+      },
+      {
+        "image": "steam rising in a warm bathroom with soft light",
+        "motion": "the steam swirls slowly"
+      },
+      {
+        "image": "a recording studio with a singer and a microphone"
+      },
+      {
+        "image": "a person in a towel taking a bow with imaginary applause, funny"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "sonido",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué cantas mejor en la ducha 🚿",
+    "playlist": "Ciencia loca",
+    "highlight": [
+      "rebota",
+      "cantante"
+    ]
+  },
+  {
+    "id": "065",
+    "title": "El plástico de burbujas era papel tapiz",
+    "narration": "El plástico de burbujas no se inventó para envolver cosas. En 1957, dos inventores pegaron dos cortinas de plástico de baño y atraparon burbujas de aire adentro. Querían vender un papel tapiz moderno, con textura. Nadie lo quiso. Después probaron venderlo como aislante para casas, y tampoco funcionó. Hasta que una empresa de computadoras lo usó para proteger sus máquinas en los envíos. Y así un papel tapiz fallido terminó en todos los paquetes del mundo.",
+    "scenes": [
+      {
+        "image": "a sheet of bubble wrap close up in soft light",
+        "motion": "a finger presses a bubble and it pops"
+      },
+      {
+        "image": "two inventors in a 1950s workshop holding a sheet of bubble plastic",
+        "motion": "the inventors stretch the plastic between them"
+      },
+      {
+        "image": "a 1950s living room with bubble wrap on the walls as wallpaper",
+        "motion": "the camera slowly pans across the strange wall"
+      },
+      {
+        "image": "an old computer wrapped in bubble wrap inside a cardboard box"
+      },
+      {
+        "image": "a giant pile of packages wrapped in bubble wrap"
+      }
+    ],
+    "tags": [
+      "inventos",
+      "historia",
+      "curiosidades"
+    ],
+    "yt_title": "El plástico de burbujas se inventó para la pared 🫧",
+    "playlist": "Inventos por accidente",
+    "highlight": [
+      "papel tapiz",
+      "fallido"
+    ]
+  },
+  {
+    "id": "066",
+    "title": "Los post-it nacieron de un pegamento malo",
+    "narration": "Los post-it nacieron de un error. En 1968, un científico intentaba inventar un pegamento súper fuerte. Le salió todo lo contrario: uno que pegaba muy poquito y se despegaba sin dejar marca. Nadie sabía para qué servía. Años después, un compañero cantaba en el coro de su iglesia y se le caían los papelitos que marcaban las páginas del libro. Se acordó de ese pegamento raro. Lo probó, funcionó, y así nació el post-it.",
+    "scenes": [
+      {
+        "image": "a colorful stack of sticky notes on a desk",
+        "motion": "a sticky note peels off the stack"
+      },
+      {
+        "image": "a 1960s scientist in a lab looking disappointed at a jar of glue",
+        "motion": "the scientist pulls a sticky strand that easily breaks"
+      },
+      {
+        "image": "a choir singer with bookmarks falling out of a hymn book",
+        "motion": "the paper bookmarks fall out of the book"
+      },
+      {
+        "image": "a man sticking a yellow note on a page of a book with a smile"
+      },
+      {
+        "image": "a wall covered in colorful sticky notes in an office"
+      }
+    ],
+    "tags": [
+      "inventos",
+      "historia",
+      "curiosidades"
+    ],
+    "yt_title": "Los post-it nacieron de un error 📝",
+    "playlist": "Inventos por accidente",
+    "highlight": [
+      "error",
+      "post-it"
+    ]
+  },
+  {
+    "id": "067",
+    "title": "La penicilina por un descuido",
+    "narration": "Uno de los descubrimientos más importantes de la historia pasó porque alguien dejó la mesa sucia. En 1928, Alexander Fleming se fue de vacaciones y dejó platitos con bacterias sin limpiar. Cuando volvió, uno tenía moho. Y alrededor del moho, las bacterias habían muerto. Ese moho fabricaba una sustancia que mataba bacterias: la penicilina. Fue el primer antibiótico, y desde entonces salvó a cientos de millones de personas.",
+    "scenes": [
+      {
+        "image": "a messy 1920s laboratory desk with petri dishes and glassware",
+        "motion": "dust floats in the sunlight over the desk"
+      },
+      {
+        "image": "a petri dish with a green mold spot and a clear ring around it, macro",
+        "motion": "the mold slowly grows in the dish"
+      },
+      {
+        "image": "a scientist in the 1920s looking at a petri dish with surprise",
+        "motion": "the scientist lifts the dish to the light"
+      },
+      {
+        "image": "bacteria disappearing around mold under a microscope, 3D style"
+      },
+      {
+        "image": "old medicine vials of penicillin on a shelf, warm light"
+      }
+    ],
+    "tags": [
+      "inventos",
+      "medicina",
+      "curiosidades"
+    ],
+    "yt_title": "Un científico desordenado salvó millones de vidas 🧫",
+    "playlist": "Inventos por accidente",
+    "highlight": [
+      "moho",
+      "cientos de millones"
+    ]
+  },
+  {
+    "id": "068",
+    "title": "Por qué no se cae la Torre de Pisa",
+    "narration": "La Torre de Pisa empezó a inclinarse cuando todavía la estaban construyendo, hace más de ochocientos años. El suelo debajo es blando, como arena mojada, y un lado se hundió más que el otro. Durante siglos se fue inclinando cada vez más. A fines del siglo veinte estaba a punto de caerse. Entonces los ingenieros sacaron tierra con mucho cuidado de debajo del lado alto. La torre se enderezó unos cuarenta centímetros, y hoy es más segura que nunca.",
+    "scenes": [
+      {
+        "image": "the Leaning Tower of Pisa on a sunny day with tourists",
+        "motion": "the camera slowly circles around the tower"
+      },
+      {
+        "image": "medieval builders constructing a leaning white tower",
+        "motion": "the workers lift stones with a wooden crane"
+      },
+      {
+        "image": "a cutaway view of soft wet soil under a leaning tower",
+        "motion": "the ground slowly sinks on one side"
+      },
+      {
+        "image": "engineers removing soil from under one side of the tower with machines"
+      },
+      {
+        "image": "tourists pretending to hold up the Leaning Tower of Pisa"
+      }
+    ],
+    "tags": [
+      "historia",
+      "lugares",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué no se cae la Torre de Pisa 🇮🇹",
+    "playlist": "Lugares increíbles",
+    "highlight": [
+      "blando",
+      "cuarenta centímetros"
+    ]
+  },
+  {
+    "id": "069",
+    "title": "Cuánto pesa una nube",
+    "narration": "Una nube esponjosa normal pesa unas quinientas toneladas. Lo mismo que unos cien elefantes. Parece imposible que algo tan pesado flote, pero ese peso está repartido en millones de gotitas diminutas, separadas en un espacio enorme. Cada gotita es tan liviana que el aire caliente que sube la mantiene arriba. Cuando las gotitas se juntan y se hacen más grandes, ya no se pueden sostener, y caen. Eso es la lluvia.",
+    "scenes": [
+      {
+        "image": "a big fluffy white cloud in a bright blue sky",
+        "motion": "the cloud drifts slowly"
+      },
+      {
+        "image": "a giant scale with a cloud on one side and a hundred elephants on the other",
+        "motion": "the scale stays balanced and slightly wobbles"
+      },
+      {
+        "image": "tiny water droplets floating in the air, macro view with sunlight",
+        "motion": "the droplets float and drift slowly"
+      },
+      {
+        "image": "warm air rising under a cloud with stylized arrows"
+      },
+      {
+        "image": "a cloud turning dark and starting to rain over a field"
+      }
+    ],
+    "tags": [
+      "clima",
+      "ciencia",
+      "curiosidades"
+    ],
+    "yt_title": "Una nube pesa lo mismo que 100 elefantes ☁️",
+    "playlist": "Ciencia loca",
+    "highlight": [
+      "quinientas toneladas",
+      "cien elefantes"
+    ]
+  },
+  {
+    "id": "070",
+    "title": "La Tierra gira a 1600 km por hora",
+    "narration": "En este momento te estás moviendo a más de mil seiscientos kilómetros por hora, si estás cerca del ecuador. Es la velocidad a la que gira la Tierra. Y además viaja alrededor del Sol a más de cien mil kilómetros por hora. ¿Por qué no lo sientes? Porque el planeta gira siempre parejo, sin frenar ni acelerar. Igual que en un avión: si va estable, puedes caminar tranquilo aunque vaya rapidísimo.",
+    "scenes": [
+      {
+        "image": "planet earth spinning in space with the sun in the background",
+        "motion": "the earth rotates steadily"
+      },
+      {
+        "image": "a person sitting calmly on a couch on top of a spinning globe, funny 3D",
+        "motion": "the globe spins under the relaxed person"
+      },
+      {
+        "image": "earth orbiting the sun with a glowing trail",
+        "motion": "the earth moves along its orbit"
+      },
+      {
+        "image": "a speedometer showing a huge number over a view of earth"
+      },
+      {
+        "image": "a passenger walking calmly down the aisle of a flying airplane"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "planeta tierra",
+      "curiosidades"
+    ],
+    "yt_title": "Ahora mismo giras a 1600 km por hora 🌍",
+    "playlist": "Espacio",
+    "highlight": [
+      "mil seiscientos",
+      "parejo"
+    ]
+  },
+  {
+    "id": "071",
+    "title": "Por qué te suenan las tripas",
+    "narration": "Las tripas te suenan todo el tiempo, no solo cuando tienes hambre. Tu intestino se aprieta en ondas para empujar la comida, el líquido y el aire. Cuando está lleno, la comida amortigua el ruido. Pero cuando está vacío, solo quedan aire y jugos, y suena mucho más fuerte. Y hay algo más: unas dos horas después de comer, el intestino hace una limpieza con ondas fuertes. Ese rugido no siempre es hambre. A veces es tu cuerpo barriendo.",
+    "scenes": [
+      {
+        "image": "a person in a quiet office holding their stomach with an embarrassed face",
+        "motion": "the person looks around embarrassed"
+      },
+      {
+        "image": "a 3D medical view of intestines squeezing in waves",
+        "motion": "the intestine squeezes in a wave motion"
+      },
+      {
+        "image": "air bubbles and liquid moving inside an empty stomach, 3D stylized",
+        "motion": "the bubbles move and swirl"
+      },
+      {
+        "image": "a cartoon broom sweeping inside an intestine"
+      },
+      {
+        "image": "a person happily eating a big plate of food"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "digestión",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué te suenan las tripas 🫃",
+    "playlist": "Cuerpo humano",
+    "highlight": [
+      "todo el tiempo",
+      "barriendo"
+    ]
+  },
+  {
+    "id": "072",
+    "title": "Las mariposas saborean con las patas",
+    "narration": "Las mariposas sienten los sabores con las patas. Tienen sensores en los pies, y cuando se paran sobre una hoja o una flor, ya saben si es comida. Para las hembras es muy importante: antes de poner huevos, pisan la hoja para probarla. Si la hoja es buena para sus orugas, ponen los huevos ahí. Si no, se van a otra. O sea que una mariposa nunca necesita morder algo para saber a qué sabe. Le basta con pararse encima.",
+    "scenes": [
+      {
+        "image": "a colorful butterfly landing on a bright flower, macro",
+        "motion": "the butterfly lands gently and flutters its wings"
+      },
+      {
+        "image": "extreme macro of a butterfly's tiny feet touching a leaf",
+        "motion": "the feet tap the leaf surface"
+      },
+      {
+        "image": "a butterfly tapping on a green leaf with its legs",
+        "motion": "the butterfly steps on the leaf and moves its legs"
+      },
+      {
+        "image": "tiny butterfly eggs on a green leaf, macro"
+      },
+      {
+        "image": "a caterpillar eating a leaf happily"
+      }
+    ],
+    "tags": [
+      "animales",
+      "insectos",
+      "curiosidades"
+    ],
+    "yt_title": "Las mariposas saborean con los pies 🦋",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "patas",
+      "pararse encima"
+    ]
+  },
+  {
+    "id": "073",
+    "title": "Los peces dorados tienen buena memoria",
+    "narration": "Dicen que los peces dorados solo recuerdan las cosas por tres segundos. Es falso. En experimentos, los entrenaron para empujar una palanca y conseguir comida, y lo recordaron durante meses. Otros aprendieron que sonaba un ruido justo antes de la comida, y nadaban hacia el lugar cada vez que lo escuchaban. Incluso pueden reconocer a la persona que les da de comer. Así que si tu pez dorado se acerca cuando entras, no es casualidad. Te reconoce.",
+    "scenes": [
+      {
+        "image": "a shiny orange goldfish swimming in a round glass bowl",
+        "motion": "the goldfish swims around the bowl"
+      },
+      {
+        "image": "a goldfish pushing a tiny lever in an aquarium to get food",
+        "motion": "the fish pushes the lever and food falls in"
+      },
+      {
+        "image": "a calendar with pages flipping next to an aquarium",
+        "motion": "the calendar pages flip quickly"
+      },
+      {
+        "image": "a goldfish swimming toward a person at the aquarium glass"
+      },
+      {
+        "image": "a happy person feeding a goldfish"
+      }
+    ],
+    "tags": [
+      "animales",
+      "peces",
+      "curiosidades"
+    ],
+    "yt_title": "El pez dorado NO tiene 3 segundos de memoria 🐠",
+    "playlist": "Mitos falsos",
+    "highlight": [
+      "falso",
+      "meses"
+    ]
+  },
+  {
+    "id": "074",
+    "title": "Por qué la sal derrite el hielo",
+    "narration": "Cuando echas sal sobre el hielo, el hielo se derrite aunque haga frío. La sal se mezcla con el agua y le hace más difícil congelarse. El agua pura se congela a cero grados, pero el agua salada necesita mucho más frío. Por eso en las ciudades con nieve tiran sal en las calles. Pero hay un límite: si hace más de unos veintiún grados bajo cero, ni la sal sirve. Ahí el agua salada también se congela.",
+    "scenes": [
+      {
+        "image": "salt being sprinkled on an icy sidewalk in winter",
+        "motion": "the salt grains fall and bounce on the ice"
+      },
+      {
+        "image": "macro view of salt grains melting into ice",
+        "motion": "the ice slowly melts around the salt grains"
+      },
+      {
+        "image": "a truck spreading salt on a snowy road",
+        "motion": "the truck drives slowly spreading salt"
+      },
+      {
+        "image": "a thermometer showing minus 21 degrees in a frozen landscape"
+      },
+      {
+        "image": "a frozen salty puddle with ice crystals"
+      }
+    ],
+    "tags": [
+      "ciencia",
+      "clima",
+      "curiosidades"
+    ],
+    "yt_title": "La sal derrite el hielo… hasta que hace demasiado frío ❄️",
+    "playlist": "Ciencia loca",
+    "highlight": [
+      "sal",
+      "veintiún grados"
+    ]
+  },
+  {
+    "id": "075",
+    "title": "Por qué no te puedes hacer cosquillas",
+    "narration": "Trata de hacerte cosquillas a ti mismo. No funciona. Tu cerebro tiene una parte que predice cada movimiento que haces antes de que pase. Como sabe exactamente dónde y cuándo vas a tocar, no se sorprende, y le baja el volumen a la sensación. Las cosquillas necesitan sorpresa. Por eso, cuando otra persona te toca sin avisar, te mueres de risa. Y hay un dato curioso: en experimentos con un robot que tardaba un poquito en reaccionar, las cosquillas sí se sentían.",
+    "scenes": [
+      {
+        "image": "a person trying to tickle their own feet with a confused face",
+        "motion": "the person wiggles fingers on their own foot"
+      },
+      {
+        "image": "a glowing brain with a highlighted area at the back, 3D medical style",
+        "motion": "the highlighted area pulses with light"
+      },
+      {
+        "image": "two friends laughing while one tickles the other",
+        "motion": "the friend laughs and squirms"
+      },
+      {
+        "image": "a small robot arm with a feather tickling a hand in a lab"
+      },
+      {
+        "image": "a person laughing uncontrollably on a couch"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "cerebro",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué no te puedes hacer cosquillas solo 🤭",
+    "playlist": "Cuerpo humano",
+    "highlight": [
+      "predice",
+      "sorpresa"
+    ]
+  },
+  {
+    "id": "076",
+    "title": "El arcoíris es un círculo",
+    "narration": "Los arcoíris no son arcos. Son círculos completos. Desde el suelo solo vemos la mitad de arriba, porque la otra mitad queda tapada por la tierra. Pero si estás en un avión o en una montaña muy alta, con el sol detrás, puedes ver el arcoíris entero, como un anillo de colores. Y lo más curioso: no hay dos personas que vean exactamente el mismo arcoíris. Cada uno ve el suyo, hecho por gotas distintas.",
+    "scenes": [
+      {
+        "image": "a bright rainbow over a green valley after the rain",
+        "motion": "the rainbow colors shimmer"
+      },
+      {
+        "image": "a complete circular rainbow seen from an airplane window above the clouds",
+        "motion": "the circular rainbow slowly moves with the plane"
+      },
+      {
+        "image": "sunlight entering a raindrop and splitting into colors, macro 3D",
+        "motion": "the light splits into colors inside the drop"
+      },
+      {
+        "image": "a full circle rainbow seen from the top of a mountain"
+      },
+      {
+        "image": "two people looking at a rainbow from different places"
+      }
+    ],
+    "tags": [
+      "ciencia",
+      "clima",
+      "curiosidades"
+    ],
+    "yt_title": "Los arcoíris son círculos completos 🌈",
+    "playlist": "Ciencia loca",
+    "highlight": [
+      "círculos",
+      "el suyo"
+    ]
+  },
+  {
+    "id": "077",
+    "title": "En el espacio no hay sonido",
+    "narration": "En el espacio no hay sonido. El sonido es una vibración que viaja por el aire, chocando de partícula en partícula. Pero en el espacio casi no hay partículas. Entonces, aunque explote una estrella gigante, no se escucharía absolutamente nada. Todas esas explosiones con ruido de las películas son inventadas. Y por eso los astronautas, aunque estén uno al lado del otro afuera de la nave, tienen que hablarse por radio.",
+    "scenes": [
+      {
+        "image": "a huge silent explosion of a star in space",
+        "motion": "the explosion expands silently"
+      },
+      {
+        "image": "sound waves traveling through air particles, 3D stylized",
+        "motion": "the particles bump into each other in a wave"
+      },
+      {
+        "image": "an empty black space with a few scattered particles",
+        "motion": "the particles drift slowly"
+      },
+      {
+        "image": "a spaceship exploding in a sci-fi movie scene in a cinema"
+      },
+      {
+        "image": "two astronauts floating next to each other with radios"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "sonido",
+      "curiosidades"
+    ],
+    "yt_title": "En el espacio, las explosiones no hacen ruido 💥",
+    "playlist": "Espacio",
+    "highlight": [
+      "no hay sonido",
+      "radio"
+    ]
+  },
+  {
+    "id": "078",
+    "title": "La luz de las luciérnagas",
+    "narration": "Una luciérnaga hace luz con una reacción química dentro de su cuerpo. Mezcla una sustancia con oxígeno, y sale luz. Y es una luz especial: casi no produce calor. Una bombilla común pierde mucha energía calentándose. La luciérnaga no. Por eso se llama luz fría. Cada especie tiene su propio código de destellos, como un idioma. Los machos parpadean de una forma, y las hembras responden. Es una conversación hecha de luces.",
+    "scenes": [
+      {
+        "image": "fireflies glowing over a field at night",
+        "motion": "the fireflies blink softly and drift"
+      },
+      {
+        "image": "macro view of a glowing firefly on a leaf",
+        "motion": "the firefly's tail glows and fades"
+      },
+      {
+        "image": "an old light bulb glowing hot next to a cool glowing firefly",
+        "motion": "the bulb glows hot with heat waves"
+      },
+      {
+        "image": "a forest with many fireflies flashing patterns"
+      },
+      {
+        "image": "two fireflies flashing at each other at night"
+      }
+    ],
+    "tags": [
+      "animales",
+      "insectos",
+      "curiosidades"
+    ],
+    "yt_title": "La luz de las luciérnagas casi no calienta ✨",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "luz fría",
+      "conversación"
+    ]
+  },
+  {
+    "id": "079",
+    "title": "La piña te come mientras la comes",
+    "narration": "Cuando comes piña, la piña también te come a ti. Tiene una sustancia que deshace proteínas, y tu lengua está hecha de proteínas. Por eso, si comes mucha, sientes un hormigueo y la lengua un poco lastimada. No te preocupes: tu boca se repara rápido, y el ácido del estómago desactiva la sustancia. Es tan buena deshaciendo proteínas que se usa para ablandar carne. Por eso la piña cocida, como en las pizzas, ya no pica.",
+    "scenes": [
+      {
+        "image": "a fresh pineapple cut in half on a table",
+        "motion": "the pineapple halves rotate slowly"
+      },
+      {
+        "image": "a person eating pineapple and making a face from tingling, cartoon",
+        "motion": "the person sticks out their tongue"
+      },
+      {
+        "image": "macro view of a tongue with tiny cartoon pineapple particles",
+        "motion": "the particles nibble at the tongue"
+      },
+      {
+        "image": "a piece of meat with pineapple slices on top on a cutting board"
+      },
+      {
+        "image": "a hot pizza with pineapple slices"
+      }
+    ],
+    "tags": [
+      "comida",
+      "cuerpo humano",
+      "curiosidades"
+    ],
+    "yt_title": "La piña te come mientras tú la comes 🍍",
+    "playlist": "Comida increíble",
+    "highlight": [
+      "te come",
+      "ablandar carne"
+    ]
+  },
+  {
+    "id": "080",
+    "title": "Los girasoles siguen al sol",
+    "narration": "Los girasoles jóvenes siguen al Sol durante el día. Por la mañana miran al este, y por la tarde ya están mirando al oeste. De noche, giran solos de vuelta hacia el este para esperar el amanecer. Pero cuando crecen y florecen, dejan de moverse. Se quedan mirando siempre al este. Los científicos descubrieron por qué: las flores que miran al este se calientan más temprano, y reciben muchas más visitas de abejas.",
+    "scenes": [
+      {
+        "image": "a field of young sunflowers facing the morning sun",
+        "motion": "the sunflowers slowly turn toward the sun"
+      },
+      {
+        "image": "a sunflower turning its head from east to west, time lapse style",
+        "motion": "the flower head turns slowly across the sky"
+      },
+      {
+        "image": "sunflowers at night under the stars",
+        "motion": "the flowers slowly turn back"
+      },
+      {
+        "image": "a field of adult sunflowers all facing east at sunrise"
+      },
+      {
+        "image": "a bee landing on a big sunflower"
+      }
+    ],
+    "tags": [
+      "naturaleza",
+      "plantas",
+      "curiosidades"
+    ],
+    "yt_title": "Los girasoles jóvenes siguen al sol 🌻",
+    "playlist": "Naturaleza",
+    "highlight": [
+      "siguen al Sol",
+      "abejas"
+    ]
+  },
+  {
+    "id": "081",
+    "title": "Tu cerebro gasta el 20% de tu energía",
+    "narration": "Tu cerebro pesa más o menos el dos por ciento de tu cuerpo. Pero gasta cerca del veinte por ciento de toda tu energía. Incluso cuando estás tirado en el sillón sin hacer nada, tu cerebro sigue trabajando a toda máquina: controla tu respiración, tu corazón, ordena recuerdos y mantiene todo funcionando. Por eso pensar mucho cansa de verdad. Y por eso, cuando no duermes bien, lo primero que se te apaga es la cabeza.",
+    "scenes": [
+      {
+        "image": "a glowing human brain floating with electric sparks, 3D medical style",
+        "motion": "electric sparks flash across the brain"
+      },
+      {
+        "image": "a pie chart made of glowing energy where a brain takes a big slice",
+        "motion": "the brain slice glows brighter"
+      },
+      {
+        "image": "a person lying on a couch doing nothing while their brain glows busy above them",
+        "motion": "the glowing brain spins with activity"
+      },
+      {
+        "image": "a tired student with a book falling asleep at a desk"
+      },
+      {
+        "image": "a brain with a battery icon running low"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "cerebro",
+      "curiosidades"
+    ],
+    "yt_title": "Tu cerebro gasta 20% de tu energía 🧠",
+    "playlist": "Cuerpo humano",
+    "highlight": [
+      "veinte por ciento",
+      "toda máquina"
+    ]
+  },
+  {
+    "id": "082",
+    "title": "El wombat hace popó en cubos",
+    "narration": "El wombat es el único animal conocido que hace popó en forma de cubo. Es un marsupial de Australia, parecido a un osito. Durante años nadie entendía cómo lo hacía. En 2018 unos científicos descubrieron el secreto: su intestino tiene partes más duras y partes más elásticas, y eso le va dando forma de cubo al final del camino. ¿Y para qué? Los wombats marcan su territorio con eso, y los cubos no se caen rodando de las piedras.",
+    "scenes": [
+      {
+        "image": "a cute chubby wombat walking on grass in Australia",
+        "motion": "the wombat waddles forward"
+      },
+      {
+        "image": "small brown cubes arranged on top of a rock in the Australian bush, cartoon style",
+        "motion": "the camera slowly pushes in"
+      },
+      {
+        "image": "a scientist looking at a diagram of an intestine with surprise",
+        "motion": "the scientist adjusts glasses and leans closer"
+      },
+      {
+        "image": "a 3D illustration of an intestine with stiff and stretchy parts"
+      },
+      {
+        "image": "a wombat sitting proudly on top of a rock"
+      }
+    ],
+    "tags": [
+      "animales",
+      "australia",
+      "curiosidades"
+    ],
+    "yt_title": "Este animal hace popó en forma de cubo 🧊",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "cubo",
+      "no se caen"
+    ]
+  },
+  {
+    "id": "083",
+    "title": "La Estatua de la Libertad era marrón",
+    "narration": "La Estatua de la Libertad no siempre fue verde. Cuando la armaron en 1886, era del color de una moneda nueva de cobre: marrón y brillante. Está hecha de una capa de cobre muy finita. Con los años, la lluvia, el aire y la sal del mar la fueron oxidando, y se formó una capa verde por encima. Esa capa no la arruina. Al contrario: la protege. Por eso decidieron no pintarla nunca.",
+    "scenes": [
+      {
+        "image": "the Statue of Liberty shiny copper brown color in 1886, sunny day",
+        "motion": "the camera slowly flies around the statue"
+      },
+      {
+        "image": "a shiny new copper coin next to an old green copper coin, macro",
+        "motion": "the light reflects on the coins"
+      },
+      {
+        "image": "rain and sea mist hitting the copper statue",
+        "motion": "rain falls over the statue"
+      },
+      {
+        "image": "the Statue of Liberty slowly turning green, time lapse"
+      },
+      {
+        "image": "the green Statue of Liberty today with the New York skyline"
+      }
+    ],
+    "tags": [
+      "historia",
+      "lugares",
+      "curiosidades"
+    ],
+    "yt_title": "La Estatua de la Libertad era de color cobre 🗽",
+    "playlist": "Lugares increíbles",
+    "highlight": [
+      "cobre",
+      "la protege"
+    ]
+  },
+  {
+    "id": "084",
+    "title": "El kétchup se vendía como medicina",
+    "narration": "El kétchup se vendía como medicina. En la década de 1830, un médico de Estados Unidos aseguró que el kétchup de tomate curaba problemas del estómago y otros malestares. Lo empezaron a vender en pastillas. Se hizo tan popular que aparecieron muchos imitadores vendiendo pastillas falsas. Hasta que todo se descubrió y el negocio se derrumbó. Pero el kétchup quedó, y hoy está en casi todas las cocinas del mundo.",
+    "scenes": [
+      {
+        "image": "an old 1830s medicine bottle labeled with a tomato drawing on a wooden shelf",
+        "motion": "the light flickers on the old bottle"
+      },
+      {
+        "image": "a 19th century doctor holding up a tomato proudly",
+        "motion": "the doctor raises the tomato and smiles"
+      },
+      {
+        "image": "old fashioned pills spilling out of a tin box",
+        "motion": "the pills spill across the table"
+      },
+      {
+        "image": "a crowd of salesmen selling bottles on a 19th century street"
+      },
+      {
+        "image": "a modern ketchup bottle next to french fries"
+      }
+    ],
+    "tags": [
+      "comida",
+      "historia",
+      "curiosidades"
+    ],
+    "yt_title": "El kétchup se vendía como medicina 🍅",
+    "playlist": "Comida increíble",
+    "highlight": [
+      "medicina",
+      "pastillas"
+    ]
+  },
+  {
+    "id": "085",
+    "title": "El chocolate es veneno para los perros",
+    "narration": "El chocolate es peligroso para los perros. Tiene una sustancia que a nosotros no nos hace nada, porque la eliminamos rápido. Pero el cuerpo del perro la elimina muy lento, y se le acumula. Le acelera el corazón, lo pone nervioso y, en cantidad, puede ser muy grave. El chocolate amargo es el peor, porque tiene mucho más de esa sustancia. Así que, aunque te mire con esos ojitos, el chocolate es solo para ti.",
+    "scenes": [
+      {
+        "image": "a cute puppy looking at a chocolate bar on a table",
+        "motion": "the puppy sniffs toward the chocolate"
+      },
+      {
+        "image": "a 3D illustration of a dog's body processing a substance slowly",
+        "motion": "glowing particles move slowly through the body"
+      },
+      {
+        "image": "a dog with a racing heart, stylized glowing heart",
+        "motion": "the heart beats fast"
+      },
+      {
+        "image": "dark chocolate and milk chocolate bars side by side"
+      },
+      {
+        "image": "a dog with puppy eyes begging at a person eating chocolate"
+      }
+    ],
+    "tags": [
+      "animales",
+      "perros",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué el chocolate es peligroso para tu perro 🐶",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "peligroso",
+      "amargo"
+    ]
+  },
+  {
+    "id": "086",
+    "title": "Tu estómago se renueva cada pocos días",
+    "narration": "El ácido de tu estómago es tan fuerte que puede deshacer la carne. Entonces, ¿por qué no se deshace el estómago? Porque se protege de dos formas. Primero, fabrica una capa de moco espeso que lo cubre por dentro. Y segundo, se renueva todo el tiempo: las células del revestimiento se reemplazan cada pocos días. Si el ácido daña algunas, ya hay otras nuevas listas. Tu estómago, por dentro, es nuevo casi cada semana.",
+    "scenes": [
+      {
+        "image": "a 3D medical view of a human stomach glowing with acid inside",
+        "motion": "the acid swirls inside the stomach"
+      },
+      {
+        "image": "a piece of meat dissolving in a glass of bubbling acid",
+        "motion": "the meat slowly bubbles and dissolves"
+      },
+      {
+        "image": "a thick protective slime layer coating the inside of a stomach, 3D",
+        "motion": "the layer spreads across the wall"
+      },
+      {
+        "image": "new cells replacing old cells on a stomach wall, 3D stylized"
+      },
+      {
+        "image": "a happy cartoon stomach with a shield"
+      }
+    ],
+    "tags": [
+      "cuerpo humano",
+      "digestión",
+      "curiosidades"
+    ],
+    "yt_title": "Tu estómago se cambia por dentro cada pocos días 🫄",
+    "playlist": "Cuerpo humano",
+    "highlight": [
+      "ácido",
+      "cada pocos días"
+    ]
+  },
+  {
+    "id": "087",
+    "title": "La cucaracha vive sin cabeza",
+    "narration": "Una cucaracha puede vivir más o menos una semana sin su cabeza. Suena imposible, pero tiene explicación. No respira por la boca, sino por agujeritos repartidos en el cuerpo. Su sangre no necesita una presión fuerte, así que casi no se desangra. Y muchas funciones las controlan nervios del cuerpo, no el cerebro. ¿Y de qué se muere al final? De sed. Sin boca, no puede tomar agua.",
+    "scenes": [
+      {
+        "image": "a cockroach on a kitchen floor at night, cartoon friendly style",
+        "motion": "the cockroach scurries across the floor"
+      },
+      {
+        "image": "a 3D illustration of tiny breathing holes along a cockroach body",
+        "motion": "the holes open and close slowly"
+      },
+      {
+        "image": "a cockroach walking with a small bandage on top, funny cartoon",
+        "motion": "the cockroach keeps walking confidently"
+      },
+      {
+        "image": "a glowing nervous system inside a cockroach body, 3D"
+      },
+      {
+        "image": "a cartoon cockroach looking at a drop of water"
+      }
+    ],
+    "tags": [
+      "animales",
+      "insectos",
+      "curiosidades"
+    ],
+    "yt_title": "Una cucaracha puede vivir una semana sin cabeza 🪳",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "una semana",
+      "sed"
+    ]
+  },
+  {
+    "id": "088",
+    "title": "La tormenta gigante de Júpiter",
+    "narration": "En Júpiter hay una tormenta más grande que la Tierra entera. Se llama la Gran Mancha Roja. Es un huracán gigante, con vientos de cientos de kilómetros por hora, que lleva girando por lo menos ciento cincuenta años, y quizás mucho más. Y en las últimas décadas se está achicando. Algún día, esa tormenta que vieron nuestros tatarabuelos podría desaparecer.",
+    "scenes": [
+      {
+        "image": "planet Jupiter with its great red spot in space",
+        "motion": "Jupiter rotates slowly"
+      },
+      {
+        "image": "planet Earth floating next to the giant red storm on Jupiter for scale",
+        "motion": "the storm swirls next to the small earth"
+      },
+      {
+        "image": "swirling red and orange clouds of a giant storm, close up",
+        "motion": "the clouds swirl in a spiral"
+      },
+      {
+        "image": "an old astronomer with a brass telescope in the 1600s"
+      },
+      {
+        "image": "the great red spot slightly smaller in a modern photo style"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "planetas",
+      "curiosidades"
+    ],
+    "yt_title": "En Júpiter hay una tormenta más grande que la Tierra 🌪️",
+    "playlist": "Espacio",
+    "highlight": [
+      "más grande que la Tierra",
+      "achicando"
+    ]
+  },
+  {
+    "id": "089",
+    "title": "Saturno flotaría en el agua",
+    "narration": "Saturno es gigante: dentro de él cabrían más de setecientas Tierras. Pero si encontraras una bañera lo suficientemente grande, Saturno flotaría. Está hecho casi todo de gas, sobre todo hidrógeno y helio, que son los más livianos que existen. Aunque es enorme, es menos denso que el agua. Y hay algo más: sus anillos son finísimos. Miden cientos de miles de kilómetros de ancho, pero en muchas partes no más de unos diez metros de alto.",
+    "scenes": [
+      {
+        "image": "planet Saturn with its rings in space",
+        "motion": "Saturn rotates slowly with its rings"
+      },
+      {
+        "image": "planet Saturn floating in a giant bathtub full of water, cartoon 3D",
+        "motion": "Saturn bobs gently in the water"
+      },
+      {
+        "image": "many small Earths fitting inside a transparent Saturn",
+        "motion": "the small Earths fill the planet"
+      },
+      {
+        "image": "a close view of Saturn's thin rings made of ice chunks"
+      },
+      {
+        "image": "Saturn's rings seen from the edge, extremely thin line"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "planetas",
+      "curiosidades"
+    ],
+    "yt_title": "Saturno flotaría en una bañera 🪐",
+    "playlist": "Espacio",
+    "highlight": [
+      "flotaría",
+      "diez metros"
+    ]
+  },
+  {
+    "id": "090",
+    "title": "El avestruz no esconde la cabeza",
+    "narration": "El avestruz no esconde la cabeza en la tierra. Es un mito. Si lo hiciera, se ahogaría. El malentendido viene de su nido: los avestruces cavan un pozo en la tierra para poner los huevos, y varias veces al día meten la cabeza para voltearlos con el pico. Desde lejos, parece que escondieran la cabeza. Y si tienen miedo, no se esconden: corren a más de sesenta kilómetros por hora, o dan patadas muy peligrosas.",
+    "scenes": [
+      {
+        "image": "an ostrich standing tall in the African savanna",
+        "motion": "the ostrich turns its head and looks around"
+      },
+      {
+        "image": "an ostrich with its head down in a sandy nest turning eggs",
+        "motion": "the ostrich moves its head turning the eggs"
+      },
+      {
+        "image": "big ostrich eggs in a sandy pit nest, close up",
+        "motion": "the camera slowly pushes in on the eggs"
+      },
+      {
+        "image": "an ostrich running very fast across the savanna"
+      },
+      {
+        "image": "an ostrich doing a powerful kick, dramatic"
+      }
+    ],
+    "tags": [
+      "animales",
+      "aves",
+      "curiosidades"
+    ],
+    "yt_title": "El avestruz NO esconde la cabeza en la tierra 🐦",
+    "playlist": "Mitos falsos",
+    "highlight": [
+      "mito",
+      "sesenta kilómetros"
+    ]
+  }
 ]
