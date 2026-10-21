@@ -29,7 +29,7 @@
     "volume": 0.6,
     "duck_ratio": 2.5
   },
-  "max_clips": 4,
+  "max_clips": 5,
   "image_providers": [
     "hf"
   ],
@@ -43,5 +43,7 @@
     "gemini-2.5-flash"
   ],
   "min_pending_ideas": 7,
-  "videos_per_day": 1
+  "videos_per_day": 1,
+  "end_padding": 0.15,
+  "default_motion": "slow cinematic camera push in, subtle natural movement of the main subject"
 }
