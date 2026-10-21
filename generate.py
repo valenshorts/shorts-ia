@@ -151,7 +151,8 @@ def make_voice(text, work):
     gap = work / "gap.wav"
     run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", pause, gap])
     lst = work / "list.txt"
-    lst.write_text("".join(f"file '{p.as_posix()}'\nfile '{gap.as_posix()}'\n" for p in parts))
+    lst.write_text("".join(f"file '{p.as_posix()}'\n" + (f"file '{gap.as_posix()}'\n" if i < len(parts) - 1 else "")
+                           for i, p in enumerate(parts)))  # sin silencio después de la última frase
     raw = work / "voice_raw.wav"
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, raw])
     # normalizar el volumen en un paso aparte (dentro del armado cortaba el final de la voz)
@@ -308,12 +309,12 @@ def assemble(visuals, voice, subs, total, out, sfx=None, mascot=None):
               f"[{ai}:a]aresample=48000,aformat=channel_layouts=mono,volume={m['volume']},afade=t=in:d=1[mus];"
               f"[mus][key]sidechaincompress=threshold=0.06:ratio={m['duck_ratio']}:attack=30:release=500[duck];"
               f"[{si}:a]aresample=48000,volume={CFG.get('sfx_volume', 0.5)}[fx];"
-              f"[vo][duck][fx]amix=inputs=3:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
+              f"[vo][duck][fx]amix=inputs=3:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.12:.2f}:d=0.12[a]")
     else:  # sin música: un zumbido ambiente muy bajo
         ain = ["-f", "lavfi", "-i", "anoisesrc=color=brown:amplitude=0.5:r=48000"]
         af = (f"[{ai}:a]lowpass=f=320,volume={CFG['ambience_volume']}[amb];[{vi}:a]aresample=48000[vo];"
               f"[{si}:a]aresample=48000,volume={CFG.get('sfx_volume', 0.5)}[fx];"
-              f"[vo][amb][fx]amix=inputs=3:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
+              f"[vo][amb][fx]amix=inputs=3:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.12:.2f}:d=0.12[a]")
     run(["ffmpeg", "-v", "error", "-y", *inputs, "-i", voice, *ain, *extra,
          "-filter_complex", vf + ";" + af, "-map", "[v]", "-map", "[a]", "-t", f"{total:.2f}",
          "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-pix_fmt", "yuv420p",
@@ -490,7 +491,7 @@ def main():
     OUT.mkdir(exist_ok=True)
 
     voice, timeline = make_voice(idea["narration"], work)
-    total = duration(voice) + 0.8
+    total = duration(voice) + CFG.get("end_padding", 0.15)  # corta apenas termina de hablar
     subs = work / "subs.ass"
     make_subs(timeline, subs, idea.get("highlight", []), total)
     log(f"Voz lista: {total:.1f}s")
@@ -530,10 +531,11 @@ def main():
     for k, (sc, img) in enumerate(zip(scenes, imgs), 1):
         clip = work / f"scene{k}.mp4"
         done_clip = False
-        if sc.get("motion") and k <= CFG["max_clips"] and not quota_out:
+        motion = sc.get("motion") or CFG.get("default_motion")
+        if motion and k <= CFG["max_clips"] and not quota_out:
             for attempt in range(2):
                 try:
-                    with_tokens(make_clip, img, f"{sc['motion']}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
+                    with_tokens(make_clip, img, f"{motion}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
                     done_clip = True
                     log(f"Clip {k} listo")
                     break
