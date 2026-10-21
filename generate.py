@@ -7,7 +7,7 @@ Fábrica diaria de Shorts con IA gratis.
 4. Arma el Short 9:16 con ffmpeg
 5. Lo sube a YouTube (si están cargados los secretos) y marca la idea como hecha
 
-Variables de entorno: HF_TOKEN (obligatoria), YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (opcionales)
+Variables de entorno: HF_TOKEN (obligatoria), HF_TOKEN_2, GEMINI_API_KEY, YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (opcionales)
 """
 import asyncio, hashlib, json, os, re, shutil, subprocess, sys, time
 from pathlib import Path
@@ -35,9 +35,30 @@ def duration(p):
 
 
 # ---------------------------------------------------------------- Hugging Face
+HF_TOKENS = [t for t in (os.environ.get("HF_TOKEN"), os.environ.get("HF_TOKEN_2")) if t]
+_tok = [0]
+
+
 def hf_client(space):
     from gradio_client import Client
-    return Client(space, token=os.environ.get("HF_TOKEN"))
+    return Client(space, token=HF_TOKENS[_tok[0]] if HF_TOKENS else None)
+
+
+def is_quota(e):
+    return "quota" in str(e).lower()
+
+
+def with_tokens(fn, *a, **k):
+    """Si se acaba la cuota con una cuenta de Hugging Face, sigue con la otra."""
+    while True:
+        try:
+            return fn(*a, **k)
+        except Exception as e:
+            if is_quota(e) and _tok[0] + 1 < len(HF_TOKENS):
+                _tok[0] += 1
+                log("Cuota agotada en esta cuenta de Hugging Face; sigo con la segunda.")
+                continue
+            raise
 
 
 def call_space(client, candidates, **kwargs):
@@ -79,38 +100,7 @@ def as_path(x):
     return None
 
 
-_last_pollinations = [0.0]
-
-
-def pollinations_image(prompt, dest, seed):
-    """Imágenes gratis sin cuota de GPU (pollinations.ai). Máx. 1 pedido cada 15 s."""
-    import urllib.parse, urllib.request
-    wait = 16 - (time.time() - _last_pollinations[0])
-    if wait > 0:
-        time.sleep(wait)
-    url = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(prompt) +
-           f"?width=1080&height=1920&nologo=true&seed={seed}&model=flux")
-    raw = Path(str(dest) + ".jpg")
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=180) as r, open(raw, "wb") as f:
-        f.write(r.read())
-    _last_pollinations[0] = time.time()
-    if raw.stat().st_size < 20000:
-        raise RuntimeError("imagen vacía")
-    # recorte leve de bordes por si trae marca de agua en una esquina
-    run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-vf", "crop=iw*0.92:ih*0.92:iw*0.04:ih*0.03", dest])
-    return dest
-
-
 def make_image(prompt, dest):
-    import random
-    if "pollinations" in CFG.get("image_providers", []):
-        for attempt in range(3):
-            try:
-                return pollinations_image(prompt, dest, random.randint(1, 10**6))
-            except Exception as e:
-                log(f"Pollinations falló ({e}); reintento" if attempt < 2 else "Pollinations no anda, uso Hugging Face")
-                time.sleep(10)
     c = hf_client(CFG["image_space"])
     res = call_space(c, ["/generate_image", "/infer", "/generate"],
                      prompt=prompt, aspect_ratio="9:16", randomize_seed=True)
@@ -176,8 +166,16 @@ def ts(t):
     return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
 
 
-def make_subs(timeline, out):
+def _norm(w):
+    return re.sub(r"[^\wáéíóúñü]", "", w.lower())
+
+
+def make_subs(timeline, out, highlight=(), video_len=None):
     st = CFG["captions"]
+    stop = {"todos", "todo", "para", "como", "pero", "este", "esta", "cada", "solo", "tiene", "hasta", "desde"}
+    hl = {_norm(w) for ph in highlight for w in ph.split()
+          if (len(_norm(w)) >= 4 or _norm(w).isdigit()) and _norm(w) not in stop}
+    color = st.get("highlight_color", "&H00D7FF&")
     caps = []
     for sent, a, b in timeline:
         words = sent.split()
@@ -193,13 +191,22 @@ def make_subs(timeline, out):
         t = a
         for g in groups:
             d = (b - a) * sum(x for _, x in g) / total
-            txt = " ".join(w for w, _ in g).rstrip(",;:")
-            caps.append([t, t + d, txt.upper() if st["uppercase"] else txt])
+            ws = [w for w, _ in g]
+            ws[-1] = ws[-1].rstrip(",;:")
+            ws = [w.upper() if st["uppercase"] else w for w in ws]
+            txt = " ".join(f"{{\\c{color}}}{w}{{\\c&HFFFFFF&}}" if _norm(w) in hl else w for w in ws)
+            caps.append([t, t + d, txt])
             t += d
     for i in range(len(caps) - 1):  # sin huecos en las pausas
         caps[i][1] = caps[i + 1][0]
     pop = "{\\fscx85\\fscy85\\t(0,80,\\fscx100\\fscy100)}"
     lines = [f"Dialogue: 0,{ts(a)},{ts(b)},Cap,,0,0,0,,{pop}{txt}" for a, b, txt in caps]
+    end = video_len or (caps[-1][1] if caps else 0)
+    if CFG.get("handle"):  # marca del canal arriba, por si lo suben a TikTok/Instagram
+        lines.append(f"Dialogue: 1,{ts(0)},{ts(end)},Mark,,0,0,0,,{CFG['handle']}")
+    if CFG.get("end_card", True) and end > 6:  # cartel final con la mascota
+        a = end - CFG.get("end_card_seconds", 2.6)
+        lines.append(f"Dialogue: 2,{ts(a)},{ts(end)},End,,0,0,0,,{{\\fscx40\\fscy40\\t(0,180,\\fscx110\\fscy110)\\t(180,300,\\fscx100\\fscy100)}}¡SUSCRÍBETE!")
     out.write_text(f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -209,6 +216,8 @@ WrapStyle: 0
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Cap,{st['font']},{st['size']},&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,{st['outline']},0,2,80,80,{st['margin_bottom']},1
+Style: Mark,{st['font']},38,&H60FFFFFF,&H60FFFFFF,&H90000000,&H00000000,0,0,0,0,100,100,1,0,1,2,0,8,40,40,150,1
+Style: End,{st['font']},96,&H00FFFFFF,&H00FFFFFF,&H001A6BFF,&H00000000,0,0,0,0,100,100,2,0,1,8,0,5,40,40,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -222,7 +231,39 @@ def crop_variant(src, dest, where):
     run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf",
          f"crop=iw*0.62:ih*0.62:(iw-ow)/2:{y},scale={W}:{H}:flags=lanczos", dest])
 
-def assemble(visuals, voice, subs, total, out):
+def make_sfx(work, total, whooshes, pops):
+    """Efectos de sonido propios (sin derechos de autor): whoosh en cada corte y pop en el dato fuerte."""
+    wh, pp = work / "whoosh.wav", work / "pop.wav"
+    run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "anoisesrc=d=0.45:c=pink:r=48000:a=0.9",
+         "-af", "highpass=f=500,lowpass=f=5000,afade=t=in:d=0.3:curve=exp,afade=t=out:st=0.3:d=0.15,volume=0.5", wh])
+    run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i",
+         "aevalsrc=0.9*sin(2*PI*(500+900*exp(-28*t))*t)*exp(-22*t):s=48000:d=0.18", pp])
+    ev = [(wh, max(0.0, t - 0.3)) for t in whooshes] + [(pp, t) for t in pops]
+    out = work / "sfx.wav"
+    if not ev:
+        run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", f"{total:.2f}", out])
+        return out
+    ins, ch = [], []
+    for k, (f, t) in enumerate(ev):
+        ins += ["-i", f]
+        ch.append(f"[{k}:a]adelay={int(t * 1000)}:all=1[e{k}]")
+    fc = ";".join(ch) + ";" + "".join(f"[e{k}]" for k in range(len(ev))) + \
+        f"amix=inputs={len(ev)}:normalize=0,apad,atrim=0:{total:.2f}[a]"
+    run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", fc, "-map", "[a]", "-ac", "1", "-ar", "48000", out])
+    return out
+
+
+def mascot_png(work):
+    b = ROOT / "mascot.b64"
+    if not b.exists():
+        return None
+    import base64
+    p = work / "mascot.png"
+    p.write_bytes(base64.b64decode(b.read_text()))
+    return p
+
+
+def assemble(visuals, voice, subs, total, out, sfx=None, mascot=None):
     """visuals: lista de (archivo, es_video, segundos en pantalla)."""
     inputs, chains = [], []
     look = f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},unsharp=5:5:0.6,fps={FPS},setsar=1"
@@ -248,7 +289,13 @@ def assemble(visuals, voice, subs, total, out):
     fontsdir = (ROOT / "fonts").as_posix()
     vf = ";".join(chains) + ";" + "".join(f"[s{i}]" for i in range(n)) + \
         f"concat=n={n}:v=1:a=0,ass={subs.as_posix()}:fontsdir={fontsdir}[v]"
-    vi, ai = n, n + 1
+    vi, ai, si, mi = n, n + 1, n + 2, n + 3
+    extra = ["-i", sfx] if sfx else ["-f", "lavfi", "-t", f"{total:.2f}", "-i", "anullsrc=r=48000:cl=mono"]
+    if mascot:  # la mascota entra saltando en el cartel final
+        a = total - CFG.get("end_card_seconds", 2.6)
+        extra += ["-loop", "1", "-t", f"{total:.2f}", "-i", mascot]
+        vf = vf.replace("[v]", "[v0]") + (f";[{mi}:v]scale=-1:430,format=rgba[m];"
+              f"[v0][m]overlay=x=(W-w)/2:y='if(lt(t-{a:.2f},0.35),H-(H-470)*(t-{a:.2f})/0.35,470)':enable='gte(t,{a:.2f})'[v]")
     tracks = sorted(p for p in (ROOT / "music").rglob("*") if p.suffix.lower() in (".mp3", ".wav", ".m4a", ".ogg"))
     if tracks:  # música de fondo: tema al azar, desde un punto al azar, que baja sola cuando habla la voz
         import random
@@ -260,12 +307,14 @@ def assemble(visuals, voice, subs, total, out):
         af = (f"[{vi}:a]aresample=48000,asplit=2[vo][key];"
               f"[{ai}:a]aresample=48000,aformat=channel_layouts=mono,volume={m['volume']},afade=t=in:d=1[mus];"
               f"[mus][key]sidechaincompress=threshold=0.06:ratio={m['duck_ratio']}:attack=30:release=500[duck];"
-              f"[vo][duck]amix=inputs=2:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
+              f"[{si}:a]aresample=48000,volume={CFG.get('sfx_volume', 0.5)}[fx];"
+              f"[vo][duck][fx]amix=inputs=3:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
     else:  # sin música: un zumbido ambiente muy bajo
         ain = ["-f", "lavfi", "-i", "anoisesrc=color=brown:amplitude=0.5:r=48000"]
         af = (f"[{ai}:a]lowpass=f=320,volume={CFG['ambience_volume']}[amb];[{vi}:a]aresample=48000[vo];"
-              f"[vo][amb]amix=inputs=2:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
-    run(["ffmpeg", "-v", "error", "-y", *inputs, "-i", voice, *ain,
+              f"[{si}:a]aresample=48000,volume={CFG.get('sfx_volume', 0.5)}[fx];"
+              f"[vo][amb][fx]amix=inputs=3:duration=first:normalize=0,apad=pad_dur=2,afade=t=out:st={total - 0.8:.2f}:d=0.8[a]")
+    run(["ffmpeg", "-v", "error", "-y", *inputs, "-i", voice, *ain, *extra,
          "-filter_complex", vf + ";" + af, "-map", "[v]", "-map", "[a]", "-t", f"{total:.2f}",
          "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", out])
@@ -297,8 +346,7 @@ def upload(video, idea):
     from googleapiclient.http import MediaFileUpload
     creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"],
                         client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"],
-                        token_uri="https://oauth2.googleapis.com/token",
-                        scopes=["https://www.googleapis.com/auth/youtube.upload"])
+                        token_uri="https://oauth2.googleapis.com/token")
     yt = build("youtube", "v3", credentials=creds)
     body = {
         "snippet": {"title": youtube_title(idea),
@@ -314,14 +362,122 @@ def upload(video, idea):
     while resp is None:
         _, resp = req.next_chunk()
     log("Subido: https://youtube.com/shorts/" + resp["id"])
+    extras(yt, resp["id"], idea)
     return resp["id"]
 
 
+def extras(yt, vid, idea):
+    """Comentario con pregunta + lista por tema. Necesita el permiso youtube.force-ssl; si no está, se saltea."""
+    q = idea.get("question") or CFG.get("comment", "🤯 ¿Lo sabías? Escribe SÍ o NO 👇 ¿Qué tema quieres para mañana?")
+    try:
+        yt.commentThreads().insert(part="snippet", body={"snippet": {"videoId": vid, "topLevelComment": {
+            "snippet": {"textOriginal": q}}}}).execute()
+        log("Comentario publicado")
+    except Exception as e:
+        log(f"Sin comentario automático ({str(e)[:120]})")
+    name = idea.get("playlist")
+    if not name:
+        return
+    try:
+        pid = None
+        req = yt.playlists().list(part="snippet", mine=True, maxResults=50)
+        while req and not pid:
+            res = req.execute()
+            pid = next((p["id"] for p in res.get("items", []) if p["snippet"]["title"] == name), None)
+            req = yt.playlists().list_next(req, res)
+        if not pid:
+            pid = yt.playlists().insert(part="snippet,status", body={
+                "snippet": {"title": name, "description": f"{name}: datos curiosos en 30 segundos. Uno nuevo cada día."},
+                "status": {"privacyStatus": "public"}}).execute()["id"]
+        yt.playlistItems().insert(part="snippet", body={"snippet": {
+            "playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": vid}}}).execute()
+        log(f"Agregado a la lista: {name}")
+    except Exception as e:
+        log(f"Sin lista ({str(e)[:120]})")
+
+
+# ---------------------------------------------------------------- Ideas nuevas solas
+IDEA_PROMPT = """Eres el guionista del canal de YouTube Shorts "El Porqué de Todo": datos curiosos explicados en 30 segundos.
+Escribe {n} ideas NUEVAS en español neutro (tú, nunca vos; nada de palabras argentinas), sobre temas distintos a estos ya usados:
+{used}
+
+Reglas:
+- Solo datos reales y comprobados por la ciencia. Si no estás seguro de un dato, no lo uses.
+- La primera frase es un gancho que sorprende. La última frase es un final "wow".
+- Narración de 70 a 85 palabras, frases cortas y fáciles de decir en voz alta. Números escritos en letras.
+- 5 escenas: "image" en inglés describiendo una imagen 3D estilo animación; las 3 primeras también llevan "motion" en inglés (movimiento simple de 4 segundos).
+- "playlist" es una de: Animales increíbles, Cuerpo humano, Espacio, Ciencia loca, Comida increíble, Inventos por accidente, Mitos falsos, Naturaleza, Lugares increíbles.
+- "highlight": 2 palabras o frases cortas de la narración para resaltar en amarillo.
+- "yt_title": título corto que dé curiosidad, con un emoji al final.
+
+Devuelve SOLO un JSON con una lista de objetos con estas claves: title, yt_title, narration, scenes, tags, playlist, highlight.
+Ejemplo de una idea:
+{example}"""
+
+
+def gemini_ideas(ideas, n=10):
+    key = os.environ.get("GEMINI_API_KEY")
+    if not key:
+        return []
+    import urllib.request
+    used = "\n".join("- " + i["title"] for i in ideas)
+    ex = {k: ideas[-1][k] for k in ("title", "yt_title", "narration", "scenes", "tags", "playlist", "highlight") if k in ideas[-1]}
+    prompt = IDEA_PROMPT.format(n=n, used=used, example=json.dumps(ex, ensure_ascii=False))
+    body = json.dumps({"contents": [{"parts": [{"text": prompt}]}],
+                       "generationConfig": {"responseMimeType": "application/json", "temperature": 0.9}}).encode()
+    for model in CFG.get("gemini_models", ["gemini-flash-latest", "gemini-2.5-flash"]):
+        try:
+            req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
+            with urllib.request.urlopen(req, timeout=180) as r:
+                txt = json.loads(r.read())["candidates"][0]["content"]["parts"][0]["text"]
+            new = json.loads(txt)
+            good = []
+            for it in new:
+                sc = it.get("scenes", [])
+                if (isinstance(it.get("narration"), str) and 50 <= len(it["narration"].split()) <= 100
+                        and len(sc) >= 3 and all("image" in x for x in sc) and it.get("title")):
+                    good.append(it)
+            log(f"Gemini ({model}) escribió {len(good)} ideas nuevas")
+            return good
+        except Exception as e:
+            log(f"Gemini {model} falló: {e}")
+    return []
+
+
+def refill_ideas(ideas, done):
+    pending = [i for i in ideas if i["id"] not in done]
+    if len(pending) >= CFG.get("min_pending_ideas", 7):
+        return ideas
+    new = gemini_ideas(ideas)
+    if not new:
+        if len(pending) < 3:
+            log("⚠️ Quedan muy pocas ideas. Pedile a Claude más ideas o cargá GEMINI_API_KEY.")
+        return ideas
+    nxt = max(int(i["id"]) for i in ideas) + 1
+    for k, it in enumerate(new):
+        it["id"] = f"{nxt + k:03d}"
+        ideas.append(it)
+    (ROOT / "ideas.json").write_text(json.dumps(ideas, ensure_ascii=False, indent=2), encoding="utf-8")
+    return ideas
+
+
 # ---------------------------------------------------------------- Principal
+def today_ar():
+    from datetime import datetime, timedelta, timezone
+    return datetime.now(timezone(timedelta(hours=-3))).strftime("%Y-%m-%d")
+
+
 def main():
     ideas = json.loads((ROOT / "ideas.json").read_text(encoding="utf-8"))
     done_p = ROOT / "done.json"
     done = json.loads(done_p.read_text(encoding="utf-8")) if done_p.exists() else {}
+    per_day = CFG.get("videos_per_day", 1)
+    if not os.environ.get("FORCE") and sum(1 for v in done.values() if v.get("date") == today_ar()) >= per_day:
+        log("Hoy ya se subió el video del día. Nada que hacer.")
+        return
+    ideas = refill_ideas(ideas, done)
     pending = [i for i in ideas if i["id"] not in done]
     if not pending:
         log("No quedan ideas nuevas. Agregá más a ideas.json.")
@@ -336,7 +492,7 @@ def main():
     voice, timeline = make_voice(idea["narration"], work)
     total = duration(voice) + 0.8
     subs = work / "subs.ass"
-    make_subs(timeline, subs)
+    make_subs(timeline, subs, idea.get("highlight", []), total)
     log(f"Voz lista: {total:.1f}s")
 
     # 1) Primero todas las imágenes (gastan poca cuota), sin repetidas.
@@ -349,7 +505,7 @@ def main():
         for attempt in range(3):
             try:
                 extra = "" if attempt == 0 else f", variation {attempt}, different composition"
-                make_image(f"{CFG['style']} {sc['image']}{extra}. Vertical composition, no text.", img)
+                with_tokens(make_image, f"{CFG['style']} {sc['image']}{extra}. Vertical composition, no text.", img)
                 h = hashlib.md5(img.read_bytes()).hexdigest()
                 if h in hashes:
                     log(f"Imagen {k} salió repetida; pido otra")
@@ -377,7 +533,7 @@ def main():
         if sc.get("motion") and k <= CFG["max_clips"] and not quota_out:
             for attempt in range(2):
                 try:
-                    make_clip(img, f"{sc['motion']}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
+                    with_tokens(make_clip, img, f"{sc['motion']}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
                     done_clip = True
                     log(f"Clip {k} listo")
                     break
@@ -399,10 +555,23 @@ def main():
         raise SystemExit("No salió ningún clip animado: se reintenta mañana con la misma idea.")
 
     out = OUT / f"short_{idea['id']}.mp4"
-    assemble(visuals, voice, subs, total, out)
+    cuts, t = [], 0.0
+    for _, _, secs in visuals[:-1]:
+        t += secs
+        cuts.append(t)
+    pops = [timeline[-1][1]] if len(timeline) > 2 else []  # el dato fuerte del final
+    sfx = make_sfx(work, total, cuts, pops) if CFG.get("sfx", True) else None
+    mascot = mascot_png(work) if CFG.get("end_card", True) else None
+    assemble(visuals, voice, subs, total, out, sfx, mascot)
     log(f"Short listo: {out}")
     vid = upload(out, idea)
-    done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": time.strftime("%Y-%m-%d")}
+    tags = " ".join("#" + _norm(t) for t in idea.get("tags", []) if _norm(t))
+    (OUT / "meta.json").write_text(json.dumps({
+        "id": idea["id"], "file": out.name, "youtube_id": vid,
+        "caption": f"{idea.get('yt_title') or idea['title']}\n\n{sentences(idea['narration'])[0]}\n\n"
+                   f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
+        ensure_ascii=False, indent=2), encoding="utf-8")
+    done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": today_ar()}
     done_p.write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
