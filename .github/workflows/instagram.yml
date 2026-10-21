@@ -1,0 +1,53 @@
+name: Solo Instagram
+
+# Sube a Instagram el último video que ya se hizo (no genera nada nuevo ni toca YouTube).
+on:
+  workflow_dispatch: {}
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  instagram:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Bajar el último video
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p output
+          for r in $(gh run list -R "${{ github.repository }}" -w diario.yml --status success --limit 30 --json databaseId -q '.[].databaseId'); do
+            gh run download "$r" -R "${{ github.repository }}" -n short -D output && break
+          done
+          ls -l output
+
+      - name: Armar el texto
+        run: |
+          python - <<'PY'
+          import json, re
+          from pathlib import Path
+          f = sorted(Path("output").glob("short_*.mp4"))[-1]
+          iid = re.search(r"short_(\d+)", f.name).group(1)
+          idea = next(i for i in json.load(open("ideas.json", encoding="utf-8")) if i["id"] == iid)
+          norm = lambda w: re.sub(r"[^\wáéíóúñü]", "", w.lower())
+          tags = " ".join("#" + norm(t) for t in idea.get("tags", []) if norm(t))
+          first = re.split(r"(?<=[.!?])\s+", idea["narration"].strip())[0]
+          cap = (f"{idea.get('yt_title') or idea['title']}\n\n{first}\n\n"
+                 f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos")
+          Path("output/meta.json").write_text(json.dumps({"id": iid, "file": f.name, "caption": cap}, ensure_ascii=False), encoding="utf-8")
+          print("Video:", f.name)
+          PY
+
+      - name: Subir a Instagram
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python crosspost.py
