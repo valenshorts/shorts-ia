@@ -37,13 +37,16 @@ def instagram():
         http(f"https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token={tok}")
     except Exception:
         pass
-    c = http(f"{IG_API}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable",
+    # Instagram baja el video desde un link: lo subo a un alojamiento temporal que se borra solo en 1 hora
+    import subprocess
+    link = subprocess.run(["curl", "-s", "-F", "reqtype=fileupload", "-F", "time=1h", "-F", f"fileToUpload=@{VIDEO}",
+                           "https://litterbox.catbox.moe/resources/internals/api.php"],
+                          capture_output=True, text=True, timeout=300).stdout.strip()
+    if not link.startswith("http"):
+        raise RuntimeError(f"No se pudo subir el video temporal: {link[:200]}")
+    c = http(f"{IG_API}/{uid}/media", {"media_type": "REELS", "video_url": link,
                                         "caption": META["caption"], "share_to_feed": "true", "access_token": tok})
     cid = c["id"]
-    size = VIDEO.stat().st_size
-    up = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/v23.0/{cid}"
-    http(up, data=VIDEO.read_bytes(), method="POST",
-         headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(size)})
     for _ in range(60):  # Instagram procesa el video
         st = http(f"{IG_API}/{cid}?fields=status_code,status&access_token={tok}")
         if st.get("status_code") == "FINISHED":
