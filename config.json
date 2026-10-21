@@ -15,10 +15,10 @@
     "outline": 6,
     "words_per_caption": 3,
     "uppercase": true,
-    "margin_bottom": 340
+    "margin_bottom": 340,
+    "highlight_color": "&H00D7FF&"
   },
   "privacy": "public",
-  "description_footer": "Animación y voz generadas con IA.\n\n#curiosidades #sabiasque #ciencia #shorts",
   "extra_tags": [
     "curiosidades",
     "sabias que",
@@ -32,5 +32,16 @@
   "max_clips": 4,
   "image_providers": [
     "hf"
-  ]
+  ],
+  "handle": "@elporquedetodo",
+  "sfx": true,
+  "sfx_volume": 0.5,
+  "end_card": true,
+  "end_card_seconds": 2.6,
+  "gemini_models": [
+    "gemini-flash-latest",
+    "gemini-2.5-flash"
+  ],
+  "min_pending_ideas": 7,
+  "videos_per_day": 1
 }
