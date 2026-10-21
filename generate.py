@@ -258,7 +258,7 @@ def mascot_png(work):
     if not b.exists():
         return None
     import base64
-    p = work / "mascot.png"
+    p = work / "mascot.webp"
     p.write_bytes(base64.b64decode(b.read_text()))
     return p
 
