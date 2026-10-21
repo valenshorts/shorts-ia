@@ -6,8 +6,8 @@
   "style": "Stylized 3D CGI render, clean Pixar-like animation style, soft bright even studio lighting, simple clean background, highly detailed materials.",
   "motion_style": "smooth 3D animation, natural real-life speed, steady lighting, objects stay solid and do not pass through each other",
   "voice": "es-MX-JorgeNeural",
-  "voice_rate": "+8%",
-  "pause_between_sentences": 0.25,
+  "voice_rate": "+15%",
+  "pause_between_sentences": 0.08,
   "ambience_volume": 0.05,
   "captions": {
     "font": "Inter Black",
