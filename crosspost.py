@@ -28,6 +28,30 @@ def http(url, data=None, headers=None, method=None):
     return json.loads(body) if body else {}
 
 
+def temp_link(path):
+    """Sube el video a un alojamiento temporal (se borra solo en pocas horas) y devuelve el link directo."""
+    import subprocess
+    ua = ["-A", "Mozilla/5.0 (X11; Linux x86_64)"]
+    tries = [
+        ("uguu", ["-F", f"files[]=@{path}", "https://uguu.se/upload"],
+         lambda t: json.loads(t)["files"][0]["url"]),
+        ("tmpfiles", ["-F", f"file=@{path}", "https://tmpfiles.org/api/v1/upload"],
+         lambda t: json.loads(t)["data"]["url"].replace("tmpfiles.org/", "tmpfiles.org/dl/", 1)),
+        ("litterbox", ["-F", "reqtype=fileupload", "-F", "time=1h", "-F", f"fileToUpload=@{path}",
+                       "https://litterbox.catbox.moe/resources/internals/api.php"], lambda t: t.strip()),
+    ]
+    for name, args, parse in tries:
+        out = subprocess.run(["curl", "-s", "-m", "240", *ua, *args], capture_output=True, text=True).stdout
+        try:
+            url = parse(out)
+            if url.startswith("https://"):
+                return url
+        except Exception:
+            pass
+        log(f"{name} no funcionó: {out[:120]!r}")
+    raise RuntimeError("No pude subir el video a ningún alojamiento temporal")
+
+
 def instagram():
     uid, tok = os.environ.get("IG_USER_ID"), os.environ.get("IG_TOKEN")
     if not (uid and tok):
@@ -37,13 +61,9 @@ def instagram():
         http(f"https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token={tok}")
     except Exception:
         pass
-    # Instagram baja el video desde un link: lo subo a un alojamiento temporal que se borra solo en 1 hora
-    import subprocess
-    link = subprocess.run(["curl", "-s", "-F", "reqtype=fileupload", "-F", "time=1h", "-F", f"fileToUpload=@{VIDEO}",
-                           "https://litterbox.catbox.moe/resources/internals/api.php"],
-                          capture_output=True, text=True, timeout=300).stdout.strip()
-    if not link.startswith("http"):
-        raise RuntimeError(f"No se pudo subir el video temporal: {link[:200]}")
+    # Instagram baja el video desde un link: lo subo a un alojamiento temporal que se borra solo
+    link = temp_link(VIDEO)
+    log("Link temporal listo")
     c = http(f"{IG_API}/{uid}/media", {"media_type": "REELS", "video_url": link,
                                         "caption": META["caption"], "share_to_feed": "true", "access_token": tok})
     cid = c["id"]
