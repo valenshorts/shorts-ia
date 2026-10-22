@@ -4,10 +4,10 @@
   "clip_seconds": 4,
   "video_steps": 6,
   "style": "Stylized 3D CGI render, clean Pixar-like animation style, soft bright even studio lighting, simple clean background, highly detailed materials.",
-  "motion_style": "smooth 3D animation, natural real-life speed, steady lighting, objects stay solid and do not pass through each other",
+  "motion_style": "dynamic cinematic camera movement, vivid and energetic, natural real-life speed, rich detail, steady lighting, objects stay solid and do not pass through each other",
   "voice": "es-MX-JorgeNeural",
-  "voice_rate": "+15%",
-  "pause_between_sentences": 0.08,
+  "voice_rate": "+20%",
+  "pause_between_sentences": 0.05,
   "ambience_volume": 0.05,
   "captions": {
     "font": "Inter Black",
@@ -45,5 +45,6 @@
   "min_pending_ideas": 7,
   "videos_per_day": 1,
   "end_padding": 0.15,
-  "default_motion": "slow cinematic camera push in, subtle natural movement of the main subject"
+  "default_motion": "slow cinematic camera push in, subtle natural movement of the main subject",
+  "min_clips": 5
 }
