@@ -475,9 +475,9 @@ def main():
     done_p = ROOT / "done.json"
     done = json.loads(done_p.read_text(encoding="utf-8")) if done_p.exists() else {}
     per_day = CFG.get("videos_per_day", 1)
-    if not os.environ.get("FORCE") and sum(1 for v in done.values() if v.get("date") == today_ar()) >= per_day:
-        log("Hoy ya se subió el video del día. Nada que hacer.")
-        return
+    publish_today = os.environ.get("FORCE") or sum(1 for v in done.values() if v.get("date") == today_ar()) < per_day
+    if not publish_today:
+        log("Hoy ya se subió el video del día: aprovecho el cupo para ir preparando el de mañana.")
     ideas = refill_ideas(ideas, done)
     pending = [i for i in ideas if i["id"] not in done]
     if not pending:
@@ -486,8 +486,11 @@ def main():
     idea = pending[0]
     log(f"Idea {idea['id']}: {idea['title']}")
     work = ROOT / "work" / idea["id"]
-    shutil.rmtree(work, ignore_errors=True)
-    work.mkdir(parents=True)
+    # lo ya generado de esta idea (en un intento anterior) se reutiliza; lo de ideas viejas se borra
+    for d in (ROOT / "work").glob("*"):
+        if d.is_dir() and d.name != idea["id"]:
+            shutil.rmtree(d, ignore_errors=True)
+    work.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(exist_ok=True)
 
     voice, timeline = make_voice(idea["narration"], work)
@@ -503,6 +506,11 @@ def main():
     for k, sc in enumerate(scenes, 1):
         img = work / f"scene{k}.png"
         ok = False
+        if img.exists() and img.stat().st_size > 10000:  # ya estaba de un intento anterior
+            hashes.add(hashlib.md5(img.read_bytes()).hexdigest())
+            imgs.append(img)
+            log(f"Imagen {k} lista (guardada)")
+            continue
         for attempt in range(3):
             try:
                 extra = "" if attempt == 0 else f", variation {attempt}, different composition"
@@ -520,10 +528,9 @@ def main():
                     break
                 time.sleep(10)
         if not ok:
-            if not imgs:
-                raise SystemExit("No salió ninguna imagen: se reintenta mañana con la misma idea.")
-            log(f"Imagen {k}: uso un recorte de la anterior")
-            crop_variant(imgs[-1], img, "bottom")
+            # modo calidad: no se rellena con recortes; se guarda lo hecho y se reintenta más tarde
+            log(f"Imagen {k} no salió (cupo): guardo lo hecho y reintento más tarde.")
+            return
         imgs.append(img)
 
     # 2) Animar las primeras escenas (el gancho) con la cuota que quede.
@@ -532,7 +539,10 @@ def main():
         clip = work / f"scene{k}.mp4"
         done_clip = False
         motion = sc.get("motion") or CFG.get("default_motion")
-        if motion and k <= CFG["max_clips"] and not quota_out:
+        if clip.exists() and clip.stat().st_size > 10000:  # animación guardada de un intento anterior
+            done_clip = True
+            log(f"Clip {k} listo (guardado)")
+        elif motion and k <= CFG["max_clips"] and not quota_out:
             for attempt in range(2):
                 try:
                     with_tokens(make_clip, img, f"{motion}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
@@ -547,14 +557,26 @@ def main():
                     log(f"Clip {k} falló ({e}); reintento" if attempt == 0 else f"Clip {k} falló otra vez")
                     time.sleep(20)
         if done_clip:
-            visuals.append((clip, True, per))
+            # dos tomas por escena (normal + acercamiento) = cortes cada ~2 s, más ritmo sin gastar cupo
+            punch = work / f"scene{k}p.mp4"
+            if not punch.exists():
+                half = duration(clip) / 2
+                run(["ffmpeg", "-v", "error", "-y", "-ss", f"{half:.2f}", "-i", clip, "-vf",
+                     "crop=iw*0.78:ih*0.78:(iw-ow)/2:(ih-oh)/2", "-an", "-c:v", "libx264", "-crf", "16", punch])
+            visuals += [(clip, True, per / 2), (punch, True, per / 2)]
         else:
             # escena quieta: dos tomas (plano general + acercamiento) para que no aburra
             close = work / f"scene{k}b.png"
             crop_variant(img, close, "center")
             visuals += [(img, False, per / 2), (close, False, per / 2)]
-    if not any(v[1] for v in visuals):
-        raise SystemExit("No salió ningún clip animado: se reintenta mañana con la misma idea.")
+    animated = sum(1 for k in range(1, len(scenes) + 1) if (work / f"scene{k}.mp4").exists())
+    need = min(CFG.get("min_clips", len(scenes)), len(scenes))
+    if animated < need:  # modo calidad: si no están todas las escenas animadas, no se publica
+        log(f"{animated}/{len(scenes)} escenas animadas: guardo lo hecho y sigo en el próximo intento.")
+        return
+    if not publish_today:
+        log("El video de mañana ya tiene todo listo; se publica en el primer intento de mañana.")
+        return
 
     out = OUT / f"short_{idea['id']}.mp4"
     cuts, t = [], 0.0
