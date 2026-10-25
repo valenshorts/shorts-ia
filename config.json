@@ -4,7 +4,7 @@
   "clip_seconds": 4,
   "video_steps": 6,
   "style": "Stylized 3D CGI render, clean Pixar-like animation style, soft bright even studio lighting, simple clean background, highly detailed materials.",
-  "motion_style": "dynamic cinematic camera movement, vivid and energetic, natural real-life speed, rich detail, steady lighting, objects stay solid and do not pass through each other",
+  "motion_style": "realistic physics, smooth and steady, slow gentle camera movement, everything stays in its place, ships stay on the water and vehicles stay on the ground, objects keep their shape and never pass through each other, nothing appears or disappears",
   "voice": "es-MX-JorgeNeural",
   "voice_rate": "+20%",
   "pause_between_sentences": 0.05,
@@ -45,6 +45,8 @@
   "min_pending_ideas": 7,
   "videos_per_day": 1,
   "end_padding": 0.15,
-  "default_motion": "slow cinematic camera push in, subtle natural movement of the main subject",
-  "min_clips": 5
+  "default_motion": "slow smooth camera push in, the scene stays still except for small natural movements like water, smoke or leaves",
+  "min_clips": 5,
+  "check_clips": true,
+  "max_rejects": 2
 }
