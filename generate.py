@@ -404,7 +404,9 @@ Escribe {n} ideas NUEVAS en español neutro (tú, nunca vos; nada de palabras ar
 
 Reglas:
 - Solo datos reales y comprobados por la ciencia. Si no estás seguro de un dato, no lo uses.
-- La primera frase es un gancho que sorprende. La última frase es un final "wow".
+- GANCHO: la primera frase dice YA lo más sorprendente del video, lo mismo que promete "yt_title". Nunca guardar la promesa del título para el final.
+- Nunca empezar explicando ("Cuando cortas...", "La lluvia va..."). Los ganchos que mejor funcionan en el canal: una contradicción ("Un clavo de acero se hunde, pero un barco de miles de toneladas flota") o algo que todos vivieron con un giro ("Se te arrugan los dedos en el agua. Parece que absorben agua, pero no").
+- La última frase es un final "wow".
 - Narración de 70 a 85 palabras, frases cortas y fáciles de decir en voz alta. Números escritos en letras.
 - 5 escenas: "image" en inglés describiendo una imagen 3D estilo animación; las 3 primeras también llevan "motion" en inglés (movimiento simple de 4 segundos).
 - "playlist" es una de: Animales increíbles, Cuerpo humano, Espacio, Ciencia loca, Comida increíble, Inventos por accidente, Mitos falsos, Naturaleza, Lugares increíbles.
