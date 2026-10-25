@@ -124,6 +124,65 @@ def make_clip(image, prompt, seconds, dest):
     return dest
 
 
+CHECK_PROMPT = """These are {n} frames, in order, from a 4-second AI-generated animation for an educational video (stylized 3D cartoon style is fine).
+Intended scene: {image}
+Intended motion: {motion}
+Check ONLY for obvious AI mistakes a normal viewer would notice as weird or impossible: something moving where it can't
+(a ship over land, a car through a wall), objects melting, merging, stretching or changing shape, things appearing or
+disappearing, deformed bodies or extra limbs, things passing through each other, or the subject turning into something else.
+Small imperfections are fine. Reply only JSON: {{"ok": true or false, "reason": "short reason in Spanish"}}"""
+
+
+def gemini_check(clip, image_desc, motion):
+    """Gemini mira fotogramas de la animación. Devuelve (ok, motivo); si no se puede revisar, la deja pasar."""
+    key = os.environ.get("GEMINI_API_KEY")
+    if not key or not CFG.get("check_clips", True):
+        return True, "sin revisión"
+    import base64, urllib.request
+    d, parts = duration(clip), []
+    for j, t in enumerate((0.15, 0.4, 0.65, 0.9)):
+        fr = clip.with_name(f"{clip.stem}_f{j}.jpg")
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{d * t:.2f}", "-i", clip, "-frames:v", "1", "-vf", "scale=384:-2", fr])
+        parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(fr.read_bytes()).decode()}})
+        fr.unlink()
+    parts.append({"text": CHECK_PROMPT.format(n=len(parts), image=image_desc, motion=motion)})
+    body = json.dumps({"contents": [{"parts": parts}],
+                       "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}).encode()
+    for model in CFG.get("gemini_models", ["gemini-flash-latest", "gemini-2.5-flash"]):
+        try:
+            req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                v = json.loads(json.loads(r.read())["candidates"][0]["content"]["parts"][0]["text"])
+            if isinstance(v, list):
+                v = v[0]
+            return bool(v.get("ok", True)), str(v.get("reason", ""))
+        except Exception as e:
+            log(f"Revisión con Gemini {model} falló: {e}")
+    return True, "sin revisión"
+
+
+def clip_ok(clip, k, image_desc, motion, work):
+    """Si la animación tiene un error de IA evidente, la borra para rehacerla (máximo `max_rejects` veces por escena)."""
+    mark, rej = work / f"scene{k}.ok", work / f"scene{k}.rej"
+    if mark.exists():
+        return True
+    n = int(rej.read_text()) if rej.exists() else 0
+    if n >= CFG.get("max_rejects", 2):
+        log(f"Clip {k}: ya se rehízo {n} veces, queda esta versión")
+        mark.touch()
+        return True
+    ok, why = gemini_check(clip, image_desc, motion)
+    if ok:
+        mark.touch()
+        return True
+    rej.write_text(str(n + 1))
+    clip.unlink()
+    log(f"Clip {k} rechazado por la revisión ({why}); lo rehago")
+    return False
+
+
 # ---------------------------------------------------------------- Voz
 def sentences(text):
     return [s.strip() for s in re.split(r"(?<=[.!?])\s+", text.strip()) if s.strip()]
@@ -409,6 +468,7 @@ Reglas:
 - La última frase es un final "wow".
 - Narración de 70 a 85 palabras, frases cortas y fáciles de decir en voz alta. Números escritos en letras.
 - 5 escenas: "image" en inglés describiendo una imagen 3D estilo animación; las 3 primeras también llevan "motion" en inglés (movimiento simple de 4 segundos).
+- "motion" realista y chico: que se muevan cosas que se mueven solas (agua, humo, hojas, un animal respirando) y la cámara despacio. Los objetos grandes (barcos, autos, aviones, edificios) no viajan por la imagen: se quedan en su lugar.
 - "playlist" es una de: Animales increíbles, Cuerpo humano, Espacio, Ciencia loca, Comida increíble, Inventos por accidente, Mitos falsos, Naturaleza, Lugares increíbles.
 - "highlight": 2 palabras o frases cortas de la narración para resaltar en amarillo.
 - "yt_title": título corto que dé curiosidad, con un emoji al final.
@@ -542,22 +602,25 @@ def main():
         done_clip = False
         motion = sc.get("motion") or CFG.get("default_motion")
         if clip.exists() and clip.stat().st_size > 10000:  # animación guardada de un intento anterior
-            done_clip = True
-            log(f"Clip {k} listo (guardado)")
-        elif motion and k <= CFG["max_clips"] and not quota_out:
-            for attempt in range(2):
+            if clip_ok(clip, k, sc["image"], motion, work):
+                done_clip = True
+                log(f"Clip {k} listo (guardado)")
+        if not done_clip and motion and k <= CFG["max_clips"] and not quota_out:
+            for attempt in range(3):
                 try:
                     with_tokens(make_clip, img, f"{motion}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
-                    done_clip = True
-                    log(f"Clip {k} listo")
-                    break
                 except Exception as e:
                     if "quota" in str(e).lower():
                         log("Se terminó la cuota gratis de hoy: el resto va con imágenes.")
                         quota_out = True
                         break
-                    log(f"Clip {k} falló ({e}); reintento" if attempt == 0 else f"Clip {k} falló otra vez")
+                    log(f"Clip {k} falló ({e}); reintento" if attempt < 2 else f"Clip {k} falló otra vez")
                     time.sleep(20)
+                    continue
+                if clip_ok(clip, k, sc["image"], motion, work):
+                    done_clip = True
+                    log(f"Clip {k} listo")
+                    break
         if done_clip:
             # la animación se muestra entera, sin acercamiento encima
             visuals.append((clip, True, per))
