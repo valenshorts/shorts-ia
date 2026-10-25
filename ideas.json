@@ -450,7 +450,7 @@
   {
     "id": "015",
     "title": "¿Por qué ves estrellitas al pararte rápido?",
-    "narration": "Cuando te paras de golpe, la gravedad tira la sangre hacia tus piernas. Por un segundo le llega menos sangre a la cabeza, y la vista se te llena de puntitos. Tu cuerpo lo corrige enseguida apretando las venas y acelerando el corazón. Pero imagínate pasar meses sin gravedad. Eso les pasa a los astronautas. Cuando vuelven a la Tierra, su cuerpo se olvidó de hacer ese ajuste, y muchos se marean o se desmayan solo por pararse.",
+    "narration": "Muchos astronautas se desmayan al volver a la Tierra. La culpa: algo que también te pasa a ti. Cuando te paras de golpe, la gravedad tira la sangre hacia tus piernas. Por un segundo le llega menos sangre a la cabeza, y la vista se te llena de puntitos. Tu cuerpo lo corrige enseguida. Ahora imagina pasar meses sin gravedad. Cuando vuelven a la Tierra, su cuerpo se olvidó de hacer ese ajuste, y muchos se marean o se desmayan solo por pararse.",
     "scenes": [
       {
         "image": "a semi-realistic young adult sitting on a couch in a living room",
@@ -514,7 +514,7 @@
   {
     "id": "017",
     "title": "¿Hace mal tronarse los dedos?",
-    "narration": "Entre tus huesos hay un líquido con gas disuelto. Cuando estiras el dedo, el espacio se agranda de golpe y se forma una burbuja. Ese crac es la burbuja apareciendo. Y siempre te dijeron que te va a dar artrosis. Un médico quiso probarlo con su propio cuerpo. Durante más de sesenta años se tronó los dedos de una sola mano, y de la otra nunca. Al final, ninguna de las dos tenía artrosis. Por ese experimento le dieron un premio.",
+    "narration": "Un médico se tronó los dedos de una sola mano durante sesenta años, para probar algo. Entre tus huesos hay un líquido con gas disuelto. Cuando estiras el dedo, el espacio se agranda de golpe y se forma una burbuja. Ese crac es la burbuja apareciendo. Y siempre te dijeron que te va a dar artrosis. Por eso ese médico se tronó una mano, y la otra nunca. Al final, ninguna de las dos tenía artrosis. Por ese experimento le dieron un premio.",
     "scenes": [
       {
         "image": "two hands with interlaced fingers about to crack knuckles",
@@ -546,7 +546,7 @@
   {
     "id": "018",
     "title": "¿Por qué explotan las palomitas de maíz?",
-    "narration": "Cada grano de maíz tiene una gotita de agua adentro. Cuando lo calientas, esa agua se convierte en vapor y empuja la cáscara dura desde adentro. Al llegar a unos ciento ochenta grados, la presión adentro del grano es como nueve veces la del aire que respiras. La cáscara no aguanta más, revienta, y el almidón se infla como espuma y se endurece en el aire. Todo eso pasa en una fracción de segundo.",
+    "narration": "Justo antes de reventar, un grano de maíz aguanta adentro nueve veces la presión del aire. Cada grano de maíz tiene una gotita de agua adentro. Cuando lo calientas, esa agua se convierte en vapor y empuja la cáscara dura desde adentro. Al llegar a unos ciento ochenta grados, la cáscara no aguanta más, revienta, y el almidón se infla como espuma y se endurece en el aire. Todo eso pasa en una fracción de segundo.",
     "scenes": [
       {
         "image": "yellow corn kernels in a hot pan on a stove",
@@ -642,7 +642,7 @@
   {
     "id": "021",
     "title": "¿Por qué el mar es salado?",
-    "narration": "La lluvia va desgastando las rocas y arrastra sus minerales a los ríos. Los ríos los llevan al mar. El agua del mar se evapora, pero la sal no se va con ella, así que se queda. Y así durante millones de años. ¿Sabes cuánta sal hay? Si sacaras toda la sal del mar y la repartieras sobre todos los continentes, harías una capa de más de ciento cincuenta metros de alto. Como un edificio de cuarenta pisos.",
+    "narration": "Si sacaras toda la sal del mar, taparías los continentes con una capa de ciento cincuenta metros. La lluvia va desgastando las rocas y arrastra sus minerales a los ríos. Los ríos los llevan al mar. El agua del mar se evapora, pero la sal no se va con ella, así que se queda. Y así durante millones de años. Por eso hay tanta: esa capa de sal sería como un edificio de cuarenta pisos.",
     "scenes": [
       {
         "image": "rain falling on large gray rocks on a mountain",
@@ -706,7 +706,7 @@
   {
     "id": "023",
     "title": "El camaleón no cambia de color para esconderse",
-    "narration": "El camaleón no tiene pinturas en la piel. Tiene millones de cristales diminutos. Cuando se relaja o se pone nervioso, los separa o los junta, y eso cambia la luz que rebota. Así cambia de color en segundos. Pero aquí viene la sorpresa: casi nunca lo hace para camuflarse. Cambia de color para mostrar lo que siente, para asustar a otro macho o conquistar a una hembra, y para calentarse o enfriarse.",
+    "narration": "El camaleón casi nunca cambia de color para esconderse. El camaleón no tiene pinturas en la piel. Tiene millones de cristales diminutos. Cuando se relaja o se pone nervioso, los separa o los junta, y eso cambia la luz que rebota. Así cambia de color en segundos. Entonces, ¿para qué lo hace? Cambia de color para mostrar lo que siente, para asustar a otro macho o conquistar a una hembra, y para calentarse o enfriarse.",
     "scenes": [
       {
         "image": "a green chameleon on a branch in a tropical forest",
@@ -738,7 +738,7 @@
   {
     "id": "024",
     "title": "¿Por qué el agua oxigenada hace espuma?",
-    "narration": "Cuando pones agua oxigenada en una herida, hace espuma. Es que tu sangre y tu piel tienen una sustancia que la rompe al instante en agua y oxígeno. Ese oxígeno sale en burbujitas, y eso es la espuma blanca. Mucha gente cree que esa espuma significa que está matando gérmenes. Pero los médicos hoy recomiendan otra cosa: el agua oxigenada también daña las células que curan tu herida. Para una raspadura, lo mejor es agua y jabón.",
+    "narration": "Ponerle agua oxigenada a una herida puede hacer que tarde más en curarse. Cuando pones agua oxigenada en una herida, hace espuma. Es que tu sangre y tu piel tienen una sustancia que la rompe al instante en agua y oxígeno. Mucha gente cree que esa espuma significa que está matando gérmenes. Pero los médicos hoy recomiendan otra cosa: el agua oxigenada también daña las células que curan tu herida. Para una raspadura, lo mejor es agua y jabón.",
     "scenes": [
       {
         "image": "a brown bottle of hydrogen peroxide pouring onto a small scrape on a knee",
@@ -834,7 +834,7 @@
   {
     "id": "027",
     "title": "El hombre que tuvo hipo 68 años",
-    "narration": "El hipo empieza en el diafragma, un músculo que tienes debajo de los pulmones. De repente se contrae solo, y tomas aire de golpe. En ese mismo instante se cierran tus cuerdas vocales, y ese cierre rápido es el sonido hip. Casi siempre se pasa en minutos. Pero un hombre en Estados Unidos tuvo hipo durante sesenta y ocho años seguidos. Empezó en 1922, y un día de 1990 se le fue solo. Es récord mundial.",
+    "narration": "Un hombre tuvo hipo sesenta y ocho años seguidos. El hipo empieza en el diafragma, un músculo que tienes debajo de los pulmones. De repente se contrae solo, y tomas aire de golpe. En ese mismo instante se cierran tus cuerdas vocales, y ese cierre rápido es el sonido hip. Casi siempre se pasa en minutos. Pero a aquel hombre, en Estados Unidos, nunca se le pasaba. Empezó en 1922, y un día de 1990 se le fue solo. Es récord mundial.",
     "scenes": [
       {
         "image": "a semi-realistic adult hiccupping in a kitchen, hand on chest",
@@ -866,7 +866,7 @@
   {
     "id": "028",
     "title": "¿Por qué la Coca explota con Mentos?",
-    "narration": "El refresco tiene gas disuelto que está esperando una excusa para salir. La pastilla de menta parece lisa, pero vista de cerca está llena de poros diminutos. En cada poro se forman burbujas al instante, millones a la vez, y el refresco sale disparado hasta varios metros. Y hay un detalle que pocos saben: con el refresco light sale mucho más alto. El endulzante ayuda a que se formen burbujas, y el azúcar del normal las frena.",
+    "narration": "Con refresco light, el truco de las pastillas de menta sale mucho más alto. ¿Por qué? El refresco tiene gas disuelto que está esperando una excusa para salir. La pastilla de menta parece lisa, pero vista de cerca está llena de poros diminutos. En cada poro se forman burbujas al instante, millones a la vez, y el refresco sale disparado hasta varios metros. ¿Y el light? El endulzante ayuda a que se formen burbujas, y el azúcar del normal las frena.",
     "scenes": [
       {
         "image": "a bottle of dark soda standing on grass outdoors",
@@ -898,7 +898,7 @@
   {
     "id": "029",
     "title": "¿Por qué un pez se ahoga fuera del agua?",
-    "narration": "Los peces toman agua por la boca y la sacan por las branquias. Las branquias están llenas de láminas finitas con sangre, y cuando el agua pasa, le roban el oxígeno que lleva disuelto. Ahora, el aire tiene muchísimo más oxígeno que el agua. Entonces, ¿por qué un pez se ahoga fuera del agua? Porque sin agua que las sostenga, esas láminas finitas se pegan unas con otras y colapsan, y el pez ya no puede usar ese oxígeno.",
+    "narration": "El aire tiene muchísimo más oxígeno que el agua. Entonces, ¿por qué un pez se ahoga fuera del agua? Los peces toman agua por la boca y la sacan por las branquias. Las branquias están llenas de láminas finitas con sangre, y cuando el agua pasa, le roban el oxígeno que lleva disuelto. Pero sin agua que las sostenga, esas láminas finitas se pegan unas con otras y colapsan, y el pez ya no puede usar ese oxígeno.",
     "scenes": [
       {
         "image": "a goldfish swimming in a clear aquarium",
@@ -930,7 +930,7 @@
   {
     "id": "030",
     "title": "La luna se está yendo",
-    "narration": "La luna en el horizonte parece gigante, pero es un truco de tu cerebro. Si la tapas con el dedo, mide lo mismo que cuando está bien arriba. Tu cerebro la compara con edificios y árboles, y la agranda. Pero hay algo de la luna que sí cambia de verdad: se está yendo. Cada año se aleja de la Tierra casi cuatro centímetros, más o menos lo que te crecen las uñas. Dentro de muchísimo tiempo, se verá cada vez más chica.",
+    "narration": "La Luna se está alejando de la Tierra, y se puede medir. La luna en el horizonte parece gigante, pero es un truco de tu cerebro. Si la tapas con el dedo, mide lo mismo que cuando está bien arriba. Tu cerebro la compara con edificios y árboles, y la agranda. Lo que sí es real es que se va: cada año se aleja de la Tierra casi cuatro centímetros, más o menos lo que te crecen las uñas. Dentro de muchísimo tiempo, se verá cada vez más chica.",
     "scenes": [
       {
         "image": "a huge orange full moon rising over a city skyline",
@@ -1214,7 +1214,7 @@
   {
     "id": "038",
     "title": "Por qué se te tapan los oídos en el avión",
-    "narration": "Detrás de cada oído tienes una cámara de aire, conectada a la garganta por un tubito muy finito. Cuando el avión sube o baja, la presión de afuera cambia rápido, pero el aire de adentro tarda en igualarse. Entonces el tímpano queda empujado y se te tapa el oído. Cuando tragas o bostezas, el tubito se abre y suena el famoso pop. Por eso lloran tanto los bebés en los aviones: todavía no saben destaparse los oídos solos.",
+    "narration": "Si en el avión se te tapan los oídos, la culpa es de un tubito escondido en tu garganta. Detrás de cada oído hay una cámara de aire, conectada a ese tubito. Cuando el avión sube o baja, la presión de afuera cambia rápido, pero el aire de adentro tarda en igualarse. Entonces el tímpano queda empujado y se te tapa el oído. Cuando tragas o bostezas, el tubito se abre y suena el famoso pop. Por eso lloran tanto los bebés en los aviones: todavía no saben destaparse los oídos solos.",
     "scenes": [
       {
         "image": "an airplane taking off into the clouds",
@@ -2294,7 +2294,7 @@
   {
     "id": "068",
     "title": "Por qué no se cae la Torre de Pisa",
-    "narration": "La Torre de Pisa empezó a inclinarse cuando todavía la estaban construyendo, hace más de ochocientos años. El suelo debajo es blando, como arena mojada, y un lado se hundió más que el otro. Durante siglos se fue inclinando cada vez más. A fines del siglo veinte estaba a punto de caerse. Entonces los ingenieros sacaron tierra con mucho cuidado de debajo del lado alto. La torre se enderezó unos cuarenta centímetros, y hoy es más segura que nunca.",
+    "narration": "La Torre de Pisa estuvo a punto de caerse, y la salvaron sacándole tierra. La Torre de Pisa empezó a inclinarse cuando todavía la estaban construyendo, hace más de ochocientos años. El suelo debajo es blando, como arena mojada, y un lado se hundió más que el otro. Durante siglos se fue inclinando cada vez más. Entonces los ingenieros sacaron tierra con mucho cuidado de debajo del lado alto. La torre se enderezó unos cuarenta centímetros, y hoy es más segura que nunca.",
     "scenes": [
       {
         "image": "the Leaning Tower of Pisa on a sunny day with tourists",
@@ -2654,7 +2654,7 @@
   {
     "id": "078",
     "title": "La luz de las luciérnagas",
-    "narration": "Una luciérnaga hace luz con una reacción química dentro de su cuerpo. Mezcla una sustancia con oxígeno, y sale luz. Y es una luz especial: casi no produce calor. Una bombilla común pierde mucha energía calentándose. La luciérnaga no. Por eso se llama luz fría. Cada especie tiene su propio código de destellos, como un idioma. Los machos parpadean de una forma, y las hembras responden. Es una conversación hecha de luces.",
+    "narration": "La luz de una luciérnaga casi no calienta. Una luciérnaga hace luz con una reacción química dentro de su cuerpo. Mezcla una sustancia con oxígeno, y sale luz. Y es una luz especial: casi no produce calor. Una bombilla común pierde mucha energía calentándose. La luciérnaga no. Por eso se llama luz fría. Cada especie tiene su propio código de destellos, como un idioma. Los machos parpadean de una forma, y las hembras responden. Es una conversación hecha de luces.",
     "scenes": [
       {
         "image": "fireflies glowing over a field at night",
