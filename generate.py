@@ -557,13 +557,8 @@ def main():
                     log(f"Clip {k} falló ({e}); reintento" if attempt == 0 else f"Clip {k} falló otra vez")
                     time.sleep(20)
         if done_clip:
-            # dos tomas por escena (normal + acercamiento) = cortes cada ~2 s, más ritmo sin gastar cupo
-            punch = work / f"scene{k}p.mp4"
-            if not punch.exists():
-                half = duration(clip) / 2
-                run(["ffmpeg", "-v", "error", "-y", "-ss", f"{half:.2f}", "-i", clip, "-vf",
-                     "crop=iw*0.78:ih*0.78:(iw-ow)/2:(ih-oh)/2", "-an", "-c:v", "libx264", "-crf", "16", punch])
-            visuals += [(clip, True, per / 2), (punch, True, per / 2)]
+            # la animación se muestra entera, sin acercamiento encima
+            visuals.append((clip, True, per))
         else:
             # escena quieta: dos tomas (plano general + acercamiento) para que no aburra
             close = work / f"scene{k}b.png"
