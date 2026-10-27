@@ -3,15 +3,17 @@ Sube el Short del día también a Instagram Reels y a TikTok.
 Lee output/meta.json (lo escribe generate.py). Si faltan los datos de una red, la saltea.
 
 Instagram: IG_USER_ID + IG_TOKEN (token de "Instagram API con inicio de sesión de Instagram", dura 60 días).
-TikTok:    TIKTOK_CLIENT_KEY + TIKTOK_CLIENT_SECRET + TIKTOK_REFRESH_TOKEN (queda en tus borradores de TikTok
-           y lo publicás con un toque desde la app).
+TikTok:    TIKTOK_CLIENT_KEY + TIKTOK_CLIENT_SECRET + tt_token.enc (refresh token cifrado; se crea con
+           `python crosspost.py --tiktok-code CODIGO`). Queda en tus borradores de TikTok hasta que la app esté auditada.
 """
 import json, os, time, urllib.parse, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-META = json.loads((ROOT / "output" / "meta.json").read_text(encoding="utf-8"))
-VIDEO = ROOT / "output" / META["file"]
+_M = ROOT / "output" / "meta.json"
+META = json.loads(_M.read_text(encoding="utf-8")) if _M.exists() else {}
+VIDEO = ROOT / "output" / META.get("file", "")
+TT_TOKEN = ROOT / "tt_token.enc"  # refresh token de TikTok, cifrado con TIKTOK_CLIENT_SECRET
 IG_API = "https://graph.instagram.com/v23.0"
 
 
@@ -82,27 +84,74 @@ def instagram():
     p.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
+def _tt_save(refresh, sec):
+    import subprocess
+    r = subprocess.run(["openssl", "enc", "-aes-256-cbc", "-pbkdf2", "-salt", "-a", "-A", "-pass", "env:TTPASS"],
+                       input=refresh, capture_output=True, text=True, env={**os.environ, "TTPASS": sec}, check=True)
+    TT_TOKEN.write_text(r.stdout.strip() + "\n")
+
+
+def _tt_load(sec):
+    import subprocess
+    r = subprocess.run(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-a", "-A", "-pass", "env:TTPASS"],
+                       input=TT_TOKEN.read_text().strip() + "\n", capture_output=True, text=True,
+                       env={**os.environ, "TTPASS": sec}, check=True)
+    return r.stdout.strip()
+
+
+def _tt_token(body):
+    return http("https://open.tiktokapis.com/v2/oauth/token/", body,
+                headers={"Content-Type": "application/x-www-form-urlencoded"})
+
+
+def tiktok_connect(code):
+    """Cambia el código de autorización por tokens y guarda el refresh token cifrado."""
+    key, sec = os.environ["TIKTOK_CLIENT_KEY"], os.environ["TIKTOK_CLIENT_SECRET"]
+    t = _tt_token({"client_key": key, "client_secret": sec, "code": code, "grant_type": "authorization_code",
+                   "redirect_uri": os.environ.get("TIKTOK_REDIRECT", "https://valenshorts.github.io/")})
+    if "refresh_token" not in t:
+        raise RuntimeError(f"TikTok no devolvió tokens: {t}")
+    _tt_save(t["refresh_token"], sec)
+    log("TikTok conectado: token guardado (cifrado).")
+
+
 def tiktok():
-    key, sec, ref = (os.environ.get(k) for k in ("TIKTOK_CLIENT_KEY", "TIKTOK_CLIENT_SECRET", "TIKTOK_REFRESH_TOKEN"))
-    if not (key and sec and ref):
+    key, sec = os.environ.get("TIKTOK_CLIENT_KEY"), os.environ.get("TIKTOK_CLIENT_SECRET")
+    if not (key and sec and TT_TOKEN.exists() and META):
         log("TikTok: sin datos, lo salteo.")
         return
-    t = http("https://open.tiktokapis.com/v2/oauth/token/",
-             {"client_key": key, "client_secret": sec, "grant_type": "refresh_token", "refresh_token": ref},
-             headers={"Content-Type": "application/x-www-form-urlencoded"})
+    t = _tt_token({"client_key": key, "client_secret": sec, "grant_type": "refresh_token",
+                   "refresh_token": _tt_load(sec)})
+    if "access_token" not in t:
+        raise RuntimeError(f"TikTok no renovó el token: {t}")
+    if t.get("refresh_token"):
+        _tt_save(t["refresh_token"], sec)
     at = t["access_token"]
-    size = VIDEO.stat().st_size
+    size = VIDEO.stat().st_size  # el archivo original, sin recomprimir
+    chunk = size if size <= 64 * 1024 * 1024 else 10 * 1024 * 1024
+    count = 1 if chunk == size else size // chunk
     init = http("https://open.tiktokapis.com/v2/post/publish/inbox/video/init/",
                 data=json.dumps({"source_info": {"source": "FILE_UPLOAD", "video_size": size,
-                                                 "chunk_size": size, "total_chunk_count": 1}}).encode(),
+                                                 "chunk_size": chunk, "total_chunk_count": count}}).encode(),
                 headers={"Authorization": f"Bearer {at}", "Content-Type": "application/json; charset=UTF-8"})
-    url = init["data"]["upload_url"]
-    http(url, data=VIDEO.read_bytes(), method="PUT",
-         headers={"Content-Type": "video/mp4", "Content-Range": f"bytes 0-{size - 1}/{size}"})
-    log("TikTok: listo, el video está en tus borradores de TikTok para publicarlo.")
+    url, data = init["data"]["upload_url"], VIDEO.read_bytes()
+    for n in range(count):
+        a = n * chunk
+        b = size if n == count - 1 else a + chunk
+        http(url, data=data[a:b], method="PUT",
+             headers={"Content-Type": "video/mp4", "Content-Range": f"bytes {a}-{b - 1}/{size}"})
+    p = ROOT / "tt_done.json"
+    d = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    d[META["id"]] = {"publish_id": init["data"].get("publish_id"), "date": time.strftime("%Y-%m-%d"), "mode": "borrador"}
+    p.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
+    log("TikTok: listo, el video está en tus borradores de TikTok (notificación en la app) para publicarlo.")
 
 
 if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 2 and sys.argv[1] == "--tiktok-code":
+        tiktok_connect(sys.argv[2])
+        sys.exit(0)
     for fn in (instagram, tiktok):
         try:
             fn()
