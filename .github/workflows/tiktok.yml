@@ -1,11 +1,12 @@
 name: TikTok
 
-# Todos los días a las 21:07 AR (18:07 México) manda a TikTok, en calidad original, el video más viejo que ya es
-# público en YouTube y todavía no está en TikTok (desde el 014; los anteriores se programaron a mano en TikTok Studio).
+# A las 13:07 y 21:07 AR (10:07 y 18:07 México) manda a TikTok, en calidad original, UN video: el más viejo que ya es
+# público en YouTube y todavía no está en TikTok (desde el 004). Al día, el video nuevo sale a las 21:07.
 # Mientras la app de TikTok no esté auditada, llega como BORRADOR: notificación en la app → Publicar.
 # A mano: Run workflow. "code" = código de autorización de TikTok (solo para conectar la cuenta).
 on:
   schedule:
+    - cron: "7 16 * * *"
     - cron: "7 0 * * *"
   workflow_dispatch:
     inputs:
@@ -57,7 +58,7 @@ jobs:
           done = json.loads(Path("done.json").read_text(encoding="utf-8"))
           tt = json.loads(Path("tt_done.json").read_text(encoding="utf-8")) if Path("tt_done.json").exists() else {}
           pend = sorted(k for k, v in done.items()
-                        if k >= "014" and v.get("youtube_id") and k not in tt and v.get("publish_at", "") <= now)
+                        if k >= "004" and k not in tt and v.get("publish_at", "") <= now)
           manual = os.environ.get("VIDEOS", "").strip()
           print(f"[tt] Pendientes: {pend or 'ninguno'}")
           ok = Path("tt_token.enc").exists() and os.environ.get("TIKTOK_CLIENT_KEY")
@@ -94,7 +95,7 @@ jobs:
           if not want:
               now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
               pend = sorted(k for k, v in done.items()
-                            if k >= "014" and v.get("youtube_id") and k not in tt and v.get("publish_at", "") <= now)
+                            if k >= "004" and k not in tt and v.get("publish_at", "") <= now)
               want = [k for k in pend if k in found][:1]
           out = Path("output"); out.mkdir(exist_ok=True)
           for iid in want:
