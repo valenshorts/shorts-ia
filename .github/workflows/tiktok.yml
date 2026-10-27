@@ -1,11 +1,22 @@
-name: Preparar TikTok
+name: TikTok
 
-# Copia los videos ya hechos (los que GitHub todavía guarda, 14 días) a la rama "tt",
-# para que Claude los cargue y programe en TikTok Studio desde el navegador.
+# Todos los días a las 21:07 AR (18:07 México) manda a TikTok, en calidad original, el video más viejo que ya es
+# público en YouTube y todavía no está en TikTok (desde el 014; los anteriores se programaron a mano en TikTok Studio).
+# Mientras la app de TikTok no esté auditada, llega como BORRADOR: notificación en la app → Publicar.
+# A mano: Run workflow. "code" = código de autorización de TikTok (solo para conectar la cuenta).
 on:
-  workflow_dispatch: {}
   schedule:
-    - cron: "17 4 * * *"   # 01:17 AR, después de que se genera el video del día
+    - cron: "7 0 * * *"
+  workflow_dispatch:
+    inputs:
+      code:
+        description: "Código de autorización de TikTok (solo para conectar la cuenta)"
+        required: false
+        default: ""
+      videos:
+        description: "Números de idea separados por coma (ej: 014). Vacío = el próximo de la cola."
+        required: false
+        default: ""
 
 permissions:
   actions: read
@@ -16,13 +27,48 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  tt:
+  tiktok:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
+    env:
+      TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+      TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Conectar la cuenta
+        if: github.event.inputs.code != ''
+        run: python crosspost.py --tiktok-code "${{ github.event.inputs.code }}"
+
+      - name: ¿Hay algo para subir?
+        id: cola
+        if: github.event.inputs.code == ''
+        env:
+          VIDEOS: ${{ github.event.inputs.videos }}
+        run: |
+          python - <<'PY'
+          import json, os, time
+          from pathlib import Path
+          now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+          done = json.loads(Path("done.json").read_text(encoding="utf-8"))
+          tt = json.loads(Path("tt_done.json").read_text(encoding="utf-8")) if Path("tt_done.json").exists() else {}
+          pend = sorted(k for k, v in done.items()
+                        if k >= "014" and v.get("youtube_id") and k not in tt and v.get("publish_at", "") <= now)
+          manual = os.environ.get("VIDEOS", "").strip()
+          print(f"[tt] Pendientes: {pend or 'ninguno'}")
+          ok = Path("tt_token.enc").exists() and os.environ.get("TIKTOK_CLIENT_KEY")
+          if not ok:
+              print("[tt] TikTok todavía no está conectado")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"hay={'1' if (ok and (pend or manual)) else ''}\n")
+          PY
+
       - name: Bajar los videos
+        if: steps.cola.outputs.hay == '1'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -31,24 +77,40 @@ jobs:
             gh run download "$r" -R "${{ github.repository }}" -n short -D "dl/$r" 2>/dev/null || true
           done
 
-      - name: Publicar en la rama tt
+      - name: Subir a TikTok
+        if: steps.cola.outputs.hay == '1'
+        env:
+          VIDEOS: ${{ github.event.inputs.videos }}
         run: |
           python - <<'PY'
-          import json, re, shutil
+          import json, os, re, shutil, subprocess, time
           from pathlib import Path
+          found = {}
+          for f in Path("dl").rglob("short_*.mp4"):
+              found[re.search(r"short_(\d+)", f.name).group(1)] = f
           done = json.loads(Path("done.json").read_text(encoding="utf-8"))
           tt = json.loads(Path("tt_done.json").read_text(encoding="utf-8")) if Path("tt_done.json").exists() else {}
-          out = Path("/tmp/tt"); out.mkdir()
-          for f in Path("dl").rglob("short_*.mp4"):
-              iid = re.search(r"short_(\d+)", f.name).group(1)
-              if iid in done and iid not in tt and iid >= "004":
-                  shutil.copy(f, out / f.name)
-          print(sorted(p.name for p in out.iterdir()))
+          want = [v.strip().zfill(3) for v in os.environ.get("VIDEOS", "").split(",") if v.strip()]
+          if not want:
+              now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+              pend = sorted(k for k, v in done.items()
+                            if k >= "014" and v.get("youtube_id") and k not in tt and v.get("publish_at", "") <= now)
+              want = [k for k in pend if k in found][:1]
+          out = Path("output"); out.mkdir(exist_ok=True)
+          for iid in want:
+              if iid not in found:
+                  print(f"[tt] No encontré el video {iid}"); continue
+              shutil.copy(found[iid], out / found[iid].name)
+              (out / "meta.json").write_text(json.dumps({"id": iid, "file": found[iid].name, "caption": ""}), encoding="utf-8")
+              print(f"[tt] Subiendo {iid}", flush=True)
+              subprocess.run(["python", "crosspost.py"])
           PY
-          cd /tmp/tt
-          git init -q -b tt
+
+      - name: Guardar
+        if: always()
+        run: |
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
-          git add -A
-          git commit -q -m "Videos para TikTok" || exit 0
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" tt
+          for f in tt_done.json tt_token.enc; do [ -f "$f" ] && git add "$f"; done
+          git commit -m "TikTok" || echo "nada para guardar"
+          git pull --rebase && git push
