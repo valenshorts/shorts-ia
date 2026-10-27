@@ -76,6 +76,10 @@ def instagram():
         time.sleep(10)
     res = http(f"{IG_API}/{uid}/media_publish", {"creation_id": cid, "access_token": tok})
     log("Instagram: publicado", res.get("id"))
+    p = ROOT / "ig_done.json"  # anota lo subido para que la cola no lo repita
+    d = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    d[META["id"]] = {"ig_id": res.get("id"), "date": time.strftime("%Y-%m-%d")}
+    p.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def tiktok():
