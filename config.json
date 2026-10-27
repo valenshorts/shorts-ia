@@ -40,7 +40,7 @@
   "end_card_seconds": 2.6,
   "gemini_models": [
     "gemini-flash-latest",
-    "gemini-2.5-flash"
+    "gemini-flash-lite-latest"
   ],
   "min_pending_ideas": 7,
   "videos_per_day": 1,
