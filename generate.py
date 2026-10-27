@@ -414,13 +414,17 @@ def upload(video, idea):
                         client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"],
                         token_uri="https://oauth2.googleapis.com/token")
     yt = build("youtube", "v3", credentials=creds)
+    status = {"privacyStatus": CFG["privacy"], "selfDeclaredMadeForKids": False, "containsSyntheticMedia": False}
+    publish_at = scheduled_time()
+    if publish_at:  # se sube privado y YouTube lo publica solo a la hora elegida
+        status.update(privacyStatus="private", publishAt=publish_at)
+        log(f"Programado para publicarse a las {CFG['publish_time_ar']} (hora AR)")
     body = {
         "snippet": {"title": youtube_title(idea),
                     "description": youtube_description(idea),
                     "tags": list(dict.fromkeys(idea.get("tags", []) + CFG["extra_tags"]))[:15],
                     "categoryId": "27", "defaultLanguage": "es", "defaultAudioLanguage": "es"},
-        "status": {"privacyStatus": CFG["privacy"], "selfDeclaredMadeForKids": False,
-                   "containsSyntheticMedia": False},
+        "status": status,
     }
     req = yt.videos().insert(part="snippet,status", body=body,
                              media_body=MediaFileUpload(str(video), chunksize=-1, resumable=True))
@@ -428,19 +432,64 @@ def upload(video, idea):
     while resp is None:
         _, resp = req.next_chunk()
     log("Subido: https://youtube.com/shorts/" + resp["id"])
-    extras(yt, resp["id"], idea)
-    return resp["id"]
+    extras(yt, resp["id"], idea, comment=not publish_at)  # si está programado, el comentario va cuando sea público
+    return resp["id"], publish_at
 
 
-def extras(yt, vid, idea):
-    """Comentario con pregunta + lista por tema. Necesita el permiso youtube.force-ssl; si no está, se saltea."""
+def scheduled_time():
+    """Hora de publicación de hoy en UTC (RFC3339), o None si hay que publicar ya (pasó la hora o fue a mano)."""
+    from datetime import datetime, timedelta, timezone
+    hhmm = CFG.get("publish_time_ar")
+    if not hhmm or os.environ.get("FORCE"):
+        return None
+    ar = timezone(timedelta(hours=-3))
+    now = datetime.now(ar)
+    h, m = map(int, hhmm.split(":"))
+    target = now.replace(hour=h, minute=m, second=0, microsecond=0)
+    if target - now < timedelta(minutes=20):
+        return None
+    return target.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def youtube_client():
+    from google.oauth2.credentials import Credentials
+    from googleapiclient.discovery import build
+    creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"],
+                        client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"],
+                        token_uri="https://oauth2.googleapis.com/token")
+    return build("youtube", "v3", credentials=creds)
+
+
+def post_comment(yt, vid, idea):
     q = idea.get("question") or CFG.get("comment", "🤯 ¿Lo sabías? Escribe SÍ o NO 👇 ¿Qué tema quieres para mañana?")
     try:
         yt.commentThreads().insert(part="snippet", body={"snippet": {"videoId": vid, "topLevelComment": {
             "snippet": {"textOriginal": q}}}}).execute()
         log("Comentario publicado")
+        return True
     except Exception as e:
         log(f"Sin comentario automático ({str(e)[:120]})")
+        return False
+
+
+def pending_comments(done, ideas):
+    """Comenta los videos programados que ya se hicieron públicos."""
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    todo = [k for k, v in done.items() if v.get("comment_pending") and v.get("publish_at", "") <= now]
+    if not todo or not os.environ.get("YT_REFRESH_TOKEN"):
+        return False
+    yt, by = youtube_client(), {i["id"]: i for i in ideas}
+    for k in todo:
+        if k in by and post_comment(yt, done[k]["youtube_id"], by[k]):
+            done[k].pop("comment_pending", None)
+    return True
+
+
+def extras(yt, vid, idea, comment=True):
+    """Comentario con pregunta + lista por tema. Necesita el permiso youtube.force-ssl; si no está, se saltea."""
+    if comment:
+        post_comment(yt, vid, idea)
     name = idea.get("playlist")
     if not name:
         return
@@ -542,6 +591,11 @@ def main():
     ideas = json.loads((ROOT / "ideas.json").read_text(encoding="utf-8"))
     done_p = ROOT / "done.json"
     done = json.loads(done_p.read_text(encoding="utf-8")) if done_p.exists() else {}
+    try:
+        if pending_comments(done, ideas):
+            done_p.write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
+    except Exception as e:
+        log(f"Comentarios pendientes: falló ({e})")
     per_day = CFG.get("videos_per_day", 1)
     publish_today = os.environ.get("FORCE") or sum(1 for v in done.values() if v.get("date") == today_ar()) < per_day
     if not publish_today:
@@ -654,7 +708,7 @@ def main():
     mascot = mascot_png(work) if CFG.get("end_card", True) else None
     assemble(visuals, voice, subs, total, out, sfx, mascot)
     log(f"Short listo: {out}")
-    vid = upload(out, idea)
+    vid, publish_at = upload(out, idea) or (None, None)
     tags = " ".join("#" + _norm(t) for t in idea.get("tags", []) if _norm(t))
     (OUT / "meta.json").write_text(json.dumps({
         "id": idea["id"], "file": out.name, "youtube_id": vid,
@@ -662,6 +716,8 @@ def main():
                    f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
         ensure_ascii=False, indent=2), encoding="utf-8")
     done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": today_ar()}
+    if publish_at:
+        done[idea["id"]].update(publish_at=publish_at, comment_pending=True)
     done_p.write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
