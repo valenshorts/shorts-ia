@@ -148,18 +148,24 @@ def gemini_check(clip, image_desc, motion):
     parts.append({"text": CHECK_PROMPT.format(n=len(parts), image=image_desc, motion=motion)})
     body = json.dumps({"contents": [{"parts": parts}],
                        "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}).encode()
-    for model in CFG.get("gemini_models", ["gemini-flash-latest", "gemini-2.5-flash"]):
-        try:
-            req = urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-                data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
-            with urllib.request.urlopen(req, timeout=120) as r:
-                v = json.loads(json.loads(r.read())["candidates"][0]["content"]["parts"][0]["text"])
-            if isinstance(v, list):
-                v = v[0]
-            return bool(v.get("ok", True)), str(v.get("reason", ""))
-        except Exception as e:
-            log(f"Revisión con Gemini {model} falló: {e}")
+    for model in CFG.get("gemini_models", ["gemini-flash-latest", "gemini-flash-lite-latest"]):
+        for attempt in range(3):  # si Gemini está saturado (503/429), espera y reintenta
+            try:
+                req = urllib.request.Request(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                    data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
+                with urllib.request.urlopen(req, timeout=120) as r:
+                    v = json.loads(json.loads(r.read())["candidates"][0]["content"]["parts"][0]["text"])
+                if isinstance(v, list):
+                    v = v[0]
+                return bool(v.get("ok", True)), str(v.get("reason", ""))
+            except Exception as e:
+                log(f"Revisión con Gemini {model} falló: {e}")
+                if "503" in str(e) or "429" in str(e):
+                    time.sleep(20 * (attempt + 1))
+                    continue
+                break
+    log("⚠️ No se pudo revisar con Gemini: el clip queda sin revisar")
     return True, "sin revisión"
 
 
