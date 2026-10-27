@@ -1,14 +1,14 @@
 name: Solo Instagram
 
-# Cola de Instagram: en cada horario sube UN video que ya salió en YouTube y todavía no está en Instagram
+# Cola de Instagram: en cada horario sube UN video que ya es público en YouTube y todavía no está en Instagram
 # (el más viejo primero). Así no se suben todos juntos. Lo subido queda anotado en ig_done.json.
 # A mano: Actions → Solo Instagram → Run workflow. Vacío = el próximo de la cola; o números (ej: 007,008).
 on:
   schedule:
-    # 12:37, 16:37 y 20:37 de Argentina (en UTC)
-    - cron: "37 15 * * *"
-    - cron: "37 19 * * *"
-    - cron: "37 23 * * *"
+    # 13:37, 19:37 y 22:37 de Argentina (en UTC). Al día: el video sale a las 22:37 AR = 19:37 México, prime time.
+    - cron: "37 16 * * *"
+    - cron: "37 22 * * *"
+    - cron: "37 1 * * *"
   workflow_dispatch:
     inputs:
       videos:
@@ -41,11 +41,12 @@ jobs:
           VIDEOS: ${{ github.event.inputs.videos }}
         run: |
           python - <<'PY'
-          import json, os
+          import json, os, time
           from pathlib import Path
+          now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
           done = json.loads(Path("done.json").read_text(encoding="utf-8"))
           ig = json.loads(Path("ig_done.json").read_text(encoding="utf-8")) if Path("ig_done.json").exists() else {}
-          pend = sorted(k for k, v in done.items() if v.get("youtube_id") and k not in ig)
+          pend = sorted(k for k, v in done.items() if v.get("youtube_id") and k not in ig and v.get("publish_at", "") <= now)
           manual = os.environ.get("VIDEOS", "").strip()
           print(f"[ig] Pendientes en la cola: {pend or 'ninguno'}")
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
@@ -81,7 +82,8 @@ jobs:
           ig = json.loads(igp.read_text(encoding="utf-8")) if igp.exists() else {}
           want = [v.strip().zfill(3) for v in os.environ.get("VIDEOS", "").split(",") if v.strip()]
           if not want:  # cola: el más viejo que falte y que todavía se pueda bajar (GitHub guarda 14 días)
-              pend = sorted(k for k, v in done.items() if v.get("youtube_id") and k not in ig)
+              now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())  # solo los que ya son públicos en YouTube
+              pend = sorted(k for k, v in done.items() if v.get("youtube_id") and k not in ig and v.get("publish_at", "") <= now)
               for k in pend:
                   if k not in found:
                       print(f"[ig] {k} ya no está para bajar (más de 14 días): lo salteo"); continue
