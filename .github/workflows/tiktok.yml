@@ -1,0 +1,54 @@
+name: Preparar TikTok
+
+# Copia los videos ya hechos (los que GitHub todavía guarda, 14 días) a la rama "tt",
+# para que Claude los cargue y programe en TikTok Studio desde el navegador.
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "17 4 * * *"   # 01:17 AR, después de que se genera el video del día
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: tiktok
+  cancel-in-progress: false
+
+jobs:
+  tt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bajar los videos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p dl
+          for r in $(gh run list -R "${{ github.repository }}" -w diario.yml --status success --limit 40 --json databaseId -q '.[].databaseId'); do
+            gh run download "$r" -R "${{ github.repository }}" -n short -D "dl/$r" 2>/dev/null || true
+          done
+
+      - name: Publicar en la rama tt
+        run: |
+          python - <<'PY'
+          import json, re, shutil
+          from pathlib import Path
+          done = json.loads(Path("done.json").read_text(encoding="utf-8"))
+          tt = json.loads(Path("tt_done.json").read_text(encoding="utf-8")) if Path("tt_done.json").exists() else {}
+          out = Path("/tmp/tt"); out.mkdir()
+          for f in Path("dl").rglob("short_*.mp4"):
+              iid = re.search(r"short_(\d+)", f.name).group(1)
+              if iid in done and iid not in tt and iid >= "004":
+                  shutil.copy(f, out / f.name)
+          print(sorted(p.name for p in out.iterdir()))
+          PY
+          cd /tmp/tt
+          git init -q -b tt
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Videos para TikTok" || exit 0
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" tt
