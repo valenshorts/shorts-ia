@@ -104,8 +104,30 @@ def _tt_token(body):
                 headers={"Content-Type": "application/x-www-form-urlencoded"})
 
 
+def tiktok_status():
+    """Muestra qué pasó con cada envío a TikTok (se corre con code = estado)."""
+    key, sec = os.environ["TIKTOK_CLIENT_KEY"], os.environ["TIKTOK_CLIENT_SECRET"]
+    t = _tt_token({"client_key": key, "client_secret": sec, "grant_type": "refresh_token",
+                   "refresh_token": _tt_load(sec)})
+    if t.get("refresh_token"):
+        _tt_save(t["refresh_token"], sec)
+    log("Scopes del token:", t.get("scope"))
+    d = json.loads((ROOT / "tt_done.json").read_text(encoding="utf-8")) if (ROOT / "tt_done.json").exists() else {}
+    for iid, v in d.items():
+        try:
+            st = http("https://open.tiktokapis.com/v2/post/publish/status/fetch/",
+                      data=json.dumps({"publish_id": v.get("publish_id")}).encode(),
+                      headers={"Authorization": f"Bearer {t['access_token']}",
+                               "Content-Type": "application/json; charset=UTF-8"})
+            log(f"Estado {iid}: {json.dumps(st, ensure_ascii=False)}")
+        except Exception as e:
+            log(f"Estado {iid}: falló {e.read().decode()[:300] if hasattr(e, 'read') else e}")
+
+
 def tiktok_connect(code):
     """Cambia el código de autorización por tokens y guarda el refresh token cifrado."""
+    if code.strip().lower() == "estado":
+        return tiktok_status()
     key, sec = os.environ["TIKTOK_CLIENT_KEY"], os.environ["TIKTOK_CLIENT_SECRET"]
     t = _tt_token({"client_key": key, "client_secret": sec, "code": code, "grant_type": "authorization_code",
                    "redirect_uri": os.environ.get("TIKTOK_REDIRECT", "https://valenshorts.github.io/")})
