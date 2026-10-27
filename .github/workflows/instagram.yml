@@ -1,17 +1,28 @@
 name: Solo Instagram
 
-# Sube a Instagram videos que ya se hicieron (no genera nada nuevo ni toca YouTube).
+# Cola de Instagram: en cada horario sube UN video que ya salió en YouTube y todavía no está en Instagram
+# (el más viejo primero). Así no se suben todos juntos. Lo subido queda anotado en ig_done.json.
+# A mano: Actions → Solo Instagram → Run workflow. Vacío = el próximo de la cola; o números (ej: 007,008).
 on:
+  schedule:
+    # 12:37, 16:37 y 20:37 de Argentina (en UTC)
+    - cron: "37 15 * * *"
+    - cron: "37 19 * * *"
+    - cron: "37 23 * * *"
   workflow_dispatch:
     inputs:
       videos:
-        description: "Números de idea separados por coma (ej: 004,005,006). Vacío = el último."
+        description: "Números de idea separados por coma (ej: 007,008). Vacío = el próximo de la cola."
         required: false
         default: ""
 
 permissions:
   actions: read
-  contents: read
+  contents: write
+
+concurrency:
+  group: instagram
+  cancel-in-progress: false
 
 jobs:
   instagram:
@@ -24,7 +35,25 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: ¿Hay algo para subir?
+        id: cola
+        env:
+          VIDEOS: ${{ github.event.inputs.videos }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          done = json.loads(Path("done.json").read_text(encoding="utf-8"))
+          ig = json.loads(Path("ig_done.json").read_text(encoding="utf-8")) if Path("ig_done.json").exists() else {}
+          pend = sorted(k for k, v in done.items() if v.get("youtube_id") and k not in ig)
+          manual = os.environ.get("VIDEOS", "").strip()
+          print(f"[ig] Pendientes en la cola: {pend or 'ninguno'}")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"hay={'1' if (pend or manual) else ''}\n")
+          PY
+
       - name: Bajar los videos
+        if: steps.cola.outputs.hay == '1'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -35,6 +64,7 @@ jobs:
           find dl -name "*.mp4"
 
       - name: Subir a Instagram
+        if: steps.cola.outputs.hay == '1'
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
@@ -46,13 +76,20 @@ jobs:
           found = {}
           for f in sorted(Path("dl").rglob("short_*.mp4"), key=lambda p: p.stat().st_mtime):
               found[re.search(r"short_(\d+)", f.name).group(1)] = f
+          done = json.loads(Path("done.json").read_text(encoding="utf-8"))
+          igp = Path("ig_done.json")
+          ig = json.loads(igp.read_text(encoding="utf-8")) if igp.exists() else {}
           want = [v.strip().zfill(3) for v in os.environ.get("VIDEOS", "").split(",") if v.strip()]
-          if not want:
-              want = [max(found)] if found else []
+          if not want:  # cola: el más viejo que falte y que todavía se pueda bajar (GitHub guarda 14 días)
+              pend = sorted(k for k, v in done.items() if v.get("youtube_id") and k not in ig)
+              for k in pend:
+                  if k not in found:
+                      print(f"[ig] {k} ya no está para bajar (más de 14 días): lo salteo"); continue
+                  want = [k]; break
           ideas = {i["id"]: i for i in json.load(open("ideas.json", encoding="utf-8"))}
           norm = lambda w: re.sub(r"[^\wáéíóúñü]", "", w.lower())
           out = Path("output"); out.mkdir(exist_ok=True)
-          for k, iid in enumerate(want):
+          for n, iid in enumerate(want):
               if iid not in found:
                   print(f"[ig] No encontré el video {iid} (GitHub guarda los videos 14 días)"); continue
               idea = ideas[iid]
@@ -65,6 +102,15 @@ jobs:
                                                          ensure_ascii=False), encoding="utf-8")
               print(f"[ig] Subiendo {iid}: {idea['title']}", flush=True)
               subprocess.run(["python", "crosspost.py"])
-              if k < len(want) - 1:
+              if n < len(want) - 1:
                   time.sleep(60)
           PY
+
+      - name: Anotar lo subido
+        if: steps.cola.outputs.hay == '1'
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add ig_done.json 2>/dev/null || true
+          git commit -m "Instagram: subido" || echo "nada para guardar"
+          git pull --rebase && git push
