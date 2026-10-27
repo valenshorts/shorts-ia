@@ -68,12 +68,10 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
-      - name: Subir a Instagram y TikTok
+      - name: Subir a TikTok (Instagram va por la cola de "Solo Instagram", en mejores horarios)
         if: hashFiles('output/meta.json') != '' && hashFiles('crosspost.py') != ''
         continue-on-error: true
         env:
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IG_TOKEN: ${{ secrets.IG_TOKEN }}
           TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
           TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
           TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
