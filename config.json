@@ -48,5 +48,6 @@
   "default_motion": "slow smooth camera push in, the scene stays still except for small natural movements like water, smoke or leaves",
   "min_clips": 5,
   "check_clips": true,
-  "max_rejects": 2
+  "max_rejects": 2,
+  "publish_time_ar": "20:00"
 }
