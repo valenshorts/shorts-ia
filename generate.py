@@ -196,7 +196,17 @@ def sentences(text):
 
 async def _tts(text, path):
     import edge_tts
-    await edge_tts.Communicate(text, CFG["voice"], rate=CFG["voice_rate"]).save(str(path))
+    for attempt in range(6):  # el servicio de voz de Microsoft a veces corta sin mandar audio: reintenta
+        try:
+            await edge_tts.Communicate(text, CFG["voice"], rate=CFG["voice_rate"]).save(str(path))
+            if Path(path).exists() and Path(path).stat().st_size > 1000:
+                return
+            raise RuntimeError("audio vacío")
+        except Exception as e:
+            if attempt == 5:
+                raise
+            log(f"La voz falló ({type(e).__name__}); reintento en {15 * (attempt + 1)} s")
+            await asyncio.sleep(15 * (attempt + 1))
 
 
 def make_voice(text, work):
@@ -587,6 +597,17 @@ def today_ar():
     return datetime.now(timezone(timedelta(hours=-3))).strftime("%Y-%m-%d")
 
 
+def publish_hour_ok():
+    """Se publica directo en público recién desde publish_after_ar (hora AR): lo antes se usa para preparar el video."""
+    from datetime import datetime, timedelta, timezone
+    hhmm = CFG.get("publish_after_ar")
+    if not hhmm:
+        return True
+    h, m = map(int, hhmm.split(":"))
+    now = datetime.now(timezone(timedelta(hours=-3)))
+    return (now.hour, now.minute) >= (h, m)
+
+
 def main():
     ideas = json.loads((ROOT / "ideas.json").read_text(encoding="utf-8"))
     done_p = ROOT / "done.json"
@@ -597,9 +618,11 @@ def main():
     except Exception as e:
         log(f"Comentarios pendientes: falló ({e})")
     per_day = CFG.get("videos_per_day", 1)
-    publish_today = os.environ.get("FORCE") or sum(1 for v in done.values() if v.get("date") == today_ar()) < per_day
+    already = sum(1 for v in done.values() if v.get("date") == today_ar()) >= per_day
+    publish_today = os.environ.get("FORCE") or (not already and publish_hour_ok())
     if not publish_today:
-        log("Hoy ya se subió el video del día: aprovecho el cupo para ir preparando el de mañana.")
+        log("Hoy ya se subió el video del día: aprovecho el cupo para ir preparando el de mañana." if already else
+            f"Todavía no es la hora de publicar ({CFG.get('publish_after_ar')} AR): preparo el video de hoy.")
     ideas = refill_ideas(ideas, done)
     pending = [i for i in ideas if i["id"] not in done]
     if not pending:
@@ -695,7 +718,8 @@ def main():
         log(f"{animated}/{len(scenes)} escenas animadas: guardo lo hecho y sigo en el próximo intento.")
         return
     if not publish_today:
-        log("El video de mañana ya tiene todo listo; se publica en el primer intento de mañana.")
+        log("El video de mañana ya tiene todo listo; se publica en el primer intento de mañana." if already else
+            "El video de hoy ya tiene todo listo; se publica en la corrida de la noche.")
         return
 
     out = OUT / f"short_{idea['id']}.mp4"
