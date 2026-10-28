@@ -2,11 +2,13 @@ name: Short diario
 
 on:
   schedule:
-    # Intentos cada 3 horas (12:07, 15:07, 18:07, 21:07 y 00:07 de Argentina). Cada intento suma
-    # imágenes/animaciones al trabajo guardado; el video se publica recién cuando está completo (1 por día).
+    # Intentos 12:07, 15:07, 18:07, 21:07 y 00:07 de Argentina: van sumando imágenes/animaciones al trabajo guardado.
+    # 19:50 AR: publica el video del día directo en público (desde publish_after_ar en config.json; 21:07 queda de respaldo).
+    # El video se publica recién cuando está completo (1 por día).
     - cron: "7 15 * * *"
     - cron: "7 18 * * *"
     - cron: "7 21 * * *"
+    - cron: "50 22 * * *"
     - cron: "7 0 * * *"
     - cron: "7 3 * * *"
   workflow_dispatch: {}
