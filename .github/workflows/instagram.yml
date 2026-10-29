@@ -59,7 +59,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p dl
-          for r in $(gh run list -R "${{ github.repository }}" -w diario.yml --status success --limit 40 --json databaseId -q '.[].databaseId'); do
+          for r in $(gh run list -R "${{ github.repository }}" -w diario.yml --limit 60 --json databaseId -q '.[].databaseId'); do
             gh run download "$r" -R "${{ github.repository }}" -n short -D "dl/$r" 2>/dev/null || true
           done
           find dl -name "*.mp4"
