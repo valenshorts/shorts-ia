@@ -779,11 +779,6 @@ def main():
     animated = sum(1 for k in range(1, len(scenes) + 1)
                    if (work / f"scene{k}.mp4").exists() or (work / f"scene{k}.still").exists())
     need = min(CFG.get("min_clips", len(scenes)), len(scenes))
-    if animated < need and publish_today and last_chance():
-        # última corrida del día: mejor publicar con algunas escenas quietas que no publicar
-        need = min(need, CFG.get("min_clips_last_chance", 3))
-        if animated >= need:
-            log(f"Última corrida del día: publico con {animated}/{len(scenes)} escenas animadas y el resto con imagen.")
     if animated < need:  # modo calidad: si no están todas las escenas animadas, no se publica
         log(f"{animated}/{len(scenes)} escenas animadas: guardo lo hecho y sigo en el próximo intento.")
         if publish_today and last_chance():
