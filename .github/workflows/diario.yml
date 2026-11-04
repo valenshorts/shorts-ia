@@ -52,6 +52,8 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           FORCE: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
+          # la corrida de las 21:07 AR es la última que puede publicar el video del día
+          LAST_CHANCE: ${{ github.event.schedule == '7 0 * * *' && '1' || '' }}
         run: python generate.py
 
       - name: Guardar lo generado para el próximo intento
@@ -78,4 +80,10 @@ jobs:
           git add done.json ideas.json
           git commit -m "Short del día" || echo "nada para guardar"
           git stash --include-untracked || true  # otros archivos tocados no frenan el guardado
-          git pull --rebase && git push
+          ok=""
+          for i in 1 2 3 4; do  # si otro workflow guardó justo antes, reintenta (si no se guarda, se repetiría la subida)
+            if git pull --rebase && git push; then ok=1; break; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          [ -n "$ok" ] || { echo "::error::No se pudo guardar el registro de lo subido"; exit 1; }
