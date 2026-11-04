@@ -342,15 +342,22 @@ def mascot_png(work):
 
 
 def assemble(visuals, voice, subs, total, out, sfx=None, mascot=None):
-    """visuals: lista de (archivo, es_video, segundos en pantalla)."""
+    """visuals: lista de (archivo, es_video, segundos en pantalla[, opciones]).
+    Opciones para videos: full = duración de toda la escena, start = desde qué segundo de la escena empieza
+    este tramo, zoom = acercamiento (ej. 1.12) para hacer un corte de ritmo dentro de la misma animación."""
     inputs, chains = [], []
     look = f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},unsharp=5:5:0.6,fps={FPS},setsar=1"
-    for i, (f, is_video, secs) in enumerate(visuals):
+    for i, v in enumerate(visuals):
+        f, is_video, secs = v[:3]
+        opt = v[3] if len(v) > 3 else {}
         if is_video:
             d = duration(f)
-            stretch = min(max(secs / d, 1.0), 1.5)  # cámara lenta suave si falta duración
+            full, start, zoom = opt.get("full", secs), opt.get("start", 0.0), opt.get("zoom", 1.0)
+            stretch = min(max(full / d, 1.0), 1.5)  # cámara lenta suave si falta duración
+            punch = f",scale={round(W * zoom / 2) * 2}:{round(H * zoom / 2) * 2}:flags=lanczos,crop={W}:{H},setsar=1" if zoom > 1 else ""
             inputs += ["-i", f]
-            chains.append(f"[{i}:v]setpts={stretch:.3f}*PTS,{look},tpad=stop_mode=clone:stop_duration={secs},trim=0:{secs:.3f},setpts=PTS-STARTPTS[s{i}]")
+            chains.append(f"[{i}:v]setpts={stretch:.3f}*PTS,{look}{punch},tpad=stop_mode=clone:stop_duration={full:.3f},"
+                          f"trim={start:.3f}:{start + secs:.3f},setpts=PTS-STARTPTS[s{i}]")
         else:  # imagen fija con zoom lento
             frames = int(secs * FPS) + 1
             inputs += ["-loop", "1", "-t", f"{secs:.3f}", "-i", f]
@@ -414,7 +421,7 @@ def youtube_description(idea):
             f"{hashtags}")
 
 
-def upload(video, idea):
+def upload(video, idea, work=None):
     need = ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")
     if not all(os.environ.get(k) for k in need):
         log("Sin datos de YouTube: el video queda para descargar desde GitHub.")
@@ -425,7 +432,16 @@ def upload(video, idea):
     creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"],
                         client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"],
                         token_uri="https://oauth2.googleapis.com/token")
+    mark = work / "uploaded.json" if work else None
+    if mark and mark.exists():  # una corrida anterior ya lo subió (y quizás no pudo guardar done.json)
+        vid = json.loads(mark.read_text(encoding="utf-8"))["id"]
+        log(f"Este video ya se subió en una corrida anterior (https://youtube.com/shorts/{vid}): no lo subo de nuevo.")
+        return vid, None
     yt = build("youtube", "v3", credentials=creds)
+    dup = recent_upload(yt, youtube_title(idea))
+    if dup:
+        log(f"Este video ya estaba subido (https://youtube.com/shorts/{dup}): no lo subo de nuevo.")
+        return dup, None
     status = {"privacyStatus": CFG["privacy"], "selfDeclaredMadeForKids": False, "containsSyntheticMedia": False}
     publish_at = scheduled_time()
     if publish_at:  # se sube privado y YouTube lo publica solo a la hora elegida
@@ -444,8 +460,24 @@ def upload(video, idea):
     while resp is None:
         _, resp = req.next_chunk()
     log("Subido: https://youtube.com/shorts/" + resp["id"])
+    if mark:
+        mark.write_text(json.dumps({"id": resp["id"], "date": today_ar()}), encoding="utf-8")
     extras(yt, resp["id"], idea, comment=not publish_at)  # si está programado, el comentario va cuando sea público
     return resp["id"], publish_at
+
+
+def recent_upload(yt, title):
+    """Busca entre los últimos videos del canal uno con el mismo título; devuelve su id o None."""
+    try:
+        ch = yt.channels().list(part="contentDetails", mine=True).execute()
+        up = ch["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+        res = yt.playlistItems().list(part="snippet", playlistId=up, maxResults=15).execute()
+        for it in res.get("items", []):
+            if it["snippet"]["title"].strip() == title.strip():
+                return it["snippet"]["resourceId"]["videoId"]
+    except Exception as e:
+        log(f"No pude revisar si ya estaba subido ({str(e)[:120]})")
+    return None
 
 
 def scheduled_time():
@@ -516,8 +548,15 @@ def extras(yt, vid, idea, comment=True):
             pid = yt.playlists().insert(part="snippet,status", body={
                 "snippet": {"title": name, "description": f"{name}: datos curiosos en 30 segundos. Uno nuevo cada día."},
                 "status": {"privacyStatus": "public"}}).execute()["id"]
-        yt.playlistItems().insert(part="snippet", body={"snippet": {
-            "playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": vid}}}).execute()
+        for attempt in range(4):  # YouTube a veces responde 409 apenas se sube el video: espera y reintenta
+            try:
+                yt.playlistItems().insert(part="snippet", body={"snippet": {
+                    "playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": vid}}}).execute()
+                break
+            except Exception as e:
+                if getattr(getattr(e, "resp", None), "status", None) != 409 or attempt == 3:
+                    raise
+                time.sleep(15 * (attempt + 1))
         log(f"Agregado a la lista: {name}")
     except Exception as e:
         log(f"Sin lista ({str(e)[:120]})")
@@ -534,7 +573,9 @@ Reglas:
 - Nunca empezar explicando ("Cuando cortas...", "La lluvia va..."). Los ganchos que mejor funcionan en el canal: una contradicción ("Un clavo de acero se hunde, pero un barco de miles de toneladas flota") o algo que todos vivieron con un giro ("Se te arrugan los dedos en el agua. Parece que absorben agua, pero no").
 - La última frase es un final "wow".
 - Narración de 70 a 85 palabras, frases cortas y fáciles de decir en voz alta. Números escritos en letras.
-- 5 escenas: "image" en inglés describiendo una imagen 3D estilo animación; las 3 primeras también llevan "motion" en inglés (movimiento simple de 4 segundos).
+- Lo que mejor funciona en el canal: cuerpo humano, tecnología, física, inventos y comida, con algo que todos vivieron. Lo que peor funciona: datos de animales muy conocidos (el pulpo tiene tres corazones, los flamencos nacen grises). Si es de animales, tiene que ser un mecanismo sorprendente, no un dato suelto.
+- "yt_title" lleva una cifra concreta ("10 veces", "el doble", "68 años") o una contradicción clara.
+- 5 escenas: "image" en inglés describiendo una imagen 3D estilo animación, y las 5 llevan "motion" en inglés (movimiento simple de 4 segundos).
 - "motion" realista y chico: describe solo cómo se mueve lo que YA está en esa imagen (algo que respira, se balancea o fluye) y la cámara despacio. Nunca nombres en "motion" cosas que no aparecen en la escena, ni siquiera para decir que no se muevan. Los objetos grandes no viajan por la imagen: se quedan en su lugar.
 - "playlist" es una de: Animales increíbles, Cuerpo humano, Espacio, Ciencia loca, Comida increíble, Inventos por accidente, Mitos falsos, Naturaleza, Lugares increíbles.
 - "highlight": 2 palabras o frases cortas de la narración para resaltar en amarillo.
@@ -610,6 +651,18 @@ def publish_hour_ok():
     return (now.hour, now.minute) >= (h, m)
 
 
+def last_chance():
+    """True solo en la última corrida programada que todavía puede publicar el video del día (21:07 AR).
+    El workflow lo avisa con LAST_CHANCE=1; así una corrida atrasada o una manual nunca se toma como la última."""
+    return bool(os.environ.get("LAST_CHANCE"))
+
+
+def give_up(msg):
+    """Si ya no queda otra corrida para publicar hoy, la marca en rojo para que GitHub mande un mail de aviso."""
+    log(f"❌ {msg}")
+    sys.exit(1)
+
+
 def main():
     ideas = json.loads((ROOT / "ideas.json").read_text(encoding="utf-8"))
     done_p = ROOT / "done.json"
@@ -677,6 +730,8 @@ def main():
         if not ok:
             # modo calidad: no se rellena con recortes; se guarda lo hecho y se reintenta más tarde
             log(f"Imagen {k} no salió (cupo): guardo lo hecho y reintento más tarde.")
+            if publish_today and last_chance():
+                give_up("Hoy no se pudo publicar: faltan imágenes (se terminó la cuota de Hugging Face).")
             return
         imgs.append(img)
 
@@ -709,8 +764,12 @@ def main():
                 if (work / f"scene{k}.still").exists():  # salió mal demasiadas veces: imagen quieta
                     break
         if done_clip:
-            # la animación se muestra entera, sin acercamiento encima
-            visuals.append((clip, True, per))
+            if CFG.get("punch_in", True):
+                # dos tomas de la misma animación: normal y, a mitad de escena, un acercamiento (corte de ritmo)
+                visuals += [(clip, True, per / 2, {"full": per}),
+                            (clip, True, per / 2, {"full": per, "start": per / 2, "zoom": CFG.get("punch_zoom", 1.12)})]
+            else:
+                visuals.append((clip, True, per))
         else:
             # escena quieta: dos tomas (plano general + acercamiento) para que no aburra
             close = work / f"scene{k}b.png"
@@ -720,8 +779,15 @@ def main():
     animated = sum(1 for k in range(1, len(scenes) + 1)
                    if (work / f"scene{k}.mp4").exists() or (work / f"scene{k}.still").exists())
     need = min(CFG.get("min_clips", len(scenes)), len(scenes))
+    if animated < need and publish_today and last_chance():
+        # última corrida del día: mejor publicar con algunas escenas quietas que no publicar
+        need = min(need, CFG.get("min_clips_last_chance", 3))
+        if animated >= need:
+            log(f"Última corrida del día: publico con {animated}/{len(scenes)} escenas animadas y el resto con imagen.")
     if animated < need:  # modo calidad: si no están todas las escenas animadas, no se publica
         log(f"{animated}/{len(scenes)} escenas animadas: guardo lo hecho y sigo en el próximo intento.")
+        if publish_today and last_chance():
+            give_up(f"Hoy no se pudo publicar: solo {animated}/{len(scenes)} escenas animadas (cuota de Hugging Face).")
         return
     if not publish_today:
         log("El video de mañana ya tiene todo listo; se publica en el primer intento de mañana." if already else
@@ -729,23 +795,22 @@ def main():
         return
 
     out = OUT / f"short_{idea['id']}.mp4"
-    cuts, t = [], 0.0
-    for _, _, secs in visuals[:-1]:
-        t += secs
-        cuts.append(t)
+    cuts = [per * k for k in range(1, len(scenes))]  # whoosh solo cuando cambia de escena
     pops = [timeline[-1][1]] if len(timeline) > 2 else []  # el dato fuerte del final
     sfx = make_sfx(work, total, cuts, pops) if CFG.get("sfx", True) else None
     mascot = mascot_png(work) if CFG.get("end_card", True) else None
     assemble(visuals, voice, subs, total, out, sfx, mascot)
     log(f"Short listo: {out}")
-    vid, publish_at = upload(out, idea) or (None, None)
+    vid, publish_at = upload(out, idea, work) or (None, None)
+    mark = work / "uploaded.json"
+    day = json.loads(mark.read_text(encoding="utf-8")).get("date", today_ar()) if mark.exists() else today_ar()
     tags = " ".join("#" + _norm(t) for t in idea.get("tags", []) if _norm(t))
     (OUT / "meta.json").write_text(json.dumps({
         "id": idea["id"], "file": out.name, "youtube_id": vid,
         "caption": f"{idea.get('yt_title') or idea['title']}\n\n{sentences(idea['narration'])[0]}\n\n"
                    f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
         ensure_ascii=False, indent=2), encoding="utf-8")
-    done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": today_ar()}
+    done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": day}
     if publish_at:
         done[idea["id"]].update(publish_at=publish_at, comment_pending=True)
     done_p.write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
