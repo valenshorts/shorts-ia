@@ -49,5 +49,8 @@
   "min_clips": 5,
   "check_clips": true,
   "max_rejects": 2,
-  "publish_after_ar": "19:30"
+  "publish_after_ar": "19:30",
+  "punch_in": true,
+  "punch_zoom": 1.12,
+  "min_clips_last_chance": 3
 }
