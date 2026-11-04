@@ -134,7 +134,7 @@ Small imperfections are fine. Reply only JSON: {{"ok": true or false, "reason": 
 
 
 def gemini_check(clip, image_desc, motion):
-    """Gemini mira fotogramas de la animación. Devuelve (ok, motivo); si no se puede revisar, la deja pasar."""
+    """Gemini mira fotogramas de la animación. Devuelve (ok, motivo); ok es None si no se pudo revisar."""
     key = os.environ.get("GEMINI_API_KEY")
     if not key or not CFG.get("check_clips", True):
         return True, "sin revisión"
@@ -161,30 +161,33 @@ def gemini_check(clip, image_desc, motion):
                 return bool(v.get("ok", True)), str(v.get("reason", ""))
             except Exception as e:
                 log(f"Revisión con Gemini {model} falló: {e}")
-                if "503" in str(e) or "429" in str(e):
+                if "503" in str(e) or "429" in str(e) or "timed out" in str(e):
                     time.sleep(20 * (attempt + 1))
                     continue
                 break
-    log("⚠️ No se pudo revisar con Gemini: el clip queda sin revisar")
-    return True, "sin revisión"
+    log("⚠️ No se pudo revisar con Gemini: el clip se usa por ahora y se vuelve a revisar en la próxima corrida")
+    return None, "sin revisión"
 
 
 def clip_ok(clip, k, image_desc, motion, work):
-    """Si la animación tiene un error de IA evidente, la borra para rehacerla (máximo `max_rejects` veces por escena)."""
-    mark, rej = work / f"scene{k}.ok", work / f"scene{k}.rej"
+    """Gemini revisa la animación. Si tiene un error de IA evidente, la borra para rehacerla.
+    Si ya se rehízo `max_rejects` veces y sigue mal, esa escena va con la imagen quieta (marca scene{k}.still)."""
+    mark, rej, still = work / f"scene{k}.ok", work / f"scene{k}.rej", work / f"scene{k}.still"
     if mark.exists():
         return True
     n = int(rej.read_text()) if rej.exists() else 0
-    if n >= CFG.get("max_rejects", 2):
-        log(f"Clip {k}: ya se rehízo {n} veces, queda esta versión")
-        mark.touch()
-        return True
     ok, why = gemini_check(clip, image_desc, motion)
+    if ok is None:  # no se pudo revisar: se usa por ahora, sin marca, así se revisa en la próxima corrida
+        return True
     if ok:
         mark.touch()
         return True
-    rej.write_text(str(n + 1))
     clip.unlink()
+    if n >= CFG.get("max_rejects", 2):
+        still.touch()
+        log(f"Clip {k} salió mal {n + 1} veces ({why}); esta escena va con la imagen quieta")
+        return False
+    rej.write_text(str(n + 1))
     log(f"Clip {k} rechazado por la revisión ({why}); lo rehago")
     return False
 
@@ -533,7 +536,7 @@ Reglas:
 - La última frase es un final "wow".
 - Narración de 70 a 85 palabras, frases cortas y fáciles de decir en voz alta. Números escritos en letras.
 - 5 escenas: "image" en inglés describiendo una imagen 3D estilo animación; las 3 primeras también llevan "motion" en inglés (movimiento simple de 4 segundos).
-- "motion" realista y chico: que se muevan cosas que se mueven solas (agua, humo, hojas, un animal respirando) y la cámara despacio. Los objetos grandes (barcos, autos, aviones, edificios) no viajan por la imagen: se quedan en su lugar.
+- "motion" realista y chico: describe solo cómo se mueve lo que YA está en esa imagen (algo que respira, se balancea o fluye) y la cámara despacio. Nunca nombres en "motion" cosas que no aparecen en la escena, ni siquiera para decir que no se muevan. Los objetos grandes no viajan por la imagen: se quedan en su lugar.
 - "playlist" es una de: Animales increíbles, Cuerpo humano, Espacio, Ciencia loca, Comida increíble, Inventos por accidente, Mitos falsos, Naturaleza, Lugares increíbles.
 - "highlight": 2 palabras o frases cortas de la narración para resaltar en amarillo.
 - "yt_title": título corto que dé curiosidad, con un emoji al final.
@@ -688,7 +691,7 @@ def main():
             if clip_ok(clip, k, sc["image"], motion, work):
                 done_clip = True
                 log(f"Clip {k} listo (guardado)")
-        if not done_clip and motion and k <= CFG["max_clips"] and not quota_out:
+        if not done_clip and motion and k <= CFG["max_clips"] and not quota_out and not (work / f"scene{k}.still").exists():
             for attempt in range(3):
                 try:
                     with_tokens(make_clip, img, f"{motion}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
@@ -704,6 +707,8 @@ def main():
                     done_clip = True
                     log(f"Clip {k} listo")
                     break
+                if (work / f"scene{k}.still").exists():  # salió mal demasiadas veces: imagen quieta
+                    break
         if done_clip:
             # la animación se muestra entera, sin acercamiento encima
             visuals.append((clip, True, per))
@@ -712,7 +717,9 @@ def main():
             close = work / f"scene{k}b.png"
             crop_variant(img, close, "center")
             visuals += [(img, False, per / 2), (close, False, per / 2)]
-    animated = sum(1 for k in range(1, len(scenes) + 1) if (work / f"scene{k}.mp4").exists())
+    # una escena cuenta como lista si está animada o si quedó con imagen quieta porque la animación salía mal
+    animated = sum(1 for k in range(1, len(scenes) + 1)
+                   if (work / f"scene{k}.mp4").exists() or (work / f"scene{k}.still").exists())
     need = min(CFG.get("min_clips", len(scenes)), len(scenes))
     if animated < need:  # modo calidad: si no están todas las escenas animadas, no se publica
         log(f"{animated}/{len(scenes)} escenas animadas: guardo lo hecho y sigo en el próximo intento.")
