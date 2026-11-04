@@ -115,4 +115,11 @@ jobs:
           git config user.email "shorts-bot@users.noreply.github.com"
           git add ig_done.json 2>/dev/null || true
           git commit -m "Instagram: subido" || echo "nada para guardar"
-          git pull --rebase && git push
+          git stash --include-untracked || true
+          ok=""
+          for i in 1 2 3 4; do  # si otro workflow guardó justo antes, reintenta (si no se guarda, se repetiría la subida)
+            if git pull --rebase && git push; then ok=1; break; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          [ -n "$ok" ] || { echo "::error::No se pudo guardar el registro de lo subido"; exit 1; }
