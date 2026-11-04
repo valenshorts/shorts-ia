@@ -611,7 +611,7 @@
     "id": "093",
     "title": "Los astronautas crecen en el espacio",
     "yt_title": "Los astronautas crecen hasta 5 cm en el espacio 🚀",
-    "narration": "En el espacio, los astronautas crecen hasta cinco centímetros. No es magia: es su columna. En la Tierra, la gravedad aprieta todo el día los discos blandos que hay entre tus vértebras. En el espacio no hay nada que los aplaste, así que se estiran y la espalda se alarga. Por eso los trajes espaciales se diseñan con lugar extra. Pero dura poco. Al volver a la Tierra, la gravedad los aprieta otra vez, y en pocos días vuelven a su altura.",
+    "narration": "En el espacio, los astronautas crecen hasta cinco centímetros. No es magia: es su columna. En la Tierra, la gravedad aprieta todo el día los discos blandos que hay entre tus vértebras. En órbita flotan, y nada aplasta esos discos, así que se estiran y la espalda se alarga. Por eso los trajes espaciales se diseñan con lugar extra. Pero dura poco. Al volver a la Tierra, la gravedad los aprieta otra vez, y en pocos días o semanas vuelven a su altura.",
     "scenes": [
       {
         "image": "an astronaut floating inside a bright space station next to a height measuring tape on the wall",
@@ -626,10 +626,12 @@
         "motion": "the astronaut stretches slightly, the stars twinkle"
       },
       {
-        "image": "an empty white space suit hanging inside a space station locker"
+        "image": "an empty white space suit hanging inside a space station locker",
+        "motion": "the space suit sways gently in zero gravity"
       },
       {
-        "image": "an astronaut walking on solid ground on Earth after landing, smiling, sunny day"
+        "image": "an astronaut walking on solid ground on Earth after landing, smiling, sunny day",
+        "motion": "the astronaut takes slow steps forward, camera follows gently"
       }
     ],
     "tags": [
@@ -646,7 +648,7 @@
   {
     "id": "091",
     "title": "Un rayo es más caliente que el Sol",
-    "yt_title": "Un rayo es 5 veces más caliente que el Sol ⚡",
+    "yt_title": "Un rayo es 5 veces más caliente que la superficie del Sol ⚡",
     "narration": "Un rayo es cinco veces más caliente que la superficie del Sol. En una fracción de segundo, calienta el aire a unos treinta mil grados. La superficie del Sol ronda los cinco mil quinientos. Ese calor hace que el aire se expanda de golpe, tan rápido que rompe la barrera del sonido. Eso es el trueno: el aire explotando. Y como la luz viaja muchísimo más rápido que el sonido, siempre ves el rayo antes de escucharlo.",
     "scenes": [
       {
@@ -662,10 +664,12 @@
         "motion": "the ring of hot air expands outward from the glowing channel"
       },
       {
-        "image": "visible shockwave rings spreading across a dark stormy sky around a lightning bolt"
+        "image": "visible shockwave rings spreading across a dark stormy sky around a lightning bolt",
+        "motion": "the shockwave rings slowly spread outward"
       },
       {
-        "image": "a person at a window watching a distant lightning flash over a city at night"
+        "image": "a person at a window watching a distant lightning flash over a city at night",
+        "motion": "the distant lightning flashes softly, the person watches still"
       }
     ],
     "tags": [
@@ -682,8 +686,8 @@
   {
     "id": "095",
     "title": "El refrigerador pone duro el pan",
-    "yt_title": "El refrigerador pone duro el pan más rápido 🍞",
-    "narration": "Guardar el pan en el refrigerador lo pone duro más rápido. Parece raro, pero tiene explicación. El pan no se endurece solo porque se seca. Al hornearse, el almidón absorbe agua y queda blando. Con el tiempo, ese almidón vuelve a cristalizarse y se pone rígido. Y ese proceso es mucho más rápido con el frío del refrigerador. Por eso, si quieres guardarlo varios días, mejor congélalo. Y si ya está duro, unos minutos en el horno lo ablandan otra vez.",
+    "yt_title": "El pan se pone duro 3 veces más rápido en el refrigerador 🍞",
+    "narration": "Si guardas el pan en el refrigerador para que dure más, se pone duro hasta tres veces más rápido. El pan no se endurece solo porque se seca. Al hornearse, el almidón absorbe agua y queda blando. Con el tiempo, ese almidón vuelve a cristalizarse y se pone rígido. Y ese proceso es mucho más rápido con el frío del refrigerador. Si quieres guardarlo varios días, congélalo. Y si ya está duro, unos minutos en el horno lo ablandan otra vez por un rato.",
     "scenes": [
       {
         "image": "a loaf of fresh bread on a wooden kitchen table, next to an open refrigerator",
@@ -698,10 +702,12 @@
         "motion": "the starch granules swell gently and glow"
       },
       {
-        "image": "a cutaway of a hard stale bread slice with tiny shiny crystals inside"
+        "image": "a cutaway of a hard stale bread slice with tiny shiny crystals inside",
+        "motion": "the tiny crystals sparkle softly, camera slowly pushes in"
       },
       {
-        "image": "bread slices warming inside a glowing oven, golden light"
+        "image": "bread slices warming inside a glowing oven, golden light",
+        "motion": "the bread slices glow warmer, heat shimmers inside the oven"
       }
     ],
     "tags": [
@@ -711,7 +717,7 @@
     ],
     "playlist": "Comida increíble",
     "highlight": [
-      "más rápido",
+      "tres veces",
       "congélalo"
     ]
   },
@@ -719,7 +725,7 @@
     "id": "092",
     "title": "Sin Einstein, el GPS fallaría",
     "yt_title": "Sin Einstein, tu GPS fallaría 10 km por día 🛰️",
-    "narration": "Sin la teoría de Einstein, el GPS de tu teléfono se equivocaría unos diez kilómetros por día. Los satélites del GPS llevan relojes atómicos. Pero allá arriba el tiempo pasa distinto, por la velocidad y por estar lejos de la gravedad de la Tierra. Cada día, sus relojes se adelantan unos treinta y ocho millonésimos de segundo. Parece nada, pero alcanza para arruinar el mapa. Por eso esos relojes vienen ajustados desde antes del lanzamiento, gracias a la relatividad.",
+    "narration": "Sin la teoría de Einstein, el GPS de tu teléfono se equivocaría unos diez kilómetros por día. Los satélites del GPS llevan relojes atómicos. Pero allá arriba el tiempo pasa distinto, por la velocidad y por estar lejos de la gravedad de la Tierra. Cada día, en total, sus relojes se adelantan unos treinta y ocho millonésimos de segundo. Parece nada, pero alcanza para arruinar el mapa. Por eso esos relojes vienen ajustados desde antes del lanzamiento, gracias a la relatividad.",
     "scenes": [
       {
         "image": "a smartphone showing a map with a blue location dot, held in a hand on a city street",
@@ -734,10 +740,12 @@
         "motion": "the digits on the clock tick and glow softly"
       },
       {
-        "image": "a chalkboard full of physics equations with a glowing clock drawn in the middle"
+        "image": "a chalkboard full of physics equations with a glowing clock drawn in the middle",
+        "motion": "the drawn clock glows softly, camera slowly pushes in"
       },
       {
-        "image": "a phone map where the blue location dot is in the middle of a lake, far from the street"
+        "image": "a phone map where the blue location dot is in the middle of a lake, far from the street",
+        "motion": "the blue dot pulses gently on the lake"
       }
     ],
     "tags": [
@@ -770,10 +778,12 @@
         "motion": "the bone pieces glow brighter where they touch"
       },
       {
-        "image": "a 3D model of a baby skull showing separate plates with soft gaps between them"
+        "image": "a 3D model of a baby skull showing separate plates with soft gaps between them",
+        "motion": "the skull slowly rotates, the soft gaps glow gently"
       },
       {
-        "image": "a full adult skeleton model standing in a bright science classroom"
+        "image": "a full adult skeleton model standing in a bright science classroom",
+        "motion": "camera slowly tilts up along the skeleton"
       }
     ],
     "tags": [
@@ -790,8 +800,8 @@
   {
     "id": "096",
     "title": "El mito del chicle de 7 años",
-    "yt_title": "Tragar un chicle NO lo deja 7 años en tu estómago 🍬",
-    "narration": "Si te tragas un chicle, no se queda siete años en tu estómago. Es un mito. Es verdad que tu cuerpo no puede digerir la goma del chicle. Pero el estómago no guarda lo que no digiere: lo empuja. Con sus movimientos, lo manda por el intestino junto con todo lo demás. En unos días, sale del cuerpo como cualquier otra cosa. Eso sí, tragar muchísimos chicles juntos puede trabar el intestino. Pero uno solo, de vez en cuando, no pasa nada.",
+    "yt_title": "¿Un chicle tragado dura 7 años en tu estómago? Falso 🍬",
+    "narration": "Te dijeron que un chicle tragado se queda siete años en tu estómago. Es mentira. Es verdad que tu cuerpo no puede digerir la goma del chicle. Pero el estómago no guarda lo que no digiere: lo empuja. Con sus movimientos, lo manda por el intestino junto con todo lo demás. En unos días, sale del cuerpo como cualquier otra cosa. Eso sí, tragar muchísimos chicles juntos puede trabar el intestino. Pero tragar uno de vez en cuando no te hace nada.",
     "scenes": [
       {
         "image": "a big pink bubble of chewing gum being blown, cartoon style, colorful background",
@@ -806,10 +816,12 @@
         "motion": "the intestine walls ripple and the gum slides along"
       },
       {
-        "image": "a big wall calendar with the number seven circled in red, cartoon style"
+        "image": "a big wall calendar with the number seven circled in red, cartoon style",
+        "motion": "the red circle glows softly, camera slowly pushes in"
       },
       {
-        "image": "a pile of many colorful chewing gum pieces on a table"
+        "image": "a pile of many colorful chewing gum pieces on a table",
+        "motion": "camera slowly pushes in on the colorful gum pieces"
       }
     ],
     "tags": [
@@ -820,14 +832,14 @@
     "playlist": "Mitos falsos",
     "highlight": [
       "siete años",
-      "mito"
+      "mentira"
     ]
   },
   {
     "id": "097",
     "title": "La Torre Eiffel crece en verano",
-    "yt_title": "La Torre Eiffel crece 15 cm en verano 🗼",
-    "narration": "En verano, la Torre Eiffel crece hasta quince centímetros. Está hecha de hierro, y el hierro se estira con el calor. Cuando el sol pega fuerte, cada pieza de metal se alarga apenas un poquito. Pero son miles de piezas, y en una torre de más de trescientos metros todo eso se suma. Además, el lado que da al sol se estira más que el de la sombra, así que la punta se inclina un poco. En invierno, con el frío, se encoge otra vez.",
+    "yt_title": "La Torre Eiffel crece hasta 15 cm en verano 🗼",
+    "narration": "En verano, la Torre Eiffel crece hasta quince centímetros. Está hecha de hierro, y el hierro se estira con el calor. Cuando el sol pega fuerte, cada pieza de metal se alarga apenas un poquito. Y en una torre de más de trescientos metros, ese poquito se suma. Además, el lado que da al sol se estira más que el de la sombra, así que la punta se inclina un poco. En invierno, con el frío, se encoge otra vez.",
     "scenes": [
       {
         "image": "the Eiffel Tower on a hot sunny summer day, bright blue sky",
@@ -842,10 +854,12 @@
         "motion": "the metal bar glows warmer, camera slowly pushes in"
       },
       {
-        "image": "the Eiffel Tower with the sun on one side and soft shadow on the other, diagram style"
+        "image": "the Eiffel Tower with the sun on one side and soft shadow on the other, diagram style",
+        "motion": "the sunlight glows on one side of the tower, camera slowly tilts up"
       },
       {
-        "image": "the Eiffel Tower covered with frost on a cold winter morning"
+        "image": "the Eiffel Tower covered with frost on a cold winter morning",
+        "motion": "light snow falls gently around the tower"
       }
     ],
     "tags": [
