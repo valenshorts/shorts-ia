@@ -608,6 +608,258 @@
     "playlist": "Animales increíbles"
   },
   {
+    "id": "093",
+    "title": "Los astronautas crecen en el espacio",
+    "yt_title": "Los astronautas crecen hasta 5 cm en el espacio 🚀",
+    "narration": "En el espacio, los astronautas crecen hasta cinco centímetros. No es magia: es su columna. En la Tierra, la gravedad aprieta todo el día los discos blandos que hay entre tus vértebras. En el espacio no hay nada que los aplaste, así que se estiran y la espalda se alarga. Por eso los trajes espaciales se diseñan con lugar extra. Pero dura poco. Al volver a la Tierra, la gravedad los aprieta otra vez, y en pocos días vuelven a su altura.",
+    "scenes": [
+      {
+        "image": "an astronaut floating inside a bright space station next to a height measuring tape on the wall",
+        "motion": "the astronaut floats gently in place, camera slowly pushes in"
+      },
+      {
+        "image": "a glowing human spine with the soft discs between the vertebrae highlighted in blue",
+        "motion": "the soft discs between the vertebrae slowly expand"
+      },
+      {
+        "image": "an astronaut floating in space with stars and the Earth far in the background",
+        "motion": "the astronaut stretches slightly, the stars twinkle"
+      },
+      {
+        "image": "an empty white space suit hanging inside a space station locker"
+      },
+      {
+        "image": "an astronaut walking on solid ground on Earth after landing, smiling, sunny day"
+      }
+    ],
+    "tags": [
+      "espacio",
+      "cuerpohumano",
+      "astronautas"
+    ],
+    "playlist": "Espacio",
+    "highlight": [
+      "cinco centímetros",
+      "columna"
+    ]
+  },
+  {
+    "id": "091",
+    "title": "Un rayo es más caliente que el Sol",
+    "yt_title": "Un rayo es 5 veces más caliente que el Sol ⚡",
+    "narration": "Un rayo es cinco veces más caliente que la superficie del Sol. En una fracción de segundo, calienta el aire a unos treinta mil grados. La superficie del Sol ronda los cinco mil quinientos. Ese calor hace que el aire se expanda de golpe, tan rápido que rompe la barrera del sonido. Eso es el trueno: el aire explotando. Y como la luz viaja muchísimo más rápido que el sonido, siempre ves el rayo antes de escucharlo.",
+    "scenes": [
+      {
+        "image": "a bright lightning bolt striking down from dark storm clouds over an open field at night",
+        "motion": "the lightning bolt flickers brightly, the storm clouds churn slowly"
+      },
+      {
+        "image": "the glowing orange surface of the Sun seen up close, with bubbling plasma",
+        "motion": "the solar surface bubbles and swirls slowly"
+      },
+      {
+        "image": "a glowing white-hot lightning channel with a ring of bright hot air around it, close-up",
+        "motion": "the ring of hot air expands outward from the glowing channel"
+      },
+      {
+        "image": "visible shockwave rings spreading across a dark stormy sky around a lightning bolt"
+      },
+      {
+        "image": "a person at a window watching a distant lightning flash over a city at night"
+      }
+    ],
+    "tags": [
+      "rayos",
+      "naturaleza",
+      "física"
+    ],
+    "playlist": "Naturaleza",
+    "highlight": [
+      "cinco veces",
+      "treinta mil grados"
+    ]
+  },
+  {
+    "id": "095",
+    "title": "El refrigerador pone duro el pan",
+    "yt_title": "El refrigerador pone duro el pan más rápido 🍞",
+    "narration": "Guardar el pan en el refrigerador lo pone duro más rápido. Parece raro, pero tiene explicación. El pan no se endurece solo porque se seca. Al hornearse, el almidón absorbe agua y queda blando. Con el tiempo, ese almidón vuelve a cristalizarse y se pone rígido. Y ese proceso es mucho más rápido con el frío del refrigerador. Por eso, si quieres guardarlo varios días, mejor congélalo. Y si ya está duro, unos minutos en el horno lo ablandan otra vez.",
+    "scenes": [
+      {
+        "image": "a loaf of fresh bread on a wooden kitchen table, next to an open refrigerator",
+        "motion": "soft steam rises from the bread, camera slowly pushes in"
+      },
+      {
+        "image": "a slice of bread on a shelf inside a cold refrigerator, frosty light",
+        "motion": "cold mist drifts slowly around the bread slice"
+      },
+      {
+        "image": "a close-up cutaway of soft bread showing round starch granules full of water, glowing softly",
+        "motion": "the starch granules swell gently and glow"
+      },
+      {
+        "image": "a cutaway of a hard stale bread slice with tiny shiny crystals inside"
+      },
+      {
+        "image": "bread slices warming inside a glowing oven, golden light"
+      }
+    ],
+    "tags": [
+      "comida",
+      "cocina",
+      "ciencia"
+    ],
+    "playlist": "Comida increíble",
+    "highlight": [
+      "más rápido",
+      "congélalo"
+    ]
+  },
+  {
+    "id": "092",
+    "title": "Sin Einstein, el GPS fallaría",
+    "yt_title": "Sin Einstein, tu GPS fallaría 10 km por día 🛰️",
+    "narration": "Sin la teoría de Einstein, el GPS de tu teléfono se equivocaría unos diez kilómetros por día. Los satélites del GPS llevan relojes atómicos. Pero allá arriba el tiempo pasa distinto, por la velocidad y por estar lejos de la gravedad de la Tierra. Cada día, sus relojes se adelantan unos treinta y ocho millonésimos de segundo. Parece nada, pero alcanza para arruinar el mapa. Por eso esos relojes vienen ajustados desde antes del lanzamiento, gracias a la relatividad.",
+    "scenes": [
+      {
+        "image": "a smartphone showing a map with a blue location dot, held in a hand on a city street",
+        "motion": "the blue dot on the map pulses gently, camera slowly pushes in"
+      },
+      {
+        "image": "a GPS satellite with shiny solar panels high above the Earth",
+        "motion": "the solar panels glint in the sunlight, camera drifts slowly"
+      },
+      {
+        "image": "a glowing atomic clock with bright digital numbers inside a satellite",
+        "motion": "the digits on the clock tick and glow softly"
+      },
+      {
+        "image": "a chalkboard full of physics equations with a glowing clock drawn in the middle"
+      },
+      {
+        "image": "a phone map where the blue location dot is in the middle of a lake, far from the street"
+      }
+    ],
+    "tags": [
+      "tecnología",
+      "espacio",
+      "física"
+    ],
+    "playlist": "Ciencia loca",
+    "highlight": [
+      "diez kilómetros",
+      "relatividad"
+    ]
+  },
+  {
+    "id": "094",
+    "title": "Naciste con 300 huesos",
+    "yt_title": "Naciste con casi 100 huesos más que ahora 🦴",
+    "narration": "Naciste con casi cien huesos más que los que tienes ahora. Un bebé tiene alrededor de trescientos huesos. Un adulto, doscientos seis. ¿Dónde quedaron los demás? No se pierden: se unen. Muchos huesos de bebé son pedacitos separados por cartílago, para ser flexibles al nacer y poder crecer. Con los años, esos pedacitos se sueldan entre sí. El cráneo, por ejemplo, empieza en varias partes con espacios blandos. Y termina siendo casi una sola pieza.",
+    "scenes": [
+      {
+        "image": "a cute sleeping newborn baby wrapped in a soft blanket in a crib",
+        "motion": "the baby breathes slowly, camera gently pushes in"
+      },
+      {
+        "image": "a glowing x-ray style skeleton of a baby with many small separate bones",
+        "motion": "the small bones glow softly one after another"
+      },
+      {
+        "image": "small glowing bone pieces fitting together like puzzle pieces, close-up",
+        "motion": "the bone pieces glow brighter where they touch"
+      },
+      {
+        "image": "a 3D model of a baby skull showing separate plates with soft gaps between them"
+      },
+      {
+        "image": "a full adult skeleton model standing in a bright science classroom"
+      }
+    ],
+    "tags": [
+      "cuerpohumano",
+      "huesos",
+      "bebés"
+    ],
+    "playlist": "Cuerpo humano",
+    "highlight": [
+      "trescientos huesos",
+      "se unen"
+    ]
+  },
+  {
+    "id": "096",
+    "title": "El mito del chicle de 7 años",
+    "yt_title": "Tragar un chicle NO lo deja 7 años en tu estómago 🍬",
+    "narration": "Si te tragas un chicle, no se queda siete años en tu estómago. Es un mito. Es verdad que tu cuerpo no puede digerir la goma del chicle. Pero el estómago no guarda lo que no digiere: lo empuja. Con sus movimientos, lo manda por el intestino junto con todo lo demás. En unos días, sale del cuerpo como cualquier otra cosa. Eso sí, tragar muchísimos chicles juntos puede trabar el intestino. Pero uno solo, de vez en cuando, no pasa nada.",
+    "scenes": [
+      {
+        "image": "a big pink bubble of chewing gum being blown, cartoon style, colorful background",
+        "motion": "the pink gum bubble slowly grows bigger"
+      },
+      {
+        "image": "a cartoon cutaway of a human stomach with a small piece of pink gum inside",
+        "motion": "the stomach walls squeeze gently, the gum moves slowly"
+      },
+      {
+        "image": "a cartoon cutaway of winding intestines with a tiny pink piece of gum inside",
+        "motion": "the intestine walls ripple and the gum slides along"
+      },
+      {
+        "image": "a big wall calendar with the number seven circled in red, cartoon style"
+      },
+      {
+        "image": "a pile of many colorful chewing gum pieces on a table"
+      }
+    ],
+    "tags": [
+      "mitos",
+      "cuerpohumano",
+      "chicle"
+    ],
+    "playlist": "Mitos falsos",
+    "highlight": [
+      "siete años",
+      "mito"
+    ]
+  },
+  {
+    "id": "097",
+    "title": "La Torre Eiffel crece en verano",
+    "yt_title": "La Torre Eiffel crece 15 cm en verano 🗼",
+    "narration": "En verano, la Torre Eiffel crece hasta quince centímetros. Está hecha de hierro, y el hierro se estira con el calor. Cuando el sol pega fuerte, cada pieza de metal se alarga apenas un poquito. Pero son miles de piezas, y en una torre de más de trescientos metros todo eso se suma. Además, el lado que da al sol se estira más que el de la sombra, así que la punta se inclina un poco. En invierno, con el frío, se encoge otra vez.",
+    "scenes": [
+      {
+        "image": "the Eiffel Tower on a hot sunny summer day, bright blue sky",
+        "motion": "heat haze shimmers in the air, camera slowly tilts up"
+      },
+      {
+        "image": "a close-up of the iron beams and rivets of the Eiffel Tower glowing warm in the sun",
+        "motion": "the sunlight slowly moves across the iron beams"
+      },
+      {
+        "image": "a single metal bar on a table glowing orange from heat, simple diagram style",
+        "motion": "the metal bar glows warmer, camera slowly pushes in"
+      },
+      {
+        "image": "the Eiffel Tower with the sun on one side and soft shadow on the other, diagram style"
+      },
+      {
+        "image": "the Eiffel Tower covered with frost on a cold winter morning"
+      }
+    ],
+    "tags": [
+      "física",
+      "lugares",
+      "torreeiffel"
+    ],
+    "playlist": "Lugares increíbles",
+    "highlight": [
+      "quince centímetros",
+      "calor"
+    ]
+  },
+  {
     "id": "020",
     "title": "¿Qué son las rayas blancas que dejan los aviones?",
     "narration": "Esas rayas blancas que dejan los aviones son nubes. El motor suelta aire caliente y húmedo. Allá arriba hace unos cincuenta grados bajo cero, y ese vapor se congela al instante en millones de cristalitos de hielo. Por eso la raya aparece un poquito atrás del avión, no pegada. Y a veces, si el aire está muy húmedo, esas rayas no desaparecen: se van estirando durante horas hasta convertirse en nubes de verdad que tapan el sol.",
