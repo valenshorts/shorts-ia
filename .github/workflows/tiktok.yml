@@ -1,13 +1,14 @@
 name: TikTok
 
-# A las 13:07 y 21:07 AR (10:07 y 18:07 México) manda a TikTok, en calidad original, UN video: el más viejo que ya es
-# público en YouTube y todavía no está en TikTok (desde el 004). Al día, el video nuevo sale a las 21:07.
+# Después de cada horario de YouTube (15:10, 21:45 y 00:45 AR) manda a TikTok, en calidad original, UN video: el más
+# viejo que ya es público en YouTube y todavía no está en TikTok (desde el 004).
 # Mientras la app de TikTok no esté auditada, llega como BORRADOR: notificación en la app → Publicar.
 # A mano: Run workflow. "code" = código de autorización de TikTok (solo para conectar la cuenta).
 on:
   schedule:
-    - cron: "7 16 * * *"
-    - cron: "7 0 * * *"
+    - cron: "10 18 * * *"
+    - cron: "45 0 * * *"
+    - cron: "45 3 * * *"
   workflow_dispatch:
     inputs:
       code:
@@ -74,7 +75,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p dl
-          for r in $(gh run list -R "${{ github.repository }}" -w diario.yml --limit 60 --json databaseId -q '.[].databaseId'); do
+          for r in $(gh run list -R "${{ github.repository }}" -w diario.yml --limit 120 --json databaseId -q '.[].databaseId'); do
             gh run download "$r" -R "${{ github.repository }}" -n short -D "dl/$r" 2>/dev/null || true
           done
 
