@@ -7,15 +7,23 @@ Fábrica diaria de Shorts con IA gratis.
 4. Arma el Short 9:16 con ffmpeg
 5. Lo sube a YouTube (si están cargados los secretos) y marca la idea como hecha
 
-Variables de entorno: HF_TOKEN (obligatoria), HF_TOKEN_2, GEMINI_API_KEY, YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN (opcionales)
+Variables de entorno: HF_TOKEN (obligatoria), HF_TOKEN_2..HF_TOKEN_6, GEMINI_API_KEY, YT_CLIENT_ID, YT_CLIENT_SECRET,
+YT_REFRESH_TOKEN (opcionales)
+
+Reglas de calidad: nunca se publica una escena con imagen quieta. Cada escena tiene que ser una animación aprobada
+(sin tramos congelados y revisada por Gemini) y el video final se revisa entero antes de subirlo.
+Horarios: el video terminado se sube a YouTube programado para el próximo horario libre (publish_slots_ar).
 """
-import asyncio, hashlib, json, os, re, shutil, subprocess, sys, time
+import asyncio, hashlib, json, math, os, re, shutil, subprocess, sys, time
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CFG = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
 OUT = ROOT / "output"
 W, H, FPS = 1080, 1920, 30
+AR = timezone(timedelta(hours=-3))  # hora de Argentina (no tiene horario de verano)
+T0 = time.time()
 
 
 def log(*a):
@@ -125,6 +133,37 @@ def make_clip(image, prompt, seconds, dest):
     return dest
 
 
+def frozen_spans(path, min_secs=1.0, crop=None):
+    """Tramos donde la imagen queda quieta al menos `min_secs` segundos: [(desde, hasta), ...].
+    crop deja afuera los subtítulos y el nombre del canal (cambian aunque la imagen esté congelada)."""
+    vf = (f"{crop}," if crop else "") + f"scale=270:-2,freezedetect=n=-60dB:d={min_secs}"
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-vf", vf, "-an", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        raise RuntimeError(f"No pude revisar el movimiento de {Path(path).name}: {r.stderr[-300:]}")
+    starts = [float(x) for x in re.findall(r"freeze_start: ([\d.]+)", r.stderr)]
+    ends = [float(x) for x in re.findall(r"freeze_end: ([\d.]+)", r.stderr)]
+    end_all = duration(path)
+    return [(a, ends[i] if i < len(ends) else end_all) for i, a in enumerate(starts)]
+
+
+def clip_motion_ok(clip):
+    """Revisión local (sin cuota): la animación tiene que durar lo pedido y moverse todo el tiempo."""
+    try:
+        d = duration(clip)
+    except Exception:
+        return False, "el archivo de la animación está roto"
+    if d < 2.5:
+        return False, f"la animación dura solo {d:.1f}s"
+    try:
+        spans = frozen_spans(clip, CFG.get("max_frozen_seconds", 1.0))
+    except Exception:
+        return False, "no se pudo leer la animación"
+    if spans:
+        return False, f"imagen congelada entre {spans[0][0]:.1f}s y {spans[0][1]:.1f}s"
+    return True, ""
+
+
 CHECK_PROMPT = """These are {n} frames, in order, from a 4-second AI-generated animation for an educational video (stylized 3D cartoon style is fine).
 Intended scene: {image}
 Intended motion: {motion}
@@ -165,19 +204,22 @@ def gemini_check(clip, image_desc, motion):
                 log(f"Revisión con Gemini {model} falló: {e}")
         if attempt < 2:
             time.sleep(20 * (attempt + 1))
-    log("⚠️ No se pudo revisar con Gemini: el clip se usa por ahora y se vuelve a revisar en la próxima corrida")
+    log("⚠️ No se pudo revisar con Gemini: el clip queda guardado y se revisa en la próxima corrida (no se publica sin aprobar)")
     return None, "sin revisión"
 
 
 def clip_ok(clip, k, image_desc, motion, work):
-    """Gemini revisa la animación. Si tiene un error de IA evidente, la borra para rehacerla.
+    """Se revisa que la animación se mueva (sin tramos congelados) y Gemini busca errores de IA.
+    Si falla, la borra para rehacerla.
     Si ya se rehízo `max_rejects` veces y sigue mal, también se borra la imagen de esa escena para empezar
     de cero con una imagen nueva. Nunca se publica una escena con imagen quieta."""
     mark, rej = work / f"scene{k}.ok", work / f"scene{k}.rej"
     if mark.exists():
         return True
     n = int(rej.read_text()) if rej.exists() else 0
-    ok, why = gemini_check(clip, image_desc, motion)
+    ok, why = clip_motion_ok(clip)  # primero lo gratis: que no tenga tramos quietos
+    if ok:
+        ok, why = gemini_check(clip, image_desc, motion)
     if ok is None:  # no se pudo revisar: queda guardada sin marca; no se publica hasta que Gemini la apruebe
         return False
     if ok:
@@ -306,12 +348,6 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 # ---------------------------------------------------------------- Armado
-def crop_variant(src, dest, where):
-    """Otra toma de la misma imagen: un acercamiento (centro) o la parte de abajo."""
-    y = {"center": "(ih-oh)/2", "bottom": "ih-oh"}[where]
-    run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf",
-         f"crop=iw*0.62:ih*0.62:(iw-ow)/2:{y},scale={W}:{H}:flags=lanczos", dest])
-
 def make_sfx(work, total, whooshes, pops):
     """Efectos de sonido propios (sin derechos de autor): whoosh en cada corte y pop en el dato fuerte."""
     wh, pp = work / "whoosh.wav", work / "pop.wav"
@@ -345,7 +381,7 @@ def mascot_png(work):
 
 
 def assemble(visuals, voice, subs, total, out, sfx=None, mascot=None):
-    """visuals: lista de (archivo, es_video, segundos en pantalla[, opciones]).
+    """visuals: lista de (archivo, es_video, segundos en pantalla[, opciones]). Solo se aceptan animaciones.
     Opciones para videos: full = duración de toda la escena, start = desde qué segundo de la escena empieza
     este tramo, zoom = acercamiento (ej. 1.12) para hacer un corte de ritmo dentro de la misma animación."""
     inputs, chains = [], []
@@ -353,26 +389,16 @@ def assemble(visuals, voice, subs, total, out, sfx=None, mascot=None):
     for i, v in enumerate(visuals):
         f, is_video, secs = v[:3]
         opt = v[3] if len(v) > 3 else {}
-        if is_video:
-            d = duration(f)
-            full, start, zoom = opt.get("full", secs), opt.get("start", 0.0), opt.get("zoom", 1.0)
-            stretch = min(max(full / d, 1.0), 1.5)  # cámara lenta suave si falta duración
-            punch = f",scale={round(W * zoom / 2) * 2}:{round(H * zoom / 2) * 2}:flags=lanczos,crop={W}:{H},setsar=1" if zoom > 1 else ""
-            inputs += ["-i", f]
-            chains.append(f"[{i}:v]setpts={stretch:.3f}*PTS,{look}{punch},tpad=stop_mode=clone:stop_duration={full:.3f},"
-                          f"trim={start:.3f}:{start + secs:.3f},setpts=PTS-STARTPTS[s{i}]")
-        else:  # imagen fija con zoom lento
-            frames = int(secs * FPS) + 1
-            inputs += ["-i", f]  # una sola imagen: zoompan arma los cuadros (con -loop se estiraba y tapaba el resto del video)
-            moves = [  # zoom in, zoom out, paneo a la derecha, paneo hacia arriba
-                ("min(zoom+0.0012,1.18)", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"),
-                ("max(1.18-0.0012*on,1.0)", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"),
-                ("1.15", f"(iw-iw/zoom)*on/{frames}", "ih/2-(ih/zoom/2)"),
-                ("1.15", "iw/2-(iw/zoom/2)", f"(ih-ih/zoom)*(1-on/{frames})"),
-            ]
-            z, x, y = moves[i % len(moves)]
-            chains.append(f"[{i}:v]scale={W*2}:{H*2}:force_original_aspect_ratio=increase,crop={W*2}:{H*2},"
-                          f"zoompan=z='{z}':x='{x}':y='{y}':d={frames}:s={W}x{H}:fps={FPS},setsar=1[s{i}]")
+        if not is_video:  # regla del canal: nunca una imagen quieta en un video
+            raise RuntimeError(f"Se intentó armar el video con una imagen quieta ({Path(f).name}): no se publica")
+        d = duration(f)
+        full, start, zoom = opt.get("full", secs), opt.get("start", 0.0), opt.get("zoom", 1.0)
+        # cámara lenta suave hasta cubrir toda la escena (+2 % de margen): así el último cuadro nunca queda congelado
+        stretch = max(full / d * 1.02, 1.0)
+        punch = f",scale={round(W * zoom / 2) * 2}:{round(H * zoom / 2) * 2}:flags=lanczos,crop={W}:{H},setsar=1" if zoom > 1 else ""
+        inputs += ["-i", f]
+        chains.append(f"[{i}:v]setpts={stretch:.4f}*PTS,{look}{punch},tpad=stop_mode=clone:stop_duration=0.2,"
+                      f"trim={start:.3f}:{start + secs:.3f},setpts=PTS-STARTPTS[s{i}]")
     n = len(visuals)
     fontsdir = (ROOT / "fonts").as_posix()
     vf = ";".join(chains) + ";" + "".join(f"[s{i}]" for i in range(n)) + \
@@ -424,32 +450,27 @@ def youtube_description(idea):
             f"{hashtags}")
 
 
-def upload(video, idea, work=None):
+def upload(video, idea, work, publish_at):
+    """Sube el video. Con publish_at (UTC, RFC3339) queda privado y YouTube lo publica solo a esa hora.
+    Devuelve (id, publish_at) o None si no hay datos de YouTube."""
     need = ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")
     if not all(os.environ.get(k) for k in need):
         log("Sin datos de YouTube: el video queda para descargar desde GitHub.")
         return None
-    from google.oauth2.credentials import Credentials
-    from googleapiclient.discovery import build
     from googleapiclient.http import MediaFileUpload
-    creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"],
-                        client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"],
-                        token_uri="https://oauth2.googleapis.com/token")
-    mark = work / "uploaded.json" if work else None
-    if mark and mark.exists():  # una corrida anterior ya lo subió (y quizás no pudo guardar done.json)
-        vid = json.loads(mark.read_text(encoding="utf-8"))["id"]
-        log(f"Este video ya se subió en una corrida anterior (https://youtube.com/shorts/{vid}): no lo subo de nuevo.")
-        return vid, None
-    yt = build("youtube", "v3", credentials=creds)
+    mark = work / "uploaded.json"
+    if mark.exists():  # una corrida anterior ya lo subió (y quizás no pudo guardar done.json)
+        m = json.loads(mark.read_text(encoding="utf-8"))
+        log(f"Este video ya se subió en una corrida anterior (https://youtube.com/shorts/{m['id']}): no lo subo de nuevo.")
+        return m["id"], m.get("publish_at")
+    yt = youtube_client()
     dup = recent_upload(yt, youtube_title(idea))
     if dup:
-        log(f"Este video ya estaba subido (https://youtube.com/shorts/{dup}): no lo subo de nuevo.")
-        return dup, None
+        log(f"Este video ya estaba subido (https://youtube.com/shorts/{dup[0]}): no lo subo de nuevo.")
+        return dup
     status = {"privacyStatus": CFG["privacy"], "selfDeclaredMadeForKids": False, "containsSyntheticMedia": False}
-    publish_at = scheduled_time()
     if publish_at:  # se sube privado y YouTube lo publica solo a la hora elegida
         status.update(privacyStatus="private", publishAt=publish_at)
-        log(f"Programado para publicarse a las {CFG['publish_time_ar']} (hora AR)")
     body = {
         "snippet": {"title": youtube_title(idea),
                     "description": youtube_description(idea),
@@ -462,40 +483,30 @@ def upload(video, idea, work=None):
     resp = None
     while resp is None:
         _, resp = req.next_chunk()
-    log("Subido: https://youtube.com/shorts/" + resp["id"])
-    if mark:
-        mark.write_text(json.dumps({"id": resp["id"], "date": today_ar()}), encoding="utf-8")
+    log("Subido: https://youtube.com/shorts/" + resp["id"] +
+        (f" (se publica solo el {ar_text(publish_at)} hora AR)" if publish_at else " (público ya)"))
+    mark.write_text(json.dumps({"id": resp["id"], "publish_at": publish_at, "date": slot_day(publish_at)}), encoding="utf-8")
     extras(yt, resp["id"], idea, comment=not publish_at)  # si está programado, el comentario va cuando sea público
     return resp["id"], publish_at
 
 
 def recent_upload(yt, title):
-    """Busca entre los últimos videos del canal uno con el mismo título; devuelve su id o None."""
+    """Busca entre los últimos videos del canal uno con el mismo título; devuelve (id, publish_at) o None."""
     try:
         ch = yt.channels().list(part="contentDetails", mine=True).execute()
         up = ch["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
         res = yt.playlistItems().list(part="snippet", playlistId=up, maxResults=15).execute()
         for it in res.get("items", []):
             if it["snippet"]["title"].strip() == title.strip():
-                return it["snippet"]["resourceId"]["videoId"]
+                vid = it["snippet"]["resourceId"]["videoId"]
+                st = yt.videos().list(part="status", id=vid).execute().get("items", [{}])[0].get("status", {})
+                pa = st.get("publishAt")
+                if pa:  # "2026-11-08T00:30:00Z" o con milisegundos
+                    pa = iso(datetime.fromisoformat(pa.replace("Z", "+00:00")))
+                return vid, pa
     except Exception as e:
         log(f"No pude revisar si ya estaba subido ({str(e)[:120]})")
     return None
-
-
-def scheduled_time():
-    """Hora de publicación de hoy en UTC (RFC3339), o None si hay que publicar ya (pasó la hora o fue a mano)."""
-    from datetime import datetime, timedelta, timezone
-    hhmm = CFG.get("publish_time_ar")
-    if not hhmm or os.environ.get("FORCE"):
-        return None
-    ar = timezone(timedelta(hours=-3))
-    now = datetime.now(ar)
-    h, m = map(int, hhmm.split(":"))
-    target = now.replace(hour=h, minute=m, second=0, microsecond=0)
-    if target - now < timedelta(minutes=20):
-        return None
-    return target.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def youtube_client():
@@ -637,64 +648,93 @@ def refill_ideas(ideas, done):
     return ideas
 
 
-# ---------------------------------------------------------------- Principal
+# ---------------------------------------------------------------- Horarios
+def now_utc():
+    return datetime.now(timezone.utc)
+
+
 def today_ar():
-    from datetime import datetime, timedelta, timezone
-    return datetime.now(timezone(timedelta(hours=-3))).strftime("%Y-%m-%d")
+    return datetime.now(AR).strftime("%Y-%m-%d")
 
 
-def slots_open():
-    """Cuántos videos se pueden haber publicado ya hoy según publish_slots_ar (ej. ["12:00", "19:30"])."""
-    from datetime import datetime, timedelta, timezone
-    slots = CFG.get("publish_slots_ar") or [CFG.get("publish_after_ar") or "00:00"]
-    now = datetime.now(timezone(timedelta(hours=-3)))
-    return sum(1 for hhmm in slots if (now.hour, now.minute) >= tuple(map(int, hhmm.split(":"))))
+def iso(dt):
+    return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def publish_hour_ok():
-    """Se publica directo en público recién desde publish_after_ar (hora AR): lo antes se usa para preparar el video."""
-    from datetime import datetime, timedelta, timezone
-    hhmm = CFG.get("publish_after_ar")
-    if not hhmm:
-        return True
-    h, m = map(int, hhmm.split(":"))
-    now = datetime.now(timezone(timedelta(hours=-3)))
-    return (now.hour, now.minute) >= (h, m)
+def parse_iso(s):
+    return datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
 
 
-def last_chance():
-    """True solo en la última corrida programada que todavía puede publicar el video del día (21:07 AR).
-    El workflow lo avisa con LAST_CHANCE=1; así una corrida atrasada o una manual nunca se toma como la última."""
-    return bool(os.environ.get("LAST_CHANCE"))
+def ar_text(s):
+    return parse_iso(s).astimezone(AR).strftime("%d/%m %H:%M")
+
+
+def slot_day(s):
+    """Día (AR) en que sale el video: el del horario programado, o hoy si se publicó directo."""
+    return parse_iso(s).astimezone(AR).strftime("%Y-%m-%d") if s else today_ar()
+
+
+def slots(now, days=6):
+    """Horarios de publicación de los próximos días: [(hora UTC, es_principal)], en orden.
+    publish_slots_ar = los principales (siempre se llenan); extra_slots_ar = solo si sobran videos."""
+    out, start = [], now.astimezone(AR).date() - timedelta(days=1)
+    for dd in range(days + 1):
+        day = start + timedelta(days=dd)
+        for main, key in ((True, "publish_slots_ar"), (False, "extra_slots_ar")):
+            for hhmm in CFG.get(key) or []:
+                h, m = map(int, hhmm.split(":"))
+                out.append((datetime(day.year, day.month, day.day, h, m, tzinfo=AR).astimezone(timezone.utc), main))
+    return sorted(out)
+
+
+def next_slot(done, now=None):
+    """El mejor horario libre para el próximo video terminado (UTC), o None si no hay horarios configurados.
+    - Nunca a menos de min_lead_minutes (YouTube tiene que tenerlo procesado) ni a menos de min_gap_hours de otro video.
+    - Un horario extra (ej. mediodía) se usa solo si ya hay extra_if_queued videos programados esperando:
+      o sea, cuando sobran videos. Así los horarios principales (los de más público) se llenan primero."""
+    now = now or now_utc()
+    taken = [parse_iso(v["publish_at"]) for v in done.values() if v.get("publish_at")]
+    queued = sum(1 for t in taken if t > now)
+    gap = timedelta(hours=CFG.get("min_gap_hours", 2.5))
+    lead = timedelta(minutes=CFG.get("min_lead_minutes", 25))
+    free = [(t, main) for t, main in slots(now) if t >= now + lead and all(abs(t - x) >= gap for x in taken)]
+    best = next((t for t, main in free if main), None)
+    extra = next((t for t, main in free if not main and (best is None or t < best)), None)
+    if extra and (best is None or queued >= CFG.get("extra_if_queued", 1)):
+        return extra
+    return best
 
 
 def give_up(msg):
-    """Si ya no queda otra corrida para publicar hoy, la marca en rojo para que GitHub mande un mail de aviso."""
+    """Marca la corrida en rojo para que GitHub mande un mail de aviso."""
     log(f"❌ {msg}")
     sys.exit(1)
 
 
-def main():
-    ideas = json.loads((ROOT / "ideas.json").read_text(encoding="utf-8"))
-    done_p = ROOT / "done.json"
-    done = json.loads(done_p.read_text(encoding="utf-8")) if done_p.exists() else {}
-    try:
-        if pending_comments(done, ideas):
-            done_p.write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
-    except Exception as e:
-        log(f"Comentarios pendientes: falló ({e})")
-    per_day = CFG.get("videos_per_day", 1)
-    today_n = sum(1 for v in done.values() if v.get("date") == today_ar())
-    already = today_n >= per_day
-    publish_today = os.environ.get("FORCE") or (not already and today_n < min(slots_open(), per_day))
-    if not publish_today:
-        log("Hoy ya se subió el video del día: aprovecho el cupo para ir preparando el de mañana." if already else
-            f"Todavía no es la hora del próximo video ({', '.join(CFG.get('publish_slots_ar') or [str(CFG.get('publish_after_ar'))])} AR): lo preparo.")
-    ideas = refill_ideas(ideas, done)
+def verify_final(out, total, per, n_scenes):
+    """Revisión final antes de subir: formato, duración, audio y que la imagen nunca quede congelada.
+    Devuelve la lista de escenas con problemas (vacía = todo bien)."""
+    info = json.loads(run(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", out]))
+    v = [x for x in info["streams"] if x["codec_type"] == "video"]
+    a = [x for x in info["streams"] if x["codec_type"] == "audio"]
+    d = float(info["format"]["duration"])
+    if not v or (int(v[0]["width"]), int(v[0]["height"])) != (W, H) or not a or abs(d - total) > 0.6:
+        raise RuntimeError(f"El video armado salió mal (duración {d:.1f}s de {total:.1f}s, video={bool(v)}, audio={bool(a)})")
+    # se mira la franja del medio: los subtítulos (abajo) y el nombre del canal (arriba) quedan afuera
+    spans = frozen_spans(out, CFG.get("max_frozen_seconds", 1.0), crop=f"crop={W}:{int(H * 0.5)}:0:{int(H * 0.14)}")
+    bad = sorted({min(int(t / per) + 1, n_scenes) for a_, b_ in spans for t in (a_, max(a_, b_ - 0.01))})
+    for a_, b_ in spans:
+        log(f"⚠️ Imagen quieta en el video armado entre {a_:.1f}s y {b_:.1f}s")
+    return bad
+
+
+# ---------------------------------------------------------------- Principal
+def make_one(ideas, done, slot):
+    """Avanza el próximo video. Devuelve "uploaded", "wait" (le falta algo; sigue en otro intento) o "noideas"."""
     pending = [i for i in ideas if i["id"] not in done]
     if not pending:
         log("No quedan ideas nuevas. Agregá más a ideas.json.")
-        return
+        return "noideas"
     idea = pending[0]
     log(f"Idea {idea['id']}: {idea['title']}")
     work = ROOT / "work" / idea["id"]
@@ -704,6 +744,8 @@ def main():
             shutil.rmtree(d, ignore_errors=True)
     work.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(exist_ok=True)
+    for f in list(work.glob("scene*.still")) + list(work.glob("scene*b.png")):  # restos del modo viejo con imágenes
+        f.unlink()
 
     voice, timeline = make_voice(idea["narration"], work)
     total = duration(voice) + CFG.get("end_padding", 0.15)  # corta apenas termina de hablar
@@ -711,9 +753,12 @@ def main():
     make_subs(timeline, subs, idea.get("highlight", []), total)
     log(f"Voz lista: {total:.1f}s")
 
-    # 1) Primero todas las imágenes (gastan poca cuota), sin repetidas.
     scenes = idea["scenes"]
     per = total / len(scenes)
+    # la animación se pide un poco más larga si la escena es larga (máx. 5 s): así la cámara lenta es mínima
+    secs = min(5.0, max(float(CFG["clip_seconds"]), math.ceil(per / CFG.get("max_slowmo", 1.3) * 10) / 10))
+
+    # 1) Primero todas las imágenes (gastan poca cuota), sin repetidas.
     imgs, hashes = [], set()
     for k, sc in enumerate(scenes, 1):
         img = work / f"scene{k}.png"
@@ -736,39 +781,39 @@ def main():
                 break
             except Exception as e:
                 log(f"Imagen {k} falló ({e})")
-                if "quota" in str(e).lower():
+                if is_quota(e):
                     break
                 time.sleep(10)
         if not ok:
-            # modo calidad: no se rellena con recortes; se guarda lo hecho y se reintenta más tarde
+            img.unlink(missing_ok=True)
             log(f"Imagen {k} no salió (cupo): guardo lo hecho y reintento más tarde.")
-            if publish_today and last_chance():
-                give_up("Hoy no se pudo publicar: faltan imágenes (se terminó la cuota de Hugging Face).")
-            return
+            return "wait"
         imgs.append(img)
 
-    # 2) Animar las primeras escenas (el gancho) con la cuota que quede.
+    # 2) Animar cada escena. Una escena cuenta solo si su animación se mueve todo el tiempo y Gemini la aprobó.
     visuals, quota_out = [], False
-    for f in work.glob("scene*.still"):  # marcas viejas de "imagen quieta": ya no se usan
-        f.unlink()
     for k, (sc, img) in enumerate(zip(scenes, imgs), 1):
         clip = work / f"scene{k}.mp4"
+        if clip.exists() and clip.stat().st_size <= 10000:  # archivo roto de un intento cortado
+            clip.unlink()
+            (work / f"scene{k}.ok").unlink(missing_ok=True)
         done_clip = False
         motion = sc.get("motion") or CFG.get("default_motion")
-        if clip.exists() and clip.stat().st_size > 10000:  # animación guardada de un intento anterior
+        if clip.exists():  # animación guardada de un intento anterior
             if clip_ok(clip, k, sc["image"], motion, work):
                 done_clip = True
                 log(f"Clip {k} listo (guardado)")
-        if not done_clip and motion and k <= CFG["max_clips"] and not quota_out and not clip.exists():  # un clip guardado sin revisar no se rehace
+        elif not quota_out:  # un clip guardado que espera revisión no se rehace
             for attempt in range(3):
                 try:
-                    with_tokens(make_clip, img, f"{motion}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
+                    with_tokens(make_clip, img, f"{motion}, {CFG['motion_style']}", secs, clip)
                 except Exception as e:
-                    if "quota" in str(e).lower():
-                        log("Se terminó la cuota gratis de hoy: el resto va con imágenes.")
+                    if is_quota(e):
+                        log("Se terminó la cuota gratis de Hugging Face en todas las cuentas: sigo en el próximo intento.")
                         quota_out = True
                         break
                     log(f"Clip {k} falló ({e}); reintento" if attempt < 2 else f"Clip {k} falló otra vez")
+                    clip.unlink(missing_ok=True)
                     time.sleep(20)
                     continue
                 if clip_ok(clip, k, sc["image"], motion, work):
@@ -784,45 +829,71 @@ def main():
                             (clip, True, per / 2, {"full": per, "start": per / 2, "zoom": CFG.get("punch_zoom", 1.12)})]
             else:
                 visuals.append((clip, True, per))
-        elif img.exists():
-            # escena todavía sin animación aprobada (este video no se publica hasta que estén todas)
-            close = work / f"scene{k}b.png"
-            crop_variant(img, close, "center")
-            visuals += [(img, False, per / 2), (close, False, per / 2)]
-    # una escena cuenta como lista solo si tiene animación y Gemini la aprobó (nunca imagen quieta)
-    animated = sum(1 for k in range(1, len(scenes) + 1)
-                   if (work / f"scene{k}.mp4").exists() and (work / f"scene{k}.ok").exists())
-    need = min(CFG.get("min_clips", len(scenes)), len(scenes))
-    if animated < need:  # modo calidad: si no están todas las escenas animadas, no se publica
-        log(f"{animated}/{len(scenes)} escenas animadas: guardo lo hecho y sigo en el próximo intento.")
-        if publish_today and last_chance():
-            give_up(f"Hoy no se pudo publicar: solo {animated}/{len(scenes)} escenas animadas (cuota de Hugging Face).")
-        return
-    if not publish_today:
-        log("El video de mañana ya tiene todo listo; se publica en el primer intento de mañana." if already else
-            "El video de hoy ya tiene todo listo; se publica en la corrida de la noche.")
-        return
+    ready = sum(1 for k in range(1, len(scenes) + 1)
+                if (work / f"scene{k}.mp4").exists() and (work / f"scene{k}.ok").exists())
+    if ready < len(scenes) or len(visuals) != len(scenes) * (2 if CFG.get("punch_in", True) else 1):
+        log(f"{ready}/{len(scenes)} escenas animadas y aprobadas: guardo lo hecho y sigo en el próximo intento.")
+        return "wait"
 
+    # 3) Armado + revisión final (nunca se sube un video con un tramo congelado)
     out = OUT / f"short_{idea['id']}.mp4"
     cuts = [per * k for k in range(1, len(scenes))]  # whoosh solo cuando cambia de escena
     pops = [timeline[-1][1]] if len(timeline) > 2 else []  # el dato fuerte del final
     sfx = make_sfx(work, total, cuts, pops) if CFG.get("sfx", True) else None
     mascot = mascot_png(work) if CFG.get("end_card", True) else None
     assemble(visuals, voice, subs, total, out, sfx, mascot)
-    log(f"Short listo: {out}")
-    vid, publish_at = upload(out, idea, work) or (None, None)
-    mark = work / "uploaded.json"
-    day = json.loads(mark.read_text(encoding="utf-8")).get("date", today_ar()) if mark.exists() else today_ar()
+    bad = verify_final(out, total, per, len(scenes))
+    if bad:
+        for k in bad:  # esas animaciones se rehacen en el próximo intento
+            (work / f"scene{k}.mp4").unlink(missing_ok=True)
+            (work / f"scene{k}.ok").unlink(missing_ok=True)
+        out.unlink(missing_ok=True)
+        log(f"❌ El video armado tenía imagen quieta (escenas {bad}): NO se sube; esas escenas se rehacen.")
+        return "wait"
+    log(f"Short listo y revisado: {out}")
+
+    res = upload(out, idea, work, iso(slot) if slot else None)
+    vid, publish_at = res or (None, None)
     tags = " ".join("#" + _norm(t) for t in idea.get("tags", []) if _norm(t))
     (OUT / "meta.json").write_text(json.dumps({
         "id": idea["id"], "file": out.name, "youtube_id": vid,
         "caption": f"{idea.get('yt_title') or idea['title']}\n\n{sentences(idea['narration'])[0]}\n\n"
                    f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
         ensure_ascii=False, indent=2), encoding="utf-8")
-    done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": day}
+    if not res:  # sin YouTube: queda para descargar, no se marca como hecho
+        return "wait"
+    done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": slot_day(publish_at)}
     if publish_at:
         done[idea["id"]].update(publish_at=publish_at, comment_pending=True)
-    done_p.write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
+    (ROOT / "done.json").write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
+    return "uploaded"
+
+
+def main():
+    ideas = json.loads((ROOT / "ideas.json").read_text(encoding="utf-8"))
+    done_p = ROOT / "done.json"
+    done = json.loads(done_p.read_text(encoding="utf-8")) if done_p.exists() else {}
+    try:
+        if pending_comments(done, ideas):
+            done_p.write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
+    except Exception as e:
+        log(f"Comentarios pendientes: falló ({e})")
+    ahead = timedelta(hours=CFG.get("max_hours_ahead", 40))
+    result = "wait"
+    for n in range(CFG.get("max_videos_per_run", 3)):
+        slot = next_slot(done)
+        if slot and slot - now_utc() > ahead:
+            log(f"Ya hay videos de sobra programados (el próximo horario libre es el {ar_text(iso(slot))} AR): por ahora no hace falta preparar más.")
+            return
+        log(f"Próximo horario libre: {ar_text(iso(slot)) + ' AR' if slot else 'publicar ya'}")
+        ideas = refill_ideas(ideas, done)
+        result = make_one(ideas, done, slot)
+        if result != "uploaded" or time.time() - T0 > CFG.get("more_videos_if_minutes_left", 30) * 60:
+            break
+    if result == "wait" and CFG.get("alert_slot_ar"):  # aviso por mail si el horario principal de hoy queda vacío
+        slot = next_slot(done)
+        if slot and slot.astimezone(AR).strftime("%H:%M") == CFG["alert_slot_ar"] and slot - now_utc() < timedelta(hours=3, minutes=10):
+            give_up(f"Todavía no hay video para las {CFG['alert_slot_ar']} AR (falta cuota de Hugging Face): sigue en los próximos intentos.")
 
 
 if __name__ == "__main__":
