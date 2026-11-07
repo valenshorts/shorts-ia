@@ -43,7 +43,7 @@
     "gemini-flash-lite-latest"
   ],
   "min_pending_ideas": 7,
-  "videos_per_day": 1,
+  "videos_per_day": 2,
   "end_padding": 0.15,
   "default_motion": "slow smooth camera push in, the scene stays still except for subtle natural movement of what is already in the image",
   "min_clips": 5,
@@ -51,5 +51,9 @@
   "max_rejects": 2,
   "publish_after_ar": "19:30",
   "punch_in": true,
-  "punch_zoom": 1.12
+  "punch_zoom": 1.12,
+  "publish_slots_ar": [
+    "12:00",
+    "19:30"
+  ]
 }
