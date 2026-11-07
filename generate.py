@@ -35,7 +35,7 @@ def duration(p):
 
 
 # ---------------------------------------------------------------- Hugging Face
-HF_TOKENS = [t for t in (os.environ.get("HF_TOKEN"), os.environ.get("HF_TOKEN_2")) if t]
+HF_TOKENS = [t for t in (os.environ.get("HF_TOKEN"), os.environ.get("HF_TOKEN_2"), os.environ.get("HF_TOKEN_3")) if t]
 _tok = [0]
 
 
@@ -56,7 +56,7 @@ def with_tokens(fn, *a, **k):
         except Exception as e:
             if is_quota(e) and _tok[0] + 1 < len(HF_TOKENS):
                 _tok[0] += 1
-                log("Cuota agotada en esta cuenta de Hugging Face; sigo con la segunda.")
+                log(f"Cuota agotada en esta cuenta de Hugging Face; sigo con la cuenta {_tok[0] + 1}.")
                 continue
             raise
 
@@ -170,21 +170,23 @@ def gemini_check(clip, image_desc, motion):
 
 def clip_ok(clip, k, image_desc, motion, work):
     """Gemini revisa la animación. Si tiene un error de IA evidente, la borra para rehacerla.
-    Si ya se rehízo `max_rejects` veces y sigue mal, esa escena va con la imagen quieta (marca scene{k}.still)."""
-    mark, rej, still = work / f"scene{k}.ok", work / f"scene{k}.rej", work / f"scene{k}.still"
+    Si ya se rehízo `max_rejects` veces y sigue mal, también se borra la imagen de esa escena para empezar
+    de cero con una imagen nueva. Nunca se publica una escena con imagen quieta."""
+    mark, rej = work / f"scene{k}.ok", work / f"scene{k}.rej"
     if mark.exists():
         return True
     n = int(rej.read_text()) if rej.exists() else 0
     ok, why = gemini_check(clip, image_desc, motion)
-    if ok is None:  # no se pudo revisar: se usa por ahora, sin marca, así se revisa en la próxima corrida
-        return True
+    if ok is None:  # no se pudo revisar: queda guardada sin marca; no se publica hasta que Gemini la apruebe
+        return False
     if ok:
         mark.touch()
         return True
     clip.unlink()
     if n >= CFG.get("max_rejects", 2):
-        still.touch()
-        log(f"Clip {k} salió mal {n + 1} veces ({why}); esta escena va con la imagen quieta")
+        (work / f"scene{k}.png").unlink(missing_ok=True)
+        rej.unlink(missing_ok=True)
+        log(f"Clip {k} salió mal {n + 1} veces ({why}); en la próxima corrida pruebo con una imagen nueva")
         return False
     rej.write_text(str(n + 1))
     log(f"Clip {k} rechazado por la revisión ({why}); lo rehago")
@@ -737,6 +739,8 @@ def main():
 
     # 2) Animar las primeras escenas (el gancho) con la cuota que quede.
     visuals, quota_out = [], False
+    for f in work.glob("scene*.still"):  # marcas viejas de "imagen quieta": ya no se usan
+        f.unlink()
     for k, (sc, img) in enumerate(zip(scenes, imgs), 1):
         clip = work / f"scene{k}.mp4"
         done_clip = False
@@ -745,7 +749,7 @@ def main():
             if clip_ok(clip, k, sc["image"], motion, work):
                 done_clip = True
                 log(f"Clip {k} listo (guardado)")
-        if not done_clip and motion and k <= CFG["max_clips"] and not quota_out and not (work / f"scene{k}.still").exists():
+        if not done_clip and motion and k <= CFG["max_clips"] and not quota_out and not clip.exists():  # un clip guardado sin revisar no se rehace
             for attempt in range(3):
                 try:
                     with_tokens(make_clip, img, f"{motion}, {CFG['motion_style']}", CFG["clip_seconds"], clip)
@@ -761,7 +765,7 @@ def main():
                     done_clip = True
                     log(f"Clip {k} listo")
                     break
-                if (work / f"scene{k}.still").exists():  # salió mal demasiadas veces: imagen quieta
+                if not img.exists() or clip.exists():  # imagen nueva la próxima vez, o clip guardado esperando revisión
                     break
         if done_clip:
             if CFG.get("punch_in", True):
@@ -770,14 +774,14 @@ def main():
                             (clip, True, per / 2, {"full": per, "start": per / 2, "zoom": CFG.get("punch_zoom", 1.12)})]
             else:
                 visuals.append((clip, True, per))
-        else:
-            # escena quieta: dos tomas (plano general + acercamiento) para que no aburra
+        elif img.exists():
+            # escena todavía sin animación aprobada (este video no se publica hasta que estén todas)
             close = work / f"scene{k}b.png"
             crop_variant(img, close, "center")
             visuals += [(img, False, per / 2), (close, False, per / 2)]
-    # una escena cuenta como lista si está animada o si quedó con imagen quieta porque la animación salía mal
+    # una escena cuenta como lista solo si tiene animación y Gemini la aprobó (nunca imagen quieta)
     animated = sum(1 for k in range(1, len(scenes) + 1)
-                   if (work / f"scene{k}.mp4").exists() or (work / f"scene{k}.still").exists())
+                   if (work / f"scene{k}.mp4").exists() and (work / f"scene{k}.ok").exists())
     need = min(CFG.get("min_clips", len(scenes)), len(scenes))
     if animated < need:  # modo calidad: si no están todas las escenas animadas, no se publica
         log(f"{animated}/{len(scenes)} escenas animadas: guardo lo hecho y sigo en el próximo intento.")
