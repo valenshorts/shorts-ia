@@ -5,10 +5,10 @@ name: Solo Instagram
 # A mano: Actions → Solo Instagram → Run workflow. Vacío = el próximo de la cola; o números (ej: 007,008).
 on:
   schedule:
-    # 13:37, 19:37 y 22:37 de Argentina (en UTC). Al día: el video sale a las 22:37 AR = 19:37 México, prime time.
-    - cron: "37 16 * * *"
-    - cron: "37 22 * * *"
-    - cron: "37 1 * * *"
+    # 20-25 min después de cada horario de YouTube (15:00, 21:30 y 00:30 AR): 15:20, 21:55 y 00:55 AR (en UTC).
+    - cron: "20 18 * * *"
+    - cron: "55 0 * * *"
+    - cron: "55 3 * * *"
   workflow_dispatch:
     inputs:
       videos:
@@ -59,7 +59,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p dl
-          for r in $(gh run list -R "${{ github.repository }}" -w diario.yml --limit 60 --json databaseId -q '.[].databaseId'); do
+          for r in $(gh run list -R "${{ github.repository }}" -w diario.yml --limit 120 --json databaseId -q '.[].databaseId'); do
             gh run download "$r" -R "${{ github.repository }}" -n short -D "dl/$r" 2>/dev/null || true
           done
           find dl -name "*.mp4"
