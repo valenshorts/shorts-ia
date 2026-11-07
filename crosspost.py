@@ -76,6 +76,8 @@ def instagram():
         if st.get("status_code") == "ERROR":
             raise RuntimeError(f"Instagram rechazó el video: {st}")
         time.sleep(10)
+    else:
+        raise RuntimeError("Instagram no terminó de procesar el video en 10 minutos; se reintenta en el próximo horario")
     res = http(f"{IG_API}/{uid}/media_publish", {"creation_id": cid, "access_token": tok})
     log("Instagram: publicado", res.get("id"))
     p = ROOT / "ig_done.json"  # anota lo subido para que la cola no lo repita
