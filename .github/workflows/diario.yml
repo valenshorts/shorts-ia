@@ -4,8 +4,10 @@ on:
   schedule:
     # Intentos 12:07, 15:07, 18:07, 21:07 y 00:07 de Argentina: van sumando imágenes/animaciones al trabajo guardado.
     # 19:50 AR: publica el video del día directo en público (desde publish_after_ar en config.json; 21:07 queda de respaldo).
-    # El video se publica recién cuando está completo (1 por día).
-    - cron: "7 15 * * *"
+    # Hasta 2 videos por día (12:00 y 19:30 AR), cada uno recién cuando está completo y con las 5 escenas animadas.
+    - cron: "7 9 * * *"    # 06:07 AR (prepara)
+    - cron: "7 12 * * *"   # 09:07 AR (prepara)
+    - cron: "7 15 * * *"   # 12:07 AR: 1er video del día (publish_slots_ar)
     - cron: "7 18 * * *"
     - cron: "7 21 * * *"
     - cron: "50 22 * * *"
@@ -48,6 +50,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_TOKEN_2: ${{ secrets.HF_TOKEN_2 }}
           HF_TOKEN_3: ${{ secrets.HF_TOKEN_3 }}
+          HF_TOKEN_4: ${{ secrets.HF_TOKEN_4 }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
