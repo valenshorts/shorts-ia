@@ -360,7 +360,7 @@ def assemble(visuals, voice, subs, total, out, sfx=None, mascot=None):
                           f"trim={start:.3f}:{start + secs:.3f},setpts=PTS-STARTPTS[s{i}]")
         else:  # imagen fija con zoom lento
             frames = int(secs * FPS) + 1
-            inputs += ["-loop", "1", "-t", f"{secs:.3f}", "-i", f]
+            inputs += ["-i", f]  # una sola imagen: zoompan arma los cuadros (con -loop se estiraba y tapaba el resto del video)
             moves = [  # zoom in, zoom out, paneo a la derecha, paneo hacia arriba
                 ("min(zoom+0.0012,1.18)", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"),
                 ("max(1.18-0.0012*on,1.0)", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"),
