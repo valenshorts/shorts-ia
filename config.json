@@ -43,17 +43,27 @@
     "gemini-flash-lite-latest"
   ],
   "min_pending_ideas": 7,
-  "videos_per_day": 2,
   "end_padding": 0.15,
   "default_motion": "slow smooth camera push in, the scene stays still except for subtle natural movement of what is already in the image",
   "min_clips": 5,
   "check_clips": true,
   "max_rejects": 2,
-  "publish_after_ar": "19:30",
   "punch_in": true,
   "punch_zoom": 1.12,
   "publish_slots_ar": [
-    "12:00",
-    "19:30"
-  ]
+    "21:30",
+    "00:30"
+  ],
+  "extra_slots_ar": [
+    "15:00"
+  ],
+  "min_gap_hours": 2.5,
+  "min_lead_minutes": 25,
+  "max_hours_ahead": 40,
+  "max_videos_per_run": 3,
+  "more_videos_if_minutes_left": 25,
+  "alert_slot_ar": "21:30",
+  "max_frozen_seconds": 1.0,
+  "max_slowmo": 1.3,
+  "extra_if_queued": 1
 }
