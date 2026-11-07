@@ -2,17 +2,18 @@ name: Short diario
 
 on:
   schedule:
-    # Intentos 12:07, 15:07, 18:07, 21:07 y 00:07 de Argentina: van sumando imágenes/animaciones al trabajo guardado.
-    # 19:50 AR: publica el video del día directo en público (desde publish_after_ar en config.json; 21:07 queda de respaldo).
-    # Hasta 2 videos por día (12:00 y 19:30 AR), cada uno recién cuando está completo y con las 5 escenas animadas.
-    - cron: "7 9 * * *"    # 06:07 AR (prepara)
-    - cron: "7 12 * * *"   # 09:07 AR (prepara)
-    - cron: "7 15 * * *"   # 12:07 AR: 1er video del día (publish_slots_ar)
-    - cron: "7 18 * * *"
-    - cron: "7 21 * * *"
-    - cron: "50 22 * * *"
-    - cron: "7 0 * * *"
-    - cron: "7 3 * * *"
+    # Un intento cada 3 horas (a las :40 de Argentina). Cada intento suma imágenes/animaciones al trabajo guardado;
+    # cuando un video está COMPLETO (5 escenas animadas, aprobadas y revisado entero) se sube a YouTube programado
+    # para el próximo horario libre: 21:30 y 00:30 AR (principales) y 15:00 AR (solo si sobran videos).
+    # Los intentos de las 21:40, 00:40 y 15:40 además publican el comentario de los videos que acaban de salir.
+    - cron: "40 0 * * *"    # 21:40 AR
+    - cron: "40 3 * * *"    # 00:40 AR
+    - cron: "40 6 * * *"    # 03:40 AR
+    - cron: "40 9 * * *"    # 06:40 AR
+    - cron: "40 12 * * *"   # 09:40 AR
+    - cron: "40 15 * * *"   # 12:40 AR
+    - cron: "40 18 * * *"   # 15:40 AR
+    - cron: "40 21 * * *"   # 18:40 AR (si no hay video para las 21:30, avisa en rojo por mail)
   workflow_dispatch: {}
 
 permissions:
@@ -25,7 +26,7 @@ concurrency:
 jobs:
   short:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
 
@@ -57,9 +58,6 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-          FORCE: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
-          # la corrida de las 21:07 AR es la última que puede publicar el video del día
-          LAST_CHANCE: ${{ github.event.schedule == '7 0 * * *' && '1' || '' }}
         run: python generate.py
 
       - name: Guardar lo generado para el próximo intento
