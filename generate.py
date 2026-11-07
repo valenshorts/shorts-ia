@@ -35,8 +35,8 @@ def duration(p):
 
 
 # ---------------------------------------------------------------- Hugging Face
-HF_TOKENS = [t for t in (os.environ.get("HF_TOKEN"), os.environ.get("HF_TOKEN_2"), os.environ.get("HF_TOKEN_3"),
-                              os.environ.get("HF_TOKEN_4")) if t]
+HF_TOKENS = [t for t in (os.environ.get(k) for k in ("HF_TOKEN", "HF_TOKEN_2", "HF_TOKEN_3", "HF_TOKEN_4",
+                                                     "HF_TOKEN_5", "HF_TOKEN_6")) if t]
 _tok = [0]
 
 
