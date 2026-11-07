@@ -35,7 +35,8 @@ def duration(p):
 
 
 # ---------------------------------------------------------------- Hugging Face
-HF_TOKENS = [t for t in (os.environ.get("HF_TOKEN"), os.environ.get("HF_TOKEN_2"), os.environ.get("HF_TOKEN_3")) if t]
+HF_TOKENS = [t for t in (os.environ.get("HF_TOKEN"), os.environ.get("HF_TOKEN_2"), os.environ.get("HF_TOKEN_3"),
+                              os.environ.get("HF_TOKEN_4")) if t]
 _tok = [0]
 
 
@@ -642,6 +643,14 @@ def today_ar():
     return datetime.now(timezone(timedelta(hours=-3))).strftime("%Y-%m-%d")
 
 
+def slots_open():
+    """Cuántos videos se pueden haber publicado ya hoy según publish_slots_ar (ej. ["12:00", "19:30"])."""
+    from datetime import datetime, timedelta, timezone
+    slots = CFG.get("publish_slots_ar") or [CFG.get("publish_after_ar") or "00:00"]
+    now = datetime.now(timezone(timedelta(hours=-3)))
+    return sum(1 for hhmm in slots if (now.hour, now.minute) >= tuple(map(int, hhmm.split(":"))))
+
+
 def publish_hour_ok():
     """Se publica directo en público recién desde publish_after_ar (hora AR): lo antes se usa para preparar el video."""
     from datetime import datetime, timedelta, timezone
@@ -675,11 +684,12 @@ def main():
     except Exception as e:
         log(f"Comentarios pendientes: falló ({e})")
     per_day = CFG.get("videos_per_day", 1)
-    already = sum(1 for v in done.values() if v.get("date") == today_ar()) >= per_day
-    publish_today = os.environ.get("FORCE") or (not already and publish_hour_ok())
+    today_n = sum(1 for v in done.values() if v.get("date") == today_ar())
+    already = today_n >= per_day
+    publish_today = os.environ.get("FORCE") or (not already and today_n < min(slots_open(), per_day))
     if not publish_today:
         log("Hoy ya se subió el video del día: aprovecho el cupo para ir preparando el de mañana." if already else
-            f"Todavía no es la hora de publicar ({CFG.get('publish_after_ar')} AR): preparo el video de hoy.")
+            f"Todavía no es la hora del próximo video ({', '.join(CFG.get('publish_slots_ar') or [str(CFG.get('publish_after_ar'))])} AR): lo preparo.")
     ideas = refill_ideas(ideas, done)
     pending = [i for i in ideas if i["id"] not in done]
     if not pending:
