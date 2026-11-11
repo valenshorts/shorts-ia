@@ -36,7 +36,21 @@ jobs:
 
       - name: Instalar ffmpeg y librerías
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          ok=""
+          for i in 1 2; do  # los servidores de Ubuntu a veces no responden: reintenta (máx. 5 min por intento)
+            if timeout 300 sudo apt-get update -qq -o Acquire::Retries=3 && timeout 300 sudo apt-get install -y -qq -o Acquire::Retries=3 ffmpeg; then ok=1; break; fi
+            echo "apt falló (intento $i)"; sleep 30
+          done
+          if [ -z "$ok" ]; then  # plan B: ffmpeg ya armado, bajado desde GitHub (mismos filtros que usa el video)
+            echo "::warning::No se pudo instalar ffmpeg desde Ubuntu; uso el de GitHub (BtbN)"
+            base=https://github.com/BtbN/FFmpeg-Builds/releases/download/latest
+            for f in ffmpeg-n8.1-latest-linux64-gpl-8.1.tar.xz ffmpeg-master-latest-linux64-gpl.tar.xz; do
+              curl -fsSL --retry 3 "$base/$f" -o /tmp/ff.tar.xz && break
+            done
+            mkdir -p /tmp/ff && tar -xJf /tmp/ff.tar.xz -C /tmp/ff --strip-components=1
+            echo "/tmp/ff/bin" >> "$GITHUB_PATH"
+            /tmp/ff/bin/ffmpeg -version | head -1
+          fi
           pip install -r requirements.txt
 
       - name: Recuperar lo generado en intentos anteriores
