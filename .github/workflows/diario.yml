@@ -25,7 +25,7 @@ concurrency:
 
 jobs:
   short:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # fijo: "ubuntu-latest" está pasando a Ubuntu 26 (10-11/11 se colgaba instalando ffmpeg)
     timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
@@ -35,6 +35,7 @@ jobs:
           python-version: "3.12"
 
       - name: Instalar ffmpeg y librerías
+        timeout-minutes: 25
         run: |
           ok=""
           for i in 1 2; do  # los servidores de Ubuntu a veces no responden: reintenta (máx. 5 min por intento)
@@ -49,8 +50,10 @@ jobs:
             done
             mkdir -p /tmp/ff && tar -xJf /tmp/ff.tar.xz -C /tmp/ff --strip-components=1
             echo "/tmp/ff/bin" >> "$GITHUB_PATH"
+            export PATH="/tmp/ff/bin:$PATH"
             /tmp/ff/bin/ffmpeg -version | head -1
           fi
+          ffmpeg -hide_banner -filters | grep -q freezedetect  # el control anti-congelado lo necesita
           pip install -r requirements.txt
 
       - name: Recuperar lo generado en intentos anteriores
@@ -61,6 +64,7 @@ jobs:
           restore-keys: work-
 
       - name: Generar y subir el Short
+        id: gen
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_TOKEN_2: ${{ secrets.HF_TOKEN_2 }}
@@ -75,7 +79,7 @@ jobs:
         run: python generate.py
 
       - name: Guardar lo generado para el próximo intento
-        if: always()
+        if: always() && steps.gen.outcome != 'skipped'  # si no llegó a generar, no pisa lo guardado
         uses: actions/cache/save@v4
         with:
           path: work
