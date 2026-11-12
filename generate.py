@@ -43,8 +43,8 @@ def duration(p):
 
 
 # ---------------------------------------------------------------- Hugging Face
-HF_TOKENS = [t for t in (os.environ.get(k) for k in ("HF_TOKEN", "HF_TOKEN_2", "HF_TOKEN_3", "HF_TOKEN_4",
-                                                     "HF_TOKEN_5", "HF_TOKEN_6")) if t]
+# cuentas de Hugging Face: HF_TOKEN, HF_TOKEN_2 ... HF_TOKEN_10 (las que estén cargadas; se usan en orden)
+HF_TOKENS = [t for t in (os.environ.get(k) for k in ["HF_TOKEN"] + [f"HF_TOKEN_{n}" for n in range(2, 11)]) if t]
 _tok = [0]
 
 
