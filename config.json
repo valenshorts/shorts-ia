@@ -55,7 +55,9 @@
     "00:30"
   ],
   "extra_slots_ar": [
-    "15:00"
+    "12:00",
+    "15:00",
+    "18:00"
   ],
   "min_gap_hours": 2.5,
   "min_lead_minutes": 25,
