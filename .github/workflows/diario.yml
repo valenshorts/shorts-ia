@@ -72,6 +72,10 @@ jobs:
           HF_TOKEN_4: ${{ secrets.HF_TOKEN_4 }}
           HF_TOKEN_5: ${{ secrets.HF_TOKEN_5 }}
           HF_TOKEN_6: ${{ secrets.HF_TOKEN_6 }}
+          HF_TOKEN_7: ${{ secrets.HF_TOKEN_7 }}
+          HF_TOKEN_8: ${{ secrets.HF_TOKEN_8 }}
+          HF_TOKEN_9: ${{ secrets.HF_TOKEN_9 }}
+          HF_TOKEN_10: ${{ secrets.HF_TOKEN_10 }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
