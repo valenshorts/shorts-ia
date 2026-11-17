@@ -1,0 +1,781 @@
+{
+ "scenes": [
+  {
+   "plantilla": "gancho",
+   "fondo": "cielo",
+   "kicker": "secreto en vuelo",
+   "titulo": "El misterio del <b>oído</b>",
+   "e": "✈️",
+   "e2": "🫀",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "crece",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "avión",
+   "cifras": [],
+   "clave": [
+    "tapanlosoídos"
+   ],
+   "a": 0.0,
+   "b": 4.465,
+   "cue": 0.478,
+   "cueEnd": 0.728
+  },
+  {
+   "plantilla": "zoom",
+   "fondo": "cuerpo",
+   "kicker": "anatomía interna",
+   "titulo": "Cámara de <b>aire</b>",
+   "e": "👂",
+   "e2": "👀",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": null,
+   "unidad": "",
+   "interior": "💨",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "cámara",
+   "cifras": [],
+   "clave": [
+    "cámaradeaire"
+   ],
+   "a": 4.465,
+   "b": 8.264,
+   "cue": 5.797,
+   "cueEnd": 6.109
+  },
+  {
+   "plantilla": "proceso",
+   "fondo": "cielo",
+   "kicker": "cambio brusco",
+   "titulo": "Diferencia de <b>presión</b>",
+   "e": "📉",
+   "e2": "📈",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "rápido",
+   "cifras": [],
+   "clave": [
+    "presiondeafuera"
+   ],
+   "a": 8.264,
+   "b": 13.448,
+   "cue": 10.762,
+   "cueEnd": 11.169
+  },
+  {
+   "plantilla": "comparar",
+   "fondo": "cuerpo",
+   "kicker": "efecto físico",
+   "titulo": "El tímpano <b>empujado</b>",
+   "e": "🥁",
+   "e2": "💥",
+   "etiqueta": "Normal",
+   "etiqueta2": "Presión",
+   "cambio": "",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.3,
+   "puntos": [],
+   "palabra": "tímpano",
+   "cifras": [],
+   "clave": [
+    "tímpanoquedaempujado"
+   ],
+   "a": 13.448,
+   "b": 16.466,
+   "cue": 14.082,
+   "cueEnd": 14.446
+  },
+  {
+   "plantilla": "linea",
+   "fondo": "cuerpo",
+   "kicker": "alivio instantáneo",
+   "titulo": "El famoso <b>pop</b>",
+   "e": "💪",
+   "e2": "👂",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [
+    {
+     "e": "🥱",
+     "texto": "bostezo"
+    },
+    {
+     "e": "👅",
+     "texto": "tragar"
+    },
+    {
+     "e": "🔊",
+     "texto": "pop"
+    }
+   ],
+   "palabra": "pop",
+   "cifras": [],
+   "clave": [
+    "suenaelfamosopop"
+   ],
+   "a": 16.466,
+   "b": 19.984,
+   "cue": 19.464,
+   "cueEnd": 19.704
+  },
+  {
+   "plantilla": "cierre",
+   "fondo": "cielo",
+   "kicker": "por qué lloran",
+   "titulo": "Bebés sin <b>experiencia</b>",
+   "e": "👶",
+   "e2": "🧠",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "late",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "bebés",
+   "cifras": [],
+   "clave": [
+    "llorantantolosbebés"
+   ],
+   "a": 19.984,
+   "b": 25.156,
+   "cue": 21.045,
+   "cueEnd": 21.305
+  }
+ ],
+ "chunks": [
+  {
+   "a": 0.0,
+   "b": 0.688,
+   "w": [
+    {
+     "x": "Si",
+     "t": 0.04,
+     "k": false
+    },
+    {
+     "x": "en",
+     "t": 0.269,
+     "k": false
+    },
+    {
+     "x": "el",
+     "t": 0.373,
+     "k": false
+    },
+    {
+     "x": "avión",
+     "t": 0.478,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 0.688,
+   "b": 1.948,
+   "w": [
+    {
+     "x": "se",
+     "t": 0.738,
+     "k": false
+    },
+    {
+     "x": "te",
+     "t": 0.863,
+     "k": false
+    },
+    {
+     "x": "tapan",
+     "t": 0.978,
+     "k": false
+    },
+    {
+     "x": "los",
+     "t": 1.248,
+     "k": false
+    },
+    {
+     "x": "oídos",
+     "t": 1.384,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 1.948,
+   "b": 3.0,
+   "w": [
+    {
+     "x": "la",
+     "t": 1.998,
+     "k": false
+    },
+    {
+     "x": "culpa",
+     "t": 2.092,
+     "k": false
+    },
+    {
+     "x": "es",
+     "t": 2.425,
+     "k": false
+    },
+    {
+     "x": "de",
+     "t": 2.54,
+     "k": false
+    },
+    {
+     "x": "un",
+     "t": 2.623,
+     "k": false
+    },
+    {
+     "x": "tubito",
+     "t": 2.748,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 3.0,
+   "b": 4.465,
+   "w": [
+    {
+     "x": "escondido",
+     "t": 3.05,
+     "k": false
+    },
+    {
+     "x": "en",
+     "t": 3.498,
+     "k": false
+    },
+    {
+     "x": "tu",
+     "t": 3.582,
+     "k": false
+    },
+    {
+     "x": "garganta",
+     "t": 3.675,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 4.465,
+   "b": 5.486,
+   "w": [
+    {
+     "x": "Detrás",
+     "t": 4.505,
+     "k": false
+    },
+    {
+     "x": "de",
+     "t": 4.88,
+     "k": false
+    },
+    {
+     "x": "cada",
+     "t": 4.963,
+     "k": false
+    },
+    {
+     "x": "oído",
+     "t": 5.234,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 5.486,
+   "b": 6.674,
+   "w": [
+    {
+     "x": "hay",
+     "t": 5.536,
+     "k": false
+    },
+    {
+     "x": "una",
+     "t": 5.661,
+     "k": false
+    },
+    {
+     "x": "cámara",
+     "t": 5.797,
+     "k": true
+    },
+    {
+     "x": "de",
+     "t": 6.12,
+     "k": false
+    },
+    {
+     "x": "aire",
+     "t": 6.245,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 6.674,
+   "b": 8.264,
+   "w": [
+    {
+     "x": "conectada",
+     "t": 6.724,
+     "k": false
+    },
+    {
+     "x": "a",
+     "t": 7.265,
+     "k": false
+    },
+    {
+     "x": "ese",
+     "t": 7.349,
+     "k": false
+    },
+    {
+     "x": "tubito",
+     "t": 7.578,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 8.264,
+   "b": 9.066,
+   "w": [
+    {
+     "x": "Cuando",
+     "t": 8.304,
+     "k": false
+    },
+    {
+     "x": "el",
+     "t": 8.544,
+     "k": false
+    },
+    {
+     "x": "avión",
+     "t": 8.627,
+     "k": false
+    },
+    {
+     "x": "sube",
+     "t": 8.866,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 9.066,
+   "b": 9.702,
+   "w": [
+    {
+     "x": "o",
+     "t": 9.116,
+     "k": false
+    },
+    {
+     "x": "baja",
+     "t": 9.189,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 9.702,
+   "b": 10.421,
+   "w": [
+    {
+     "x": "la",
+     "t": 9.752,
+     "k": false
+    },
+    {
+     "x": "presión",
+     "t": 9.846,
+     "k": false
+    },
+    {
+     "x": "de",
+     "t": 10.148,
+     "k": false
+    },
+    {
+     "x": "afuera",
+     "t": 10.21,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 10.421,
+   "b": 11.348,
+   "w": [
+    {
+     "x": "cambia",
+     "t": 10.471,
+     "k": false
+    },
+    {
+     "x": "rápido",
+     "t": 10.762,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 11.348,
+   "b": 12.244,
+   "w": [
+    {
+     "x": "pero",
+     "t": 11.398,
+     "k": false
+    },
+    {
+     "x": "el",
+     "t": 11.575,
+     "k": false
+    },
+    {
+     "x": "aire",
+     "t": 11.669,
+     "k": false
+    },
+    {
+     "x": "de",
+     "t": 11.877,
+     "k": false
+    },
+    {
+     "x": "adentro",
+     "t": 11.971,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 12.244,
+   "b": 13.448,
+   "w": [
+    {
+     "x": "tarda",
+     "t": 12.294,
+     "k": false
+    },
+    {
+     "x": "en",
+     "t": 12.575,
+     "k": false
+    },
+    {
+     "x": "igualarse",
+     "t": 12.648,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 13.448,
+   "b": 14.407,
+   "w": [
+    {
+     "x": "Entonces",
+     "t": 13.488,
+     "k": false
+    },
+    {
+     "x": "el",
+     "t": 13.978,
+     "k": false
+    },
+    {
+     "x": "tímpano",
+     "t": 14.082,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 14.407,
+   "b": 15.428,
+   "w": [
+    {
+     "x": "queda",
+     "t": 14.457,
+     "k": false
+    },
+    {
+     "x": "empujado",
+     "t": 14.665,
+     "k": false
+    },
+    {
+     "x": "y",
+     "t": 15.155,
+     "k": false
+    },
+    {
+     "x": "se",
+     "t": 15.217,
+     "k": false
+    },
+    {
+     "x": "te",
+     "t": 15.363,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 15.428,
+   "b": 16.466,
+   "w": [
+    {
+     "x": "tapa",
+     "t": 15.478,
+     "k": false
+    },
+    {
+     "x": "el",
+     "t": 15.738,
+     "k": false
+    },
+    {
+     "x": "oído",
+     "t": 15.821,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 16.466,
+   "b": 17.8,
+   "w": [
+    {
+     "x": "Cuando",
+     "t": 16.506,
+     "k": false
+    },
+    {
+     "x": "tragas",
+     "t": 16.746,
+     "k": false
+    },
+    {
+     "x": "o",
+     "t": 17.089,
+     "k": false
+    },
+    {
+     "x": "bostezas",
+     "t": 17.141,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 17.8,
+   "b": 18.633,
+   "w": [
+    {
+     "x": "el",
+     "t": 17.85,
+     "k": false
+    },
+    {
+     "x": "tubito",
+     "t": 17.985,
+     "k": false
+    },
+    {
+     "x": "se",
+     "t": 18.308,
+     "k": false
+    },
+    {
+     "x": "abre",
+     "t": 18.464,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 18.633,
+   "b": 19.414,
+   "w": [
+    {
+     "x": "y",
+     "t": 18.683,
+     "k": false
+    },
+    {
+     "x": "suena",
+     "t": 18.756,
+     "k": false
+    },
+    {
+     "x": "el",
+     "t": 19.016,
+     "k": false
+    },
+    {
+     "x": "famoso",
+     "t": 19.089,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 19.414,
+   "b": 19.984,
+   "w": [
+    {
+     "x": "pop",
+     "t": 19.464,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 19.984,
+   "b": 20.859,
+   "w": [
+    {
+     "x": "Por",
+     "t": 20.024,
+     "k": false
+    },
+    {
+     "x": "eso",
+     "t": 20.17,
+     "k": false
+    },
+    {
+     "x": "lloran",
+     "t": 20.347,
+     "k": false
+    },
+    {
+     "x": "tanto",
+     "t": 20.639,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 20.859,
+   "b": 22.109,
+   "w": [
+    {
+     "x": "los",
+     "t": 20.909,
+     "k": false
+    },
+    {
+     "x": "bebés",
+     "t": 21.045,
+     "k": true
+    },
+    {
+     "x": "en",
+     "t": 21.316,
+     "k": false
+    },
+    {
+     "x": "los",
+     "t": 21.389,
+     "k": false
+    },
+    {
+     "x": "aviones",
+     "t": 21.524,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 22.109,
+   "b": 23.422,
+   "w": [
+    {
+     "x": "todavía",
+     "t": 22.159,
+     "k": false
+    },
+    {
+     "x": "no",
+     "t": 22.545,
+     "k": false
+    },
+    {
+     "x": "saben",
+     "t": 22.67,
+     "k": false
+    },
+    {
+     "x": "destaparse",
+     "t": 22.941,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 23.422,
+   "b": 25.156,
+   "w": [
+    {
+     "x": "los",
+     "t": 23.472,
+     "k": false
+    },
+    {
+     "x": "oídos",
+     "t": 23.618,
+     "k": false
+    },
+    {
+     "x": "solos",
+     "t": 23.92,
+     "k": false
+    }
+   ]
+  }
+ ],
+ "total": 25.156000000000002,
+ "brand": "El Porqué de Todo"
+}

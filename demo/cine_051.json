@@ -1,0 +1,659 @@
+{
+ "scenes": [
+  {
+   "plantilla": "gancho",
+   "fondo": "cuerpo",
+   "kicker": "Dato increíble",
+   "titulo": "Tu <b>corazón</b> late",
+   "e": "💓",
+   "e2": "🫀",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "late",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "corazón",
+   "cifras": [
+    [
+     "cien mil",
+     "100000"
+    ]
+   ],
+   "clave": [
+    "cienmil"
+   ],
+   "a": 0.0,
+   "b": 2.372,
+   "cue": 0.155,
+   "cueEnd": 0.509
+  },
+  {
+   "plantilla": "proceso",
+   "fondo": "cuerpo",
+   "kicker": "Ritmo constante",
+   "titulo": "Trabajo <b>sin descanso</b>",
+   "e": "🛑",
+   "e2": "🏃",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "descanso",
+   "cifras": [],
+   "clave": [
+    "sindescanso"
+   ],
+   "a": 2.372,
+   "b": 4.608,
+   "cue": 2.652,
+   "cueEnd": 3.141
+  },
+  {
+   "plantilla": "acumular",
+   "fondo": "cuerpo",
+   "kicker": "Toda una vida",
+   "titulo": "Miles de <b>millones</b>",
+   "e": "💓",
+   "e2": "🦴",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": "2.500M",
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "millones",
+   "cifras": [
+    [
+     "dos mil quinientos millones",
+     "2500000000"
+    ]
+   ],
+   "clave": [
+    "dosmilquinientosmillones"
+   ],
+   "a": 4.608,
+   "b": 8.323,
+   "cue": 7.054,
+   "cueEnd": 7.44
+  },
+  {
+   "plantilla": "numero",
+   "fondo": "espacio",
+   "kicker": "Red global",
+   "titulo": "Vueltas a la <b>Tierra</b>",
+   "e": "🌍",
+   "e2": "💪",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": 2.0,
+   "unidad": "vueltas",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "dos",
+   "cifras": [
+    [
+     "dos",
+     "2"
+    ]
+   ],
+   "clave": [
+    "dosvueltas"
+   ],
+   "a": 8.323,
+   "b": 15.111,
+   "cue": 13.748,
+   "cueEnd": 13.957
+  },
+  {
+   "plantilla": "zoom",
+   "fondo": "laboratorio",
+   "kicker": "Motor interno",
+   "titulo": "Generador <b>eléctrico</b>",
+   "e": "🫀",
+   "e2": "👂",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚡",
+   "agitar": true,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "eléctrico",
+   "cifras": [],
+   "clave": [
+    "generadoreléctrico"
+   ],
+   "a": 15.111,
+   "b": 18.931,
+   "cue": 18.13,
+   "cueEnd": 18.651
+  },
+  {
+   "plantilla": "cierre",
+   "fondo": "laboratorio",
+   "kicker": "Poder vital",
+   "titulo": "Late <b>solo</b>",
+   "e": "🔋",
+   "e2": "🧠",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "brilla",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "oxígeno",
+   "cifras": [],
+   "clave": [
+    "tengaoxígeno"
+   ],
+   "a": 18.931,
+   "b": 23.009,
+   "cue": 21.679,
+   "cueEnd": 22.19
+  }
+ ],
+ "chunks": [
+  {
+   "a": 0.0,
+   "b": 0.938,
+   "w": [
+    {
+     "x": "Tu",
+     "t": 0.04,
+     "k": false
+    },
+    {
+     "x": "corazón",
+     "t": 0.155,
+     "k": true
+    },
+    {
+     "x": "late",
+     "t": 0.519,
+     "k": false
+    },
+    {
+     "x": "unas",
+     "t": 0.759,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 0.938,
+   "b": 2.372,
+   "w": [
+    {
+     "x": "100000",
+     "t": 0.988,
+     "k": true
+    },
+    {
+     "x": "veces",
+     "t": 1.353,
+     "k": false
+    },
+    {
+     "x": "por",
+     "t": 1.665,
+     "k": false
+    },
+    {
+     "x": "día",
+     "t": 1.811,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 2.372,
+   "b": 3.32,
+   "w": [
+    {
+     "x": "Sin",
+     "t": 2.412,
+     "k": false
+    },
+    {
+     "x": "descanso",
+     "t": 2.652,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 3.32,
+   "b": 4.608,
+   "w": [
+    {
+     "x": "sin",
+     "t": 3.37,
+     "k": false
+    },
+    {
+     "x": "que",
+     "t": 3.568,
+     "k": false
+    },
+    {
+     "x": "se",
+     "t": 3.672,
+     "k": false
+    },
+    {
+     "x": "lo",
+     "t": 3.797,
+     "k": false
+    },
+    {
+     "x": "pidas",
+     "t": 3.891,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 4.608,
+   "b": 5.733,
+   "w": [
+    {
+     "x": "En",
+     "t": 4.648,
+     "k": false
+    },
+    {
+     "x": "toda",
+     "t": 4.846,
+     "k": false
+    },
+    {
+     "x": "una",
+     "t": 5.086,
+     "k": false
+    },
+    {
+     "x": "vida",
+     "t": 5.252,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 5.733,
+   "b": 7.4,
+   "w": [
+    {
+     "x": "son",
+     "t": 5.783,
+     "k": false
+    },
+    {
+     "x": "más",
+     "t": 5.961,
+     "k": false
+    },
+    {
+     "x": "de",
+     "t": 6.148,
+     "k": false
+    },
+    {
+     "x": "2500000000",
+     "t": 6.211,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 7.4,
+   "b": 8.323,
+   "w": [
+    {
+     "x": "de",
+     "t": 7.45,
+     "k": false
+    },
+    {
+     "x": "latidos",
+     "t": 7.523,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 8.323,
+   "b": 9.188,
+   "w": [
+    {
+     "x": "Cada",
+     "t": 8.363,
+     "k": false
+    },
+    {
+     "x": "latido",
+     "t": 8.571,
+     "k": false
+    },
+    {
+     "x": "empuja",
+     "t": 8.884,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 9.188,
+   "b": 10.115,
+   "w": [
+    {
+     "x": "sangre",
+     "t": 9.238,
+     "k": false
+    },
+    {
+     "x": "por",
+     "t": 9.592,
+     "k": false
+    },
+    {
+     "x": "un",
+     "t": 9.738,
+     "k": false
+    },
+    {
+     "x": "camino",
+     "t": 9.832,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 10.115,
+   "b": 10.928,
+   "w": [
+    {
+     "x": "de",
+     "t": 10.165,
+     "k": false
+    },
+    {
+     "x": "vasos",
+     "t": 10.248,
+     "k": false
+    },
+    {
+     "x": "sanguíneos",
+     "t": 10.509,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 10.928,
+   "b": 11.782,
+   "w": [
+    {
+     "x": "tan",
+     "t": 10.978,
+     "k": false
+    },
+    {
+     "x": "largo",
+     "t": 11.134,
+     "k": false
+    },
+    {
+     "x": "que",
+     "t": 11.425,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 11.782,
+   "b": 13.115,
+   "w": [
+    {
+     "x": "si",
+     "t": 11.832,
+     "k": false
+    },
+    {
+     "x": "los",
+     "t": 11.957,
+     "k": false
+    },
+    {
+     "x": "pusieras",
+     "t": 12.113,
+     "k": false
+    },
+    {
+     "x": "en",
+     "t": 12.53,
+     "k": false
+    },
+    {
+     "x": "fila",
+     "t": 12.644,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 13.115,
+   "b": 13.917,
+   "w": [
+    {
+     "x": "darían",
+     "t": 13.165,
+     "k": false
+    },
+    {
+     "x": "más",
+     "t": 13.478,
+     "k": false
+    },
+    {
+     "x": "de",
+     "t": 13.686,
+     "k": false
+    },
+    {
+     "x": "2",
+     "t": 13.748,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 13.917,
+   "b": 15.111,
+   "w": [
+    {
+     "x": "vueltas",
+     "t": 13.967,
+     "k": true
+    },
+    {
+     "x": "a",
+     "t": 14.311,
+     "k": false
+    },
+    {
+     "x": "la",
+     "t": 14.363,
+     "k": false
+    },
+    {
+     "x": "Tierra",
+     "t": 14.467,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 15.111,
+   "b": 16.393,
+   "w": [
+    {
+     "x": "Y",
+     "t": 15.151,
+     "k": false
+    },
+    {
+     "x": "lo",
+     "t": 15.266,
+     "k": false
+    },
+    {
+     "x": "más",
+     "t": 15.37,
+     "k": false
+    },
+    {
+     "x": "impresionante",
+     "t": 15.568,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 16.393,
+   "b": 17.632,
+   "w": [
+    {
+     "x": "el",
+     "t": 16.443,
+     "k": false
+    },
+    {
+     "x": "corazón",
+     "t": 16.588,
+     "k": false
+    },
+    {
+     "x": "tiene",
+     "t": 16.995,
+     "k": false
+    },
+    {
+     "x": "su",
+     "t": 17.224,
+     "k": false
+    },
+    {
+     "x": "propio",
+     "t": 17.359,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 17.632,
+   "b": 18.931,
+   "w": [
+    {
+     "x": "generador",
+     "t": 17.682,
+     "k": false
+    },
+    {
+     "x": "eléctrico",
+     "t": 18.13,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 18.931,
+   "b": 19.744,
+   "w": [
+    {
+     "x": "Late",
+     "t": 18.971,
+     "k": false
+    },
+    {
+     "x": "solo",
+     "t": 19.273,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 19.744,
+   "b": 21.088,
+   "w": [
+    {
+     "x": "aunque",
+     "t": 19.794,
+     "k": false
+    },
+    {
+     "x": "lo",
+     "t": 20.065,
+     "k": false
+    },
+    {
+     "x": "saquen",
+     "t": 20.148,
+     "k": false
+    },
+    {
+     "x": "del",
+     "t": 20.45,
+     "k": false
+    },
+    {
+     "x": "cuerpo",
+     "t": 20.565,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 21.088,
+   "b": 23.009,
+   "w": [
+    {
+     "x": "mientras",
+     "t": 21.138,
+     "k": false
+    },
+    {
+     "x": "tenga",
+     "t": 21.461,
+     "k": false
+    },
+    {
+     "x": "oxígeno",
+     "t": 21.679,
+     "k": true
+    }
+   ]
+  }
+ ],
+ "total": 23.009,
+ "brand": "El Porqué de Todo"
+}

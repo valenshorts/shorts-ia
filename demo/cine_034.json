@@ -1,0 +1,670 @@
+{
+ "scenes": [
+  {
+   "plantilla": "gancho",
+   "fondo": "espacio",
+   "kicker": "Dato insólito",
+   "titulo": "Un día dura <b>más que un año</b>",
+   "e": "🪐",
+   "e2": "🪐",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "gira",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "año",
+   "cifras": [],
+   "clave": [
+    "díaduramás"
+   ],
+   "a": 0.0,
+   "b": 2.382,
+   "cue": 1.821,
+   "cueEnd": 2.103
+  },
+  {
+   "plantilla": "numero",
+   "fondo": "espacio",
+   "kicker": "Órbita solar",
+   "titulo": "Vuelta completa al <b>Sol</b>",
+   "e": "☀️",
+   "e2": "☄️",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": 225.0,
+   "unidad": "días",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "días",
+   "cifras": [
+    [
+     "doscientos veinticinco días",
+     "225"
+    ]
+   ],
+   "clave": [
+    "doscientosveinticincodías"
+   ],
+   "a": 2.382,
+   "b": 5.556,
+   "cue": 3.943,
+   "cueEnd": 4.234
+  },
+  {
+   "plantilla": "comparar",
+   "fondo": "espacio",
+   "kicker": "Tiempo en Venus",
+   "titulo": "Duración de su <b>año</b>",
+   "e": "🌍",
+   "e2": "🪐",
+   "etiqueta": "Tierra",
+   "etiqueta2": "Venus",
+   "cambio": "",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "año",
+   "cifras": [],
+   "clave": [
+    "suaño"
+   ],
+   "a": 5.556,
+   "b": 6.626,
+   "cue": 6.086,
+   "cueEnd": 6.346
+  },
+  {
+   "plantilla": "proceso",
+   "fondo": "espacio",
+   "kicker": "Rotación planetaria",
+   "titulo": "Giro sobre su <b>eje</b>",
+   "e": "🪐",
+   "e2": "🔄",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "días",
+   "cifras": [
+    [
+     "doscientos cuarenta y tres días",
+     "243"
+    ]
+   ],
+   "clave": [
+    "doscientoscuarentaytres"
+   ],
+   "a": 6.626,
+   "b": 10.894,
+   "cue": 10.239,
+   "cueEnd": 10.614
+  },
+  {
+   "plantilla": "acumular",
+   "fondo": "espacio",
+   "kicker": "Paradoja temporal",
+   "titulo": "El año <b>termina antes</b>",
+   "e": "⏳",
+   "e2": "🛰️",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": "1 > 2",
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "día",
+   "cifras": [],
+   "clave": [
+    "añoterminaantes"
+   ],
+   "a": 10.894,
+   "b": 13.484,
+   "cue": 12.903,
+   "cueEnd": 13.205
+  },
+  {
+   "plantilla": "zoom",
+   "fondo": "espacio",
+   "kicker": "Rotación extraña",
+   "titulo": "Gira al <b>revés</b>",
+   "e": "🔄",
+   "e2": "🚀",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "",
+   "valor": null,
+   "unidad": "",
+   "interior": "↩️",
+   "agitar": true,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "revés",
+   "cifras": [],
+   "clave": [
+    "giraalrevés"
+   ],
+   "a": 13.484,
+   "b": 17.574,
+   "cue": 15.524,
+   "cueEnd": 15.805
+  },
+  {
+   "plantilla": "cierre",
+   "fondo": "espacio",
+   "kicker": "Atardecer venusiano",
+   "titulo": "El Sol sale por el <b>oeste</b>",
+   "e": "🌅",
+   "e2": "🪐",
+   "etiqueta": "",
+   "etiqueta2": "",
+   "cambio": "brilla",
+   "valor": null,
+   "unidad": "",
+   "interior": "⚛️",
+   "agitar": false,
+   "tam2": 1.0,
+   "puntos": [],
+   "palabra": "oeste",
+   "cifras": [],
+   "clave": [
+    "poreloeste"
+   ],
+   "a": 17.574,
+   "b": 21.59,
+   "cue": 20.395,
+   "cueEnd": 20.77
+  }
+ ],
+ "chunks": [
+  {
+   "a": 0.0,
+   "b": 0.771,
+   "w": [
+    {
+     "x": "En",
+     "t": 0.04,
+     "k": false
+    },
+    {
+     "x": "Venus",
+     "t": 0.228,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 0.771,
+   "b": 1.771,
+   "w": [
+    {
+     "x": "un",
+     "t": 0.821,
+     "k": false
+    },
+    {
+     "x": "día",
+     "t": 0.905,
+     "k": false
+    },
+    {
+     "x": "dura",
+     "t": 1.092,
+     "k": false
+    },
+    {
+     "x": "más",
+     "t": 1.332,
+     "k": false
+    },
+    {
+     "x": "que",
+     "t": 1.561,
+     "k": false
+    },
+    {
+     "x": "un",
+     "t": 1.675,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 1.771,
+   "b": 2.382,
+   "w": [
+    {
+     "x": "año",
+     "t": 1.821,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 2.382,
+   "b": 4.507,
+   "w": [
+    {
+     "x": "Venus",
+     "t": 2.422,
+     "k": false
+    },
+    {
+     "x": "tarda",
+     "t": 2.745,
+     "k": false
+    },
+    {
+     "x": "225",
+     "t": 2.985,
+     "k": true
+    },
+    {
+     "x": "en",
+     "t": 4.245,
+     "k": false
+    },
+    {
+     "x": "dar",
+     "t": 4.391,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 4.507,
+   "b": 5.556,
+   "w": [
+    {
+     "x": "la",
+     "t": 4.557,
+     "k": false
+    },
+    {
+     "x": "vuelta",
+     "t": 4.641,
+     "k": false
+    },
+    {
+     "x": "al",
+     "t": 4.932,
+     "k": false
+    },
+    {
+     "x": "Sol",
+     "t": 5.016,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 5.556,
+   "b": 6.626,
+   "w": [
+    {
+     "x": "Eso",
+     "t": 5.596,
+     "k": false
+    },
+    {
+     "x": "es",
+     "t": 5.867,
+     "k": false
+    },
+    {
+     "x": "su",
+     "t": 5.961,
+     "k": false
+    },
+    {
+     "x": "año",
+     "t": 6.086,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 6.626,
+   "b": 7.429,
+   "w": [
+    {
+     "x": "Pero",
+     "t": 6.666,
+     "k": false
+    },
+    {
+     "x": "gira",
+     "t": 6.854,
+     "k": false
+    },
+    {
+     "x": "sobre",
+     "t": 7.104,
+     "k": false
+    },
+    {
+     "x": "sí",
+     "t": 7.322,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 7.429,
+   "b": 8.783,
+   "w": [
+    {
+     "x": "misma",
+     "t": 7.479,
+     "k": false
+    },
+    {
+     "x": "tan",
+     "t": 7.781,
+     "k": false
+    },
+    {
+     "x": "lento",
+     "t": 7.968,
+     "k": false
+    },
+    {
+     "x": "que",
+     "t": 8.27,
+     "k": false
+    },
+    {
+     "x": "una",
+     "t": 8.385,
+     "k": false
+    },
+    {
+     "x": "vuelta",
+     "t": 8.541,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 8.783,
+   "b": 10.894,
+   "w": [
+    {
+     "x": "le",
+     "t": 8.833,
+     "k": false
+    },
+    {
+     "x": "lleva",
+     "t": 8.926,
+     "k": false
+    },
+    {
+     "x": "243",
+     "t": 9.145,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 10.894,
+   "b": 11.53,
+   "w": [
+    {
+     "x": "O",
+     "t": 10.934,
+     "k": false
+    },
+    {
+     "x": "sea",
+     "t": 11.028,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 11.53,
+   "b": 12.644,
+   "w": [
+    {
+     "x": "el",
+     "t": 11.58,
+     "k": false
+    },
+    {
+     "x": "año",
+     "t": 11.746,
+     "k": false
+    },
+    {
+     "x": "termina",
+     "t": 11.955,
+     "k": false
+    },
+    {
+     "x": "antes",
+     "t": 12.371,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 12.644,
+   "b": 13.484,
+   "w": [
+    {
+     "x": "que",
+     "t": 12.694,
+     "k": false
+    },
+    {
+     "x": "el",
+     "t": 12.799,
+     "k": false
+    },
+    {
+     "x": "día",
+     "t": 12.903,
+     "k": true
+    }
+   ]
+  },
+  {
+   "a": 13.484,
+   "b": 14.391,
+   "w": [
+    {
+     "x": "Y",
+     "t": 13.524,
+     "k": false
+    },
+    {
+     "x": "hay",
+     "t": 13.67,
+     "k": false
+    },
+    {
+     "x": "algo",
+     "t": 13.816,
+     "k": false
+    },
+    {
+     "x": "más",
+     "t": 14.024,
+     "k": false
+    },
+    {
+     "x": "raro",
+     "t": 14.243,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 14.391,
+   "b": 15.12,
+   "w": [
+    {
+     "x": "todavía",
+     "t": 14.441,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 15.12,
+   "b": 16.214,
+   "w": [
+    {
+     "x": "gira",
+     "t": 15.17,
+     "k": false
+    },
+    {
+     "x": "al",
+     "t": 15.441,
+     "k": false
+    },
+    {
+     "x": "revés",
+     "t": 15.524,
+     "k": true
+    },
+    {
+     "x": "que",
+     "t": 15.816,
+     "k": false
+    },
+    {
+     "x": "casi",
+     "t": 15.941,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 16.214,
+   "b": 17.574,
+   "w": [
+    {
+     "x": "todos",
+     "t": 16.264,
+     "k": false
+    },
+    {
+     "x": "los",
+     "t": 16.618,
+     "k": false
+    },
+    {
+     "x": "planetas",
+     "t": 16.743,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 17.574,
+   "b": 18.491,
+   "w": [
+    {
+     "x": "Si",
+     "t": 17.614,
+     "k": false
+    },
+    {
+     "x": "pudieras",
+     "t": 17.812,
+     "k": false
+    },
+    {
+     "x": "pararte",
+     "t": 18.208,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 18.491,
+   "b": 19.147,
+   "w": [
+    {
+     "x": "en",
+     "t": 18.541,
+     "k": false
+    },
+    {
+     "x": "Venus",
+     "t": 18.635,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 19.147,
+   "b": 20.095,
+   "w": [
+    {
+     "x": "verías",
+     "t": 19.197,
+     "k": false
+    },
+    {
+     "x": "salir",
+     "t": 19.51,
+     "k": false
+    },
+    {
+     "x": "el",
+     "t": 19.812,
+     "k": false
+    },
+    {
+     "x": "Sol",
+     "t": 19.916,
+     "k": false
+    }
+   ]
+  },
+  {
+   "a": 20.095,
+   "b": 21.59,
+   "w": [
+    {
+     "x": "por",
+     "t": 20.145,
+     "k": false
+    },
+    {
+     "x": "el",
+     "t": 20.291,
+     "k": false
+    },
+    {
+     "x": "oeste",
+     "t": 20.395,
+     "k": true
+    }
+   ]
+  }
+ ],
+ "total": 21.589999999999996,
+ "brand": "El Porqué de Todo"
+}
