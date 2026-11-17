@@ -55,6 +55,9 @@ jobs:
           fi
           ffmpeg -hide_banner -filters | grep -q freezedetect  # el control anti-congelado lo necesita
           pip install -r requirements.txt
+          # para los videos con animación con código: emojis de color y el navegador que "filma" las escenas
+          sudo timeout 300 apt-get install -y -qq -o Acquire::Retries=3 fonts-noto-color-emoji || echo "sin emojis de color"
+          timeout 600 python -m playwright install --with-deps chromium || echo "sin navegador: los videos van con IA"
 
       - name: Recuperar lo generado en intentos anteriores
         uses: actions/cache/restore@v4
