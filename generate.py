@@ -776,7 +776,8 @@ def make_one(ideas, done, slot):
             log(f"La animación con código falló ({str(e)[:200]}); este video va con IA")
             (work / "style.txt").write_text("ai")
             return "wait"
-        return finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, cuts, "code")
+        return finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, cuts, "code",
+                            codeanim.LAST_HITS)
     log("Estilo de este video: IA (Hugging Face)")
 
     # 1) Primero todas las imágenes (gastan poca cuota), sin repetidas.
@@ -880,10 +881,11 @@ def video_style(done, work):
     return style
 
 
-def finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, cuts, style):
+def finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, cuts, style, pops=None):
     """Armado + revisión final (nunca se sube un video con un tramo congelado) + subida."""
     out = OUT / f"short_{idea['id']}.mp4"
-    pops = [timeline[-1][1]] if len(timeline) > 2 else []  # el dato fuerte del final
+    if not pops:  # "pop" en el dato fuerte del final (con animación con código: en cada impacto)
+        pops = [timeline[-1][1]] if len(timeline) > 2 else []
     sfx = make_sfx(work, total, cuts, pops) if CFG.get("sfx", True) else None
     mascot = mascot_png(work) if CFG.get("end_card", True) else None
     assemble(visuals, voice, subs, total, out, sfx, mascot)
