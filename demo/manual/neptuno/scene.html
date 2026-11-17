@@ -1,0 +1,366 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Llueven diamantes en Neptuno (hecho a mano). render(t) dibuja el cuadro del segundo t. -->
+<style>
+@font-face{font-family:"M";src:url(FONTURL);font-weight:100 900}
+:root{--navy:#080D2B;--yellow:#FFD22E;--teal:#19B8B2}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--navy);font-family:"M",sans-serif;color:#fff}
+.full{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#stage{transform-origin:0 0}
+.sc{display:none}
+#head{position:absolute;left:60px;right:60px;top:170px;text-align:center}
+#kick{font-weight:800;font-size:40px;letter-spacing:.08em;color:var(--teal);text-transform:uppercase}
+#h1{font-weight:900;font-size:96px;line-height:.98;letter-spacing:-.015em;text-transform:uppercase;text-shadow:0 6px 24px rgba(0,0,0,.5)}
+#h1 b{color:var(--yellow);font-weight:900}
+.tag{position:absolute;left:0;top:0;font-weight:800;font-size:32px;letter-spacing:.06em;padding:10px 22px;border-radius:40px;
+  background:rgba(8,13,43,.8);border:3px solid var(--teal);white-space:nowrap;text-transform:uppercase;opacity:0}
+#cap{position:absolute;left:70px;right:70px;top:1300px;display:flex;justify-content:center}
+#capbox{background:rgba(8,13,43,.82);border-radius:26px;padding:20px 34px 22px;text-align:center;max-width:940px;
+  font-weight:800;font-size:58px;line-height:1.12;text-transform:uppercase;opacity:0}
+#capbox span{white-space:nowrap}
+#capbox .k{color:var(--yellow)}
+#brand{position:absolute;top:96px;left:0;right:0;text-align:center;font-weight:700;font-size:28px;letter-spacing:.12em;color:rgba(255,255,255,.55);text-transform:uppercase}
+#note{position:absolute;left:0;right:0;top:1462px;text-align:center;font-weight:600;font-size:24px;color:rgba(255,255,255,.6);opacity:0}
+#vig{background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.5) 100%)}
+</style></head>
+<body>
+<div id="sky" class="full"></div>
+<svg id="stars" class="full" viewBox="0 0 1080 1920"></svg>
+<div id="stage" class="full"><svg id="w" class="full" viewBox="0 0 1080 1920">
+<defs>
+  <radialGradient id="nep" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#5aa0ff"/><stop offset=".55" stop-color="#2a5fd6"/><stop offset="1" stop-color="#0b1f78"/></radialGradient>
+  <radialGradient id="nepShade" cx=".3" cy=".3" r=".9"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".65"/></radialGradient>
+  <radialGradient id="atmo"><stop offset=".86" stop-color="#5fd4ff" stop-opacity="0"/><stop offset=".93" stop-color="#5fd4ff" stop-opacity=".55"/><stop offset="1" stop-color="#5fd4ff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="ura" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#c8fbff"/><stop offset=".6" stop-color="#6fd6df"/><stop offset="1" stop-color="#2a8a9a"/></radialGradient>
+  <linearGradient id="gemA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#bff4ff"/><stop offset="1" stop-color="#6fd0ff"/></linearGradient>
+  <linearGradient id="gemB" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8fdff"/><stop offset="1" stop-color="#3fa9e8"/></linearGradient>
+  <radialGradient id="glowY"><stop offset="0" stop-color="#FFD22E" stop-opacity=".55"/><stop offset="1" stop-color="#FFD22E" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowC"><stop offset="0" stop-color="#bff4ff" stop-opacity=".7"/><stop offset="1" stop-color="#bff4ff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="core"><stop offset="0" stop-color="#ffcf7a"/><stop offset=".7" stop-color="#c46a2a"/><stop offset="1" stop-color="#7a3a1a"/></radialGradient>
+  <radialGradient id="hot"><stop offset="0" stop-color="#ff8a3a" stop-opacity=".6"/><stop offset="1" stop-color="#ff8a3a" stop-opacity="0"/></radialGradient>
+  <clipPath id="nclip"><circle cx="0" cy="0" r="330"/></clipPath>
+  <clipPath id="lensclip"><circle cx="0" cy="0" r="196"/></clipPath>
+  <symbol id="gem" viewBox="-50 -50 100 100">
+    <polygon points="-40,-14 -22,-34 22,-34 40,-14 0,40" fill="url(#gemB)"/>
+    <polygon points="-40,-14 -22,-34 -8,-14" fill="#ffffff" opacity=".85"/>
+    <polygon points="-8,-14 -22,-34 22,-34 8,-14" fill="url(#gemA)"/>
+    <polygon points="8,-14 22,-34 40,-14" fill="#9fe6ff"/>
+    <polygon points="-40,-14 -8,-14 0,40" fill="#d9f8ff"/>
+    <polygon points="-8,-14 8,-14 0,40" fill="#8fdcff"/>
+    <polygon points="8,-14 40,-14 0,40" fill="#4fb6ef"/>
+    <polygon points="-40,-14 -22,-34 22,-34 40,-14 0,40" fill="none" stroke="#ffffff" stroke-width="2" opacity=".7"/>
+  </symbol>
+</defs>
+<g id="S0" class="sc"></g><g id="S1" class="sc"></g><g id="S2" class="sc"></g><g id="S3" class="sc"></g><g id="S4" class="sc"></g><g id="S5" class="sc"></g>
+</svg></div>
+<svg id="rain" class="full" viewBox="0 0 1080 1920"></svg>
+<div id="hud" class="full">
+  <div id="brand">El Porqué de Todo</div>
+  <div id="head"><div id="kick"></div><div id="h1"></div></div>
+  <div class="tag" id="tag1"></div><div class="tag" id="tag2"></div><div class="tag" id="tag3"></div>
+  <div id="note">ilustración</div>
+  <div id="cap"><div id="capbox"></div></div>
+</div>
+<div id="vig" class="full"></div>
+<script>
+var DATA = /*DATA*/null;
+var NS = "http://www.w3.org/2000/svg", W = 1080, H = 1920;
+function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+function lerp(a, b, p) { return a + (b - a) * p; }
+function seg(t, a, b) { return b <= a ? (t >= b ? 1 : 0) : clamp((t - a) / (b - a), 0, 1); }
+var E = {
+  out: function (p) { return 1 - Math.pow(1 - p, 3); },
+  inout: function (p) { return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; },
+  inq: function (p) { return p * p * p; },
+  spring: function (p) { var c = 1.4; return p <= 0 ? 0 : 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); },
+  pop: function (p) { return p <= 0 ? 0 : .55 + .45 * E.spring(p); }
+};
+function rnd(seed) { var s = seed; return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+function $(id) { return document.getElementById(id); }
+function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function tr(e, x, y, s, r) { e.setAttribute("transform", "translate(" + x + "," + y + ") scale(" + (s || 1) + ") rotate(" + (r || 0) + ")"); }
+function gem(parent, size) { return el("use", { href: "#gem", x: -size / 2, y: -size / 2, width: size, height: size }, el("g", {}, parent)).parentNode; }
+function scene(t) { var S = DATA.scenes; for (var i = S.length - 1; i >= 0; i--) if (t >= S[i].a) return i; return 0; }
+function cue(si, prefix, frac, end) {
+  var w = DATA.words;
+  for (var i = 0; i < w.length; i++) if (w[i].s === si && w[i].n.indexOf(prefix) === 0) return end ? w[i].e : w[i].t;
+  var s = DATA.scenes[si]; return lerp(s.a, s.b, frac);
+}
+var R = rnd(59), N = {};
+
+// ---------- planeta Neptuno (bandas que giran, mancha oscura, brillo de atmósfera)
+function planet(g, uranus) {
+  var p = { g: el("g", {}, g) };
+  el("circle", { r: 372, fill: "url(#atmo)" }, p.g);
+  el("circle", { r: 330, fill: "url(#nep)" }, p.g);
+  p.bands = el("g", { "clip-path": "url(#nclip)" }, p.g);
+  var cols = ["#3d7cf0", "#2353c4", "#5b9bff", "#1d47b0", "#4a8af5", "#2a5fd6"];
+  p.strips = [];
+  for (var i = 0; i < 9; i++) {
+    var y = -300 + i * 72, h = 26 + R() * 30, st = el("g", {}, p.bands);
+    for (var k = 0; k < 3; k++) el("rect", { x: -700 + k * 700, y: y, width: 720, height: h, rx: h / 2, fill: cols[i % cols.length], opacity: .45 }, st);
+    p.strips.push({ e: st, v: 14 + R() * 26 });
+  }
+  p.spot = el("ellipse", { cx: 0, cy: 60, rx: 70, ry: 34, fill: "#0b1f6a", opacity: .75 }, p.bands);
+  p.spot2 = el("ellipse", { cx: 0, cy: 34, rx: 46, ry: 10, fill: "#cfe6ff", opacity: .55 }, p.bands);
+  el("circle", { r: 330, fill: "url(#nepShade)" }, p.g);
+  return p;
+}
+function planetTick(p, t) {
+  p.strips.forEach(function (s, i) { var x = ((t * s.v) % 700); s.e.setAttribute("transform", "translate(" + x + ",0)"); });
+  var sx = -330 + ((t * 30) % 900);
+  p.spot.setAttribute("cx", sx); p.spot2.setAttribute("cx", sx + 40);
+}
+
+// ---------- molécula de metano (C en el centro, 4 H)
+function methane(parent, s) {
+  var m = { g: el("g", {}, parent), hs: [] };
+  var dirs = [[-1, -.8], [1, -.8], [-.7, 1], [.8, .9]];
+  m.bonds = dirs.map(function (d) { return el("line", { x1: 0, y1: 0, x2: d[0] * 52, y2: d[1] * 52, stroke: "#9fb4d8", "stroke-width": 7 }, m.g); });
+  m.hs = dirs.map(function (d) { return el("circle", { cx: d[0] * 52, cy: d[1] * 52, r: 15, fill: "#f2f6ff" }, m.g); });
+  m.glow = el("circle", { r: 60, fill: "url(#glowY)", opacity: 0 }, m.g);
+  m.c = el("circle", { r: 26, fill: "#3a4060", stroke: "#cfd8ff", "stroke-width": 3 }, m.g);
+  return m;
+}
+
+function build() {
+  var st = $("stars");
+  for (var i = 0; i < 170; i++) el("circle", { cx: R() * W, cy: R() * H, r: .7 + R() * 2.2, fill: "#fff", opacity: .2 + R() * .6 }, st);
+  // S0 y S5: Neptuno + Urano
+  [0, 5].forEach(function (k) {
+    var g = $("S" + k); var o = N["s" + k] = {};
+    o.ura = el("g", {}, g); el("ellipse", { rx: 150, ry: 22, fill: "none", stroke: "#bff4ff", "stroke-width": 4, opacity: .5, transform: "rotate(-80)" }, o.ura);
+    el("circle", { r: 92, fill: "url(#ura)" }, o.ura);
+    o.p = planet(g);
+  });
+  // S1: atmósfera con moléculas
+  var g1 = $("S1"); N.s1 = { mols: [] };
+  for (var b = 0; b < 6; b++) el("rect", { x: -200, y: 300 + b * 260, width: 1500, height: 120 + R() * 80, rx: 80, fill: "#3a78e8", opacity: .08 + R() * .06 }, g1);
+  for (var j = 0; j < 9; j++) N.s1.mols.push({ m: methane(g1), x: 120 + R() * 840, y: 520 + R() * 700, ph: R() * 6.3, v: 8 + R() * 14, r0: R() * 360, s: .55 + R() * .35 });
+  N.s1.big = methane(g1);
+  // S2: descenso, medidores y red de carbono
+  var g2 = $("S2"); var o2 = N.s2 = { atoms: [], hs: [], bonds: [] };
+  o2.hot = el("circle", { cx: 540, cy: 1750, r: 900, fill: "url(#hot)", opacity: 0 }, g2);
+  o2.depth = el("g", {}, g2);
+  el("rect", { x: 70, y: 500, width: 18, height: 640, rx: 9, fill: "#ffffff", opacity: .15 }, o2.depth);
+  o2.dmark = el("polygon", { points: "96,0 126,-16 126,16", fill: "#19B8B2" }, o2.depth);
+  o2.dfill = el("rect", { x: 70, y: 500, width: 18, height: 0, rx: 9, fill: "#19B8B2" }, o2.depth);
+  o2.pbarBg = el("rect", { x: 930, y: 500, width: 30, height: 520, rx: 15, fill: "#ffffff", opacity: .12 }, g2);
+  o2.pbar = el("rect", { x: 930, y: 1020, width: 30, height: 0, rx: 15, fill: "#FFD22E" }, g2);
+  o2.tbarBg = el("rect", { x: 985, y: 500, width: 30, height: 520, rx: 15, fill: "#ffffff", opacity: .12 }, g2);
+  o2.tbar = el("rect", { x: 985, y: 1020, width: 30, height: 0, rx: 15, fill: "#ff5a3a" }, g2);
+  var lat = [];
+  for (var r = -2; r <= 2; r++) for (var c = -2; c <= 2; c++) if (Math.abs(r) + Math.abs(c) < 4) lat.push([540 + c * 92 + (r % 2 ? 46 : 0), 860 + r * 80]);
+  o2.lat = lat;
+  lat.forEach(function (p, i) {
+    for (var q = 0; q < i; q++) { var d = Math.hypot(p[0] - lat[q][0], p[1] - lat[q][1]); if (d < 110) o2.bonds.push({ a: i, b: q, e: el("line", { stroke: "#bff4ff", "stroke-width": 6, opacity: 0 }, g2) }); }
+  });
+  lat.forEach(function (p, i) {
+    o2.atoms.push({ x0: 120 + R() * 840, y0: 520 + R() * 640, ph: R() * 6.3, e: el("circle", { r: 24, fill: "#3a4060", stroke: "#FFD22E", "stroke-width": 4 }, g2) });
+    o2.hs.push({ dx: (R() - .5) * 400, e: el("circle", { r: 13, fill: "#f2f6ff" }, g2) });
+  });
+  o2.arrows = [[0, -1], [0, 1], [-1, 0], [1, 0]].map(function (d) {
+    var gg = el("g", { opacity: 0 }, g2);
+    el("path", { d: "M0 -36 L0 36 M-22 14 L0 36 L22 14", stroke: "#FFD22E", "stroke-width": 12, "stroke-linecap": "round", "stroke-linejoin": "round", fill: "none" }, gg);
+    return { e: gg, d: d };
+  });
+  o2.glow = el("circle", { cx: 540, cy: 860, r: 300, fill: "url(#glowC)", opacity: 0 }, g2);
+  o2.gem = gem(g2, 360);
+  // S3: corte del planeta por capas
+  var g3 = $("S3"); var o3 = N.s3 = { gems: [] };
+  el("circle", { cx: 540, cy: 1000, r: 560, fill: "#5fd4ff", opacity: .12 }, g3);
+  el("circle", { cx: 540, cy: 1000, r: 520, fill: "#2a5fd6" }, g3);
+  el("circle", { cx: 540, cy: 1000, r: 430, fill: "#123a8a" }, g3);
+  el("circle", { cx: 540, cy: 1000, r: 160, fill: "url(#core)" }, g3);
+  el("circle", { cx: 540, cy: 1000, r: 520, fill: "none", stroke: "#bff4ff", "stroke-width": 3, opacity: .5 }, g3);
+  o3.labs = [["ATMÓSFERA", 540, 520], ["MANTO", 540, 640], ["NÚCLEO", 540, 1000]].map(function (l) {
+    var tx = el("text", { x: l[1], y: l[2], "font-family": "M", "font-weight": 800, "font-size": 30, fill: "#ffffff", "text-anchor": "middle", "letter-spacing": 3, opacity: 0 }, g3);
+    tx.textContent = l[0]; return tx;
+  });
+  for (var q3 = 0; q3 < 22; q3++) { var ang = -Math.PI / 2 + (R() - .5) * 2.6; o3.gems.push({ a: ang, ph: R(), sp: .12 + R() * .1, s: 46 + R() * 30, e: gem(g3, 1) }); }
+  // S4: laboratorio
+  var g4 = $("S4"); var o4 = N.s4 = { tiny: [] };
+  el("rect", { x: -100, y: -100, width: 1280, height: 2120, fill: "#0b1640" }, g4);
+  for (var gx = 0; gx <= 1080; gx += 60) el("line", { x1: gx, x2: gx, y1: 0, y2: 1920, stroke: "#19B8B2", opacity: .08 }, g4);
+  for (var gy = 0; gy <= 1920; gy += 60) el("line", { x1: 0, x2: 1080, y1: gy, y2: gy, stroke: "#19B8B2", opacity: .08 }, g4);
+  o4.emL = el("g", {}, g4); el("rect", { x: -110, y: -40, width: 150, height: 80, rx: 12, fill: "#2a3658", stroke: "#9fb4d8", "stroke-width": 4 }, o4.emL); el("rect", { x: 40, y: -14, width: 24, height: 28, fill: "#9fb4d8" }, o4.emL);
+  o4.emR = el("g", {}, g4); el("rect", { x: -40, y: -40, width: 150, height: 80, rx: 12, fill: "#2a3658", stroke: "#9fb4d8", "stroke-width": 4 }, o4.emR); el("rect", { x: -64, y: -14, width: 24, height: 28, fill: "#9fb4d8" }, o4.emR);
+  o4.beamL = el("line", { stroke: "#ff3b5c", "stroke-width": 16, "stroke-linecap": "round", opacity: 0 }, g4);
+  o4.beamR = el("line", { stroke: "#ff3b5c", "stroke-width": 16, "stroke-linecap": "round", opacity: 0 }, g4);
+  o4.beamGL = el("line", { stroke: "#ff8aa0", "stroke-width": 34, opacity: 0 }, g4);
+  o4.beamGR = el("line", { stroke: "#ff8aa0", "stroke-width": 34, opacity: 0 }, g4);
+  o4.block = el("g", {}, g4);
+  el("polygon", { points: "-90,-40 0,-85 90,-40 0,5", fill: "#e8f0ff", opacity: .55 }, o4.block);
+  el("polygon", { points: "-90,-40 0,5 0,105 -90,60", fill: "#c8d6f5", opacity: .45 }, o4.block);
+  el("polygon", { points: "90,-40 0,5 0,105 90,60", fill: "#a8bbe8", opacity: .45 }, o4.block);
+  el("polygon", { points: "-90,-40 0,-85 90,-40 90,60 0,105 -90,60", fill: "none", stroke: "#ffffff", "stroke-width": 3, opacity: .8 }, o4.block);
+  o4.heat = el("circle", { r: 150, fill: "url(#hot)", opacity: 0 }, o4.block);
+  o4.ring = el("circle", { r: 60, fill: "none", stroke: "#FFD22E", "stroke-width": 6, opacity: 0 }, g4);
+  o4.lens = el("g", { opacity: 0 }, g4);
+  el("circle", { r: 205, fill: "#080D2B", stroke: "#ffffff", "stroke-width": 7 }, o4.lens);
+  var lg = el("g", { "clip-path": "url(#lensclip)" }, o4.lens);
+  for (var q4 = 0; q4 < 18; q4++) o4.tiny.push({ x: (R() - .5) * 320, y: (R() - .5) * 320, ph: R() * 6.3, s: 24 + R() * 22, e: gem(lg, 1) });
+  // lluvia de diamantes (capa de adelante, S0 y S5)
+  var rn = $("rain"); N.rain = [];
+  for (var q5 = 0; q5 < 34; q5++) N.rain.push({ x: R() * W, y0: R() * H, v: 170 + R() * 170, s: 48 + R() * 62, r: R() * 360, vr: (R() - .5) * 120, ph: R() * 6.3, e: gem(rn, 1) });
+}
+
+// ---------- texto
+var lastCap = -1, lastHead = "";
+function setHead(k, h, op, dy) {
+  var key = k + "|" + h;
+  if (key !== lastHead) { $("kick").textContent = k; $("h1").innerHTML = h; lastHead = key; }
+  $("head").style.opacity = op; $("head").style.transform = "translateY(" + (dy || 0) + "px)";
+}
+function captions(t) {
+  var C = DATA.chunks, idx = -1;
+  for (var i = 0; i < C.length; i++) if (t >= C[i].a && t < C[i].b) idx = i;
+  var box = $("capbox");
+  if (idx < 0) { box.style.opacity = 0; return; }
+  var c = C[idx];
+  if (idx !== lastCap) { box.innerHTML = c.w.map(function (w) { return "<span" + (w.k ? ' class="k"' : "") + ">" + w.x + "</span>"; }).join(" "); lastCap = idx; }
+  var sp = box.children;
+  for (var j = 0; j < sp.length; j++) sp[j].style.opacity = t >= c.w[j].t - 0.04 ? 1 : .42;
+  var p = E.out(seg(t, c.a, c.a + .14));
+  box.style.opacity = p; box.style.transform = "translateY(" + (1 - p) * 14 + "px)";
+}
+function tag(id, txt, x, y, op, color) {
+  var e = $(id); if (e.textContent !== txt) e.textContent = txt;
+  e.style.left = x + "px"; e.style.top = y + "px"; e.style.opacity = op; e.style.transform = "translate(-50%,-50%)";
+  if (color) e.style.borderColor = color;
+}
+
+// ---------- cuadro
+var cur = -1;
+function render(t) {
+  var si = scene(t), S = DATA.scenes[si], key = S.key, a = S.a, b = S.b, drift = seg(t, a, b);
+  if (si !== cur) { for (var k = 0; k < 6; k++) $("S" + k).style.display = k === si ? "block" : "none"; cur = si; }
+  var cam = { s: 1, fx: 540, fy: 960 }, head = ["", "", 0, 0], tags = [["", 0, 0, 0], ["", 0, 0, 0], ["", 0, 0, 0]];
+  var rainOp = 0, rainN = 0, note = 0, sky = ["#060a26", "#0d1550"];
+
+  if (key === "gancho" || key === "cierre") {
+    var o = N["s" + si], k0 = key === "gancho";
+    var tu = cue(si, "urano", .4), td = cue(si, k0 ? "diamantes" : "llueven", .7), tj = cue(si, "joyas", .8);
+    var pin = E.pop(seg(t, a - .01, a + .45));
+    tr(o.p.g, 540, 860 + Math.sin(t * 1.4) * 8, (k0 ? 1 : lerp(1.08, 1, E.out(drift))) * pin, 0); planetTick(o.p, t);
+    var ue = k0 ? E.spring(seg(t, tu, tu + .5)) : 1;
+    tr(o.ura, lerp(1180, 880, k0 ? E.out(seg(t, tu, tu + .5)) : 1), 575, ue * .9, 0);
+    o.ura.setAttribute("opacity", k0 ? seg(t, tu, tu + .15) : .9);
+    rainOp = k0 ? seg(t, td - .1, td + .3) : 1; rainN = k0 ? 22 : 34;
+    cam = { s: k0 ? lerp(1, 1.08, E.inout(drift)) : lerp(1.1, 1.0, E.out(drift)), fx: 540, fy: lerp(930, 900, drift) };
+    head = k0 ? ["En Neptuno y Urano", "Llueven <b>diamantes</b>", 1, 0] : ["Un planeta donde", "llueven <b>joyas</b>", E.out(seg(t, a, a + .3)), 0];
+    if (k0) { tags[0] = ["Neptuno", 540, 1225, E.out(seg(t, a + .2, a + .5)), "#5aa0ff"]; tags[1] = ["Urano", 880, 700, E.out(seg(t, tu + .2, tu + .5)), "#6fd6df"]; }
+    if (!k0) tags[2] = ["", 0, 0, 0];
+  } else if (key === "metano") {
+    var o1 = N.s1, tm = cue(1, "metano", .35), tc = cue(1, "carbono", .8);
+    var zin = seg(t, a, a + .4);
+    cam = { s: lerp(1.25, 1.06, E.out(zin)) + .05 * drift, fx: lerp(540, 520, drift), fy: 900 };
+    var lit = E.out(seg(t, tc - .05, tc + .3));
+    o1.mols.forEach(function (q, i) {
+      var x = q.x + Math.sin(t * .7 + q.ph) * 30, y = q.y - t * q.v % 60 + Math.cos(t * .9 + q.ph) * 20;
+      tr(q.m.g, x, y, q.s * E.pop(seg(t, a - .01 + i * .03, a + .4 + i * .03)), q.r0 + t * 20);
+      q.m.glow.setAttribute("opacity", lit * .9); q.m.c.setAttribute("fill", lit > .5 ? "#FFD22E" : "#3a4060");
+      q.m.hs.forEach(function (h) { h.setAttribute("opacity", 1 - .55 * lit); });
+    });
+    var bigE = E.spring(seg(t, tm - .1, tm + .4));
+    tr(o1.big.g, 540, 880, 2.2 * bigE, t * 12); o1.big.g.setAttribute("opacity", bigE > 0 ? 1 : 0);
+    o1.big.glow.setAttribute("opacity", lit); o1.big.c.setAttribute("fill", lit > .5 ? "#FFD22E" : "#3a4060");
+    o1.big.hs.forEach(function (h) { h.setAttribute("opacity", 1 - .55 * lit); });
+    head = lit > 0 ? ["Hecho de", "<b>Carbono</b>", 1, (1 - lit) * 20] : ["Su aire tiene", "Mucho <b>metano</b>", E.out(seg(t, tm - .1, tm + .25)), (1 - E.out(seg(t, tm - .1, tm + .25))) * 24];
+    tags[0] = ["CH₄ · metano", 540, 1135, E.out(seg(t, tm, tm + .3)) * (1 - lit), "#19B8B2"];
+    tags[1] = ["C = carbono", 540, 1135, lit, "#FFD22E"];
+    sky = ["#0a1650", "#1d3f9a"]; note = 0;
+  } else if (key === "presion") {
+    var o2 = N.s2, tp = cue(2, "presión", .25), tca = cue(2, "calor", .5), tap = cue(2, "aprieta", .7), tdi = cue(2, "diamante", .9);
+    var dep = E.inout(seg(t, a, tap)), pr = E.inout(seg(t, tp - .2, tap)), ht = E.inout(seg(t, tca - .3, tap)), sq = E.inout(seg(t, tp, tap + .2));
+    var gm = E.spring(seg(t, tdi - .05, tdi + .55)), gOn = seg(t, tdi - .1, tdi + .15);
+    sky = ["#0b1450", lerp(0, 1, ht) > .5 ? "#3a1a4a" : "#1a1f6a"];
+    o2.hot.setAttribute("opacity", ht * .9);
+    o2.dmark.setAttribute("transform", "translate(0," + (500 + 640 * dep) + ")"); o2.dfill.setAttribute("height", 640 * dep);
+    o2.pbar.setAttribute("y", 1020 - 520 * pr); o2.pbar.setAttribute("height", 520 * pr);
+    o2.tbar.setAttribute("y", 1020 - 520 * ht); o2.tbar.setAttribute("height", 520 * ht);
+    var jit = 6 * (1 - sq) + 2.5 * ht;
+    o2.atoms.forEach(function (q, i) {
+      var p = o2.lat[i], x = lerp(q.x0, p[0], sq) + Math.sin(t * 18 + q.ph) * jit, y = lerp(q.y0, p[1], sq) + Math.cos(t * 15 + q.ph) * jit;
+      q.x = x; q.y = y; q.e.setAttribute("cx", x); q.e.setAttribute("cy", y); q.e.setAttribute("opacity", 1 - gOn);
+      var h = o2.hs[i], hf = E.out(seg(t, a + .1, a + 1.1));
+      h.e.setAttribute("cx", x + 34 + h.dx * hf); h.e.setAttribute("cy", y - 30 - 700 * hf); h.e.setAttribute("opacity", 1 - hf);
+    });
+    o2.bonds.forEach(function (bd) {
+      var A = o2.atoms[bd.a], B = o2.atoms[bd.b];
+      bd.e.setAttribute("x1", A.x); bd.e.setAttribute("y1", A.y); bd.e.setAttribute("x2", B.x); bd.e.setAttribute("y2", B.y);
+      bd.e.setAttribute("opacity", seg(sq, .7, 1) * .8 * (1 - gOn));
+    });
+    o2.arrows.forEach(function (ar) {
+      var dd = 360 - 60 * Math.sin(t * 8) * sq;
+      ar.e.setAttribute("transform", "translate(" + (540 - ar.d[0] * dd) + "," + (860 - ar.d[1] * dd) + ") rotate(" + (ar.d[0] ? -90 * ar.d[0] : (ar.d[1] < 0 ? 0 : 180)) + ")");
+      ar.e.setAttribute("opacity", seg(t, tp - .1, tp + .2) * (1 - gOn));
+    });
+    tr(o2.gem, 540, 860 + Math.sin(t * 2) * 8, gm, Math.sin(t * 1.5) * 6); o2.gem.setAttribute("opacity", gOn);
+    o2.glow.setAttribute("opacity", gOn * (.8 + .2 * Math.sin(t * 4)));
+    cam = { s: 1 + .06 * sq + .05 * gOn, fx: 540, fy: lerp(940, 900, drift) };
+    head = gOn > 0 ? ["Se vuelve", "<b>Diamante</b>", 1, (1 - E.out(seg(t, tdi, tdi + .25))) * 20] :
+      ["Muy adentro", "Presión <b>enorme</b>", E.out(seg(t, tp - .1, tp + .25)), (1 - E.out(seg(t, tp - .1, tp + .25))) * 24];
+    tags[0] = ["profundidad", 175, 1190, E.out(seg(t, a + .2, a + .5)), "#19B8B2"];
+    tags[1] = ["presión", 945, 465, E.out(seg(t, tp, tp + .3)), "#FFD22E"];
+    tags[2] = ["calor", 1000, 1065, E.out(seg(t, tca, tca + .3)), "#ff5a3a"];
+    note = 0;
+  } else if (key === "lluvia") {
+    var o3 = N.s3, tce = cue(3, "centro", .5), tll = cue(3, "lluvia", .85);
+    var po = E.inout(seg(t, a, a + 1.1));
+    cam = { s: lerp(2.4, 1, po) + .06 * seg(t, a + 1.1, b), fx: 540, fy: lerp(640, 960, po) };
+    var more = seg(t, tll - .2, tll + .4);
+    o3.gems.forEach(function (q, i) {
+      if (i > 13 && more <= 0) { q.e.setAttribute("opacity", 0); return; }
+      var ph = (q.ph + (t - a) * q.sp) % 1, rr = lerp(500, 170, ph);
+      tr(q.e, 540 + Math.cos(q.a) * rr, 1000 + Math.sin(q.a) * rr, q.s * (1 - .4 * ph), t * 40 + i * 30);
+      q.e.setAttribute("opacity", Math.min(1, ph * 6, (1 - ph) * 6) * (i > 13 ? more : 1));
+    });
+    o3.labs.forEach(function (l, i) { l.setAttribute("opacity", E.out(seg(t, a + .9 + i * .15, a + 1.2 + i * .15)) * .85); });
+    head = ["Caen hacia", "el <b>centro</b>", E.out(seg(t, tce - .1, tce + .25)), (1 - E.out(seg(t, tce - .1, tce + .25))) * 24];
+    note = seg(t, a + 1, a + 1.3);
+  } else if (key === "lab") {
+    var o4 = N.s4, tl = cue(4, "láseres", .35), tpl = cue(4, "plástico", .5), tdm = cue(4, "diminutos", .85);
+    var fire = seg(t, tl - .1, tl + .25), hitp = seg(t, tl + .25, tl + .7);
+    tr(o4.block, 540, 820, 1.6 * E.pop(seg(t, a - .01, a + .4)), 0);
+    tr(o4.emL, lerp(-160, 130, E.out(seg(t, a, a + .5))), 820, 1.4, 0); tr(o4.emR, lerp(1240, 950, E.out(seg(t, a, a + .5))), 820, 1.4, 0);
+    var lx = lerp(225, 420, fire), rx = lerp(855, 660, fire), on = fire > 0 ? (.85 + .15 * Math.sin(t * 40)) : 0;
+    [[o4.beamL, 225, lx], [o4.beamGL, 225, lx], [o4.beamR, 855, rx], [o4.beamGR, 855, rx]].forEach(function (bm, i) {
+      bm[0].setAttribute("x1", bm[1]); bm[0].setAttribute("x2", bm[2]); bm[0].setAttribute("y1", 820); bm[0].setAttribute("y2", 820);
+      bm[0].setAttribute("opacity", on * (i % 2 ? .3 : 1) * (1 - seg(t, tdm - .3, tdm)));
+    });
+    o4.heat.setAttribute("opacity", hitp * (1 - seg(t, tdm - .3, tdm)));
+    o4.ring.setAttribute("cx", 540); o4.ring.setAttribute("cy", 820); o4.ring.setAttribute("r", lerp(60, 330, E.out(hitp)));
+    o4.ring.setAttribute("opacity", hitp > 0 && hitp < 1 ? (1 - hitp) * .8 : 0);
+    var le = E.spring(seg(t, tdm - .2, tdm + .35));
+    o4.lens.setAttribute("opacity", le > 0 ? 1 : 0); tr(o4.lens, 540, 820, le * 1.25, 0);
+    o4.tiny.forEach(function (q) { tr(q.e, q.x + Math.sin(t * 2 + q.ph) * 6, q.y + Math.cos(t * 2 + q.ph) * 6, q.s * (.85 + .15 * Math.sin(t * 5 + q.ph)), t * 30 + q.ph * 50); });
+    cam = { s: 1.04 + .06 * drift, fx: 540, fy: 930 };
+    head = le > 0 ? ["En laboratorio", "<b>Diamantes</b> diminutos", 1, 0] : ["Experimento real · 2017", "Láser + <b>plástico</b>", E.out(seg(t, a + .05, a + .35)), 0];
+    tags[0] = ["láser", 140, 930, E.out(seg(t, tl, tl + .3)) * (1 - le), "#ff3b5c"];
+    tags[1] = ["plástico", 540, 1075, E.out(seg(t, tpl, tpl + .3)) * (1 - le), "#19B8B2"];
+    tags[2] = ["láser", 945, 930, E.out(seg(t, tl, tl + .3)) * (1 - le), "#ff3b5c"];
+    sky = ["#0b1640", "#0b1640"];
+  }
+
+  $("sky").style.background = "linear-gradient(180deg," + sky[0] + " 0%," + sky[1] + " 85%,#080D2B 100%)";
+  var tx = W / 2 - cam.fx * cam.s, ty = H / 2 - cam.fy * cam.s;
+  $("stage").style.transform = "translate(" + tx + "px," + ty + "px) scale(" + cam.s + ")";
+  $("stars").style.transform = "translate(" + ((540 - cam.fx) * .1) + "px," + ((960 - cam.fy) * .1 - 15 * drift) + "px)";
+  $("rain").style.opacity = rainOp;
+  if (rainOp > 0) N.rain.forEach(function (q, i) {
+    var y = (q.y0 + t * q.v) % (H + 120) - 60;
+    tr(q.e, q.x + Math.sin(t + q.ph) * 20, y, i < rainN ? q.s * (.85 + .15 * Math.sin(t * 6 + q.ph)) : 0, q.r + t * q.vr);
+  });
+  setHead(head[0], head[1], head[2], head[3]);
+  tag("tag1", tags[0][0], tags[0][1], tags[0][2], tags[0][3], tags[0][4]);
+  tag("tag2", tags[1][0], tags[1][1], tags[1][2], tags[1][3], tags[1][4]);
+  tag("tag3", tags[2][0], tags[2][1], tags[2][2], tags[2][3], tags[2][4]);
+  $("note").style.opacity = note * .9;
+  captions(t);
+}
+build();
+window.READY = true;
+</script>
+</body></html>
