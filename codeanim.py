@@ -264,6 +264,7 @@ def scene_html(spec, d, seed):
                  '<style>@keyframes stamp{from{scale:2.4;opacity:0}to{scale:1;opacity:1}}</style>')
     if spec.get("_close"):  # plano cerrado: la cámara se acerca al objeto principal
         stage = f'<div class="stage" style="transform-origin:{mx}px {max(my, 900)}px;animation:near var(--d) ease-out both">'
+        body += "<style>.p,.w{animation-duration:.01s !important;animation-delay:0s !important}</style>"  # ya estaban en pantalla
     else:
         stage = '<div class="stage">'
     title = _title(spec.get("titulo", ""), d) if spec.get("titulo") else ""
