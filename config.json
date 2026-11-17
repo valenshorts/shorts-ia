@@ -64,5 +64,8 @@
   "more_videos_if_minutes_left": 25,
   "max_frozen_seconds": 1.0,
   "max_slowmo": 1.3,
-  "extra_if_queued": 3
+  "extra_if_queued": 3,
+  "code_every": 2,
+  "code_engine": "cine",
+  "music_code": true
 }
