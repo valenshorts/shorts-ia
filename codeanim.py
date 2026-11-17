@@ -265,16 +265,23 @@ def gemini_specs(sentences, models):
         "{frases}", "\n".join(f"{i + 1}. {s}" for i, s in enumerate(sentences)))
     body = json.dumps({"contents": [{"parts": [{"text": prompt}]}],
                        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.7}}).encode()
-    for model in list(models) * 2:  # dos vueltas: a veces Gemini está saturado
-        try:
-            req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-                                         data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
-            with urllib.request.urlopen(req, timeout=90) as r:
-                v = json.loads(json.loads(r.read())["candidates"][0]["content"]["parts"][0]["text"])
-            if isinstance(v, list) and len(v) == len(sentences):
-                return v
-        except Exception as e:
-            print(f"[anim] Gemini {model} no pudo diseñar las escenas: {e}", flush=True)
+    import time
+    for ronda in range(5):  # Gemini a veces está saturado (503): espera y reintenta
+        for model in models:
+            try:
+                req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                                             data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
+                with urllib.request.urlopen(req, timeout=90) as r:
+                    v = json.loads(json.loads(r.read())["candidates"][0]["content"]["parts"][0]["text"])
+                if isinstance(v, dict):  # a veces viene envuelto: {"escenas": [...]}
+                    v = next((x for x in v.values() if isinstance(x, list)), None)
+                if isinstance(v, list) and len(v) == len(sentences):
+                    return v
+                print(f"[anim] Gemini {model} mandó otra cantidad de escenas", flush=True)
+            except Exception as e:
+                print(f"[anim] Gemini {model} no pudo diseñar las escenas: {e}", flush=True)
+        if ronda < 4:
+            time.sleep(20 * (ronda + 1))
     return None
 
 
