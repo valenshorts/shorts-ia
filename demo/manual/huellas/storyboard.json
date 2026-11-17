@@ -1,0 +1,26 @@
+{
+ "id": "052",
+ "title": "Las huellas en la Luna duran millones de años",
+ "rate": "+20%", "pause": 0.18, "tail": 0.8,
+ "sources": ["NASA: sin atmósfera no hay viento ni agua que borre las huellas; solo las erosionan micrometeoritos, muy lentamente"],
+ "scenes": [
+  {"key": "huellas", "text": "Las huellas que dejaron los astronautas en la Luna siguen ahí."},
+  {"key": "millones", "text": "Y podrían durar millones de años."},
+  {"key": "tierra", "text": "En la Tierra, el viento y la lluvia borran cualquier pisada."},
+  {"key": "sinaire", "text": "Pero la Luna no tiene aire, así que no hay viento, ni lluvia, ni nada que las tape."},
+  {"key": "piedras", "text": "Lo único que las puede borrar es la caída de pequeñas piedras del espacio, y eso pasa muy lento."},
+  {"key": "final", "text": "Dentro de millones de años, esas huellas seguirán marcando el día que llegamos."}
+ ],
+ "keywords": ["huellas", "luna", "millones", "años", "tierra", "viento", "lluvia", "borran", "aire", "piedras", "lento", "llegamos"],
+ "sfx": [
+  {"tipo": "boom", "escena": 0, "inicio": 0.15, "gain": 0.6},
+  {"tipo": "clics", "escena": 1, "inicio": 0.1, "hasta": "años", "n": 6, "gain": 0.45},
+  {"tipo": "boom_grande", "escena": 1, "palabra": "años", "gain": 0.8},
+  {"tipo": "whoosh", "escena": 2, "palabra": "viento", "gain": 0.7},
+  {"tipo": "boom", "escena": 3, "palabra": "viento", "gain": 0.5},
+  {"tipo": "boom", "escena": 3, "palabra": "lluvia", "gain": 0.5},
+  {"tipo": "brillo", "escena": 4, "palabra": "piedras", "gain": 0.5},
+  {"tipo": "grave", "escena": 4, "palabra": "lento", "gain": 0.7},
+  {"tipo": "campana", "escena": 5, "palabra": "llegamos", "gain": 0.8}
+ ]
+}
