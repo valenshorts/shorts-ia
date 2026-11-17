@@ -287,7 +287,10 @@ def font_url(work):
 
 def film(folder, data, total, video, work, scene_file=None):
     from playwright.sync_api import sync_playwright
-    html = (ROOT / scene_file if scene_file else folder / "scene.html").read_text(encoding="utf-8")
+    if (folder / "scene.js").exists():  # escena sobre la base común (textos, subtítulos, cámara)
+        html = (HERE / "base.html").read_text(encoding="utf-8").replace("/*SCENE*/", (folder / "scene.js").read_text(encoding="utf-8"))
+    else:
+        html = (ROOT / scene_file if scene_file else folder / "scene.html").read_text(encoding="utf-8")
     html = html.replace("FONTURL", font_url(work)).replace("/*DATA*/null", json.dumps(data, ensure_ascii=False))
     page = work / "scene.html"; page.write_text(html, encoding="utf-8")
     frames = int(math.ceil(total * FPS))
