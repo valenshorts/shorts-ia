@@ -19,19 +19,19 @@
   "entre": "→"
  },
  {
-  "fondo": "campo",
+  "fondo": "ciudad",
   "titulo": "<b>Ilusión</b> en el horizonte",
   "objetos": [
    {
     "e": "luna",
     "pos": "arriba",
     "tam": "grande",
-    "anim": "crece"
+    "anim": "gira"
    },
    {
     "e": "🧠",
     "pos": "abajo",
-    "tam": "medio",
+    "tam": "chico",
     "anim": "late"
    }
   ],
@@ -39,22 +39,15 @@
  },
  {
   "fondo": "espacio",
-  "titulo": "El <b>dedo</b> la tapa",
+  "titulo": "Prueba con el <b>dedo</b>",
   "objetos": [
    {
-    "e": "👆",
+    "e": "☝️",
     "pos": "centro",
     "tam": "grande",
-    "anim": "rebota"
-   },
-   {
-    "e": "luna",
-    "pos": "arriba_der",
-    "tam": "chico",
-    "anim": "flota"
+    "anim": "entra"
    }
-  ],
-  "sello": "REAL"
+  ]
  },
  {
   "fondo": "ciudad",
@@ -76,8 +69,8 @@
   "entre": "VS"
  },
  {
-  "fondo": "espacio",
-  "titulo": "Se aleja <b>lentamente</b>",
+  "fondo": "cuerpo",
+  "titulo": "Se aleja <b>4 cm</b> al año",
   "objetos": [
    {
     "e": "💅",
@@ -88,8 +81,9 @@
   ],
   "numero": {
    "valor": 4,
-   "unidad": "cm al año"
-  }
+   "unidad": "cm"
+  },
+  "sello": "REAL"
  },
  {
   "fondo": "espacio",
@@ -100,12 +94,6 @@
     "pos": "centro",
     "tam": "chico",
     "anim": "achica"
-   },
-   {
-    "e": "⏳",
-    "pos": "arriba",
-    "tam": "medio",
-    "anim": "gira"
    }
   ]
  }
