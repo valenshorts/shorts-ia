@@ -23,7 +23,7 @@ def main(iid):
     subs = work / "subs.ass"
     g.make_subs(timeline, subs, idea.get("highlight", []), total)
     visuals, cuts = codeanim.make_visuals(idea, timeline, total, work, g.CFG.get("gemini_models", []))
-    sfx = g.make_sfx(work, total, cuts, [timeline[-1][1]])
+    sfx = g.make_sfx(work, total, cuts, codeanim.LAST_HITS or [timeline[-1][1]])  # "pop" en cada impacto
     out = ROOT / "demo" / f"demo_dopamina_{iid}.mp4"
     g.assemble(visuals, voice, subs, total, out, sfx, None)
     shutil.copy(work / "anim_specs.json", out.with_suffix(".json"))
