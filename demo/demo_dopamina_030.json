@@ -20,32 +20,32 @@
  },
  {
   "fondo": "ciudad",
-  "titulo": "<b>Ilusión</b> en el horizonte",
+  "titulo": "Ilusión en el <b>horizonte</b>",
   "objetos": [
    {
     "e": "luna",
     "pos": "arriba",
     "tam": "grande",
-    "anim": "gira"
-   },
-   {
-    "e": "🧠",
-    "pos": "abajo",
-    "tam": "chico",
-    "anim": "late"
+    "anim": "crece"
    }
   ],
   "sello": "MITO"
  },
  {
   "fondo": "espacio",
-  "titulo": "Prueba con el <b>dedo</b>",
+  "titulo": "Medida con el <b>dedo</b>",
   "objetos": [
    {
-    "e": "☝️",
+    "e": "👆",
     "pos": "centro",
-    "tam": "grande",
-    "anim": "entra"
+    "tam": "medio",
+    "anim": "rebota"
+   },
+   {
+    "e": "luna",
+    "pos": "arriba",
+    "tam": "chico",
+    "anim": "flota"
    }
   ]
  },
@@ -54,34 +54,34 @@
   "titulo": "Truco del <b>cerebro</b>",
   "objetos": [
    {
-    "e": "🏢",
+    "e": "🧠",
     "pos": "izq",
     "tam": "medio",
-    "anim": "flota"
+    "anim": "late"
    },
    {
-    "e": "🌳",
+    "e": "🏢",
     "pos": "der",
     "tam": "medio",
-    "anim": "flota"
+    "anim": "entra"
    }
   ],
   "entre": "VS"
  },
  {
-  "fondo": "cuerpo",
-  "titulo": "Se aleja <b>4 cm</b> al año",
+  "fondo": "laboratorio",
+  "titulo": "Alejamiento <b>real</b>",
   "objetos": [
    {
     "e": "💅",
     "pos": "abajo",
-    "tam": "chico",
+    "tam": "medio",
     "anim": "crece"
    }
   ],
   "numero": {
    "valor": 4,
-   "unidad": "cm"
+   "unidad": "cm al año"
   },
   "sello": "REAL"
  },
@@ -90,11 +90,18 @@
   "titulo": "Futuro <b>lejano</b>",
   "objetos": [
    {
+    "e": "tierra",
+    "pos": "izq",
+    "tam": "grande",
+    "anim": "flota"
+   },
+   {
     "e": "luna",
-    "pos": "centro",
+    "pos": "der",
     "tam": "chico",
     "anim": "achica"
    }
-  ]
+  ],
+  "entre": "→"
  }
 ]
