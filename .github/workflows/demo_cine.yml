@@ -1,0 +1,58 @@
+name: Demo motor cine
+
+# Prueba aparte (solo a mano): arma ideas con el motor automático "cine" y deja los videos en demo/.
+# No toca el Short diario ni sube nada a YouTube. Se pueden pasar varias ideas separadas por espacio.
+on:
+  workflow_dispatch:
+    inputs:
+      ideas:
+        description: "Números de idea separados por espacio (ej: 030 046)"
+        required: false
+        default: "030"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: demo
+  cancel-in-progress: false
+
+jobs:
+  cine:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar ffmpeg y navegador
+        timeout-minutes: 20
+        run: |
+          sudo timeout 300 apt-get update -qq -o Acquire::Retries=3
+          sudo timeout 600 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Armar los videos
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          for i in ${{ github.event.inputs.ideas || '030' }}; do
+            python cine.py "$i" || echo "falló la idea $i"
+          done
+
+      - name: Guardar los videos en el repo
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add demo/cine_*
+          git commit -m "Demo motor cine" || echo "nada para guardar"
+          for i in 1 2 3 4; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          exit 1
