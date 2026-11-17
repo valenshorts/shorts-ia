@@ -7,7 +7,7 @@
     "e": "tierra",
     "pos": "izq",
     "tam": "grande",
-    "anim": "rebota"
+    "anim": "flota"
    },
    {
     "e": "luna",
@@ -19,11 +19,11 @@
   "entre": "→"
  },
  {
-  "fondo": "ciudad",
+  "fondo": "campo",
   "titulo": "<b>Ilusión</b> en el horizonte",
   "objetos": [
    {
-    "e": "🌕",
+    "e": "luna",
     "pos": "arriba",
     "tam": "grande",
     "anim": "crece"
@@ -39,26 +39,26 @@
  },
  {
   "fondo": "espacio",
-  "titulo": "Mide lo <b>mismo</b>",
+  "titulo": "El <b>dedo</b> la tapa",
   "objetos": [
    {
     "e": "👆",
-    "pos": "izq",
-    "tam": "medio",
-    "anim": "entra"
+    "pos": "centro",
+    "tam": "grande",
+    "anim": "rebota"
    },
    {
-    "e": "🌕",
-    "pos": "der",
+    "e": "luna",
+    "pos": "arriba_der",
     "tam": "chico",
     "anim": "flota"
    }
   ],
-  "entre": "="
+  "sello": "REAL"
  },
  {
   "fondo": "ciudad",
-  "titulo": "El cerebro la <b>agranda</b>",
+  "titulo": "Truco del <b>cerebro</b>",
   "objetos": [
    {
     "e": "🏢",
@@ -72,11 +72,12 @@
     "tam": "medio",
     "anim": "flota"
    }
-  ]
+  ],
+  "entre": "VS"
  },
  {
-  "fondo": "cuerpo",
-  "titulo": "Crecimiento <b>anual</b>",
+  "fondo": "espacio",
+  "titulo": "Se aleja <b>lentamente</b>",
   "objetos": [
    {
     "e": "💅",
@@ -87,25 +88,24 @@
   ],
   "numero": {
    "valor": 4,
-   "unidad": "cm"
-  },
-  "sello": "REAL"
+   "unidad": "cm al año"
+  }
  },
  {
   "fondo": "espacio",
   "titulo": "Futuro <b>lejano</b>",
   "objetos": [
    {
-    "e": "🔭",
-    "pos": "izq",
-    "tam": "medio",
-    "anim": "entra"
-   },
-   {
-    "e": "🌑",
-    "pos": "der",
+    "e": "luna",
+    "pos": "centro",
     "tam": "chico",
     "anim": "achica"
+   },
+   {
+    "e": "⏳",
+    "pos": "arriba",
+    "tam": "medio",
+    "anim": "gira"
    }
   ]
  }
