@@ -229,5 +229,21 @@
     "youtube_id": "XmFS5GNW7I4",
     "date": "2026-11-17",
     "publish_at": "2026-11-17T21:00:00Z"
+  },
+  "059": {
+    "title": "Llueven diamantes en Neptuno",
+    "youtube_id": "CSHw8rBWFRc",
+    "date": "2026-11-17",
+    "style": "manual",
+    "publish_at": "2026-11-18T00:30:00Z",
+    "comment_pending": true
+  },
+  "097b": {
+    "title": "La Torre Eiffel cambia de altura",
+    "youtube_id": "XmlrZP6nMBE",
+    "date": "2026-11-18",
+    "style": "manual",
+    "publish_at": "2026-11-18T21:00:00Z",
+    "comment_pending": true
   }
 }
