@@ -1,0 +1,400 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Torre Eiffel v6: escena única con línea de tiempo. render(t) dibuja el cuadro del segundo t (sin animaciones CSS). -->
+<style>
+@font-face{font-family:"M";src:url(FONTURL);font-weight:100 900}
+:root{--navy:#080D2B;--navy2:#172B65;--white:#FFFFFF;--yellow:#FFD22E;--teal:#19B8B2}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--navy);font-family:"M",sans-serif;color:#fff}
+#sky,#stars,#world,#beam,#hud,#snow,#fx{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#world{transform-origin:0 0}
+#beam{opacity:0}
+.kicker{font-weight:800;font-size:40px;letter-spacing:.08em;color:var(--teal);text-transform:uppercase}
+.h1{font-weight:900;font-size:96px;line-height:.98;letter-spacing:-.015em;text-transform:uppercase;text-shadow:0 6px 24px rgba(0,0,0,.45)}
+.h1 b{color:var(--yellow);font-weight:900}
+#head{position:absolute;left:60px;right:60px;top:170px;text-align:center}
+#num{position:absolute;left:0;right:0;top:330px;text-align:center;font-weight:900;color:var(--yellow);opacity:0}
+#num .v{font-size:200px;letter-spacing:-.03em;text-shadow:0 8px 30px rgba(0,0,0,.5)}
+#num .u{font-size:84px;margin-left:10px}
+.tag{position:absolute;font-weight:800;font-size:32px;letter-spacing:.06em;padding:10px 22px;border-radius:40px;
+  background:rgba(8,13,43,.78);border:3px solid var(--teal);white-space:nowrap;text-transform:uppercase;opacity:0}
+#cap{position:absolute;left:70px;right:70px;top:1300px;display:flex;justify-content:center}
+#capbox{background:rgba(8,13,43,.82);border-radius:26px;padding:20px 34px 22px;text-align:center;max-width:940px;
+  font-weight:800;font-size:58px;line-height:1.12;text-transform:uppercase;opacity:0}
+#capbox span{white-space:nowrap}
+#capbox .k{color:var(--yellow)}
+#brand{position:absolute;top:96px;left:0;right:0;text-align:center;font-weight:700;font-size:28px;letter-spacing:.12em;
+  color:rgba(255,255,255,.55);text-transform:uppercase}
+#note{position:absolute;left:0;right:0;text-align:center;top:1236px;font-weight:600;font-size:24px;color:rgba(255,255,255,.6);opacity:0}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%)}
+</style></head>
+<body>
+<div id="sky"></div>
+<svg id="stars" viewBox="0 0 1080 1920"></svg>
+<div id="world">
+  <svg id="wsvg" width="1080" height="1920" viewBox="0 0 1080 1920">
+    <defs>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#9a5a1c"/><stop offset=".45" stop-color="#ffc35a"/><stop offset=".6" stop-color="#ffd98a"/><stop offset="1" stop-color="#a8621e"/>
+      </linearGradient>
+      <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#2b3f78"/><stop offset=".5" stop-color="#8fb3e6"/><stop offset="1" stop-color="#2b3f78"/>
+      </linearGradient>
+      <linearGradient id="sunside" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#fff1b0" stop-opacity=".75"/><stop offset=".5" stop-color="#fff1b0" stop-opacity="0"/>
+        <stop offset=".5" stop-color="#0a1440" stop-opacity="0"/><stop offset="1" stop-color="#0a1440" stop-opacity=".7"/>
+      </linearGradient>
+      <pattern id="lattice" width="16" height="16" patternUnits="userSpaceOnUse">
+        <path d="M0 0L16 16M16 0L0 16" stroke="#3a1d06" stroke-width="1.6" opacity=".55"/>
+        <path d="M0 8H16" stroke="#3a1d06" stroke-width="1" opacity=".35"/>
+      </pattern>
+      <radialGradient id="sung"><stop offset="0" stop-color="#fff6cf"/><stop offset=".35" stop-color="#ffd22e"/><stop offset="1" stop-color="#ff9d2e" stop-opacity="0"/></radialGradient>
+      <clipPath id="tclip"><path id="tclipPath"/></clipPath>
+    </defs>
+    <g id="sun" opacity="0"><circle r="260" fill="url(#sung)" opacity=".55"/><circle r="92" fill="#ffe27a"/><circle r="70" fill="#fff4c4"/></g>
+    <g id="skyline"></g>
+    <g id="ghost" opacity="0"></g>
+    <g id="towerA"></g>
+    <g id="towerB" opacity="0"></g>
+    <g id="tape" opacity="0"></g>
+    <g id="cmp" opacity="0"><line id="cmpW" stroke="#8fb3e6" stroke-width="3" stroke-dasharray="10 8"/><line id="cmpS" stroke="#FFD22E" stroke-width="3" stroke-dasharray="10 8"/></g>
+    <g id="axis" opacity="0"><line id="axisL" stroke="#ffffff" stroke-width="4" stroke-dasharray="14 12" opacity=".7"/></g>
+    <rect id="ground" x="-400" y="1780" width="1880" height="600" fill="#050922"/>
+  </svg>
+</div>
+<svg id="beam" viewBox="0 0 1080 1920"></svg>
+<svg id="snow" viewBox="0 0 1080 1920"></svg>
+<div id="hud">
+  <div id="brand">El Porqué de Todo</div>
+  <div id="head"><div class="kicker" id="kick"></div><div class="h1" id="h1"></div></div>
+  <div id="num"><span class="v" id="numv">0</span><span class="u" id="numu">cm</span></div>
+  <div class="tag" id="tag1"></div><div class="tag" id="tag2"></div><div class="tag" id="tag3"></div>
+  <div id="note">ilustración: escala exagerada</div>
+  <div id="cap"><div id="capbox"></div></div>
+</div>
+<div id="vig"></div>
+<script>
+var DATA = /*DATA*/null;
+var NS = "http://www.w3.org/2000/svg";
+var W = 1080, H = 1920, CX = 540, BASE = 1780, TH = 1250, GROW = 1.07, LEAN = 4.2;
+
+// ---------- utilidades
+function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+function lerp(a, b, p) { return a + (b - a) * p; }
+function seg(t, a, b) { return b <= a ? (t >= b ? 1 : 0) : clamp((t - a) / (b - a), 0, 1); }
+var E = {
+  lin: function (p) { return p; },
+  out: function (p) { return 1 - Math.pow(1 - p, 3); },
+  inout: function (p) { return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; },
+  inq: function (p) { return p * p * p; },
+  spring: function (p) { var c = 1.35; return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); }
+};
+function hex(c) { return [parseInt(c.substr(1, 2), 16), parseInt(c.substr(3, 2), 16), parseInt(c.substr(5, 2), 16)]; }
+function mix(c1, c2, p) { var a = hex(c1), b = hex(c2); return "rgb(" + Math.round(lerp(a[0], b[0], p)) + "," + Math.round(lerp(a[1], b[1], p)) + "," + Math.round(lerp(a[2], b[2], p)) + ")"; }
+function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function rnd(seed) { var s = seed; return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+function $(id) { return document.getElementById(id); }
+
+// ---------- línea de tiempo (escenas por frase, señales por palabra real de la voz)
+function scene(t) { var S = DATA.scenes; for (var i = S.length - 1; i >= 0; i--) if (t >= S[i].a) return i; return 0; }
+function cue(si, prefix, frac) {
+  var w = DATA.words;
+  for (var i = 0; i < w.length; i++) if (w[i].s === si && w[i].n.indexOf(prefix) === 0) return w[i].t;
+  var s = DATA.scenes[si]; return lerp(s.a, s.b, frac);
+}
+function cueEnd(si, prefix, frac) {
+  var w = DATA.words;
+  for (var i = 0; i < w.length; i++) if (w[i].s === si && w[i].n.indexOf(prefix) === 0) return w[i].e;
+  var s = DATA.scenes[si]; return lerp(s.a, s.b, frac);
+}
+
+// ---------- torre (vector, proporciones reales aprox.: 330 m de alto, 125 m de base)
+function towerPath() {
+  var d = "M" + (190 - 3) + " 0 L" + (190 + 3) + " 0 L193 40 L202 40 L202 70 L210 76 Q218 500 248 640 L260 640 L260 656 L252 656 Q268 740 298 815 L312 815 L312 838 L302 838 Q330 930 380 1000 L330 1000 C320 930 250 880 190 880 C130 880 60 930 50 1000 L0 1000 Q50 930 78 838 L68 838 L68 815 L82 815 Q112 740 128 656 L120 656 L120 640 L132 640 Q162 500 170 76 L178 70 L178 40 L187 40 Z";
+  return d;
+}
+var TP = towerPath();
+function buildTower(g, ghost) {
+  var k = TH / 1000;
+  var inner = el("g", { transform: "translate(" + (CX - 190 * k) + "," + (BASE - TH) + ") scale(" + k + ")" }, g);
+  if (ghost) { el("path", { d: TP, fill: "none", stroke: "#ffffff", "stroke-width": 3 / k, "stroke-dasharray": (12 / k) + " " + (10 / k), opacity: .75 }, inner); return; }
+  el("path", { d: TP, fill: "url(#steel)" }, inner);
+  var warm = el("path", { d: TP, fill: "url(#gold)", "class": "warm" }, inner);
+  el("path", { d: TP, fill: "url(#lattice)" }, inner);
+  var side = el("path", { d: TP, fill: "url(#sunside)", "class": "side", opacity: 0 }, inner);
+  var bands = el("g", { "clip-path": "url(#tclip)", "class": "bands" }, inner);
+  for (var i = 0; i < 10; i++) el("rect", { x: 0, y: 1000 - (i + 1) * 92, width: 380, height: 90, fill: "#FFD22E", opacity: 0, "class": "band" }, bands);
+  [[640, 656, 120, 260], [815, 838, 68, 312], [40, 70, 178, 202]].forEach(function (r) {
+    el("rect", { x: r[2], y: r[0], width: r[3] - r[2], height: r[1] - r[0], fill: "#2a1404", opacity: .55 }, inner);
+  });
+  el("path", { d: TP, fill: "none", stroke: "#2a1404", "stroke-width": 2.2, opacity: .7 }, inner);
+  g._warm = warm; g._side = side; g._bands = bands.querySelectorAll(".band");
+}
+function towerTransform(g, sy, lean, dx, sc) {
+  // crece desde la base; la inclinación es un sesgo desde la base (la punta se mueve, la base no)
+  sc = sc || 1;
+  g.setAttribute("transform", "translate(" + (CX + dx) + "," + BASE + ") scale(" + sc + ") skewX(" + (-lean) + ") scale(1," + sy + ") translate(" + (-CX) + "," + (-BASE) + ")");
+}
+
+// ---------- construcción única (lo estático no se recalcula por cuadro)
+var STARS = [], FLAKES = [], ATOMS = [];
+function build() {
+  $("tclipPath").setAttribute("d", TP);
+  var r = rnd(97);
+  var st = $("stars");
+  for (var i = 0; i < 140; i++) STARS.push(el("circle", { cx: r() * W, cy: r() * 1500, r: .8 + r() * 2.2, fill: "#fff", opacity: .25 + r() * .6 }, st));
+  var sk = $("skyline"), x = -380;
+  while (x < 1460) {
+    var bw = 50 + r() * 90, bh = 90 + r() * 230;
+    if (Math.abs(x + bw / 2 - CX) < 260) bh *= .45;
+    el("rect", { x: x, y: BASE - bh, width: bw + 1, height: bh, fill: "#0b1338" }, sk);
+    for (var wy = BASE - bh + 18; wy < BASE - 20; wy += 34) for (var wx = x + 12; wx < x + bw - 14; wx += 26)
+      if (r() < .32) el("rect", { x: wx, y: wy, width: 10, height: 14, fill: "#ffd22e", opacity: .55 }, sk);
+    x += bw + 4;
+  }
+  buildTower($("towerA"), false); buildTower($("towerB"), false); buildTower($("ghost"), true);
+  var tp = $("tape");
+  el("rect", { x: 0, y: 0, width: 40, height: 100, rx: 3, fill: "#FFD22E", "class": "body" }, tp);
+  for (var j = 0; j <= 15; j++) el("line", { x1: 0, x2: j % 5 === 0 ? 24 : 13, y1: 0, y2: 0, stroke: "#080D2B", "stroke-width": j % 5 === 0 ? 2.4 : 1.4, "class": "tick", "data-j": j }, tp);
+  el("line", { x1: -140, x2: 0, y1: 0, y2: 0, stroke: "#fff", "stroke-width": 2, "stroke-dasharray": "6 5", "class": "l0" }, tp);
+  el("line", { x1: -140, x2: 0, y1: 0, y2: 0, stroke: "#FFD22E", "stroke-width": 2.4, "class": "l1" }, tp);
+  // capa de la demostración (barra de hierro y átomos)
+  var b = $("beam");
+  el("rect", { x: 0, y: 0, width: W, height: H, fill: "#0b1640" }, b);
+  for (var gx = 0; gx <= W; gx += 60) el("line", { x1: gx, x2: gx, y1: 0, y2: H, stroke: "#19B8B2", opacity: .08 }, b);
+  for (var gy = 0; gy <= H; gy += 60) el("line", { x1: 0, x2: W, y1: gy, y2: gy, stroke: "#19B8B2", opacity: .08 }, b);
+  el("rect", { id: "thTube", x: 92, y: 470, width: 44, height: 520, rx: 22, fill: "#0a0f2e", stroke: "#fff", "stroke-width": 4 }, b);
+  el("rect", { id: "thFill", x: 104, y: 930, width: 20, height: 60, rx: 10, fill: "#19B8B2" }, b);
+  el("circle", { id: "thBulb", cx: 114, cy: 1015, r: 40, fill: "#19B8B2", stroke: "#fff", "stroke-width": 4 }, b);
+  var bg = el("g", { id: "bar" }, b);
+  el("rect", { id: "barGlow", x: 0, y: 0, width: 10, height: 120, rx: 30, fill: "#ff8c3a", opacity: 0 }, bg);
+  el("rect", { id: "barTop", x: 0, y: 0, width: 10, height: 22, fill: "#9fb4d8" }, bg);
+  el("rect", { id: "barWeb", x: 0, y: 22, width: 10, height: 56, fill: "#7f93b8" }, bg);
+  el("rect", { id: "barBot", x: 0, y: 78, width: 10, height: 22, fill: "#9fb4d8" }, bg);
+  for (var q = 0; q < 12; q++) el("circle", { "class": "rivet", cy: 50, r: 6, fill: "#2a3658" }, bg);
+  el("line", { id: "dimA", stroke: "#fff", "stroke-width": 4 }, b);
+  el("line", { id: "dimB", stroke: "#FFD22E", "stroke-width": 6 }, b);
+  el("line", { id: "dimS", stroke: "#fff", "stroke-width": 4 }, b);
+  el("line", { id: "dimE", stroke: "#FFD22E", "stroke-width": 4 }, b);
+  var tl = el("text", { id: "dimL", "font-family": "M", "font-weight": 900, "font-size": 56, fill: "#fff", "text-anchor": "middle" }, b); tl.textContent = "L";
+  var td = el("text", { id: "dimD", "font-family": "M", "font-weight": 900, "font-size": 50, fill: "#FFD22E", "text-anchor": "middle", opacity: 0 }, b); td.textContent = "+ΔL";
+  el("circle", { cx: 590, cy: 930, r: 220, fill: "#080D2B", stroke: "#fff", "stroke-width": 6 }, b);
+  el("clipPath", { id: "lens" }, b).appendChild(el("circle", { cx: 590, cy: 930, r: 214 }));
+  var ag = el("g", { "clip-path": "url(#lens)", id: "atoms" }, b);
+  for (var ar = -3; ar <= 3; ar++) for (var ac = -4; ac <= 4; ac++) ATOMS.push({ r: ar, c: ac, ph: r() * 6.28, ph2: r() * 6.28, e: el("circle", { r: 22, fill: "#8fa3c7" }, ag) });
+  var lab = el("text", { id: "lensLab", x: 590, y: 1200, "font-family": "M", "font-weight": 800, "font-size": 34, fill: "#19B8B2", "text-anchor": "middle", "letter-spacing": 3 }, b);
+  lab.textContent = "ÁTOMOS DE HIERRO";
+  var sn = $("snow");
+  for (var f = 0; f < 70; f++) FLAKES.push({ x: r() * W, y: r() * H, s: 2 + r() * 5, v: 60 + r() * 120, ph: r() * 6.28, e: el("circle", { r: 1, fill: "#fff" }, sn) });
+}
+
+// ---------- texto
+var lastCap = -1, lastHead = "";
+function setHead(k, h, op, dy) {
+  var key = k + "|" + h;
+  if (key !== lastHead) { $("kick").textContent = k; $("h1").innerHTML = h; lastHead = key; }
+  $("head").style.opacity = op; $("head").style.transform = "translateY(" + (dy || 0) + "px)";
+}
+function captions(t) {
+  var C = DATA.chunks, idx = -1;
+  for (var i = 0; i < C.length; i++) if (t >= C[i].a && t < C[i].b) idx = i;
+  var box = $("capbox");
+  if (idx < 0) { box.style.opacity = 0; return; }
+  var c = C[idx];
+  if (idx !== lastCap) {
+    box.innerHTML = c.w.map(function (w) { return "<span" + (w.k ? " class=\"k\"" : "") + ">" + w.x + "</span>"; }).join(" ");
+    lastCap = idx;
+  }
+  var sp = box.children;
+  for (var j = 0; j < sp.length; j++) sp[j].style.opacity = t >= c.w[j].t - 0.04 ? 1 : .42;
+  var p = E.out(seg(t, c.a, c.a + .14));
+  box.style.opacity = p; box.style.transform = "translateY(" + (1 - p) * 14 + "px)";
+}
+function tag(id, txt, x, y, op, color) {
+  var e = $(id); if (e.textContent !== txt) e.textContent = txt;
+  e.style.left = x + "px"; e.style.top = y + "px"; e.style.opacity = op;
+  if (color) { e.style.borderColor = color; }
+}
+
+// ---------- cuadro
+function render(t) {
+  var S = DATA.scenes, si = scene(t), sc = S[si], key = sc.key, a = sc.a, b = sc.b;
+  // estado base de cada cuadro
+  var cold = 0, sy = 1, lean = 0, cam = { s: 1, fx: CX, fy: 960 }, beamOp = 0, beamS = 1;
+  var ghostOp = 0, tapeOp = 0, sunOp = 0, sunX = 160, sunY = 420, sideOp = 0, axisOp = 0, snowOp = 0, bandP = 0;
+  var cmpOp = 0, head = ["", "", 0, 0], numOp = 0, numV = 0, noteOp = 0, tB = 0, tAdx = 0, tAsc = 1;
+  var tags = [["", 0, 0, 0], ["", 0, 0, 0], ["", 0, 0, 0]];
+
+  if (key === "gancho") {
+    var tv = cue(0, "verano", .45);
+    var g = E.spring(seg(t, tv, tv + .55));
+    cold = 1 - E.inout(seg(t, tv - .1, tv + .5)); sy = lerp(1, GROW, g);
+    ghostOp = seg(t, tv, tv + .3) * .9; snowOp = cold * .8;
+    var pc = E.inout(seg(t, a, b));
+    cam = { s: lerp(1, 1.1, pc), fx: CX, fy: lerp(1000, 880, pc) };
+    head = ["La Torre Eiffel", "cambia de <b>altura</b>", 1, 0];
+    tags[0] = [cold > .5 ? "invierno" : "verano", 70, 520, 1, cold > .5 ? "#8fb3e6" : "#FFD22E"];
+    noteOp = seg(t, tv, tv + .3);
+  } else if (key === "dato") {
+    sy = GROW; ghostOp = .9; tapeOp = 1;
+    var q1 = cueEnd(1, "centím", .9);
+    var pin = E.out(seg(t, a, a + .5));
+    cam = { s: lerp(1.8, 3.1, pin) + .12 * seg(t, a, b), fx: lerp(CX, CX + 45, pin), fy: lerp(880, 520, pin) };
+    var m = seg(t, a + .25, q1);           // medición a velocidad constante (lineal)
+    numV = Math.round(15 * m); numOp = E.out(seg(t, a + .15, a + .45));
+    head = ["Con el calor", "", 1, 0];
+    noteOp = 1;
+    $("tape")._m = m; $("tape")._pop = E.out(seg(t, q1, q1 + .25));
+  } else if (key === "hierro") {
+    var hz = E.inout(seg(t, a + .25, cueEnd(2, "calienta", .95)));
+    var zin = seg(t, a, a + .45);
+    cam = { s: lerp(3.2, 9, E.inq(zin)), fx: CX, fy: 1250 }; sy = 1;
+    beamOp = E.out(seg(t, a + .12, a + .42)); beamS = lerp(1.25, 1, E.out(seg(t, a + .12, a + .6)));
+    var est = cue(2, "estira", .5);
+    head = ["Hierro + calor", "El hierro se <b>estira</b>", E.out(seg(t, est - .1, est + .25)), (1 - E.out(seg(t, est - .1, est + .25))) * 30];
+    beam(t, hz);
+  } else if (key === "suma") {
+    var zo = E.inout(seg(t, a, a + 1.15));
+    cam = { s: lerp(7, 1, zo) + .05 * seg(t, a + 1.15, b), fx: CX, fy: lerp(1250, 1000, zo) };
+    beamOp = 1 - E.out(seg(t, a, a + .3)); beamS = lerp(1, .7, seg(t, a, a + .3));
+    if (beamOp > 0) beam(t, 1);
+    var bs = Math.max(cue(3, "poquito", .25), a + 1.0), be = cueEnd(3, "suman", .95);
+    bandP = seg(t, bs, be); sy = lerp(1, GROW, E.inout(bandP)); ghostOp = seg(t, bs, bs + .3) * .9;
+    var tr = cue(3, "trescientos", .5);
+    var ph = E.out(seg(t, tr - .1, tr + .3));
+    head = ["Una torre de", "<b>330 metros</b>", ph, (1 - ph) * 30];
+    numOp = 0;
+    tags[0] = ["+ un poquito por tramo", 60, 1160, E.out(seg(t, bs, bs + .3)) * (1 - seg(t, be, be + .3)), "#FFD22E"];
+    tags[1] = ["= hasta 15 cm", 60, 1160, E.out(seg(t, be - .2, be + .2)), "#FFD22E"];
+    noteOp = ghostOp;
+  } else if (key === "sol") {
+    var ts = cue(4, "sol", .2), tsh = cue(4, "sombra", .5), tin = cue(4, "inclina", .75);
+    sunOp = E.out(seg(t, a, a + .5)); sunX = lerp(-120, 150, E.out(seg(t, a, a + .9))); sunY = 520;
+    sideOp = E.inout(seg(t, ts - .1, ts + .5));
+    lean = LEAN * E.inout(seg(t, tin - .1, tin + .8)); axisOp = seg(t, tin - .1, tin + .2) * .9;
+    sy = GROW;
+    var pc5 = E.inout(seg(t, a, b));
+    cam = { s: lerp(1.04, 1.1, pc5), fx: lerp(560, 540, pc5), fy: 980 };
+    head = ["Sol de un lado", "La punta se <b>aleja</b>", E.out(seg(t, tin - .1, tin + .3)), 0];
+    tags[0] = ["se estira más", 40, 1050, E.out(seg(t, ts, ts + .3)), "#FFD22E"];
+    tags[1] = ["sombra", 800, 1050, E.out(seg(t, tsh, tsh + .3)), "#8fb3e6"];
+    noteOp = axisOp;
+  } else {
+    var te = cue(5, "encoger", .45), tp = cue(5, "próximo", .75);
+    cold = E.inout(seg(t, a, a + .6));
+    snowOp = cold;
+    lean = LEAN * (1 - E.inout(seg(t, a, a + .6)));
+    sy = lerp(GROW, 1, E.inout(seg(t, te - .15, te + .5)));
+    ghostOp = 0; axisOp = 0;
+    var sp = E.inout(seg(t, tp - .25, tp + .45));
+    tAdx = lerp(0, -230, sp); tAsc = lerp(1, .78, sp); tB = sp;
+    cam = { s: lerp(1.08, 1, E.inout(seg(t, a, a + .8))) + .05 * E.inout(seg(t, tp + .4, b)), fx: CX, fy: lerp(960, 900, seg(t, tp + .4, b)) };
+    cmpOp = E.out(seg(t, tp + .25, tp + .6));
+    head = ["Invierno vs verano", "<b>15 cm</b> de diferencia", E.out(seg(t, tp, tp + .3)), (1 - E.out(seg(t, tp, tp + .3))) * 30];
+    tags[0] = ["invierno", 120, 1120, sp, "#8fb3e6"];
+    tags[1] = ["verano", 610, 1120, sp, "#FFD22E"];
+    tags[2] = ["+15 cm", 455, 640, E.out(seg(t, tp + .3, tp + .6)), "#FFD22E"];
+    noteOp = sp;
+  }
+
+  // cielo: frío (invierno) a cálido (verano), siempre dentro de la paleta de marca
+  var top = mix("#101d4f", "#0b1a52", cold), bot = mix("#2a2a6a", "#1c4a7a", cold);
+  if (key === "sol") { top = "#0d1a50"; bot = mix("#2a2a6a", "#5a3a5e", sideOp); }
+  $("sky").style.background = "linear-gradient(180deg," + top + " 0%," + bot + " 78%,#080D2B 100%)";
+
+  // cámara (el mundo se mueve; las estrellas con parallax más lento)
+  var tx = W / 2 - cam.fx * cam.s, ty = H / 2 - cam.fy * cam.s;
+  $("world").style.transform = "translate(" + tx + "px," + ty + "px) scale(" + cam.s + ")";
+  $("stars").style.transform = "translate(" + (tx - (W / 2 - CX)) * .08 + "px," + (ty - (H / 2 - 960)) * .08 + "px)";
+
+  // torre principal, fantasma (altura de invierno) y segunda torre (comparación)
+  var A = $("towerA"), B = $("towerB");
+  towerTransform(A, sy, lean, tAdx, tAsc);
+  A._warm.setAttribute("opacity", 1 - cold);
+  A._side.setAttribute("opacity", sideOp);
+  for (var i = 0; i < 10; i++) {
+    var lit = seg(bandP * 10, i, i + 1);
+    A._bands[i].setAttribute("opacity", (lit > 0 && bandP < 1 ? .55 * (1 - seg(bandP * 10, i + .9, i + 2.2)) + .12 * lit : 0));
+  }
+  $("ghost").setAttribute("opacity", ghostOp);
+  B.setAttribute("opacity", tB);
+  if (tB > 0) { towerTransform(B, GROW, 0, lerp(400, 230, E.out(tB)), .78); B._warm.setAttribute("opacity", 1); B._side.setAttribute("opacity", 0); }
+
+  // cinta métrica en la punta: de la altura de invierno a la de verano
+  var tp0 = $("tape");
+  tp0.setAttribute("opacity", tapeOp);
+  if (tapeOp > 0) {
+    var y0 = BASE - TH, y1 = BASE - TH * GROW, mm = tp0._m || 0, yy = lerp(y0, y1, mm);
+    tp0.setAttribute("transform", "translate(" + (CX + 70) + ",0)");
+    var body = tp0.querySelector(".body"); body.setAttribute("y", yy); body.setAttribute("height", y0 - yy + 2);
+    var tk = tp0.querySelectorAll(".tick");
+    for (var j = 0; j < tk.length; j++) { var yj = lerp(y0, y1, j / 15); tk[j].setAttribute("y1", yj); tk[j].setAttribute("y2", yj); tk[j].setAttribute("opacity", yj >= yy - .5 ? 1 : 0); }
+    var l0 = tp0.querySelector(".l0"); l0.setAttribute("y1", y0); l0.setAttribute("y2", y0);
+    var l1 = tp0.querySelector(".l1"); l1.setAttribute("y1", yy); l1.setAttribute("y2", yy);
+  }
+  // eje original (para ver cuánto se corre la punta)
+  $("axis").setAttribute("opacity", axisOp);
+  var al = $("axisL"); al.setAttribute("x1", CX); al.setAttribute("x2", CX); al.setAttribute("y1", BASE); al.setAttribute("y2", BASE - TH * GROW - 30);
+
+  $("cmp").setAttribute("opacity", cmpOp);
+  if (cmpOp > 0) {
+    var yw = BASE - TH * .78, ys = BASE - TH * GROW * .78;
+    var cw = $("cmpW"), cs = $("cmpS");
+    cw.setAttribute("x1", CX - 230); cw.setAttribute("x2", CX + 230); cw.setAttribute("y1", yw); cw.setAttribute("y2", yw);
+    cs.setAttribute("x1", CX - 230); cs.setAttribute("x2", CX + 230); cs.setAttribute("y1", ys); cs.setAttribute("y2", ys);
+  }
+  var sun = $("sun"); sun.setAttribute("opacity", sunOp); sun.setAttribute("transform", "translate(" + sunX + "," + sunY + ")");
+
+  // capa de la demostración
+  $("beam").style.opacity = beamOp; $("beam").style.transform = "scale(" + beamS + ")";
+
+  // nieve
+  var sn = $("snow"); sn.style.opacity = snowOp;
+  if (snowOp > 0) FLAKES.forEach(function (f) {
+    var y = (f.y + t * f.v) % (H + 40) - 20, x = f.x + Math.sin(t * 1.3 + f.ph) * 18;
+    f.e.setAttribute("cx", x); f.e.setAttribute("cy", y); f.e.setAttribute("r", f.s * .6); f.e.setAttribute("opacity", .5 + f.s / 14);
+  });
+
+  // textos
+  setHead(head[0], head[1], head[2], head[3]);
+  $("num").style.opacity = numOp;
+  if (numOp > 0) {
+    var pop = $("tape")._pop || 0;
+    $("numv").textContent = "+" + numV;
+    $("num").style.transform = "scale(" + (1 + .12 * Math.sin(Math.PI * pop)) + ")";
+  }
+  tag("tag1", tags[0][0], tags[0][1], tags[0][2], tags[0][3], tags[0][4]);
+  tag("tag2", tags[1][0], tags[1][1], tags[1][2], tags[1][3], tags[1][4]);
+  tag("tag3", tags[2][0], tags[2][1], tags[2][2], tags[2][3], tags[2][4]);
+  $("note").style.opacity = noteOp * .9;
+  captions(t);
+}
+
+// demostración: barra de hierro + átomos (h = cuánto calor, de 0 a 1)
+function beam(t, h) {
+  var hot = mix("#8fa3c7", "#ff8c3a", h), x0 = 220, L0 = 620, L = L0 * (1 + .1 * h), y = 470;
+  $("barTop").setAttribute("x", x0); $("barTop").setAttribute("width", L); $("barTop").setAttribute("y", y); $("barTop").setAttribute("fill", mix("#9fb4d8", "#ffb070", h));
+  $("barWeb").setAttribute("x", x0 + 14); $("barWeb").setAttribute("width", L - 28); $("barWeb").setAttribute("y", y + 22); $("barWeb").setAttribute("fill", hot);
+  $("barBot").setAttribute("x", x0); $("barBot").setAttribute("width", L); $("barBot").setAttribute("y", y + 78); $("barBot").setAttribute("fill", mix("#9fb4d8", "#ffb070", h));
+  var gl = $("barGlow"); gl.setAttribute("x", x0 - 20); gl.setAttribute("y", y - 10); gl.setAttribute("width", L + 40); gl.setAttribute("opacity", h * .35);
+  var rv = document.querySelectorAll(".rivet");
+  for (var i = 0; i < rv.length; i++) { rv[i].setAttribute("cx", x0 + 30 + i * (L - 60) / (rv.length - 1)); rv[i].setAttribute("cy", y + 50); }
+  var dy = y + 175;
+  $("dimA").setAttribute("x1", x0); $("dimA").setAttribute("x2", x0 + L0); $("dimA").setAttribute("y1", dy); $("dimA").setAttribute("y2", dy);
+  $("dimS").setAttribute("x1", x0); $("dimS").setAttribute("x2", x0); $("dimS").setAttribute("y1", dy - 26); $("dimS").setAttribute("y2", dy + 26);
+  $("dimB").setAttribute("x1", x0 + L0); $("dimB").setAttribute("x2", x0 + L); $("dimB").setAttribute("y1", dy); $("dimB").setAttribute("y2", dy);
+  $("dimE").setAttribute("x1", x0 + L); $("dimE").setAttribute("x2", x0 + L); $("dimE").setAttribute("y1", dy - 26); $("dimE").setAttribute("y2", dy + 26);
+  $("dimL").setAttribute("x", x0 + L0 / 2); $("dimL").setAttribute("y", dy - 22);
+  var d = $("dimD"); d.setAttribute("x", x0 + L0 + (L - L0) / 2 + 30); d.setAttribute("y", dy + 70); d.setAttribute("opacity", seg(h, .45, .75));
+  $("thFill").setAttribute("y", lerp(930, 490, h)); $("thFill").setAttribute("height", lerp(60, 500, h));
+  var tc = mix("#19B8B2", "#ff5a3a", h); $("thFill").setAttribute("fill", tc); $("thBulb").setAttribute("fill", tc);
+  var sp = 52 * (1 + .14 * h), amp = 1.5 + 9 * h;
+  ATOMS.forEach(function (o) {
+    var x = 590 + o.c * sp + Math.sin(t * 23 + o.ph) * amp, yy = 930 + o.r * sp * .95 + Math.cos(t * 19 + o.ph2) * amp;
+    o.e.setAttribute("cx", x); o.e.setAttribute("cy", yy); o.e.setAttribute("fill", hot);
+  });
+}
+build();
+window.READY = true;
+</script>
+</body></html>
