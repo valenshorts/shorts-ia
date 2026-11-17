@@ -1,0 +1,48 @@
+name: Demo animación con código
+
+# Prueba aparte (solo a mano): arma la idea 030 con animación hecha con código en vez de IA de video.
+# No toca el Short diario ni sube nada a YouTube: deja el video en demo/demo_030.mp4.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: demo
+  cancel-in-progress: false
+
+jobs:
+  demo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar ffmpeg, emojis y navegador
+        timeout-minutes: 20
+        run: |
+          sudo timeout 300 apt-get update -qq -o Acquire::Retries=3
+          sudo timeout 600 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg fonts-noto-color-emoji
+          pip install -r requirements.txt playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Armar el video de prueba
+        run: python demo/demo.py
+
+      - name: Guardar el video en el repo
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add demo/demo_030.mp4
+          git commit -m "Demo animación con código" || echo "nada para guardar"
+          for i in 1 2 3 4; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          exit 1
