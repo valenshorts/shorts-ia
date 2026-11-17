@@ -1,0 +1,147 @@
+{
+ "id": "097b",
+ "title": "La Torre Eiffel crece en verano",
+ "voice": "es-MX-JorgeNeural",
+ "rate": "+20%",
+ "pause": 0.18,
+ "scene": "demo/v6/scene.html",
+ "sources": [
+  "Torre Eiffel: 330 m de altura con antenas (sitio oficial toureiffel.paris)",
+  "Dilatación térmica: hasta unos 15 cm más alta en verano",
+  "El lado al sol se dilata más, la punta se aleja del sol"
+ ],
+ "scenes": [
+  {
+   "key": "gancho",
+   "text": "La Torre Eiffel no mide lo mismo en verano que en invierno."
+  },
+  {
+   "key": "dato",
+   "text": "Con el calor, puede crecer hasta quince centímetros."
+  },
+  {
+   "key": "hierro",
+   "text": "Es que está hecha de hierro, y el hierro se estira cuando se calienta."
+  },
+  {
+   "key": "suma",
+   "text": "Cada viga se alarga un poquito, pero en trescientos treinta metros de torre, esos poquitos se suman."
+  },
+  {
+   "key": "sol",
+   "text": "Y como el lado del sol se calienta más que el de la sombra, la punta se inclina hacia el otro lado."
+  },
+  {
+   "key": "cierre",
+   "text": "En invierno, con el frío, vuelve a encogerse, hasta el próximo verano."
+  }
+ ],
+ "caption_replace": [
+  [
+   "quince centímetros",
+   "15 cm"
+  ],
+  [
+   "trescientos treinta metros",
+   "330 metros"
+  ]
+ ],
+ "keywords": [
+  "verano",
+  "invierno",
+  "calor",
+  "15",
+  "cm",
+  "hierro",
+  "estira",
+  "calienta",
+  "poquito",
+  "330",
+  "metros",
+  "suman",
+  "sol",
+  "sombra",
+  "inclina",
+  "frío",
+  "encogerse",
+  "próximo"
+ ],
+ "sfx": [
+  {
+   "tipo": "subida",
+   "escena": 0,
+   "palabra": "verano",
+   "gain": 0.6
+  },
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "palabra": "verano",
+   "offset": 0.1,
+   "gain": 0.8
+  },
+  {
+   "tipo": "clics",
+   "escena": 1,
+   "inicio": 0.25,
+   "hasta": "centím",
+   "n": 5,
+   "gain": 0.55
+  },
+  {
+   "tipo": "boom_grande",
+   "escena": 1,
+   "palabra": "centím",
+   "fin": true,
+   "gain": 0.9
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "inicio": 0,
+   "gain": 0.7
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 3,
+   "inicio": 0.2,
+   "gain": 0.6
+  },
+  {
+   "tipo": "clics",
+   "escena": 3,
+   "palabra": "poquito",
+   "hasta": "suman",
+   "n": 10,
+   "f": 900,
+   "d": 0.03,
+   "gain": 0.35
+  },
+  {
+   "tipo": "boom",
+   "escena": 3,
+   "palabra": "suman",
+   "fin": true,
+   "gain": 0.5
+  },
+  {
+   "tipo": "grave",
+   "escena": 4,
+   "palabra": "inclina",
+   "gain": 1
+  },
+  {
+   "tipo": "bajada",
+   "escena": 5,
+   "palabra": "encoger",
+   "gain": 1
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "palabra": "próximo",
+   "offset": 0.3,
+   "gain": 0.8
+  }
+ ]
+}
