@@ -1,0 +1,109 @@
+[
+ {
+  "fondo": "ciudad",
+  "titulo": "Torre Eiffel en <b>verano</b>",
+  "objetos": [
+   {
+    "e": "🗼",
+    "pos": "centro",
+    "tam": "grande",
+    "anim": "crece"
+   }
+  ],
+  "numero": {
+   "valor": 15,
+   "unidad": "cm"
+  }
+ },
+ {
+  "fondo": "laboratorio",
+  "titulo": "Hecha de <b>hierro</b>",
+  "objetos": [
+   {
+    "e": "⚙️",
+    "pos": "izq",
+    "tam": "medio",
+    "anim": "gira"
+   },
+   {
+    "e": "🔥",
+    "pos": "der",
+    "tam": "medio",
+    "anim": "late"
+   }
+  ],
+  "entre": "="
+ },
+ {
+  "fondo": "espacio",
+  "titulo": "El sol la <b>calienta</b>",
+  "objetos": [
+   {
+    "e": "sol",
+    "pos": "arriba",
+    "tam": "grande",
+    "anim": "flota"
+   },
+   {
+    "e": "🗼",
+    "pos": "abajo",
+    "tam": "medio",
+    "anim": "rebota"
+   }
+  ]
+ },
+ {
+  "fondo": "ciudad",
+  "titulo": "Más de <b>300 metros</b>",
+  "objetos": [
+   {
+    "e": "📏",
+    "pos": "centro",
+    "tam": "grande",
+    "anim": "se_aleja"
+   }
+  ],
+  "numero": {
+   "valor": 300,
+   "unidad": "metros"
+  }
+ },
+ {
+  "fondo": "ciudad",
+  "titulo": "La punta se <b>inclina</b>",
+  "objetos": [
+   {
+    "e": "🗼",
+    "pos": "izq",
+    "tam": "medio",
+    "anim": "gira"
+   },
+   {
+    "e": "☀️",
+    "pos": "der",
+    "tam": "chico",
+    "anim": "entra"
+   }
+  ],
+  "entre": "→"
+ },
+ {
+  "fondo": "noche",
+  "titulo": "En invierno se <b>encoge</b>",
+  "objetos": [
+   {
+    "e": "❄️",
+    "pos": "arriba_izq",
+    "tam": "chico",
+    "anim": "flota"
+   },
+   {
+    "e": "🗼",
+    "pos": "centro",
+    "tam": "medio",
+    "anim": "achica"
+   }
+  ],
+  "sello": "REAL"
+ }
+]
