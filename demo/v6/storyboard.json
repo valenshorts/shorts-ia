@@ -1,0 +1,46 @@
+{
+  "id": "097",
+  "title": "La Torre Eiffel crece en verano",
+  "voice": "es-MX-JorgeNeural",
+  "rate": "+12%",
+  "pause": 0.22,
+  "sources": [
+    "Torre Eiffel: 330 m de altura con antenas (sitio oficial toureiffel.paris)",
+    "Dilatación térmica: hasta unos 15 cm más alta en verano (cifra habitual del sitio oficial)",
+    "El lado al sol se dilata más, la punta se aleja del sol"
+  ],
+  "scenes": [
+    {"key": "gancho", "text": "La Torre Eiffel no mide lo mismo en verano que en invierno.",
+     "goal": "Anomalía: la misma torre con dos alturas"},
+    {"key": "dato", "text": "Con el calor, puede crecer hasta quince centímetros.",
+     "goal": "Revelación medida: cinta métrica en la punta, contador lineal hasta 15 cm"},
+    {"key": "hierro", "text": "Es que está hecha de hierro, y el hierro se estira cuando se calienta.",
+     "goal": "Demostración: barra de hierro, átomos que vibran y se separan, L pasa a L + ΔL"},
+    {"key": "suma", "text": "Cada viga se alarga apenas un poquito, pero en trescientos treinta metros de torre, todos esos poquitos se suman.",
+     "goal": "Acumulación: los tramos se iluminan de abajo hacia arriba y llenan un medidor"},
+    {"key": "sol", "text": "Y como el lado del sol se calienta más que el de la sombra, la punta se inclina hacia el otro lado.",
+     "goal": "Física correcta: la cara al sol se estira más, la punta se aleja del sol"},
+    {"key": "cierre", "text": "En invierno, con el frío, vuelve a encogerse, hasta el próximo verano.",
+     "goal": "Cierre comparativo: invierno y verano lado a lado con la diferencia marcada"}
+  ],
+  "cues": {
+    "estira": "estira",
+    "calienta": "calienta",
+    "quince": "quince",
+    "centimetros": "centímetros",
+    "poquito": "poquito",
+    "trescientos": "trescientos",
+    "suman": "suman",
+    "sol": "sol",
+    "sombra": "sombra",
+    "inclina": "inclina",
+    "encogerse": "encogerse",
+    "verano2": "próximo"
+  },
+  "caption_replace": [
+    ["quince centímetros", "15 cm"],
+    ["trescientos treinta metros", "330 metros"]
+  ],
+  "keywords": ["verano", "invierno", "calor", "15", "cm", "hierro", "estira", "calienta", "poquito", "330", "metros",
+               "suman", "sol", "sombra", "inclina", "frío", "encogerse", "próximo"]
+}
