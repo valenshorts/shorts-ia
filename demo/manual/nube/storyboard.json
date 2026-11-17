@@ -1,0 +1,28 @@
+{
+ "id": "069",
+ "title": "Cuánto pesa una nube",
+ "rate": "+20%", "pause": 0.18, "tail": 0.8,
+ "sources": ["USGS: una nube cúmulo de ~1 km³ pesa alrededor de 500 toneladas (unos 100 elefantes de 5 t)"],
+ "scenes": [
+  {"key": "peso", "text": "Una nube esponjosa normal pesa unas quinientas toneladas."},
+  {"key": "elefantes", "text": "Lo mismo que unos cien elefantes."},
+  {"key": "gotitas", "text": "Parece imposible que algo tan pesado flote, pero ese peso está repartido en millones de gotitas diminutas, separadas en un espacio enorme."},
+  {"key": "aire", "text": "Cada gotita es tan liviana que el aire caliente que sube la mantiene arriba."},
+  {"key": "caen", "text": "Cuando las gotitas se juntan y se hacen más grandes, ya no se pueden sostener, y caen."},
+  {"key": "lluvia", "text": "Eso es la lluvia."}
+ ],
+ "caption_replace": [["quinientas toneladas", "500 toneladas"], ["cien elefantes", "100 elefantes"]],
+ "keywords": ["nube", "toneladas", "elefantes", "flote", "gotitas", "espacio", "liviana", "aire", "caliente", "juntan", "grandes", "caen", "lluvia"],
+ "sfx": [
+  {"tipo": "clics", "escena": 0, "inicio": 0.3, "hasta": "toneladas", "n": 5, "gain": 0.5},
+  {"tipo": "boom_grande", "escena": 0, "palabra": "toneladas", "offset": 0.3, "gain": 0.9},
+  {"tipo": "clics", "escena": 1, "inicio": 0.15, "hasta": "elefantes", "n": 10, "f": 700, "d": 0.03, "gain": 0.35},
+  {"tipo": "boom", "escena": 1, "palabra": "elefantes", "offset": 0.2, "gain": 0.7},
+  {"tipo": "whoosh", "escena": 2, "inicio": 0.1, "gain": 0.6},
+  {"tipo": "brillo", "escena": 2, "palabra": "gotitas", "gain": 0.5},
+  {"tipo": "subida", "escena": 3, "palabra": "aire", "gain": 0.5},
+  {"tipo": "boom", "escena": 4, "palabra": "grandes", "gain": 0.5},
+  {"tipo": "bajada", "escena": 4, "palabra": "caen", "gain": 0.9},
+  {"tipo": "campana", "escena": 5, "palabra": "lluvia", "gain": 0.7}
+ ]
+}
