@@ -289,7 +289,7 @@ function render(t) {
     var sp = E.inout(seg(t, tp - .25, tp + .45));
     ghostOp = .9 * seg(t, a, a + .3) * (1 - sp);
     tAdx = lerp(0, -230, sp); tAsc = lerp(1, .78, sp); tB = sp;
-    cam = { s: lerp(1.08, 1, E.inout(seg(t, a, a + .8))) + .05 * E.inout(seg(t, tp + .4, b)), fx: CX, fy: lerp(960, 900, seg(t, tp + .4, b)) };
+    cam = { s: lerp(1.12, 1, E.inout(seg(t, a, tp))) + .05 * E.inout(seg(t, tp + .4, b)), fx: CX, fy: lerp(960, 900, seg(t, tp + .4, b)) };
     cmpOp = E.out(seg(t, tp + .25, tp + .6));
     head = ["Invierno vs verano", "<b>15 cm</b> de diferencia", E.out(seg(t, tp, tp + .3)), (1 - E.out(seg(t, tp, tp + .3))) * 30];
     tags[0] = ["invierno", 120, 1120, sp, "#8fb3e6"];
@@ -353,7 +353,7 @@ function render(t) {
   var sn = $("snow"); sn.style.opacity = snowOp;
   if (snowOp > 0) FLAKES.forEach(function (f) {
     var y = (f.y + t * f.v) % (H + 40) - 20, x = f.x + Math.sin(t * 1.3 + f.ph) * 18;
-    f.e.setAttribute("cx", x); f.e.setAttribute("cy", y); f.e.setAttribute("r", f.s * .6); f.e.setAttribute("opacity", .5 + f.s / 14);
+    f.e.setAttribute("cx", x); f.e.setAttribute("cy", y); f.e.setAttribute("r", f.s * .9); f.e.setAttribute("opacity", .5 + f.s / 14);
   });
 
   // textos
