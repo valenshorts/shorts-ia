@@ -10,8 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 W, H, FPS = 1080, 1920, 30
 FONDOS = ("noche", "ciudad", "campo", "espacio", "mar", "laboratorio", "cocina", "cuerpo")
-POS = {"centro": (540, 880), "izq": (280, 900), "der": (800, 900), "arriba": (540, 660), "abajo": (540, 1130),
-       "arriba_izq": (300, 640), "arriba_der": (780, 640)}
+POS = {"centro": (540, 880), "izq": (280, 900), "der": (800, 900), "arriba": (540, 700), "abajo": (540, 1130),
+       "arriba_izq": (300, 690), "arriba_der": (780, 690)}
 TAM = {"chico": 150, "medio": 240, "grande": 360}
 ANIMS = ("rebota", "crece", "achica", "se_aleja", "entra", "gira", "flota", "late")
 DIBUJOS = ("luna", "tierra", "sol")
@@ -73,6 +73,29 @@ body{font-family:'Inter','Noto Color Emoji',sans-serif;color:#fff;background:var
 @keyframes achica{from{scale:1;opacity:1}to{scale:.3;opacity:.8}}
 @keyframes se_aleja{from{translate:0 0;scale:1}to{translate:150px -170px;scale:.65}}
 @keyframes entra{from{translate:0 900px;rotate:25deg}to{translate:0 0;rotate:0deg}}
+.cam{position:absolute;inset:0;animation:punch .45s cubic-bezier(.2,1,.3,1) both,shake .35s linear var(--hit) both}
+@keyframes punch{from{scale:1.14}to{scale:1}}
+@keyframes shake{0%,100%{translate:0 0}25%{translate:-14px 8px}50%{translate:12px -10px}75%{translate:-8px -6px}}
+@keyframes near{from{transform:scale(1.3)}to{transform:scale(1.42)}}
+.glow{position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,220,120,.26) 0%,rgba(255,220,120,0) 65%);animation:late 1.4s ease-in-out infinite alternate}
+.rays2{position:absolute;width:1400px;height:1400px;border-radius:50%;opacity:.11;
+  background:repeating-conic-gradient(#fff 0 6deg,transparent 6deg 18deg);
+  -webkit-mask:radial-gradient(circle,#000 18%,transparent 62%);mask:radial-gradient(circle,#000 18%,transparent 62%);
+  animation:gira 16s linear infinite}
+.ring{position:absolute;width:220px;height:220px;border-radius:50%;border:10px solid rgba(255,212,0,.9);opacity:0;
+  animation:ring .6s ease-out var(--hit) both}
+@keyframes ring{from{scale:.3;opacity:1}to{scale:4.2;opacity:0}}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;animation:fl .22s ease-out var(--hit) forwards}
+@keyframes fl{from{opacity:.28}to{opacity:0}}
+.spark{position:absolute;color:#ffe9a8;line-height:1;animation:sp 1.5s ease-in-out infinite alternate}
+@keyframes sp{from{scale:.3;opacity:.15;rotate:0deg}to{scale:1.1;opacity:1;rotate:90deg}}
+.w{display:inline-block;animation:pop .35s cubic-bezier(.2,1.7,.4,1) both}
+.ruler{position:absolute;left:140px;height:110px;width:800px;border-radius:14px;transform-origin:0 50%;
+  background:repeating-linear-gradient(90deg,#1b1b1b 0 4px,transparent 4px 40px) 0 0/100% 40% no-repeat,#ffd86b;
+  box-shadow:0 10px 0 rgba(0,0,0,.3)}
+@keyframes extend{from{transform:scaleX(.04)}to{transform:scaleX(1)}}
+@keyframes boing{0%{scale:1}40%{scale:1.35}100%{scale:1}}
 """
 
 JS = """
@@ -186,35 +209,67 @@ def prop_html(p, d, i):
             f'<div style="animation:{loop}">{inner}</div></div>')
 
 
+def _title(t, d):
+    """Título que entra palabra por palabra; lo que va entre <b> y </b> sale en amarillo."""
+    out, k = [], 0
+    for bold, plain in re.findall(r"<b>(.*?)</b>|([^<]+)", str(t)):
+        for wd in (bold or plain).split():
+            style = f"animation-delay:{0.05 + 0.09 * k:.2f}s" + (";color:#ffd400" if bold else "")
+            out.append(f'<span class="w" style="{style}">{_esc(wd)}</span>')
+            k += 1
+    return '<div class="label" style="animation:none">' + " ".join(out) + "</div>"
+
+
+def _sparks(r):
+    return "".join(f'<div class="spark" style="left:{r.randint(40, 1000)}px;top:{r.randint(480, 1280)}px;'
+                   f'font-size:{r.choice([28, 36, 48, 60])}px;animation-delay:-{r.uniform(0, 1.5):.2f}s">✦</div>'
+                   for _ in range(9))
+
+
 def scene_html(spec, d, seed):
-    """spec: {fondo, titulo, objetos:[{e,pos,tam,anim}], numero:{valor,unidad}, sello, entre}"""
-    hit = min(max(d * 0.5, 0.5), d - 0.3)
+    """spec: {fondo, titulo, objetos:[{e,pos,tam,anim}], numero:{valor,unidad}, sello, entre, _close}"""
+    r = random.Random(seed)
+    hit = min(max(d * 0.45, 0.45), d - 0.3)
     fondo = spec.get("fondo") if spec.get("fondo") in FONDOS else "noche"
-    body = backdrop(fondo, seed)
     objs = [o for o in (spec.get("objetos") or []) if isinstance(o, dict)][:4]
+    num = spec.get("numero") if isinstance(spec.get("numero"), dict) else None
+    mx, my = POS.get(objs[0].get("pos"), POS["centro"]) if objs else (540, 760)
+    # luz detrás del objeto principal + destellos
+    body = backdrop(fondo, seed)
+    body += (f'<div class="rays2" style="left:{mx - 700}px;top:{my - 700}px"></div>'
+             f'<div class="glow" style="left:{mx - 450}px;top:{my - 450}px"></div>' + _sparks(r))
     body += "".join(prop_html(o, d, i) for i, o in enumerate(objs))
+    body += f'<div class="ring" style="left:{mx - 110}px;top:{my - 110}px"></div>'
     if spec.get("entre") in ("=", "VS", "→"):
-        body += f'<div class="mid" style="top:800px;animation:pop .4s cubic-bezier(.2,1.6,.4,1) {hit * 0.8:.2f}s both">{spec["entre"]}</div>'
-    num = spec.get("numero")
-    if isinstance(num, dict) and num.get("valor") is not None:
+        body += (f'<div class="mid" style="top:800px;animation:pop .4s cubic-bezier(.2,1.6,.4,1) {hit * 0.8:.2f}s both,'
+                 f'late .6s ease-in-out {hit:.2f}s infinite alternate">{spec["entre"]}</div>')
+    if num and num.get("valor") is not None:
         try:
             v = float(str(num["valor"]).replace(",", "."))
             dec = 0 if v == int(v) else 1
-            top = 520 if objs else 640
-            body += (f'<div class="big" style="top:{top}px;font-size:250px" data-count="0,{v},0.2,{max(hit, 0.5):.2f},{dec}">0</div>'
+            top = 500 if objs else 600
+            body += (f'<div class="big" style="top:{top}px;font-size:250px;animation:boing .4s ease-out {hit:.2f}s both" '
+                     f'data-count="0,{v},0.15,{max(hit - 0.15, 0.4):.2f},{dec}">0</div>'
                      f'<div class="unit" style="top:{top + 290}px;animation:pop .4s cubic-bezier(.2,1.6,.4,1) {hit:.2f}s both">'
                      f'{_esc(num.get("unidad", ""))}</div>')
+            if re.search(r"cm|cent[ií]metro|mm|mil[ií]metro|metro|km|kil[oó]metro", str(num.get("unidad", "")), re.I):
+                body += (f'<div class="ruler" style="top:{top + 420}px;animation:extend {max(hit, 0.6):.2f}s '
+                         f'cubic-bezier(.2,.8,.3,1) .1s both"></div>')
         except Exception:
             pass
-    if spec.get("sello") and not isinstance(num, dict):  # el sello taparía el número
+    if spec.get("sello") and not num:  # el sello taparía el número
         color = "#ff3b5c" if str(spec["sello"]).upper() in ("FALSO", "MITO", "NO", "TRUCO") else "#2ee59d"
         body += (f'<div class="stamp" style="top:780px;color:{color};animation:stamp .35s cubic-bezier(.2,1.8,.4,1) '
                  f'{hit:.2f}s both">{_esc(str(spec["sello"])[:12]).upper()}</div>'
                  '<style>@keyframes stamp{from{scale:2.4;opacity:0}to{scale:1;opacity:1}}</style>')
-    title = f'<div class="label">{_esc(spec.get("titulo", ""))}</div>' if spec.get("titulo") else ""
+    if spec.get("_close"):  # plano cerrado: la cámara se acerca al objeto principal
+        stage = f'<div class="stage" style="transform-origin:{mx}px {max(my, 900)}px;animation:near var(--d) ease-out both">'
+    else:
+        stage = '<div class="stage">'
+    title = _title(spec.get("titulo", ""), d) if spec.get("titulo") else ""
     return (f"<!doctype html><html><head><meta charset='utf-8'><style>{CSS}</style></head>"
-            f"<body style='--bg:{BG[fondo]};--d:{d:.2f}s'><div class='stage'>{body}{title}</div>"
-            f"<script>{JS}</script></body></html>")
+            f"<body style='--bg:{BG[fondo]};--d:{d:.2f}s;--hit:{hit:.2f}s'><div class='cam'>{stage}{body}</div>"
+            f"{title}</div><div class='flash'></div><script>{JS}</script></body></html>")
 
 
 def render(html, secs, dest, browser):
@@ -317,21 +372,34 @@ def clean_specs(specs, sentences, idea):
     return out
 
 
+LAST_HITS = []  # momentos de impacto del último video (para los efectos de sonido)
+
+
 def make_visuals(idea, timeline, total, work, models):
-    """Una toma por frase, del largo exacto de la frase."""
+    """Una o dos tomas por frase: plano general y, si la frase es larga, un plano cerrado al objeto principal."""
     from playwright.sync_api import sync_playwright
     sentences = [s for s, _, _ in timeline]
     specs = clean_specs(gemini_specs(sentences, models), sentences, idea)
     (work / "anim_specs.json").write_text(json.dumps(specs, ensure_ascii=False, indent=1), encoding="utf-8")
     starts = [0.0] + [timeline[k][1] for k in range(1, len(timeline))]
     ends = starts[1:] + [total]
+    shots = []
+    for sp, a, b in zip(specs, starts, ends):
+        if b - a > 3.2 and sp.get("objetos") and not sp.get("numero"):
+            m = a + (b - a) * 0.55
+            shots += [(sp, a, m), (dict(sp, _close=True, sello=None, entre=None), m, b)]
+        else:
+            shots.append((sp, a, b))
     seed0 = int(re.sub(r"\D", "", idea["id"]) or 0)
     visuals = []
+    LAST_HITS.clear()
     with sync_playwright() as pw:
         br = pw.chromium.launch()
-        for j, (sp, a, b) in enumerate(zip(specs, starts, ends)):
+        for j, (sp, a, b) in enumerate(shots):
             clip = work / f"anim{j + 1}.mp4"
             render(scene_html(sp, b - a, seed0 * 10 + j), b - a, clip, br)
             visuals.append((clip, True, b - a))
+            if not sp.get("_close"):
+                LAST_HITS.append(a + min(max((b - a) * 0.45, 0.45), (b - a) - 0.3))
         br.close()
-    return visuals, starts[1:]
+    return visuals, [a for _, a, _ in shots[1:]]
