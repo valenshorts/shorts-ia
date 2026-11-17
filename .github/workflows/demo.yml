@@ -1,9 +1,14 @@
 name: Demo animación con código
 
-# Prueba aparte (solo a mano): arma la idea 030 con animación hecha con código en vez de IA de video.
-# No toca el Short diario ni sube nada a YouTube: deja el video en demo/demo_030.mp4.
+# Prueba aparte (solo a mano): arma una idea con el estilo "animación con código" (Gemini elige las escenas)
+# y la música hecha con código. No toca el Short diario ni sube nada a YouTube: deja el video en demo/.
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      idea:
+        description: "Número de idea (ej: 030)"
+        required: false
+        default: "030"
 
 permissions:
   contents: write
@@ -28,17 +33,19 @@ jobs:
         run: |
           sudo timeout 300 apt-get update -qq -o Acquire::Retries=3
           sudo timeout 600 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg fonts-noto-color-emoji
-          pip install -r requirements.txt playwright
+          pip install -r requirements.txt
           python -m playwright install --with-deps chromium
 
       - name: Armar el video de prueba
-        run: python demo/demo.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python demo/demo2.py "${{ github.event.inputs.idea || '030' }}"
 
       - name: Guardar el video en el repo
         run: |
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
-          git add demo/demo_030.mp4
+          git add demo/
           git commit -m "Demo animación con código" || echo "nada para guardar"
           for i in 1 2 3 4; do
             if git pull --rebase && git push; then exit 0; fi
