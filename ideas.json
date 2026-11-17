@@ -1406,78 +1406,6 @@
     ]
   },
   {
-    "id": "036",
-    "title": "Los gatos no sienten lo dulce",
-    "narration": "Tu gato no puede sentir el sabor dulce. Nada. Le das azúcar y para él no sabe a nada. Los gatos perdieron el gen que arma los sensores de lo dulce en la lengua. Como comen casi solo carne, nunca lo necesitaron. Y no son los únicos: los leones y los tigres tampoco lo sienten. Entonces, si tu gato te roba el helado, no es por lo dulce. Lo que le gusta es la grasa y la leche.",
-    "scenes": [
-      {
-        "image": "a cute cat sniffing a sugar cube on a kitchen table",
-        "motion": "the cat sniffs the sugar cube and tilts its head"
-      },
-      {
-        "image": "a macro view of a cat tongue with tiny taste buds",
-        "motion": "the tongue moves slightly, soft light"
-      },
-      {
-        "image": "a lion and a tiger looking confused at a cupcake in the savanna",
-        "motion": "the lion sniffs the cupcake and looks away"
-      },
-      {
-        "image": "a cat licking an ice cream cone on a sunny balcony"
-      },
-      {
-        "image": "a cat happily drinking from a bowl of milk"
-      }
-    ],
-    "tags": [
-      "animales",
-      "gatos",
-      "curiosidades"
-    ],
-    "yt_title": "Tu gato no puede sentir lo dulce 🐱",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "dulce",
-      "grasa"
-    ]
-  },
-  {
-    "id": "037",
-    "title": "El corazón del colibrí",
-    "narration": "El corazón de un colibrí puede latir más de mil veces por minuto. El tuyo late unas setenta. Sus alas se mueven tan rápido que hacen ese zumbido, y gasta tanta energía que tiene que comer néctar cada pocos minutos. Pero de noche no puede comer. Entonces hace algo increíble: baja su temperatura, su corazón casi se detiene y entra en una especie de hibernación por unas horas. Por la mañana se despierta y vuelve a volar como si nada.",
-    "scenes": [
-      {
-        "image": "a hummingbird hovering in front of a red flower, wings blurred",
-        "motion": "the wings flap extremely fast while the bird hovers"
-      },
-      {
-        "image": "a glowing heart inside a tiny hummingbird, x-ray style",
-        "motion": "the tiny heart beats very fast"
-      },
-      {
-        "image": "a hummingbird drinking nectar from a tubular flower",
-        "motion": "the bird dips its beak into the flower"
-      },
-      {
-        "image": "a hummingbird sleeping still on a branch at night under moonlight"
-      },
-      {
-        "image": "a hummingbird waking up at sunrise and flying away from the branch"
-      }
-    ],
-    "tags": [
-      "animales",
-      "aves",
-      "curiosidades"
-    ],
-    "yt_title": "Su corazón late 1200 veces por minuto 🐦",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "mil veces",
-      "se detiene"
-    ]
-  },
-  {
     "id": "038",
     "title": "Por qué se te tapan los oídos en el avión",
     "narration": "Si en el avión se te tapan los oídos, la culpa es de un tubito escondido en tu garganta. Detrás de cada oído hay una cámara de aire, conectada a ese tubito. Cuando el avión sube o baja, la presión de afuera cambia rápido, pero el aire de adentro tarda en igualarse. Entonces el tímpano queda empujado y se te tapa el oído. Cuando tragas o bostezas, el tubito se abre y suena el famoso pop. Por eso lloran tanto los bebés en los aviones: todavía no saben destaparse los oídos solos.",
@@ -1511,258 +1439,6 @@
     "highlight": [
       "pop",
       "bebés"
-    ]
-  },
-  {
-    "id": "039",
-    "title": "Las vacas tienen mejores amigas",
-    "narration": "Las vacas tienen mejores amigas. Una investigadora en Inglaterra midió el estrés de vacas cuando las separaban del grupo. Si las dejaban solas con una vaca cualquiera, se estresaban. Pero si las dejaban con su vaca preferida, el ritmo de su corazón bajaba y estaban mucho más tranquilas. Las vacas eligen con quién pasar el tiempo, y lo recuerdan. Así que la próxima vez que veas dos vacas siempre juntas en el campo, no es casualidad. Son amigas.",
-    "scenes": [
-      {
-        "image": "two cows standing close together in a green field, heads touching",
-        "motion": "the cows nuzzle each other gently"
-      },
-      {
-        "image": "a researcher with a clipboard watching cows in a barn",
-        "motion": "the researcher writes notes while the cows move"
-      },
-      {
-        "image": "a lonely cow standing alone in an empty field looking sad",
-        "motion": "the cow looks around slowly"
-      },
-      {
-        "image": "two happy cows lying down together in the grass under a tree"
-      },
-      {
-        "image": "two cows walking side by side across a field at sunset"
-      }
-    ],
-    "tags": [
-      "animales",
-      "vacas",
-      "curiosidades"
-    ],
-    "yt_title": "Las vacas tienen mejores amigas 🐄",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "mejores amigas",
-      "juntas"
-    ]
-  },
-  {
-    "id": "040",
-    "title": "El baile de las abejas",
-    "narration": "Cuando una abeja encuentra flores, vuelve a la colmena y baila. No es por diversión. Camina en línea recta moviendo la cola y después da la vuelta, una y otra vez. El ángulo de esa línea, comparado con el Sol, dice hacia dónde volar. Y cuanto más tiempo mueve la cola, más lejos están las flores. Las otras abejas la tocan con las antenas, leen el mensaje y salen directo. Es un GPS hecho con baile.",
-    "scenes": [
-      {
-        "image": "a honeybee doing a waggle dance on a honeycomb surrounded by other bees",
-        "motion": "the bee wiggles its body in a straight line while others watch"
-      },
-      {
-        "image": "a field of colorful flowers seen from a bee's point of view with the sun in the sky",
-        "motion": "the camera flies low over the flowers"
-      },
-      {
-        "image": "bees touching a dancing bee with their antennae on the honeycomb",
-        "motion": "the bees move their antennae, touching the dancer"
-      },
-      {
-        "image": "a glowing arrow drawn on a honeycomb pointing at the sun"
-      },
-      {
-        "image": "a swarm of bees flying straight toward distant flowers"
-      }
-    ],
-    "tags": [
-      "animales",
-      "abejas",
-      "curiosidades"
-    ],
-    "yt_title": "Las abejas dan direcciones bailando 🐝",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "baila",
-      "GPS"
-    ]
-  },
-  {
-    "id": "041",
-    "title": "La Torre Eiffel crece en verano",
-    "narration": "La Torre Eiffel no mide siempre lo mismo. En verano crece hasta unos quince centímetros. Está hecha de hierro, y el hierro se estira cuando se calienta. Con el calor, cada pieza se agranda un poquito, y sumadas todas, la torre sube. En invierno, con el frío, se encoge otra vez. Y como el sol le pega de un solo lado, a veces la punta se inclina unos centímetros hacia el lado contrario. La torre se mueve todo el día, y nadie lo nota.",
-    "scenes": [
-      {
-        "image": "the Eiffel Tower on a hot sunny summer day with heat shimmer",
-        "motion": "heat waves shimmer around the tower"
-      },
-      {
-        "image": "a giant measuring tape next to the top of the Eiffel Tower",
-        "motion": "the tape slowly extends upward"
-      },
-      {
-        "image": "macro view of iron beams of the Eiffel Tower in sunlight",
-        "motion": "the camera slowly slides along the beams"
-      },
-      {
-        "image": "the Eiffel Tower covered in snow in winter"
-      },
-      {
-        "image": "the top of the Eiffel Tower leaning slightly with the sun on one side, exaggerated cartoon style"
-      }
-    ],
-    "tags": [
-      "ciencia",
-      "lugares",
-      "curiosidades"
-    ],
-    "yt_title": "La Torre Eiffel crece 15 cm en verano 🗼",
-    "playlist": "Ciencia loca",
-    "highlight": [
-      "quince centímetros",
-      "se encoge"
-    ]
-  },
-  {
-    "id": "042",
-    "title": "La rana de cristal esconde su sangre",
-    "narration": "La rana de cristal es casi transparente. Le puedes ver los huesos y el corazón desde abajo. Pero la sangre es roja, y eso la delataría. Entonces, cuando se duerme, hace algo que nadie entendía: casi toda su sangre desaparece. En 2022 unos científicos descubrieron a dónde va. La rana guarda casi todos sus glóbulos rojos dentro del hígado, que tiene como un espejo que los tapa. Así, mientras duerme en una hoja, es casi invisible.",
-    "scenes": [
-      {
-        "image": "a translucent glass frog on a green leaf, its organs faintly visible",
-        "motion": "the frog breathes slowly on the leaf"
-      },
-      {
-        "image": "the underside of a glass frog showing its heart and bones through the skin, macro",
-        "motion": "the tiny heart beats inside the transparent body"
-      },
-      {
-        "image": "red blood cells flowing into a shiny reflective liver inside a translucent frog, 3D medical style",
-        "motion": "the red cells flow into the liver and disappear"
-      },
-      {
-        "image": "scientists with a flashlight looking at a leaf in a rainforest at night"
-      },
-      {
-        "image": "an almost invisible glass frog sleeping on a leaf, only its outline visible"
-      }
-    ],
-    "tags": [
-      "animales",
-      "ranas",
-      "curiosidades"
-    ],
-    "yt_title": "Esta rana se vuelve invisible al dormir 🐸",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "invisible",
-      "hígado"
-    ]
-  },
-  {
-    "id": "043",
-    "title": "Los bebés tienen más huesos que tú",
-    "narration": "Un bebé tiene casi cien huesos más que tú. Nace con unos trescientos, y un adulto tiene doscientos seis. ¿A dónde se van? No se pierden: se juntan. Muchos huesos del bebé son piezas separadas, unidas por cartílago blando, para poder doblarse al nacer. Con los años, esas piezas se sueldan. Por ejemplo, el cráneo del bebé tiene partes blandas en la cabeza. Si alguna vez tocaste esa zona suave, eran huesos que todavía no se habían unido.",
-    "scenes": [
-      {
-        "image": "a cute sleeping newborn baby wrapped in a blanket",
-        "motion": "the baby breathes softly while sleeping"
-      },
-      {
-        "image": "an x-ray style illustration of a baby skeleton with many small separate bones",
-        "motion": "the separate bones glow one by one"
-      },
-      {
-        "image": "small bone pieces slowly merging together into one bone, 3D medical animation style",
-        "motion": "the pieces slide together and fuse"
-      },
-      {
-        "image": "an adult skeleton standing next to a baby skeleton in a museum, friendly style"
-      },
-      {
-        "image": "a parent gently touching the top of a baby's head"
-      }
-    ],
-    "tags": [
-      "cuerpo humano",
-      "bebés",
-      "curiosidades"
-    ],
-    "yt_title": "Un bebé tiene casi 100 huesos más que tú 👶",
-    "playlist": "Cuerpo humano",
-    "highlight": [
-      "trescientos",
-      "doscientos seis"
-    ]
-  },
-  {
-    "id": "044",
-    "title": "El osito de agua sobrevive en el espacio",
-    "narration": "Hay un animal que sobrevivió en el espacio sin ninguna protección: el tardígrado, también llamado osito de agua. Mide menos de un milímetro y vive en el musgo. En 2007 lo mandaron afuera de una nave, expuesto al vacío y a la radiación. Muchos volvieron vivos. Su truco es secarse por completo, encogerse como una pelotita y apagarse casi del todo. Así puede aguantar años. Le pones una gota de agua, y en un rato vuelve a caminar.",
-    "scenes": [
-      {
-        "image": "a cute chubby microscopic tardigrade walking on green moss, microscope view",
-        "motion": "the tardigrade slowly walks with its tiny legs"
-      },
-      {
-        "image": "a small capsule floating in space above the earth with tiny tardigrades on it",
-        "motion": "the capsule slowly rotates in space"
-      },
-      {
-        "image": "a tardigrade curling up into a dry tiny ball",
-        "motion": "the tardigrade shrinks and curls into a ball"
-      },
-      {
-        "image": "a single drop of water falling on a dried tardigrade, macro"
-      },
-      {
-        "image": "a tardigrade waking up and walking again in a drop of water"
-      }
-    ],
-    "tags": [
-      "animales",
-      "espacio",
-      "curiosidades"
-    ],
-    "yt_title": "Este animal sobrevivió en el espacio sin traje 🚀",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "vacío",
-      "gota de agua"
-    ]
-  },
-  {
-    "id": "045",
-    "title": "El rayo es más caliente que el Sol",
-    "narration": "Un rayo es unas cinco veces más caliente que la superficie del Sol. La superficie del Sol está a unos cinco mil quinientos grados. Un rayo puede llegar a treinta mil. Calienta el aire de golpe, en una fracción de segundo, y el aire se expande tan rápido que explota. Esa explosión es el trueno. Por eso, si cuentas los segundos entre el rayo y el trueno y los divides por tres, sabes a cuántos kilómetros cayó.",
-    "scenes": [
-      {
-        "image": "a giant lightning bolt striking down over a dark city at night",
-        "motion": "the lightning flashes and branches across the sky"
-      },
-      {
-        "image": "the surface of the sun with solar flares, close view",
-        "motion": "the solar flares slowly swirl"
-      },
-      {
-        "image": "a glowing thermometer exploding past its limit next to a lightning bolt",
-        "motion": "the thermometer red line shoots up and bursts"
-      },
-      {
-        "image": "a shockwave of air expanding around a lightning bolt, stylized"
-      },
-      {
-        "image": "a person counting on their fingers while looking at a storm from a window"
-      }
-    ],
-    "tags": [
-      "ciencia",
-      "clima",
-      "curiosidades"
-    ],
-    "yt_title": "Un rayo es 5 veces más caliente que el Sol ⚡",
-    "playlist": "Ciencia loca",
-    "highlight": [
-      "treinta mil",
-      "trueno"
     ]
   },
   {
@@ -1835,78 +1511,6 @@
     "highlight": [
       "el plátano sí",
       "cientos de frutitas"
-    ]
-  },
-  {
-    "id": "048",
-    "title": "Hay 2 millones de hormigas por persona",
-    "narration": "Por cada persona en el mundo hay unos dos millones y medio de hormigas. Un estudio de 2022 calculó que en la Tierra viven unos veinte mil billones de hormigas. Si las pusieras todas en una balanza, pesarían más que todos los pájaros y mamíferos salvajes juntos. Y no están de adorno: mueven la tierra, reparten semillas y limpian el suelo. Sin las hormigas, muchos bosques no podrían existir. El planeta, en el fondo, es de ellas.",
-    "scenes": [
-      {
-        "image": "a line of ants walking across a leaf in a garden, macro",
-        "motion": "the ants march in a line across the leaf"
-      },
-      {
-        "image": "a giant pile of ants next to a single person for scale, cartoon style",
-        "motion": "the pile of ants moves and wiggles"
-      },
-      {
-        "image": "a giant scale with ants on one side and birds and wild mammals on the other",
-        "motion": "the scale tips toward the ants"
-      },
-      {
-        "image": "ants carrying seeds into an underground nest, cutaway view"
-      },
-      {
-        "image": "a lush green forest with tiny ants on the ground in the foreground"
-      }
-    ],
-    "tags": [
-      "animales",
-      "hormigas",
-      "curiosidades"
-    ],
-    "yt_title": "Hay 2 millones y medio de hormigas por cada persona 🐜",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "dos millones y medio",
-      "más que todos"
-    ]
-  },
-  {
-    "id": "049",
-    "title": "Los pingüinos regalan piedras",
-    "narration": "Algunos pingüinos se declaran con una piedra. El macho busca entre miles de piedritas en la playa hasta encontrar la más lisa y perfecta. Después se la lleva a la hembra y la deja a sus pies. Si ella la acepta, la usan para armar su nido juntos. Las piedras son tan valiosas que algunos pingüinos se las roban a sus vecinos cuando no miran. Encontrar la piedra perfecta es, para ellos, como un anillo de compromiso.",
-    "scenes": [
-      {
-        "image": "a cute penguin on a pebble beach holding a small smooth stone in its beak",
-        "motion": "the penguin waddles forward with the stone"
-      },
-      {
-        "image": "a penguin carefully searching through pebbles on a beach",
-        "motion": "the penguin picks up a pebble and inspects it"
-      },
-      {
-        "image": "a male penguin dropping a pebble at the feet of a female penguin",
-        "motion": "the female penguin looks down at the pebble"
-      },
-      {
-        "image": "two penguins building a nest of pebbles together"
-      },
-      {
-        "image": "a sneaky penguin stealing a pebble from a neighbor's nest"
-      }
-    ],
-    "tags": [
-      "animales",
-      "pingüinos",
-      "curiosidades"
-    ],
-    "yt_title": "Los pingüinos se declaran con una piedra 🐧",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "piedra",
-      "anillo"
     ]
   },
   {
@@ -2018,78 +1622,6 @@
     ]
   },
   {
-    "id": "053",
-    "title": "Las nutrias se toman de las manos",
-    "narration": "Las nutrias marinas duermen flotando de espaldas en el agua. Pero hay un problema: mientras duermen, las corrientes las podrían separar. Entonces se toman de las manos. A veces se enredan en algas, como si fueran un cinturón, para no irse a la deriva. Y hay algo más tierno todavía: muchas tienen una piedra favorita. La usan para romper conchas, y la guardan en un bolsillo de piel debajo del brazo, para no perderla nunca.",
-    "scenes": [
-      {
-        "image": "two cute sea otters floating on their backs holding hands in calm water",
-        "motion": "the otters float gently holding paws"
-      },
-      {
-        "image": "a group of sea otters sleeping in a kelp forest at the surface",
-        "motion": "the otters bob gently with the waves"
-      },
-      {
-        "image": "a sea otter wrapping itself in kelp",
-        "motion": "the otter rolls in the kelp"
-      },
-      {
-        "image": "a sea otter cracking a shell with a stone on its belly"
-      },
-      {
-        "image": "a sea otter holding a small round stone close to its chest"
-      }
-    ],
-    "tags": [
-      "animales",
-      "nutrias",
-      "curiosidades"
-    ],
-    "yt_title": "Las nutrias duermen de la mano 🦦",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "de las manos",
-      "piedra favorita"
-    ]
-  },
-  {
-    "id": "054",
-    "title": "Los koalas tienen huellas como las tuyas",
-    "narration": "Tus huellas digitales son únicas. Ni siquiera los gemelos idénticos tienen las mismas. Pero hay un animal con huellas casi iguales a las humanas: el koala. Son tan parecidas que, vistas al microscopio, cuesta muchísimo distinguirlas. Y lo raro es que los koalas no son parientes cercanos nuestros. Les aparecieron por su cuenta, seguramente para agarrar mejor las ramas y las hojas. Así que un koala podría dejar huellas en la escena de un crimen.",
-    "scenes": [
-      {
-        "image": "a close up of a human fingertip with fingerprint lines, soft light",
-        "motion": "the light slowly moves across the fingerprint ridges"
-      },
-      {
-        "image": "identical twins pressing their fingers on glass, showing different fingerprints",
-        "motion": "the twins press their fingers on the glass"
-      },
-      {
-        "image": "a cute koala holding a eucalyptus branch with its hand visible",
-        "motion": "the koala grabs the branch and chews a leaf"
-      },
-      {
-        "image": "a koala fingerprint and a human fingerprint side by side under a magnifying glass"
-      },
-      {
-        "image": "a koala inside a detective scene with fingerprint powder on a table, funny"
-      }
-    ],
-    "tags": [
-      "animales",
-      "koalas",
-      "curiosidades"
-    ],
-    "yt_title": "Los koalas tienen huellas como las tuyas 🐨",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "únicas",
-      "koala"
-    ]
-  },
-  {
     "id": "055",
     "title": "A qué huele el espacio",
     "narration": "El espacio tiene olor. Los astronautas lo cuentan después de hacer caminatas afuera de la estación. Cuando vuelven a entrar y se sacan el casco, sus trajes huelen raro. Unos dicen que a carne asada. Otros, a pólvora o a metal caliente. Los científicos creen que ese olor viene de partículas que se forman cuando mueren las estrellas, y que se pegan a los trajes. O sea que, cuando un astronauta huele su traje, está oliendo restos de estrellas.",
@@ -2162,78 +1694,6 @@
     ]
   },
   {
-    "id": "057",
-    "title": "El golpe del camarón mantis",
-    "narration": "El camarón mantis tiene el golpe más rápido del mundo animal. Sus brazos se doblan como un resorte y se sueltan a una velocidad parecida a la de una bala. Es tan rápido que el agua alrededor se rompe y forma burbujas que explotan con un destello de luz y muchísimo calor. Así rompe las conchas de cangrejos y caracoles. En los acuarios a veces tienen que usar vidrio especial, porque pueden romper el vidrio común de un golpe.",
-    "scenes": [
-      {
-        "image": "a colorful mantis shrimp on the sea floor among coral",
-        "motion": "the mantis shrimp moves its eyes and claws"
-      },
-      {
-        "image": "a mantis shrimp punching a snail shell, with a burst of bubbles",
-        "motion": "the claw strikes and bubbles burst"
-      },
-      {
-        "image": "a tiny glowing bubble exploding with a flash of light underwater, macro",
-        "motion": "the bubble collapses with a bright flash"
-      },
-      {
-        "image": "a cracked crab shell on the sea floor next to a mantis shrimp"
-      },
-      {
-        "image": "a mantis shrimp in an aquarium with a crack on the glass"
-      }
-    ],
-    "tags": [
-      "animales",
-      "mar",
-      "curiosidades"
-    ],
-    "yt_title": "Su golpe es tan rápido como una bala 🦐",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "bala",
-      "vidrio"
-    ]
-  },
-  {
-    "id": "058",
-    "title": "Los elefantes escuchan con los pies",
-    "narration": "Los elefantes pueden escuchar con los pies. Cuando un elefante hace un sonido muy grave, la vibración no solo viaja por el aire. También viaja por el suelo, a varios kilómetros. Otros elefantes la sienten a través de sus patas, que tienen sensores especiales. A veces se quedan quietos, con una pata levantada, como si escucharan atentos. Así se avisan de peligros o se encuentran con su manada, sin verse ni oírse por el aire.",
-    "scenes": [
-      {
-        "image": "an elephant standing in the savanna at sunset",
-        "motion": "the elephant slowly flaps its ears"
-      },
-      {
-        "image": "vibration waves traveling through the ground from an elephant, stylized",
-        "motion": "the waves ripple through the ground"
-      },
-      {
-        "image": "close up of an elephant foot pressing on the dusty ground",
-        "motion": "the foot slowly presses down raising dust"
-      },
-      {
-        "image": "an elephant standing still with one foot raised listening"
-      },
-      {
-        "image": "a herd of elephants walking together toward a distant elephant"
-      }
-    ],
-    "tags": [
-      "animales",
-      "elefantes",
-      "curiosidades"
-    ],
-    "yt_title": "Los elefantes escuchan con los pies 🐘",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "pies",
-      "kilómetros"
-    ]
-  },
-  {
     "id": "059",
     "title": "Llueven diamantes en Neptuno",
     "narration": "En Neptuno y en Urano podrían llover diamantes. Estos planetas tienen mucho metano, que está hecho de carbono. Muy adentro, la presión es tan enorme y el calor tan fuerte, que ese carbono se aprieta hasta volverse diamante. Los diamantes caerían lentamente hacia el centro, como una lluvia. Los científicos lo probaron en laboratorio, disparando láseres a plástico, y lograron fabricar diamantes diminutos. Un planeta entero donde llueven joyas.",
@@ -2303,78 +1763,6 @@
     "highlight": [
       "veintitrés horas",
       "veinticinco"
-    ]
-  },
-  {
-    "id": "061",
-    "title": "Por qué los mosquitos te pican más a ti",
-    "narration": "Si los mosquitos siempre te pican a ti, no es mala suerte. Te eligen. Los mosquitos encuentran a las personas por el aire que exhalan, por el calor del cuerpo y, sobre todo, por el olor de la piel. Un estudio de 2022 descubrió que las personas que más atraen a los mosquitos tienen en la piel más cantidad de ciertos ácidos. Y lo más injusto: ese olor no cambia. Si hoy eres un imán de mosquitos, lo vas a seguir siendo.",
-    "scenes": [
-      {
-        "image": "a mosquito flying toward a person's arm at night, macro",
-        "motion": "the mosquito flies closer with wings buzzing"
-      },
-      {
-        "image": "glowing trails of breath and heat coming from a sleeping person, mosquitoes following them",
-        "motion": "the glowing trails drift and mosquitoes follow"
-      },
-      {
-        "image": "a group of friends outdoors where only one person is surrounded by mosquitoes, cartoon",
-        "motion": "the mosquitoes circle around one person"
-      },
-      {
-        "image": "a scientist in a lab with a glass box full of mosquitoes"
-      },
-      {
-        "image": "a giant magnet attracting mosquitoes, funny 3D style"
-      }
-    ],
-    "tags": [
-      "animales",
-      "insectos",
-      "curiosidades"
-    ],
-    "yt_title": "Por qué los mosquitos te eligen a ti 🦟",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "te eligen",
-      "imán"
-    ]
-  },
-  {
-    "id": "062",
-    "title": "El perezoso baja una vez por semana",
-    "narration": "El perezoso es tan lento que le crecen algas en el pelo. Se mueve tan poco que su pelaje se vuelve verde, y eso lo ayuda a esconderse entre los árboles. Gasta tan poquita energía que puede vivir comiendo solo hojas. Y hay algo increíble: casi nunca baja del árbol. Lo hace más o menos una vez por semana, y solo para hacer sus necesidades en el suelo. Es el momento más peligroso de su vida, y todavía nadie sabe bien por qué lo hace.",
-    "scenes": [
-      {
-        "image": "a cute sloth hanging from a tree branch in a rainforest",
-        "motion": "the sloth slowly turns its head and blinks"
-      },
-      {
-        "image": "close up of sloth fur with green algae growing in it",
-        "motion": "the camera slowly moves along the green fur"
-      },
-      {
-        "image": "a sloth slowly eating a leaf",
-        "motion": "the sloth slowly chews the leaf"
-      },
-      {
-        "image": "a sloth climbing down a tree trunk very slowly toward the ground"
-      },
-      {
-        "image": "a sloth on the forest floor looking around carefully"
-      }
-    ],
-    "tags": [
-      "animales",
-      "perezosos",
-      "curiosidades"
-    ],
-    "yt_title": "El perezoso es tan lento que le crecen plantas encima 🦥",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "algas",
-      "una vez por semana"
     ]
   },
   {
@@ -2702,42 +2090,6 @@
     ]
   },
   {
-    "id": "072",
-    "title": "Las mariposas saborean con las patas",
-    "narration": "Las mariposas sienten los sabores con las patas. Tienen sensores en los pies, y cuando se paran sobre una hoja o una flor, ya saben si es comida. Para las hembras es muy importante: antes de poner huevos, pisan la hoja para probarla. Si la hoja es buena para sus orugas, ponen los huevos ahí. Si no, se van a otra. O sea que una mariposa nunca necesita morder algo para saber a qué sabe. Le basta con pararse encima.",
-    "scenes": [
-      {
-        "image": "a colorful butterfly landing on a bright flower, macro",
-        "motion": "the butterfly lands gently and flutters its wings"
-      },
-      {
-        "image": "extreme macro of a butterfly's tiny feet touching a leaf",
-        "motion": "the feet tap the leaf surface"
-      },
-      {
-        "image": "a butterfly tapping on a green leaf with its legs",
-        "motion": "the butterfly steps on the leaf and moves its legs"
-      },
-      {
-        "image": "tiny butterfly eggs on a green leaf, macro"
-      },
-      {
-        "image": "a caterpillar eating a leaf happily"
-      }
-    ],
-    "tags": [
-      "animales",
-      "insectos",
-      "curiosidades"
-    ],
-    "yt_title": "Las mariposas saborean con los pies 🦋",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "patas",
-      "pararse encima"
-    ]
-  },
-  {
     "id": "073",
     "title": "Los peces dorados tienen buena memoria",
     "narration": "Dicen que los peces dorados solo recuerdan las cosas por tres segundos. Es falso. En experimentos, los entrenaron para empujar una palanca y conseguir comida, y lo recordaron durante meses. Otros aprendieron que sonaba un ruido justo antes de la comida, y nadaban hacia el lugar cada vez que lo escuchaban. Incluso pueden reconocer a la persona que les da de comer. Así que si tu pez dorado se acerca cuando entras, no es casualidad. Te reconoce.",
@@ -2918,42 +2270,6 @@
     ]
   },
   {
-    "id": "078",
-    "title": "La luz de las luciérnagas",
-    "narration": "La luz de una luciérnaga casi no calienta. Una luciérnaga hace luz con una reacción química dentro de su cuerpo. Mezcla una sustancia con oxígeno, y sale luz. Y es una luz especial: casi no produce calor. Una bombilla común pierde mucha energía calentándose. La luciérnaga no. Por eso se llama luz fría. Cada especie tiene su propio código de destellos, como un idioma. Los machos parpadean de una forma, y las hembras responden. Es una conversación hecha de luces.",
-    "scenes": [
-      {
-        "image": "fireflies glowing over a field at night",
-        "motion": "the fireflies blink softly and drift"
-      },
-      {
-        "image": "macro view of a glowing firefly on a leaf",
-        "motion": "the firefly's tail glows and fades"
-      },
-      {
-        "image": "an old light bulb glowing hot next to a cool glowing firefly",
-        "motion": "the bulb glows hot with heat waves"
-      },
-      {
-        "image": "a forest with many fireflies flashing patterns"
-      },
-      {
-        "image": "two fireflies flashing at each other at night"
-      }
-    ],
-    "tags": [
-      "animales",
-      "insectos",
-      "curiosidades"
-    ],
-    "yt_title": "La luz de las luciérnagas casi no calienta ✨",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "luz fría",
-      "conversación"
-    ]
-  },
-  {
     "id": "079",
     "title": "La piña te come mientras la comes",
     "narration": "Cuando comes piña, la piña también te come a ti. Tiene una sustancia que deshace proteínas, y tu lengua está hecha de proteínas. Por eso, si comes mucha, sientes un hormigueo y la lengua un poco lastimada. No te preocupes: tu boca se repara rápido, y el ácido del estómago desactiva la sustancia. Es tan buena deshaciendo proteínas que se usa para ablandar carne. Por eso la piña cocida, como en las pizzas, ya no pica.",
@@ -3062,42 +2378,6 @@
     ]
   },
   {
-    "id": "082",
-    "title": "El wombat hace popó en cubos",
-    "narration": "El wombat es el único animal conocido que hace popó en forma de cubo. Es un marsupial de Australia, parecido a un osito. Durante años nadie entendía cómo lo hacía. En 2018 unos científicos descubrieron el secreto: su intestino tiene partes más duras y partes más elásticas, y eso le va dando forma de cubo al final del camino. ¿Y para qué? Los wombats marcan su territorio con eso, y los cubos no se caen rodando de las piedras.",
-    "scenes": [
-      {
-        "image": "a cute chubby wombat walking on grass in Australia",
-        "motion": "the wombat waddles forward"
-      },
-      {
-        "image": "small brown cubes arranged on top of a rock in the Australian bush, cartoon style",
-        "motion": "the camera slowly pushes in"
-      },
-      {
-        "image": "a scientist looking at a diagram of an intestine with surprise",
-        "motion": "the scientist adjusts glasses and leans closer"
-      },
-      {
-        "image": "a 3D illustration of an intestine with stiff and stretchy parts"
-      },
-      {
-        "image": "a wombat sitting proudly on top of a rock"
-      }
-    ],
-    "tags": [
-      "animales",
-      "australia",
-      "curiosidades"
-    ],
-    "yt_title": "Este animal hace popó en forma de cubo 🧊",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "cubo",
-      "no se caen"
-    ]
-  },
-  {
     "id": "083",
     "title": "La Estatua de la Libertad era marrón",
     "narration": "La Estatua de la Libertad no siempre fue verde. Cuando la armaron en 1886, era del color de una moneda nueva de cobre: marrón y brillante. Está hecha de una capa de cobre muy finita. Con los años, la lluvia, el aire y la sal del mar la fueron oxidando, y se formó una capa verde por encima. Esa capa no la arruina. Al contrario: la protege. Por eso decidieron no pintarla nunca.",
@@ -3170,42 +2450,6 @@
     ]
   },
   {
-    "id": "085",
-    "title": "El chocolate es veneno para los perros",
-    "narration": "El chocolate es peligroso para los perros. Tiene una sustancia que a nosotros no nos hace nada, porque la eliminamos rápido. Pero el cuerpo del perro la elimina muy lento, y se le acumula. Le acelera el corazón, lo pone nervioso y, en cantidad, puede ser muy grave. El chocolate amargo es el peor, porque tiene mucho más de esa sustancia. Así que, aunque te mire con esos ojitos, el chocolate es solo para ti.",
-    "scenes": [
-      {
-        "image": "a cute puppy looking at a chocolate bar on a table",
-        "motion": "the puppy sniffs toward the chocolate"
-      },
-      {
-        "image": "a 3D illustration of a dog's body processing a substance slowly",
-        "motion": "glowing particles move slowly through the body"
-      },
-      {
-        "image": "a dog with a racing heart, stylized glowing heart",
-        "motion": "the heart beats fast"
-      },
-      {
-        "image": "dark chocolate and milk chocolate bars side by side"
-      },
-      {
-        "image": "a dog with puppy eyes begging at a person eating chocolate"
-      }
-    ],
-    "tags": [
-      "animales",
-      "perros",
-      "curiosidades"
-    ],
-    "yt_title": "Por qué el chocolate es peligroso para tu perro 🐶",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "peligroso",
-      "amargo"
-    ]
-  },
-  {
     "id": "086",
     "title": "Tu estómago se renueva cada pocos días",
     "narration": "El ácido de tu estómago es tan fuerte que puede deshacer la carne. Entonces, ¿por qué no se deshace el estómago? Porque se protege de dos formas. Primero, fabrica una capa de moco espeso que lo cubre por dentro. Y segundo, se renueva todo el tiempo: las células del revestimiento se reemplazan cada pocos días. Si el ácido daña algunas, ya hay otras nuevas listas. Tu estómago, por dentro, es nuevo casi cada semana.",
@@ -3239,42 +2483,6 @@
     "highlight": [
       "ácido",
       "cada pocos días"
-    ]
-  },
-  {
-    "id": "087",
-    "title": "La cucaracha vive sin cabeza",
-    "narration": "Una cucaracha puede vivir más o menos una semana sin su cabeza. Suena imposible, pero tiene explicación. No respira por la boca, sino por agujeritos repartidos en el cuerpo. Su sangre no necesita una presión fuerte, así que casi no se desangra. Y muchas funciones las controlan nervios del cuerpo, no el cerebro. ¿Y de qué se muere al final? De sed. Sin boca, no puede tomar agua.",
-    "scenes": [
-      {
-        "image": "a cockroach on a kitchen floor at night, cartoon friendly style",
-        "motion": "the cockroach scurries across the floor"
-      },
-      {
-        "image": "a 3D illustration of tiny breathing holes along a cockroach body",
-        "motion": "the holes open and close slowly"
-      },
-      {
-        "image": "a cockroach walking with a small bandage on top, funny cartoon",
-        "motion": "the cockroach keeps walking confidently"
-      },
-      {
-        "image": "a glowing nervous system inside a cockroach body, 3D"
-      },
-      {
-        "image": "a cartoon cockroach looking at a drop of water"
-      }
-    ],
-    "tags": [
-      "animales",
-      "insectos",
-      "curiosidades"
-    ],
-    "yt_title": "Una cucaracha puede vivir una semana sin cabeza 🪳",
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "una semana",
-      "sed"
     ]
   },
   {
@@ -3383,6 +2591,690 @@
     "highlight": [
       "mito",
       "sesenta kilómetros"
+    ]
+  },
+  {
+    "id": "036",
+    "title": "Los gatos no sienten lo dulce",
+    "narration": "Tu gato no puede sentir el sabor dulce. Nada. Le das azúcar y para él no sabe a nada. Los gatos perdieron el gen que arma los sensores de lo dulce en la lengua. Como comen casi solo carne, nunca lo necesitaron. Y no son los únicos: los leones y los tigres tampoco lo sienten. Entonces, si tu gato te roba el helado, no es por lo dulce. Lo que le gusta es la grasa y la leche.",
+    "scenes": [
+      {
+        "image": "a cute cat sniffing a sugar cube on a kitchen table",
+        "motion": "the cat sniffs the sugar cube and tilts its head"
+      },
+      {
+        "image": "a macro view of a cat tongue with tiny taste buds",
+        "motion": "the tongue moves slightly, soft light"
+      },
+      {
+        "image": "a lion and a tiger looking confused at a cupcake in the savanna",
+        "motion": "the lion sniffs the cupcake and looks away"
+      },
+      {
+        "image": "a cat licking an ice cream cone on a sunny balcony"
+      },
+      {
+        "image": "a cat happily drinking from a bowl of milk"
+      }
+    ],
+    "tags": [
+      "animales",
+      "gatos",
+      "curiosidades"
+    ],
+    "yt_title": "Tu gato no puede sentir lo dulce 🐱",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "dulce",
+      "grasa"
+    ]
+  },
+  {
+    "id": "037",
+    "title": "El corazón del colibrí",
+    "narration": "El corazón de un colibrí puede latir más de mil veces por minuto. El tuyo late unas setenta. Sus alas se mueven tan rápido que hacen ese zumbido, y gasta tanta energía que tiene que comer néctar cada pocos minutos. Pero de noche no puede comer. Entonces hace algo increíble: baja su temperatura, su corazón casi se detiene y entra en una especie de hibernación por unas horas. Por la mañana se despierta y vuelve a volar como si nada.",
+    "scenes": [
+      {
+        "image": "a hummingbird hovering in front of a red flower, wings blurred",
+        "motion": "the wings flap extremely fast while the bird hovers"
+      },
+      {
+        "image": "a glowing heart inside a tiny hummingbird, x-ray style",
+        "motion": "the tiny heart beats very fast"
+      },
+      {
+        "image": "a hummingbird drinking nectar from a tubular flower",
+        "motion": "the bird dips its beak into the flower"
+      },
+      {
+        "image": "a hummingbird sleeping still on a branch at night under moonlight"
+      },
+      {
+        "image": "a hummingbird waking up at sunrise and flying away from the branch"
+      }
+    ],
+    "tags": [
+      "animales",
+      "aves",
+      "curiosidades"
+    ],
+    "yt_title": "Su corazón late 1200 veces por minuto 🐦",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "mil veces",
+      "se detiene"
+    ]
+  },
+  {
+    "id": "039",
+    "title": "Las vacas tienen mejores amigas",
+    "narration": "Las vacas tienen mejores amigas. Una investigadora en Inglaterra midió el estrés de vacas cuando las separaban del grupo. Si las dejaban solas con una vaca cualquiera, se estresaban. Pero si las dejaban con su vaca preferida, el ritmo de su corazón bajaba y estaban mucho más tranquilas. Las vacas eligen con quién pasar el tiempo, y lo recuerdan. Así que la próxima vez que veas dos vacas siempre juntas en el campo, no es casualidad. Son amigas.",
+    "scenes": [
+      {
+        "image": "two cows standing close together in a green field, heads touching",
+        "motion": "the cows nuzzle each other gently"
+      },
+      {
+        "image": "a researcher with a clipboard watching cows in a barn",
+        "motion": "the researcher writes notes while the cows move"
+      },
+      {
+        "image": "a lonely cow standing alone in an empty field looking sad",
+        "motion": "the cow looks around slowly"
+      },
+      {
+        "image": "two happy cows lying down together in the grass under a tree"
+      },
+      {
+        "image": "two cows walking side by side across a field at sunset"
+      }
+    ],
+    "tags": [
+      "animales",
+      "vacas",
+      "curiosidades"
+    ],
+    "yt_title": "Las vacas tienen mejores amigas 🐄",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "mejores amigas",
+      "juntas"
+    ]
+  },
+  {
+    "id": "040",
+    "title": "El baile de las abejas",
+    "narration": "Cuando una abeja encuentra flores, vuelve a la colmena y baila. No es por diversión. Camina en línea recta moviendo la cola y después da la vuelta, una y otra vez. El ángulo de esa línea, comparado con el Sol, dice hacia dónde volar. Y cuanto más tiempo mueve la cola, más lejos están las flores. Las otras abejas la tocan con las antenas, leen el mensaje y salen directo. Es un GPS hecho con baile.",
+    "scenes": [
+      {
+        "image": "a honeybee doing a waggle dance on a honeycomb surrounded by other bees",
+        "motion": "the bee wiggles its body in a straight line while others watch"
+      },
+      {
+        "image": "a field of colorful flowers seen from a bee's point of view with the sun in the sky",
+        "motion": "the camera flies low over the flowers"
+      },
+      {
+        "image": "bees touching a dancing bee with their antennae on the honeycomb",
+        "motion": "the bees move their antennae, touching the dancer"
+      },
+      {
+        "image": "a glowing arrow drawn on a honeycomb pointing at the sun"
+      },
+      {
+        "image": "a swarm of bees flying straight toward distant flowers"
+      }
+    ],
+    "tags": [
+      "animales",
+      "abejas",
+      "curiosidades"
+    ],
+    "yt_title": "Las abejas dan direcciones bailando 🐝",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "baila",
+      "GPS"
+    ]
+  },
+  {
+    "id": "042",
+    "title": "La rana de cristal esconde su sangre",
+    "narration": "La rana de cristal es casi transparente. Le puedes ver los huesos y el corazón desde abajo. Pero la sangre es roja, y eso la delataría. Entonces, cuando se duerme, hace algo que nadie entendía: casi toda su sangre desaparece. En 2022 unos científicos descubrieron a dónde va. La rana guarda casi todos sus glóbulos rojos dentro del hígado, que tiene como un espejo que los tapa. Así, mientras duerme en una hoja, es casi invisible.",
+    "scenes": [
+      {
+        "image": "a translucent glass frog on a green leaf, its organs faintly visible",
+        "motion": "the frog breathes slowly on the leaf"
+      },
+      {
+        "image": "the underside of a glass frog showing its heart and bones through the skin, macro",
+        "motion": "the tiny heart beats inside the transparent body"
+      },
+      {
+        "image": "red blood cells flowing into a shiny reflective liver inside a translucent frog, 3D medical style",
+        "motion": "the red cells flow into the liver and disappear"
+      },
+      {
+        "image": "scientists with a flashlight looking at a leaf in a rainforest at night"
+      },
+      {
+        "image": "an almost invisible glass frog sleeping on a leaf, only its outline visible"
+      }
+    ],
+    "tags": [
+      "animales",
+      "ranas",
+      "curiosidades"
+    ],
+    "yt_title": "Esta rana se vuelve invisible al dormir 🐸",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "invisible",
+      "hígado"
+    ]
+  },
+  {
+    "id": "044",
+    "title": "El osito de agua sobrevive en el espacio",
+    "narration": "Hay un animal que sobrevivió en el espacio sin ninguna protección: el tardígrado, también llamado osito de agua. Mide menos de un milímetro y vive en el musgo. En 2007 lo mandaron afuera de una nave, expuesto al vacío y a la radiación. Muchos volvieron vivos. Su truco es secarse por completo, encogerse como una pelotita y apagarse casi del todo. Así puede aguantar años. Le pones una gota de agua, y en un rato vuelve a caminar.",
+    "scenes": [
+      {
+        "image": "a cute chubby microscopic tardigrade walking on green moss, microscope view",
+        "motion": "the tardigrade slowly walks with its tiny legs"
+      },
+      {
+        "image": "a small capsule floating in space above the earth with tiny tardigrades on it",
+        "motion": "the capsule slowly rotates in space"
+      },
+      {
+        "image": "a tardigrade curling up into a dry tiny ball",
+        "motion": "the tardigrade shrinks and curls into a ball"
+      },
+      {
+        "image": "a single drop of water falling on a dried tardigrade, macro"
+      },
+      {
+        "image": "a tardigrade waking up and walking again in a drop of water"
+      }
+    ],
+    "tags": [
+      "animales",
+      "espacio",
+      "curiosidades"
+    ],
+    "yt_title": "Este animal sobrevivió en el espacio sin traje 🚀",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "vacío",
+      "gota de agua"
+    ]
+  },
+  {
+    "id": "048",
+    "title": "Hay 2 millones de hormigas por persona",
+    "narration": "Por cada persona en el mundo hay unos dos millones y medio de hormigas. Un estudio de 2022 calculó que en la Tierra viven unos veinte mil billones de hormigas. Si las pusieras todas en una balanza, pesarían más que todos los pájaros y mamíferos salvajes juntos. Y no están de adorno: mueven la tierra, reparten semillas y limpian el suelo. Sin las hormigas, muchos bosques no podrían existir. El planeta, en el fondo, es de ellas.",
+    "scenes": [
+      {
+        "image": "a line of ants walking across a leaf in a garden, macro",
+        "motion": "the ants march in a line across the leaf"
+      },
+      {
+        "image": "a giant pile of ants next to a single person for scale, cartoon style",
+        "motion": "the pile of ants moves and wiggles"
+      },
+      {
+        "image": "a giant scale with ants on one side and birds and wild mammals on the other",
+        "motion": "the scale tips toward the ants"
+      },
+      {
+        "image": "ants carrying seeds into an underground nest, cutaway view"
+      },
+      {
+        "image": "a lush green forest with tiny ants on the ground in the foreground"
+      }
+    ],
+    "tags": [
+      "animales",
+      "hormigas",
+      "curiosidades"
+    ],
+    "yt_title": "Hay 2 millones y medio de hormigas por cada persona 🐜",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "dos millones y medio",
+      "más que todos"
+    ]
+  },
+  {
+    "id": "049",
+    "title": "Los pingüinos regalan piedras",
+    "narration": "Algunos pingüinos se declaran con una piedra. El macho busca entre miles de piedritas en la playa hasta encontrar la más lisa y perfecta. Después se la lleva a la hembra y la deja a sus pies. Si ella la acepta, la usan para armar su nido juntos. Las piedras son tan valiosas que algunos pingüinos se las roban a sus vecinos cuando no miran. Encontrar la piedra perfecta es, para ellos, como un anillo de compromiso.",
+    "scenes": [
+      {
+        "image": "a cute penguin on a pebble beach holding a small smooth stone in its beak",
+        "motion": "the penguin waddles forward with the stone"
+      },
+      {
+        "image": "a penguin carefully searching through pebbles on a beach",
+        "motion": "the penguin picks up a pebble and inspects it"
+      },
+      {
+        "image": "a male penguin dropping a pebble at the feet of a female penguin",
+        "motion": "the female penguin looks down at the pebble"
+      },
+      {
+        "image": "two penguins building a nest of pebbles together"
+      },
+      {
+        "image": "a sneaky penguin stealing a pebble from a neighbor's nest"
+      }
+    ],
+    "tags": [
+      "animales",
+      "pingüinos",
+      "curiosidades"
+    ],
+    "yt_title": "Los pingüinos se declaran con una piedra 🐧",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "piedra",
+      "anillo"
+    ]
+  },
+  {
+    "id": "053",
+    "title": "Las nutrias se toman de las manos",
+    "narration": "Las nutrias marinas duermen flotando de espaldas en el agua. Pero hay un problema: mientras duermen, las corrientes las podrían separar. Entonces se toman de las manos. A veces se enredan en algas, como si fueran un cinturón, para no irse a la deriva. Y hay algo más tierno todavía: muchas tienen una piedra favorita. La usan para romper conchas, y la guardan en un bolsillo de piel debajo del brazo, para no perderla nunca.",
+    "scenes": [
+      {
+        "image": "two cute sea otters floating on their backs holding hands in calm water",
+        "motion": "the otters float gently holding paws"
+      },
+      {
+        "image": "a group of sea otters sleeping in a kelp forest at the surface",
+        "motion": "the otters bob gently with the waves"
+      },
+      {
+        "image": "a sea otter wrapping itself in kelp",
+        "motion": "the otter rolls in the kelp"
+      },
+      {
+        "image": "a sea otter cracking a shell with a stone on its belly"
+      },
+      {
+        "image": "a sea otter holding a small round stone close to its chest"
+      }
+    ],
+    "tags": [
+      "animales",
+      "nutrias",
+      "curiosidades"
+    ],
+    "yt_title": "Las nutrias duermen de la mano 🦦",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "de las manos",
+      "piedra favorita"
+    ]
+  },
+  {
+    "id": "054",
+    "title": "Los koalas tienen huellas como las tuyas",
+    "narration": "Tus huellas digitales son únicas. Ni siquiera los gemelos idénticos tienen las mismas. Pero hay un animal con huellas casi iguales a las humanas: el koala. Son tan parecidas que, vistas al microscopio, cuesta muchísimo distinguirlas. Y lo raro es que los koalas no son parientes cercanos nuestros. Les aparecieron por su cuenta, seguramente para agarrar mejor las ramas y las hojas. Así que un koala podría dejar huellas en la escena de un crimen.",
+    "scenes": [
+      {
+        "image": "a close up of a human fingertip with fingerprint lines, soft light",
+        "motion": "the light slowly moves across the fingerprint ridges"
+      },
+      {
+        "image": "identical twins pressing their fingers on glass, showing different fingerprints",
+        "motion": "the twins press their fingers on the glass"
+      },
+      {
+        "image": "a cute koala holding a eucalyptus branch with its hand visible",
+        "motion": "the koala grabs the branch and chews a leaf"
+      },
+      {
+        "image": "a koala fingerprint and a human fingerprint side by side under a magnifying glass"
+      },
+      {
+        "image": "a koala inside a detective scene with fingerprint powder on a table, funny"
+      }
+    ],
+    "tags": [
+      "animales",
+      "koalas",
+      "curiosidades"
+    ],
+    "yt_title": "Los koalas tienen huellas como las tuyas 🐨",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "únicas",
+      "koala"
+    ]
+  },
+  {
+    "id": "057",
+    "title": "El golpe del camarón mantis",
+    "narration": "El camarón mantis tiene el golpe más rápido del mundo animal. Sus brazos se doblan como un resorte y se sueltan a una velocidad parecida a la de una bala. Es tan rápido que el agua alrededor se rompe y forma burbujas que explotan con un destello de luz y muchísimo calor. Así rompe las conchas de cangrejos y caracoles. En los acuarios a veces tienen que usar vidrio especial, porque pueden romper el vidrio común de un golpe.",
+    "scenes": [
+      {
+        "image": "a colorful mantis shrimp on the sea floor among coral",
+        "motion": "the mantis shrimp moves its eyes and claws"
+      },
+      {
+        "image": "a mantis shrimp punching a snail shell, with a burst of bubbles",
+        "motion": "the claw strikes and bubbles burst"
+      },
+      {
+        "image": "a tiny glowing bubble exploding with a flash of light underwater, macro",
+        "motion": "the bubble collapses with a bright flash"
+      },
+      {
+        "image": "a cracked crab shell on the sea floor next to a mantis shrimp"
+      },
+      {
+        "image": "a mantis shrimp in an aquarium with a crack on the glass"
+      }
+    ],
+    "tags": [
+      "animales",
+      "mar",
+      "curiosidades"
+    ],
+    "yt_title": "Su golpe es tan rápido como una bala 🦐",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "bala",
+      "vidrio"
+    ]
+  },
+  {
+    "id": "058",
+    "title": "Los elefantes escuchan con los pies",
+    "narration": "Los elefantes pueden escuchar con los pies. Cuando un elefante hace un sonido muy grave, la vibración no solo viaja por el aire. También viaja por el suelo, a varios kilómetros. Otros elefantes la sienten a través de sus patas, que tienen sensores especiales. A veces se quedan quietos, con una pata levantada, como si escucharan atentos. Así se avisan de peligros o se encuentran con su manada, sin verse ni oírse por el aire.",
+    "scenes": [
+      {
+        "image": "an elephant standing in the savanna at sunset",
+        "motion": "the elephant slowly flaps its ears"
+      },
+      {
+        "image": "vibration waves traveling through the ground from an elephant, stylized",
+        "motion": "the waves ripple through the ground"
+      },
+      {
+        "image": "close up of an elephant foot pressing on the dusty ground",
+        "motion": "the foot slowly presses down raising dust"
+      },
+      {
+        "image": "an elephant standing still with one foot raised listening"
+      },
+      {
+        "image": "a herd of elephants walking together toward a distant elephant"
+      }
+    ],
+    "tags": [
+      "animales",
+      "elefantes",
+      "curiosidades"
+    ],
+    "yt_title": "Los elefantes escuchan con los pies 🐘",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "pies",
+      "kilómetros"
+    ]
+  },
+  {
+    "id": "061",
+    "title": "Por qué los mosquitos te pican más a ti",
+    "narration": "Si los mosquitos siempre te pican a ti, no es mala suerte. Te eligen. Los mosquitos encuentran a las personas por el aire que exhalan, por el calor del cuerpo y, sobre todo, por el olor de la piel. Un estudio de 2022 descubrió que las personas que más atraen a los mosquitos tienen en la piel más cantidad de ciertos ácidos. Y lo más injusto: ese olor no cambia. Si hoy eres un imán de mosquitos, lo vas a seguir siendo.",
+    "scenes": [
+      {
+        "image": "a mosquito flying toward a person's arm at night, macro",
+        "motion": "the mosquito flies closer with wings buzzing"
+      },
+      {
+        "image": "glowing trails of breath and heat coming from a sleeping person, mosquitoes following them",
+        "motion": "the glowing trails drift and mosquitoes follow"
+      },
+      {
+        "image": "a group of friends outdoors where only one person is surrounded by mosquitoes, cartoon",
+        "motion": "the mosquitoes circle around one person"
+      },
+      {
+        "image": "a scientist in a lab with a glass box full of mosquitoes"
+      },
+      {
+        "image": "a giant magnet attracting mosquitoes, funny 3D style"
+      }
+    ],
+    "tags": [
+      "animales",
+      "insectos",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué los mosquitos te eligen a ti 🦟",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "te eligen",
+      "imán"
+    ]
+  },
+  {
+    "id": "062",
+    "title": "El perezoso baja una vez por semana",
+    "narration": "El perezoso es tan lento que le crecen algas en el pelo. Se mueve tan poco que su pelaje se vuelve verde, y eso lo ayuda a esconderse entre los árboles. Gasta tan poquita energía que puede vivir comiendo solo hojas. Y hay algo increíble: casi nunca baja del árbol. Lo hace más o menos una vez por semana, y solo para hacer sus necesidades en el suelo. Es el momento más peligroso de su vida, y todavía nadie sabe bien por qué lo hace.",
+    "scenes": [
+      {
+        "image": "a cute sloth hanging from a tree branch in a rainforest",
+        "motion": "the sloth slowly turns its head and blinks"
+      },
+      {
+        "image": "close up of sloth fur with green algae growing in it",
+        "motion": "the camera slowly moves along the green fur"
+      },
+      {
+        "image": "a sloth slowly eating a leaf",
+        "motion": "the sloth slowly chews the leaf"
+      },
+      {
+        "image": "a sloth climbing down a tree trunk very slowly toward the ground"
+      },
+      {
+        "image": "a sloth on the forest floor looking around carefully"
+      }
+    ],
+    "tags": [
+      "animales",
+      "perezosos",
+      "curiosidades"
+    ],
+    "yt_title": "El perezoso es tan lento que le crecen plantas encima 🦥",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "algas",
+      "una vez por semana"
+    ]
+  },
+  {
+    "id": "072",
+    "title": "Las mariposas saborean con las patas",
+    "narration": "Las mariposas sienten los sabores con las patas. Tienen sensores en los pies, y cuando se paran sobre una hoja o una flor, ya saben si es comida. Para las hembras es muy importante: antes de poner huevos, pisan la hoja para probarla. Si la hoja es buena para sus orugas, ponen los huevos ahí. Si no, se van a otra. O sea que una mariposa nunca necesita morder algo para saber a qué sabe. Le basta con pararse encima.",
+    "scenes": [
+      {
+        "image": "a colorful butterfly landing on a bright flower, macro",
+        "motion": "the butterfly lands gently and flutters its wings"
+      },
+      {
+        "image": "extreme macro of a butterfly's tiny feet touching a leaf",
+        "motion": "the feet tap the leaf surface"
+      },
+      {
+        "image": "a butterfly tapping on a green leaf with its legs",
+        "motion": "the butterfly steps on the leaf and moves its legs"
+      },
+      {
+        "image": "tiny butterfly eggs on a green leaf, macro"
+      },
+      {
+        "image": "a caterpillar eating a leaf happily"
+      }
+    ],
+    "tags": [
+      "animales",
+      "insectos",
+      "curiosidades"
+    ],
+    "yt_title": "Las mariposas saborean con los pies 🦋",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "patas",
+      "pararse encima"
+    ]
+  },
+  {
+    "id": "078",
+    "title": "La luz de las luciérnagas",
+    "narration": "La luz de una luciérnaga casi no calienta. Una luciérnaga hace luz con una reacción química dentro de su cuerpo. Mezcla una sustancia con oxígeno, y sale luz. Y es una luz especial: casi no produce calor. Una bombilla común pierde mucha energía calentándose. La luciérnaga no. Por eso se llama luz fría. Cada especie tiene su propio código de destellos, como un idioma. Los machos parpadean de una forma, y las hembras responden. Es una conversación hecha de luces.",
+    "scenes": [
+      {
+        "image": "fireflies glowing over a field at night",
+        "motion": "the fireflies blink softly and drift"
+      },
+      {
+        "image": "macro view of a glowing firefly on a leaf",
+        "motion": "the firefly's tail glows and fades"
+      },
+      {
+        "image": "an old light bulb glowing hot next to a cool glowing firefly",
+        "motion": "the bulb glows hot with heat waves"
+      },
+      {
+        "image": "a forest with many fireflies flashing patterns"
+      },
+      {
+        "image": "two fireflies flashing at each other at night"
+      }
+    ],
+    "tags": [
+      "animales",
+      "insectos",
+      "curiosidades"
+    ],
+    "yt_title": "La luz de las luciérnagas casi no calienta ✨",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "luz fría",
+      "conversación"
+    ]
+  },
+  {
+    "id": "082",
+    "title": "El wombat hace popó en cubos",
+    "narration": "El wombat es el único animal conocido que hace popó en forma de cubo. Es un marsupial de Australia, parecido a un osito. Durante años nadie entendía cómo lo hacía. En 2018 unos científicos descubrieron el secreto: su intestino tiene partes más duras y partes más elásticas, y eso le va dando forma de cubo al final del camino. ¿Y para qué? Los wombats marcan su territorio con eso, y los cubos no se caen rodando de las piedras.",
+    "scenes": [
+      {
+        "image": "a cute chubby wombat walking on grass in Australia",
+        "motion": "the wombat waddles forward"
+      },
+      {
+        "image": "small brown cubes arranged on top of a rock in the Australian bush, cartoon style",
+        "motion": "the camera slowly pushes in"
+      },
+      {
+        "image": "a scientist looking at a diagram of an intestine with surprise",
+        "motion": "the scientist adjusts glasses and leans closer"
+      },
+      {
+        "image": "a 3D illustration of an intestine with stiff and stretchy parts"
+      },
+      {
+        "image": "a wombat sitting proudly on top of a rock"
+      }
+    ],
+    "tags": [
+      "animales",
+      "australia",
+      "curiosidades"
+    ],
+    "yt_title": "Este animal hace popó en forma de cubo 🧊",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "cubo",
+      "no se caen"
+    ]
+  },
+  {
+    "id": "085",
+    "title": "El chocolate es veneno para los perros",
+    "narration": "El chocolate es peligroso para los perros. Tiene una sustancia que a nosotros no nos hace nada, porque la eliminamos rápido. Pero el cuerpo del perro la elimina muy lento, y se le acumula. Le acelera el corazón, lo pone nervioso y, en cantidad, puede ser muy grave. El chocolate amargo es el peor, porque tiene mucho más de esa sustancia. Así que, aunque te mire con esos ojitos, el chocolate es solo para ti.",
+    "scenes": [
+      {
+        "image": "a cute puppy looking at a chocolate bar on a table",
+        "motion": "the puppy sniffs toward the chocolate"
+      },
+      {
+        "image": "a 3D illustration of a dog's body processing a substance slowly",
+        "motion": "glowing particles move slowly through the body"
+      },
+      {
+        "image": "a dog with a racing heart, stylized glowing heart",
+        "motion": "the heart beats fast"
+      },
+      {
+        "image": "dark chocolate and milk chocolate bars side by side"
+      },
+      {
+        "image": "a dog with puppy eyes begging at a person eating chocolate"
+      }
+    ],
+    "tags": [
+      "animales",
+      "perros",
+      "curiosidades"
+    ],
+    "yt_title": "Por qué el chocolate es peligroso para tu perro 🐶",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "peligroso",
+      "amargo"
+    ]
+  },
+  {
+    "id": "087",
+    "title": "La cucaracha vive sin cabeza",
+    "narration": "Una cucaracha puede vivir más o menos una semana sin su cabeza. Suena imposible, pero tiene explicación. No respira por la boca, sino por agujeritos repartidos en el cuerpo. Su sangre no necesita una presión fuerte, así que casi no se desangra. Y muchas funciones las controlan nervios del cuerpo, no el cerebro. ¿Y de qué se muere al final? De sed. Sin boca, no puede tomar agua.",
+    "scenes": [
+      {
+        "image": "a cockroach on a kitchen floor at night, cartoon friendly style",
+        "motion": "the cockroach scurries across the floor"
+      },
+      {
+        "image": "a 3D illustration of tiny breathing holes along a cockroach body",
+        "motion": "the holes open and close slowly"
+      },
+      {
+        "image": "a cockroach walking with a small bandage on top, funny cartoon",
+        "motion": "the cockroach keeps walking confidently"
+      },
+      {
+        "image": "a glowing nervous system inside a cockroach body, 3D"
+      },
+      {
+        "image": "a cartoon cockroach looking at a drop of water"
+      }
+    ],
+    "tags": [
+      "animales",
+      "insectos",
+      "curiosidades"
+    ],
+    "yt_title": "Una cucaracha puede vivir una semana sin cabeza 🪳",
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "una semana",
+      "sed"
     ]
   }
 ]
