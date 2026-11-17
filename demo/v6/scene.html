@@ -25,7 +25,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--navy);font
 #capbox .k{color:var(--yellow)}
 #brand{position:absolute;top:96px;left:0;right:0;text-align:center;font-weight:700;font-size:28px;letter-spacing:.12em;
   color:rgba(255,255,255,.55);text-transform:uppercase}
-#note{position:absolute;left:0;right:0;text-align:center;top:1236px;font-weight:600;font-size:24px;color:rgba(255,255,255,.6);opacity:0}
+#note{position:absolute;left:0;right:0;text-align:center;top:1462px;font-weight:600;font-size:24px;color:rgba(255,255,255,.6);opacity:0}
 #vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.45) 100%)}
 </style></head>
 <body>
@@ -265,16 +265,16 @@ function render(t) {
     head = ["Una torre de", "<b>330 metros</b>", ph, (1 - ph) * 30];
     numOp = 0;
     tags[0] = ["+ un poquito por tramo", 60, 1160, E.out(seg(t, bs, bs + .3)) * (1 - seg(t, be, be + .3)), "#FFD22E"];
-    tags[1] = ["= hasta 15 cm", 60, 1160, E.out(seg(t, be - .2, be + .2)), "#FFD22E"];
+    tags[1] = ["= hasta 15 cm", 60, 1160, E.out(seg(t, be + .3, be + .6)), "#FFD22E"];
     noteOp = ghostOp;
   } else if (key === "sol") {
     var ts = cue(4, "sol", .2), tsh = cue(4, "sombra", .5), tin = cue(4, "inclina", .75);
-    sunOp = E.out(seg(t, a, a + .5)); sunX = lerp(-120, 150, E.out(seg(t, a, a + .9))); sunY = 520;
+    sunOp = E.out(seg(t, a, a + .5)) * (.9 + .1 * Math.sin(t * 5)); sunX = lerp(-120, 150, E.out(seg(t, a, a + .9))) + 40 * seg(t, a + .9, b); sunY = 520 - 60 * seg(t, a, b);
     sideOp = E.inout(seg(t, ts - .1, ts + .5));
     lean = LEAN * E.inout(seg(t, tin - .1, tin + .8)); axisOp = seg(t, tin - .1, tin + .2) * .9;
     sy = GROW;
     var pc5 = E.inout(seg(t, a, b));
-    cam = { s: lerp(1.04, 1.1, pc5), fx: lerp(560, 540, pc5), fy: 980 };
+    cam = { s: lerp(1.02, 1.14, pc5), fx: lerp(580, 540, pc5), fy: lerp(1000, 940, pc5) };
     head = ["Sol de un lado", "La punta se <b>aleja</b>", E.out(seg(t, tin - .1, tin + .3)), 0];
     tags[0] = ["se estira más", 40, 1050, E.out(seg(t, ts, ts + .3)), "#FFD22E"];
     tags[1] = ["sombra", 800, 1050, E.out(seg(t, tsh, tsh + .3)), "#8fb3e6"];
@@ -285,8 +285,9 @@ function render(t) {
     snowOp = cold;
     lean = LEAN * (1 - E.inout(seg(t, a, a + .6)));
     sy = lerp(GROW, 1, E.inout(seg(t, te - .15, te + .5)));
-    ghostOp = 0; axisOp = 0;
+    axisOp = 0;
     var sp = E.inout(seg(t, tp - .25, tp + .45));
+    ghostOp = .9 * seg(t, a, a + .3) * (1 - sp);
     tAdx = lerp(0, -230, sp); tAsc = lerp(1, .78, sp); tB = sp;
     cam = { s: lerp(1.08, 1, E.inout(seg(t, a, a + .8))) + .05 * E.inout(seg(t, tp + .4, b)), fx: CX, fy: lerp(960, 900, seg(t, tp + .4, b)) };
     cmpOp = E.out(seg(t, tp + .25, tp + .6));
