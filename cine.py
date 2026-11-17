@@ -159,7 +159,7 @@ Datos de cada escena (JSON):
  "kicker": "2 a 4 palabras chicas arriba", "titulo": "máx. 5 palabras, la clave entre <b> y </b>",
  "e": "UN emoji que represente exactamente el objeto (o torre_eiffel)", "e2": "otro emoji si hace falta",
  "etiqueta": "1 a 3 palabras", "etiqueta2": "1 a 3 palabras", "cambio": "crece|achica|gira|brilla|late",
- "valor": número o texto corto, "unidad": "cm, km, años, %...", "interior": "emoji", "agitar": true/false, "tam2": 1,
+ "valor": número o texto corto, "unidad": "cm, km, años, %...", "interior": "emoji de algo chico y físico (⚛️ 🦠 🫧 💧 🔴)", "agitar": true/false, "tam2": 1,
  "puntos": [...], "palabra": "UNA palabra exacta de la frase donde ocurre el golpe visual",
  "cifras": [["frase con el número en letras exacta de la frase", "como se escribe en cifras"]],
  "clave": ["1 a 3 palabras exactas de la frase para resaltar"]}
@@ -240,7 +240,7 @@ def clean_plan(plan, sents, idea):
         if p == "numero" and (valor is None or valor <= 0):
             p = "gancho" if i == 0 else "comparar"
         if p == "acumular":
-            valor = _txt(valor, 12)
+            valor = _txt(valor, 12) if re.match(r"^[\d.,]+\s*\w*$", str(valor or "").strip()) else ""
         cifras = []
         for pair in g.get("cifras") or []:
             if isinstance(pair, list) and len(pair) == 2 and norm(pair[0]) and \
@@ -304,7 +304,10 @@ def chunks(words, bounds, scenes, highlight):
                 toks.append({"x": hit[1] + re.sub(r"[\wáéíóúñü]", "", last["x"]), "t": ws[i]["t"], "k": True})
                 i += len(hit[0])
             else:
-                toks.append({"x": ws[i]["x"], "t": ws[i]["t"], "k": ws[i]["n"] in kws or ws[i]["n"].isdigit()}); i += 1
+                x = ws[i]["x"]
+                if re.fullmatch(r"\d{4,}[.,;:]?", x):  # 100000 -> 100.000 (la voz manda los números en cifras)
+                    x = "{:,}".format(int(re.sub(r"\D", "", x))).replace(",", ".") + re.sub(r"\d", "", x)
+                toks.append({"x": x, "t": ws[i]["t"], "k": ws[i]["n"] in kws or ws[i]["n"].isdigit()}); i += 1
         group, groups = [], []
         for tk in toks:
             group.append(tk)
