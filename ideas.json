@@ -3276,5 +3276,44 @@
       "una semana",
       "sed"
     ]
+  },
+  {
+    "id": "097b",
+    "title": "La Torre Eiffel cambia de altura",
+    "yt_title": "¿La Torre Eiffel mide lo mismo todo el año? 🗼",
+    "narration": "La Torre Eiffel no mide lo mismo en verano que en invierno. Con el calor, puede crecer hasta quince centímetros. Es que está hecha de hierro, y el hierro se estira cuando se calienta. Cada viga se alarga un poquito, pero en trescientos treinta metros de torre, esos poquitos se suman. Y como el lado del sol se calienta más que el de la sombra, la punta se inclina hacia el otro lado. En invierno, con el frío, vuelve a encogerse, hasta el próximo verano.",
+    "scenes": [
+      {
+        "image": "the Eiffel Tower on a hot sunny summer day, bright blue sky",
+        "motion": "heat haze shimmers in the air, camera slowly tilts up"
+      },
+      {
+        "image": "a close-up of the iron beams and rivets of the Eiffel Tower glowing warm in the sun",
+        "motion": "the sunlight slowly moves across the iron beams"
+      },
+      {
+        "image": "a single metal bar on a table glowing orange from heat, simple diagram style",
+        "motion": "the metal bar glows warmer, camera slowly pushes in"
+      },
+      {
+        "image": "the Eiffel Tower with the sun on one side and soft shadow on the other, diagram style",
+        "motion": "the sunlight glows on one side of the tower, camera slowly tilts up"
+      },
+      {
+        "image": "the Eiffel Tower covered with frost on a cold winter morning",
+        "motion": "light snow falls gently around the tower"
+      }
+    ],
+    "tags": [
+      "física",
+      "lugares",
+      "torreeiffel"
+    ],
+    "playlist": "Lugares increíbles",
+    "highlight": [
+      "quince centímetros",
+      "calor"
+    ],
+    "question": "¿Sabías que la Torre Eiffel cambia de altura? 🗼"
   }
 ]
