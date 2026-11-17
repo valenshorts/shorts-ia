@@ -587,11 +587,11 @@ Reglas:
 - Nunca empezar explicando ("Cuando cortas...", "La lluvia va..."). Los ganchos que mejor funcionan en el canal: una contradicción ("Un clavo de acero se hunde, pero un barco de miles de toneladas flota") o algo que todos vivieron con un giro ("Se te arrugan los dedos en el agua. Parece que absorben agua, pero no").
 - La última frase es un final "wow".
 - Narración de 70 a 85 palabras, frases cortas y fáciles de decir en voz alta. Números escritos en letras.
-- Lo que mejor funciona en el canal: cuerpo humano, tecnología, física, inventos y comida, con algo que todos vivieron. Lo que peor funciona: datos de animales muy conocidos (el pulpo tiene tres corazones, los flamencos nacen grises). Si es de animales, tiene que ser un mecanismo sorprendente, no un dato suelto.
+- Lo que mejor funciona en el canal: espacio, ciencia y física, cuerpo humano, inventos, comida y mitos falsos, con algo que todos vivieron. NO escribas ideas de animales: en el canal casi nadie las ve.
 - "yt_title" lleva una cifra concreta ("10 veces", "el doble", "68 años") o una contradicción clara.
 - 5 escenas: "image" en inglés describiendo una imagen 3D estilo animación, y las 5 llevan "motion" en inglés (movimiento simple de 4 segundos).
 - "motion" realista y chico: describe solo cómo se mueve lo que YA está en esa imagen (algo que respira, se balancea o fluye) y la cámara despacio. Nunca nombres en "motion" cosas que no aparecen en la escena, ni siquiera para decir que no se muevan. Los objetos grandes no viajan por la imagen: se quedan en su lugar.
-- "playlist" es una de: Animales increíbles, Cuerpo humano, Espacio, Ciencia loca, Comida increíble, Inventos por accidente, Mitos falsos, Naturaleza, Lugares increíbles.
+- "playlist" es una de: Cuerpo humano, Espacio, Ciencia loca, Comida increíble, Inventos por accidente, Mitos falsos, Naturaleza, Lugares increíbles.
 - "highlight": 2 palabras o frases cortas de la narración para resaltar en amarillo.
 - "yt_title": título corto que dé curiosidad, con un emoji al final.
 
