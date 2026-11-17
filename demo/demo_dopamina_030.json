@@ -1,0 +1,50 @@
+[
+ {
+  "plantilla": "emoji",
+  "emoji": "🌕",
+  "emoji2": "🚀",
+  "titulo": "La Luna se <b>aleja</b>"
+ },
+ {
+  "plantilla": "mito",
+  "emoji": "👁️",
+  "emoji2": "🧠",
+  "titulo": "No es <b>gigante</b>"
+ },
+ {
+  "plantilla": "versus",
+  "emoji": "👉",
+  "emoji2": "🌕",
+  "titulo": "Mide lo <b>mismo</b>"
+ },
+ {
+  "plantilla": "lista",
+  "items": [
+   [
+    "🏢",
+    "Edificios"
+   ],
+   [
+    "🌲",
+    "Árboles"
+   ]
+  ],
+  "emoji": "🧠",
+  "emoji2": "👀",
+  "titulo": "Trampa del <b>cerebro</b>"
+ },
+ {
+  "plantilla": "numero",
+  "valor": 4.0,
+  "unidad": "cm al año",
+  "emoji": "💅",
+  "emoji2": "📏",
+  "titulo": "Se aleja <b>lentamente</b>"
+ },
+ {
+  "plantilla": "zoom",
+  "emoji": "🔭",
+  "emoji2": "🌑",
+  "titulo": "Se verá más <b>chica</b>"
+ }
+]
