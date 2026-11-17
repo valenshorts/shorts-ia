@@ -1,0 +1,45 @@
+{
+ "id": "059",
+ "title": "Llueven diamantes en Neptuno",
+ "voice": "es-MX-JorgeNeural",
+ "rate": "+20%",
+ "pause": 0.18,
+ "tail": 0.8,
+ "sources": [
+  "Kraus et al. 2017, Nature Astronomy: diamantes formados con láseres en hidrocarburos (poliestireno) a presiones de planetas gigantes (SLAC)",
+  "Hipótesis de lluvia de diamantes en Urano y Neptuno por la presión y la temperatura internas sobre el metano"
+ ],
+ "scenes": [
+  {"key": "gancho", "text": "En Neptuno y en Urano podrían llover diamantes.",
+   "goal": "Planeta azul girando; aparece Urano; empieza a llover diamantes"},
+  {"key": "metano", "text": "Estos planetas tienen mucho metano, que está hecho de carbono.",
+   "goal": "Zoom a la atmósfera: moléculas de metano (C + 4 H); se iluminan los carbonos"},
+  {"key": "presion", "text": "Muy adentro, la presión es tan enorme y el calor tan fuerte, que ese carbono se aprieta hasta volverse diamante.",
+   "goal": "Descenso con medidores de profundidad, presión y calor; los carbonos se aprietan en una red y se vuelven un diamante"},
+  {"key": "lluvia", "text": "Los diamantes caerían lentamente hacia el centro, como una lluvia.",
+   "goal": "Corte del planeta por capas; diamantes que caen hacia el núcleo"},
+  {"key": "lab", "text": "Los científicos lo probaron en laboratorio, disparando láseres a plástico, y lograron fabricar diamantes diminutos.",
+   "goal": "Laboratorio: dos láseres sobre un bloque de plástico; lupa con diamantes diminutos (experimento de 2017)"},
+  {"key": "cierre", "text": "Un planeta entero donde llueven joyas.",
+   "goal": "Vuelve el planeta del principio con lluvia de diamantes (cierra el loop)"}
+ ],
+ "keywords": ["neptuno", "urano", "diamantes", "metano", "carbono", "presión", "enorme", "calor", "diamante", "centro",
+              "lluvia", "láseres", "plástico", "diminutos", "joyas"],
+ "sfx": [
+  {"tipo": "brillo", "escena": 0, "palabra": "diamantes", "gain": 0.8, "dur": 1.2},
+  {"tipo": "boom", "escena": 0, "palabra": "diamantes", "gain": 0.6},
+  {"tipo": "whoosh", "escena": 1, "inicio": 0.05, "gain": 0.7},
+  {"tipo": "boom", "escena": 1, "palabra": "carbono", "gain": 0.5},
+  {"tipo": "grave", "escena": 2, "palabra": "presión", "gain": 0.9},
+  {"tipo": "clics", "escena": 2, "palabra": "presión", "hasta": "aprieta", "n": 6, "f": 700, "d": 0.03, "gain": 0.35},
+  {"tipo": "boom_grande", "escena": 2, "palabra": "diamante", "gain": 0.9},
+  {"tipo": "brillo", "escena": 2, "palabra": "diamante", "offset": 0.1, "gain": 0.6},
+  {"tipo": "whoosh", "escena": 3, "inicio": 0.1, "gain": 0.5},
+  {"tipo": "brillo", "escena": 3, "palabra": "lluvia", "gain": 0.6, "dur": 1.2},
+  {"tipo": "subida", "escena": 4, "palabra": "láseres", "gain": 0.6},
+  {"tipo": "boom", "escena": 4, "palabra": "láseres", "fin": true, "gain": 0.7},
+  {"tipo": "brillo", "escena": 4, "palabra": "diminutos", "gain": 0.7},
+  {"tipo": "campana", "escena": 5, "palabra": "joyas", "gain": 0.8},
+  {"tipo": "brillo", "escena": 5, "palabra": "joyas", "gain": 0.7, "dur": 1.4}
+ ]
+}
