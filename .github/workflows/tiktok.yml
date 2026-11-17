@@ -1,14 +1,14 @@
 name: TikTok
 
-# Después de cada horario de YouTube (15:10, 21:45 y 00:45 AR) manda a TikTok, en calidad original, UN video: el más
+# Después de cada horario de YouTube (14:40, 18:10 y 21:45 AR) manda a TikTok, en calidad original, UN video: el más
 # viejo que ya es público en YouTube y todavía no está en TikTok (desde el 004).
 # Mientras la app de TikTok no esté auditada, llega como BORRADOR: notificación en la app → Publicar.
 # A mano: Run workflow. "code" = código de autorización de TikTok (solo para conectar la cuenta).
 on:
   schedule:
-    - cron: "10 18 * * *"
+    - cron: "40 17 * * *"
+    - cron: "10 21 * * *"
     - cron: "45 0 * * *"
-    - cron: "45 3 * * *"
   workflow_dispatch:
     inputs:
       code:
