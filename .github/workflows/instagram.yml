@@ -5,10 +5,10 @@ name: Solo Instagram
 # A mano: Actions → Solo Instagram → Run workflow. Vacío = el próximo de la cola; o números (ej: 007,008).
 on:
   schedule:
-    # 20-25 min después de cada horario de YouTube (15:00, 21:30 y 00:30 AR): 15:20, 21:55 y 00:55 AR (en UTC).
-    - cron: "20 18 * * *"
+    # 20-25 min después de cada horario de YouTube (14:30, 18:00 y 21:30 AR): 14:50, 18:20 y 21:55 AR (en UTC).
+    - cron: "50 17 * * *"
+    - cron: "20 21 * * *"
     - cron: "55 0 * * *"
-    - cron: "55 3 * * *"
   workflow_dispatch:
     inputs:
       videos:
