@@ -68,7 +68,9 @@ var E = {
   out: function (p) { return 1 - Math.pow(1 - p, 3); },
   inout: function (p) { return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; },
   inq: function (p) { return p * p * p; },
-  spring: function (p) { var c = 1.4; return p <= 0 ? 0 : 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); }
+  spring: function (p) { var c = 1.4; return p <= 0 ? 0 : 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); },
+  // entrada: arranca al 55 % del tamaño (nunca un cuadro vacío al cambiar de escena) y rebota suave
+  pop: function (p) { return p <= 0 ? 0 : .55 + .45 * E.spring(p); }
 };
 function rnd(seed) { var s = seed; return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
 function $(id) { return document.getElementById(id); }
@@ -243,7 +245,7 @@ function render(t) {
     put(o.ring, x, y, lerp(.4, 3.2, E.out(hitIn)), 0, hitIn > 0 && hitIn < 1 ? (1 - hitIn) * .8 : 0);
   }
   if (p === "gancho" || p === "cierre") {
-    var x = 540, y = 860, base = E.spring(seg(t, a, a + .5)), s = base, rot = 0, gOp = 0;
+    var x = 540, y = 860, base = E.pop(seg(t, a - .01, a + .45)), s = base, rot = 0, gOp = 0;
     if (d.cambio === "crece") { s *= lerp(1, 1.28, E.spring(seg(t, c, c + .6))); gOp = seg(t, c, c + .2) * .35; }
     else if (d.cambio === "achica") { s *= lerp(1, .68, E.inout(seg(t, c, c + .6))); gOp = seg(t, c, c + .2) * .35; }
     else if (d.cambio === "gira") rot = 360 * E.inout(seg(t, c, c + .9));
@@ -260,13 +262,13 @@ function render(t) {
   } else if (p === "numero") {
     var m = seg(t, a + .2, ce), dec = d.valor % 1 ? 1 : 0, v = d.valor * m;
     num = { v: fmt(v, dec), u: d.unidad, op: E.out(seg(t, a + .1, a + .4)), pop: Math.sin(Math.PI * seg(t, ce, ce + .3)) };
-    put(o.hero, 540, 900 + Math.sin(t * 2) * 8, E.spring(seg(t, a + .05, a + .5)) * (1 + .1 * Math.sin(Math.PI * seg(t, ce, ce + .35))), 0, 1);
+    put(o.hero, 540, 900 + Math.sin(t * 2) * 8, E.pop(seg(t, a - .01, a + .4)) * (1 + .1 * Math.sin(Math.PI * seg(t, ce, ce + .35))), 0, 1);
     lights(540, 900, enter * .7);
     o.bar.style.opacity = E.out(seg(t, a + .1, a + .4)); o.bar.firstChild.style.width = (100 * m) + "%";
     if (o.t1) put(o.t1, 540, 1240, 1, 0, E.out(seg(t, ce, ce + .3)));
     head = { op: E.out(seg(t, a, a + .3)), dy: 0 };
   } else if (p === "comparar") {
-    var e1 = E.spring(seg(t, a + .05, a + .5)), e2 = E.spring(seg(t, a + .35, a + .8));
+    var e1 = E.pop(seg(t, a - .01, a + .4)), e2 = E.pop(seg(t, a + .25, a + .65));
     var s2 = d.tam2 || 1;
     put(o.hero, 290, 900 + Math.sin(t * 2) * 8, e1, 0, e1 > 0 ? 1 : 0);
     put(o.h2, 790, 900 + Math.sin(t * 2 + 1.5) * 8, e2 * s2, 0, e2 > 0 ? 1 : 0);
@@ -278,7 +280,7 @@ function render(t) {
     cam.fx = lerp(510, 570, E.inout(drift));
   } else if (p === "proceso") {
     var mv = E.inout(seg(t, c - .35, c + .2));
-    var ax = lerp(540, 270, mv), as = lerp(1, .72, mv) * E.spring(seg(t, a, a + .45));
+    var ax = lerp(540, 270, mv), as = lerp(1, .72, mv) * E.pop(seg(t, a - .01, a + .4));
     put(o.hero, ax, 900 + Math.sin(t * 2) * 8, as, 0, 1);
     var ar = seg(t, c - .1, c + .25);
     o.arrow.setAttribute("stroke-dashoffset", 260 * (1 - ar)); o.head.setAttribute("opacity", seg(ar, .8, 1));
@@ -289,7 +291,7 @@ function render(t) {
     head = { op: E.out(seg(t, a + .05, a + .35)), dy: 0 };
     cam.fx = lerp(520, 580, E.inout(drift));
   } else if (p === "zoom") {
-    put(o.hero, 380, 740 + Math.sin(t * 2) * 6, E.spring(seg(t, a, a + .45)) * .85, 0, 1);
+    put(o.hero, 380, 740 + Math.sin(t * 2) * 6, E.pop(seg(t, a - .01, a + .4)) * .85, 0, 1);
     var lo = E.spring(seg(t, a + .35, a + .8));
     put(o.lens, 650, 970, lo * .88, 0, lo > 0 ? 1 : 0);
     var heat = d.agitar ? E.inout(seg(t, a + .5, ce)) : .25, sp = 96 * (1 + .18 * heat), amp = 2 + 12 * heat;
