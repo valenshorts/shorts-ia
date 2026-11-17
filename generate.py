@@ -746,6 +746,14 @@ def make_one(ideas, done, slot):
     hechos = {p.stem for p in manual_dir.glob("*.mp4")} if manual_dir.exists() else set()
     idea = next((i for i in pending if i["id"] in hechos), pending[0])
     log(f"Idea {idea['id']}: {idea['title']}")
+    if idea["id"] in hechos:  # video hecho a mano: se publica tal cual (después de la misma revisión)
+        log("Estilo de este video: hecho a mano")
+        work = ROOT / "work" / f"manual_{idea['id']}"  # carpeta aparte: no borra lo empezado de otra idea
+        work.mkdir(parents=True, exist_ok=True)
+        OUT.mkdir(exist_ok=True)
+        out = OUT / f"short_{idea['id']}.mp4"
+        shutil.copy(manual_dir / f"{idea['id']}.mp4", out)
+        return publish_ready(idea, done, slot, work, out, "manual")
     work = ROOT / "work" / idea["id"]
     # lo ya generado de esta idea (en un intento anterior) se reutiliza; lo de ideas viejas se borra
     for d in (ROOT / "work").glob("*"):
@@ -755,12 +763,6 @@ def make_one(ideas, done, slot):
     OUT.mkdir(exist_ok=True)
     for f in list(work.glob("scene*.still")) + list(work.glob("scene*b.png")):  # restos del modo viejo con imágenes
         f.unlink()
-
-    if idea["id"] in hechos:  # video hecho a mano: se publica tal cual (después de la misma revisión)
-        log("Estilo de este video: hecho a mano")
-        out = OUT / f"short_{idea['id']}.mp4"
-        shutil.copy(manual_dir / f"{idea['id']}.mp4", out)
-        return publish_ready(idea, done, slot, work, out, "manual")
 
     # Motor "cine" (motion graphics automáticos): en el turno de la animación con código, si está activado.
     # Si falla, este video sigue con la animación con código de antes y, si también falla, con IA.
