@@ -1,0 +1,154 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Base de los videos hechos a mano: textos, subtítulos, cámara y fondo. Cada video pone su escena en scene.js (V.build / V.draw). -->
+<style>
+@font-face{font-family:"M";src:url(FONTURL);font-weight:100 900}
+:root{--navy:#080D2B;--yellow:#FFD22E;--teal:#19B8B2}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--navy);font-family:"M",sans-serif;color:#fff}
+.full{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#stage{transform-origin:0 0}
+#head{position:absolute;left:60px;right:60px;top:170px;text-align:center}
+#kick{font-weight:800;font-size:40px;letter-spacing:.08em;color:var(--teal);text-transform:uppercase}
+#h1{font-weight:900;font-size:96px;line-height:.98;letter-spacing:-.015em;text-transform:uppercase;text-shadow:0 6px 24px rgba(0,0,0,.5)}
+#h1 b{color:var(--yellow);font-weight:900}
+#num{position:absolute;left:0;right:0;top:330px;text-align:center;font-weight:900;color:var(--yellow);opacity:0;white-space:nowrap}
+#numv{font-size:190px;letter-spacing:-.03em;text-shadow:0 8px 30px rgba(0,0,0,.5)}
+#numu{font-size:78px;margin-left:12px}
+.tag{position:absolute;left:0;top:0;font-weight:800;font-size:32px;letter-spacing:.06em;padding:10px 22px;border-radius:40px;
+  background:rgba(8,13,43,.8);border:3px solid var(--teal);white-space:nowrap;text-transform:uppercase;opacity:0;transform:translate(-50%,-50%)}
+#cap{position:absolute;left:70px;right:70px;top:1300px;display:flex;justify-content:center}
+#capbox{background:rgba(8,13,43,.82);border-radius:26px;padding:20px 34px 22px;text-align:center;max-width:940px;
+  font-weight:800;font-size:58px;line-height:1.12;text-transform:uppercase;opacity:0}
+#capbox span{white-space:nowrap}
+#capbox .k{color:var(--yellow)}
+#brand{position:absolute;top:96px;left:0;right:0;text-align:center;font-weight:700;font-size:28px;letter-spacing:.12em;color:rgba(255,255,255,.55);text-transform:uppercase}
+#note{position:absolute;left:0;right:0;top:1462px;text-align:center;font-weight:600;font-size:24px;color:rgba(255,255,255,.6);opacity:0}
+#vig{background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.5) 100%)}
+</style></head>
+<body>
+<div id="sky" class="full"></div>
+<svg id="stars" class="full" viewBox="0 0 1080 1920"></svg>
+<div id="stage" class="full"><svg id="w" class="full" viewBox="0 0 1080 1920" overflow="visible"><defs id="defs">
+  <radialGradient id="glowY"><stop offset="0" stop-color="#FFD22E" stop-opacity=".55"/><stop offset="1" stop-color="#FFD22E" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowC"><stop offset="0" stop-color="#bff4ff" stop-opacity=".7"/><stop offset="1" stop-color="#bff4ff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowW"><stop offset="0" stop-color="#ffffff" stop-opacity=".6"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+</defs></svg></div>
+<svg id="front" class="full" viewBox="0 0 1080 1920"></svg>
+<div id="hud" class="full">
+  <div id="brand">El Porqué de Todo</div>
+  <div id="head"><div id="kick"></div><div id="h1"></div></div>
+  <div id="num"><span id="numv"></span><span id="numu"></span></div>
+  <div class="tag" id="tag1"></div><div class="tag" id="tag2"></div><div class="tag" id="tag3"></div><div class="tag" id="tag4"></div>
+  <div id="note"></div>
+  <div id="cap"><div id="capbox"></div></div>
+</div>
+<div id="vig" class="full"></div>
+<script>
+var DATA = /*DATA*/null;
+var NS = "http://www.w3.org/2000/svg", W = 1080, H = 1920;
+function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+function lerp(a, b, p) { return a + (b - a) * p; }
+function seg(t, a, b) { return b <= a ? (t >= b ? 1 : 0) : clamp((t - a) / (b - a), 0, 1); }
+var E = {
+  out: function (p) { return 1 - Math.pow(1 - p, 3); },
+  inout: function (p) { return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; },
+  inq: function (p) { return p * p * p; },
+  spring: function (p) { var c = 1.4; return p <= 0 ? 0 : 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); },
+  pop: function (p) { return p <= 0 ? 0 : .55 + .45 * E.spring(p); }
+};
+function rnd(seed) { var s = seed; return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+var R = rnd(7);
+function $(id) { return document.getElementById(id); }
+function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function txt(parent, s, attrs) { var a = { "font-family": "M", "font-weight": 800, "font-size": 30, fill: "#fff", "text-anchor": "middle" }; for (var k in attrs) a[k] = attrs[k]; var e = el("text", a, parent); e.textContent = s; return e; }
+function tr(e, x, y, s, r) { e.setAttribute("transform", "translate(" + x + "," + y + ") scale(" + (s === undefined ? 1 : s) + ") rotate(" + (r || 0) + ")"); }
+function op(e, v) { e.setAttribute("opacity", v); }
+function defs(markup) { $("defs").insertAdjacentHTML("beforeend", markup); }
+function sc(i) { return $("S" + i); }
+function cue(si, prefix, frac, end) {
+  var w = DATA.words;
+  for (var i = 0; i < w.length; i++) if (w[i].s === si && w[i].n.indexOf(prefix) === 0) return end ? w[i].e : w[i].t;
+  var s = DATA.scenes[si]; return lerp(s.a, s.b, frac === undefined ? .5 : frac);
+}
+function fade(t, a, d) { return E.out(seg(t, a, a + (d || .3))); }
+function rise(t, a) { var p = E.out(seg(t, a - .1, a + .25)); return [p, (1 - p) * 24]; }
+function fmt(v, dec) { return v.toLocaleString("es-ES", { minimumFractionDigits: dec || 0, maximumFractionDigits: dec || 0, useGrouping: v >= 10000 }); }
+
+/*SCENE*/
+
+// ---------- textos
+var lastCap = -1, lastHead = "";
+function setHead(k, h, o, dy) {
+  var key = k + "|" + h;
+  if (key !== lastHead) { $("kick").textContent = k; $("h1").innerHTML = h; lastHead = key; }
+  $("head").style.opacity = o; $("head").style.transform = "translateY(" + (dy || 0) + "px)";
+}
+function captions(t) {
+  var C = DATA.chunks, idx = -1;
+  for (var i = 0; i < C.length; i++) if (t >= C[i].a && t < C[i].b) idx = i;
+  var box = $("capbox");
+  if (idx < 0) { box.style.opacity = 0; return; }
+  var c = C[idx];
+  if (idx !== lastCap) { box.innerHTML = c.w.map(function (w) { return "<span" + (w.k ? ' class="k"' : "") + ">" + w.x + "</span>"; }).join(" "); lastCap = idx; }
+  var sp = box.children;
+  for (var j = 0; j < sp.length; j++) sp[j].style.opacity = t >= c.w[j].t - 0.04 ? 1 : .42;
+  var p = E.out(seg(t, c.a, c.a + .14));
+  box.style.opacity = p; box.style.transform = "translateY(" + (1 - p) * 14 + "px)";
+}
+function tag(id, a) {
+  var e = $(id); a = a || ["", 0, 0, 0];
+  if (e.textContent !== a[0]) e.textContent = a[0];
+  e.style.left = a[1] + "px"; e.style.top = a[2] + "px"; e.style.opacity = a[3];
+  if (a[4]) e.style.borderColor = a[4];
+}
+
+// ---------- armado y cuadro
+var DUST = [], cur = -1;
+function __boot() {
+  var w = $("w");
+  DATA.scenes.forEach(function (s, i) { el("g", { id: "S" + i, style: "display:none" }, w); });
+  var r = rnd(3), st = $("stars");
+  if (V.stars !== false) for (var i = 0; i < (V.stars || 150); i++) el("circle", { cx: r() * W, cy: r() * H, r: .7 + r() * 2.1, fill: "#fff", opacity: .2 + r() * .55 }, st);
+  for (var j = 0; j < 30; j++) DUST.push({ x: r() * W, y: r() * H, v: 12 + r() * 26, s: 1.4 + r() * 2.6, ph: r() * 6.3, e: el("circle", { r: 2, fill: "#fff" }, $("front")) });
+  V.build();
+  window.READY = true;
+}
+function render(t) {
+  var S = DATA.scenes, si = 0;
+  for (var i = S.length - 1; i >= 0; i--) if (t >= S[i].a) { si = i; break; }
+  var s = S[si];
+  if (si !== cur) { for (var k = 0; k < S.length; k++) sc(k).style.display = k === si ? "block" : "none"; cur = si; }
+  var c = { si: si, key: s.key, a: s.a, b: s.b, drift: seg(t, s.a, s.b) };
+  var o = V.draw(t, c) || {};
+  var cam = o.cam || { s: 1 + .05 * c.drift, fx: 540, fy: 960 };
+  var sky = o.sky || ["#070b2a", "#121a5a"];
+  $("sky").style.background = "linear-gradient(180deg," + sky[0] + " 0%," + sky[1] + " 85%,#080D2B 100%)";
+  var tx = W / 2 - cam.fx * cam.s, ty = H / 2 - cam.fy * cam.s;
+  $("stage").style.transform = "translate(" + tx + "px," + ty + "px) scale(" + cam.s + ")";
+  $("stars").style.transform = "translate(" + ((540 - cam.fx) * .1) + "px," + ((960 - cam.fy) * .1 - 15 * c.drift) + "px)";
+  $("stars").style.opacity = o.stars === undefined ? 1 : o.stars;
+  var dOp = o.dust === undefined ? 1 : o.dust;
+  DUST.forEach(function (q) {
+    var y = ((q.y - t * q.v) % H + H) % H, x = q.x + Math.sin(t * .8 + q.ph) * 14;
+    q.e.setAttribute("cx", x); q.e.setAttribute("cy", y); q.e.setAttribute("r", q.s); q.e.setAttribute("opacity", dOp * (.12 + .1 * Math.sin(t * 1.5 + q.ph)));
+  });
+  var h = o.head || ["", "", 0, 0];
+  setHead(h[0], h[1], h[2], h[3]);
+  var tg = o.tags || [];
+  tag("tag1", tg[0]); tag("tag2", tg[1]); tag("tag3", tg[2]); tag("tag4", tg[3]);
+  if (o.num) {
+    $("num").style.opacity = o.num[2];
+    if ($("numv").textContent !== o.num[0]) $("numv").textContent = o.num[0];
+    if ($("numu").textContent !== o.num[1]) $("numu").textContent = o.num[1];
+    $("num").style.top = (o.num[4] || 330) + "px"; $("numv").style.fontSize = (o.num[5] || 190) + "px";
+    $("num").style.transform = "scale(" + (1 + .12 * (o.num[3] || 0)) + ")";
+  } else $("num").style.opacity = 0;
+  var n = o.note || ["", 0];
+  if ($("note").textContent !== n[0]) $("note").textContent = n[0];
+  $("note").style.opacity = n[1] * .9;
+  captions(t);
+}
+__boot();
+</script>
+</body></html>
