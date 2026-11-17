@@ -1,50 +1,74 @@
 [
  {
-  "plantilla": "emoji",
-  "emoji": "🌕",
-  "emoji2": "🚀",
-  "titulo": "La Luna se <b>aleja</b>"
- },
- {
-  "plantilla": "mito",
-  "emoji": "👁️",
-  "emoji2": "🧠",
-  "titulo": "No es <b>gigante</b>"
- },
- {
-  "plantilla": "versus",
-  "emoji": "👉",
-  "emoji2": "🌕",
-  "titulo": "Mide lo <b>mismo</b>"
- },
- {
-  "plantilla": "lista",
-  "items": [
-   [
-    "🏢",
-    "Edificios"
-   ],
-   [
-    "🌲",
-    "Árboles"
-   ]
+  "fondo": "espacio",
+  "objetos": [
+   {
+    "e": "🚀",
+    "pos": "centro",
+    "tam": "grande",
+    "anim": "entra"
+   }
   ],
-  "emoji": "🧠",
-  "emoji2": "👀",
-  "titulo": "Trampa del <b>cerebro</b>"
+  "titulo": "ALEJANDO <b>TIERRA</b>"
  },
  {
-  "plantilla": "numero",
-  "valor": 4.0,
-  "unidad": "cm al año",
-  "emoji": "💅",
-  "emoji2": "📏",
-  "titulo": "Se aleja <b>lentamente</b>"
+  "fondo": "espacio",
+  "objetos": [
+   {
+    "e": "🪐",
+    "pos": "centro",
+    "tam": "grande",
+    "anim": "rebota"
+   }
+  ],
+  "titulo": "HORIZONTE <b>GIGANTE</b>"
  },
  {
-  "plantilla": "zoom",
-  "emoji": "🔭",
-  "emoji2": "🌑",
-  "titulo": "Se verá más <b>chica</b>"
+  "fondo": "espacio",
+  "objetos": [
+   {
+    "e": "☄️",
+    "pos": "centro",
+    "tam": "grande",
+    "anim": "rebota"
+   }
+  ],
+  "titulo": "TAPAS <b>ARRIBA</b>"
+ },
+ {
+  "fondo": "espacio",
+  "objetos": [
+   {
+    "e": "🌙",
+    "pos": "centro",
+    "tam": "grande",
+    "anim": "rebota"
+   }
+  ],
+  "titulo": "CEREBRO <b>EDIFICIOS</b>"
+ },
+ {
+  "fondo": "espacio",
+  "objetos": [
+   {
+    "e": "⭐",
+    "pos": "centro",
+    "tam": "grande",
+    "anim": "rebota"
+   }
+  ],
+  "titulo": "TIERRA <b>CENTÍMETROS</b>"
+ },
+ {
+  "fondo": "espacio",
+  "objetos": [
+   {
+    "e": "🛰️",
+    "pos": "centro",
+    "tam": "grande",
+    "anim": "rebota"
+   }
+  ],
+  "titulo": "DENTRO <b>MUCHÍSIMO</b>"
  }
 ]
