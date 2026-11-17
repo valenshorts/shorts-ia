@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       carpeta:
-        description: "Nombre de la carpeta en demo/manual (ej: neptuno)"
+        description: "Carpetas en demo/manual separadas por espacio (ej: neptuno nube)"
         required: true
       accion:
         description: "armar, publicar o ambos"
@@ -43,16 +43,20 @@ jobs:
 
       - name: Armar el video
         if: github.event.inputs.accion != 'publicar'
-        run: python demo/manual/render.py "${{ github.event.inputs.carpeta }}"
+        run: |
+          for c in ${{ github.event.inputs.carpeta }}; do
+            python demo/manual/render.py "$c" || echo "falló $c"
+          done
 
       - name: Pasarlo a la cola del Short diario
         if: github.event.inputs.accion != 'armar'
         run: |
-          C="demo/manual/${{ github.event.inputs.carpeta }}"
-          ID=$(python -c "import json;print(json.load(open('$C/storyboard.json'))['id'])")
           mkdir -p manual
-          cp "$C/video.mp4" "manual/$ID.mp4"
-          echo "En cola: manual/$ID.mp4"
+          for c in ${{ github.event.inputs.carpeta }}; do
+            C="demo/manual/$c"
+            ID=$(python -c "import json;print(json.load(open('$C/storyboard.json'))['id'])")
+            if [ -f "$C/video.mp4" ]; then cp "$C/video.mp4" "manual/$ID.mp4"; echo "En cola: manual/$ID.mp4"; else echo "sin video: $c"; fi
+          done
 
       - name: Guardar en el repo
         run: |
