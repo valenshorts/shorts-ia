@@ -742,7 +742,9 @@ def make_one(ideas, done, slot):
     if not pending:
         log("No quedan ideas nuevas. Agregá más a ideas.json.")
         return "noideas"
-    idea = pending[0]
+    manual_dir = ROOT / "manual"  # videos hechos a mano (en tandas): si hay uno listo, pasa primero
+    hechos = {p.stem for p in manual_dir.glob("*.mp4")} if manual_dir.exists() else set()
+    idea = next((i for i in pending if i["id"] in hechos), pending[0])
     log(f"Idea {idea['id']}: {idea['title']}")
     work = ROOT / "work" / idea["id"]
     # lo ya generado de esta idea (en un intento anterior) se reutiliza; lo de ideas viejas se borra
@@ -753,6 +755,25 @@ def make_one(ideas, done, slot):
     OUT.mkdir(exist_ok=True)
     for f in list(work.glob("scene*.still")) + list(work.glob("scene*b.png")):  # restos del modo viejo con imágenes
         f.unlink()
+
+    if idea["id"] in hechos:  # video hecho a mano: se publica tal cual (después de la misma revisión)
+        log("Estilo de este video: hecho a mano")
+        out = OUT / f"short_{idea['id']}.mp4"
+        shutil.copy(manual_dir / f"{idea['id']}.mp4", out)
+        return publish_ready(idea, done, slot, work, out, "manual")
+
+    # Motor "cine" (motion graphics automáticos): en el turno de la animación con código, si está activado.
+    # Si falla, este video sigue con la animación con código de antes y, si también falla, con IA.
+    if CFG.get("code_engine") == "cine" and not (work / "cine_off").exists() and video_style(done, work) == "code":
+        log("Estilo de este video: motion graphics (motor cine)")
+        try:
+            import cine
+            out, total_c = cine.make_video(idea, work, OUT / f"short_{idea['id']}.mp4", CFG)
+        except Exception as e:
+            log(f"El motor cine falló ({str(e)[:300]}); sigue con la animación con código de antes")
+            (work / "cine_off").write_text("1")
+        else:
+            return publish_ready(idea, done, slot, work, out, "cine", total_c)
 
     voice, timeline = make_voice(idea["narration"], work)
     total = duration(voice) + CFG.get("end_padding", 0.15)  # corta apenas termina de hablar
@@ -873,7 +894,7 @@ def video_style(done, work):
     else:
         streak = 0  # videos seguidos sin animación con código
         for v in reversed(list(done.values())):
-            if v.get("style") == "code":
+            if v.get("style") in ("code", "cine", "manual"):
                 break
             streak += 1
         style = "code" if streak >= every - 1 else "ai"
@@ -913,6 +934,39 @@ def finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, 
                    f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
         ensure_ascii=False, indent=2), encoding="utf-8")
     if not res:  # sin YouTube: queda para descargar, no se marca como hecho
+        return "wait"
+    done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": slot_day(publish_at), "style": style}
+    if publish_at:
+        done[idea["id"]].update(publish_at=publish_at, comment_pending=True)
+    (ROOT / "done.json").write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
+    return "uploaded"
+
+
+def publish_ready(idea, done, slot, work, out, style, total=None):
+    """Publica un video que ya viene armado (motor cine o hecho a mano), con la misma revisión final."""
+    total = total or duration(out)
+    bad = verify_final(out, total, total / 6, 6)
+    if bad:
+        out.unlink(missing_ok=True)
+        if style == "manual":
+            rej = ROOT / "manual" / "revisar"
+            rej.mkdir(exist_ok=True)
+            shutil.move(str(ROOT / "manual" / f"{idea['id']}.mp4"), str(rej / f"{idea['id']}.mp4"))
+            log("❌ El video hecho a mano tenía un tramo quieto: NO se sube; queda en manual/revisar/.")
+        else:
+            (work / "cine_off").write_text("1")
+            log("❌ El video del motor cine tenía un tramo quieto: NO se sube; se rehace con el estilo de antes.")
+        return "wait"
+    log(f"Short listo y revisado: {out}")
+    res = upload(out, idea, work, iso(slot) if slot else None)
+    vid, publish_at = res or (None, None)
+    tags = " ".join("#" + _norm(t) for t in idea.get("tags", []) if _norm(t))
+    (OUT / "meta.json").write_text(json.dumps({
+        "id": idea["id"], "file": out.name, "youtube_id": vid,
+        "caption": f"{idea.get('yt_title') or idea['title']}\n\n{sentences(idea['narration'])[0]}\n\n"
+                   f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
+        ensure_ascii=False, indent=2), encoding="utf-8")
+    if not res:
         return "wait"
     done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": slot_day(publish_at), "style": style}
     if publish_at:
