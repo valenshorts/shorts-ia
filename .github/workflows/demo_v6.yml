@@ -1,0 +1,51 @@
+name: Demo Torre Eiffel v6
+
+# Prueba aparte (solo a mano): rehace el video de la Torre Eiffel con el estilo nuevo.
+# No toca el Short diario ni sube nada a YouTube: deja el video en demo/v6/.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: demo
+  cancel-in-progress: false
+
+jobs:
+  v6:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar ffmpeg, fuente y navegador
+        timeout-minutes: 20
+        run: |
+          sudo timeout 300 apt-get update -qq -o Acquire::Retries=3
+          sudo timeout 600 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+          mkdir -p demo/v6/fonts
+          curl -sSfL --retry 3 "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf" -o demo/v6/fonts/Montserrat.ttf || echo "sin Montserrat: usa Inter"
+
+      - name: Armar el video v6
+        run: python demo/v6/eiffel_v6.py
+
+      - name: Guardar el video en el repo
+        run: |
+          rm -rf demo/v6/fonts
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add demo/v6/
+          git commit -m "Demo Torre Eiffel v6" || echo "nada para guardar"
+          for i in 1 2 3 4; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          exit 1
