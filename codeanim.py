@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 W, H, FPS = 1080, 1920, 30
 FONDOS = ("noche", "ciudad", "campo", "espacio", "mar", "laboratorio", "cocina", "cuerpo")
-POS = {"centro": (540, 880), "izq": (280, 900), "der": (800, 900), "arriba": (540, 600), "abajo": (540, 1130),
+POS = {"centro": (540, 880), "izq": (280, 900), "der": (800, 900), "arriba": (540, 660), "abajo": (540, 1130),
        "arriba_izq": (300, 640), "arriba_der": (780, 640)}
 TAM = {"chico": 150, "medio": 240, "grande": 360}
 ANIMS = ("rebota", "crece", "achica", "se_aleja", "entra", "gira", "flota", "late")
@@ -128,8 +128,8 @@ def backdrop(kind, seed):
                 '<div class="hill" style="left:420px;bottom:520px;width:900px;height:220px;background:#0e1640"></div>'
                 '<div class="ground" style="height:530px"></div>')
     if kind == "espacio":
-        return (_stars(r, 160, 1900) + '<div class="p" style="left:820px;top:1280px;width:260px;height:260px;opacity:.45">'
-                '<div class="e" style="font-size:200px;animation:flota 3s ease-in-out infinite alternate">🪐</div></div>')
+        return (_stars(r, 160, 1900) + '<div class="p" style="left:850px;top:1000px;width:200px;height:200px;opacity:.45">'
+                '<div class="e" style="font-size:150px;animation:flota 3s ease-in-out infinite alternate">🪐</div></div>')
     if kind == "mar":
         return (_stars(r, 25, 500) + "".join(
             f'<div class="wave" style="top:{1120 + k * 90}px;height:900px;background:{c};animation-delay:-{k * .7:.1f}s"></div>'
@@ -168,6 +168,8 @@ def _drawn(kind, size):
 def prop_html(p, d, i):
     x, y = POS.get(p.get("pos"), POS["centro"])
     size = TAM.get(p.get("tam"), TAM["medio"])
+    if p.get("pos", "").startswith("arriba"):  # arriba no puede ser grande: taparía el título
+        size = min(size, TAM["medio"])
     anim = p.get("anim") if p.get("anim") in ANIMS else "rebota"
     loop = {"rebota": "rebota 1.4s ease-in-out infinite alternate", "flota": "flota 2.4s ease-in-out infinite alternate",
             "late": "late .7s ease-in-out infinite alternate", "gira": "gira 4s linear infinite",
@@ -204,7 +206,7 @@ def scene_html(spec, d, seed):
                      f'{_esc(num.get("unidad", ""))}</div>')
         except Exception:
             pass
-    if spec.get("sello"):
+    if spec.get("sello") and not isinstance(num, dict):  # el sello taparía el número
         color = "#ff3b5c" if str(spec["sello"]).upper() in ("FALSO", "MITO", "NO", "TRUCO") else "#2ee59d"
         body += (f'<div class="stamp" style="top:780px;color:{color};animation:stamp .35s cubic-bezier(.2,1.8,.4,1) '
                  f'{hit:.2f}s both">{_esc(str(spec["sello"])[:12]).upper()}</div>'
