@@ -411,11 +411,18 @@ def assemble(visuals, voice, subs, total, out, sfx=None, mascot=None):
         vf = vf.replace("[v]", "[v0]") + (f";[{mi}:v]scale=-1:430,format=rgba[m];"
               f"[v0][m]overlay=x=(W-w)/2:y='if(lt(t-{a:.2f},0.35),H-(H-470)*(t-{a:.2f})/0.35,470)':enable='gte(t,{a:.2f})'[v]")
     tracks = sorted(p for p in (ROOT / "music").rglob("*") if p.suffix.lower() in (".mp3", ".wav", ".m4a", ".ogg"))
-    if tracks:  # música de fondo: tema al azar, desde un punto al azar, que baja sola cuando habla la voz
+    if CFG.get("music_code", False):  # tema electrónico alegre hecho con código, distinto en cada video
         import random
-        track = random.choice(tracks)
-        start = random.uniform(0, max(0.0, duration(track) - total - 2))
-        log(f"Música: {track.name}")
+        import music as music_gen
+        track = music_gen.make_track(total + 2, random.randrange(10 ** 6), subs.with_name("music.wav"))
+        tracks, start = [track], 0.0
+        log("Música: tema hecho con código")
+    if tracks:  # música de fondo que baja sola cuando habla la voz
+        import random
+        if not CFG.get("music_code", False):
+            track = random.choice(tracks)
+            start = random.uniform(0, max(0.0, duration(track) - total - 2))
+            log(f"Música: {track.name}")
         ain = ["-ss", f"{start:.2f}", "-stream_loop", "-1", "-i", track]
         m = CFG["music"]
         af = (f"[{vi}:a]aresample=48000,asplit=2[vo][key];"
@@ -758,6 +765,20 @@ def make_one(ideas, done, slot):
     # la animación se pide un poco más larga si la escena es larga (máx. 5 s): así la cámara lenta es mínima
     secs = min(5.0, max(float(CFG["clip_seconds"]), math.ceil(per / CFG.get("max_slowmo", 1.3) * 10) / 10))
 
+    # Estilo del video: animación con código o IA (Hugging Face). Se alternan para comparar (code_every).
+    style = video_style(done, work)
+    if style == "code":
+        log("Estilo de este video: animación con código")
+        try:
+            import codeanim
+            visuals, cuts = codeanim.make_visuals(idea, timeline, total, work, CFG.get("gemini_models", []))
+        except Exception as e:  # si falla el navegador o algo del dibujo, este video se hace con IA
+            log(f"La animación con código falló ({str(e)[:200]}); este video va con IA")
+            (work / "style.txt").write_text("ai")
+            return "wait"
+        return finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, cuts, "code")
+    log("Estilo de este video: IA (Hugging Face)")
+
     # 1) Primero todas las imágenes (gastan poca cuota), sin repetidas.
     imgs, hashes = [], set()
     for k, sc in enumerate(scenes, 1):
@@ -835,19 +856,48 @@ def make_one(ideas, done, slot):
         log(f"{ready}/{len(scenes)} escenas animadas y aprobadas: guardo lo hecho y sigo en el próximo intento.")
         return "wait"
 
-    # 3) Armado + revisión final (nunca se sube un video con un tramo congelado)
-    out = OUT / f"short_{idea['id']}.mp4"
     cuts = [per * k for k in range(1, len(scenes))]  # whoosh solo cuando cambia de escena
+    return finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, cuts, "ai")
+
+
+def video_style(done, work):
+    """"code" o "ai". Con code_every = 2 se alternan: uno con animación con código, uno con IA.
+    Una idea que ya tiene imágenes de IA empezadas sigue con IA (no se tira lo hecho)."""
+    every = CFG.get("code_every", 0)
+    mark = work / "style.txt"
+    if mark.exists():
+        return mark.read_text().strip()
+    if not every or any(work.glob("scene*.png")):
+        style = "ai"
+    else:
+        streak = 0  # videos seguidos sin animación con código
+        for v in reversed(list(done.values())):
+            if v.get("style") == "code":
+                break
+            streak += 1
+        style = "code" if streak >= every - 1 else "ai"
+    mark.write_text(style)
+    return style
+
+
+def finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, cuts, style):
+    """Armado + revisión final (nunca se sube un video con un tramo congelado) + subida."""
+    out = OUT / f"short_{idea['id']}.mp4"
     pops = [timeline[-1][1]] if len(timeline) > 2 else []  # el dato fuerte del final
     sfx = make_sfx(work, total, cuts, pops) if CFG.get("sfx", True) else None
     mascot = mascot_png(work) if CFG.get("end_card", True) else None
     assemble(visuals, voice, subs, total, out, sfx, mascot)
-    bad = verify_final(out, total, per, len(scenes))
+    n = len(idea["scenes"]) if style == "ai" else len(visuals)
+    bad = verify_final(out, total, total / n, n)
     if bad:
+        out.unlink(missing_ok=True)
+        if style == "code":  # no debería pasar; por las dudas este video se rehace con IA
+            (work / "style.txt").write_text("ai")
+            log("❌ La animación con código tenía un tramo quieto: NO se sube; se rehace con IA.")
+            return "wait"
         for k in bad:  # esas animaciones se rehacen en el próximo intento
             (work / f"scene{k}.mp4").unlink(missing_ok=True)
             (work / f"scene{k}.ok").unlink(missing_ok=True)
-        out.unlink(missing_ok=True)
         log(f"❌ El video armado tenía imagen quieta (escenas {bad}): NO se sube; esas escenas se rehacen.")
         return "wait"
     log(f"Short listo y revisado: {out}")
@@ -862,7 +912,7 @@ def make_one(ideas, done, slot):
         ensure_ascii=False, indent=2), encoding="utf-8")
     if not res:  # sin YouTube: queda para descargar, no se marca como hecho
         return "wait"
-    done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": slot_day(publish_at)}
+    done[idea["id"]] = {"title": idea["title"], "youtube_id": vid, "date": slot_day(publish_at), "style": style}
     if publish_at:
         done[idea["id"]].update(publish_at=publish_at, comment_pending=True)
     (ROOT / "done.json").write_text(json.dumps(done, indent=2, ensure_ascii=False), encoding="utf-8")
