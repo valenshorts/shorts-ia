@@ -1,74 +1,112 @@
 [
  {
   "fondo": "espacio",
+  "titulo": "La <b>Luna</b> se aleja",
   "objetos": [
    {
-    "e": "🚀",
-    "pos": "centro",
+    "e": "tierra",
+    "pos": "izq",
     "tam": "grande",
+    "anim": "rebota"
+   },
+   {
+    "e": "luna",
+    "pos": "der",
+    "tam": "chico",
+    "anim": "se_aleja"
+   }
+  ],
+  "entre": "→"
+ },
+ {
+  "fondo": "ciudad",
+  "titulo": "<b>Ilusión</b> en el horizonte",
+  "objetos": [
+   {
+    "e": "🌕",
+    "pos": "arriba",
+    "tam": "grande",
+    "anim": "crece"
+   },
+   {
+    "e": "🧠",
+    "pos": "abajo",
+    "tam": "medio",
+    "anim": "late"
+   }
+  ],
+  "sello": "MITO"
+ },
+ {
+  "fondo": "espacio",
+  "titulo": "Mide lo <b>mismo</b>",
+  "objetos": [
+   {
+    "e": "👆",
+    "pos": "izq",
+    "tam": "medio",
     "anim": "entra"
+   },
+   {
+    "e": "🌕",
+    "pos": "der",
+    "tam": "chico",
+    "anim": "flota"
    }
   ],
-  "titulo": "ALEJANDO <b>TIERRA</b>"
+  "entre": "="
+ },
+ {
+  "fondo": "ciudad",
+  "titulo": "El cerebro la <b>agranda</b>",
+  "objetos": [
+   {
+    "e": "🏢",
+    "pos": "izq",
+    "tam": "medio",
+    "anim": "flota"
+   },
+   {
+    "e": "🌳",
+    "pos": "der",
+    "tam": "medio",
+    "anim": "flota"
+   }
+  ]
+ },
+ {
+  "fondo": "cuerpo",
+  "titulo": "Crecimiento <b>anual</b>",
+  "objetos": [
+   {
+    "e": "💅",
+    "pos": "abajo",
+    "tam": "chico",
+    "anim": "crece"
+   }
+  ],
+  "numero": {
+   "valor": 4,
+   "unidad": "cm"
+  },
+  "sello": "REAL"
  },
  {
   "fondo": "espacio",
+  "titulo": "Futuro <b>lejano</b>",
   "objetos": [
    {
-    "e": "🪐",
-    "pos": "centro",
-    "tam": "grande",
-    "anim": "rebota"
-   }
-  ],
-  "titulo": "HORIZONTE <b>GIGANTE</b>"
- },
- {
-  "fondo": "espacio",
-  "objetos": [
+    "e": "🔭",
+    "pos": "izq",
+    "tam": "medio",
+    "anim": "entra"
+   },
    {
-    "e": "☄️",
-    "pos": "centro",
-    "tam": "grande",
-    "anim": "rebota"
+    "e": "🌑",
+    "pos": "der",
+    "tam": "chico",
+    "anim": "achica"
    }
-  ],
-  "titulo": "TAPAS <b>ARRIBA</b>"
- },
- {
-  "fondo": "espacio",
-  "objetos": [
-   {
-    "e": "🌙",
-    "pos": "centro",
-    "tam": "grande",
-    "anim": "rebota"
-   }
-  ],
-  "titulo": "CEREBRO <b>EDIFICIOS</b>"
- },
- {
-  "fondo": "espacio",
-  "objetos": [
-   {
-    "e": "⭐",
-    "pos": "centro",
-    "tam": "grande",
-    "anim": "rebota"
-   }
-  ],
-  "titulo": "TIERRA <b>CENTÍMETROS</b>"
- },
- {
-  "fondo": "espacio",
-  "objetos": [
-   {
-    "e": "🛰️",
-    "pos": "centro",
-    "tam": "grande",
-    "anim": "rebota"
-   }
-  ],
-  "titulo": "DENTRO <b>MUCHÍSIMO</b>"
+  ]
  }
 ]
