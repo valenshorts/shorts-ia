@@ -17,12 +17,10 @@
   ],
   "format": {
    "duration": "23.800000",
-   "bit_rate": "4304490"
+   "bit_rate": "4539015"
   }
  },
- "freeze": [
-  "20.1"
- ],
+ "freeze": [],
  "black": [],
  "loudness_I": -14.6,
  "true_peak": -1.4,
