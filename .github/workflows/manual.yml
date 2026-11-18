@@ -24,7 +24,7 @@ concurrency:
 jobs:
   manual:
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -34,10 +34,13 @@ jobs:
 
       - name: Instalar ffmpeg y navegador
         if: github.event.inputs.accion != 'publicar'
-        timeout-minutes: 20
+        timeout-minutes: 35
         run: |
-          sudo timeout 300 apt-get update -qq -o Acquire::Retries=3
-          sudo timeout 600 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg
+          for i in 1 2 3; do
+            sudo timeout 300 apt-get update -qq -o Acquire::Retries=3 && sudo timeout 420 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg && break
+            echo "reintento apt $i"; sleep 10
+          done
+          which ffmpeg
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
 
