@@ -8,7 +8,7 @@ Uso: python demo/manual/render.py neptuno           -> demo/manual/neptuno/video
      python demo/manual/render.py neptuno --fake    -> sin voz, solo para mirar la imagen
 Publicar: copiar video.mp4 a manual/<id>.mp4 (lo hace manual.yml con "publicar"); el Short diario lo sube.
 """
-import asyncio, base64, json, math, re, subprocess, sys, urllib.request, wave
+import asyncio, base64, json, math, os, re, subprocess, sys, urllib.request, wave
 from pathlib import Path
 
 import numpy as np
@@ -88,6 +88,50 @@ def loudnorm(src, dst, I, TP):
          f"aresample={SR}", "-ar", SR, "-ac", 1, dst])
 
 
+CLONE = {}  # voz clonada (Chatterbox) si existe la variable VOZ_REF con la ruta a la grabación de referencia
+
+
+def clone_tts(text, out_wav):
+    if not CLONE:
+        from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+        from faster_whisper import WhisperModel
+        CLONE["m"] = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
+        CLONE["w"] = WhisperModel("small", device="cpu", compute_type="int8")
+    import torchaudio
+    m = CLONE["m"]
+    w = m.generate(text, language_id="es", audio_prompt_path=os.environ["VOZ_REF"],
+                   exaggeration=float(os.environ.get("VOZ_EXAG", "0.55")), cfg_weight=0.5, temperature=0.7)
+    raw = out_wav.with_suffix(".raw.wav"); torchaudio.save(str(raw), w, m.sr)
+    run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-af", f"atempo={os.environ.get('VOZ_TEMPO', '1.1')}", "-ar", SR, "-ac", 1, out_wav])
+    segs, _ = CLONE["w"].transcribe(str(out_wav), language="es", word_timestamps=True, initial_prompt=text)
+    return [(x.start, x.end, x.word.strip()) for s in segs for x in (s.words or []) if x.word.strip()]
+
+
+def align(toks, ws):
+    # tiempos de whisper -> palabras exactas del guion; las que no coinciden se reparten en el hueco
+    import difflib
+    A, B = [norm(t) for t in toks], [norm(w) for _, _, w in ws]
+    times = [None] * len(toks)
+    for blk in difflib.SequenceMatcher(None, A, B, autojunk=False).get_matching_blocks():
+        for k in range(blk.size):
+            times[blk.a + k] = (ws[blk.b + k][0], ws[blk.b + k][1])
+    end, i = (ws[-1][1] if ws else 0.5 * len(toks)), 0
+    while i < len(toks):
+        if times[i] is None:
+            j = i
+            while j < len(toks) and times[j] is None:
+                j += 1
+            a = times[i - 1][1] if i else (ws[0][0] if ws else 0.0)
+            b = times[j][0] if j < len(toks) else end
+            step = max(b - a, 0.05 * (j - i)) / (j - i)
+            for k in range(j - i):
+                times[i + k] = (a + k * step, a + (k + 1) * step)
+            i = j
+        else:
+            i += 1
+    return [(a, b, t) for (a, b), t in zip(times, toks)]
+
+
 def make_voice(sb, work, fake):
     words, parts, t = [], [], 0.0
     for si, sc in enumerate(sb["scenes"]):
@@ -99,6 +143,12 @@ def make_voice(sb, work, fake):
                 ws.append((d0, d0 + d, w)); d0 += d
             run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"anullsrc=r={SR}:cl=mono", "-t", f"{d0:.3f}", wav])
             start = 0.0
+        elif os.environ.get("VOZ_REF"):
+            cw = work / f"c{si}.wav"
+            ws = align(sc["text"].split(), clone_tts(sc["text"], cw))
+            start = max(0.0, ws[0][0] - 0.04)
+            run(["ffmpeg", "-v", "error", "-y", "-i", cw, "-af",
+                 f"atrim={start:.3f}:{ws[-1][1] + 0.12:.3f},asetpts=PTS-STARTPTS", "-ar", SR, "-ac", 1, wav])
         else:
             mp3 = work / f"v{si}.mp3"
             ws = asyncio.run(tts_words(sc["text"], sb.get("voice", "es-MX-JorgeNeural"), sb.get("rate", "+20%"), mp3))
@@ -336,18 +386,19 @@ def main():
     folder = HERE / name
     sb = json.loads((folder / "storyboard.json").read_text(encoding="utf-8"))
     work = (ROOT / "work_manual" / name).resolve(); work.mkdir(parents=True, exist_ok=True)
+    suf = "_voz" if os.environ.get("VOZ_REF") else ""  # con voz clonada no pisa el video original
     voice, words, scenes, total = make_voice(sb, work, fake)
     data = {"scenes": scenes, "words": words, "chunks": chunks(words, scenes, sb), "total": total}
-    (folder / "timeline.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    (folder / f"timeline{suf}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     log(f"{name}: {total:.2f} s, {len(words)} palabras")
     audio = mix(voice, sfx_track(sb, words, scenes, total, work), total, work, int(re.sub(r"\D", "", sb["id"]) or 1))
     video = work / "video_sin_audio.mp4"
     film(folder, data, total, video, work, sb.get("scene"))  # "scene": otra escena del repo (ej. demo/v6/scene.html)
-    out = folder / "video.mp4" if not fake else work / "fake.mp4"
+    out = folder / f"video{suf}.mp4" if not fake else work / "fake.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-i", video, "-i", audio, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
          "-c:a", "aac", "-b:a", "192k", "-ar", SR, "-t", f"{total:.3f}", "-movflags", "+faststart", out])
     rep = qa(out, total)
-    (folder / "qa.json").write_text(json.dumps(rep, indent=1), encoding="utf-8")
+    (folder / f"qa{suf}.json").write_text(json.dumps(rep, indent=1), encoding="utf-8")
     log(f"Listo: {out} | quietos: {rep['freeze'] or 'ninguno'} | {rep['loudness_I']} LUFS, pico {rep['true_peak']} dB")
 
 
