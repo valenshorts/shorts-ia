@@ -51,6 +51,23 @@ def err_text(e):
 
 
 # ---------------------------------------------------------------- YouTube
+def yt_refresh_token():
+    """El token con permiso de estadísticas (yt_token.enc, lo crea yt_auth.yml); si no, YT_REFRESH_TOKEN."""
+    import subprocess
+    enc = ROOT / "yt_token.enc"
+    if enc.exists():
+        try:
+            r = subprocess.run(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-a", "-A", "-pass", "env:YTPASS"],
+                               input=enc.read_text().strip() + "\n", capture_output=True, text=True, check=True,
+                               env={**os.environ, "YTPASS": "yt:" + os.environ["YT_CLIENT_SECRET"]})
+            if r.stdout.strip():
+                log("YouTube: uso el token de estadísticas (yt_token.enc)")
+                return r.stdout.strip()
+        except Exception:
+            log("No pude leer yt_token.enc: uso YT_REFRESH_TOKEN")
+    return os.environ["YT_REFRESH_TOKEN"]
+
+
 def youtube(videos, desde, hasta):
     need = ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")
     if not all(os.environ.get(k) for k in need):
@@ -58,7 +75,7 @@ def youtube(videos, desde, hasta):
         return
     from google.oauth2.credentials import Credentials
     from googleapiclient.discovery import build
-    creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"],
+    creds = Credentials(None, refresh_token=yt_refresh_token(),
                         client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"],
                         token_uri="https://oauth2.googleapis.com/token")
     by_id = {v["youtube"]["id"]: v for v in videos if v.get("youtube")}

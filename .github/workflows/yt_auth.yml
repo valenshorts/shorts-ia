@@ -1,0 +1,79 @@
+name: Conectar estadísticas de YouTube
+
+# Cambia un código de autorización de Google por un refresh token con permiso de estadísticas
+# (youtube.force-ssl + yt-analytics.readonly), lo prueba y lo guarda cifrado en yt_token.enc
+# (clave "yt:" + YT_CLIENT_SECRET). Lo usa stats.py; la subida de videos sigue con YT_REFRESH_TOKEN.
+# A mano: Actions → Conectar estadísticas de YouTube → Run workflow → pegar el código (vale pocos minutos).
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: "Código de autorización (lo que viene después de code= en el link)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  auth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Canjear y probar
+        env:
+          CODE: ${{ github.event.inputs.code }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+        run: |
+          python - <<'PY'
+          import json, os, subprocess, sys, urllib.error, urllib.parse, urllib.request
+          code = urllib.parse.unquote(os.environ["CODE"].strip())
+          if "code=" in code:  # pegaron el link entero
+              code = urllib.parse.parse_qs(urllib.parse.urlparse(code).query).get("code", [""])[0]
+          print(f"::add-mask::{code}")
+          data = urllib.parse.urlencode({"code": code, "client_id": os.environ["YT_CLIENT_ID"],
+                                         "client_secret": os.environ["YT_CLIENT_SECRET"],
+                                         "redirect_uri": "https://developers.google.com/oauthplayground",
+                                         "grant_type": "authorization_code"}).encode()
+          try:
+              with urllib.request.urlopen("https://oauth2.googleapis.com/token", data, timeout=60) as r:
+                  t = json.loads(r.read())
+          except urllib.error.HTTPError as e:
+              sys.exit(f"Google no aceptó el código: {e.read().decode()[:300]} (los códigos vencen en pocos minutos y sirven una sola vez)")
+          rt = t.get("refresh_token")
+          if not rt:
+              sys.exit(f"Google no devolvió refresh token (scopes: {t.get('scope')})")
+          print(f"::add-mask::{rt}")
+          print(f"::add-mask::{t['access_token']}")
+          print("Permisos:", t.get("scope"))
+          if "yt-analytics.readonly" not in t.get("scope", ""):
+              sys.exit("El token no tiene permiso de estadísticas (yt-analytics.readonly)")
+          q = urllib.parse.urlencode({"ids": "channel==MINE", "startDate": "2026-10-01", "endDate": "2026-11-17", "metrics": "views,averageViewPercentage"})
+          req = urllib.request.Request("https://youtubeanalytics.googleapis.com/v2/reports?" + q,
+                                       headers={"Authorization": "Bearer " + t["access_token"]})
+          try:
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  print("Prueba de estadísticas OK:", json.loads(r.read()).get("rows"))
+          except urllib.error.HTTPError as e:
+              sys.exit(f"La prueba de estadísticas falló: {e.read().decode()[:300]}")
+          r = subprocess.run(["openssl", "enc", "-aes-256-cbc", "-pbkdf2", "-salt", "-a", "-A", "-pass", "env:YTPASS"],
+                             input=rt, capture_output=True, text=True, check=True,
+                             env={**os.environ, "YTPASS": "yt:" + os.environ["YT_CLIENT_SECRET"]})
+          open("yt_token.enc", "w").write(r.stdout.strip() + "\n")
+          print("Guardado en yt_token.enc")
+          PY
+
+      - name: Guardar
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add yt_token.enc
+          git commit -m "YouTube: permiso de estadísticas conectado" || exit 0
+          for i in 1 2 3 4; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          exit 1
