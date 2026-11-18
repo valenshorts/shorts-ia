@@ -8,7 +8,7 @@ on:
     - cron: "20 11 * * 1"   # lunes 08:20 AR
   push:
     branches: [main]
-    paths: [".github/workflows/stats.yml", "stats.py", "yt_token.enc"]   # corre cuando se crea o cambia (o se conecta el permiso)
+    paths: [".github/workflows/stats.yml", "stats.py"]   # corre una vez cuando se crea o cambia
   workflow_dispatch: {}
 
 permissions:

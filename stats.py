@@ -52,7 +52,7 @@ def err_text(e):
 
 # ---------------------------------------------------------------- YouTube
 def yt_refresh_token():
-    """El token con permiso de estadísticas (yt_token.enc, lo crea yt_auth.yml); si no, YT_REFRESH_TOKEN."""
+    """El token con permiso de estadísticas (yt_token.enc, lo crea yt_auth.yml el 18/11); si no, YT_REFRESH_TOKEN."""
     import subprocess
     enc = ROOT / "yt_token.enc"
     if enc.exists():
