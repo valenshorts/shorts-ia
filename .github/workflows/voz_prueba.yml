@@ -1,0 +1,77 @@
+name: Prueba con voz clonada
+
+# Arma demo/manual/<carpeta>/video_voz.mp4 con la voz de Valentín (Chatterbox, gratis y abierto).
+# La grabación de referencia está en el secreto VOZ_REF (audio .ogg en base64), nunca en el repo.
+# No publica nada ni toca video.mp4.
+on:
+  workflow_dispatch:
+    inputs:
+      carpeta:
+        description: "Carpetas en demo/manual separadas por espacio (ej: saturno)"
+        required: true
+        default: "saturno"
+      tempo:
+        description: "Velocidad de la voz (1.0 = normal)"
+        required: true
+        default: "1.1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: demo
+  cancel-in-progress: false
+
+jobs:
+  voz:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Preparar la voz de referencia
+        env:
+          VOZ_B64: ${{ secrets.VOZ_REF }}
+        run: |
+          if [ -z "$VOZ_B64" ]; then echo "Falta el secreto VOZ_REF"; exit 1; fi
+          printf '%s' "$VOZ_B64" | tr -d ' \n\r' | base64 -d > "$RUNNER_TEMP/ref.ogg"
+
+      - name: Instalar ffmpeg, navegador y modelo de voz
+        timeout-minutes: 45
+        run: |
+          for i in 1 2 3; do
+            sudo timeout 300 apt-get update -qq -o Acquire::Retries=3 && sudo timeout 420 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg && break
+            echo "reintento apt $i"; sleep 10
+          done
+          which ffmpeg
+          ffmpeg -v error -y -i "$RUNNER_TEMP/ref.ogg" -ac 1 -ar 24000 "$RUNNER_TEMP/ref.wav"
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+          pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+          pip install chatterbox-tts faster-whisper
+
+      - name: Armar con la voz clonada
+        env:
+          VOZ_REF: ${{ runner.temp }}/ref.wav
+          VOZ_TEMPO: ${{ github.event.inputs.tempo }}
+        run: |
+          for c in ${{ github.event.inputs.carpeta }}; do
+            python demo/manual/render.py "$c" || echo "falló $c"
+          done
+
+      - name: Guardar en el repo
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add demo/manual/
+          git commit -m "Prueba voz clonada: ${{ github.event.inputs.carpeta }}" || echo "nada para guardar"
+          for i in 1 2 3 4; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          exit 1
