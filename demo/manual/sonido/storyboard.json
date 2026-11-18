@@ -1,0 +1,24 @@
+{
+ "id": "077",
+ "title": "En el espacio no hay sonido",
+ "rate": "+20%", "pause": 0.18, "tail": 0.8,
+ "sources": ["Física: el sonido es una onda mecánica que necesita un medio; en el vacío casi no hay partículas, por eso los astronautas usan radio"],
+ "scenes": [
+  {"key": "nada", "text": "En el espacio no hay sonido."},
+  {"key": "vibra", "text": "El sonido es una vibración que viaja por el aire, chocando de partícula en partícula."},
+  {"key": "vacio", "text": "Pero en el espacio casi no hay partículas."},
+  {"key": "estrella", "text": "Entonces, aunque explote una estrella gigante, no se escucharía absolutamente nada."},
+  {"key": "peliculas", "text": "Todas esas explosiones con ruido de las películas son inventadas."},
+  {"key": "radio", "text": "Y por eso los astronautas, aunque estén uno al lado del otro afuera de la nave, tienen que hablarse por radio."}
+ ],
+ "keywords": ["espacio", "sonido", "vibración", "aire", "partícula", "partículas", "explote", "estrella", "nada", "películas", "inventadas", "astronautas", "radio"],
+ "sfx": [
+  {"tipo": "bajada", "escena": 0, "inicio": 0.9, "gain": 0.6},
+  {"tipo": "clics", "escena": 1, "inicio": 0.3, "hasta": "partícula", "n": 8, "f": 1200, "gain": 0.35},
+  {"tipo": "whoosh", "escena": 2, "palabra": "casi", "gain": 0.6},
+  {"tipo": "brillo", "escena": 3, "palabra": "explote", "gain": 0.3},
+  {"tipo": "boom", "escena": 4, "palabra": "inventadas", "gain": 0.8},
+  {"tipo": "clics", "escena": 5, "palabra": "radio", "hasta": "radio", "n": 3, "f": 2600, "gain": 0.4},
+  {"tipo": "campana", "escena": 5, "palabra": "radio", "offset": 0.3, "gain": 0.7}
+ ]
+}
