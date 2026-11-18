@@ -76,11 +76,11 @@ var V = {
       o.cam = { s: 1 + .05 * d, fx: 540, fy: 920 };
     } else if (k === "estrella") {
       var tex = cue(3, "explote", .3), tn = cue(3, "nada", .9), ex = E.out(seg(t, tex, tex + 1.6));
-      tr(N.nova, 540, 820, ex > 0 ? .4 + 3.2 * ex : .32 + .05 * Math.sin(t * 8), 0); op(N.nova, 1 - .4 * seg(ex, .7, 1));
+      tr(N.nova, 540, 820, ex > 0 ? 1.3 + 2.3 * ex : E.pop(seg(t, a - .01, a + .4)) * (1.3 + .08 * Math.sin(t * 8)), 0); op(N.nova, 1 - .4 * seg(ex, .7, 1));
       tr(N.ring, 540, 820, .6 + 5 * ex, 0); op(N.ring, ex > 0 ? (1 - ex) : 0);
       N.rays.forEach(function (q) { var r1 = 120 + 300 * ex, r2 = r1 + 120 * (1 - ex); q.e.setAttribute("x1", 540 + Math.cos(q.a) * r1); q.e.setAttribute("y1", 820 + Math.sin(q.a) * r1); q.e.setAttribute("x2", 540 + Math.cos(q.a) * r2); q.e.setAttribute("y2", 820 + Math.sin(q.a) * r2); op(q.e, ex > 0 ? 1 - ex : 0); });
       tr(N.mute, 470, 1130, .8, 0); wave(N.mute, 0); op(N.mute, fade(t, tn - .4)); op(N.mute.x, 1);
-      o.head = ["Aunque explote una estrella", "<b>no se escucharía nada</b>", rise(t, tn)[0], rise(t, tn)[1]];
+      o.head = tn > t ? ["Aunque explote", "una <b>estrella gigante</b>", rise(t, tex)[0], rise(t, tex)[1]] : ["No se escucharía", "<b>absolutamente nada</b>", 1, rise(t, tn)[1]];
       o.cam = { s: 1.05 + .05 * d, fx: 540, fy: 900 };
     } else if (k === "peliculas") {
       var tpe = cue(4, "películas", .4), tin = cue(4, "inventadas", .85);
