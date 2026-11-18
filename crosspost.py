@@ -2,7 +2,7 @@
 Sube el Short del día también a Instagram Reels y a TikTok.
 Lee output/meta.json (lo escribe generate.py). Si faltan los datos de una red, la saltea.
 
-Instagram: IG_USER_ID + IG_TOKEN (token de "Instagram API con inicio de sesión de Instagram", dura 60 días).
+Instagram: IG_USER_ID + token (ig_token.enc, renovado cada mes por ig_token.yml; si no está, el secreto IG_TOKEN).
 TikTok:    TIKTOK_CLIENT_KEY + TIKTOK_CLIENT_SECRET + tt_token.enc (refresh token cifrado; se crea con
            `python crosspost.py --tiktok-code CODIGO`). Queda en tus borradores de TikTok hasta que la app esté auditada.
 """
@@ -55,14 +55,11 @@ def temp_link(path):
 
 
 def instagram():
-    uid, tok = os.environ.get("IG_USER_ID"), os.environ.get("IG_TOKEN")
+    import igtoken  # el token más nuevo (lo renueva ig_token.yml cada mes); si no, el secreto IG_TOKEN
+    uid, tok = os.environ.get("IG_USER_ID"), igtoken.load()
     if not (uid and tok):
         log("Instagram: sin datos, lo salteo.")
         return
-    try:  # alarga la vida del token (si ya tiene más de 24 h)
-        http(f"https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token={tok}")
-    except Exception:
-        pass
     # Instagram baja el video desde un link: lo subo a un alojamiento temporal que se borra solo
     link = temp_link(VIDEO)
     log("Link temporal listo")

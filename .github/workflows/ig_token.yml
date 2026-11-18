@@ -1,0 +1,114 @@
+name: Renovar token de Instagram
+
+# El token de Instagram dura 60 días. Este workflow lo renueva el día 1 de cada mes (y la primera vez que se sube),
+# lo prueba y lo guarda cifrado en ig_token.enc (lo leen "Solo Instagram" y "Estadísticas semanales").
+# Si existe el secreto GH_PAT (token personal de GitHub con permiso "Secrets: read and write" en este repo),
+# además actualiza el secreto IG_TOKEN. Si algo falla: corrida en rojo + aviso por mail (issue en el repo).
+on:
+  schedule:
+    - cron: "17 13 1 * *"   # día 1 de cada mes, 10:17 AR
+  push:
+    branches: [main]
+    paths: [".github/workflows/ig_token.yml"]   # corre una vez apenas se crea o se cambia este archivo
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ig-token
+  cancel-in-progress: false
+
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      IG_TOKEN: ${{ secrets.IG_TOKEN }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Renovar y probar el token
+        run: |
+          python - <<'PY'
+          import json, os, sys, urllib.error, urllib.parse, urllib.request
+          from pathlib import Path
+          import igtoken
+
+          def fail(msg):
+              Path("/tmp/motivo.txt").write_text(msg, encoding="utf-8")
+              print(f"::error::{msg}")
+              sys.exit(1)
+
+          def get(url):
+              try:
+                  with urllib.request.urlopen(url, timeout=60) as r:
+                      return json.loads(r.read())
+              except urllib.error.HTTPError as e:
+                  return {"error": e.read().decode(errors="replace")[:400]}
+              except Exception as e:
+                  return {"error": str(e)[:400]}
+
+          tok = igtoken.load()
+          if not tok:
+              fail("No hay token de Instagram (falta el secreto IG_TOKEN).")
+          r = get("https://graph.instagram.com/refresh_access_token?" +
+                  urllib.parse.urlencode({"grant_type": "ig_refresh_token", "access_token": tok}))
+          new = r.get("access_token")
+          if not new:
+              fail("Instagram no renovó el token. Respuesta: " + str(r.get("error") or r)[:400] +
+                   " — Si dice que venció, hay que generar uno nuevo en developers.facebook.com (app \"El Porqué de Todo\") "
+                   "y cargarlo en el secreto IG_TOKEN.")
+          print(f"::add-mask::{new}")
+          me = get("https://graph.instagram.com/v23.0/me?" + urllib.parse.urlencode({"fields": "user_id,username", "access_token": new}))
+          if not me.get("username"):
+              fail("El token nuevo no funciona: " + str(me.get("error") or me)[:400])
+          igtoken.save(new)
+          Path("/tmp/ig_new").write_text(new)
+          dias = int(r.get("expires_in", 0)) // 86400
+          print(f"[ig] Token renovado y probado (@{me['username']}): vale {dias} días más. Guardado en ig_token.enc")
+          PY
+
+      - name: Actualizar el secreto IG_TOKEN (si hay GH_PAT)
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -z "$GH_PAT" ]; then
+            echo "Sin GH_PAT: el token nuevo queda en ig_token.enc (el secreto IG_TOKEN queda de respaldo)."
+            exit 0
+          fi
+          GH_TOKEN="$GH_PAT" gh secret set IG_TOKEN -R "${{ github.repository }}" < /tmp/ig_new && echo "Secreto IG_TOKEN actualizado."
+
+      - name: Guardar el token cifrado
+        run: |
+          rm -f /tmp/ig_new
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add ig_token.enc
+          git commit -m "Instagram: token renovado" || { echo "nada para guardar"; exit 0; }
+          ok=""
+          for i in 1 2 3 4; do
+            if git pull --rebase && git push; then ok=1; break; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          [ -n "$ok" ] || { echo "No se pudo guardar el token nuevo" > /tmp/motivo.txt; echo "::error::No se pudo guardar ig_token.enc"; exit 1; }
+
+      - name: Avisar por mail si falló
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -f /tmp/ig_new
+          motivo="$(cat /tmp/motivo.txt 2>/dev/null || echo 'Falló un paso del workflow (ver el log).')"
+          gh issue create -R "${{ github.repository }}" \
+            --title "No se pudo renovar el token de Instagram ($(date +%d/%m))" \
+            --body "@${{ github.repository_owner }} El token de Instagram NO se renovó.
+
+          **Motivo:** ${motivo}
+
+          Log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          Mientras tanto Instagram sigue con el token actual hasta que venza. Pedile a Claude que lo revise."

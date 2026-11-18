@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  issues: write  # aviso por mail cuando el control de calidad rechaza un video
 
 concurrency:
   group: short
@@ -83,6 +84,7 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}  # para avisar por mail si un video no pasa el control de calidad
         run: python generate.py
 
       - name: Guardar lo generado para el próximo intento

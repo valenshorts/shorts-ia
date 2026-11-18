@@ -69,6 +69,7 @@ jobs:
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}  # clave para leer ig_token.enc
           VIDEOS: ${{ github.event.inputs.videos }}
         run: |
           python - <<'PY'

@@ -67,5 +67,7 @@
   "extra_if_queued": 3,
   "code_every": 2,
   "code_engine": "cine",
-  "music_code": true
+  "music_code": true,
+  "max_still_seconds": 2.0,
+  "max_av_diff_seconds": 0.3
 }

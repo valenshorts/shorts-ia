@@ -718,21 +718,91 @@ def give_up(msg):
     sys.exit(1)
 
 
-def verify_final(out, total, per, n_scenes):
-    """Revisión final antes de subir: formato, duración, audio y que la imagen nunca quede congelada.
-    Devuelve la lista de escenas con problemas (vacía = todo bien)."""
-    info = json.loads(run(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", out]))
+def quality_check(out, total, n_scenes, style, work=None, idea=None):
+    """Control de calidad antes de publicar: ningún video que falle esto se sube.
+    Devuelve (motivos, escenas):
+      motivos = problemas graves → NO se sube y se avisa por mail (escena quieta de más de max_still_seconds,
+                audio y video de distinto largo, falta una escena animada, formato o duración mal);
+      escenas = escenas con algún tramo quieto de ≥ max_frozen_seconds (se rehacen solas)."""
+    motivos = []
+    info = json.loads(run(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", str(out)]))
     v = [x for x in info["streams"] if x["codec_type"] == "video"]
     a = [x for x in info["streams"] if x["codec_type"] == "audio"]
-    d = float(info["format"]["duration"])
-    if not v or (int(v[0]["width"]), int(v[0]["height"])) != (W, H) or not a or abs(d - total) > 0.6:
-        raise RuntimeError(f"El video armado salió mal (duración {d:.1f}s de {total:.1f}s, video={bool(v)}, audio={bool(a)})")
-    # se mira la franja del medio: los subtítulos (abajo) y el nombre del canal (arriba) quedan afuera
-    spans = frozen_spans(out, CFG.get("max_frozen_seconds", 1.0), crop=f"crop={W}:{int(H * 0.5)}:0:{int(H * 0.14)}")
-    bad = sorted({min(int(t / per) + 1, n_scenes) for a_, b_ in spans for t in (a_, max(a_, b_ - 0.01))})
-    for a_, b_ in spans:
-        log(f"⚠️ Imagen quieta en el video armado entre {a_:.1f}s y {b_:.1f}s")
-    return bad
+    d = float(info["format"].get("duration") or 0)
+    if not v:
+        motivos.append("el archivo no tiene imagen")
+    elif (int(v[0]["width"]), int(v[0]["height"])) != (W, H):
+        motivos.append(f"el tamaño es {v[0]['width']}x{v[0]['height']} y tiene que ser {W}x{H}")
+    if not a:
+        motivos.append("el video no tiene audio")
+    if v and a:
+        vd, ad = float(v[0].get("duration") or d), float(a[0].get("duration") or d)
+        if abs(vd - ad) > CFG.get("max_av_diff_seconds", 0.3):
+            motivos.append(f"el audio dura {ad:.1f}s y la imagen {vd:.1f}s (no coinciden)")
+    if total and abs(d - total) > 0.6:
+        motivos.append(f"dura {d:.1f}s y tenía que durar {total:.1f}s")
+    if style == "ai" and work is not None and idea:  # cada escena tiene que tener su animación aprobada
+        faltan = [k for k in range(1, len(idea["scenes"]) + 1)
+                  if not ((work / f"scene{k}.mp4").exists() and (work / f"scene{k}.ok").exists())]
+        if faltan:
+            motivos.append("falta la animación de la(s) escena(s) " + ", ".join(map(str, faltan)))
+    escenas = []
+    if v:
+        # se mira la franja del medio: los subtítulos (abajo) y el nombre del canal (arriba) quedan afuera
+        spans = frozen_spans(out, CFG.get("max_frozen_seconds", 1.0), crop=f"crop={W}:{int(H * 0.5)}:0:{int(H * 0.14)}")
+        per = (total or d) / n_scenes
+        escenas = sorted({min(int(t / per) + 1, n_scenes) for a_, b_ in spans for t in (a_, max(a_, b_ - 0.01))})
+        for a_, b_ in spans:
+            log(f"⚠️ Imagen quieta en el video armado entre {a_:.1f}s y {b_:.1f}s")
+        largos = [(a_, b_) for a_, b_ in spans if b_ - a_ > CFG.get("max_still_seconds", 2.0)]
+        if largos:
+            motivos.append(f"imagen quieta más de {CFG.get('max_still_seconds', 2.0):g} s (" +
+                           ", ".join(f"de {a_:.1f}s a {b_:.1f}s" for a_, b_ in largos) + ")")
+    return motivos, escenas
+
+
+REJECT_FAILED = []  # avisos que no se pudieron mandar: la corrida termina en rojo (GitHub manda su mail)
+
+
+def reject(idea, motivos, style, work, despues):
+    """El video NO se sube: lo anota en el log y avisa por mail con el motivo.
+    El mail sale de un "issue" del repo (GitHub le manda un mail al dueño). Una vez por motivo y por idea."""
+    log(f"❌ Control de calidad: el video {idea['id']} NO se sube: " + "; ".join(motivos))
+    print(f"::error title=Video {idea['id']} rechazado::" + "; ".join(motivos), flush=True)
+    firma = re.sub(r"[\d.,]+", "#", " | ".join(motivos))  # sin números: mismos problemas = mismo aviso
+    mark = work / "rechazo.txt"
+    if mark.exists() and mark.read_text(encoding="utf-8") == firma:
+        log("(este mismo motivo ya se avisó por mail: no lo repito)")
+        return
+    tok, repo = os.environ.get("GH_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
+    if not (tok and repo):
+        REJECT_FAILED.append(idea["id"])
+        return
+    run_url = f"{os.environ.get('GITHUB_SERVER_URL', 'https://github.com')}/{repo}/actions/runs/{os.environ.get('GITHUB_RUN_ID', '')}"
+    owner = repo.split("/")[0]
+    body = (f"@{owner} El video **{idea['id']} — {idea['title']}** (estilo {style}) **NO se subió** porque:\n\n" +
+            "\n".join(f"- {m}" for m in motivos) + f"\n\n**Qué pasa ahora:** {despues}\n\nLog: {run_url}")
+    title = f"Video {idea['id']} rechazado por el control de calidad"
+    import urllib.request
+
+    def gh(method, path, data=None):
+        req = urllib.request.Request(f"https://api.github.com/repos/{repo}{path}", method=method,
+                                     data=json.dumps(data).encode() if data else None,
+                                     headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return json.loads(r.read() or b"null")
+    try:
+        abiertos = gh("GET", "/issues?state=open&per_page=100")
+        prev = next((i for i in abiertos if i.get("title") == title and not i.get("pull_request")), None)
+        if prev:
+            gh("POST", f"/issues/{prev['number']}/comments", {"body": body})
+        else:
+            gh("POST", "/issues", {"title": title, "body": body})
+        mark.write_text(firma, encoding="utf-8")
+        log("Aviso por mail enviado (issue en GitHub).")
+    except Exception as e:
+        log(f"No se pudo mandar el aviso por mail ({e}): la corrida termina en rojo para que GitHub avise.")
+        REJECT_FAILED.append(idea["id"])
 
 
 # ---------------------------------------------------------------- Principal
@@ -913,17 +983,22 @@ def finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, 
     mascot = mascot_png(work) if CFG.get("end_card", True) else None
     assemble(visuals, voice, subs, total, out, sfx, mascot)
     n = len(idea["scenes"]) if style == "ai" else len(visuals)
-    bad = verify_final(out, total, total / n, n)
-    if bad:
+    motivos, bad = quality_check(out, total, n, style, work, idea)
+    if motivos or bad:
         out.unlink(missing_ok=True)
         if style == "code":  # no debería pasar; por las dudas este video se rehace con IA
             (work / "style.txt").write_text("ai")
-            log("❌ La animación con código tenía un tramo quieto: NO se sube; se rehace con IA.")
-            return "wait"
-        for k in bad:  # esas animaciones se rehacen en el próximo intento
-            (work / f"scene{k}.mp4").unlink(missing_ok=True)
-            (work / f"scene{k}.ok").unlink(missing_ok=True)
-        log(f"❌ El video armado tenía imagen quieta (escenas {bad}): NO se sube; esas escenas se rehacen.")
+            despues = "este video se rehace con imágenes animadas por IA en los próximos intentos."
+            log("❌ La animación con código no pasó el control: NO se sube; se rehace con IA.")
+        else:
+            for k in bad:  # esas animaciones se rehacen en el próximo intento
+                (work / f"scene{k}.mp4").unlink(missing_ok=True)
+                (work / f"scene{k}.ok").unlink(missing_ok=True)
+            despues = (f"se rehacen las escenas {bad} en los próximos intentos." if bad
+                       else "se vuelve a armar en el próximo intento.")
+            log(f"❌ El video armado no pasó el control (escenas quietas: {bad or 'ninguna'}): NO se sube.")
+        if motivos:
+            reject(idea, motivos, style, work, despues)
         return "wait"
     log(f"Short listo y revisado: {out}")
 
@@ -947,17 +1022,21 @@ def finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, 
 def publish_ready(idea, done, slot, work, out, style, total=None):
     """Publica un video que ya viene armado (motor cine o hecho a mano), con la misma revisión final."""
     total = total or duration(out)
-    bad = verify_final(out, total, total / 6, 6)
-    if bad:
+    motivos, bad = quality_check(out, total, 6, style)
+    if motivos or bad:
         out.unlink(missing_ok=True)
         if style == "manual":
             rej = ROOT / "manual" / "revisar"
             rej.mkdir(exist_ok=True)
             shutil.move(str(ROOT / "manual" / f"{idea['id']}.mp4"), str(rej / f"{idea['id']}.mp4"))
-            log("❌ El video hecho a mano tenía un tramo quieto: NO se sube; queda en manual/revisar/.")
+            despues = "el video queda en manual/revisar/ y se sigue con la próxima idea."
+            log("❌ El video hecho a mano no pasó el control: NO se sube; queda en manual/revisar/.")
         else:
             (work / "cine_off").write_text("1")
-            log("❌ El video del motor cine tenía un tramo quieto: NO se sube; se rehace con el estilo de antes.")
+            despues = "este video se rehace con el estilo de antes (animación con código o IA)."
+            log("❌ El video del motor cine no pasó el control: NO se sube; se rehace con el estilo de antes.")
+        if motivos:
+            reject(idea, motivos, style, work, despues)
         return "wait"
     log(f"Short listo y revisado: {out}")
     res = upload(out, idea, work, iso(slot) if slot else None)
@@ -1002,6 +1081,8 @@ def main():
         slot = next_slot(done)
         if slot and slot.astimezone(AR).strftime("%H:%M") == CFG["alert_slot_ar"] and slot - now_utc() < timedelta(hours=3, minutes=10):
             give_up(f"Todavía no hay video para las {CFG['alert_slot_ar']} AR (falta cuota de Hugging Face): sigue en los próximos intentos.")
+    if REJECT_FAILED:
+        give_up(f"Videos rechazados por el control de calidad (no se pudo avisar por mail): {', '.join(REJECT_FAILED)}")
 
 
 if __name__ == "__main__":
