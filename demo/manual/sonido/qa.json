@@ -17,13 +17,9 @@
    "duration": "22.133333"
   }
  },
- "freeze": [
-  "8.3"
- ],
- "black": [
-  "8.23333"
- ],
+ "freeze": [],
+ "black": [],
  "loudness_I": -15.0,
- "true_peak": -1.4,
+ "true_peak": -1.3,
  "duration": 22.127
 }
