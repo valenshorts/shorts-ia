@@ -1,0 +1,25 @@
+{
+ "id": "076",
+ "title": "El arcoíris es un círculo",
+ "rate": "+20%", "pause": 0.18, "tail": 0.8,
+ "sources": ["Óptica atmosférica: el arcoíris es un cono de 42° alrededor del punto antisolar; desde el suelo el horizonte tapa la parte de abajo"],
+ "scenes": [
+  {"key": "arco", "text": "Los arcoíris no son arcos."},
+  {"key": "circulo", "text": "Son círculos completos."},
+  {"key": "suelo", "text": "Desde el suelo solo vemos la mitad de arriba, porque la otra mitad queda tapada por la tierra."},
+  {"key": "avion", "text": "Pero si estás en un avión o en una montaña muy alta, con el sol detrás, puedes ver el arcoíris entero, como un anillo de colores."},
+  {"key": "dos", "text": "Y lo más curioso: no hay dos personas que vean exactamente el mismo arcoíris."},
+  {"key": "gotas", "text": "Cada uno ve el suyo, hecho por gotas distintas."}
+ ],
+ "keywords": ["arcoíris", "arcos", "círculos", "completos", "mitad", "tapada", "tierra", "avión", "montaña", "sol", "entero", "anillo", "mismo", "suyo", "gotas"],
+ "sfx": [
+  {"tipo": "brillo", "escena": 0, "inicio": 0.1, "gain": 0.5},
+  {"tipo": "subida", "escena": 1, "palabra": "círculos", "gain": 0.5},
+  {"tipo": "boom", "escena": 1, "palabra": "completos", "gain": 0.7},
+  {"tipo": "boom", "escena": 2, "palabra": "tapada", "gain": 0.5},
+  {"tipo": "whoosh", "escena": 3, "inicio": 0.3, "gain": 0.6},
+  {"tipo": "brillo", "escena": 3, "palabra": "entero", "gain": 0.7},
+  {"tipo": "boom", "escena": 4, "palabra": "personas", "gain": 0.6},
+  {"tipo": "campana", "escena": 5, "palabra": "gotas", "gain": 0.8}
+ ]
+}
