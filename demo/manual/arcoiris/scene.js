@@ -57,13 +57,13 @@ var V = {
     N.pA5 = person(g5, "#FFD22E"); N.pB5 = person(g5, "#19B8B2");
   },
   draw: function (t, c) {
-    var o = { sky: ["#2a5cae", "#8fb8e6"] }, a = c.a, d = c.drift, k = c.key;
+    var o = { sky: ["#163574", "#8fb8e6"] }, a = c.a, d = c.drift, k = c.key;
     if (k === "arco") {
       var s = N.s0; setBow(s.bow, .5 * E.inout(seg(t, a, a + .9)));
       o.head = ["El arcoíris", "<b>no es un arco</b>", 1, 0];
       o.cam = { s: 1 + .05 * d, fx: 540, fy: 960 };
     } else if (k === "circulo") {
-      var s1 = N.s1, tc = cue(1, "círculos", .4), full = E.inout(seg(t, tc - .2, tc + .8));
+      var s1 = N.s1, tc = cue(1, "círculos", .4), full = E.inout(seg(t, a + .1, a + .85));
       setBow(s1.bow, .5 + .5 * full); op(s1.ground, 1 - .8 * full);
       o.head = ["Es un", "<b>círculo completo</b>", rise(t, tc)[0], rise(t, tc)[1]];
       o.cam = { s: lerp(1, .92, full) + .04 * d, fx: 540, fy: lerp(960, 1040, full) };
@@ -87,9 +87,10 @@ var V = {
       var tp = cue(4, "personas", .5), sp = E.inout(seg(t, tp - .2, tp + .6));
       tr(N.b4a, 540 - 140 * sp, 1040, 1, 0); tr(N.b4b, 540 + 140 * sp, 1040, 1, 0); op(N.b4b, sp);
       setBow(N.bA, .5 * E.inout(seg(t, a, a + .7))); setBow(N.bB, .5 * sp);
-      tr(N.pA, 540 - 140 * sp, 994, 1.1, 0); tr(N.pB, 540 + 140 * sp, 994, 1.1, 0); op(N.pB, sp);
+      tr(N.pA, 540 - 140 * sp, 994 + Math.sin(t * 3) * 6, 1.1, 0); tr(N.pB, 540 + 140 * sp, 994 + Math.sin(t * 3 + 1.6) * 6, 1.1, 0); op(N.pB, sp);
+      [N.bA, N.bB].forEach(function (b, j) { b.rings.forEach(function (q, i) { q.e.setAttribute("opacity", .75 + .2 * Math.sin(t * 4 - i * .7 + j * 2)); }); });
       o.head = ["No hay dos personas que vean", "<b>el mismo arcoíris</b>", rise(t, tp)[0], rise(t, tp)[1]];
-      o.cam = { s: 1 + .05 * d, fx: 540, fy: 960 };
+      o.cam = { s: 1 + .1 * E.inout(d), fx: 540, fy: 960 };
     } else {
       var tg = cue(5, "gotas", .7);
       tr(N.pA5, 400, 994, 1.1, 0); tr(N.pB5, 680, 994, 1.1, 0);
