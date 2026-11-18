@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-18T16:03:00Z",
+  "generado": "2026-11-18T18:29:41Z",
   "semana": {
     "desde": "2026-11-11",
     "hasta": "2026-11-17"
@@ -7,9 +7,9 @@
   "resumen": {
     "videos_youtube": 45,
     "videos_instagram": 37,
-    "youtube_vistas_total": 23273,
+    "youtube_vistas_total": 23287,
     "youtube_vistas_semana": null,
-    "instagram_vistas_total": 54031,
+    "instagram_vistas_total": 54051,
     "publicados_esta_semana": [
       "024",
       "025",
@@ -580,8 +580,8 @@
         "comentarios": 0,
         "url": "https://www.instagram.com/reel/Dfqf3-Vldd8/",
         "publicado": "2026-11-13T01:55:01+0000",
-        "vistas": 2826,
-        "alcance": 2204,
+        "vistas": 2827,
+        "alcance": 2205,
         "guardados": 2,
         "compartidos": 0,
         "seg_medio_visto": 10.5,
@@ -609,8 +609,8 @@
         "comentarios": 0,
         "url": "https://www.instagram.com/reel/DfqzOQunCM8/",
         "publicado": "2026-11-13T04:44:06+0000",
-        "vistas": 529,
-        "alcance": 408,
+        "vistas": 530,
+        "alcance": 409,
         "guardados": 0,
         "compartidos": 0,
         "seg_medio_visto": 23.5,
@@ -888,7 +888,7 @@
         "id": "XmFS5GNW7I4",
         "url": "https://youtube.com/shorts/XmFS5GNW7I4",
         "vistas": 85,
-        "likes": 5,
+        "likes": 6,
         "comentarios": 1,
         "duracion_s": 20.0,
         "estado": "public"
@@ -899,12 +899,12 @@
         "comentarios": 0,
         "url": "https://www.instagram.com/reel/Df3KsshifNj/",
         "publicado": "2026-11-18T00:00:06+0000",
-        "vistas": 302,
-        "alcance": 237,
+        "vistas": 306,
+        "alcance": 239,
         "guardados": 0,
         "compartidos": 0,
-        "seg_medio_visto": 7.4,
-        "retencion_aprox_pct": 37.0
+        "seg_medio_visto": 7.6,
+        "retencion_aprox_pct": 38.0
       }
     },
     {
@@ -932,7 +932,7 @@
       "youtube": {
         "id": "CSHw8rBWFRc",
         "url": "https://youtube.com/shorts/CSHw8rBWFRc",
-        "vistas": 899,
+        "vistas": 902,
         "likes": 16,
         "comentarios": 2,
         "duracion_s": 25.0,
@@ -940,16 +940,16 @@
       },
       "instagram": {
         "id": "18345014902278150",
-        "likes": 38,
+        "likes": 39,
         "comentarios": 0,
         "url": "https://www.instagram.com/reel/Df3fRPsj7cC/",
         "publicado": "2026-11-18T02:59:50+0000",
-        "vistas": 1669,
-        "alcance": 1169,
+        "vistas": 1683,
+        "alcance": 1184,
         "guardados": 1,
         "compartidos": 5,
-        "seg_medio_visto": 11.4,
-        "retencion_aprox_pct": 45.6
+        "seg_medio_visto": 11.3,
+        "retencion_aprox_pct": 45.2
       }
     },
     {
@@ -977,11 +977,11 @@
       "youtube": {
         "id": "HafvDHfNUIs",
         "url": "https://youtube.com/shorts/HafvDHfNUIs",
-        "vistas": 2,
-        "likes": 0,
-        "comentarios": 0,
+        "vistas": 13,
+        "likes": 1,
+        "comentarios": 1,
         "duracion_s": 23.0,
-        "estado": "private"
+        "estado": "public"
       }
     },
     {
