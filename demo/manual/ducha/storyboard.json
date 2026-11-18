@@ -1,0 +1,26 @@
+{
+ "id": "064",
+ "title": "Por qué cantas mejor en la ducha",
+ "rate": "+20%", "pause": 0.18, "tail": 0.8,
+ "sources": ["Acústica: superficies duras y lisas reflejan el sonido y generan reverberación corta, que enriquece y disimula desafinaciones (efecto reverb en estudios)"],
+ "scenes": [
+  {"key": "ducha", "text": "No es tu imaginación: en la ducha cantas mejor."},
+  {"key": "paredes", "text": "Las paredes del baño son duras y lisas, así que tu voz rebota en ellas una y otra vez."},
+  {"key": "eco", "text": "Ese eco cortito hace que tu voz suene más llena y tape las notas desafinadas."},
+  {"key": "vapor", "text": "Además, el vapor y el calor relajan la garganta."},
+  {"key": "estudio", "text": "Los estudios de grabación usan el mismo truco, pero con efectos de sonido."},
+  {"key": "famoso", "text": "Por eso, en la ducha, todos suenan un poco como un cantante famoso."}
+ ],
+ "keywords": ["ducha", "cantas", "mejor", "paredes", "lisas", "rebota", "eco", "llena", "desafinadas", "vapor", "calor", "garganta", "estudios", "truco", "efectos", "famoso"],
+ "sfx": [
+  {"tipo": "brillo", "escena": 0, "palabra": "cantas", "gain": 0.5},
+  {"tipo": "whoosh", "escena": 1, "inicio": 0.05, "gain": 0.5},
+  {"tipo": "clics", "escena": 1, "palabra": "rebota", "hasta": "vez", "n": 6, "f": 1500, "gain": 0.35},
+  {"tipo": "subida", "escena": 2, "palabra": "llena", "gain": 0.5},
+  {"tipo": "boom", "escena": 2, "palabra": "desafinadas", "gain": 0.5},
+  {"tipo": "grave", "escena": 3, "palabra": "relajan", "gain": 0.5},
+  {"tipo": "boom", "escena": 4, "palabra": "truco", "gain": 0.6},
+  {"tipo": "campana", "escena": 5, "palabra": "famoso", "gain": 0.8},
+  {"tipo": "brillo", "escena": 5, "palabra": "famoso", "gain": 0.6, "dur": 1.2}
+ ]
+}
