@@ -103,7 +103,11 @@ def clone_tts(text, out_wav):
                    exaggeration=float(os.environ.get("VOZ_EXAG", "0.55")), cfg_weight=0.5, temperature=0.7)
     raw = out_wav.with_suffix(".raw.wav"); torchaudio.save(str(raw), w, m.sr)
     run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-af", f"atempo={os.environ.get('VOZ_TEMPO', '1.1')}", "-ar", SR, "-ac", 1, out_wav])
-    segs, _ = CLONE["w"].transcribe(str(out_wav), language="es", word_timestamps=True, initial_prompt=text)
+    w16 = out_wav.with_suffix(".16k.wav")  # se le pasa el audio ya leído: evita el choque de versiones de PyAV
+    run(["ffmpeg", "-v", "error", "-y", "-i", out_wav, "-ar", 16000, "-ac", 1, "-c:a", "pcm_s16le", w16])
+    with wave.open(str(w16)) as f:
+        a16 = np.frombuffer(f.readframes(f.getnframes()), dtype=np.int16).astype(np.float32) / 32768
+    segs, _ = CLONE["w"].transcribe(a16, language="es", word_timestamps=True, initial_prompt=text)
     return [(x.start, x.end, x.word.strip()) for s in segs for x in (s.words or []) if x.word.strip()]
 
 
