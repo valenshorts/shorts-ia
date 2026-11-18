@@ -1,0 +1,28 @@
+{
+ "id": "089",
+ "title": "Saturno flotaría en el agua",
+ "rate": "+20%", "pause": 0.18, "tail": 0.8,
+ "sources": ["NASA: Saturno, densidad media 0,687 g/cm³ (menor que el agua); volumen ~764 Tierras; anillos de unos 10 m a 1 km de espesor"],
+ "scenes": [
+  {"key": "gigante", "text": "Saturno es gigante: dentro de él cabrían más de setecientas Tierras."},
+  {"key": "banera", "text": "Pero si encontraras una bañera lo suficientemente grande, Saturno flotaría."},
+  {"key": "gas", "text": "Está hecho casi todo de gas, sobre todo hidrógeno y helio, que son los más livianos que existen."},
+  {"key": "densidad", "text": "Aunque es enorme, es menos denso que el agua."},
+  {"key": "anillos", "text": "Y hay algo más: sus anillos son finísimos."},
+  {"key": "metros", "text": "Miden cientos de miles de kilómetros de ancho, pero en muchas partes no más de unos diez metros de alto."}
+ ],
+ "caption_replace": [["setecientas Tierras", "700 Tierras"], ["diez metros", "10 metros"]],
+ "keywords": ["saturno", "gigante", "tierras", "bañera", "flotaría", "gas", "hidrógeno", "helio", "livianos", "denso", "agua", "anillos", "finísimos", "kilómetros", "metros"],
+ "sfx": [
+  {"tipo": "clics", "escena": 0, "inicio": 0.4, "hasta": "tierras", "n": 6, "gain": 0.45},
+  {"tipo": "boom_grande", "escena": 0, "palabra": "tierras", "offset": 0.2, "gain": 0.85},
+  {"tipo": "whoosh", "escena": 1, "inicio": 0.6, "gain": 0.6},
+  {"tipo": "boom", "escena": 1, "inicio": 1.1, "gain": 0.8},
+  {"tipo": "whoosh", "escena": 2, "inicio": 0.5, "gain": 0.5},
+  {"tipo": "subida", "escena": 3, "palabra": "menos", "gain": 0.5},
+  {"tipo": "boom", "escena": 3, "palabra": "agua", "gain": 0.5},
+  {"tipo": "grave", "escena": 4, "palabra": "finísimos", "gain": 0.7},
+  {"tipo": "brillo", "escena": 5, "palabra": "metros", "gain": 0.6},
+  {"tipo": "campana", "escena": 5, "palabra": "alto", "gain": 0.7}
+ ]
+}
