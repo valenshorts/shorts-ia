@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-18T18:29:41Z",
+  "generado": "2026-11-18T18:46:42Z",
   "semana": {
     "desde": "2026-11-11",
     "hasta": "2026-11-17"
@@ -7,8 +7,8 @@
   "resumen": {
     "videos_youtube": 45,
     "videos_instagram": 37,
-    "youtube_vistas_total": 23287,
-    "youtube_vistas_semana": null,
+    "youtube_vistas_total": 23328,
+    "youtube_vistas_semana": 2481,
     "instagram_vistas_total": 54051,
     "publicados_esta_semana": [
       "024",
@@ -28,11 +28,40 @@
       "069",
       "097b"
     ],
-    "top_semana_youtube": []
+    "top_semana_youtube": [
+      {
+        "id": "024",
+        "titulo": "¿Por qué el agua oxigenada hace espuma?",
+        "vistas": 1215,
+        "retencion_pct": 79.7
+      },
+      {
+        "id": "030",
+        "titulo": "La luna se está yendo",
+        "vistas": 506,
+        "retencion_pct": 86.7
+      },
+      {
+        "id": "021",
+        "titulo": "¿Por qué el mar es salado?",
+        "vistas": 383,
+        "retencion_pct": 84.1
+      },
+      {
+        "id": "028",
+        "titulo": "¿Por qué la Coca explota con Mentos?",
+        "vistas": 160,
+        "retencion_pct": 59.0
+      },
+      {
+        "id": "020",
+        "titulo": "¿Qué son las rayas blancas que dejan los aviones?",
+        "vistas": 57,
+        "retencion_pct": 90.3
+      }
+    ]
   },
-  "avisos": [
-    "YouTube Analytics (semana/retención) falló: Request had insufficient authentication scopes. → Falta el permiso de estadísticas: generar un refresh token nuevo en OAuth Playground con los scopes youtube.force-ssl Y yt-analytics.readonly (y habilitar \"YouTube Analytics API\" en Google Cloud, proyecto shorts-ia), y reemplazar el secreto YT_REFRESH_TOKEN."
-  ],
+  "avisos": [],
   "videos": [
     {
       "id": "005",
@@ -47,7 +76,29 @@
         "likes": 27,
         "comentarios": 0,
         "duracion_s": 24.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 3,
+          "likes": 0,
+          "retencion_pct": 165.4,
+          "seg_medio_visto": 39.0
+        },
+        "total": {
+          "vistas": 1562,
+          "likes": 27,
+          "retencion_pct": 121.9,
+          "seg_medio_visto": 29.0,
+          "vistas_feed_shorts": 1465,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 26,
+            "YT_SEARCH": 66,
+            "YT_OTHER_PAGE": 2,
+            "NOTIFICATION": 1,
+            "SHORTS": 1465
+          }
+        }
       }
     },
     {
@@ -63,7 +114,21 @@
         "likes": 1,
         "comentarios": 0,
         "duracion_s": 27.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 19,
+          "likes": 1,
+          "retencion_pct": 66.5,
+          "seg_medio_visto": 17.0,
+          "vistas_feed_shorts": 1,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 5,
+            "YT_CHANNEL": 6,
+            "YT_SEARCH": 7,
+            "SHORTS": 1
+          }
+        }
       }
     },
     {
@@ -79,7 +144,23 @@
         "likes": 30,
         "comentarios": 3,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 1649,
+          "likes": 30,
+          "retencion_pct": 75.9,
+          "seg_medio_visto": 15.0,
+          "vistas_feed_shorts": 1602,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 8,
+            "YT_SEARCH": 34,
+            "YT_OTHER_PAGE": 2,
+            "NOTIFICATION": 1,
+            "SHORTS": 1602
+          }
+        }
       },
       "instagram": {
         "id": "18082296077349404",
@@ -108,7 +189,22 @@
         "likes": 18,
         "comentarios": 1,
         "duracion_s": 22.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 877,
+          "likes": 18,
+          "retencion_pct": 81.2,
+          "seg_medio_visto": 17.0,
+          "vistas_feed_shorts": 850,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 1,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 3,
+            "YT_SEARCH": 20,
+            "NOTIFICATION": 1,
+            "SHORTS": 850
+          }
+        }
       },
       "instagram": {
         "id": "18399820618166115",
@@ -137,7 +233,19 @@
         "likes": 0,
         "comentarios": 1,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 8,
+          "likes": 0,
+          "retencion_pct": 70.5,
+          "seg_medio_visto": 14.0,
+          "vistas_feed_shorts": 1,
+          "origen_vistas": {
+            "YT_CHANNEL": 6,
+            "YT_SEARCH": 1,
+            "SHORTS": 1
+          }
+        }
       },
       "instagram": {
         "id": "18181890694435537",
@@ -166,7 +274,29 @@
         "likes": 24,
         "comentarios": 1,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 3,
+          "likes": 0,
+          "retencion_pct": 103.0,
+          "seg_medio_visto": 20.0
+        },
+        "total": {
+          "vistas": 1307,
+          "likes": 24,
+          "retencion_pct": 101.0,
+          "seg_medio_visto": 20.0,
+          "vistas_feed_shorts": 1236,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 8,
+            "YT_SEARCH": 58,
+            "YT_OTHER_PAGE": 4,
+            "NOTIFICATION": 0,
+            "SHORTS": 1236
+          }
+        }
       },
       "instagram": {
         "id": "18168789778476796",
@@ -195,7 +325,19 @@
         "likes": 0,
         "comentarios": 0,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 4,
+          "likes": 0,
+          "retencion_pct": 82.7,
+          "seg_medio_visto": 17.0,
+          "vistas_feed_shorts": 1,
+          "origen_vistas": {
+            "YT_CHANNEL": 0,
+            "YT_SEARCH": 3,
+            "SHORTS": 1
+          }
+        }
       },
       "instagram": {
         "id": "18150862672552605",
@@ -224,7 +366,28 @@
         "likes": 13,
         "comentarios": 2,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 0,
+          "likes": 0,
+          "retencion_pct": 0.0,
+          "seg_medio_visto": 0.0
+        },
+        "total": {
+          "vistas": 2231,
+          "likes": 13,
+          "retencion_pct": 81.7,
+          "seg_medio_visto": 17.0,
+          "vistas_feed_shorts": 2166,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 9,
+            "YT_SEARCH": 52,
+            "YT_OTHER_PAGE": 3,
+            "SHORTS": 2166,
+            "SOUND_PAGE": 1
+          }
+        }
       },
       "instagram": {
         "id": "18076177415729626",
@@ -253,7 +416,23 @@
         "likes": 10,
         "comentarios": 1,
         "duracion_s": 23.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 477,
+          "likes": 10,
+          "retencion_pct": 88.8,
+          "seg_medio_visto": 20.0,
+          "vistas_feed_shorts": 455,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 7,
+            "YT_CHANNEL": 3,
+            "YT_SEARCH": 8,
+            "YT_OTHER_PAGE": 2,
+            "NOTIFICATION": 2,
+            "SHORTS": 455
+          }
+        }
       },
       "instagram": {
         "id": "17960299020253849",
@@ -282,7 +461,20 @@
         "likes": 1,
         "comentarios": 1,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 15,
+          "likes": 1,
+          "retencion_pct": 93.5,
+          "seg_medio_visto": 18.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 12
+          }
+        }
       },
       "instagram": {
         "id": "17967019101228384",
@@ -311,7 +503,23 @@
         "likes": 15,
         "comentarios": 1,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 1286,
+          "likes": 15,
+          "retencion_pct": 75.5,
+          "seg_medio_visto": 15.0,
+          "vistas_feed_shorts": 1248,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 6,
+            "YT_CHANNEL": 6,
+            "YT_SEARCH": 22,
+            "YT_OTHER_PAGE": 3,
+            "NOTIFICATION": 1,
+            "SHORTS": 1248
+          }
+        }
       },
       "instagram": {
         "id": "18371352787214292",
@@ -340,7 +548,19 @@
         "likes": 0,
         "comentarios": 1,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 6,
+          "likes": 0,
+          "retencion_pct": 26.4,
+          "seg_medio_visto": 5.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 0,
+            "YT_SEARCH": 6
+          }
+        }
       },
       "instagram": {
         "id": "18132885481825134",
@@ -369,7 +589,20 @@
         "likes": 1,
         "comentarios": 1,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 5,
+          "likes": 1,
+          "retencion_pct": 129.2,
+          "seg_medio_visto": 27.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 2
+          }
+        }
       },
       "instagram": {
         "id": "18118190471046474",
@@ -398,7 +631,22 @@
         "likes": 13,
         "comentarios": 3,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 1272,
+          "likes": 13,
+          "retencion_pct": 68.9,
+          "seg_medio_visto": 13.0,
+          "vistas_feed_shorts": 1243,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 2,
+            "YT_SEARCH": 24,
+            "NOTIFICATION": 2,
+            "SHORTS": 1243
+          }
+        }
       },
       "instagram": {
         "id": "18236289955323561",
@@ -427,7 +675,23 @@
         "likes": 27,
         "comentarios": 1,
         "duracion_s": 23.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 1246,
+          "likes": 27,
+          "retencion_pct": 65.7,
+          "seg_medio_visto": 15.0,
+          "vistas_feed_shorts": 1206,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 32,
+            "YT_OTHER_PAGE": 1,
+            "NOTIFICATION": 2,
+            "SHORTS": 1206
+          }
+        }
       },
       "instagram": {
         "id": "17909093952657964",
@@ -456,7 +720,27 @@
         "likes": 13,
         "comentarios": 1,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 57,
+          "likes": 1,
+          "retencion_pct": 90.3,
+          "seg_medio_visto": 18.0
+        },
+        "total": {
+          "vistas": 252,
+          "likes": 13,
+          "retencion_pct": 86.8,
+          "seg_medio_visto": 18.0,
+          "vistas_feed_shorts": 226,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 3,
+            "YT_SEARCH": 20,
+            "SHORTS": 226
+          }
+        }
       },
       "instagram": {
         "id": "17977645287174263",
@@ -485,7 +769,28 @@
         "likes": 25,
         "comentarios": 1,
         "duracion_s": 19.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 383,
+          "likes": 2,
+          "retencion_pct": 84.1,
+          "seg_medio_visto": 15.0
+        },
+        "total": {
+          "vistas": 1491,
+          "likes": 25,
+          "retencion_pct": 70.9,
+          "seg_medio_visto": 13.0,
+          "vistas_feed_shorts": 1450,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 29,
+            "YT_OTHER_PAGE": 5,
+            "SHORTS": 1450
+          }
+        }
       },
       "instagram": {
         "id": "18120291122112086",
@@ -514,7 +819,27 @@
         "likes": 1,
         "comentarios": 1,
         "duracion_s": 19.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 34,
+          "likes": 0,
+          "retencion_pct": 107.1,
+          "seg_medio_visto": 20.0
+        },
+        "total": {
+          "vistas": 47,
+          "likes": 1,
+          "retencion_pct": 144.8,
+          "seg_medio_visto": 27.0,
+          "vistas_feed_shorts": 3,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 5,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 35,
+            "SHORTS": 3
+          }
+        }
       },
       "instagram": {
         "id": "18133997080740675",
@@ -543,7 +868,26 @@
         "likes": 2,
         "comentarios": 2,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 5,
+          "likes": 1,
+          "retencion_pct": 56.0,
+          "seg_medio_visto": 11.0
+        },
+        "total": {
+          "vistas": 11,
+          "likes": 2,
+          "retencion_pct": 79.2,
+          "seg_medio_visto": 15.0,
+          "vistas_feed_shorts": 5,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 0,
+            "YT_SEARCH": 6,
+            "SHORTS": 5
+          }
+        }
       },
       "instagram": {
         "id": "17967672692984550",
@@ -572,7 +916,28 @@
         "likes": 40,
         "comentarios": 1,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 1215,
+          "likes": 39,
+          "retencion_pct": 79.7,
+          "seg_medio_visto": 16.0
+        },
+        "total": {
+          "vistas": 1215,
+          "likes": 39,
+          "retencion_pct": 79.7,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 1046,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 5,
+            "YT_CHANNEL": 6,
+            "YT_SEARCH": 157,
+            "NOTIFICATION": 0,
+            "SHORTS": 1046
+          }
+        }
       },
       "instagram": {
         "id": "18165079474494057",
@@ -601,7 +966,28 @@
         "likes": 2,
         "comentarios": 1,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 9,
+          "likes": 2,
+          "retencion_pct": 55.1,
+          "seg_medio_visto": 11.0
+        },
+        "total": {
+          "vistas": 9,
+          "likes": 2,
+          "retencion_pct": 55.1,
+          "seg_medio_visto": 11.0,
+          "vistas_feed_shorts": 3,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 1,
+            "NOTIFICATION": 2,
+            "SHORTS": 3
+          }
+        }
       },
       "instagram": {
         "id": "18026750000947145",
@@ -630,7 +1016,27 @@
         "likes": 3,
         "comentarios": 2,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 13,
+          "likes": 3,
+          "retencion_pct": 76.0,
+          "seg_medio_visto": 15.0
+        },
+        "total": {
+          "vistas": 13,
+          "likes": 3,
+          "retencion_pct": 76.0,
+          "seg_medio_visto": 15.0,
+          "vistas_feed_shorts": 4,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 7,
+            "SHORTS": 4
+          }
+        }
       },
       "instagram": {
         "id": "17877689751638747",
@@ -659,7 +1065,27 @@
         "likes": 1,
         "comentarios": 1,
         "duracion_s": 23.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 7,
+          "likes": 0,
+          "retencion_pct": 61.9,
+          "seg_medio_visto": 14.0
+        },
+        "total": {
+          "vistas": 7,
+          "likes": 0,
+          "retencion_pct": 61.9,
+          "seg_medio_visto": 14.0,
+          "vistas_feed_shorts": 2,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 0,
+            "YT_SEARCH": 3,
+            "SHORTS": 2
+          }
+        }
       },
       "instagram": {
         "id": "18112883096337297",
@@ -688,7 +1114,27 @@
         "likes": 1,
         "comentarios": 1,
         "duracion_s": 22.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 160,
+          "likes": 1,
+          "retencion_pct": 59.0,
+          "seg_medio_visto": 12.0
+        },
+        "total": {
+          "vistas": 160,
+          "likes": 1,
+          "retencion_pct": 59.0,
+          "seg_medio_visto": 12.0,
+          "vistas_feed_shorts": 139,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 16,
+            "SHORTS": 139
+          }
+        }
       },
       "instagram": {
         "id": "18374363848209585",
@@ -717,7 +1163,26 @@
         "likes": 1,
         "comentarios": 1,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 8,
+          "likes": 1,
+          "retencion_pct": 85.6,
+          "seg_medio_visto": 17.0
+        },
+        "total": {
+          "vistas": 8,
+          "likes": 1,
+          "retencion_pct": 85.6,
+          "seg_medio_visto": 17.0,
+          "vistas_feed_shorts": 3,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 2,
+            "YT_SEARCH": 3,
+            "SHORTS": 3
+          }
+        }
       },
       "instagram": {
         "id": "18113967311235146",
@@ -746,7 +1211,27 @@
         "likes": 38,
         "comentarios": 2,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 506,
+          "likes": 23,
+          "retencion_pct": 86.7,
+          "seg_medio_visto": 18.0
+        },
+        "total": {
+          "vistas": 506,
+          "likes": 23,
+          "retencion_pct": 86.7,
+          "seg_medio_visto": 18.0,
+          "vistas_feed_shorts": 497,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 2,
+            "YT_SEARCH": 5,
+            "YT_OTHER_PAGE": 2,
+            "SHORTS": 497
+          }
+        }
       },
       "instagram": {
         "id": "18124558571288225",
@@ -775,7 +1260,26 @@
         "likes": 1,
         "comentarios": 1,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 6,
+          "likes": 1,
+          "retencion_pct": 131.0,
+          "seg_medio_visto": 27.0
+        },
+        "total": {
+          "vistas": 6,
+          "likes": 1,
+          "retencion_pct": 131.0,
+          "seg_medio_visto": 27.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 2,
+            "YT_SEARCH": 3
+          }
+        }
       },
       "instagram": {
         "id": "18352847449271385",
@@ -804,7 +1308,23 @@
         "likes": 2,
         "comentarios": 1,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 3,
+          "likes": 0,
+          "retencion_pct": 79.3,
+          "seg_medio_visto": 15.0
+        },
+        "total": {
+          "vistas": 3,
+          "likes": 0,
+          "retencion_pct": 79.3,
+          "seg_medio_visto": 15.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "YT_CHANNEL": 3
+          }
+        }
       },
       "instagram": {
         "id": "18020843441745384",
@@ -833,7 +1353,11 @@
         "likes": 3,
         "comentarios": 1,
         "duracion_s": 22.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       },
       "instagram": {
         "id": "18032726597877425",
@@ -862,7 +1386,11 @@
         "likes": 25,
         "comentarios": 2,
         "duracion_s": 19.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       },
       "instagram": {
         "id": "17956678623271455",
@@ -891,7 +1419,11 @@
         "likes": 6,
         "comentarios": 1,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       },
       "instagram": {
         "id": "17958916755293207",
@@ -920,7 +1452,11 @@
         "likes": 0,
         "comentarios": 0,
         "duracion_s": 23.0,
-        "estado": "private"
+        "estado": "private",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       }
     },
     {
@@ -936,7 +1472,11 @@
         "likes": 16,
         "comentarios": 2,
         "duracion_s": 25.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       },
       "instagram": {
         "id": "18345014902278150",
@@ -945,7 +1485,7 @@
         "url": "https://www.instagram.com/reel/Df3fRPsj7cC/",
         "publicado": "2026-11-18T02:59:50+0000",
         "vistas": 1683,
-        "alcance": 1184,
+        "alcance": 1185,
         "guardados": 1,
         "compartidos": 5,
         "seg_medio_visto": 11.3,
@@ -965,7 +1505,11 @@
         "likes": 0,
         "comentarios": 0,
         "duracion_s": 23.0,
-        "estado": "private"
+        "estado": "private",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       }
     },
     {
@@ -977,11 +1521,15 @@
       "youtube": {
         "id": "HafvDHfNUIs",
         "url": "https://youtube.com/shorts/HafvDHfNUIs",
-        "vistas": 13,
+        "vistas": 54,
         "likes": 1,
         "comentarios": 1,
         "duracion_s": 23.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       }
     },
     {
@@ -997,7 +1545,11 @@
         "likes": 0,
         "comentarios": 0,
         "duracion_s": 21.0,
-        "estado": "private"
+        "estado": "private",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       }
     },
     {
@@ -1013,7 +1565,11 @@
         "likes": 0,
         "comentarios": 0,
         "duracion_s": 23.0,
-        "estado": "private"
+        "estado": "private",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       }
     },
     {
@@ -1029,7 +1585,28 @@
         "likes": 35,
         "comentarios": 1,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 0,
+          "retencion_pct": 54.0,
+          "seg_medio_visto": 10.0
+        },
+        "total": {
+          "vistas": 1087,
+          "likes": 35,
+          "retencion_pct": 134.6,
+          "seg_medio_visto": 26.0,
+          "vistas_feed_shorts": 1039,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 41,
+            "YT_OTHER_PAGE": 4,
+            "NOTIFICATION": 1,
+            "SHORTS": 1039
+          }
+        }
       },
       "instagram": {
         "id": "17993255726858876",
@@ -1058,7 +1635,28 @@
         "likes": 8,
         "comentarios": 1,
         "duracion_s": 24.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 2,
+          "likes": 0,
+          "retencion_pct": 57.9,
+          "seg_medio_visto": 13.0
+        },
+        "total": {
+          "vistas": 846,
+          "likes": 8,
+          "retencion_pct": 85.2,
+          "seg_medio_visto": 20.0,
+          "vistas_feed_shorts": 817,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 8,
+            "YT_CHANNEL": 0,
+            "YT_SEARCH": 10,
+            "YT_OTHER_PAGE": 5,
+            "SHORTS": 817
+          }
+        }
       },
       "instagram": {
         "id": "17907253584355257",
@@ -1087,7 +1685,21 @@
         "likes": 1,
         "comentarios": 1,
         "duracion_s": 22.0,
-        "estado": "public"
+        "estado": "public",
+        "total": {
+          "vistas": 12,
+          "likes": 1,
+          "retencion_pct": 76.7,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 2,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 5,
+            "SHORTS": 2
+          }
+        }
       },
       "instagram": {
         "id": "18110052794215518",
@@ -1116,7 +1728,25 @@
         "likes": 0,
         "comentarios": 1,
         "duracion_s": 22.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 7,
+          "likes": 0,
+          "retencion_pct": 81.1,
+          "seg_medio_visto": 17.0
+        },
+        "total": {
+          "vistas": 15,
+          "likes": 0,
+          "retencion_pct": 74.8,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 4,
+          "origen_vistas": {
+            "YT_CHANNEL": 2,
+            "YT_SEARCH": 9,
+            "SHORTS": 4
+          }
+        }
       },
       "instagram": {
         "id": "17922273117243659",
@@ -1145,7 +1775,28 @@
         "likes": 21,
         "comentarios": 1,
         "duracion_s": 22.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 0,
+          "likes": 0,
+          "retencion_pct": 0.0,
+          "seg_medio_visto": 0.0
+        },
+        "total": {
+          "vistas": 1003,
+          "likes": 21,
+          "retencion_pct": 57.2,
+          "seg_medio_visto": 12.0,
+          "vistas_feed_shorts": 984,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 16,
+            "YT_OTHER_PAGE": 1,
+            "NOTIFICATION": 1,
+            "SHORTS": 984
+          }
+        }
       },
       "instagram": {
         "id": "18143404966716194",
@@ -1174,7 +1825,27 @@
         "likes": 37,
         "comentarios": 1,
         "duracion_s": 21.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 12,
+          "likes": 1,
+          "retencion_pct": 69.2,
+          "seg_medio_visto": 14.0
+        },
+        "total": {
+          "vistas": 1078,
+          "likes": 37,
+          "retencion_pct": 76.6,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 1044,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 25,
+            "PLAYLIST": 1,
+            "SHORTS": 1044
+          }
+        }
       },
       "instagram": {
         "id": "18172424221426013",
@@ -1203,7 +1874,27 @@
         "likes": 22,
         "comentarios": 1,
         "duracion_s": 20.0,
-        "estado": "public"
+        "estado": "public",
+        "semana": {
+          "vistas": 47,
+          "likes": 1,
+          "retencion_pct": 96.0,
+          "seg_medio_visto": 19.0
+        },
+        "total": {
+          "vistas": 1033,
+          "likes": 22,
+          "retencion_pct": 114.8,
+          "seg_medio_visto": 22.0,
+          "vistas_feed_shorts": 1004,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 16,
+            "NOTIFICATION": 1,
+            "SHORTS": 1004
+          }
+        }
       },
       "instagram": {
         "id": "18183202222437464",
@@ -1232,7 +1923,11 @@
         "likes": 0,
         "comentarios": 0,
         "duracion_s": 24.0,
-        "estado": "private"
+        "estado": "private",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
       }
     }
   ]
