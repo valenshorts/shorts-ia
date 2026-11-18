@@ -1,0 +1,27 @@
+{
+ "id": "070",
+ "title": "La Tierra gira a 1600 km por hora",
+ "rate": "+20%", "pause": 0.18, "tail": 0.8,
+ "sources": ["NASA: la Tierra gira a ~1.670 km/h en el ecuador y orbita al Sol a ~107.000 km/h; un avión comercial va a ~900 km/h"],
+ "scenes": [
+  {"key": "ahora", "text": "En este momento te estás moviendo a más de mil seiscientos kilómetros por hora, si estás cerca del ecuador."},
+  {"key": "gira", "text": "Es la velocidad a la que gira la Tierra."},
+  {"key": "sol", "text": "Y además viaja alrededor del Sol a más de cien mil kilómetros por hora."},
+  {"key": "porque", "text": "¿Por qué no lo sientes?"},
+  {"key": "parejo", "text": "Porque el planeta gira siempre parejo, sin frenar ni acelerar."},
+  {"key": "avion", "text": "Igual que en un avión: si va estable, puedes caminar tranquilo aunque vaya rapidísimo."}
+ ],
+ "caption_replace": [["mil seiscientos kilómetros por hora", "1.600 km/h"], ["cien mil kilómetros por hora", "100.000 km/h"]],
+ "keywords": ["moviendo", "ecuador", "gira", "tierra", "sol", "sientes", "parejo", "frenar", "acelerar", "avión", "estable", "tranquilo", "rapidísimo"],
+ "sfx": [
+  {"tipo": "clics", "escena": 0, "inicio": 0.2, "hasta": "kilómetros", "n": 6, "gain": 0.45},
+  {"tipo": "boom_grande", "escena": 0, "palabra": "kilómetros", "offset": 0.2, "gain": 0.85},
+  {"tipo": "whoosh", "escena": 1, "palabra": "gira", "gain": 0.6},
+  {"tipo": "clics", "escena": 2, "palabra": "sol", "hasta": "kilómetros", "n": 6, "gain": 0.45},
+  {"tipo": "boom_grande", "escena": 2, "palabra": "kilómetros", "offset": 0.3, "gain": 0.85},
+  {"tipo": "boom", "escena": 3, "inicio": 0.3, "gain": 0.6},
+  {"tipo": "subida", "escena": 4, "palabra": "parejo", "gain": 0.4},
+  {"tipo": "whoosh", "escena": 5, "inicio": 0.1, "gain": 0.6},
+  {"tipo": "campana", "escena": 5, "palabra": "rapidísimo", "gain": 0.8}
+ ]
+}
