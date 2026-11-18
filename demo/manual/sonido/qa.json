@@ -1,0 +1,29 @@
+{
+ "streams": {
+  "programs": [],
+  "streams": [
+   {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "r_frame_rate": "30/1"
+   },
+   {
+    "codec_name": "aac",
+    "r_frame_rate": "0/0"
+   }
+  ],
+  "format": {
+   "duration": "22.133333"
+  }
+ },
+ "freeze": [
+  "8.3"
+ ],
+ "black": [
+  "8.23333"
+ ],
+ "loudness_I": -15.0,
+ "true_peak": -1.4,
+ "duration": 22.127
+}
