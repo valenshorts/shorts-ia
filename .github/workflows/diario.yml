@@ -39,21 +39,23 @@ jobs:
         timeout-minutes: 25
         run: |
           ok=""
-          for i in 1 2; do  # los servidores de Ubuntu a veces no responden: reintenta (máx. 5 min por intento)
-            if timeout 300 sudo apt-get update -qq -o Acquire::Retries=3 && timeout 300 sudo apt-get install -y -qq -o Acquire::Retries=3 ffmpeg; then ok=1; break; fi
-            echo "apt falló (intento $i)"; sleep 30
+          # plan A: ffmpeg ya armado desde GitHub (BtbN, autorizado por Valentín): tarda segundos.
+          base=https://github.com/BtbN/FFmpeg-Builds/releases/download/latest
+          for f in ffmpeg-n8.1-latest-linux64-gpl-8.1.tar.xz ffmpeg-master-latest-linux64-gpl.tar.xz; do
+            if curl -fsSL --retry 3 "$base/$f" -o /tmp/ff.tar.xz; then ok=1; break; fi
           done
-          if [ -z "$ok" ]; then  # plan B: ffmpeg ya armado, bajado desde GitHub (mismos filtros que usa el video)
-            echo "::warning::No se pudo instalar ffmpeg desde Ubuntu; uso el de GitHub (BtbN)"
-            base=https://github.com/BtbN/FFmpeg-Builds/releases/download/latest
-            for f in ffmpeg-n8.1-latest-linux64-gpl-8.1.tar.xz ffmpeg-master-latest-linux64-gpl.tar.xz; do
-              curl -fsSL --retry 3 "$base/$f" -o /tmp/ff.tar.xz && break
-            done
+          if [ -n "$ok" ]; then
             mkdir -p /tmp/ff && tar -xJf /tmp/ff.tar.xz -C /tmp/ff --strip-components=1
             echo "/tmp/ff/bin" >> "$GITHUB_PATH"
             export PATH="/tmp/ff/bin:$PATH"
-            /tmp/ff/bin/ffmpeg -version | head -1
+          else  # plan B: los servidores de Ubuntu (a veces tardan mucho)
+            echo "::warning::No se pudo bajar ffmpeg de GitHub; uso el de Ubuntu"
+            for i in 1 2; do
+              if timeout 300 sudo apt-get update -qq -o Acquire::Retries=3 && timeout 300 sudo apt-get install -y -qq -o Acquire::Retries=3 ffmpeg; then break; fi
+              echo "apt falló (intento $i)"; sleep 30
+            done
           fi
+          ffmpeg -version | head -1
           ffmpeg -hide_banner -filters | grep -q freezedetect  # el control anti-congelado lo necesita
           pip install -r requirements.txt
           # para los videos con animación con código: emojis de color y el navegador que "filma" las escenas
@@ -85,6 +87,8 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           GH_TOKEN: ${{ github.token }}  # para avisar por mail si un video no pasa el control de calidad
+          ELEVEN_API_KEY: ${{ secrets.ELEVEN_API_KEY }}  # voz clonada de Valentín (si falla, sale con la voz de siempre)
+          ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
         run: python generate.py
 
       - name: Guardar lo generado para el próximo intento
