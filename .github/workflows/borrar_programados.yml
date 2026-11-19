@@ -1,0 +1,42 @@
+name: Borrar programados para resubir
+
+# Borra de YouTube videos programados (todavía privados) y los saca de done.json para que el Short diario
+# los vuelva a subir desde manual/<id>.mp4. Nunca borra un video que ya es público.
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Ids separados por espacio (ej: 070 064)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  borrar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q google-api-python-client google-auth
+      - name: Borrar y actualizar done.json
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IDS: ${{ github.event.inputs.ids }}
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          for i in 1 2 3 4; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python demo/manual/borrar_programados.py "$IDS"
+            git add done.json
+            git commit -m "Borrados para resubir con la voz nueva: $IDS" || { echo "nada para guardar"; exit 0; }
+            if git push; then exit 0; fi
+            sleep 15
+          done
+          exit 1
