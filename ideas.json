@@ -1446,7 +1446,7 @@
     "id": "099",
     "title": "Tu cepillo de dientes y el inodoro",
     "yt_title": "¿Tu cepillo de dientes tiene bacterias del inodoro? 🪥",
-    "narration": "Si tu cepillo de dientes está cerca del inodoro, puede tener bacterias del inodoro. Cada vez que tiras de la cadena con la tapa abierta, el agua lanza al aire una nube de gotitas tan chiquitas que no las ves. Esa nube sube y se dispersa por el baño. En un estudio, más de la mitad de los cepillos de baños compartidos tenían bacterias de origen fecal. La solución es simple: baja la tapa antes de tirar la cadena y guarda el cepillo lejos.",
+    "narration": "Si tu cepillo de dientes está cerca del inodoro, puede tener bacterias del inodoro. Cada vez que tirás la cadena con la tapa abierta, el agua lanza al aire una nube de gotitas tan chiquitas que no las ves. Esa nube sube y se dispersa por el baño. En un estudio, más de la mitad de los cepillos de baños compartidos tenían bacterias de origen fecal. La solución es simple: bajá la tapa antes de tirar la cadena y guardá el cepillo lejos.",
     "scenes": [
       {
         "image": "a toothbrush in a cup on a bathroom sink next to a toilet, clean bright bathroom",
@@ -1477,7 +1477,7 @@
       "bacterias",
       "tapa"
     ],
-    "question": "¿Tú bajas la tapa antes de tirar la cadena? 🚽"
+    "question": "¿Vos bajás la tapa antes de tirar la cadena? 🚽"
   },
   {
     "id": "100",
@@ -1551,7 +1551,7 @@
       "se hunde",
       "lago"
     ],
-    "question": "¿Has visto edificios inclinados en tu ciudad? 🏙️"
+    "question": "¿Viste edificios inclinados en tu ciudad? 🏙️"
   },
   {
     "id": "102",
@@ -1625,13 +1625,13 @@
       "sello",
       "hiponiquio"
     ],
-    "question": "¿Tú te cortas las uñas muy al ras? 💅"
+    "question": "¿Vos te cortás las uñas muy al ras? 💅"
   },
   {
     "id": "104",
-    "title": "Por qué no adelantar un camión que gira",
-    "yt_title": "¿Por qué nunca debes adelantar a un camión que gira? 🚛",
-    "narration": "Nunca adelantes a un camión largo cuando está girando, porque las ruedas de atrás no siguen a las de adelante. Cuando el camión dobla, el remolque corta la curva por dentro, mucho más cerca del borde. Por eso el chofer abre primero hacia el otro lado. Si te metes en ese hueco, el remolque se va cerrando sobre ti. Y lo peor: desde la cabina, ese lugar es un punto ciego. El espacio que parece libre es justo donde el camión va a pasar.",
+    "title": "Por qué no adelantar un camión que dobla",
+    "yt_title": "¿Por qué nunca tenés que pasar a un camión que dobla? 🚛",
+    "narration": "Nunca adelantes a un camión largo cuando está doblando, porque las ruedas de atrás no siguen a las de adelante. Cuando el camión dobla, el remolque corta la curva por dentro, mucho más cerca del borde. Por eso el chofer abre primero hacia el otro lado. Si te metés en ese hueco, el remolque se va cerrando sobre vos. Y lo peor: desde la cabina, ese lugar es un punto ciego. El espacio que parece libre es justo donde el camión va a pasar.",
     "scenes": [
       {
         "image": "a long semi truck with a trailer starting to turn right at a city intersection, seen from above",
@@ -1662,7 +1662,7 @@
       "ruedas de atrás",
       "punto ciego"
     ],
-    "question": "¿Lo sabías? Comparte esto con alguien que maneja 🚛"
+    "question": "¿Lo sabías? Compartilo con alguien que maneja 🚛"
   },
   {
     "id": "105",
@@ -1703,9 +1703,9 @@
   },
   {
     "id": "106",
-    "title": "Por qué no recuerdas tus sueños",
-    "yt_title": "¿Por qué olvidas tus sueños apenas te despiertas? 💤",
-    "narration": "Olvidas casi todos tus sueños a los pocos minutos de despertar. Mientras sueñas, tu cerebro está muy activo, pero la parte que guarda recuerdos nuevos casi no está anotando nada. Es como ver una película con la grabadora apagada. Por eso, si te despiertas justo en medio de un sueño, lo recuerdas; y si pasas unos minutos más dormido, se borra. El truco: apenas abras los ojos, quédate quieto y repásalo antes de pensar en otra cosa.",
+    "title": "Por qué no recordás tus sueños",
+    "yt_title": "¿Por qué te olvidás de tus sueños apenas te despertás? 💤",
+    "narration": "Te olvidás de casi todos tus sueños a los pocos minutos de despertarte. Mientras soñás, tu cerebro está muy activo, pero la parte que guarda recuerdos nuevos casi no está anotando nada. Es como ver una película con la grabadora apagada. Por eso, si te despertás justo en medio de un sueño, lo recordás; y si pasás unos minutos más dormido, se borra. El truco: apenas abras los ojos, quedate quieto y repasalo antes de pensar en otra cosa.",
     "scenes": [
       {
         "image": "a person sleeping peacefully in bed at night with soft dreamy clouds floating above",
@@ -1779,7 +1779,7 @@
     "id": "108",
     "title": "El oxígeno también es tóxico",
     "yt_title": "¿Sabías que el oxígeno puede ser venenoso? 🫁",
-    "narration": "El oxígeno que respiras para vivir también puede ser tóxico. El aire tiene solo un veintiuno por ciento de oxígeno, y tu cuerpo está hecho para esa cantidad. Si respiras oxígeno puro durante muchas horas, empieza a irritar y dañar los pulmones. Y si lo respiras bajo presión, como un buzo a mucha profundidad, puede afectar el cerebro y causar convulsiones. Por eso los buzos y los hospitales lo controlan con cuidado. Lo que te mantiene vivo, en exceso, te hace daño.",
+    "narration": "El oxígeno que respirás para vivir también puede ser tóxico. El aire tiene solo un veintiuno por ciento de oxígeno, y tu cuerpo está hecho para esa cantidad. Si respirás oxígeno puro durante muchas horas, empieza a irritar y dañar los pulmones. Y si lo respirás bajo presión, como un buzo a mucha profundidad, puede afectar el cerebro y causar convulsiones. Por eso los buzos y los hospitales lo controlan con cuidado. Lo que te mantiene vivo, en exceso, te hace daño.",
     "scenes": [
       {
         "image": "a person taking a deep breath of fresh air in a green park on a sunny morning",
@@ -1816,7 +1816,7 @@
     "id": "109",
     "title": "El matcha se cultiva a la sombra",
     "yt_title": "¿Por qué el matcha es tan verde? 🍵",
-    "narration": "El matcha es tan verde porque las plantas pasan sus últimas semanas a la sombra. Unas tres semanas antes de la cosecha, cubren las plantas de té con redes o paja. Con poca luz, las hojas fabrican más clorofila para aprovechar el sol que les llega, y se ponen de un verde intenso. Después las secan, les quitan las venas y las muelen en molinos de piedra hasta hacerlas polvo. Por eso con el matcha te tomas la hoja entera.",
+    "narration": "El matcha es tan verde porque las plantas pasan sus últimas semanas a la sombra. Unas tres semanas antes de la cosecha, cubren las plantas de té con redes o paja. Con poca luz, las hojas fabrican más clorofila para aprovechar el sol que les llega, y se ponen de un verde intenso. Después las secan, les quitan las venas y las muelen en molinos de piedra hasta hacerlas polvo. Por eso con el matcha te tomás la hoja entera.",
     "scenes": [
       {
         "image": "a bowl of bright green matcha tea with a bamboo whisk on a wooden table",
@@ -1926,7 +1926,7 @@
   {
     "id": "038",
     "title": "Por qué se te tapan los oídos en el avión",
-    "narration": "Si en el avión se te tapan los oídos, la culpa es de un tubito escondido en tu garganta. Detrás de cada oído hay una cámara de aire, conectada a ese tubito. Cuando el avión sube o baja, la presión de afuera cambia rápido, pero el aire de adentro tarda en igualarse. Entonces el tímpano queda empujado y se te tapa el oído. Cuando tragas o bostezas, el tubito se abre y suena el famoso pop. Por eso lloran tanto los bebés en los aviones: todavía no saben destaparse los oídos solos.",
+    "narration": "Si en el avión se te tapan los oídos, la culpa es de un tubito escondido en tu garganta. Detrás de cada oído hay una cámara de aire, conectada a ese tubito. Cuando el avión sube o baja, la presión de afuera cambia rápido, pero el aire de adentro tarda en igualarse. Entonces el tímpano queda empujado y se te tapa el oído. Cuando tragás o bostezás, el tubito se abre y suena el famoso pop. Por eso lloran tanto los bebés en los aviones: todavía no saben destaparse los oídos solos.",
     "scenes": [
       {
         "image": "an airplane taking off into the clouds",
@@ -1997,8 +1997,8 @@
   },
   {
     "id": "047",
-    "title": "La fresa no es una baya, el plátano sí",
-    "narration": "Para la ciencia, la fresa no es una baya. Pero el plátano sí. Una baya es una fruta que sale de una sola flor y tiene las semillas adentro. El plátano, la uva y hasta el tomate cumplen la regla. La fresa no. Y lo más loco: esos puntitos que tiene por fuera no son semillas. Cada puntito es una fruta de verdad, con una semilla adentro. O sea, cuando comes una fresa, te estás comiendo cientos de frutitas pegadas.",
+    "title": "La frutilla no es una baya, la banana sí",
+    "narration": "Para la ciencia, la frutilla no es una baya. Pero la banana sí. Una baya es una fruta que sale de una sola flor y tiene las semillas adentro. La banana, la uva y hasta el tomate cumplen la regla. La frutilla no. Y lo más loco: esos puntitos que tiene por fuera no son semillas. Cada puntito es una fruta de verdad, con una semilla adentro. O sea, cuando comés una frutilla, te estás comiendo cientos de frutitas pegadas.",
     "scenes": [
       {
         "image": "a fresh red strawberry next to a yellow banana on a white table",
@@ -2024,17 +2024,17 @@
       "plantas",
       "curiosidades"
     ],
-    "yt_title": "La fresa no es una baya, pero el plátano sí 🍓",
+    "yt_title": "La frutilla no es una baya, pero la banana sí 🍓",
     "playlist": "Comida increíble",
     "highlight": [
-      "el plátano sí",
+      "la banana sí",
       "cientos de frutitas"
     ]
   },
   {
     "id": "050",
     "title": "Por qué se pone la piel de gallina",
-    "narration": "Cuando tienes frío o te emocionas, se te pone la piel de gallina. Cada pelito tiene un músculo diminuto en la base, y ese músculo lo levanta. En los animales con mucho pelo, eso sirve: el pelo parado atrapa aire caliente, o los hace ver más grandes cuando tienen miedo. Como cuando un gato se eriza. Nosotros ya casi no tenemos pelo, pero el cuerpo sigue haciendo lo mismo. Es un botón que quedó de cuando éramos mucho más peludos.",
+    "narration": "Cuando tenés frío o te emocionás, se te pone la piel de gallina. Cada pelito tiene un músculo diminuto en la base, y ese músculo lo levanta. En los animales con mucho pelo, eso sirve: el pelo parado atrapa aire caliente, o los hace ver más grandes cuando tienen miedo. Como cuando un gato se eriza. Nosotros ya casi no tenemos pelo, pero el cuerpo sigue haciendo lo mismo. Es un botón que quedó de cuando éramos mucho más peludos.",
     "scenes": [
       {
         "image": "macro view of skin with goosebumps and tiny hairs standing up",
@@ -2177,8 +2177,8 @@
   },
   {
     "id": "056",
-    "title": "Por qué pica el chile",
-    "narration": "El chile no está caliente. Engaña a tu cerebro. Tiene una sustancia que se pega a los mismos sensores de tu lengua que detectan el calor. Tu cerebro recibe la señal y cree que te estás quemando. Por eso sudas y te pones rojo. Pero lo más curioso: los pájaros no sienten nada. Se comen los chiles sin problema y reparten las semillas lejos. La planta inventó el picante para alejar a los mamíferos y dejar comer solo a los pájaros.",
+    "title": "Por qué pica el ají",
+    "narration": "El ají picante no está caliente. Engaña a tu cerebro. Tiene una sustancia que se pega a los mismos sensores de tu lengua que detectan el calor. Tu cerebro recibe la señal y cree que te estás quemando. Por eso sudás y te ponés rojo. Pero lo más curioso: los pájaros no sienten nada. Se comen los ajíes sin problema y reparten las semillas lejos. La planta inventó el picante para alejar a los mamíferos y dejar comer solo a los pájaros.",
     "scenes": [
       {
         "image": "a bright red chili pepper on a wooden table with flames around it",
@@ -2204,7 +2204,7 @@
       "plantas",
       "curiosidades"
     ],
-    "yt_title": "El chile engaña a tu cerebro 🌶️",
+    "yt_title": "El ají picante engaña a tu cerebro 🌶️",
     "playlist": "Comida increíble",
     "highlight": [
       "engaña",
@@ -2574,7 +2574,7 @@
   {
     "id": "071",
     "title": "Por qué te suenan las tripas",
-    "narration": "Las tripas te suenan todo el tiempo, no solo cuando tienes hambre. Tu intestino se aprieta en ondas para empujar la comida, el líquido y el aire. Cuando está lleno, la comida amortigua el ruido. Pero cuando está vacío, solo quedan aire y jugos, y suena mucho más fuerte. Y hay algo más: unas dos horas después de comer, el intestino hace una limpieza con ondas fuertes. Ese rugido no siempre es hambre. A veces es tu cuerpo barriendo.",
+    "narration": "Las tripas te suenan todo el tiempo, no solo cuando tenés hambre. Tu intestino se aprieta en ondas para empujar la comida, el líquido y el aire. Cuando está lleno, la comida amortigua el ruido. Pero cuando está vacío, solo quedan aire y jugos, y suena mucho más fuerte. Y hay algo más: unas dos horas después de comer, el intestino hace una limpieza con ondas fuertes. Ese rugido no siempre es hambre. A veces es tu cuerpo barriendo.",
     "scenes": [
       {
         "image": "a person in a quiet office holding their stomach with an embarrassed face",
@@ -2610,7 +2610,7 @@
   {
     "id": "073",
     "title": "Los peces dorados tienen buena memoria",
-    "narration": "Dicen que los peces dorados solo recuerdan las cosas por tres segundos. Es falso. En experimentos, los entrenaron para empujar una palanca y conseguir comida, y lo recordaron durante meses. Otros aprendieron que sonaba un ruido justo antes de la comida, y nadaban hacia el lugar cada vez que lo escuchaban. Incluso pueden reconocer a la persona que les da de comer. Así que si tu pez dorado se acerca cuando entras, no es casualidad. Te reconoce.",
+    "narration": "Dicen que los peces dorados solo recuerdan las cosas por tres segundos. Es falso. En experimentos, los entrenaron para empujar una palanca y conseguir comida, y lo recordaron durante meses. Otros aprendieron que sonaba un ruido justo antes de la comida, y nadaban hacia el lugar cada vez que lo escuchaban. Incluso pueden reconocer a la persona que les da de comer. Así que si tu pez dorado se acerca cuando entrás, no es casualidad. Te reconoce.",
     "scenes": [
       {
         "image": "a shiny orange goldfish swimming in a round glass bowl",
@@ -2681,8 +2681,8 @@
   },
   {
     "id": "075",
-    "title": "Por qué no te puedes hacer cosquillas",
-    "narration": "Trata de hacerte cosquillas a ti mismo. No funciona. Tu cerebro tiene una parte que predice cada movimiento que haces antes de que pase. Como sabe exactamente dónde y cuándo vas a tocar, no se sorprende, y le baja el volumen a la sensación. Las cosquillas necesitan sorpresa. Por eso, cuando otra persona te toca sin avisar, te mueres de risa. Y hay un dato curioso: en experimentos con un robot que tardaba un poquito en reaccionar, las cosquillas sí se sentían.",
+    "title": "Por qué no te podés hacer cosquillas",
+    "narration": "Tratá de hacerte cosquillas a vos mismo. No funciona. Tu cerebro tiene una parte que predice cada movimiento que hacés antes de que pase. Como sabe exactamente dónde y cuándo vas a tocar, no se sorprende, y le baja el volumen a la sensación. Las cosquillas necesitan sorpresa. Por eso, cuando otra persona te toca sin avisar, te morís de risa. Y hay un dato curioso: en experimentos con un robot que tardaba un poquito en reaccionar, las cosquillas sí se sentían.",
     "scenes": [
       {
         "image": "a person trying to tickle their own feet with a confused face",
@@ -2708,7 +2708,7 @@
       "cerebro",
       "curiosidades"
     ],
-    "yt_title": "Por qué no te puedes hacer cosquillas solo 🤭",
+    "yt_title": "Por qué no te podés hacer cosquillas solo 🤭",
     "playlist": "Cuerpo humano",
     "highlight": [
       "predice",
@@ -2789,8 +2789,8 @@
   },
   {
     "id": "079",
-    "title": "La piña te come mientras la comes",
-    "narration": "Cuando comes piña, la piña también te come a ti. Tiene una sustancia que deshace proteínas, y tu lengua está hecha de proteínas. Por eso, si comes mucha, sientes un hormigueo y la lengua un poco lastimada. No te preocupes: tu boca se repara rápido, y el ácido del estómago desactiva la sustancia. Es tan buena deshaciendo proteínas que se usa para ablandar carne. Por eso la piña cocida, como en las pizzas, ya no pica.",
+    "title": "El ananá te come mientras lo comés",
+    "narration": "Cuando comés ananá, el ananá también te come a vos. Tiene una sustancia que deshace proteínas, y tu lengua está hecha de proteínas. Por eso, si comés mucho, sentís un hormigueo y la lengua un poco lastimada. No te preocupes: tu boca se repara rápido, y el ácido del estómago desactiva la sustancia. Es tan buena deshaciendo proteínas que se usa para ablandar carne. Por eso el ananá cocido, como en las pizzas, ya no pica.",
     "scenes": [
       {
         "image": "a fresh pineapple cut in half on a table",
@@ -2816,7 +2816,7 @@
       "cuerpo humano",
       "curiosidades"
     ],
-    "yt_title": "La piña te come mientras tú la comes 🍍",
+    "yt_title": "El ananá te come mientras vos lo comés 🍍",
     "playlist": "Comida increíble",
     "highlight": [
       "te come",
@@ -2862,7 +2862,7 @@
   {
     "id": "081",
     "title": "Tu cerebro gasta el 20% de tu energía",
-    "narration": "Tu cerebro pesa más o menos el dos por ciento de tu cuerpo. Pero gasta cerca del veinte por ciento de toda tu energía. Incluso cuando estás tirado en el sillón sin hacer nada, tu cerebro sigue trabajando a toda máquina: controla tu respiración, tu corazón, ordena recuerdos y mantiene todo funcionando. Por eso pensar mucho cansa de verdad. Y por eso, cuando no duermes bien, lo primero que se te apaga es la cabeza.",
+    "narration": "Tu cerebro pesa más o menos el dos por ciento de tu cuerpo. Pero gasta cerca del veinte por ciento de toda tu energía. Incluso cuando estás tirado en el sillón sin hacer nada, tu cerebro sigue trabajando a toda máquina: controla tu respiración, tu corazón, ordena recuerdos y mantiene todo funcionando. Por eso pensar mucho cansa de verdad. Y por eso, cuando no dormís bien, lo primero que se te apaga es la cabeza.",
     "scenes": [
       {
         "image": "a glowing human brain floating with electric sparks, 3D medical style",
@@ -3258,7 +3258,7 @@
   {
     "id": "042",
     "title": "La rana de cristal esconde su sangre",
-    "narration": "La rana de cristal es casi transparente. Le puedes ver los huesos y el corazón desde abajo. Pero la sangre es roja, y eso la delataría. Entonces, cuando se duerme, hace algo que nadie entendía: casi toda su sangre desaparece. En 2022 unos científicos descubrieron a dónde va. La rana guarda casi todos sus glóbulos rojos dentro del hígado, que tiene como un espejo que los tapa. Así, mientras duerme en una hoja, es casi invisible.",
+    "narration": "La rana de cristal es casi transparente. Le podés ver los huesos y el corazón desde abajo. Pero la sangre es roja, y eso la delataría. Entonces, cuando se duerme, hace algo que nadie entendía: casi toda su sangre desaparece. En 2022 unos científicos descubrieron a dónde va. La rana guarda casi todos sus glóbulos rojos dentro del hígado, que tiene como un espejo que los tapa. Así, mientras duerme en una hoja, es casi invisible.",
     "scenes": [
       {
         "image": "a translucent glass frog on a green leaf, its organs faintly visible",
@@ -3545,8 +3545,8 @@
   },
   {
     "id": "061",
-    "title": "Por qué los mosquitos te pican más a ti",
-    "narration": "Si los mosquitos siempre te pican a ti, no es mala suerte. Te eligen. Los mosquitos encuentran a las personas por el aire que exhalan, por el calor del cuerpo y, sobre todo, por el olor de la piel. Un estudio de 2022 descubrió que las personas que más atraen a los mosquitos tienen en la piel más cantidad de ciertos ácidos. Y lo más injusto: ese olor no cambia. Si hoy eres un imán de mosquitos, lo vas a seguir siendo.",
+    "title": "Por qué los mosquitos te pican más a vos",
+    "narration": "Si los mosquitos siempre te pican a vos, no es mala suerte. Te eligen. Los mosquitos encuentran a las personas por el aire que exhalan, por el calor del cuerpo y, sobre todo, por el olor de la piel. Un estudio de 2022 descubrió que las personas que más atraen a los mosquitos tienen en la piel más cantidad de ciertos ácidos. Y lo más injusto: ese olor no cambia. Si hoy sos un imán de mosquitos, lo vas a seguir siendo.",
     "scenes": [
       {
         "image": "a mosquito flying toward a person's arm at night, macro",
@@ -3572,7 +3572,7 @@
       "insectos",
       "curiosidades"
     ],
-    "yt_title": "Por qué los mosquitos te eligen a ti 🦟",
+    "yt_title": "Por qué los mosquitos te eligen a vos 🦟",
     "playlist": "Animales increíbles",
     "highlight": [
       "te eligen",
@@ -3726,7 +3726,7 @@
   {
     "id": "085",
     "title": "El chocolate es veneno para los perros",
-    "narration": "El chocolate es peligroso para los perros. Tiene una sustancia que a nosotros no nos hace nada, porque la eliminamos rápido. Pero el cuerpo del perro la elimina muy lento, y se le acumula. Le acelera el corazón, lo pone nervioso y, en cantidad, puede ser muy grave. El chocolate amargo es el peor, porque tiene mucho más de esa sustancia. Así que, aunque te mire con esos ojitos, el chocolate es solo para ti.",
+    "narration": "El chocolate es peligroso para los perros. Tiene una sustancia que a nosotros no nos hace nada, porque la eliminamos rápido. Pero el cuerpo del perro la elimina muy lento, y se le acumula. Le acelera el corazón, lo pone nervioso y, en cantidad, puede ser muy grave. El chocolate amargo es el peor, porque tiene mucho más de esa sustancia. Así que, aunque te mire con esos ojitos, el chocolate es solo para vos.",
     "scenes": [
       {
         "image": "a cute puppy looking at a chocolate bar on a table",
