@@ -53,6 +53,41 @@ def write_wav(p, x):
         w.writeframes((x * 32767).astype(np.int16).tobytes())
 
 
+def eleven_tts(text, mp3):
+    # ElevenLabs con la voz clonada de Valentín: audio + tiempo de cada letra -> tiempo de cada palabra
+    import time
+    url = ("https://api.elevenlabs.io/v1/text-to-speech/" + os.environ["ELEVEN_VOICE_ID"].strip()
+           + "/with-timestamps?output_format=mp3_44100_128")
+    body = json.dumps({"text": text, "model_id": os.environ.get("ELEVEN_MODEL", "eleven_multilingual_v2"),
+                       "voice_settings": {"stability": 0.45, "similarity_boost": 0.85, "style": 0.2,
+                                          "use_speaker_boost": True, "speed": float(os.environ.get("ELEVEN_SPEED", "1.1"))}}).encode()
+    for attempt in range(4):
+        try:
+            req = urllib.request.Request(url, data=body, headers={"xi-api-key": os.environ["ELEVEN_API_KEY"].strip(),
+                                                                  "Content-Type": "application/json"})
+            r = json.loads(urllib.request.urlopen(req, timeout=120).read())
+            break
+        except Exception as e:
+            log(f"ElevenLabs falló (intento {attempt + 1}): {str(e)[:200]}")
+            if attempt == 3:
+                raise
+            time.sleep(5 * (attempt + 1))
+    Path(mp3).write_bytes(base64.b64decode(r["audio_base64"]))
+    al = r.get("normalized_alignment") or r["alignment"]
+    ws, cur = [], None
+    for ch, a, b in zip(al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]):
+        if ch.isspace():
+            if cur:
+                ws.append(tuple(cur)); cur = None
+        elif cur is None:
+            cur = [a, b, ch]
+        else:
+            cur[1], cur[2] = b, cur[2] + ch
+    if cur:
+        ws.append(tuple(cur))
+    return ws
+
+
 async def tts_words(text, voice, rate, mp3):
     import edge_tts
     for attempt in range(6):
@@ -176,7 +211,10 @@ def make_voice(sb, work, fake):
                  f"atrim={start:.3f}:{fin + 0.12:.3f},asetpts=PTS-STARTPTS", "-ar", SR, "-ac", 1, wav])
         else:
             mp3 = work / f"v{si}.mp3"
-            ws = asyncio.run(tts_words(sc["text"], sb.get("voice", "es-MX-JorgeNeural"), sb.get("rate", "+20%"), mp3))
+            if os.environ.get("ELEVEN_API_KEY"):
+                ws = eleven_tts(sc["text"], mp3)
+            else:
+                ws = asyncio.run(tts_words(sc["text"], sb.get("voice", "es-MX-JorgeNeural"), sb.get("rate", "+20%"), mp3))
             start = max(0.0, ws[0][0] - 0.04)
             run(["ffmpeg", "-v", "error", "-y", "-i", mp3, "-af",
                  f"atrim={start:.3f}:{ws[-1][1] + 0.12:.3f},asetpts=PTS-STARTPTS", "-ar", SR, "-ac", 1, wav])
@@ -411,7 +449,7 @@ def main():
     folder = HERE / name
     sb = json.loads((folder / "storyboard.json").read_text(encoding="utf-8"))
     work = (ROOT / "work_manual" / name).resolve(); work.mkdir(parents=True, exist_ok=True)
-    suf = "_voz" if os.environ.get("VOZ_REF") else ""  # con voz clonada no pisa el video original
+    suf = "_voz" if (os.environ.get("VOZ_REF") or os.environ.get("ELEVEN_API_KEY")) else ""  # con voz clonada no pisa el video original
     voice, words, scenes, total = make_voice(sb, work, fake)
     data = {"scenes": scenes, "words": words, "chunks": chunks(words, scenes, sb), "total": total}
     (folder / f"timeline{suf}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
