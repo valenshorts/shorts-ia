@@ -14,15 +14,12 @@
    }
   ],
   "format": {
-   "duration": "25.533333"
+   "duration": "23.900000"
   }
  },
- "freeze": [
-  "5.7",
-  "19.6333"
- ],
+ "freeze": [],
  "black": [],
- "loudness_I": -15.1,
- "true_peak": -1.3,
- "duration": 25.526
+ "loudness_I": -14.4,
+ "true_peak": -1.4,
+ "duration": 23.886
 }
