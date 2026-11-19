@@ -9,10 +9,14 @@ on:
         description: "Carpetas en demo/manual separadas por espacio (ej: saturno)"
         required: true
         default: "saturno"
-      velocidad:
-        description: "Velocidad de la voz (0.7 a 1.2)"
+      modelo:
+        description: "Modelo de ElevenLabs (eleven_v4, eleven_multilingual_v2...)"
         required: true
-        default: "1.1"
+        default: "eleven_v4"
+      velocidad:
+        description: "Velocidad (solo modelos viejos; v4 la ignora)"
+        required: true
+        default: "1.0"
 
 permissions:
   contents: write
@@ -33,21 +37,27 @@ jobs:
           python-version: "3.12"
 
       - name: Instalar ffmpeg y navegador
-        timeout-minutes: 35
+        timeout-minutes: 30
         run: |
-          for i in 1 2 3; do
-            sudo timeout 300 apt-get update -qq -o Acquire::Retries=3 && sudo timeout 420 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg && break
-            echo "reintento apt $i"; sleep 10
-          done
-          which ffmpeg
+          # ffmpeg ya armado desde GitHub (BtbN, autorizado por Valentín): rápido. Ubuntu queda de respaldo.
+          if curl -fsSL --retry 3 -o /tmp/ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz; then
+            mkdir -p /tmp/ff && tar -xJf /tmp/ff.tar.xz -C /tmp/ff --strip-components=1
+            sudo cp /tmp/ff/bin/ffmpeg /tmp/ff/bin/ffprobe /usr/local/bin/
+          else
+            sudo timeout 300 apt-get update -qq && sudo timeout 600 apt-get install -y -qq ffmpeg
+          fi
+          ffmpeg -version | head -1
           pip install -r requirements.txt
-          python -m playwright install --with-deps chromium
+          python -m playwright install chromium
+          python -c "from playwright.sync_api import sync_playwright as p; s=p().start(); s.chromium.launch().close(); s.stop()" || sudo -E env PATH="$PATH" python -m playwright install-deps chromium
 
       - name: Armar con la voz de ElevenLabs
         env:
           ELEVEN_API_KEY: ${{ secrets.ELEVEN_API_KEY }}
           ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
           ELEVEN_SPEED: ${{ github.event.inputs.velocidad }}
+          ELEVEN_MODEL: ${{ github.event.inputs.modelo }}
+          VOZ_PRUEBA: "1"  # escribe video_voz.mp4: nunca pisa el video real
         run: |
           if [ -z "$ELEVEN_API_KEY" ] || [ -z "$ELEVEN_VOICE_ID" ]; then echo "Faltan los secretos ELEVEN_API_KEY / ELEVEN_VOICE_ID"; exit 1; fi
           for c in ${{ github.event.inputs.carpeta }}; do
