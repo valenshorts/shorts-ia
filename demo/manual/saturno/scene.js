@@ -118,8 +118,10 @@ var V = {
       o.cam = { s: 1 + .04 * d, fx: 540, fy: 900 };
     } else {
       var tk = cue(5, "kilómetros", .3), tm2 = cue(5, "metros", .8);
-      op(N.wArrow, fade(t, tk - .1)); tr(N.wArrow, 0, 0, 1, 0);
-      var mp = E.spring(seg(t, tm2 - .3, tm2 + .2)); tr(N.mag, 540, 1080, mp, 0); op(N.mag, mp > 0 ? 1 : 0);
+      var bob = Math.sin(t * 1.6) * 8;  // movimiento continuo: que nunca quede quieto
+      tr(N.s5, 0, bob, 1, 0);
+      op(N.wArrow, fade(t, tk - .1)); tr(N.wArrow, 0, bob, 1, 0);
+      var mp = E.spring(seg(t, tm2 - .3, tm2 + .2)); tr(N.mag, 540, 1080 + bob, mp * (1 + .03 * Math.sin(t * 3)), 0); op(N.mag, mp > 0 ? 1 : 0);
       o.head = tm2 > t ? ["De ancho", "<b>cientos de miles</b> de km", rise(t, tk)[0], rise(t, tk)[1]] : ["Pero de alto", "unos <b>10 metros</b>", 1, rise(t, tm2)[1]];
       o.tags = [["cientos de miles de km", 540, 700, fade(t, tk + .2) * (1 - fade(t, tm2 - .3)), "#FFD22E"], ["~10 m", 760, 1080, fade(t, tm2 + .1), "#FFD22E"]];
       o.cam = { s: 1.02 + .06 * d, fx: 540, fy: 940 };
