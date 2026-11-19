@@ -5,7 +5,7 @@
   "video_steps": 6,
   "style": "Stylized 3D CGI render, clean Pixar-like animation style, soft bright even studio lighting, simple clean background, highly detailed materials.",
   "motion_style": "realistic physics, smooth and steady motion, slow gentle camera movement, every object keeps its shape, size and place",
-  "voice": "es-MX-JorgeNeural",
+  "voice": "es-AR-TomasNeural",
   "voice_rate": "+20%",
   "pause_between_sentences": 0.05,
   "ambience_volume": 0.05,
