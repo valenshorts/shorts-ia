@@ -256,7 +256,28 @@ async def _tts(text, path):
             await asyncio.sleep(15 * (attempt + 1))
 
 
+def make_voice_eleven(text, work):
+    # voz clonada de Valentín (ElevenLabs): todo el guion de una vez, con el tiempo real de cada frase
+    import eleven
+    frases = sentences(text)
+    full, grupos = eleven.guion(frases, work, log)
+    a, b = max(0.0, grupos[0][0][0] - 0.05), grupos[-1][-1][1] + 0.15
+    raw = work / "voice_raw.wav"
+    run(["ffmpeg", "-v", "error", "-y", "-i", full, "-af", f"atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS",
+         "-ar", "48000", "-ac", "1", raw])
+    voice = work / "voice.wav"
+    run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000",
+         "-ar", "48000", "-ac", "1", voice])
+    return voice, [(s, round(g[0][0] - a, 3), round(g[-1][1] - a, 3)) for s, g in zip(frases, grupos)]
+
+
 def make_voice(text, work):
+    import eleven
+    if eleven.activo():
+        try:
+            return make_voice_eleven(text, work)
+        except Exception as e:  # sin créditos o caída del servicio: este video sale con la voz de siempre
+            log(f"La voz de ElevenLabs falló ({str(e)[:200]}); sigue con la voz de siempre")
     pause = CFG["pause_between_sentences"]
     t, timeline, parts = 0.0, [], []
     for i, s in enumerate(sentences(text)):
