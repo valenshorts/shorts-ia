@@ -473,8 +473,8 @@ def youtube_description(idea):
     tags = [re.sub(r"[^\wáéíóúñü]", "", t.lower()) for t in idea.get("tags", [])]
     hashtags = " ".join(f"#{t}" for t in dict.fromkeys(tags + ["curiosidades", "sabiasque", "datoscuriosos", "shorts"]) if t)
     return (f"{hook}\n\n"
-            "🤔 ¿Lo sabías? Cuéntalo en los comentarios 👇\n"
-            "🔔 Suscríbete: un dato nuevo todos los días.\n\n"
+            "🤔 ¿Lo sabías? Contalo en los comentarios 👇\n"
+            "🔔 Suscribite: un dato nuevo todos los días.\n\n"
             f"{hashtags}")
 
 
@@ -547,7 +547,7 @@ def youtube_client():
 
 
 def post_comment(yt, vid, idea):
-    q = idea.get("question") or CFG.get("comment", "🤯 ¿Lo sabías? Escribe SÍ o NO 👇 ¿Qué tema quieres para mañana?")
+    q = idea.get("question") or CFG.get("comment", "🤯 ¿Lo sabías? Escribí SÍ o NO 👇 ¿Qué tema querés para mañana?")
     try:
         yt.commentThreads().insert(part="snippet", body={"snippet": {"videoId": vid, "topLevelComment": {
             "snippet": {"textOriginal": q}}}}).execute()
@@ -606,13 +606,13 @@ def extras(yt, vid, idea, comment=True):
 
 # ---------------------------------------------------------------- Ideas nuevas solas
 IDEA_PROMPT = """Eres el guionista del canal de YouTube Shorts "El Porqué de Todo": datos curiosos explicados en 30 segundos.
-Escribe {n} ideas NUEVAS en español neutro (tú, nunca vos; nada de palabras argentinas), sobre temas distintos a estos ya usados:
+Escribe {n} ideas NUEVAS en español rioplatense de Argentina, como habla un pibe de Buenos Aires: con voseo (vos tenés, sabés, comés, mirá, imaginate; nunca tú/tienes/sabes) y palabras argentinas (frutilla, banana, ananá, palta, ají picante, auto, manejar). Natural y canchero pero sin malas palabras. Temas distintos a estos ya usados:
 {used}
 
 Reglas:
 - Solo datos reales y comprobados por la ciencia. Si no estás seguro de un dato, no lo uses.
 - GANCHO: la primera frase dice YA lo más sorprendente del video, lo mismo que promete "yt_title". Nunca guardar la promesa del título para el final.
-- Nunca empezar explicando ("Cuando cortas...", "La lluvia va..."). Los ganchos que mejor funcionan en el canal: una contradicción ("Un clavo de acero se hunde, pero un barco de miles de toneladas flota") o algo que todos vivieron con un giro ("Se te arrugan los dedos en el agua. Parece que absorben agua, pero no").
+- Nunca empezar explicando ("Cuando cortás...", "La lluvia va..."). Los ganchos que mejor funcionan en el canal: una contradicción ("Un clavo de acero se hunde, pero un barco de miles de toneladas flota") o algo que todos vivieron con un giro ("Se te arrugan los dedos en el agua. Parece que absorben agua, pero no").
 - La última frase es un final "wow".
 - Narración de 70 a 85 palabras, frases cortas y fáciles de decir en voz alta. Números escritos en letras.
 - Lo que mejor funciona en el canal: espacio, ciencia y física, cuerpo humano, inventos, comida y mitos falsos, con algo que todos vivieron. NO escribas ideas de animales: en el canal casi nadie las ve.
@@ -1029,7 +1029,7 @@ def finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, 
     (OUT / "meta.json").write_text(json.dumps({
         "id": idea["id"], "file": out.name, "youtube_id": vid,
         "caption": f"{idea.get('yt_title') or idea['title']}\n\n{sentences(idea['narration'])[0]}\n\n"
-                   f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
+                   f"Seguinos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
         ensure_ascii=False, indent=2), encoding="utf-8")
     if not res:  # sin YouTube: queda para descargar, no se marca como hecho
         return "wait"
@@ -1066,7 +1066,7 @@ def publish_ready(idea, done, slot, work, out, style, total=None):
     (OUT / "meta.json").write_text(json.dumps({
         "id": idea["id"], "file": out.name, "youtube_id": vid,
         "caption": f"{idea.get('yt_title') or idea['title']}\n\n{sentences(idea['narration'])[0]}\n\n"
-                   f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
+                   f"Seguinos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos"},
         ensure_ascii=False, indent=2), encoding="utf-8")
     if not res:
         return "wait"
