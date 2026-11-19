@@ -540,7 +540,7 @@ def main():
     folder = HERE / name
     sb = json.loads((folder / "storyboard.json").read_text(encoding="utf-8"))
     work = (ROOT / "work_manual" / name).resolve(); work.mkdir(parents=True, exist_ok=True)
-    suf = "_voz" if (os.environ.get("VOZ_REF") or os.environ.get("ELEVEN_API_KEY")) else ""  # con voz clonada no pisa el video original
+    suf = "_voz" if (os.environ.get("VOZ_REF") or os.environ.get("VOZ_PRUEBA")) else ""  # en pruebas no pisa el video original
     voice, words, scenes, total = make_voice(sb, work, fake)
     data = {"scenes": scenes, "words": words, "chunks": chunks(words, scenes, sb), "total": total}
     (folder / f"timeline{suf}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
