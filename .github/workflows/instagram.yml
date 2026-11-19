@@ -76,7 +76,7 @@ jobs:
           import json, os, re, shutil, subprocess, time
           from pathlib import Path
           found = {}
-          for f in sorted(Path("dl").rglob("short_*.mp4"), key=lambda p: p.stat().st_mtime):
+          for f in sorted(Path("dl").rglob("short_*.mp4"), key=lambda p: int(p.relative_to("dl").parts[0])):  # gana la corrida más nueva
               found[re.search(r"short_(\d+)", f.name).group(1)] = f
           done = json.loads(Path("done.json").read_text(encoding="utf-8"))
           igp = Path("ig_done.json")
