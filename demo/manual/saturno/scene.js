@@ -124,7 +124,7 @@ var V = {
       var mp = E.spring(seg(t, tm2 - .3, tm2 + .2)); tr(N.mag, 540, 1080 + bob, mp * (1 + .03 * Math.sin(t * 3)), 0); op(N.mag, mp > 0 ? 1 : 0);
       o.head = tm2 > t ? ["De ancho", "<b>cientos de miles</b> de km", rise(t, tk)[0], rise(t, tk)[1]] : ["Pero de alto", "unos <b>10 metros</b>", 1, rise(t, tm2)[1]];
       o.tags = [["cientos de miles de km", 540, 700, fade(t, tk + .2) * (1 - fade(t, tm2 - .3)), "#FFD22E"], ["~10 m", 760, 1080, fade(t, tm2 + .1), "#FFD22E"]];
-      o.cam = { s: 1.02 + .06 * d, fx: 540, fy: 940 };
+      o.cam = { s: 1.02 + .06 * d, fx: 540 + Math.sin(t * 1.3) * 12, fy: 940 + Math.cos(t * 1.1) * 8 };
     }
     return o;
   }
