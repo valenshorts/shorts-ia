@@ -489,8 +489,16 @@ def upload(video, idea, work, publish_at):
     mark = work / "uploaded.json"
     if mark.exists():  # una corrida anterior ya lo subió (y quizás no pudo guardar done.json)
         m = json.loads(mark.read_text(encoding="utf-8"))
-        log(f"Este video ya se subió en una corrida anterior (https://youtube.com/shorts/{m['id']}): no lo subo de nuevo.")
-        return m["id"], m.get("publish_at")
+        try:  # si ese video se borró de YouTube (por ejemplo para resubirlo con otra voz), la marca ya no vale
+            vivo = bool(youtube_client().videos().list(part="id", id=m["id"]).execute().get("items"))
+        except Exception as e:
+            log(f"No pude revisar si sigue en YouTube ({str(e)[:120]}); no lo subo de nuevo")
+            vivo = True
+        if vivo:
+            log(f"Este video ya se subió en una corrida anterior (https://youtube.com/shorts/{m['id']}): no lo subo de nuevo.")
+            return m["id"], m.get("publish_at")
+        log(f"El video que había subido antes ({m['id']}) ya no está en YouTube: lo subo de nuevo.")
+        mark.unlink()
     yt = youtube_client()
     dup = recent_upload(yt, youtube_title(idea))
     if dup:
