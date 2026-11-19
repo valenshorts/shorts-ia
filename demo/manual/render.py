@@ -111,6 +111,27 @@ def clone_tts(text, out_wav):
     return [(x.start, x.end, x.word.strip()) for s in segs for x in (s.words or []) if x.word.strip()]
 
 
+def clone_scene(text, cw):
+    # genera la frase y comprueba con whisper que dijo el guion; si no, la vuelve a generar (hasta 3 veces)
+    import difflib
+    toks, best = text.split(), None
+    for intento in range(3):
+        heard = clone_tts(text, cw)
+        sm = difflib.SequenceMatcher(None, [norm(t) for t in toks], [norm(w) for _, _, w in heard], autojunk=False)
+        ok = sum(b.size for b in sm.get_matching_blocks()) / max(1, len(toks))
+        log(f"voz clonada: {ok:.0%} de palabras reconocidas (intento {intento + 1})")
+        if best is None or ok > best[0]:
+            best = (ok, heard, cw.read_bytes())
+        if ok >= 0.8:
+            break
+    ok, heard, data = best
+    cw.write_bytes(data)
+    x = read_wav(cw); amp = np.abs(x)
+    loud = np.nonzero(amp > 0.05 * (amp.max() or 1))[0]
+    fin = max(heard[-1][1] if heard else 0.0, (loud[-1] / SR) if len(loud) else 0.0)
+    return align(toks, heard), fin
+
+
 def align(toks, ws):
     # tiempos de whisper -> palabras exactas del guion; las que no coinciden se reparten en el hueco
     import difflib
@@ -149,10 +170,10 @@ def make_voice(sb, work, fake):
             start = 0.0
         elif os.environ.get("VOZ_REF"):
             cw = work / f"c{si}.wav"
-            ws = align(sc["text"].split(), clone_tts(sc["text"], cw))
+            ws, fin = clone_scene(sc["text"], cw)
             start = max(0.0, ws[0][0] - 0.04)
             run(["ffmpeg", "-v", "error", "-y", "-i", cw, "-af",
-                 f"atrim={start:.3f}:{ws[-1][1] + 0.12:.3f},asetpts=PTS-STARTPTS", "-ar", SR, "-ac", 1, wav])
+                 f"atrim={start:.3f}:{fin + 0.12:.3f},asetpts=PTS-STARTPTS", "-ar", SR, "-ac", 1, wav])
         else:
             mp3 = work / f"v{si}.mp3"
             ws = asyncio.run(tts_words(sc["text"], sb.get("voice", "es-MX-JorgeNeural"), sb.get("rate", "+20%"), mp3))
