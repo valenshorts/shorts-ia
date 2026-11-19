@@ -100,9 +100,21 @@ def loudnorm(src, dst, I, TP):
 
 def make_voice(sents, work, voice, rate, pause, fake=False):
     words, parts, t = [], [], 0.0
+    EL = None
+    if not fake:
+        import eleven
+        if eleven.activo():  # voz clonada de Valentín: todo el guion de una vez y cortado por frase
+            try:
+                full, grupos = eleven.guion(sents, work, log)
+                EL, pause = eleven.cortar(full, grupos, work, "cev"), 0.0
+            except Exception as e:  # sin créditos o caída del servicio: sigue con la voz de siempre
+                log(f"La voz de ElevenLabs falló ({str(e)[:200]}); sigue con la voz de siempre")
     for si, text in enumerate(sents):
         wav = work / f"cv{si}.wav"
-        if fake:  # solo para probar la imagen sin internet
+        if EL:
+            wav, ws = EL[si]
+            start = 0.0
+        elif fake:  # solo para probar la imagen sin internet
             d0, ws = 0.0, []
             for w in text.split():
                 d = 0.042 * len(w) + 0.07
