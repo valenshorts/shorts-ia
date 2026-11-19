@@ -36,16 +36,25 @@ jobs:
         if: github.event.inputs.accion != 'publicar'
         timeout-minutes: 35
         run: |
-          for i in 1 2 3; do
-            sudo timeout 300 apt-get update -qq -o Acquire::Retries=3 && sudo timeout 420 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg && break
-            echo "reintento apt $i"; sleep 10
-          done
-          which ffmpeg
+          # ffmpeg ya armado desde GitHub (BtbN, autorizado por Valentín): rápido. El mirror de Ubuntu queda de respaldo.
+          if curl -fsSL --retry 3 -o /tmp/ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz; then
+            mkdir -p /tmp/ff && tar -xJf /tmp/ff.tar.xz -C /tmp/ff --strip-components=1
+            sudo cp /tmp/ff/bin/ffmpeg /tmp/ff/bin/ffprobe /usr/local/bin/
+          else
+            for i in 1 2 3; do
+              sudo timeout 300 apt-get update -qq -o Acquire::Retries=3 && sudo timeout 420 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg && break
+              echo "reintento apt $i"; sleep 10
+            done
+          fi
+          ffmpeg -version | head -1
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
 
       - name: Armar el video
         if: github.event.inputs.accion != 'publicar'
+        env:  # voz clonada de Valentín (ElevenLabs v4)
+          ELEVEN_API_KEY: ${{ secrets.ELEVEN_API_KEY }}
+          ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
         run: |
           for c in ${{ github.event.inputs.carpeta }}; do
             python demo/manual/render.py "$c" || echo "falló $c"
