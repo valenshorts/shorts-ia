@@ -192,8 +192,97 @@ def align(toks, ws):
     return [(a, b, t) for (a, b), t in zip(times, toks)]
 
 
+def eleven_settings(model):
+    st = {"stability": float(os.environ.get("ELEVEN_STAB", "0.5")), "similarity_boost": float(os.environ.get("ELEVEN_SIM", "0.75"))}
+    if not model.startswith(("eleven_v4", "eleven_v3")):  # v4 solo acepta estabilidad y similitud
+        st.update(style=0.0, use_speaker_boost=True, speed=float(os.environ.get("ELEVEN_SPEED", "1.0")))
+    return st
+
+
+def eleven_call(url, data, headers):
+    import time
+    headers = dict(headers, **{"xi-api-key": os.environ["ELEVEN_API_KEY"].strip()})
+    for attempt in range(4):
+        try:
+            return urllib.request.urlopen(urllib.request.Request(url, data=data, headers=headers), timeout=180).read()
+        except urllib.error.HTTPError as e:
+            msg = f"{e.code}: {e.read()[:300]!r}"
+            if e.code in (400, 401, 403, 404, 422) or attempt == 3:
+                raise RuntimeError(f"ElevenLabs {msg}")
+            log(f"ElevenLabs falló (intento {attempt + 1}): {msg}")
+        except Exception as e:
+            if attempt == 3:
+                raise
+            log(f"ElevenLabs falló (intento {attempt + 1}): {str(e)[:200]}")
+        time.sleep(5 * (attempt + 1))
+
+
+def chars_to_words(al):
+    ws, cur = [], None
+    for ch, a, b in zip(al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]):
+        if ch.isspace():
+            if cur:
+                ws.append(tuple(cur)); cur = None
+        elif cur is None:
+            cur = [a, b, ch]
+        else:
+            cur[1], cur[2] = b, cur[2] + ch
+    if cur:
+        ws.append(tuple(cur))
+    return ws
+
+
+def forced_align(mp3, text):
+    # plan B: alineación forzada de ElevenLabs (audio + guion -> tiempo de cada palabra)
+    bnd = "----shorts" + os.urandom(8).hex()
+    body = (f"--{bnd}\r\nContent-Disposition: form-data; name=\"text\"\r\n\r\n{text}\r\n"
+            f"--{bnd}\r\nContent-Disposition: form-data; name=\"file\"; filename=\"voz.mp3\"\r\n"
+            f"Content-Type: audio/mpeg\r\n\r\n").encode() + Path(mp3).read_bytes() + f"\r\n--{bnd}--\r\n".encode()
+    r = json.loads(eleven_call("https://api.elevenlabs.io/v1/forced-alignment", body,
+                               {"Content-Type": f"multipart/form-data; boundary={bnd}"}))
+    return [(w["start"], w["end"], w["text"].strip()) for w in r["words"] if w["text"].strip()]
+
+
+def eleven_full(sb, work):
+    # todo el guion de una vez (entonación natural) y después se corta por escena con los tiempos de cada palabra
+    model = os.environ.get("ELEVEN_MODEL", "eleven_v4")
+    scenes_toks = [sc["text"].split() for sc in sb["scenes"]]
+    text = " ".join(sc["text"] for sc in sb["scenes"])
+    base = "https://api.elevenlabs.io/v1/text-to-speech/" + os.environ["ELEVEN_VOICE_ID"].strip()
+    body = json.dumps({"text": text, "model_id": model, "voice_settings": eleven_settings(model)}).encode()
+    jh = {"Content-Type": "application/json"}
+    mp3 = work / "eleven_full.mp3"
+    try:
+        r = json.loads(eleven_call(base + "/with-timestamps?output_format=mp3_44100_128", body, jh))
+        mp3.write_bytes(base64.b64decode(r["audio_base64"]))
+        heard = chars_to_words(r.get("normalized_alignment") or r["alignment"])
+        log(f"ElevenLabs {model}: audio con tiempos ({len(heard)} palabras)")
+    except Exception as e:
+        log(f"ElevenLabs {model} sin tiempos directos ({str(e)[:150]}); uso alineación forzada")
+        mp3.write_bytes(eleven_call(base + "?output_format=mp3_44100_128", body, jh))
+        heard = forced_align(mp3, text)
+    full = work / "eleven_full.wav"
+    run(["ffmpeg", "-v", "error", "-y", "-i", mp3, "-ar", SR, "-ac", 1, full])
+    total = dur(full)
+    al = align([t for ts in scenes_toks for t in ts], heard)
+    groups, i = [], 0
+    for ts in scenes_toks:
+        groups.append(al[i:i + len(ts)]); i += len(ts)
+    res, n = [], len(groups)
+    for si, g in enumerate(groups):
+        a = max(0.0, g[0][0] - 0.04) if si == 0 else (groups[si - 1][-1][1] + g[0][0]) / 2
+        b = min(total, g[-1][1] + 0.3) if si == n - 1 else (g[-1][1] + groups[si + 1][0][0]) / 2
+        b = max(b, a + 0.2)
+        wav = work / f"v{si}.wav"
+        run(["ffmpeg", "-v", "error", "-y", "-i", full, "-af", f"atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS",
+             "-ar", SR, "-ac", 1, wav])
+        res.append([(max(0.0, x - a), max(0.0, y - a), w) for x, y, w in g])
+    return res
+
+
 def make_voice(sb, work, fake):
     words, parts, t = [], [], 0.0
+    EL = eleven_full(sb, work) if (not fake and os.environ.get("ELEVEN_API_KEY")) else None
     for si, sc in enumerate(sb["scenes"]):
         wav = work / f"v{si}.wav"
         if fake:
@@ -203,6 +292,8 @@ def make_voice(sb, work, fake):
                 ws.append((d0, d0 + d, w)); d0 += d
             run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"anullsrc=r={SR}:cl=mono", "-t", f"{d0:.3f}", wav])
             start = 0.0
+        elif EL:
+            ws, start = EL[si], 0.0  # ya cortado por eleven_full
         elif os.environ.get("VOZ_REF"):
             cw = work / f"c{si}.wav"
             ws, fin = clone_scene(sc["text"], cw)
@@ -228,7 +319,7 @@ def make_voice(sb, work, fake):
                     break
             words.append({"s": si, "t": round(t + a - start, 3), "e": round(t + b - start, 3), "x": txt, "n": norm(w)})
         parts.append((wav, t, d))
-        t += d + sb.get("pause", 0.18)
+        t += d + (0.0 if EL else sb.get("pause", 0.18))  # con el guion entero las pausas ya son las naturales
     total = parts[-1][1] + parts[-1][2] + sb.get("tail", 0.75)
     buf = np.zeros(int(total * SR) + SR)
     for wav, at, d in parts:
