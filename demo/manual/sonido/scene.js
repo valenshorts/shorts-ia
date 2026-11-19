@@ -101,6 +101,7 @@ var V = {
       o.head = ["Aunque estén al lado", "se hablan por <b>radio</b>", rise(t, tra)[0], rise(t, tra)[1]];
       o.cam = { s: 1.06 - .06 * d, fx: 540, fy: 920 };
     }
+    if (o.cam) { o.cam.fx += Math.sin(t * 1.2) * 12; o.cam.fy += Math.cos(t * .9) * 9; }  // vaivén suave: nunca queda quieto aunque la voz sea más lenta
     return o;
   }
 };
