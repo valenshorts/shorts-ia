@@ -273,5 +273,21 @@
     "style": "ai",
     "publish_at": "2026-11-21T00:30:00Z",
     "comment_pending": true
+  },
+  "064": {
+    "title": "Por qué cantas mejor en la ducha",
+    "youtube_id": "x9xQXoNoSew",
+    "date": "2026-11-19",
+    "style": "manual",
+    "publish_at": "2026-11-20T00:30:00Z",
+    "comment_pending": true
+  },
+  "070": {
+    "title": "La Tierra gira a 1600 km por hora",
+    "youtube_id": "Pr8I-43_LTw",
+    "date": "2026-11-20",
+    "style": "manual",
+    "publish_at": "2026-11-20T17:30:00Z",
+    "comment_pending": true
   }
 }
