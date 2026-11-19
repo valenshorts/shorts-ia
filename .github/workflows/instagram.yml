@@ -100,7 +100,7 @@ jobs:
               tags = " ".join("#" + norm(t) for t in idea.get("tags", []) if norm(t))
               first = re.split(r"(?<=[.!?])\s+", idea["narration"].strip())[0]
               cap = (f"{idea.get('yt_title') or idea['title']}\n\n{first}\n\n"
-                     f"Síguenos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos")
+                     f"Seguinos para un dato nuevo cada día 🤯\n\n{tags} #curiosidades #sabiasque #datoscuriosos")
               (out / "meta.json").write_text(json.dumps({"id": iid, "file": found[iid].name, "caption": cap},
                                                          ensure_ascii=False), encoding="utf-8")
               print(f"[ig] Subiendo {iid}: {idea['title']}", flush=True)
