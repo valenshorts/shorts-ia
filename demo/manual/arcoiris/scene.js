@@ -108,6 +108,7 @@ var V = {
       o.note = ["ilustración", fade(t, a + .3)];
       o.cam = { s: 1 + .1 * d, fx: lerp(560, 520, d), fy: 940 };
     }
+    if (o.cam) { o.cam.fx += Math.sin(t * 1.2) * 12; o.cam.fy += Math.cos(t * .9) * 9; }  // vaivén suave: nunca queda quieto aunque la voz sea más lenta
     return o;
   }
 };
