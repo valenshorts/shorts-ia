@@ -270,8 +270,7 @@
     "youtube_id": "Fw0zqf_YMBE",
     "date": "2026-11-20",
     "style": "ai",
-    "publish_at": "2026-11-21T00:30:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-21T00:30:00Z"
   },
   "064": {
     "title": "Por qué cantas mejor en la ducha",
@@ -309,6 +308,14 @@
     "date": "2026-11-21",
     "style": "ai",
     "publish_at": "2026-11-22T00:30:00Z",
+    "comment_pending": true
+  },
+  "100": {
+    "title": "Metió la cabeza en un acelerador de partículas",
+    "youtube_id": "WsVhtzhAaeM",
+    "date": "2026-11-22",
+    "style": "cine",
+    "publish_at": "2026-11-22T17:30:00Z",
     "comment_pending": true
   }
 }
