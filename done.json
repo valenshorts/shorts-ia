@@ -291,8 +291,7 @@
     "youtube_id": "yQYp8TB47hY",
     "date": "2026-11-21",
     "style": "manual",
-    "publish_at": "2026-11-21T17:30:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-21T17:30:00Z"
   },
   "077": {
     "title": "En el espacio no hay sonido",
@@ -316,6 +315,22 @@
     "date": "2026-11-22",
     "style": "cine",
     "publish_at": "2026-11-22T17:30:00Z",
+    "comment_pending": true
+  },
+  "101": {
+    "title": "Por qué la Ciudad de México se hunde",
+    "youtube_id": "DvWuJ926CNg",
+    "date": "2026-11-22",
+    "style": "ai",
+    "publish_at": "2026-11-22T21:00:00Z",
+    "comment_pending": true
+  },
+  "102": {
+    "title": "Por qué orinaban en pañuelos en la guerra",
+    "youtube_id": "eeBmGQKUa4Q",
+    "date": "2026-11-22",
+    "style": "cine",
+    "publish_at": "2026-11-23T00:30:00Z",
     "comment_pending": true
   }
 }
