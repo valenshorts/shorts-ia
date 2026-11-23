@@ -343,5 +343,21 @@
     "style": "cine",
     "publish_at": "2026-11-24T00:30:00Z",
     "comment_pending": true
+  },
+  "105": {
+    "title": "Un monje dentro de una estatua de Buda",
+    "youtube_id": "1mnZsZ7Jc74",
+    "date": "2026-11-24",
+    "style": "ai",
+    "publish_at": "2026-11-24T21:00:00Z",
+    "comment_pending": true
+  },
+  "106": {
+    "title": "Por qué no recordás tus sueños",
+    "youtube_id": "pIrsm8JJMSE",
+    "date": "2026-11-24",
+    "style": "cine",
+    "publish_at": "2026-11-24T17:30:00Z",
+    "comment_pending": true
   }
 }
