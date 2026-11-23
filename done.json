@@ -327,5 +327,21 @@
     "date": "2026-11-22",
     "style": "cine",
     "publish_at": "2026-11-23T00:30:00Z"
+  },
+  "103": {
+    "title": "Tus uñas tienen un sello protector",
+    "youtube_id": "AjN3s3WU4io",
+    "date": "2026-11-23",
+    "style": "ai",
+    "publish_at": "2026-11-23T21:00:00Z",
+    "comment_pending": true
+  },
+  "104": {
+    "title": "Por qué no adelantar un camión que dobla",
+    "youtube_id": "f_QXzZOblNU",
+    "date": "2026-11-23",
+    "style": "cine",
+    "publish_at": "2026-11-24T00:30:00Z",
+    "comment_pending": true
   }
 }
