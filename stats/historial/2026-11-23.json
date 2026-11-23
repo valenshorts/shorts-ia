@@ -1,0 +1,2690 @@
+{
+  "generado": "2026-11-23T22:39:23Z",
+  "semana": {
+    "desde": "2026-11-16",
+    "hasta": "2026-11-22"
+  },
+  "resumen": {
+    "videos_youtube": 56,
+    "videos_instagram": 49,
+    "youtube_vistas_total": 41559,
+    "youtube_vistas_semana": 16862,
+    "instagram_vistas_total": 75834,
+    "publicados_esta_semana": [
+      "032",
+      "033",
+      "034",
+      "035",
+      "052",
+      "059",
+      "064",
+      "069",
+      "070",
+      "076",
+      "077",
+      "089",
+      "097b",
+      "098",
+      "099",
+      "100",
+      "101",
+      "102",
+      "103",
+      "104"
+    ],
+    "top_semana_youtube": [
+      {
+        "id": "064",
+        "titulo": "Por qué cantas mejor en la ducha",
+        "vistas": 1927,
+        "retencion_pct": 81.7
+      },
+      {
+        "id": "099",
+        "titulo": "Tu cepillo de dientes y el inodoro",
+        "vistas": 1844,
+        "retencion_pct": 75.5
+      },
+      {
+        "id": "089",
+        "titulo": "Saturno flotaría en el agua",
+        "vistas": 1458,
+        "retencion_pct": 81.8
+      },
+      {
+        "id": "098",
+        "titulo": "Barcos pintados como cebras",
+        "vistas": 1450,
+        "retencion_pct": 84.3
+      },
+      {
+        "id": "076",
+        "titulo": "El arcoíris es un círculo",
+        "vistas": 1391,
+        "retencion_pct": 93.8
+      }
+    ]
+  },
+  "avisos": [],
+  "videos": [
+    {
+      "id": "005",
+      "titulo": "¿Cómo flota un barco de acero?",
+      "estilo": null,
+      "fecha": "2026-10-20",
+      "hora_ar": null,
+      "youtube": {
+        "id": "FrAwtO1yl5A",
+        "url": "https://youtube.com/shorts/FrAwtO1yl5A",
+        "vistas": 1568,
+        "likes": 27,
+        "comentarios": 1,
+        "duracion_s": 24.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 6,
+          "likes": 0,
+          "retencion_pct": 41.5,
+          "seg_medio_visto": 9.0
+        },
+        "total": {
+          "vistas": 1568,
+          "likes": 27,
+          "retencion_pct": 121.4,
+          "seg_medio_visto": 29.0,
+          "vistas_feed_shorts": 1465,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 28,
+            "YT_SEARCH": 69,
+            "YT_OTHER_PAGE": 3,
+            "NOTIFICATION": 1,
+            "SHORTS": 1465
+          }
+        }
+      }
+    },
+    {
+      "id": "006",
+      "titulo": "¿Por qué los gatos caen de pie?",
+      "estilo": null,
+      "fecha": "2026-10-21",
+      "hora_ar": null,
+      "youtube": {
+        "id": "D1u6qw3Tt-E",
+        "url": "https://youtube.com/shorts/D1u6qw3Tt-E",
+        "vistas": 21,
+        "likes": 1,
+        "comentarios": 1,
+        "duracion_s": 27.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 2,
+          "likes": 0,
+          "retencion_pct": 20.5,
+          "seg_medio_visto": 5.0
+        },
+        "total": {
+          "vistas": 21,
+          "likes": 1,
+          "retencion_pct": 59.4,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 1,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 5,
+            "YT_CHANNEL": 7,
+            "YT_SEARCH": 7,
+            "YT_OTHER_PAGE": 1,
+            "SHORTS": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "007",
+      "titulo": "¿Por qué se te arrugan los dedos en el agua?",
+      "estilo": null,
+      "fecha": "2026-10-21",
+      "hora_ar": null,
+      "youtube": {
+        "id": "wHlZE_ma11Q",
+        "url": "https://youtube.com/shorts/wHlZE_ma11Q",
+        "vistas": 1652,
+        "likes": 30,
+        "comentarios": 4,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 3,
+          "likes": 0,
+          "retencion_pct": 86.9,
+          "seg_medio_visto": 17.0
+        },
+        "total": {
+          "vistas": 1652,
+          "likes": 30,
+          "retencion_pct": 76.0,
+          "seg_medio_visto": 15.0,
+          "vistas_feed_shorts": 1602,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 10,
+            "YT_SEARCH": 34,
+            "YT_OTHER_PAGE": 3,
+            "NOTIFICATION": 1,
+            "SHORTS": 1602
+          }
+        }
+      },
+      "instagram": {
+        "id": "18082296077349404",
+        "likes": 4,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfArqDuin0I/",
+        "publicado": "2026-10-27T20:09:51+0000",
+        "vistas": 335,
+        "alcance": 234,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 8.8,
+        "retencion_aprox_pct": 44.0
+      }
+    },
+    {
+      "id": "008",
+      "titulo": "El microondas se inventó por accidente",
+      "estilo": null,
+      "fecha": "2026-10-22",
+      "hora_ar": null,
+      "youtube": {
+        "id": "Apmd9kwdkHk",
+        "url": "https://youtube.com/shorts/Apmd9kwdkHk",
+        "vistas": 879,
+        "likes": 18,
+        "comentarios": 2,
+        "duracion_s": 22.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 2,
+          "likes": 0,
+          "retencion_pct": 31.3,
+          "seg_medio_visto": 6.0
+        },
+        "total": {
+          "vistas": 879,
+          "likes": 18,
+          "retencion_pct": 80.8,
+          "seg_medio_visto": 17.0,
+          "vistas_feed_shorts": 850,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 1,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 20,
+            "YT_OTHER_PAGE": 1,
+            "NOTIFICATION": 1,
+            "SHORTS": 850
+          }
+        }
+      },
+      "instagram": {
+        "id": "18399820618166115",
+        "likes": 7,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfBATIrFXIh/",
+        "publicado": "2026-10-27T23:10:14+0000",
+        "vistas": 294,
+        "alcance": 232,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 6.1,
+        "retencion_aprox_pct": 27.7
+      }
+    },
+    {
+      "id": "009",
+      "titulo": "Los flamencos nacen grises",
+      "estilo": null,
+      "fecha": "2026-10-23",
+      "hora_ar": null,
+      "youtube": {
+        "id": "RR5plknmi48",
+        "url": "https://youtube.com/shorts/RR5plknmi48",
+        "vistas": 9,
+        "likes": 0,
+        "comentarios": 2,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 0,
+          "retencion_pct": 27.5,
+          "seg_medio_visto": 5.0
+        },
+        "total": {
+          "vistas": 9,
+          "likes": 0,
+          "retencion_pct": 61.9,
+          "seg_medio_visto": 13.0,
+          "vistas_feed_shorts": 1,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 6,
+            "YT_SEARCH": 1,
+            "YT_OTHER_PAGE": 1,
+            "SHORTS": 1
+          }
+        }
+      },
+      "instagram": {
+        "id": "18181890694435537",
+        "likes": 89,
+        "comentarios": 1,
+        "url": "https://www.instagram.com/reel/DfBWFNdjvBK/",
+        "publicado": "2026-10-28T02:20:34+0000",
+        "vistas": 2462,
+        "alcance": 1691,
+        "guardados": 0,
+        "compartidos": 1,
+        "seg_medio_visto": 21.1,
+        "retencion_aprox_pct": 100.0
+      }
+    },
+    {
+      "id": "010",
+      "titulo": "¿Qué pasa si cae un rayo en el mar?",
+      "estilo": null,
+      "fecha": "2026-10-24",
+      "hora_ar": null,
+      "youtube": {
+        "id": "1N_h_9AHhRs",
+        "url": "https://youtube.com/shorts/1N_h_9AHhRs",
+        "vistas": 1315,
+        "likes": 24,
+        "comentarios": 2,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 8,
+          "likes": 0,
+          "retencion_pct": 59.8,
+          "seg_medio_visto": 11.0
+        },
+        "total": {
+          "vistas": 1315,
+          "likes": 24,
+          "retencion_pct": 100.6,
+          "seg_medio_visto": 20.0,
+          "vistas_feed_shorts": 1236,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 8,
+            "YT_SEARCH": 65,
+            "YT_OTHER_PAGE": 5,
+            "NOTIFICATION": 0,
+            "SHORTS": 1236
+          }
+        }
+      },
+      "instagram": {
+        "id": "18168789778476796",
+        "likes": 74,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfC9k5MoNLK/",
+        "publicado": "2026-10-28T17:24:52+0000",
+        "vistas": 4369,
+        "alcance": 2907,
+        "guardados": 6,
+        "compartidos": 0,
+        "seg_medio_visto": 12.6,
+        "retencion_aprox_pct": 63.0
+      }
+    },
+    {
+      "id": "011",
+      "titulo": "¿Para qué tienen rayas las cebras?",
+      "estilo": null,
+      "fecha": "2026-10-25",
+      "hora_ar": null,
+      "youtube": {
+        "id": "IW2xc1zq5zA",
+        "url": "https://youtube.com/shorts/IW2xc1zq5zA",
+        "vistas": 5,
+        "likes": 0,
+        "comentarios": 1,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 0,
+          "retencion_pct": 34.7,
+          "seg_medio_visto": 7.0
+        },
+        "total": {
+          "vistas": 5,
+          "likes": 0,
+          "retencion_pct": 70.7,
+          "seg_medio_visto": 14.0,
+          "vistas_feed_shorts": 1,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 0,
+            "YT_SEARCH": 3,
+            "YT_OTHER_PAGE": 1,
+            "SHORTS": 1
+          }
+        }
+      },
+      "instagram": {
+        "id": "18150862672552605",
+        "likes": 73,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfDlc6hldQb/",
+        "publicado": "2026-10-28T23:13:22+0000",
+        "vistas": 4012,
+        "alcance": 2477,
+        "guardados": 4,
+        "compartidos": 2,
+        "seg_medio_visto": 16.4,
+        "retencion_aprox_pct": 78.1
+      }
+    },
+    {
+      "id": "012",
+      "titulo": "El airbag es más rápido que un parpadeo",
+      "estilo": null,
+      "fecha": "2026-10-26",
+      "hora_ar": null,
+      "youtube": {
+        "id": "t5so3jkX6X4",
+        "url": "https://youtube.com/shorts/t5so3jkX6X4",
+        "vistas": 2233,
+        "likes": 13,
+        "comentarios": 3,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 2,
+          "likes": 0,
+          "retencion_pct": 54.2,
+          "seg_medio_visto": 11.0
+        },
+        "total": {
+          "vistas": 2233,
+          "likes": 13,
+          "retencion_pct": 81.7,
+          "seg_medio_visto": 17.0,
+          "vistas_feed_shorts": 2166,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 9,
+            "YT_SEARCH": 52,
+            "YT_OTHER_PAGE": 5,
+            "SHORTS": 2166,
+            "SOUND_PAGE": 1
+          }
+        }
+      },
+      "instagram": {
+        "id": "18076177415729626",
+        "likes": 32,
+        "comentarios": 1,
+        "url": "https://www.instagram.com/reel/DfD7OCAlHL_/",
+        "publicado": "2026-10-29T02:23:34+0000",
+        "vistas": 1963,
+        "alcance": 1386,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 10.1,
+        "retencion_aprox_pct": 48.1
+      }
+    },
+    {
+      "id": "013",
+      "titulo": "¿Por qué el hielo flota?",
+      "estilo": null,
+      "fecha": "2026-10-27",
+      "hora_ar": null,
+      "youtube": {
+        "id": "OuqrgEneYro",
+        "url": "https://youtube.com/shorts/OuqrgEneYro",
+        "vistas": 478,
+        "likes": 10,
+        "comentarios": 2,
+        "duracion_s": 23.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 0,
+          "retencion_pct": 25.2,
+          "seg_medio_visto": 5.0
+        },
+        "total": {
+          "vistas": 478,
+          "likes": 10,
+          "retencion_pct": 88.3,
+          "seg_medio_visto": 20.0,
+          "vistas_feed_shorts": 455,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 7,
+            "YT_CHANNEL": 3,
+            "YT_SEARCH": 8,
+            "YT_OTHER_PAGE": 3,
+            "NOTIFICATION": 2,
+            "SHORTS": 455
+          }
+        }
+      },
+      "instagram": {
+        "id": "17960299020253849",
+        "likes": 5,
+        "comentarios": 1,
+        "url": "https://www.instagram.com/reel/DfFieBMkYy7/",
+        "publicado": "2026-10-29T17:25:45+0000",
+        "vistas": 512,
+        "alcance": 419,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 7.3,
+        "retencion_aprox_pct": 31.7
+      }
+    },
+    {
+      "id": "014",
+      "titulo": "El pulpo tiene tres corazones",
+      "estilo": null,
+      "fecha": "2026-10-28",
+      "hora_ar": "20:00",
+      "youtube": {
+        "id": "rrLL5nE1hXI",
+        "url": "https://youtube.com/shorts/rrLL5nE1hXI",
+        "vistas": 16,
+        "likes": 1,
+        "comentarios": 2,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 0,
+          "retencion_pct": 36.2,
+          "seg_medio_visto": 7.0
+        },
+        "total": {
+          "vistas": 16,
+          "likes": 1,
+          "retencion_pct": 86.4,
+          "seg_medio_visto": 17.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 12,
+            "YT_OTHER_PAGE": 1
+          }
+        }
+      },
+      "instagram": {
+        "id": "17967019101228384",
+        "likes": 19,
+        "comentarios": 1,
+        "url": "https://www.instagram.com/reel/DfGfya3gUED/",
+        "publicado": "2026-10-30T02:21:36+0000",
+        "vistas": 1619,
+        "alcance": 1253,
+        "guardados": 0,
+        "compartidos": 1,
+        "seg_medio_visto": 7.7,
+        "retencion_aprox_pct": 38.5
+      }
+    },
+    {
+      "id": "015",
+      "titulo": "¿Por qué ves estrellitas al pararte rápido?",
+      "estilo": null,
+      "fecha": "2026-10-29",
+      "hora_ar": null,
+      "youtube": {
+        "id": "ZFQJoDt97G8",
+        "url": "https://youtube.com/shorts/ZFQJoDt97G8",
+        "vistas": 1287,
+        "likes": 15,
+        "comentarios": 2,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 0,
+          "retencion_pct": 40.1,
+          "seg_medio_visto": 8.0
+        },
+        "total": {
+          "vistas": 1287,
+          "likes": 15,
+          "retencion_pct": 75.5,
+          "seg_medio_visto": 15.0,
+          "vistas_feed_shorts": 1248,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 6,
+            "YT_CHANNEL": 6,
+            "YT_SEARCH": 22,
+            "YT_OTHER_PAGE": 4,
+            "NOTIFICATION": 1,
+            "SHORTS": 1248
+          }
+        }
+      },
+      "instagram": {
+        "id": "18371352787214292",
+        "likes": 27,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfIGjdekagC/",
+        "publicado": "2026-10-30T17:19:34+0000",
+        "vistas": 980,
+        "alcance": 719,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 11.6,
+        "retencion_aprox_pct": 55.2
+      }
+    },
+    {
+      "id": "016",
+      "titulo": "Los delfines duermen con medio cerebro",
+      "estilo": null,
+      "fecha": "2026-10-30",
+      "hora_ar": null,
+      "youtube": {
+        "id": "5N_kZpdNnto",
+        "url": "https://youtube.com/shorts/5N_kZpdNnto",
+        "vistas": 7,
+        "likes": 0,
+        "comentarios": 2,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 0,
+          "retencion_pct": 31.2,
+          "seg_medio_visto": 6.0
+        },
+        "total": {
+          "vistas": 7,
+          "likes": 0,
+          "retencion_pct": 27.6,
+          "seg_medio_visto": 5.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 0,
+            "YT_SEARCH": 6,
+            "YT_OTHER_PAGE": 1
+          }
+        }
+      },
+      "instagram": {
+        "id": "18132885481825134",
+        "likes": 84,
+        "comentarios": 1,
+        "url": "https://www.instagram.com/reel/DfJE1guEdcl/",
+        "publicado": "2026-10-31T02:23:48+0000",
+        "vistas": 2644,
+        "alcance": 1833,
+        "guardados": 3,
+        "compartidos": 6,
+        "seg_medio_visto": 11.9,
+        "retencion_aprox_pct": 56.7
+      }
+    },
+    {
+      "id": "017",
+      "titulo": "¿Hace mal tronarse los dedos?",
+      "estilo": null,
+      "fecha": "2026-10-31",
+      "hora_ar": null,
+      "youtube": {
+        "id": "PTJWFZ8nXpw",
+        "url": "https://youtube.com/shorts/PTJWFZ8nXpw",
+        "vistas": 6,
+        "likes": 1,
+        "comentarios": 2,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 0,
+          "retencion_pct": 29.4,
+          "seg_medio_visto": 6.0
+        },
+        "total": {
+          "vistas": 6,
+          "likes": 1,
+          "retencion_pct": 95.9,
+          "seg_medio_visto": 20.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 2,
+            "YT_OTHER_PAGE": 1
+          }
+        }
+      },
+      "instagram": {
+        "id": "18118190471046474",
+        "likes": 93,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfLp9RrGAku/",
+        "publicado": "2026-11-01T02:26:42+0000",
+        "vistas": 3632,
+        "alcance": 2559,
+        "guardados": 1,
+        "compartidos": 1,
+        "seg_medio_visto": 15.6,
+        "retencion_aprox_pct": 74.3
+      }
+    },
+    {
+      "id": "018",
+      "titulo": "¿Por qué explotan las palomitas de maíz?",
+      "estilo": null,
+      "fecha": "2026-11-02",
+      "hora_ar": null,
+      "youtube": {
+        "id": "f3p_wDvcEZo",
+        "url": "https://youtube.com/shorts/f3p_wDvcEZo",
+        "vistas": 1277,
+        "likes": 13,
+        "comentarios": 3,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 5,
+          "likes": 0,
+          "retencion_pct": 100.2,
+          "seg_medio_visto": 20.0
+        },
+        "total": {
+          "vistas": 1277,
+          "likes": 13,
+          "retencion_pct": 69.0,
+          "seg_medio_visto": 13.0,
+          "vistas_feed_shorts": 1243,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 5,
+            "YT_SEARCH": 25,
+            "YT_OTHER_PAGE": 1,
+            "NOTIFICATION": 2,
+            "SHORTS": 1243
+          }
+        }
+      },
+      "instagram": {
+        "id": "18236289955323561",
+        "likes": 8,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfQzaTGDT5W/",
+        "publicado": "2026-11-03T02:25:28+0000",
+        "vistas": 673,
+        "alcance": 530,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 8.2,
+        "retencion_aprox_pct": 41.0
+      }
+    },
+    {
+      "id": "019",
+      "titulo": "¿Cuánta miel hace una abeja en toda su vida?",
+      "estilo": null,
+      "fecha": "2026-11-03",
+      "hora_ar": null,
+      "youtube": {
+        "id": "MHqEt_Jq2Ao",
+        "url": "https://youtube.com/shorts/MHqEt_Jq2Ao",
+        "vistas": 1248,
+        "likes": 28,
+        "comentarios": 1,
+        "duracion_s": 23.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 2,
+          "likes": 1,
+          "retencion_pct": 19.7,
+          "seg_medio_visto": 4.0
+        },
+        "total": {
+          "vistas": 1248,
+          "likes": 28,
+          "retencion_pct": 65.5,
+          "seg_medio_visto": 15.0,
+          "vistas_feed_shorts": 1207,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 32,
+            "YT_OTHER_PAGE": 2,
+            "NOTIFICATION": 2,
+            "SHORTS": 1207
+          }
+        }
+      },
+      "instagram": {
+        "id": "17909093952657964",
+        "likes": 11,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfTYK5CETAC/",
+        "publicado": "2026-11-04T02:25:12+0000",
+        "vistas": 379,
+        "alcance": 305,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 7.9,
+        "retencion_aprox_pct": 34.3
+      }
+    },
+    {
+      "id": "020",
+      "titulo": "¿Qué son las rayas blancas que dejan los aviones?",
+      "estilo": null,
+      "fecha": "2026-11-09",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "FDmi63WTWqE",
+        "url": "https://youtube.com/shorts/FDmi63WTWqE",
+        "vistas": 252,
+        "likes": 14,
+        "comentarios": 1,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 1,
+          "retencion_pct": 37.9,
+          "seg_medio_visto": 7.0
+        },
+        "total": {
+          "vistas": 252,
+          "likes": 14,
+          "retencion_pct": 86.6,
+          "seg_medio_visto": 18.0,
+          "vistas_feed_shorts": 227,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 3,
+            "YT_SEARCH": 20,
+            "SHORTS": 227
+          }
+        }
+      },
+      "instagram": {
+        "id": "17977645287174263",
+        "likes": 6,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfixDtnDM8C/",
+        "publicado": "2026-11-10T01:51:14+0000",
+        "vistas": 415,
+        "alcance": 319,
+        "guardados": 2,
+        "compartidos": 0,
+        "seg_medio_visto": 8.0,
+        "retencion_aprox_pct": 38.1
+      }
+    },
+    {
+      "id": "021",
+      "titulo": "¿Por qué el mar es salado?",
+      "estilo": null,
+      "fecha": "2026-11-09",
+      "hora_ar": "15:00",
+      "youtube": {
+        "id": "GADWHHy27II",
+        "url": "https://youtube.com/shorts/GADWHHy27II",
+        "vistas": 1486,
+        "likes": 26,
+        "comentarios": 1,
+        "duracion_s": 19.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 1,
+          "retencion_pct": 39.8,
+          "seg_medio_visto": 7.0
+        },
+        "total": {
+          "vistas": 1486,
+          "likes": 26,
+          "retencion_pct": 71.1,
+          "seg_medio_visto": 13.0,
+          "vistas_feed_shorts": 1443,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 32,
+            "YT_OTHER_PAGE": 5,
+            "SHORTS": 1443
+          }
+        }
+      },
+      "instagram": {
+        "id": "18120291122112086",
+        "likes": 7,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfiDFyNCKnX/",
+        "publicado": "2026-11-09T19:09:23+0000",
+        "vistas": 371,
+        "alcance": 276,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 8.4,
+        "retencion_aprox_pct": 44.2
+      }
+    },
+    {
+      "id": "022",
+      "titulo": "¿Cómo gira tanto la cabeza un búho?",
+      "estilo": null,
+      "fecha": "2026-11-10",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "FS9uUrSLzK0",
+        "url": "https://youtube.com/shorts/FS9uUrSLzK0",
+        "vistas": 49,
+        "likes": 2,
+        "comentarios": 1,
+        "duracion_s": 19.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 2,
+          "likes": 1,
+          "retencion_pct": 43.8,
+          "seg_medio_visto": 8.0
+        },
+        "total": {
+          "vistas": 49,
+          "likes": 2,
+          "retencion_pct": 135.2,
+          "seg_medio_visto": 25.0,
+          "vistas_feed_shorts": 5,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 5,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 35,
+            "SHORTS": 5
+          }
+        }
+      },
+      "instagram": {
+        "id": "18133997080740675",
+        "likes": 9,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DflVqkljzQZ/",
+        "publicado": "2026-11-11T01:49:35+0000",
+        "vistas": 487,
+        "alcance": 334,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 9.4,
+        "retencion_aprox_pct": 49.5
+      }
+    },
+    {
+      "id": "023",
+      "titulo": "El camaleón no cambia de color para esconderse",
+      "estilo": null,
+      "fecha": "2026-11-10",
+      "hora_ar": "15:00",
+      "youtube": {
+        "id": "8Ld9BLHomEA",
+        "url": "https://youtube.com/shorts/8Ld9BLHomEA",
+        "vistas": 12,
+        "likes": 3,
+        "comentarios": 2,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 1,
+          "retencion_pct": 52.9,
+          "seg_medio_visto": 10.0
+        },
+        "total": {
+          "vistas": 12,
+          "likes": 3,
+          "retencion_pct": 73.9,
+          "seg_medio_visto": 14.0,
+          "vistas_feed_shorts": 6,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 0,
+            "YT_SEARCH": 6,
+            "SHORTS": 6
+          }
+        }
+      },
+      "instagram": {
+        "id": "17967672692984550",
+        "likes": 57,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfkoBwAioMI/",
+        "publicado": "2026-11-10T19:10:47+0000",
+        "vistas": 2308,
+        "alcance": 1686,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 10.9,
+        "retencion_aprox_pct": 54.5
+      }
+    },
+    {
+      "id": "024",
+      "titulo": "¿Por qué el agua oxigenada hace espuma?",
+      "estilo": null,
+      "fecha": "2026-11-12",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "9D-p7RgL1Ug",
+        "url": "https://youtube.com/shorts/9D-p7RgL1Ug",
+        "vistas": 1220,
+        "likes": 41,
+        "comentarios": 1,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 8,
+          "likes": 2,
+          "retencion_pct": 45.2,
+          "seg_medio_visto": 9.0
+        },
+        "total": {
+          "vistas": 1218,
+          "likes": 41,
+          "retencion_pct": 79.5,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 1048,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 5,
+            "YT_CHANNEL": 6,
+            "YT_SEARCH": 159,
+            "NOTIFICATION": 0,
+            "SHORTS": 1048
+          }
+        }
+      },
+      "instagram": {
+        "id": "18165079474494057",
+        "likes": 35,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Dfqf3-Vldd8/",
+        "publicado": "2026-11-13T01:55:01+0000",
+        "vistas": 2834,
+        "alcance": 2211,
+        "guardados": 2,
+        "compartidos": 0,
+        "seg_medio_visto": 10.5,
+        "retencion_aprox_pct": 50.0
+      }
+    },
+    {
+      "id": "025",
+      "titulo": "¿Cómo se inventó el velcro?",
+      "estilo": null,
+      "fecha": "2026-11-13",
+      "hora_ar": "00:30",
+      "youtube": {
+        "id": "yFlnSr91SSg",
+        "url": "https://youtube.com/shorts/yFlnSr91SSg",
+        "vistas": 10,
+        "likes": 3,
+        "comentarios": 1,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 2,
+          "likes": 1,
+          "retencion_pct": 148.5,
+          "seg_medio_visto": 31.0
+        },
+        "total": {
+          "vistas": 10,
+          "likes": 3,
+          "retencion_pct": 70.7,
+          "seg_medio_visto": 14.0,
+          "vistas_feed_shorts": 4,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 1,
+            "NOTIFICATION": 2,
+            "SHORTS": 4
+          }
+        }
+      },
+      "instagram": {
+        "id": "18026750000947145",
+        "likes": 5,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfqzOQunCM8/",
+        "publicado": "2026-11-13T04:44:06+0000",
+        "vistas": 531,
+        "alcance": 411,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 23.4,
+        "retencion_aprox_pct": 100.0
+      }
+    },
+    {
+      "id": "026",
+      "titulo": "Hay tiburones que no pueden dejar de nadar",
+      "estilo": null,
+      "fecha": "2026-11-13",
+      "hora_ar": "12:00",
+      "youtube": {
+        "id": "_Zbnedn35aw",
+        "url": "https://youtube.com/shorts/_Zbnedn35aw",
+        "vistas": 16,
+        "likes": 4,
+        "comentarios": 2,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 3,
+          "likes": 1,
+          "retencion_pct": 118.2,
+          "seg_medio_visto": 24.0
+        },
+        "total": {
+          "vistas": 16,
+          "likes": 4,
+          "retencion_pct": 80.7,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 5,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 8,
+            "NOTIFICATION": 1,
+            "SHORTS": 5
+          }
+        }
+      },
+      "instagram": {
+        "id": "17877689751638747",
+        "likes": 52,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfsWbqwEpTs/",
+        "publicado": "2026-11-13T19:10:49+0000",
+        "vistas": 2857,
+        "alcance": 1902,
+        "guardados": 1,
+        "compartidos": 0,
+        "seg_medio_visto": 13.3,
+        "retencion_aprox_pct": 63.3
+      }
+    },
+    {
+      "id": "027",
+      "titulo": "El hombre que tuvo hipo 68 años",
+      "estilo": null,
+      "fecha": "2026-11-13",
+      "hora_ar": "15:00",
+      "youtube": {
+        "id": "9ee5u-zCZho",
+        "url": "https://youtube.com/shorts/9ee5u-zCZho",
+        "vistas": 7,
+        "likes": 2,
+        "comentarios": 1,
+        "duracion_s": 23.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 0,
+          "likes": 2,
+          "retencion_pct": 0.0,
+          "seg_medio_visto": 0.0
+        },
+        "total": {
+          "vistas": 7,
+          "likes": 2,
+          "retencion_pct": 61.9,
+          "seg_medio_visto": 14.0,
+          "vistas_feed_shorts": 2,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 0,
+            "YT_SEARCH": 3,
+            "SHORTS": 2
+          }
+        }
+      },
+      "instagram": {
+        "id": "18112883096337297",
+        "likes": 3,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DftEJOCigVM/",
+        "publicado": "2026-11-14T01:50:45+0000",
+        "vistas": 746,
+        "alcance": 581,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 8.5,
+        "retencion_aprox_pct": 37.0
+      }
+    },
+    {
+      "id": "028",
+      "titulo": "¿Por qué la Coca explota con Mentos?",
+      "estilo": null,
+      "fecha": "2026-11-13",
+      "hora_ar": "18:00",
+      "youtube": {
+        "id": "4FjDMTOFdx4",
+        "url": "https://youtube.com/shorts/4FjDMTOFdx4",
+        "vistas": 161,
+        "likes": 2,
+        "comentarios": 1,
+        "duracion_s": 22.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 4,
+          "likes": 1,
+          "retencion_pct": 43.8,
+          "seg_medio_visto": 9.0
+        },
+        "total": {
+          "vistas": 161,
+          "likes": 2,
+          "retencion_pct": 58.4,
+          "seg_medio_visto": 12.0,
+          "vistas_feed_shorts": 138,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 20,
+            "SHORTS": 138
+          }
+        }
+      },
+      "instagram": {
+        "id": "18374363848209585",
+        "likes": 4,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DftXdARgZXA/",
+        "publicado": "2026-11-14T04:39:03+0000",
+        "vistas": 176,
+        "alcance": 155,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 4.6,
+        "retencion_aprox_pct": 20.9
+      }
+    },
+    {
+      "id": "029",
+      "titulo": "¿Por qué un pez se ahoga fuera del agua?",
+      "estilo": null,
+      "fecha": "2026-11-14",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "kDJnQwYT1nE",
+        "url": "https://youtube.com/shorts/kDJnQwYT1nE",
+        "vistas": 13,
+        "likes": 2,
+        "comentarios": 1,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 4,
+          "likes": 1,
+          "retencion_pct": 64.2,
+          "seg_medio_visto": 12.0
+        },
+        "total": {
+          "vistas": 12,
+          "likes": 2,
+          "retencion_pct": 74.9,
+          "seg_medio_visto": 14.0,
+          "vistas_feed_shorts": 5,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 2,
+            "YT_SEARCH": 5,
+            "SHORTS": 5
+          }
+        }
+      },
+      "instagram": {
+        "id": "18113967311235146",
+        "likes": 20,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfvpU22oO5b/",
+        "publicado": "2026-11-15T01:53:46+0000",
+        "vistas": 1462,
+        "alcance": 1133,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 8.5,
+        "retencion_aprox_pct": 42.5
+      }
+    },
+    {
+      "id": "030",
+      "titulo": "La luna se está yendo",
+      "estilo": null,
+      "fecha": "2026-11-15",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "Yny0NRxRq5w",
+        "url": "https://youtube.com/shorts/Yny0NRxRq5w",
+        "vistas": 1010,
+        "likes": 39,
+        "comentarios": 2,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 504,
+          "likes": 16,
+          "retencion_pct": 75.9,
+          "seg_medio_visto": 15.0
+        },
+        "total": {
+          "vistas": 1010,
+          "likes": 39,
+          "retencion_pct": 81.1,
+          "seg_medio_visto": 17.0,
+          "vistas_feed_shorts": 975,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 26,
+            "YT_OTHER_PAGE": 2,
+            "NOTIFICATION": 3,
+            "SHORTS": 975
+          }
+        }
+      },
+      "instagram": {
+        "id": "18124558571288225",
+        "likes": 12,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Dfyz4yTHKQk/",
+        "publicado": "2026-11-16T07:23:50+0000",
+        "vistas": 1589,
+        "alcance": 1141,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 10.9,
+        "retencion_aprox_pct": 51.9
+      }
+    },
+    {
+      "id": "031",
+      "titulo": "Los plátanos son radiactivos",
+      "estilo": null,
+      "fecha": "2026-11-15",
+      "hora_ar": "12:00",
+      "youtube": {
+        "id": "1ASTtCWDRVc",
+        "url": "https://youtube.com/shorts/1ASTtCWDRVc",
+        "vistas": 15,
+        "likes": 2,
+        "comentarios": 1,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 9,
+          "likes": 1,
+          "retencion_pct": 67.8,
+          "seg_medio_visto": 14.0
+        },
+        "total": {
+          "vistas": 15,
+          "likes": 2,
+          "retencion_pct": 94.9,
+          "seg_medio_visto": 19.0,
+          "vistas_feed_shorts": 6,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 2,
+            "YT_SEARCH": 6,
+            "SHORTS": 6
+          }
+        }
+      },
+      "instagram": {
+        "id": "18352847449271385",
+        "likes": 18,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Dfx5U3agsgl/",
+        "publicado": "2026-11-15T22:52:05+0000",
+        "vistas": 1614,
+        "alcance": 1266,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 9.2,
+        "retencion_aprox_pct": 43.8
+      }
+    },
+    {
+      "id": "032",
+      "titulo": "La miel nunca se echa a perder",
+      "estilo": null,
+      "fecha": "2026-11-16",
+      "hora_ar": "00:30",
+      "youtube": {
+        "id": "oI1pc3c20hY",
+        "url": "https://youtube.com/shorts/oI1pc3c20hY",
+        "vistas": 12,
+        "likes": 3,
+        "comentarios": 1,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 9,
+          "likes": 3,
+          "retencion_pct": 56.8,
+          "seg_medio_visto": 11.0
+        },
+        "total": {
+          "vistas": 12,
+          "likes": 3,
+          "retencion_pct": 65.8,
+          "seg_medio_visto": 13.0,
+          "vistas_feed_shorts": 5,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 3,
+            "YT_SEARCH": 3,
+            "SHORTS": 5
+          }
+        }
+      },
+      "instagram": {
+        "id": "18020843441745384",
+        "likes": 70,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfzUkAHkk9P/",
+        "publicado": "2026-11-16T12:09:21+0000",
+        "vistas": 2586,
+        "alcance": 1684,
+        "guardados": 1,
+        "compartidos": 0,
+        "seg_medio_visto": 10.9,
+        "retencion_aprox_pct": 54.5
+      }
+    },
+    {
+      "id": "033",
+      "titulo": "Los tiburones son más viejos que los árboles",
+      "estilo": null,
+      "fecha": "2026-11-16",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "eTSmZ5RnwlI",
+        "url": "https://youtube.com/shorts/eTSmZ5RnwlI",
+        "vistas": 14,
+        "likes": 4,
+        "comentarios": 1,
+        "duracion_s": 22.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 14,
+          "likes": 4,
+          "retencion_pct": 65.1,
+          "seg_medio_visto": 14.0
+        },
+        "total": {
+          "vistas": 14,
+          "likes": 4,
+          "retencion_pct": 65.1,
+          "seg_medio_visto": 14.0,
+          "vistas_feed_shorts": 8,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 3,
+            "YT_SEARCH": 2,
+            "SHORTS": 8
+          }
+        }
+      },
+      "instagram": {
+        "id": "18032726597877425",
+        "likes": 13,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df0y8_WFV5R/",
+        "publicado": "2026-11-17T01:54:09+0000",
+        "vistas": 478,
+        "alcance": 358,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 8.8,
+        "retencion_aprox_pct": 40.0
+      }
+    },
+    {
+      "id": "034",
+      "titulo": "En Venus un día dura más que un año",
+      "estilo": null,
+      "fecha": "2026-11-16",
+      "hora_ar": "18:00",
+      "youtube": {
+        "id": "Ht8U0Ng8McA",
+        "url": "https://youtube.com/shorts/Ht8U0Ng8McA",
+        "vistas": 1093,
+        "likes": 26,
+        "comentarios": 2,
+        "duracion_s": 19.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1093,
+          "likes": 26,
+          "retencion_pct": 200.4,
+          "seg_medio_visto": 38.0
+        },
+        "total": {
+          "vistas": 1093,
+          "likes": 26,
+          "retencion_pct": 200.4,
+          "seg_medio_visto": 38.0,
+          "vistas_feed_shorts": 1067,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 2,
+            "YT_SEARCH": 24,
+            "SHORTS": 1067
+          }
+        }
+      },
+      "instagram": {
+        "id": "17956678623271455",
+        "likes": 3,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df1hBFDFSBH/",
+        "publicado": "2026-11-17T08:36:32+0000",
+        "vistas": 442,
+        "alcance": 328,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 8.6,
+        "retencion_aprox_pct": 45.3
+      }
+    },
+    {
+      "id": "035",
+      "titulo": "Una cucharadita de estrella de neutrones",
+      "estilo": null,
+      "fecha": "2026-11-17",
+      "hora_ar": "18:00",
+      "youtube": {
+        "id": "XmFS5GNW7I4",
+        "url": "https://youtube.com/shorts/XmFS5GNW7I4",
+        "vistas": 161,
+        "likes": 10,
+        "comentarios": 1,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 161,
+          "likes": 10,
+          "retencion_pct": 93.3,
+          "seg_medio_visto": 18.0
+        },
+        "total": {
+          "vistas": 161,
+          "likes": 10,
+          "retencion_pct": 93.3,
+          "seg_medio_visto": 18.0,
+          "vistas_feed_shorts": 153,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 6,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 1,
+            "SHORTS": 153
+          }
+        }
+      },
+      "instagram": {
+        "id": "17958916755293207",
+        "likes": 5,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df3KsshifNj/",
+        "publicado": "2026-11-18T00:00:06+0000",
+        "vistas": 337,
+        "alcance": 256,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 7.9,
+        "retencion_aprox_pct": 39.5
+      }
+    },
+    {
+      "id": "052",
+      "titulo": "Las huellas en la Luna duran millones de años",
+      "estilo": "manual",
+      "fecha": "2026-11-18",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "qR3iZrk8BVk",
+        "url": "https://youtube.com/shorts/qR3iZrk8BVk",
+        "vistas": 1184,
+        "likes": 32,
+        "comentarios": 2,
+        "duracion_s": 23.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1185,
+          "likes": 32,
+          "retencion_pct": 88.8,
+          "seg_medio_visto": 20.0
+        },
+        "total": {
+          "vistas": 1185,
+          "likes": 32,
+          "retencion_pct": 88.8,
+          "seg_medio_visto": 20.0,
+          "vistas_feed_shorts": 1119,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 10,
+            "YT_SEARCH": 47,
+            "YT_OTHER_PAGE": 4,
+            "NOTIFICATION": 3,
+            "SHORTS": 1119
+          }
+        }
+      },
+      "instagram": {
+        "id": "17893913604455337",
+        "likes": 73,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df6CEshialv/",
+        "publicado": "2026-11-19T02:42:27+0000",
+        "vistas": 3110,
+        "alcance": 2096,
+        "guardados": 3,
+        "compartidos": 5,
+        "seg_medio_visto": 13.2,
+        "retencion_aprox_pct": 57.4
+      }
+    },
+    {
+      "id": "059",
+      "titulo": "Llueven diamantes en Neptuno",
+      "estilo": "manual",
+      "fecha": "2026-11-17",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "CSHw8rBWFRc",
+        "url": "https://youtube.com/shorts/CSHw8rBWFRc",
+        "vistas": 1053,
+        "likes": 21,
+        "comentarios": 2,
+        "duracion_s": 25.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1053,
+          "likes": 21,
+          "retencion_pct": 73.0,
+          "seg_medio_visto": 18.0
+        },
+        "total": {
+          "vistas": 1053,
+          "likes": 21,
+          "retencion_pct": 73.0,
+          "seg_medio_visto": 18.0,
+          "vistas_feed_shorts": 1002,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 5,
+            "YT_CHANNEL": 20,
+            "YT_SEARCH": 17,
+            "YT_OTHER_PAGE": 6,
+            "NOTIFICATION": 3,
+            "SHORTS": 1002
+          }
+        }
+      },
+      "instagram": {
+        "id": "18345014902278150",
+        "likes": 42,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df3fRPsj7cC/",
+        "publicado": "2026-11-18T02:59:50+0000",
+        "vistas": 1749,
+        "alcance": 1236,
+        "guardados": 1,
+        "compartidos": 5,
+        "seg_medio_visto": 11.2,
+        "retencion_aprox_pct": 44.8
+      }
+    },
+    {
+      "id": "064",
+      "titulo": "Por qué cantas mejor en la ducha",
+      "estilo": "manual",
+      "fecha": "2026-11-19",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "x9xQXoNoSew",
+        "url": "https://youtube.com/shorts/x9xQXoNoSew",
+        "vistas": 1951,
+        "likes": 33,
+        "comentarios": 2,
+        "duracion_s": 27.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1927,
+          "likes": 32,
+          "retencion_pct": 81.7,
+          "seg_medio_visto": 22.0
+        },
+        "total": {
+          "vistas": 1927,
+          "likes": 32,
+          "retencion_pct": 81.7,
+          "seg_medio_visto": 22.0,
+          "vistas_feed_shorts": 1856,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 4,
+            "YT_CHANNEL": 12,
+            "YT_SEARCH": 36,
+            "YT_OTHER_PAGE": 9,
+            "EXT_URL": 6,
+            "NOTIFICATION": 2,
+            "SHORTS": 1856,
+            "SOUND_PAGE": 2
+          }
+        }
+      },
+      "instagram": {
+        "id": "18147781384509773",
+        "likes": 166,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df8lJeImehf/",
+        "publicado": "2026-11-20T02:27:26+0000",
+        "vistas": 2920,
+        "alcance": 2276,
+        "guardados": 17,
+        "compartidos": 4,
+        "seg_medio_visto": 12.7,
+        "retencion_aprox_pct": 47.0
+      }
+    },
+    {
+      "id": "069",
+      "titulo": "Cuánto pesa una nube",
+      "estilo": "manual",
+      "fecha": "2026-11-18",
+      "hora_ar": "14:30",
+      "youtube": {
+        "id": "HafvDHfNUIs",
+        "url": "https://youtube.com/shorts/HafvDHfNUIs",
+        "vistas": 1000,
+        "likes": 27,
+        "comentarios": 1,
+        "duracion_s": 23.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 999,
+          "likes": 27,
+          "retencion_pct": 112.5,
+          "seg_medio_visto": 25.0
+        },
+        "total": {
+          "vistas": 999,
+          "likes": 27,
+          "retencion_pct": 112.5,
+          "seg_medio_visto": 25.0,
+          "vistas_feed_shorts": 949,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 10,
+            "YT_SEARCH": 18,
+            "YT_OTHER_PAGE": 15,
+            "EXT_URL": 2,
+            "NOTIFICATION": 4,
+            "SHORTS": 949
+          }
+        }
+      },
+      "instagram": {
+        "id": "18653504704050883",
+        "likes": 6,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df5s7F4j5Cm/",
+        "publicado": "2026-11-18T23:37:38+0000",
+        "vistas": 515,
+        "alcance": 398,
+        "guardados": 1,
+        "compartidos": 0,
+        "seg_medio_visto": 10.6,
+        "retencion_aprox_pct": 46.1
+      }
+    },
+    {
+      "id": "070",
+      "titulo": "La Tierra gira a 1600 km por hora",
+      "estilo": "manual",
+      "fecha": "2026-11-20",
+      "hora_ar": "14:30",
+      "youtube": {
+        "id": "Pr8I-43_LTw",
+        "url": "https://youtube.com/shorts/Pr8I-43_LTw",
+        "vistas": 1321,
+        "likes": 21,
+        "comentarios": 1,
+        "duracion_s": 24.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1246,
+          "likes": 20,
+          "retencion_pct": 69.0,
+          "seg_medio_visto": 16.0
+        },
+        "total": {
+          "vistas": 1246,
+          "likes": 20,
+          "retencion_pct": 69.0,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 1214,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 2,
+            "YT_CHANNEL": 9,
+            "YT_SEARCH": 15,
+            "YT_OTHER_PAGE": 2,
+            "NOTIFICATION": 4,
+            "SHORTS": 1214
+          }
+        }
+      },
+      "instagram": {
+        "id": "17995005198118951",
+        "likes": 45,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df-0-VlE0cw/",
+        "publicado": "2026-11-20T23:24:13+0000",
+        "vistas": 2144,
+        "alcance": 1547,
+        "guardados": 1,
+        "compartidos": 0,
+        "seg_medio_visto": 12.0,
+        "retencion_aprox_pct": 50.0
+      }
+    },
+    {
+      "id": "076",
+      "titulo": "El arcoíris es un círculo",
+      "estilo": "manual",
+      "fecha": "2026-11-21",
+      "hora_ar": "14:30",
+      "youtube": {
+        "id": "yQYp8TB47hY",
+        "url": "https://youtube.com/shorts/yQYp8TB47hY",
+        "vistas": 2418,
+        "likes": 12,
+        "comentarios": 1,
+        "duracion_s": 26.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1391,
+          "likes": 7,
+          "retencion_pct": 93.8,
+          "seg_medio_visto": 24.0
+        },
+        "total": {
+          "vistas": 1391,
+          "likes": 7,
+          "retencion_pct": 93.8,
+          "seg_medio_visto": 24.0,
+          "vistas_feed_shorts": 1328,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 6,
+            "YT_SEARCH": 54,
+            "YT_OTHER_PAGE": 3,
+            "SHORTS": 1328
+          }
+        }
+      },
+      "instagram": {
+        "id": "17893299300620356",
+        "likes": 99,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DgBTVGBj8HZ/",
+        "publicado": "2026-11-21T22:27:52+0000",
+        "vistas": 2643,
+        "alcance": 1670,
+        "guardados": 2,
+        "compartidos": 0,
+        "seg_medio_visto": 15.6,
+        "retencion_aprox_pct": 60.0
+      }
+    },
+    {
+      "id": "077",
+      "titulo": "En el espacio no hay sonido",
+      "estilo": "manual",
+      "fecha": "2026-11-21",
+      "hora_ar": "18:00",
+      "youtube": {
+        "id": "bQkKZZD0bug",
+        "url": "https://youtube.com/shorts/bQkKZZD0bug",
+        "vistas": 1222,
+        "likes": 13,
+        "comentarios": 1,
+        "duracion_s": 27.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1149,
+          "likes": 11,
+          "retencion_pct": 127.4,
+          "seg_medio_visto": 34.0
+        },
+        "total": {
+          "vistas": 1149,
+          "likes": 11,
+          "retencion_pct": 127.4,
+          "seg_medio_visto": 34.0,
+          "vistas_feed_shorts": 1092,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 6,
+            "YT_SEARCH": 47,
+            "YT_OTHER_PAGE": 4,
+            "SHORTS": 1092
+          }
+        }
+      },
+      "instagram": {
+        "id": "18121816544469309",
+        "likes": 84,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DgBn33ID9Q3/",
+        "publicado": "2026-11-22T01:27:26+0000",
+        "vistas": 2387,
+        "alcance": 1646,
+        "guardados": 4,
+        "compartidos": 1,
+        "seg_medio_visto": 17.7,
+        "retencion_aprox_pct": 65.6
+      }
+    },
+    {
+      "id": "089",
+      "titulo": "Saturno flotaría en el agua",
+      "estilo": "manual",
+      "fecha": "2026-11-20",
+      "hora_ar": "18:00",
+      "youtube": {
+        "id": "rgqhoNPqak4",
+        "url": "https://youtube.com/shorts/rgqhoNPqak4",
+        "vistas": 1540,
+        "likes": 18,
+        "comentarios": 1,
+        "duracion_s": 29.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1458,
+          "likes": 18,
+          "retencion_pct": 81.8,
+          "seg_medio_visto": 23.0
+        },
+        "total": {
+          "vistas": 1458,
+          "likes": 18,
+          "retencion_pct": 81.8,
+          "seg_medio_visto": 23.0,
+          "vistas_feed_shorts": 1386,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 5,
+            "YT_CHANNEL": 17,
+            "YT_SEARCH": 43,
+            "YT_OTHER_PAGE": 5,
+            "EXT_URL": 1,
+            "NOTIFICATION": 1,
+            "SHORTS": 1386
+          }
+        }
+      },
+      "instagram": {
+        "id": "18041065838893042",
+        "likes": 45,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df_KubXmf6E/",
+        "publicado": "2026-11-21T02:34:17+0000",
+        "vistas": 1294,
+        "alcance": 935,
+        "guardados": 1,
+        "compartidos": 0,
+        "seg_medio_visto": 15.5,
+        "retencion_aprox_pct": 53.4
+      }
+    },
+    {
+      "id": "091",
+      "titulo": "Un rayo es más caliente que el Sol",
+      "estilo": null,
+      "fecha": "2026-11-05",
+      "hora_ar": null,
+      "youtube": {
+        "id": "R70fyimfCR0",
+        "url": "https://youtube.com/shorts/R70fyimfCR0",
+        "vistas": 1087,
+        "likes": 36,
+        "comentarios": 1,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 0,
+          "likes": 1,
+          "retencion_pct": 0.0,
+          "seg_medio_visto": 0.0
+        },
+        "total": {
+          "vistas": 1086,
+          "likes": 36,
+          "retencion_pct": 134.8,
+          "seg_medio_visto": 26.0,
+          "vistas_feed_shorts": 1039,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 41,
+            "YT_OTHER_PAGE": 4,
+            "NOTIFICATION": 1,
+            "SHORTS": 1039
+          }
+        }
+      },
+      "instagram": {
+        "id": "17993255726858876",
+        "likes": 2,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfYihjZGGus/",
+        "publicado": "2026-11-06T02:31:40+0000",
+        "vistas": 165,
+        "alcance": 126,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 8.4,
+        "retencion_aprox_pct": 42.0
+      }
+    },
+    {
+      "id": "092",
+      "titulo": "Sin Einstein, el GPS fallaría",
+      "estilo": null,
+      "fecha": "2026-11-07",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "ukWmHrHNbCE",
+        "url": "https://youtube.com/shorts/ukWmHrHNbCE",
+        "vistas": 842,
+        "likes": 9,
+        "comentarios": 1,
+        "duracion_s": 24.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 2,
+          "likes": 1,
+          "retencion_pct": 105.2,
+          "seg_medio_visto": 25.0
+        },
+        "total": {
+          "vistas": 842,
+          "likes": 9,
+          "retencion_pct": 85.6,
+          "seg_medio_visto": 20.0,
+          "vistas_feed_shorts": 817,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 8,
+            "YT_CHANNEL": 2,
+            "YT_SEARCH": 10,
+            "YT_OTHER_PAGE": 5,
+            "SHORTS": 817
+          }
+        }
+      },
+      "instagram": {
+        "id": "17907253584355257",
+        "likes": 1,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfdnZAaivMC/",
+        "publicado": "2026-11-08T01:50:33+0000",
+        "vistas": 123,
+        "alcance": 107,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 3.1,
+        "retencion_aprox_pct": 12.9
+      }
+    },
+    {
+      "id": "093",
+      "titulo": "Los astronautas crecen en el espacio",
+      "estilo": null,
+      "fecha": "2026-11-04",
+      "hora_ar": null,
+      "youtube": {
+        "id": "TYqdtHsbBso",
+        "url": "https://youtube.com/shorts/TYqdtHsbBso",
+        "vistas": 14,
+        "likes": 2,
+        "comentarios": 1,
+        "duracion_s": 22.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 1,
+          "retencion_pct": 0.0,
+          "seg_medio_visto": 0.0
+        },
+        "total": {
+          "vistas": 13,
+          "likes": 2,
+          "retencion_pct": 76.7,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 2,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 5,
+            "YT_OTHER_PAGE": 1,
+            "SHORTS": 2
+          }
+        }
+      },
+      "instagram": {
+        "id": "18110052794215518",
+        "likes": 34,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfV96FXFRBY/",
+        "publicado": "2026-11-05T02:33:24+0000",
+        "vistas": 2314,
+        "alcance": 1597,
+        "guardados": 0,
+        "compartidos": 1,
+        "seg_medio_visto": 10.6,
+        "retencion_aprox_pct": 48.2
+      }
+    },
+    {
+      "id": "094",
+      "titulo": "Naciste con 300 huesos",
+      "estilo": null,
+      "fecha": "2026-11-08",
+      "hora_ar": "00:30",
+      "youtube": {
+        "id": "J8-7LFKMGck",
+        "url": "https://youtube.com/shorts/J8-7LFKMGck",
+        "vistas": 19,
+        "likes": 1,
+        "comentarios": 1,
+        "duracion_s": 22.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 4,
+          "likes": 1,
+          "retencion_pct": 117.1,
+          "seg_medio_visto": 25.0
+        },
+        "total": {
+          "vistas": 19,
+          "likes": 1,
+          "retencion_pct": 86.9,
+          "seg_medio_visto": 19.0,
+          "vistas_feed_shorts": 5,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 5,
+            "YT_SEARCH": 9,
+            "SHORTS": 5
+          }
+        }
+      },
+      "instagram": {
+        "id": "17922273117243659",
+        "likes": 37,
+        "comentarios": 1,
+        "url": "https://www.instagram.com/reel/Dfd6tFyGKZO/",
+        "publicado": "2026-11-08T04:39:18+0000",
+        "vistas": 2217,
+        "alcance": 1650,
+        "guardados": 3,
+        "compartidos": 1,
+        "seg_medio_visto": 10.7,
+        "retencion_aprox_pct": 48.6
+      }
+    },
+    {
+      "id": "095",
+      "titulo": "El refrigerador pone duro el pan",
+      "estilo": null,
+      "fecha": "2026-11-06",
+      "hora_ar": null,
+      "youtube": {
+        "id": "L3lpXTxVHvc",
+        "url": "https://youtube.com/shorts/L3lpXTxVHvc",
+        "vistas": 1003,
+        "likes": 22,
+        "comentarios": 1,
+        "duracion_s": 22.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 0,
+          "likes": 1,
+          "retencion_pct": 0.0,
+          "seg_medio_visto": 0.0
+        },
+        "total": {
+          "vistas": 1003,
+          "likes": 22,
+          "retencion_pct": 57.2,
+          "seg_medio_visto": 12.0,
+          "vistas_feed_shorts": 984,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 1,
+            "YT_SEARCH": 16,
+            "YT_OTHER_PAGE": 1,
+            "NOTIFICATION": 1,
+            "SHORTS": 984
+          }
+        }
+      },
+      "instagram": {
+        "id": "18143404966716194",
+        "likes": 6,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfbGTgsDbsH/",
+        "publicado": "2026-11-07T02:23:11+0000",
+        "vistas": 496,
+        "alcance": 408,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 9.7,
+        "retencion_aprox_pct": 44.1
+      }
+    },
+    {
+      "id": "096",
+      "titulo": "El mito del chicle de 7 años",
+      "estilo": null,
+      "fecha": "2026-11-08",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "69g2_5WBw14",
+        "url": "https://youtube.com/shorts/69g2_5WBw14",
+        "vistas": 1074,
+        "likes": 38,
+        "comentarios": 1,
+        "duracion_s": 21.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 1,
+          "retencion_pct": 59.3,
+          "seg_medio_visto": 12.0
+        },
+        "total": {
+          "vistas": 1074,
+          "likes": 38,
+          "retencion_pct": 76.7,
+          "seg_medio_visto": 16.0,
+          "vistas_feed_shorts": 1044,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 25,
+            "PLAYLIST": 1,
+            "SHORTS": 1044
+          }
+        }
+      },
+      "instagram": {
+        "id": "18172424221426013",
+        "likes": 21,
+        "comentarios": 1,
+        "url": "https://www.instagram.com/reel/DfgMyt7GQy2/",
+        "publicado": "2026-11-09T01:55:42+0000",
+        "vistas": 2191,
+        "alcance": 1615,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 10.5,
+        "retencion_aprox_pct": 50.0
+      }
+    },
+    {
+      "id": "097",
+      "titulo": "La Torre Eiffel crece en verano",
+      "estilo": null,
+      "fecha": "2026-11-09",
+      "hora_ar": "00:30",
+      "youtube": {
+        "id": "zFnHvuVcAio",
+        "url": "https://youtube.com/shorts/zFnHvuVcAio",
+        "vistas": 1027,
+        "likes": 23,
+        "comentarios": 1,
+        "duracion_s": 20.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1,
+          "likes": 1,
+          "retencion_pct": 75.5,
+          "seg_medio_visto": 15.0
+        },
+        "total": {
+          "vistas": 1025,
+          "likes": 23,
+          "retencion_pct": 114.4,
+          "seg_medio_visto": 22.0,
+          "vistas_feed_shorts": 1004,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 4,
+            "YT_SEARCH": 16,
+            "NOTIFICATION": 1,
+            "SHORTS": 1004
+          }
+        }
+      },
+      "instagram": {
+        "id": "18183202222437464",
+        "likes": 40,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DfggvP8kTMc/",
+        "publicado": "2026-11-09T04:50:09+0000",
+        "vistas": 1872,
+        "alcance": 1328,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 10.4,
+        "retencion_aprox_pct": 52.0
+      }
+    },
+    {
+      "id": "097b",
+      "titulo": "La Torre Eiffel cambia de altura",
+      "estilo": "manual",
+      "fecha": "2026-11-18",
+      "hora_ar": "18:00",
+      "youtube": {
+        "id": "XmlrZP6nMBE",
+        "url": "https://youtube.com/shorts/XmlrZP6nMBE",
+        "vistas": 1301,
+        "likes": 21,
+        "comentarios": 2,
+        "duracion_s": 24.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1283,
+          "likes": 20,
+          "retencion_pct": 97.7,
+          "seg_medio_visto": 23.0
+        },
+        "total": {
+          "vistas": 1283,
+          "likes": 20,
+          "retencion_pct": 97.7,
+          "seg_medio_visto": 23.0,
+          "vistas_feed_shorts": 1231,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 1,
+            "SUBSCRIBER": 3,
+            "YT_CHANNEL": 8,
+            "YT_SEARCH": 36,
+            "YT_OTHER_PAGE": 3,
+            "NOTIFICATION": 1,
+            "SHORTS": 1231
+          }
+        }
+      }
+    },
+    {
+      "id": "098",
+      "titulo": "Barcos pintados como cebras",
+      "estilo": "ai",
+      "fecha": "2026-11-20",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "Fw0zqf_YMBE",
+        "url": "https://youtube.com/shorts/Fw0zqf_YMBE",
+        "vistas": 1473,
+        "likes": 19,
+        "comentarios": 1,
+        "duracion_s": 29.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1450,
+          "likes": 18,
+          "retencion_pct": 84.3,
+          "seg_medio_visto": 24.0
+        },
+        "total": {
+          "vistas": 1450,
+          "likes": 18,
+          "retencion_pct": 84.3,
+          "seg_medio_visto": 24.0,
+          "vistas_feed_shorts": 1397,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "SUBSCRIBER": 1,
+            "YT_CHANNEL": 8,
+            "YT_SEARCH": 34,
+            "YT_OTHER_PAGE": 8,
+            "NOTIFICATION": 2,
+            "SHORTS": 1397
+          }
+        }
+      },
+      "instagram": {
+        "id": "18120979423998663",
+        "likes": 7,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/Df_um3Tgs7f/",
+        "publicado": "2026-11-21T07:47:46+0000",
+        "vistas": 533,
+        "alcance": 385,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 14.6,
+        "retencion_aprox_pct": 50.3
+      }
+    },
+    {
+      "id": "099",
+      "titulo": "Tu cepillo de dientes y el inodoro",
+      "estilo": "ai",
+      "fecha": "2026-11-21",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "YZD1N9_cmwU",
+        "url": "https://youtube.com/shorts/YZD1N9_cmwU",
+        "vistas": 2163,
+        "likes": 17,
+        "comentarios": 1,
+        "duracion_s": 26.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 1844,
+          "likes": 15,
+          "retencion_pct": 75.5,
+          "seg_medio_visto": 19.0
+        },
+        "total": {
+          "vistas": 1844,
+          "likes": 15,
+          "retencion_pct": 75.5,
+          "seg_medio_visto": 19.0,
+          "vistas_feed_shorts": 1787,
+          "origen_vistas": {
+            "NO_LINK_OTHER": 0,
+            "YT_CHANNEL": 11,
+            "YT_SEARCH": 44,
+            "YT_OTHER_PAGE": 2,
+            "SHORTS": 1787
+          }
+        }
+      },
+      "instagram": {
+        "id": "17940875760127136",
+        "likes": 10,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DgCR1PXjvWa/",
+        "publicado": "2026-11-22T07:34:05+0000",
+        "vistas": 1351,
+        "alcance": 1194,
+        "guardados": 1,
+        "compartidos": 2,
+        "seg_medio_visto": 5.0,
+        "retencion_aprox_pct": 19.2
+      }
+    },
+    {
+      "id": "100",
+      "titulo": "Metió la cabeza en un acelerador de partículas",
+      "estilo": "cine",
+      "fecha": "2026-11-22",
+      "hora_ar": "14:30",
+      "youtube": {
+        "id": "WsVhtzhAaeM",
+        "url": "https://youtube.com/shorts/WsVhtzhAaeM",
+        "vistas": 931,
+        "likes": 21,
+        "comentarios": 1,
+        "duracion_s": 30.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 7,
+          "likes": 0,
+          "retencion_pct": 116.9,
+          "seg_medio_visto": 35.0
+        },
+        "total": {
+          "vistas": 7,
+          "likes": 0,
+          "retencion_pct": 116.9,
+          "seg_medio_visto": 35.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "YT_CHANNEL": 7
+          }
+        }
+      },
+      "instagram": {
+        "id": "18122390008769101",
+        "likes": 22,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DgD6y3sgvDk/",
+        "publicado": "2026-11-22T22:51:14+0000",
+        "vistas": 714,
+        "alcance": 520,
+        "guardados": 2,
+        "compartidos": 1,
+        "seg_medio_visto": 11.9,
+        "retencion_aprox_pct": 39.7
+      }
+    },
+    {
+      "id": "101",
+      "titulo": "Por qué la Ciudad de México se hunde",
+      "estilo": "ai",
+      "fecha": "2026-11-22",
+      "hora_ar": "18:00",
+      "youtube": {
+        "id": "DvWuJ926CNg",
+        "url": "https://youtube.com/shorts/DvWuJ926CNg",
+        "vistas": 202,
+        "likes": 7,
+        "comentarios": 1,
+        "duracion_s": 27.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 4,
+          "likes": 0,
+          "retencion_pct": 105.8,
+          "seg_medio_visto": 28.0
+        },
+        "total": {
+          "vistas": 4,
+          "likes": 0,
+          "retencion_pct": 105.8,
+          "seg_medio_visto": 28.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "YT_CHANNEL": 4
+          }
+        }
+      },
+      "instagram": {
+        "id": "18118097978611404",
+        "likes": 43,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DgEPZxOHLUz/",
+        "publicado": "2026-11-23T01:51:09+0000",
+        "vistas": 2050,
+        "alcance": 1571,
+        "guardados": 0,
+        "compartidos": 0,
+        "seg_medio_visto": 11.0,
+        "retencion_aprox_pct": 40.7
+      }
+    },
+    {
+      "id": "102",
+      "titulo": "Por qué orinaban en pañuelos en la guerra",
+      "estilo": "cine",
+      "fecha": "2026-11-22",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "eeBmGQKUa4Q",
+        "url": "https://youtube.com/shorts/eeBmGQKUa4Q",
+        "vistas": 980,
+        "likes": 24,
+        "comentarios": 1,
+        "duracion_s": 29.0,
+        "estado": "public",
+        "semana": {
+          "vistas": 4,
+          "likes": 0,
+          "retencion_pct": 146.0,
+          "seg_medio_visto": 42.0
+        },
+        "total": {
+          "vistas": 4,
+          "likes": 0,
+          "retencion_pct": 146.0,
+          "seg_medio_visto": 42.0,
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {
+            "YT_CHANNEL": 4
+          }
+        }
+      },
+      "instagram": {
+        "id": "18039997523907041",
+        "likes": 36,
+        "comentarios": 0,
+        "url": "https://www.instagram.com/reel/DgE8L9ZCkkg/",
+        "publicado": "2026-11-23T08:22:39+0000",
+        "vistas": 1939,
+        "alcance": 1474,
+        "guardados": 1,
+        "compartidos": 1,
+        "seg_medio_visto": 12.4,
+        "retencion_aprox_pct": 42.8
+      }
+    },
+    {
+      "id": "103",
+      "titulo": "Tus uñas tienen un sello protector",
+      "estilo": "ai",
+      "fecha": "2026-11-23",
+      "hora_ar": "18:00",
+      "youtube": {
+        "id": "AjN3s3WU4io",
+        "url": "https://youtube.com/shorts/AjN3s3WU4io",
+        "vistas": 216,
+        "likes": 6,
+        "comentarios": 1,
+        "duracion_s": 28.0,
+        "estado": "public",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
+      }
+    },
+    {
+      "id": "104",
+      "titulo": "Por qué no adelantar un camión que dobla",
+      "estilo": "cine",
+      "fecha": "2026-11-23",
+      "hora_ar": "21:30",
+      "youtube": {
+        "id": "f_QXzZOblNU",
+        "url": "https://youtube.com/shorts/f_QXzZOblNU",
+        "vistas": 1,
+        "likes": 0,
+        "comentarios": 0,
+        "duracion_s": 27.0,
+        "estado": "private",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
+      }
+    },
+    {
+      "id": "105",
+      "titulo": "Un monje dentro de una estatua de Buda",
+      "estilo": "ai",
+      "fecha": "2026-11-24",
+      "hora_ar": "18:00",
+      "youtube": {
+        "id": "1mnZsZ7Jc74",
+        "url": "https://youtube.com/shorts/1mnZsZ7Jc74",
+        "vistas": 2,
+        "likes": 0,
+        "comentarios": 0,
+        "duracion_s": 28.0,
+        "estado": "private",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
+      }
+    },
+    {
+      "id": "106",
+      "titulo": "Por qué no recordás tus sueños",
+      "estilo": "cine",
+      "fecha": "2026-11-24",
+      "hora_ar": "14:30",
+      "youtube": {
+        "id": "pIrsm8JJMSE",
+        "url": "https://youtube.com/shorts/pIrsm8JJMSE",
+        "vistas": 3,
+        "likes": 0,
+        "comentarios": 0,
+        "duracion_s": 27.0,
+        "estado": "private",
+        "total": {
+          "vistas_feed_shorts": 0,
+          "origen_vistas": {}
+        }
+      }
+    }
+  ]
+}
