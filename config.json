@@ -66,6 +66,7 @@
   "max_slowmo": 1.3,
   "extra_if_queued": 3,
   "code_every": 2,
+  "solo_codigo": true,
   "code_engine": "cine",
   "music_code": true,
   "max_still_seconds": 2.0,
