@@ -907,7 +907,8 @@ def make_one(ideas, done, slot):
     if idea:
         log(f"Idea {idea['id']}: {idea['title']} (se rehace de cero: en YouTube había quedado trabada)")
         return rehacer_uno(idea, done, slot, resub)
-    pending = [i for i in ideas if i["id"] not in done]
+    dia = slot_day(iso(slot)) if slot else today_ar()  # "desde" en ideas.json: esa idea no sale antes de ese día (AR)
+    pending = [i for i in ideas if i["id"] not in done and i.get("desde", "") <= dia]
     if not pending:
         log("No quedan ideas nuevas. Agregá más a ideas.json.")
         return "noideas"
