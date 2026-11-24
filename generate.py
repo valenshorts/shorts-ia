@@ -256,6 +256,9 @@ async def _tts(text, path):
             await asyncio.sleep(15 * (attempt + 1))
 
 
+VOICE_WORDS = None  # con ElevenLabs: [[(inicio, fin), ...] por frase] = tiempo real de cada palabra para los subtítulos
+
+
 def make_voice_eleven(text, work):
     # voz clonada de Valentín (ElevenLabs): todo el guion de una vez, con el tiempo real de cada frase
     import eleven
@@ -268,10 +271,14 @@ def make_voice_eleven(text, work):
     voice = work / "voice.wav"
     run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000",
          "-ar", "48000", "-ac", "1", voice])
+    global VOICE_WORDS
+    VOICE_WORDS = [[(round(x - a, 3), round(y - a, 3)) for x, y, _ in g] for g in grupos]
     return voice, [(s, round(g[0][0] - a, 3), round(g[-1][1] - a, 3)) for s, g in zip(frases, grupos)]
 
 
 def make_voice(text, work):
+    global VOICE_WORDS
+    VOICE_WORDS = None
     import eleven
     if eleven.activo():
         try:
@@ -321,8 +328,10 @@ def make_subs(timeline, out, highlight=(), video_len=None):
           if (len(_norm(w)) >= 4 or _norm(w).isdigit()) and _norm(w) not in stop}
     color = st.get("highlight_color", "&H00D7FF&")
     caps = []
-    for sent, a, b in timeline:
+    for si, (sent, a, b) in enumerate(timeline):
         words = sent.split()
+        real = VOICE_WORDS[si] if VOICE_WORDS and si < len(VOICE_WORDS) and len(VOICE_WORDS[si]) == len(words) else None
+        k = 0
         weights = [len(w) + 2 for w in words]
         total = sum(weights)
         group, groups = [], []
@@ -339,7 +348,11 @@ def make_subs(timeline, out, highlight=(), video_len=None):
             ws[-1] = ws[-1].rstrip(",;:")
             ws = [w.upper() if st["uppercase"] else w for w in ws]
             txt = " ".join(f"{{\\c{color}}}{w}{{\\c&HFFFFFF&}}" if _norm(w) in hl else w for w in ws)
-            caps.append([t, t + d, txt])
+            if real:  # sincronizado con la voz: aparece justo cuando se dice la primera palabra del grupo
+                caps.append([real[k][0], real[k + len(g) - 1][1], txt])
+            else:
+                caps.append([t, t + d, txt])
+            k += len(g)
             t += d
     for i in range(len(caps) - 1):  # sin huecos en las pausas
         caps[i][1] = caps[i + 1][0]
@@ -350,7 +363,7 @@ def make_subs(timeline, out, highlight=(), video_len=None):
         lines.append(f"Dialogue: 1,{ts(0)},{ts(end)},Mark,,0,0,0,,{CFG['handle']}")
     if CFG.get("end_card", True) and end > 6:  # cartel final con la mascota
         a = end - CFG.get("end_card_seconds", 2.6)
-        lines.append(f"Dialogue: 2,{ts(a)},{ts(end)},End,,0,0,0,,{{\\fscx40\\fscy40\\t(0,180,\\fscx110\\fscy110)\\t(180,300,\\fscx100\\fscy100)}}¡SUSCRÍBETE!")
+        lines.append(f"Dialogue: 2,{ts(a)},{ts(end)},End,,0,0,0,,{{\\fscx40\\fscy40\\t(0,180,\\fscx110\\fscy110)\\t(180,300,\\fscx100\\fscy100)}}¡SUSCRIBITE!")
     out.write_text(f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -895,11 +908,17 @@ def make_one(ideas, done, slot):
             import codeanim
             visuals, cuts = codeanim.make_visuals(idea, timeline, total, work, CFG.get("gemini_models", []))
         except Exception as e:  # si falla el navegador o algo del dibujo, este video se hace con IA
+            if CFG.get("solo_codigo"):  # con Hugging Face en pausa no se pasa a IA: se reintenta en la próxima corrida
+                log(f"La animación con código falló ({str(e)[:200]}); reintento en la próxima corrida")
+                return "wait"
             log(f"La animación con código falló ({str(e)[:200]}); este video va con IA")
             (work / "style.txt").write_text("ai")
             return "wait"
         return finish_video(idea, done, slot, work, visuals, voice, subs, total, timeline, cuts, "code",
                             codeanim.LAST_HITS)
+    if CFG.get("solo_codigo"):
+        log("Hugging Face está en pausa: este video no se hace con IA")
+        return "wait"
     log("Estilo de este video: IA (Hugging Face)")
 
     # 1) Primero todas las imágenes (gastan poca cuota), sin repetidas.
@@ -988,6 +1007,9 @@ def video_style(done, work):
     Una idea que ya tiene imágenes de IA empezadas sigue con IA (no se tira lo hecho)."""
     every = CFG.get("code_every", 0)
     mark = work / "style.txt"
+    if CFG.get("solo_codigo"):  # Hugging Face en pausa (pedido de Valentín): todos los videos con código
+        mark.write_text("code")
+        return "code"
     if mark.exists():
         return mark.read_text().strip()
     if not every or any(work.glob("scene*.png")):
