@@ -23,9 +23,10 @@
     },
     function reaccion(ctx, t, a) {
       C.bg(ctx, '#0A1A2A', '#1A3A4A');
-      const k1 = pop(t, ev.mezcla - 0.1), k2 = pop(t, ev.oxigeno - 0.1), m = out(t, ev.oxigeno + 0.3, 0.6);
-      ctx.save(); ctx.translate(lerp(280, CX, m), 940); ctx.scale(k1, k1); G.ellipse(ctx, 0, 0, 90, 90, { fill: '#B8E04A', lw: 6, seed: 10 }); ctx.restore();
-      ctx.save(); ctx.translate(lerp(800, CX, m), 940); ctx.scale(k2, k2); G.ellipse(ctx, -30, 0, 60, 60, { fill: '#5fb8ff', lw: 5, seed: 11 }); G.ellipse(ctx, 40, 0, 60, 60, { fill: '#5fb8ff', lw: 5, seed: 12 }); C.text(ctx, 'O₂', 5, 22, { size: 60, color: '#fff', shadow: false }); ctx.restore();
+      const k1 = pop(t, Math.min(ev.mezcla - 0.1, a + 0.15)), k2 = pop(t, Math.min(ev.oxigeno - 0.1, a + 0.6)), m = out(t, ev.oxigeno + 0.3, 0.6), bob = (1 - m) * 18;
+      for (let i = 0; i < 16; i++) { const p = (t * 0.25 + i / 16) % 1; C.glow(ctx, 120 + (i * 137) % 840, 1300 - p * 760, 26, '210,255,90', 0.5 * Math.sin(p * Math.PI)); }
+      ctx.save(); ctx.translate(lerp(280, CX, m), 940 + Math.sin(t * 2.4) * bob); ctx.scale(k1, k1); G.ellipse(ctx, 0, 0, 90, 90, { fill: '#B8E04A', lw: 6, seed: 10 }); ctx.restore();
+      ctx.save(); ctx.translate(lerp(800, CX, m), 940 + Math.cos(t * 2.1) * bob); ctx.scale(k2, k2); G.ellipse(ctx, -30, 0, 60, 60, { fill: '#5fb8ff', lw: 5, seed: 11 }); G.ellipse(ctx, 40, 0, 60, 60, { fill: '#5fb8ff', lw: 5, seed: 12 }); C.text(ctx, 'O₂', 5, 22, { size: 60, color: '#fff', shadow: false }); ctx.restore();
       if (m > 0.8) { C.glow(ctx, CX, 940, 360, '230,255,120', 0.8); G.rays(ctx, CX, 940, { n: 14, r0: 140, r1: 280, color: '#E8FF6A', lw: 8 }); }
       C.pill(ctx, t, ev.reaccion, 'reacción química', CX, 640, '#B8E04A');
       return ['Hace luz con una reacción', 'mezcla una sustancia con *oxígeno*'];
