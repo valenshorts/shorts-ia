@@ -4,7 +4,8 @@ on:
   schedule:
     # Un intento cada 3 horas (a las :40 de Argentina). Cada intento suma imágenes/animaciones al trabajo guardado;
     # cuando un video está COMPLETO (5 escenas animadas, aprobadas y revisado entero) se sube a YouTube programado
-    # para el próximo horario libre: 21:30 y 00:30 AR (principales) y 15:00 AR (solo si sobran videos).
+    # para el próximo horario libre: 18:00 y 21:30 AR (principales) y 14:30 AR (solo si sobran videos), según
+    # publish_slots_ar / extra_slots_ar de config.json. Nada a las 00:30: ahí los videos casi no tenían vistas.
     # Los intentos de las 21:40, 00:40 y 15:40 además publican el comentario de los videos que acaban de salir.
     - cron: "40 0 * * *"    # 21:40 AR
     - cron: "40 3 * * *"    # 00:40 AR
@@ -113,6 +114,7 @@ jobs:
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
           git add done.json ideas.json
+          [ -f resubidos.json ] && git add resubidos.json
           git commit -m "Short del día" || echo "nada para guardar"
           git stash --include-untracked || true  # otros archivos tocados no frenan el guardado
           ok=""

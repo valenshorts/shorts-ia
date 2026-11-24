@@ -70,5 +70,6 @@
   "code_engine": "cine",
   "music_code": true,
   "max_still_seconds": 2.0,
-  "max_av_diff_seconds": 0.3
+  "max_av_diff_seconds": 0.3,
+  "idea_focus": "Prioridad de temas (según las estadísticas del canal): al menos la mitad de las ideas tienen que ser de ESPACIO (planetas, la Luna, el Sol, la luz, el sonido en el espacio) o del CUERPO y la VIDA COTIDIANA (cosas que te pasan en la ducha, en el baño, al dormir, al comer). Son los que más vistas y retención tienen. Arrancá con un dato que sorprenda en la primera frase."
 }

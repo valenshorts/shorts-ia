@@ -657,6 +657,8 @@ def gemini_ideas(ideas, n=10):
     used = "\n".join("- " + i["title"] for i in ideas)
     ex = {k: ideas[-1][k] for k in ("title", "yt_title", "narration", "scenes", "tags", "playlist", "highlight") if k in ideas[-1]}
     prompt = IDEA_PROMPT.format(n=n, used=used, example=json.dumps(ex, ensure_ascii=False))
+    if CFG.get("idea_focus"):  # temas que mejor andan en el canal (se ajusta en config.json)
+        prompt += "\n\n" + CFG["idea_focus"]
     body = json.dumps({"contents": [{"parts": [{"text": prompt}]}],
                        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.9}}).encode()
     for model in CFG.get("gemini_models", ["gemini-flash-latest", "gemini-2.5-flash"]):
@@ -847,15 +849,76 @@ def reject(idea, motivos, style, work, despues):
         REJECT_FAILED.append(idea["id"])
 
 
+# ---------------------------------------------------------------- Resubidos
+# Videos que pegaron en Instagram pero quedaron trabados en YouTube: resubir.py los baja de Instagram a
+# manual/<id>.mp4 y los anota en resubidos.json. Acá se suben de nuevo (uno por día) y el viejo pasa a privado.
+def load_resubidos():
+    p = ROOT / "resubidos.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+
+
+def save_resubidos(resub):
+    (ROOT / "resubidos.json").write_text(json.dumps(resub, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def resubido_ese_dia(resub, done, slot):
+    """¿Ya hay un video resubido que sale el mismo día (AR) que este horario?"""
+    dia = slot_day(iso(slot)) if slot else today_ar()
+    return any(r.get("estado") == "subido" and done.get(k, {}).get("date") == dia for k, r in resub.items())
+
+
+def resubir_uno(idea, done, slot, resub):
+    k, r = idea["id"], resub[idea["id"]]
+    viejo = done[k]
+    work = ROOT / "work" / f"resubir_{k}"
+    work.mkdir(parents=True, exist_ok=True)
+    OUT.mkdir(exist_ok=True)
+    out = OUT / f"short_{k}.mp4"
+    shutil.copy(ROOT / "manual" / f"{k}.mp4", out)
+    done.pop(k)  # publish_ready lo vuelve a anotar con el video nuevo
+    res = publish_ready(idea, done, slot, work, out, "manual")
+    if res != "uploaded":
+        done[k] = viejo  # no se subió: queda todo como estaba (el viejo sigue público)
+        if not (ROOT / "manual" / f"{k}.mp4").exists():  # el control de calidad lo mandó a manual/revisar
+            r["estado"] = "rechazado"
+            save_resubidos(resub)
+        return res
+    done[k]["resubido"] = True
+    r.update(estado="subido", youtube_nuevo=done[k]["youtube_id"], subido=today_ar())
+    try:
+        yt = youtube_client()
+        it = yt.videos().list(part="status", id=r["youtube_viejo"]).execute().get("items", [])
+        if it:
+            st = {x: y for x, y in it[0]["status"].items()
+                  if x in ("embeddable", "license", "publicStatsViewable", "selfDeclaredMadeForKids", "containsSyntheticMedia")}
+            st["privacyStatus"] = "private"
+            yt.videos().update(part="status", body={"id": r["youtube_viejo"], "status": st}).execute()
+            r["viejo_privado"] = True
+            log(f"El video viejo ({r['youtube_viejo']}) pasó a privado (no se borró).")
+    except Exception as e:
+        log(f"No pude pasar a privado el video viejo {r['youtube_viejo']} ({str(e)[:150]}): hacelo a mano en YouTube Studio.")
+    save_resubidos(resub)
+    return res
+
+
 # ---------------------------------------------------------------- Principal
 def make_one(ideas, done, slot):
     """Avanza el próximo video. Devuelve "uploaded", "wait" (le falta algo; sigue en otro intento) o "noideas"."""
-    pending = [i for i in ideas if i["id"] not in done]
+    manual_dir = ROOT / "manual"  # videos hechos a mano (en tandas): si hay uno listo, pasa primero
+    hechos = {p.stem for p in manual_dir.glob("*.mp4")} if manual_dir.exists() else set()
+    resub = load_resubidos()
+    pend_resub = [k for k, r in resub.items() if r.get("estado") == "pendiente" and k in hechos]
+    if pend_resub and resubido_ese_dia(resub, done, slot):
+        log(f"Ya sale un video resubido ese día: los resubidos que faltan ({', '.join(pend_resub)}) esperan al próximo.")
+        pend_resub = []
+    pending = [i for i in ideas if i["id"] not in done or i["id"] in pend_resub]
     if not pending:
         log("No quedan ideas nuevas. Agregá más a ideas.json.")
         return "noideas"
-    manual_dir = ROOT / "manual"  # videos hechos a mano (en tandas): si hay uno listo, pasa primero
-    hechos = {p.stem for p in manual_dir.glob("*.mp4")} if manual_dir.exists() else set()
+    idea = next((i for i in pending if i["id"] in pend_resub), None)  # un resubido por día, antes que lo demás
+    if idea:
+        log(f"Idea {idea['id']}: {idea['title']} (se vuelve a subir: en YouTube había quedado trabada)")
+        return resubir_uno(idea, done, slot, resub)
     idea = next((i for i in pending if i["id"] in hechos), pending[0])
     log(f"Idea {idea['id']}: {idea['title']}")
     if idea["id"] in hechos:  # video hecho a mano: se publica tal cual (después de la misma revisión)

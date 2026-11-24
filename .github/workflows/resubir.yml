@@ -1,0 +1,51 @@
+name: Resubir a YouTube
+
+# Videos que pegaron en Instagram pero quedaron trabados en YouTube (casi sin vistas): los baja de Instagram a
+# manual/<id>.mp4 y los anota en resubidos.json. El Short diario los vuelve a subir a YouTube, uno por día, en el
+# próximo horario libre, y recién ahí pasa el viejo a privado (no lo borra). Solo toca videos públicos con menos de
+# 100 vistas en YouTube. Instagram y TikTok no se tocan.
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Ids separados por espacio (ej: 011 017 016 009)"
+        required: true
+        default: "011 017 016 009"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: resubir
+  cancel-in-progress: false
+
+jobs:
+  resubir:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q google-api-python-client google-auth
+      - name: Bajar de Instagram y anotar
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}  # también es la clave para leer ig_token.enc
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IDS: ${{ github.event.inputs.ids }}
+        run: python resubir.py "$IDS"
+      - name: Guardar
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add resubidos.json manual/*.mp4
+          git commit -m "Para resubir a YouTube: $IDS" || { echo "nada para guardar"; exit 0; }
+          for i in 1 2 3 4; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          exit 1
