@@ -6,6 +6,7 @@ Este script pone la voz (tiempos por palabra), los subtítulos, los efectos, la 
 
 Uso: python demo/manual/render.py neptuno           -> demo/manual/neptuno/video.mp4 (para revisar)
      python demo/manual/render.py neptuno --fake    -> sin voz, solo para mirar la imagen
+     python demo/manual/render.py neptuno --solo-voz -> solo voz.m4a + timeline.json (para demo/plugin y demo/remotion)
 Publicar: copiar video.mp4 a manual/<id>.mp4 (lo hace manual.yml con "publicar"); el Short diario lo sube.
 """
 import asyncio, base64, json, math, os, re, subprocess, sys, urllib.request, wave
@@ -546,6 +547,11 @@ def main():
     (folder / f"timeline{suf}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     log(f"{name}: {total:.2f} s, {len(words)} palabras")
     audio = mix(voice, sfx_track(sb, words, scenes, total, work), total, work, int(re.sub(r"\D", "", sb["id"]) or 1))
+    if "--solo-voz" in sys.argv:  # solo la voz + efectos + música y los tiempos (para los videos del plugin o Remotion)
+        if not fake:
+            run(["ffmpeg", "-v", "error", "-y", "-i", audio, "-c:a", "aac", "-b:a", "160k", "-ar", SR, folder / "voz.m4a"])
+        log(f"Voz lista: {folder / 'voz.m4a'} ({total:.2f} s)")
+        return
     video = work / "video_sin_audio.mp4"
     film(folder, data, total, video, work, sb.get("scene"))  # "scene": otra escena del repo (ej. demo/v6/scene.html)
     out = folder / f"video{suf}.mp4" if not fake else work / "fake.mp4"
