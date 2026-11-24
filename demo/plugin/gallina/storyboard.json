@@ -1,0 +1,23 @@
+{
+ "id": "050",
+ "title": "Por qué se pone la piel de gallina",
+ "pause": 0.18, "tail": 0.8,
+ "scenes": [
+  {"key": "frio", "text": "Cuando tenés frío o te emocionás, se te pone la piel de gallina."},
+  {"key": "musculo", "text": "Cada pelito tiene un músculo diminuto en la base, y ese músculo lo levanta."},
+  {"key": "animales", "text": "En los animales con mucho pelo, eso sirve: el pelo parado atrapa aire caliente, o los hace ver más grandes cuando tienen miedo."},
+  {"key": "gato", "text": "Como cuando un gato se eriza."},
+  {"key": "nosotros", "text": "Nosotros ya casi no tenemos pelo, pero el cuerpo sigue haciendo lo mismo."},
+  {"key": "boton", "text": "Es un botón que quedó de cuando éramos mucho más peludos."}
+ ],
+ "keywords": ["frío", "emocionás", "gallina", "músculo", "diminuto", "levanta", "caliente", "grandes", "miedo", "gato", "eriza", "pelo", "mismo", "botón", "peludos"],
+ "sfx": [
+  {"tipo": "brillo", "escena": 0, "palabra": "gallina", "gain": 0.6},
+  {"tipo": "whoosh", "escena": 1, "inicio": 0.05, "gain": 0.5},
+  {"tipo": "subida", "escena": 1, "palabra": "levanta", "gain": 0.5},
+  {"tipo": "boom", "escena": 2, "palabra": "grandes", "gain": 0.6},
+  {"tipo": "boom_grande", "escena": 3, "palabra": "eriza", "gain": 0.7},
+  {"tipo": "grave", "escena": 4, "palabra": "mismo", "gain": 0.5},
+  {"tipo": "campana", "escena": 5, "palabra": "peludos", "gain": 0.8}
+ ]
+}
