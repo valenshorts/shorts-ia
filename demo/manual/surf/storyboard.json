@@ -1,0 +1,26 @@
+{
+ "id": "107",
+ "title": "Por qué los surfistas raspan sus tablas",
+ "rate": "+20%", "pause": 0.18, "tail": 0.8,
+ "sources": ["Surf wax: la cera da agarre sobre la tabla lisa y mojada; con el uso se ensucia y se aplana, y se raspa con un peine de cera haciendo un rayado en diagonal (cross-hatch) para que la cera nueva forme bultos"],
+ "scenes": [
+  {"key": "resbala", "text": "Los surfistas raspan sus tablas porque sin cera se resbalarían enseguida."},
+  {"key": "cera", "text": "La tabla es lisa y está siempre mojada, así que le frotan cera para que los pies se agarren."},
+  {"key": "sucia", "text": "Con cada sesión, esa cera se ensucia, se aplana y deja de agarrar."},
+  {"key": "peine", "text": "Entonces la raspan con un peine especial y le hacen rayas en diagonal."},
+  {"key": "bultos", "text": "Esas rayitas crean pequeños bultos donde se pega la cera nueva."},
+  {"key": "final", "text": "Por eso la parte de arriba de una tabla nunca está lisa."}
+ ],
+ "keywords": ["raspan", "cera", "resbalarían", "lisa", "mojada", "agarren", "ensucia", "aplana", "peine", "diagonal", "bultos", "nueva", "nunca"],
+ "sfx": [
+  {"tipo": "whoosh", "escena": 0, "palabra": "resbalarían", "gain": 0.7},
+  {"tipo": "boom", "escena": 0, "palabra": "enseguida", "gain": 0.6},
+  {"tipo": "brillo", "escena": 1, "palabra": "lisa", "gain": 0.4},
+  {"tipo": "clics", "escena": 1, "palabra": "frotan", "hasta": "agarren", "n": 6, "f": 900, "gain": 0.3},
+  {"tipo": "bajada", "escena": 2, "palabra": "aplana", "gain": 0.5},
+  {"tipo": "clics", "escena": 3, "palabra": "raspan", "hasta": "diagonal", "n": 8, "f": 2400, "gain": 0.3},
+  {"tipo": "boom", "escena": 3, "palabra": "diagonal", "gain": 0.5},
+  {"tipo": "subida", "escena": 4, "palabra": "bultos", "gain": 0.4},
+  {"tipo": "campana", "escena": 5, "palabra": "lisa", "gain": 0.8}
+ ]
+}
