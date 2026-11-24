@@ -340,8 +340,7 @@
     "youtube_id": "f_QXzZOblNU",
     "date": "2026-11-23",
     "style": "cine",
-    "publish_at": "2026-11-24T00:30:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-24T00:30:00Z"
   },
   "105": {
     "title": "Un monje dentro de una estatua de Buda",
@@ -365,6 +364,14 @@
     "date": "2026-11-24",
     "style": "ai",
     "publish_at": "2026-11-25T00:30:00Z",
+    "comment_pending": true
+  },
+  "108": {
+    "title": "El oxígeno también es tóxico",
+    "youtube_id": "p9Ak_RoSn84",
+    "date": "2026-11-25",
+    "style": "cine",
+    "publish_at": "2026-11-25T17:30:00Z",
     "comment_pending": true
   }
 }
