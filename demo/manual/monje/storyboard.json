@@ -1,0 +1,27 @@
+{
+ "id": "105",
+ "title": "Un monje dentro de una estatua de Buda",
+ "rate": "+20%", "pause": 0.18, "tail": 0.8,
+ "sources": ["2015, Drents Museum / Meander Medisch Centrum (Países Bajos): tomografía de una estatua de Buda china de ~1.000 años con la momia del maestro Liuquan; en lugar de los órganos había rollos de papel con escrituras chinas"],
+ "scenes": [
+  {"key": "estatua", "text": "En 2015 escanearon una estatua de Buda de casi mil años y adentro había un monje momificado."},
+  {"key": "tomografo", "text": "Los médicos usaron un tomógrafo, como el de los hospitales, y vieron un esqueleto completo sentado en posición de meditación."},
+  {"key": "maestro", "text": "Se cree que era un maestro llamado Liuquan."},
+  {"key": "papeles", "text": "Lo más raro: donde deberían estar sus órganos, encontraron pedazos de papel con antiguas escrituras chinas."},
+  {"key": "rezos", "text": "Durante siglos la gente rezó frente a la estatua sin saber que había alguien adentro."}
+ ],
+ "caption_replace": [["mil años", "1.000 años"]],
+ "keywords": ["buda", "monje", "momificado", "tomógrafo", "esqueleto", "meditación", "liuquan", "órganos", "papel", "escrituras", "siglos", "adentro"],
+ "sfx": [
+  {"tipo": "brillo", "escena": 0, "inicio": 0.1, "gain": 0.5},
+  {"tipo": "boom_grande", "escena": 0, "palabra": "monje", "gain": 0.8},
+  {"tipo": "subida", "escena": 1, "palabra": "tomógrafo", "gain": 0.4},
+  {"tipo": "clics", "escena": 1, "palabra": "tomógrafo", "hasta": "esqueleto", "n": 7, "f": 1800, "gain": 0.3},
+  {"tipo": "boom", "escena": 1, "palabra": "esqueleto", "gain": 0.7},
+  {"tipo": "campana", "escena": 2, "palabra": "liuquan", "gain": 0.6},
+  {"tipo": "grave", "escena": 3, "palabra": "órganos", "gain": 0.6},
+  {"tipo": "whoosh", "escena": 3, "palabra": "papel", "gain": 0.6},
+  {"tipo": "campana", "escena": 4, "palabra": "adentro", "gain": 0.8},
+  {"tipo": "brillo", "escena": 4, "palabra": "adentro", "gain": 0.5, "dur": 1.2}
+ ]
+}
