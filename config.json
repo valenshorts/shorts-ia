@@ -51,12 +51,11 @@
   "punch_in": true,
   "punch_zoom": 1.12,
   "publish_slots_ar": [
+    "14:30",
     "18:00",
     "21:30"
   ],
-  "extra_slots_ar": [
-    "14:30"
-  ],
+  "extra_slots_ar": [],
   "min_gap_hours": 2.5,
   "min_lead_minutes": 25,
   "max_hours_ahead": 40,
