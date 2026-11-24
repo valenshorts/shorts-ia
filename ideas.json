@@ -1741,6 +1741,45 @@
     "nota": "Misma historia que 105, versión con el estilo del plugin animation-studio (prueba A/B)"
   },
   {
+    "id": "105c",
+    "title": "Un monje dentro de una estatua de Buda",
+    "yt_title": "Un tomógrafo encontró un monje escondido dentro de un Buda 🗿",
+    "narration": "En 2015 escanearon una estatua de Buda de casi mil años y adentro había un monje momificado. Los médicos usaron un tomógrafo, como el de los hospitales, y vieron un esqueleto completo sentado en posición de meditación. Se cree que era un maestro llamado Liuquan. Lo más raro: donde deberían estar sus órganos, encontraron pedazos de papel con antiguas escrituras chinas. Durante siglos la gente rezó frente a la estatua sin saber que había alguien adentro.",
+    "scenes": [
+      {
+        "image": "an ancient golden Buddha statue sitting in meditation inside a quiet museum",
+        "motion": "camera slowly pushes in on the statue"
+      },
+      {
+        "image": "a golden Buddha statue lying inside a hospital CT scanner",
+        "motion": "the scanner ring glows softly and slowly moves"
+      },
+      {
+        "image": "a glowing blue x-ray style image of a skeleton sitting cross-legged in meditation",
+        "motion": "the x-ray image glows brighter"
+      },
+      {
+        "image": "old rolled paper scrolls with ancient Chinese writing on a wooden table"
+      },
+      {
+        "image": "candles and incense in front of an ancient Buddha statue in a temple"
+      }
+    ],
+    "tags": [
+      "historia",
+      "misterio",
+      "arqueologia"
+    ],
+    "playlist": "Lugares increíbles",
+    "highlight": [
+      "monje",
+      "momificado"
+    ],
+    "question": "¿Te animarías a ver esa estatua en persona? 🗿",
+    "desde": "2026-12-02",
+    "nota": "Misma historia que 105, versión hecha con Remotion estilo tomógrafo (prueba A/B/C)"
+  },
+  {
     "id": "106",
     "title": "Por qué no recordás tus sueños",
     "yt_title": "¿Por qué te olvidás de tus sueños apenas te despertás? 💤",
