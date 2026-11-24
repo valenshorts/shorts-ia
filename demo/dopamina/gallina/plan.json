@@ -1,0 +1,21 @@
+{
+ "base": "gallina",
+ "nota": "Prueba de video muy dopamínico con clips de IA (Hugging Face). NO se publica: queda en demo/dopamina/gallina/video.mp4",
+ "segmentos": [
+  {"t": 0.0,  "fx": "zoom_in",  "image": "close-up of a young man shivering in a snowstorm, frost on his eyebrows, breath vapor, dramatic blue light", "motion": "he shivers and hugs himself, snow swirling fast around him"},
+  {"t": 1.2,  "fx": "shake",    "image": "teenage girl at a huge concert with tears of joy, colorful stage lights and confetti in the air", "motion": "confetti falls, lights flash, she smiles with emotion"},
+  {"t": 2.4,  "fx": "zoom_in",  "image": "extreme macro shot of human forearm skin covered in goosebumps, tiny hairs standing up, soft warm light", "motion": "the goosebumps rise across the skin and the tiny hairs stand up"},
+  {"t": 3.96, "fx": "whip",     "image": "glowing microscopic cross-section of human skin showing a hair follicle and its root, scientific 3D illustration, cyan and pink", "motion": "slow camera push toward the glowing hair root"},
+  {"t": 5.5,  "fx": "zoom_out", "image": "tiny red muscle fiber attached to the base of a hair inside the skin, microscopic 3D illustration, glowing", "motion": "the red muscle fiber contracts and pulses with light"},
+  {"t": 7.0,  "fx": "shake",    "image": "a single hair standing straight up out of the skin like a lever, dramatic rim light, macro", "motion": "the hair rises quickly to stand straight up"},
+  {"t": 8.7,  "fx": "zoom_in",  "image": "a big fluffy brown bear in a snowy forest, thick fur blowing in the wind", "motion": "the bear's thick fur ripples in the wind, snow falls"},
+  {"t": 10.3, "fx": "speed",    "image": "a round fluffy owl puffing up its feathers in freezing winter, warm orange glow trapped in its feathers", "motion": "the owl puffs its feathers up and blinks"},
+  {"t": 12.0, "fx": "zoom_out", "image": "a chimpanzee with all its hair standing on end, looking bigger and impressive, jungle background", "motion": "the chimpanzee puffs up and its hair bristles"},
+  {"t": 14.0, "fx": "shake",    "image": "a small scared fluffy animal in a dark forest, big wide eyes, fur bristling", "motion": "its fur bristles and it trembles, leaves move"},
+  {"t": 16.0, "fx": "zoom_in",  "image": "a black cat arching its back with fur fully bristled, hissing, purple moonlight", "motion": "the cat arches higher and its fur bristles, tail puffs up"},
+  {"t": 17.74,"fx": "whip",     "image": "a smiling person at the beach next to a very furry gorilla, comparing their arms, sunny", "motion": "both raise their arms and compare, waves move behind them"},
+  {"t": 19.9, "fx": "zoom_in",  "image": "a person in a dark cinema watching an epic movie, goosebumps glowing on their arm, popcorn", "motion": "light from the screen flickers on their amazed face"},
+  {"t": 22.0, "fx": "shake",    "image": "a giant glowing red button inside the human body, sci-fi neon style, veins of light", "motion": "the red button pulses and glows brighter"},
+  {"t": 23.9, "fx": "zoom_out", "image": "a very hairy prehistoric early human ancestor sitting by a campfire at night, warm firelight", "motion": "the campfire flickers and he looks up at the stars"}
+ ]
+}
