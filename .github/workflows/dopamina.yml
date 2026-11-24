@@ -1,0 +1,67 @@
+name: Prueba dopamina (no se publica)
+
+# Video de prueba "muy dopamínico" con clips de IA de Hugging Face (usa las 10 cuentas en orden) y los subtítulos de la
+# tanda. Queda en demo/dopamina/<carpeta>/video.mp4 SOLO para mirarlo: no pasa por manual/ ni por YouTube.
+# Si se acaba la cuota, guarda los clips hechos y en la próxima corrida sigue desde ahí.
+on:
+  workflow_dispatch:
+    inputs:
+      carpeta:
+        description: "Carpeta en demo/dopamina (ej: gallina)"
+        required: true
+        default: "gallina"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dopamina
+  cancel-in-progress: false
+
+jobs:
+  dopamina:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar ffmpeg y navegador
+        run: |
+          # ffmpeg ya armado desde GitHub (BtbN, autorizado por Valentín)
+          curl -fsSL --retry 3 -o /tmp/ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz
+          mkdir -p /tmp/ff && tar -xJf /tmp/ff.tar.xz -C /tmp/ff --strip-components=1
+          sudo cp /tmp/ff/bin/ffmpeg /tmp/ff/bin/ffprobe /usr/local/bin/
+          pip install -q -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Clips de IA y armado
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN_2: ${{ secrets.HF_TOKEN_2 }}
+          HF_TOKEN_3: ${{ secrets.HF_TOKEN_3 }}
+          HF_TOKEN_4: ${{ secrets.HF_TOKEN_4 }}
+          HF_TOKEN_5: ${{ secrets.HF_TOKEN_5 }}
+          HF_TOKEN_6: ${{ secrets.HF_TOKEN_6 }}
+          HF_TOKEN_7: ${{ secrets.HF_TOKEN_7 }}
+          HF_TOKEN_8: ${{ secrets.HF_TOKEN_8 }}
+          HF_TOKEN_9: ${{ secrets.HF_TOKEN_9 }}
+          HF_TOKEN_10: ${{ secrets.HF_TOKEN_10 }}
+        run: python demo/dopamina/dopamina.py "${{ github.event.inputs.carpeta }}"
+
+      - name: Guardar en el repo (solo demo/dopamina)
+        if: always()
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add demo/dopamina/ 2>/dev/null || true
+          git commit -m "Prueba dopamina: ${{ github.event.inputs.carpeta }}" || echo "nada para guardar"
+          for i in 1 2 3 4; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          exit 1
