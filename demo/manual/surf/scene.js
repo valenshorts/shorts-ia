@@ -83,8 +83,8 @@ var V = {
       o.cam = { s: 1 + .06 * E.inout(d), fx: 540, fy: 920 };
     } else if (k === "cera") {
       var tli = cue(1, "lisa", .2), tf = cue(1, "frotan", .55), tg = cue(1, "agarren", .9);
-      tr(N.b1, 540, 920, .92, -8);
-      N.shine.forEach(function (sh, i) { var p = ((t - a) * .6 + i / 4) % 1; sh.setAttribute("transform", "translate(0," + lerp(-520, 520, p) + ") rotate(-30)"); op(sh, .45 * (1 - fade(t, tf - .2))); });
+      tr(N.b1, 540, 920 + Math.sin(t * 2.2) * 16, .92, -8 + Math.sin(t * 1.6) * 3);
+      N.shine.forEach(function (sh, i) { var p = ((t - a) * .6 + i / 4) % 1; sh.setAttribute("transform", "translate(0," + lerp(-520, 520, p) + ") rotate(-30)"); op(sh, .75 * (1 - fade(t, tf - .2))); });
       var wp = seg(t, tf - .2, tg); N.b1.bumps.forEach(function (q) { var s = E.spring(seg(wp, q.o * .8, q.o * .8 + .2)); tr(q.e, 0, 0, 1, 0); q.e.setAttribute("r", 13 * s); });
       var ang = (t - tf) * 7; tr(N.wax, 540 + Math.cos(ang) * 110, 900 + Math.sin(ang) * 200 + lerp(-150, 150, wp), 1, Math.sin(ang) * 10); op(N.wax, fade(t, tf - .3) * (1 - fade(t, tg - .1)));
       var fp = E.spring(seg(t, tg - .1, tg + .4)); tr(N.f1[0], 470, 760, .9 * fp, -10); tr(N.f1[1], 600, 1060, .9 * fp, 12); op(N.f1[0], fp > 0 ? 1 : 0); op(N.f1[1], fp > 0 ? 1 : 0);
