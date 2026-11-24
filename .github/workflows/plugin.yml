@@ -1,9 +1,10 @@
 name: Videos con el plugin animation-studio
 
-# Filma una película de demo/plugin/<carpeta> (dibujo estilo papel, letra del canal).
-# Carpeta con storyboard.json (tanda): pone la voz de Valentín (ElevenLabs), efectos y música, y usa demo/plugin/_base.
-# Carpeta sin storyboard.json: usa la voz del video hecho a mano de la misma idea (plugin.json "base"). accion "armar": queda en demo/plugin/<carpeta>/video.mp4 para revisar.
+# Filma videos de demo/plugin/<carpeta> (dibujo estilo papel, letra del canal) con la voz de Valentín.
+# Si la idea todavía no tiene voz (demo/manual/<base>/voz.m4a), la genera con ElevenLabs (render.py --solo-voz).
+# accion "armar": queda en demo/plugin/<carpeta>/video.mp4 para revisar.
 # accion "publicar": además la copia a manual/<id>.mp4 y el Short diario la sube (respeta "desde" de ideas.json).
+# Las tandas llegan empaquetadas en demo/plugin/tanda*.b64 (json + xz + base64): se desempacan primero.
 on:
   workflow_dispatch:
     inputs:
@@ -25,7 +26,7 @@ concurrency:
 jobs:
   plugin:
     runs-on: ubuntu-24.04
-    timeout-minutes: 150
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
 
@@ -51,7 +52,20 @@ jobs:
           google-chrome --version
           pip install -q -r requirements.txt
 
-      - name: Filmar
+      - name: Desempacar tandas
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          if ls demo/plugin/tanda*.b64 >/dev/null 2>&1; then
+            for t in $(ls demo/plugin/tanda*_0.b64 | sed 's/_0.b64//'); do
+              cat ${t}_*.b64 | tr -d '\n ' | base64 -d | xz -d > /tmp/tanda.json
+              python3 -c "import json,os;d=json.load(open('/tmp/tanda.json'));[(os.makedirs(os.path.dirname(p),exist_ok=True),open(p,'w',encoding='utf-8').write(c)) for p,c in d.items()];print(len(d),'archivos')"
+              git rm -q ${t}_*.b64
+            done
+            git add demo/ && git commit -qm "Tanda desempacada" && (git pull -q --rebase && git push -q || true)
+          fi
+
+      - name: Voz y filmación
         env:
           CHROME_PATH: /tmp/chrome.sh
           ELEVEN_API_KEY: ${{ secrets.ELEVEN_API_KEY }}
@@ -59,40 +73,35 @@ jobs:
         run: |
           for c in ${{ github.event.inputs.carpeta }}; do
             D="demo/plugin/$c"
-            if [ -f "$D/storyboard.json" ]; then
-              python3 demo/plugin/voz.py "$c" || { echo "falló la voz de $c"; continue; }
-              cp demo/plugin/_base/index.html demo/plugin/_base/score.js demo/plugin/_base/lib.js "$D/"
-            else
-              python3 demo/plugin/preparar.py "$c"
+            if [ "${{ github.event.inputs.accion }}" = "publicar" ] && [ -f "$D/video.mp4" ] && [ -f "$D/qa.txt" ] && [ ! -s "$D/qa.txt" ]; then
+              ID=$(python3 -c "import json;print(json.load(open('$D/plugin.json'))['id'])"); mkdir -p manual && cp "$D/video.mp4" "manual/$ID.mp4" && echo "En cola (ya estaba armado): manual/$ID.mp4"
+              git add manual/ && git commit -qm "Plugin: $c (publicar)" || true
+              for i in 1 2 3 4; do if git pull -q --rebase && git push -q; then break; fi; git rebase --abort 2>/dev/null || true; sleep 10; done
+              continue
             fi
-            cp -r /tmp/as/skills/animation-studio/engine "$D/engine"
+            for f in index.html score.js canal.js; do [ -f "$D/$f" ] || cp "demo/plugin/_base/$f" "$D/$f"; done
+            BASE=$(python3 -c "import json;print(json.load(open('$D/plugin.json'))['base'])")
+            if [ ! -f "demo/manual/$BASE/voz.m4a" ] && [ ! -f "demo/manual/$BASE/video.mp4" ]; then
+              python demo/manual/render.py "$BASE" --solo-voz || { echo "::warning::falló la voz de $c"; continue; }
+            fi
+            python3 demo/plugin/preparar.py "$c"
+            rm -rf "$D/engine"; cp -r /tmp/as/skills/animation-studio/engine "$D/engine"
             cp /tmp/Montserrat.ttf "$D/assets/Montserrat.ttf"
             mkdir -p "$D/out"
-            ( cd "$D" && node engine/render.js video ) || { echo "falló $c"; continue; }
+            ( cd "$D" && node engine/render.js video ) || { echo "::warning::falló $c"; rm -rf "$D/engine" "$D/out"; continue; }
             ffmpeg -v error -y -i "$D/out/video.mp4" -i "$D/assets/voz.wav" -map 0:v -map 1:a -c:v libx264 -preset medium \
               -b:v 2300k -maxrate 3000k -bufsize 6000k -pix_fmt yuv420p -r 30 -c:a aac -b:a 160k -ar 48000 -shortest \
               -movflags +faststart "$D/video.mp4"
             ffmpeg -hide_banner -i "$D/video.mp4" -vf "freezedetect=n=0.002:d=0.7,blackdetect=d=0.2" -an -f null - 2>&1 \
               | grep -E "freeze_start|black_start" > "$D/qa.txt" || true
             echo "control $c:"; cat "$D/qa.txt"
-            rm -rf "$D/engine" "$D/out" "$D/assets/voz.wav" "$D/assets/Montserrat.ttf"
-            if [ -f "$D/storyboard.json" ]; then rm -f "$D/index.html" "$D/score.js" "$D/lib.js"; fi
+            rm -rf "$D/engine" "$D/out" "$D/assets/voz.wav"
             if [ "${{ github.event.inputs.accion }}" = "publicar" ]; then
-              if [ -s "$D/qa.txt" ]; then echo "::warning::$c tiene tramos quietos o negros: no se publica"; continue; fi
-              ID=$(python3 -c "import json;print(json.load(open('$D/plugin.json'))['id'])")
-              mkdir -p manual && cp "$D/video.mp4" "manual/$ID.mp4" && echo "En cola: manual/$ID.mp4"
+              if [ -s "$D/qa.txt" ]; then echo "::warning::$c tiene tramos quietos o negros: no se publica"
+              else ID=$(python3 -c "import json;print(json.load(open('$D/plugin.json'))['id'])"); mkdir -p manual && cp "$D/video.mp4" "manual/$ID.mp4" && echo "En cola: manual/$ID.mp4"; fi
             fi
+            # se guarda video por video (si algo se corta, lo hecho queda)
+            git add demo/plugin/ demo/manual/ manual/ 2>/dev/null || true
+            git commit -qm "Plugin: $c (${{ github.event.inputs.accion }})" || true
+            for i in 1 2 3 4; do if git pull -q --rebase && git push -q; then break; fi; git rebase --abort 2>/dev/null || true; sleep 10; done
           done
-
-      - name: Guardar en el repo
-        run: |
-          git config user.name "shorts-bot"
-          git config user.email "shorts-bot@users.noreply.github.com"
-          git add demo/plugin/ manual/ 2>/dev/null || true
-          git commit -m "Plugin animation-studio: ${{ github.event.inputs.carpeta }} (${{ github.event.inputs.accion }})" || echo "nada para guardar"
-          for i in 1 2 3 4; do
-            if git pull --rebase && git push; then exit 0; fi
-            git rebase --abort 2>/dev/null || true
-            sleep 15
-          done
-          exit 1
