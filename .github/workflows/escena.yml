@@ -1,0 +1,73 @@
+name: Probar motor escena
+
+# Arma con el motor nuevo (Gemini escribe la animación) los videos de las ideas que pidas, SIN publicarlos.
+# Quedan en demo/escena/<id>/ (video.mp4, hoja.jpg con un cuadro por escena, scene.js y storyboard.json).
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Ideas separadas por espacio (ej: 110 111)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: demo
+  cancel-in-progress: false
+
+jobs:
+  escena:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar ffmpeg y navegador
+        timeout-minutes: 35
+        run: |
+          # ffmpeg ya armado desde GitHub (BtbN, autorizado por Valentín): rápido. El mirror de Ubuntu queda de respaldo.
+          if curl -fsSL --retry 3 -o /tmp/ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz; then
+            mkdir -p /tmp/ff && tar -xJf /tmp/ff.tar.xz -C /tmp/ff --strip-components=1
+            sudo cp /tmp/ff/bin/ffmpeg /tmp/ff/bin/ffprobe /usr/local/bin/
+          else
+            for i in 1 2 3; do
+              sudo timeout 300 apt-get update -qq -o Acquire::Retries=3 && sudo timeout 420 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg && break
+              echo "reintento apt $i"; sleep 10
+            done
+          fi
+          ffmpeg -version | head -1
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Armar con el motor escena
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ELEVEN_API_KEY: ${{ secrets.ELEVEN_API_KEY }}
+          ELEVEN_VOICE_ID: ${{ secrets.ELEVEN_VOICE_ID }}
+        run: |
+          for i in ${{ github.event.inputs.ids }}; do
+            python escena.py "$i" || echo "falló $i"
+            mkdir -p "demo/escena/$i"
+            W="work_escena/$i"
+            cp "work_escena/short_$i.mp4" "demo/escena/$i/video.mp4" 2>/dev/null || true
+            cp "$W/escena_hoja.jpg" "demo/escena/$i/hoja.jpg" 2>/dev/null || true
+            cp "$W/escena/scene.js" "$W/escena/storyboard.json" "$W/escena/plan.json" "demo/escena/$i/" 2>/dev/null || true
+          done
+
+      - name: Guardar en el repo
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add demo/escena/ 2>/dev/null || true
+          git commit -m "Prueba motor escena: ${{ github.event.inputs.ids }}" || echo "nada para guardar"
+          for i in 1 2 3 4; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 15
+          done
+          exit 1
