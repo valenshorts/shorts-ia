@@ -1,19 +1,12 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>film</title>
-<style>html, body { margin: 0; background: #111; } canvas { display: block; width: 100vw; height: auto; }</style>
-</head>
+<html><head><meta charset="utf-8"><title>film</title>
+<style>html, body { margin: 0; background: #111; } canvas { display: block; width: 100vw; height: auto; }</style></head>
 <body>
-<canvas id="c" width="1920" height="1080"></canvas>
-<!-- engine (shared) -->
+<canvas id="c" width="1080" height="1920"></canvas>
 <script src="engine/util.js"></script>
 <script src="engine/music.js"></script>
-<!-- this film -->
 <script src="assets/data.js"></script>
 <script src="score.js"></script>
-<!-- engine drawing toolkit -->
 <script src="engine/video/gfx.js"></script>
 <script src="engine/video/chars.js"></script>
 <script src="engine/video/ui.js"></script>
@@ -22,8 +15,6 @@
 <script src="engine/data/geo.js"></script>
 <script src="engine/video/data.js"></script>
 <script src="engine/video/boot.js"></script>
-<!-- this film's scenes (add more files here if the film grows) -->
-<script src="canal.js"></script>
+<script src="lib.js"></script>
 <script src="film.js"></script>
-</body>
-</html>
+</body></html>
