@@ -44,11 +44,6 @@
     "youtube_id": "1N_h_9AHhRs",
     "date": "2026-10-24"
   },
-  "011": {
-    "title": "¿Para qué tienen rayas las cebras?",
-    "youtube_id": "IW2xc1zq5zA",
-    "date": "2026-10-25"
-  },
   "012": {
     "title": "El airbag es más rápido que un parpadeo",
     "youtube_id": "t5so3jkX6X4",
@@ -342,8 +337,7 @@
     "youtube_id": "pIrsm8JJMSE",
     "date": "2026-11-24",
     "style": "cine",
-    "publish_at": "2026-11-24T17:30:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-24T17:30:00Z"
   },
   "108": {
     "title": "El oxígeno también es tóxico",
@@ -367,6 +361,23 @@
     "date": "2026-11-25",
     "style": "cine",
     "publish_at": "2026-11-26T00:30:00Z",
+    "comment_pending": true
+  },
+  "011": {
+    "title": "¿Para qué tienen rayas las cebras?",
+    "youtube_id": "u3iXSNTfQQ0",
+    "date": "2026-11-24",
+    "style": "cine",
+    "publish_at": "2026-11-24T21:00:00Z",
+    "comment_pending": true,
+    "resubido": true
+  },
+  "105": {
+    "title": "Un monje dentro de una estatua de Buda",
+    "youtube_id": "yyc8b5MP25A",
+    "date": "2026-11-24",
+    "style": "manual",
+    "publish_at": "2026-11-25T00:30:00Z",
     "comment_pending": true
   }
 }
