@@ -937,6 +937,19 @@ def make_idea(idea, done, slot, hechos):
     for f in list(work.glob("scene*.still")) + list(work.glob("scene*b.png")):  # restos del modo viejo con imágenes
         f.unlink()
 
+    # Motor "escena" (pedido de Valentín, 24/11): Gemini escribe una animación propia para cada video, como las hechas
+    # a mano. Cadena para que nunca se suba algo mal: escena → motor cine → animación con código de antes → esperar.
+    if CFG.get("motor_escena") and not (work / "escena_off").exists() and video_style(done, work) == "code":
+        log("Estilo de este video: escena animada propia (motor escena)")
+        try:
+            import escena
+            out, total_e = escena.make_video(idea, work, OUT / f"short_{idea['id']}.mp4", CFG)
+        except Exception as e:
+            log(f"El motor escena falló ({str(e)[:300]}); sigue con el motor cine")
+            (work / "escena_off").write_text("1")
+        else:
+            return publish_ready(idea, done, slot, work, out, "escena", total_e)
+
     # Motor "cine" (motion graphics automáticos): en el turno de la animación con código, si está activado.
     # Si falla, este video sigue con la animación con código de antes y, si también falla, con IA.
     if CFG.get("code_engine") == "cine" and not (work / "cine_off").exists() and video_style(done, work) == "code":
@@ -1078,7 +1091,7 @@ def video_style(done, work):
     else:
         streak = 0  # videos seguidos sin animación con código
         for v in reversed(list(done.values())):
-            if v.get("style") in ("code", "cine", "manual"):
+            if v.get("style") in ("code", "cine", "manual", "escena"):
                 break
             streak += 1
         style = "code" if streak >= every - 1 else "ai"
@@ -1143,6 +1156,10 @@ def publish_ready(idea, done, slot, work, out, style, total=None):
             shutil.move(str(ROOT / "manual" / f"{idea['id']}.mp4"), str(rej / f"{idea['id']}.mp4"))
             despues = "el video queda en manual/revisar/ y se sigue con la próxima idea."
             log("❌ El video hecho a mano no pasó el control: NO se sube; queda en manual/revisar/.")
+        elif style == "escena":
+            (work / "escena_off").write_text("1")
+            despues = "este video se rehace con el motor cine."
+            log("❌ El video del motor escena no pasó el control: NO se sube; se rehace con el motor cine.")
         else:
             (work / "cine_off").write_text("1")
             despues = "este video se rehace con el estilo de antes (animación con código o IA)."
