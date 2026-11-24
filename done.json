@@ -358,5 +358,13 @@
     "style": "cine",
     "publish_at": "2026-11-24T17:30:00Z",
     "comment_pending": true
+  },
+  "107": {
+    "title": "Por qué los surfistas raspan sus tablas",
+    "youtube_id": "83sVXsI6FPw",
+    "date": "2026-11-24",
+    "style": "ai",
+    "publish_at": "2026-11-25T00:30:00Z",
+    "comment_pending": true
   }
 }
