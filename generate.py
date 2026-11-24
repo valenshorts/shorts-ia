@@ -874,7 +874,9 @@ def resubir_uno(idea, done, slot, resub):
     work.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(exist_ok=True)
     out = OUT / f"short_{k}.mp4"
-    shutil.copy(ROOT / "manual" / f"{k}.mp4", out)
+    # Instagram lo devuelve en 720x1280: se lleva a 1080x1920 (el tamaño del canal) sin tocar el audio
+    run(["ffmpeg", "-y", "-v", "error", "-i", ROOT / "manual" / f"{k}.mp4", "-vf", f"scale={W}:{H}:flags=lanczos,setsar=1",
+         "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", out])
     done.pop(k)  # publish_ready lo vuelve a anotar con el video nuevo
     res = publish_ready(idea, done, slot, work, out, "manual")
     if res != "uploaded":
