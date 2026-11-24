@@ -1,0 +1,107 @@
+{
+ "id": "109",
+ "title": "El matcha se cultiva a la sombra",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "matcha",
+   "text": "El matcha es tan verde porque las plantas pasan sus últimas semanas a la sombra."
+  },
+  {
+   "key": "sombra",
+   "text": "Unas tres semanas antes de la cosecha, cubren las plantas de té con redes o paja."
+  },
+  {
+   "key": "clorofila",
+   "text": "Con poca luz, las hojas fabrican más clorofila para aprovechar el sol que les llega, y se ponen de un verde intenso."
+  },
+  {
+   "key": "molinos",
+   "text": "Después las secan, les quitan las venas y las muelen en molinos de piedra hasta hacerlas polvo."
+  },
+  {
+   "key": "hoja",
+   "text": "Por eso con el matcha te tomás la hoja entera."
+  }
+ ],
+ "keywords": [
+  "matcha",
+  "verde",
+  "sombra",
+  "cosecha",
+  "clorofila",
+  "verde intenso",
+  "molinos",
+  "polvo",
+  "hoja entera"
+ ],
+ "caption_replace": [
+  [
+   "Unas tres semanas antes",
+   "Unas 3 semanas antes"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.6,
+   "palabra": "verde"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "sombra"
+  },
+  {
+   "tipo": "subida",
+   "escena": 1,
+   "gain": 0.6,
+   "palabra": "cosecha"
+  },
+  {
+   "tipo": "boom",
+   "escena": 1,
+   "gain": 0.7,
+   "palabra": "paja"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 2,
+   "gain": 0.7,
+   "palabra": "clorofila"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "intenso"
+  },
+  {
+   "tipo": "grave",
+   "escena": 3,
+   "gain": 0.6,
+   "palabra": "molinos"
+  },
+  {
+   "tipo": "subida",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "polvo"
+  },
+  {
+   "tipo": "campana",
+   "escena": 4,
+   "gain": 0.6,
+   "palabra": "matcha"
+  },
+  {
+   "tipo": "boom_grande",
+   "escena": 4,
+   "gain": 0.8,
+   "palabra": "entera"
+  }
+ ]
+}

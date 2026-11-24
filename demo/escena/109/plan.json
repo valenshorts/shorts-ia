@@ -1,0 +1,117 @@
+{
+ "keys": [
+  "matcha",
+  "sombra",
+  "clorofila",
+  "molinos",
+  "hoja"
+ ],
+ "visual": [
+  "Aparece una planta de té verde sobre fondo azul noche. Al decir 'sombra', cae una red negra gigante encima y oscurece todo con una transición suave.",
+  "Unas manos de vectores simples colocan redes oscuras sobre varias plantas de té. Con la palabra 'cosecha', aparece un calendario grande que arranca hojas.",
+  "Zoom a una hoja de té que brilla intensamente. Al decir 'clorofila', salen puntos verdes parpadeantes desde el centro hacia los bordes, intensificando el color.",
+  "Las hojas pasan por rodillos y luego entran a un molino de piedra gris que gira sin parar, expulsando una nube de polvo verde brillante al decir 'polvo'.",
+  "Una taza blanca humeante aparece en el centro. Al decir 'hoja', la silueta de una hoja entera cae flotando directamente adentro de la taza."
+ ],
+ "head": [
+  [
+   "SECRETO VERDE",
+   "El poder del <b>matcha</b>"
+  ],
+  [
+   "OSCURIDAD TOTAL",
+   "Semanas a la <b>sombra</b>"
+  ],
+  [
+   "MAGIA NATURAL",
+   "Exceso de <b>clorofila</b>"
+  ],
+  [
+   "MOLINOS DE PIEDRA",
+   "Hecho en <b>polvo</b>"
+  ],
+  [
+   "INFUSIÓN PURA",
+   "Te tomás la <b>hoja</b>"
+  ]
+ ],
+ "keywords": [
+  "matcha",
+  "verde",
+  "sombra",
+  "cosecha",
+  "clorofila",
+  "verde intenso",
+  "molinos",
+  "polvo",
+  "hoja entera"
+ ],
+ "caption_replace": [
+  [
+   "Unas tres semanas antes",
+   "Unas 3 semanas antes"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "palabra": "verde",
+   "gain": 0.6
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 0,
+   "palabra": "sombra",
+   "gain": 0.5
+  },
+  {
+   "tipo": "subida",
+   "escena": 1,
+   "palabra": "cosecha",
+   "gain": 0.6
+  },
+  {
+   "tipo": "boom",
+   "escena": 1,
+   "palabra": "paja",
+   "gain": 0.7
+  },
+  {
+   "tipo": "brillo",
+   "escena": 2,
+   "palabra": "clorofila",
+   "gain": 0.7
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "palabra": "intenso",
+   "gain": 0.5
+  },
+  {
+   "tipo": "grave",
+   "escena": 3,
+   "palabra": "molinos",
+   "gain": 0.6
+  },
+  {
+   "tipo": "subida",
+   "escena": 3,
+   "palabra": "polvo",
+   "gain": 0.5
+  },
+  {
+   "tipo": "campana",
+   "escena": 4,
+   "palabra": "matcha",
+   "gain": 0.6
+  },
+  {
+   "tipo": "boom_grande",
+   "escena": 4,
+   "palabra": "entera",
+   "gain": 0.8
+  }
+ ]
+}
