@@ -1,0 +1,86 @@
+{
+ "id": "079",
+ "title": "El ananá te come mientras lo comés",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "come",
+   "text": "Cuando comés ananá, el ananá también te come a vos."
+  },
+  {
+   "key": "proteinas",
+   "text": "Tiene una sustancia que deshace proteínas, y tu lengua está hecha de proteínas."
+  },
+  {
+   "key": "hormigueo",
+   "text": "Por eso, si comés mucho, sentís un hormigueo y la lengua un poco lastimada."
+  },
+  {
+   "key": "repara",
+   "text": "No te preocupes: tu boca se repara rápido, y el ácido del estómago desactiva la sustancia."
+  },
+  {
+   "key": "ablandar",
+   "text": "Es tan buena deshaciendo proteínas que se usa para ablandar carne."
+  },
+  {
+   "key": "pizzas",
+   "text": "Por eso el ananá cocido, como en las pizzas, ya no pica."
+  }
+ ],
+ "keywords": [
+  "ananá",
+  "come",
+  "proteínas",
+  "lengua",
+  "hormigueo",
+  "lastimada",
+  "repara",
+  "estómago",
+  "ablandar",
+  "carne",
+  "cocido",
+  "pizzas",
+  "pica"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "come"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "proteínas"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "hormigueo"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "repara"
+  },
+  {
+   "tipo": "boom",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "carne"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "pica"
+  }
+ ]
+}

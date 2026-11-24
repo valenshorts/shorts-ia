@@ -1,0 +1,87 @@
+{
+ "id": "063",
+ "title": "La Gran Muralla no se ve desde el espacio",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "escuchaste",
+   "text": "Seguro escuchaste que la Gran Muralla China se ve desde el espacio."
+  },
+  {
+   "key": "mentira",
+   "text": "Es mentira."
+  },
+  {
+   "key": "angosta",
+   "text": "Es larguísima, pero muy angosta, y es del mismo color que la tierra que la rodea."
+  },
+  {
+   "key": "astronautas",
+   "text": "Los astronautas lo dicen: a simple vista no se distingue."
+  },
+  {
+   "key": "cabello",
+   "text": "Es como intentar ver un cabello a varios metros de distancia."
+  },
+  {
+   "key": "luces",
+   "text": "Lo que sí se ve de noche desde el espacio son las luces de las ciudades, las carreteras iluminadas y hasta los barcos de pesca en el mar."
+  }
+ ],
+ "keywords": [
+  "Gran",
+  "Muralla",
+  "espacio",
+  "mentira",
+  "larguísima",
+  "angosta",
+  "color",
+  "astronautas",
+  "distingue",
+  "cabello",
+  "metros",
+  "luces",
+  "ciudades",
+  "barcos"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "whoosh",
+   "escena": 0,
+   "gain": 0.5,
+   "inicio": 0.1
+  },
+  {
+   "tipo": "boom",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "mentira"
+  },
+  {
+   "tipo": "grave",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "angosta"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "astronautas"
+  },
+  {
+   "tipo": "subida",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "cabello"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "luces"
+  }
+ ]
+}

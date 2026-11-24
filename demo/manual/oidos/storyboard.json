@@ -1,0 +1,23 @@
+{
+ "id": "038",
+ "title": "Por qué se te tapan los oídos en el avión",
+ "pause": 0.18, "tail": 0.8,
+ "scenes": [
+  {"key": "avion", "text": "Si en el avión se te tapan los oídos, la culpa es de un tubito escondido en tu garganta."},
+  {"key": "camara", "text": "Detrás de cada oído hay una cámara de aire, conectada a ese tubito."},
+  {"key": "presion", "text": "Cuando el avión sube o baja, la presión de afuera cambia rápido, pero el aire de adentro tarda en igualarse."},
+  {"key": "timpano", "text": "Entonces el tímpano queda empujado y se te tapa el oído."},
+  {"key": "pop", "text": "Cuando tragás o bostezás, el tubito se abre y suena el famoso pop."},
+  {"key": "bebes", "text": "Por eso lloran tanto los bebés en los aviones: todavía no saben destaparse los oídos solos."}
+ ],
+ "keywords": ["oídos", "tubito", "garganta", "cámara", "aire", "presión", "rápido", "tímpano", "empujado", "tapa", "tragás", "bostezás", "pop", "bebés", "solos"],
+ "sfx": [
+  {"tipo": "whoosh", "escena": 0, "inicio": 0.1, "gain": 0.5},
+  {"tipo": "boom", "escena": 0, "palabra": "tubito", "gain": 0.5},
+  {"tipo": "brillo", "escena": 1, "palabra": "cámara", "gain": 0.5},
+  {"tipo": "subida", "escena": 2, "palabra": "sube", "gain": 0.5},
+  {"tipo": "grave", "escena": 3, "palabra": "empujado", "gain": 0.6},
+  {"tipo": "boom_grande", "escena": 4, "palabra": "pop", "gain": 0.7},
+  {"tipo": "campana", "escena": 5, "palabra": "solos", "gain": 0.7}
+ ]
+}

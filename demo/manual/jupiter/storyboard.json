@@ -1,0 +1,81 @@
+{
+ "id": "088",
+ "title": "La tormenta gigante de Júpiter",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "jupiter",
+   "text": "En Júpiter hay una tormenta más grande que la Tierra entera."
+  },
+  {
+   "key": "mancha",
+   "text": "Se llama la Gran Mancha Roja."
+  },
+  {
+   "key": "huracan",
+   "text": "Es un huracán gigante, con vientos de cientos de kilómetros por hora, que lleva girando por lo menos ciento cincuenta años, y quizás mucho más."
+  },
+  {
+   "key": "achicando",
+   "text": "Y en las últimas décadas se está achicando."
+  },
+  {
+   "key": "desaparecer",
+   "text": "Algún día, esa tormenta que vieron nuestros tatarabuelos podría desaparecer."
+  }
+ ],
+ "keywords": [
+  "Júpiter",
+  "tormenta",
+  "Tierra",
+  "Gran",
+  "Mancha",
+  "Roja",
+  "huracán",
+  "vientos",
+  "ciento",
+  "cincuenta",
+  "años",
+  "achicando",
+  "desaparecer"
+ ],
+ "caption_replace": [
+  [
+   "ciento cincuenta años",
+   "150 años"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "tormenta"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "Mancha"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "huracán"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "achicando"
+  },
+  {
+   "tipo": "campana",
+   "escena": 4,
+   "gain": 0.7,
+   "palabra": "desaparecer"
+  }
+ ]
+}

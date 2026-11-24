@@ -1,0 +1,88 @@
+{
+ "id": "047",
+ "title": "La frutilla no es una baya, la banana sí",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "baya",
+   "text": "Para la ciencia, la frutilla no es una baya. Pero la banana sí."
+  },
+  {
+   "key": "flor",
+   "text": "Una baya es una fruta que sale de una sola flor y tiene las semillas adentro."
+  },
+  {
+   "key": "regla",
+   "text": "La banana, la uva y hasta el tomate cumplen la regla. La frutilla no."
+  },
+  {
+   "key": "puntitos",
+   "text": "Y lo más loco: esos puntitos que tiene por fuera no son semillas. Cada puntito es una fruta de verdad, con una semilla adentro."
+  },
+  {
+   "key": "cientos",
+   "text": "O sea, cuando comés una frutilla, te estás comiendo cientos de frutitas pegadas."
+  }
+ ],
+ "keywords": [
+  "frutilla",
+  "baya",
+  "banana",
+  "flor",
+  "semillas",
+  "uva",
+  "tomate",
+  "regla",
+  "puntitos",
+  "fruta",
+  "semilla",
+  "cientos",
+  "frutitas"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "baya"
+  },
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "banana"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "flor"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "regla"
+  },
+  {
+   "tipo": "grave",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "frutilla"
+  },
+  {
+   "tipo": "subida",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "puntitos"
+  },
+  {
+   "tipo": "campana",
+   "escena": 4,
+   "gain": 0.7,
+   "palabra": "frutitas"
+  }
+ ]
+}

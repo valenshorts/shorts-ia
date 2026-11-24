@@ -1,7 +1,7 @@
-"""Prepara una película del plugin animation-studio (demo/plugin/<carpeta>) para filmarla en Actions.
-Usa la voz y los tiempos por palabra del video hecho a mano de la misma idea (demo/manual/<base>):
+"""Prepara un video del plugin animation-studio (demo/plugin/<carpeta>) para filmarlo.
+Usa la voz y los tiempos por palabra de la misma idea en demo/manual/<base> (render.py --solo-voz los genera):
   assets/data.js  escenas, palabras y subtítulos (con las palabras clave en amarillo)
-  assets/voz.wav  el audio del video hecho a mano (voz de Valentín + música + efectos)
+  assets/voz.wav  voz de Valentín + música + efectos (de voz.m4a o, si no hay, del video.mp4 hecho a mano)
 Uso: python demo/plugin/preparar.py monje"""
 import json, subprocess, sys
 from pathlib import Path
@@ -19,6 +19,8 @@ data = {"scenes": d["scenes"], "subs": subs, "words": words, "total": d["total"]
 (folder / "assets" / "data.js").write_text(
     "globalThis.MONJE=" + json.dumps(data, ensure_ascii=False) + ";\nif(typeof module!=='undefined')module.exports=globalThis.MONJE;\n",
     encoding="utf-8")
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(base / "video.mp4"), "-vn", "-ac", "2", "-ar", "48000",
-                str(folder / "assets" / "voz.wav")], check=True)
-print(f"{sys.argv[1]}: {len(subs)} subtítulos, {d['total']:.2f} s, id {cfg['id']}")
+src = base / "voz.m4a" if (base / "voz.m4a").exists() else base / "video.mp4"
+if src.exists():
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-vn", "-ac", "2", "-ar", "48000",
+                    str(folder / "assets" / "voz.wav")], check=True)
+print(f"{sys.argv[1]}: {len(subs)} subtítulos, {d['total']:.2f} s, id {cfg['id']}, audio: {src.name if src.exists() else 'ninguno'}")

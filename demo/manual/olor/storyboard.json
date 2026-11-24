@@ -1,0 +1,96 @@
+{
+ "id": "055",
+ "title": "A qué huele el espacio",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "olor",
+   "text": "El espacio tiene olor."
+  },
+  {
+   "key": "astronautas",
+   "text": "Los astronautas lo cuentan después de hacer caminatas afuera de la estación."
+  },
+  {
+   "key": "trajes",
+   "text": "Cuando vuelven a entrar y se sacan el casco, sus trajes huelen raro."
+  },
+  {
+   "key": "carne",
+   "text": "Unos dicen que a carne asada."
+  },
+  {
+   "key": "otros",
+   "text": "Otros, a pólvora o a metal caliente."
+  },
+  {
+   "key": "estrellas",
+   "text": "Los científicos creen que ese olor viene de partículas que se forman cuando mueren las estrellas, y que se pegan a los trajes."
+  },
+  {
+   "key": "restos",
+   "text": "O sea que, cuando un astronauta huele su traje, está oliendo restos de estrellas."
+  }
+ ],
+ "keywords": [
+  "espacio",
+  "olor",
+  "astronautas",
+  "caminatas",
+  "casco",
+  "trajes",
+  "raro",
+  "carne",
+  "asada",
+  "pólvora",
+  "metal",
+  "estrellas",
+  "restos"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "olor"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "caminatas"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "raro"
+  },
+  {
+   "tipo": "boom",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "carne"
+  },
+  {
+   "tipo": "grave",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "pólvora"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "estrellas"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "estrellas"
+  }
+ ]
+}

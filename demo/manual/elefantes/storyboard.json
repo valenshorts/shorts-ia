@@ -1,0 +1,87 @@
+{
+ "id": "058",
+ "title": "Los elefantes escuchan con los pies",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "pies",
+   "text": "Los elefantes pueden escuchar con los pies."
+  },
+  {
+   "key": "grave",
+   "text": "Cuando un elefante hace un sonido muy grave, la vibración no solo viaja por el aire."
+  },
+  {
+   "key": "suelo",
+   "text": "También viaja por el suelo, a varios kilómetros."
+  },
+  {
+   "key": "patas",
+   "text": "Otros elefantes la sienten a través de sus patas, que tienen sensores especiales."
+  },
+  {
+   "key": "quietos",
+   "text": "A veces se quedan quietos, con una pata levantada, como si escucharan atentos."
+  },
+  {
+   "key": "avisan",
+   "text": "Así se avisan de peligros o se encuentran con su manada, sin verse ni oírse por el aire."
+  }
+ ],
+ "keywords": [
+  "elefantes",
+  "escuchar",
+  "pies",
+  "grave",
+  "vibración",
+  "suelo",
+  "kilómetros",
+  "patas",
+  "sensores",
+  "quietos",
+  "pata",
+  "atentos",
+  "peligros",
+  "manada"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "pies"
+  },
+  {
+   "tipo": "grave",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "grave"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "suelo"
+  },
+  {
+   "tipo": "subida",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "sensores"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "quietos"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "manada"
+  }
+ ]
+}

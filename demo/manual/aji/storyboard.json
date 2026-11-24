@@ -1,0 +1,92 @@
+{
+ "id": "056",
+ "title": "Por qué pica el ají",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "picante",
+   "text": "El ají picante no está caliente."
+  },
+  {
+   "key": "engania",
+   "text": "Engaña a tu cerebro."
+  },
+  {
+   "key": "sensores",
+   "text": "Tiene una sustancia que se pega a los mismos sensores de tu lengua que detectan el calor."
+  },
+  {
+   "key": "quemando",
+   "text": "Tu cerebro recibe la señal y cree que te estás quemando."
+  },
+  {
+   "key": "sudas",
+   "text": "Por eso sudás y te ponés rojo."
+  },
+  {
+   "key": "pajaros",
+   "text": "Pero lo más curioso: los pájaros no sienten nada. Se comen los ajíes sin problema y reparten las semillas lejos."
+  },
+  {
+   "key": "planta",
+   "text": "La planta inventó el picante para alejar a los mamíferos y dejar comer solo a los pájaros."
+  }
+ ],
+ "keywords": [
+  "ají",
+  "picante",
+  "caliente",
+  "engaña",
+  "sensores",
+  "lengua",
+  "calor",
+  "quemando",
+  "sudás",
+  "rojo",
+  "pájaros",
+  "semillas",
+  "planta",
+  "inventó",
+  "mamíferos"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "picante"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "engaña"
+  },
+  {
+   "tipo": "subida",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "quemando"
+  },
+  {
+   "tipo": "boom",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "rojo"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "pájaros"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "inventó"
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "id": "044",
+ "title": "El osito de agua sobrevive en el espacio",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "animal",
+   "text": "Hay un animal que sobrevivió en el espacio sin ninguna protección: el tardígrado, también llamado osito de agua."
+  },
+  {
+   "key": "mide",
+   "text": "Mide menos de un milímetro y vive en el musgo."
+  },
+  {
+   "key": "nave",
+   "text": "En 2007 lo mandaron afuera de una nave, expuesto al vacío y a la radiación. Muchos volvieron vivos."
+  },
+  {
+   "key": "truco",
+   "text": "Su truco es secarse por completo, encogerse como una pelotita y apagarse casi del todo. Así puede aguantar años."
+  },
+  {
+   "key": "agua",
+   "text": "Le pones una gota de agua, y en un rato vuelve a caminar."
+  }
+ ],
+ "keywords": [
+  "espacio",
+  "tardígrado",
+  "osito",
+  "agua",
+  "milímetro",
+  "musgo",
+  "nave",
+  "vacío",
+  "radiación",
+  "vivos",
+  "secarse",
+  "pelotita",
+  "años",
+  "gota",
+  "caminar"
+ ],
+ "caption_replace": [
+  [
+   "2007",
+   "2007"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "tardígrado"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "milímetro"
+  },
+  {
+   "tipo": "boom",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "vacío"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "vivos"
+  },
+  {
+   "tipo": "grave",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "secarse"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "gota"
+  },
+  {
+   "tipo": "campana",
+   "escena": 4,
+   "gain": 0.7,
+   "palabra": "caminar"
+  }
+ ]
+}

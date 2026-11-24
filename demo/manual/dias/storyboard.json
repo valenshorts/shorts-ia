@@ -1,0 +1,104 @@
+{
+ "id": "060",
+ "title": "Los días eran más cortos",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "dinosaurios",
+   "text": "En la época de los dinosaurios, el día duraba menos de veinticuatro horas."
+  },
+  {
+   "key": "hace",
+   "text": "Hace setenta millones de años, un día duraba más o menos veintitrés horas y media."
+  },
+  {
+   "key": "luna",
+   "text": "La razón es la Luna."
+  },
+  {
+   "key": "freno",
+   "text": "Su fuerza tira del mar y frena a la Tierra muy despacito, como un freno de mano."
+  },
+  {
+   "key": "siglo",
+   "text": "Cada siglo, el día se alarga un poquito."
+  },
+  {
+   "key": "futuro",
+   "text": "Y no se detiene: dentro de millones de años, el día va a durar más de veinticinco horas."
+  }
+ ],
+ "keywords": [
+  "dinosaurios",
+  "día",
+  "veinticuatro",
+  "horas",
+  "setenta",
+  "millones",
+  "veintitrés",
+  "Luna",
+  "mar",
+  "frena",
+  "freno",
+  "siglo",
+  "alarga",
+  "veinticinco"
+ ],
+ "caption_replace": [
+  [
+   "veinticuatro horas",
+   "24 horas"
+  ],
+  [
+   "setenta millones",
+   "70 millones"
+  ],
+  [
+   "veintitrés horas y media",
+   "23,5 horas"
+  ],
+  [
+   "veinticinco horas",
+   "25 horas"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "dinosaurios"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "inicio": 0.1
+  },
+  {
+   "tipo": "brillo",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "Luna"
+  },
+  {
+   "tipo": "grave",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "freno"
+  },
+  {
+   "tipo": "subida",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "alarga"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "veinticinco"
+  }
+ ]
+}

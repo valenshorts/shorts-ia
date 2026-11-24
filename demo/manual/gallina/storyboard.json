@@ -1,0 +1,84 @@
+{
+ "id": "050",
+ "title": "Por qué se pone la piel de gallina",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "frio",
+   "text": "Cuando tenés frío o te emocionás, se te pone la piel de gallina."
+  },
+  {
+   "key": "musculo",
+   "text": "Cada pelito tiene un músculo diminuto en la base, y ese músculo lo levanta."
+  },
+  {
+   "key": "animales",
+   "text": "En los animales con mucho pelo, eso sirve: el pelo parado atrapa aire caliente, o los hace ver más grandes cuando tienen miedo."
+  },
+  {
+   "key": "gato",
+   "text": "Como cuando un gato se eriza."
+  },
+  {
+   "key": "pelo",
+   "text": "Nosotros ya casi no tenemos pelo, pero el cuerpo sigue haciendo lo mismo."
+  },
+  {
+   "key": "boton",
+   "text": "Es un botón que quedó de cuando éramos mucho más peludos."
+  }
+ ],
+ "keywords": [
+  "frío",
+  "emocionás",
+  "piel",
+  "gallina",
+  "pelito",
+  "músculo",
+  "diminuto",
+  "levanta",
+  "aire",
+  "caliente",
+  "grandes",
+  "miedo",
+  "gato",
+  "eriza",
+  "pelo",
+  "botón",
+  "peludos"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "gallina"
+  },
+  {
+   "tipo": "subida",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "levanta"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "inicio": 0.1
+  },
+  {
+   "tipo": "boom",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "eriza"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "peludos"
+  }
+ ]
+}

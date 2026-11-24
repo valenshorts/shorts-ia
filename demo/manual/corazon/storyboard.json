@@ -1,0 +1,98 @@
+{
+ "id": "051",
+ "title": "Tu corazón late 100 mil veces por día",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "late",
+   "text": "Tu corazón late unas cien mil veces por día."
+  },
+  {
+   "key": "descanso",
+   "text": "Sin descanso, sin que se lo pidas."
+  },
+  {
+   "key": "vida",
+   "text": "En toda una vida, son más de dos mil quinientos millones de latidos."
+  },
+  {
+   "key": "camino",
+   "text": "Cada latido empuja sangre por un camino de vasos sanguíneos tan largo que, si los pusieras en fila, darían más de dos vueltas a la Tierra."
+  },
+  {
+   "key": "generador",
+   "text": "Y lo más impresionante: el corazón tiene su propio generador eléctrico."
+  },
+  {
+   "key": "solo",
+   "text": "Late solo, aunque lo saquen del cuerpo, mientras tenga oxígeno."
+  }
+ ],
+ "keywords": [
+  "corazón",
+  "cien",
+  "mil",
+  "latidos",
+  "descanso",
+  "vida",
+  "millones",
+  "sangre",
+  "vasos",
+  "fila",
+  "vueltas",
+  "Tierra",
+  "generador",
+  "eléctrico",
+  "solo",
+  "oxígeno"
+ ],
+ "caption_replace": [
+  [
+   "cien mil",
+   "100.000"
+  ],
+  [
+   "dos mil quinientos millones",
+   "2.500 millones"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "late"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "millones"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 3,
+   "gain": 0.5,
+   "inicio": 0.1
+  },
+  {
+   "tipo": "boom",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "vueltas"
+  },
+  {
+   "tipo": "subida",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "eléctrico"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "solo"
+  }
+ ]
+}

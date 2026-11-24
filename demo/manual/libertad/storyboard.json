@@ -1,0 +1,88 @@
+{
+ "id": "083",
+ "title": "La Estatua de la Libertad era marrón",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "verde",
+   "text": "La Estatua de la Libertad no siempre fue verde."
+  },
+  {
+   "key": "cobre",
+   "text": "Cuando la armaron en 1886, era del color de una moneda nueva de cobre: marrón y brillante."
+  },
+  {
+   "key": "capa",
+   "text": "Está hecha de una capa de cobre muy finita."
+  },
+  {
+   "key": "oxidando",
+   "text": "Con los años, la lluvia, el aire y la sal del mar la fueron oxidando, y se formó una capa verde por encima."
+  },
+  {
+   "key": "protege",
+   "text": "Esa capa no la arruina. Al contrario: la protege."
+  },
+  {
+   "key": "pintarla",
+   "text": "Por eso decidieron no pintarla nunca."
+  }
+ ],
+ "keywords": [
+  "Estatua",
+  "Libertad",
+  "verde",
+  "1886",
+  "moneda",
+  "cobre",
+  "marrón",
+  "brillante",
+  "finita",
+  "lluvia",
+  "sal",
+  "oxidando",
+  "capa",
+  "protege",
+  "pintarla"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "verde"
+  },
+  {
+   "tipo": "boom",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "marrón"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "cobre"
+  },
+  {
+   "tipo": "subida",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "oxidando"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "protege"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "nunca"
+  }
+ ]
+}

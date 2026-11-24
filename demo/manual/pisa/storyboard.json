@@ -1,0 +1,98 @@
+{
+ "id": "068",
+ "title": "Por qué no se cae la Torre de Pisa",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "salvaron",
+   "text": "La Torre de Pisa estuvo a punto de caerse, y la salvaron sacándole tierra."
+  },
+  {
+   "key": "inclinarse",
+   "text": "La Torre de Pisa empezó a inclinarse cuando todavía la estaban construyendo, hace más de ochocientos años."
+  },
+  {
+   "key": "suelo",
+   "text": "El suelo debajo es blando, como arena mojada, y un lado se hundió más que el otro."
+  },
+  {
+   "key": "siglos",
+   "text": "Durante siglos se fue inclinando cada vez más."
+  },
+  {
+   "key": "ingenieros",
+   "text": "Entonces los ingenieros sacaron tierra con mucho cuidado de debajo del lado alto."
+  },
+  {
+   "key": "enderezo",
+   "text": "La torre se enderezó unos cuarenta centímetros, y hoy es más segura que nunca."
+  }
+ ],
+ "keywords": [
+  "Torre",
+  "Pisa",
+  "caerse",
+  "tierra",
+  "inclinarse",
+  "ochocientos",
+  "blando",
+  "arena",
+  "hundió",
+  "siglos",
+  "ingenieros",
+  "sacaron",
+  "enderezó",
+  "cuarenta",
+  "centímetros",
+  "segura"
+ ],
+ "caption_replace": [
+  [
+   "ochocientos años",
+   "800 años"
+  ],
+  [
+   "cuarenta centímetros",
+   "40 cm"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "caerse"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "inclinarse"
+  },
+  {
+   "tipo": "grave",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "hundió"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "inclinando"
+  },
+  {
+   "tipo": "subida",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "sacaron"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "segura"
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "id": "078",
+ "title": "La luz de las luciérnagas",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "calienta",
+   "text": "La luz de una luciérnaga casi no calienta."
+  },
+  {
+   "key": "reaccion",
+   "text": "Una luciérnaga hace luz con una reacción química dentro de su cuerpo. Mezcla una sustancia con oxígeno, y sale luz."
+  },
+  {
+   "key": "especial",
+   "text": "Y es una luz especial: casi no produce calor."
+  },
+  {
+   "key": "bombilla",
+   "text": "Una bombilla común pierde mucha energía calentándose. La luciérnaga no."
+  },
+  {
+   "key": "fria",
+   "text": "Por eso se llama luz fría."
+  },
+  {
+   "key": "codigo",
+   "text": "Cada especie tiene su propio código de destellos, como un idioma. Los machos parpadean de una forma, y las hembras responden."
+  },
+  {
+   "key": "conversacion",
+   "text": "Es una conversación hecha de luces."
+  }
+ ],
+ "keywords": [
+  "luciérnaga",
+  "luz",
+  "calienta",
+  "reacción",
+  "química",
+  "oxígeno",
+  "calor",
+  "bombilla",
+  "energía",
+  "fría",
+  "código",
+  "destellos",
+  "idioma",
+  "machos",
+  "hembras",
+  "conversación"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "luz"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "reacción"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "oxígeno"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "especial"
+  },
+  {
+   "tipo": "grave",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "bombilla"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "fría"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "código"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "hembras"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "luces"
+  }
+ ]
+}

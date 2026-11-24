@@ -1,0 +1,94 @@
+{
+ "id": "074",
+ "title": "Por qué la sal derrite el hielo",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "derrite",
+   "text": "Cuando echas sal sobre el hielo, el hielo se derrite aunque haga frío."
+  },
+  {
+   "key": "mezcla",
+   "text": "La sal se mezcla con el agua y le hace más difícil congelarse."
+  },
+  {
+   "key": "cero",
+   "text": "El agua pura se congela a cero grados, pero el agua salada necesita mucho más frío."
+  },
+  {
+   "key": "ciudades",
+   "text": "Por eso en las ciudades con nieve tiran sal en las calles."
+  },
+  {
+   "key": "limite",
+   "text": "Pero hay un límite: si hace más de unos veintiún grados bajo cero, ni la sal sirve."
+  },
+  {
+   "key": "congela",
+   "text": "Ahí el agua salada también se congela."
+  }
+ ],
+ "keywords": [
+  "sal",
+  "hielo",
+  "derrite",
+  "frío",
+  "congelarse",
+  "cero",
+  "salada",
+  "nieve",
+  "calles",
+  "límite",
+  "veintiún",
+  "congela"
+ ],
+ "caption_replace": [
+  [
+   "cero grados",
+   "0 °C"
+  ],
+  [
+   "veintiún grados bajo cero",
+   "-21 °C"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "derrite"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "mezcla"
+  },
+  {
+   "tipo": "grave",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "cero"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "calles"
+  },
+  {
+   "tipo": "boom",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "límite"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "congela"
+  }
+ ]
+}

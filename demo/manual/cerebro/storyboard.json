@@ -1,0 +1,87 @@
+{
+ "id": "081",
+ "title": "Tu cerebro gasta el 20% de tu energía",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "pesa",
+   "text": "Tu cerebro pesa más o menos el dos por ciento de tu cuerpo."
+  },
+  {
+   "key": "gasta",
+   "text": "Pero gasta cerca del veinte por ciento de toda tu energía."
+  },
+  {
+   "key": "sillon",
+   "text": "Incluso cuando estás tirado en el sillón sin hacer nada, tu cerebro sigue trabajando a toda máquina: controla tu respiración, tu corazón, ordena recuerdos y mantiene todo funcionando."
+  },
+  {
+   "key": "cansa",
+   "text": "Por eso pensar mucho cansa de verdad."
+  },
+  {
+   "key": "dormir",
+   "text": "Y por eso, cuando no dormís bien, lo primero que se te apaga es la cabeza."
+  }
+ ],
+ "keywords": [
+  "cerebro",
+  "dos",
+  "por",
+  "ciento",
+  "veinte",
+  "energía",
+  "sillón",
+  "máquina",
+  "respiración",
+  "corazón",
+  "recuerdos",
+  "cansa",
+  "dormís",
+  "apaga",
+  "cabeza"
+ ],
+ "caption_replace": [
+  [
+   "dos por ciento",
+   "2%"
+  ],
+  [
+   "veinte por ciento",
+   "20%"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "cerebro"
+  },
+  {
+   "tipo": "boom",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "veinte"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "inicio": 0.1
+  },
+  {
+   "tipo": "subida",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "cansa"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "apaga"
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "id": "086",
+ "title": "Tu estómago se renueva cada pocos días",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "acido",
+   "text": "El ácido de tu estómago es tan fuerte que puede deshacer la carne."
+  },
+  {
+   "key": "porque",
+   "text": "Entonces, ¿por qué no se deshace el estómago?"
+  },
+  {
+   "key": "formas",
+   "text": "Porque se protege de dos formas."
+  },
+  {
+   "key": "moco",
+   "text": "Primero, fabrica una capa de moco espeso que lo cubre por dentro."
+  },
+  {
+   "key": "renueva",
+   "text": "Y segundo, se renueva todo el tiempo: las células del revestimiento se reemplazan cada pocos días."
+  },
+  {
+   "key": "danio",
+   "text": "Si el ácido daña algunas, ya hay otras nuevas listas."
+  },
+  {
+   "key": "nuevo",
+   "text": "Tu estómago, por dentro, es nuevo casi cada semana."
+  }
+ ],
+ "keywords": [
+  "ácido",
+  "estómago",
+  "carne",
+  "deshace",
+  "protege",
+  "moco",
+  "espeso",
+  "renueva",
+  "células",
+  "días",
+  "nuevas",
+  "nuevo",
+  "semana"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "ácido"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "inicio": 0.1
+  },
+  {
+   "tipo": "brillo",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "moco"
+  },
+  {
+   "tipo": "subida",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "renueva"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "nuevo"
+  }
+ ]
+}

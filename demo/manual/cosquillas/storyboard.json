@@ -1,0 +1,95 @@
+{
+ "id": "075",
+ "title": "Por qué no te podés hacer cosquillas",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "trata",
+   "text": "Tratá de hacerte cosquillas a vos mismo."
+  },
+  {
+   "key": "nofunciona",
+   "text": "No funciona."
+  },
+  {
+   "key": "predice",
+   "text": "Tu cerebro tiene una parte que predice cada movimiento que hacés antes de que pase."
+  },
+  {
+   "key": "volumen",
+   "text": "Como sabe exactamente dónde y cuándo vas a tocar, no se sorprende, y le baja el volumen a la sensación."
+  },
+  {
+   "key": "sorpresa",
+   "text": "Las cosquillas necesitan sorpresa."
+  },
+  {
+   "key": "otra",
+   "text": "Por eso, cuando otra persona te toca sin avisar, te morís de risa."
+  },
+  {
+   "key": "robot",
+   "text": "Y hay un dato curioso: en experimentos con un robot que tardaba un poquito en reaccionar, las cosquillas sí se sentían."
+  }
+ ],
+ "keywords": [
+  "cosquillas",
+  "funciona",
+  "cerebro",
+  "predice",
+  "movimiento",
+  "sorprende",
+  "volumen",
+  "sorpresa",
+  "otra",
+  "risa",
+  "robot",
+  "sentían"
+ ],
+ "caption_replace": [],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "cosquillas"
+  },
+  {
+   "tipo": "boom",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "funciona"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "predice"
+  },
+  {
+   "tipo": "grave",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "volumen"
+  },
+  {
+   "tipo": "campana",
+   "escena": 4,
+   "gain": 0.7,
+   "palabra": "sorpresa"
+  },
+  {
+   "tipo": "boom",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "risa"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 6,
+   "gain": 0.5,
+   "palabra": "robot"
+  }
+ ]
+}

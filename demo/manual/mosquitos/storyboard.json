@@ -1,0 +1,91 @@
+{
+ "id": "061",
+ "title": "Por qué los mosquitos te pican más a vos",
+ "pause": 0.18,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "pican",
+   "text": "Si los mosquitos siempre te pican a vos, no es mala suerte."
+  },
+  {
+   "key": "eligen",
+   "text": "Te eligen."
+  },
+  {
+   "key": "encuentran",
+   "text": "Los mosquitos encuentran a las personas por el aire que exhalan, por el calor del cuerpo y, sobre todo, por el olor de la piel."
+  },
+  {
+   "key": "estudio",
+   "text": "Un estudio de 2022 descubrió que las personas que más atraen a los mosquitos tienen en la piel más cantidad de ciertos ácidos."
+  },
+  {
+   "key": "injusto",
+   "text": "Y lo más injusto: ese olor no cambia."
+  },
+  {
+   "key": "iman",
+   "text": "Si hoy sos un imán de mosquitos, lo vas a seguir siendo."
+  }
+ ],
+ "keywords": [
+  "mosquitos",
+  "pican",
+  "suerte",
+  "eligen",
+  "aire",
+  "calor",
+  "olor",
+  "piel",
+  "estudio",
+  "ácidos",
+  "injusto",
+  "cambia",
+  "imán"
+ ],
+ "caption_replace": [
+  [
+   "2022",
+   "2022"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "pican"
+  },
+  {
+   "tipo": "boom",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "eligen"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "inicio": 0.1
+  },
+  {
+   "tipo": "brillo",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "ácidos"
+  },
+  {
+   "tipo": "grave",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "injusto"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "imán"
+  }
+ ]
+}
