@@ -850,8 +850,9 @@ def reject(idea, motivos, style, work, despues):
 
 
 # ---------------------------------------------------------------- Resubidos
-# Videos que pegaron en Instagram pero quedaron trabados en YouTube: resubir.py los baja de Instagram a
-# manual/<id>.mp4 y los anota en resubidos.json. Acá se suben de nuevo (uno por día) y el viejo pasa a privado.
+# Videos que pegaron en Instagram pero quedaron trabados en YouTube: resubir.py los anota en resubidos.json
+# ("rehacer"). Acá se REHACEN de cero con el mismo guion (1080x1920, como cualquier video nuevo; nunca se usa la copia
+# de Instagram, que viene en menor calidad), uno por día, y cuando el nuevo está subido el viejo pasa a privado.
 def load_resubidos():
     p = ROOT / "resubidos.json"
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
@@ -867,23 +868,12 @@ def resubido_ese_dia(resub, done, slot):
     return any(r.get("estado") == "subido" and done.get(k, {}).get("date") == dia for k, r in resub.items())
 
 
-def resubir_uno(idea, done, slot, resub):
+def rehacer_uno(idea, done, slot, resub):
     k, r = idea["id"], resub[idea["id"]]
-    viejo = done[k]
-    work = ROOT / "work" / f"resubir_{k}"
-    work.mkdir(parents=True, exist_ok=True)
-    OUT.mkdir(exist_ok=True)
-    out = OUT / f"short_{k}.mp4"
-    # Instagram lo devuelve en 720x1280: se lleva a 1080x1920 (el tamaño del canal) sin tocar el audio
-    run(["ffmpeg", "-y", "-v", "error", "-i", ROOT / "manual" / f"{k}.mp4", "-vf", f"scale={W}:{H}:flags=lanczos,setsar=1",
-         "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "copy", out])
-    done.pop(k)  # publish_ready lo vuelve a anotar con el video nuevo
-    res = publish_ready(idea, done, slot, work, out, "manual")
-    if res != "uploaded":
-        done[k] = viejo  # no se subió: queda todo como estaba (el viejo sigue público)
-        if not (ROOT / "manual" / f"{k}.mp4").exists():  # el control de calidad lo mandó a manual/revisar
-            r["estado"] = "rechazado"
-            save_resubidos(resub)
+    viejo = done.pop(k)  # se genera como una idea nueva; si no llega a subirse, queda todo como estaba
+    res = make_idea(idea, done, slot, set())
+    if res != "uploaded" or k not in done:
+        done[k] = viejo
         return res
     done[k]["resubido"] = True
     r.update(estado="subido", youtube_nuevo=done[k]["youtube_id"], subido=today_ar())
@@ -909,20 +899,26 @@ def make_one(ideas, done, slot):
     manual_dir = ROOT / "manual"  # videos hechos a mano (en tandas): si hay uno listo, pasa primero
     hechos = {p.stem for p in manual_dir.glob("*.mp4")} if manual_dir.exists() else set()
     resub = load_resubidos()
-    pend_resub = [k for k, r in resub.items() if r.get("estado") == "pendiente" and k in hechos]
-    if pend_resub and resubido_ese_dia(resub, done, slot):
-        log(f"Ya sale un video resubido ese día: los resubidos que faltan ({', '.join(pend_resub)}) esperan al próximo.")
-        pend_resub = []
-    pending = [i for i in ideas if i["id"] not in done or i["id"] in pend_resub]
+    rehacer = [k for k, r in resub.items() if r.get("estado") == "rehacer" and k in done]
+    if rehacer and resubido_ese_dia(resub, done, slot):
+        log(f"Ya sale un video rehecho ese día: los que faltan ({', '.join(rehacer)}) esperan al próximo.")
+        rehacer = []
+    idea = next((i for i in ideas if i["id"] in rehacer), None)  # uno por día, antes que lo demás
+    if idea:
+        log(f"Idea {idea['id']}: {idea['title']} (se rehace de cero: en YouTube había quedado trabada)")
+        return rehacer_uno(idea, done, slot, resub)
+    pending = [i for i in ideas if i["id"] not in done]
     if not pending:
         log("No quedan ideas nuevas. Agregá más a ideas.json.")
         return "noideas"
-    idea = next((i for i in pending if i["id"] in pend_resub), None)  # un resubido por día, antes que lo demás
-    if idea:
-        log(f"Idea {idea['id']}: {idea['title']} (se vuelve a subir: en YouTube había quedado trabada)")
-        return resubir_uno(idea, done, slot, resub)
     idea = next((i for i in pending if i["id"] in hechos), pending[0])
     log(f"Idea {idea['id']}: {idea['title']}")
+    return make_idea(idea, done, slot, hechos)
+
+
+def make_idea(idea, done, slot, hechos):
+    """Arma y sube el video de una idea (hecho a mano si está en manual/, si no se genera)."""
+    manual_dir = ROOT / "manual"
     if idea["id"] in hechos:  # video hecho a mano: se publica tal cual (después de la misma revisión)
         log("Estilo de este video: hecho a mano")
         work = ROOT / "work" / f"manual_{idea['id']}"  # carpeta aparte: no borra lo empezado de otra idea
