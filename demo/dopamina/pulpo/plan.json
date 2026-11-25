@@ -1,0 +1,23 @@
+{
+ "base": "pulpo_puteado",
+ "nota": "Prueba de guion con puteadas + clips de IA. NO se publica: queda en demo/dopamina/pulpo/video.mp4. Los cortes se reparten solos dentro de cada escena de la voz.",
+ "segmentos": [
+  {"escena": 0, "fx": "zoom_in",  "image": "a funny grumpy orange octopus staring straight at the camera on the ocean floor, coral reef, expressive cartoon eyes", "motion": "the octopus raises one eyebrow and wiggles its tentacles"},
+  {"escena": 0, "fx": "whip",     "image": "wide shot of a weird octopus surrounded by confused fish in a colorful coral reef", "motion": "the fish swim away fast while the octopus waves its arms"},
+  {"escena": 1, "fx": "zoom_in",  "image": "transparent cartoon octopus body showing three glowing red hearts inside, x-ray style, deep blue ocean background", "motion": "the three hearts pulse and beat together"},
+  {"escena": 1, "fx": "shake",    "image": "close-up of a shocked octopus holding up three tentacles like counting to three", "motion": "the octopus shakes its three raised tentacles energetically"},
+  {"escena": 1, "fx": "zoom_out", "image": "exhausted young man sweating on a couch holding his chest after climbing stairs, living room", "motion": "he breathes heavily and wipes his forehead"},
+  {"escena": 2, "fx": "speed",    "image": "octopus swimming fast through open blue water, tentacles trailing behind, bubbles", "motion": "the octopus jets forward quickly leaving bubbles"},
+  {"escena": 2, "fx": "zoom_in",  "image": "cartoon octopus heart with a small power button switching off, the heart turning grey, underwater", "motion": "the heart slows down and its light fades out"},
+  {"escena": 2, "fx": "whip",     "image": "an octopus calmly walking on the sea floor on its tentacles like legs, sandy bottom", "motion": "the octopus walks forward step by step with its tentacles"},
+  {"escena": 3, "fx": "zoom_in",  "image": "a drop of bright blue blood falling in slow motion, shiny glowing liquid, dark background", "motion": "the blue drop falls and splashes"},
+  {"escena": 3, "fx": "shake",    "image": "a royal octopus wearing a golden crown and red cape sitting on a throne under the sea", "motion": "the octopus king lifts its chin proudly, cape flowing"},
+  {"escena": 4, "fx": "zoom_in",  "image": "octopus with a big glowing brain on its head and small glowing brains in each of its eight arms, neon blue", "motion": "all the brains light up one after another"},
+  {"escena": 4, "fx": "zoom_out", "image": "an octopus wearing tiny graduation caps on each tentacle, classroom underwater", "motion": "the tentacles wave the caps around"},
+  {"escena": 5, "fx": "speed",    "image": "eight octopus arms each doing a different task at once: opening a jar, painting, typing, juggling", "motion": "all the arms move independently doing their tasks"},
+  {"escena": 5, "fx": "shake",    "image": "a single cartoon octopus tentacle crawling alone across the sand grabbing a shell", "motion": "the tentacle curls and grabs the shell"},
+  {"escena": 5, "fx": "zoom_in",  "image": "angry octopus close-up with furious eyes, splashing ink cloud behind it", "motion": "the octopus shouts and black ink bursts out"},
+  {"escena": 6, "fx": "zoom_out", "image": "smug octopus wearing sunglasses relaxing on a rock, three hearts and nine brains floating around it", "motion": "the octopus leans back confidently"},
+  {"escena": 6, "fx": "zoom_in",  "image": "confused young man searching his messy room for his keys, turning over cushions", "motion": "he looks around frantically and scratches his head"}
+ ]
+}
