@@ -380,5 +380,29 @@
     "style": "cine",
     "publish_at": "2026-11-26T17:30:00Z",
     "comment_pending": true
+  },
+  "112": {
+    "title": "El pulpo tiene tres corazones y nueve cerebros",
+    "youtube_id": "op2HQ__qSoM",
+    "date": "2026-11-25",
+    "style": "manual",
+    "publish_at": "2026-11-25T12:30:00Z",
+    "comment_pending": true
+  },
+  "113": {
+    "title": "La cucaracha vive una semana sin cabeza",
+    "youtube_id": "w0fKrhpMdcE",
+    "date": "2026-11-25",
+    "style": "manual",
+    "publish_at": "2026-11-25T15:00:00Z",
+    "comment_pending": true
+  },
+  "114": {
+    "title": "El perezoso baja del árbol una vez por semana",
+    "youtube_id": "CvSN1_HEG_U",
+    "date": "2026-11-26",
+    "style": "manual",
+    "publish_at": "2026-11-26T12:30:00Z",
+    "comment_pending": true
   }
 }
