@@ -1,0 +1,206 @@
+{
+ "id": "118",
+ "title": "La jirafa (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Ojo con esta forra de cuello largo, que es más rara que un perro verde, boludo."
+  },
+  {
+   "key": "vertebras",
+   "text": "Tiene las mismas vértebras en el cuello que vos: siete. Lo que pasa es que cada una mide más de veinte centímetros, la muy turra."
+  },
+  {
+   "key": "lengua",
+   "text": "La lengua le mide casi medio metro y es negra, para no quemarse con el sol, la hija de puta."
+  },
+  {
+   "key": "duerme",
+   "text": "¿Y dormir? Duerme menos que vos en época de exámenes: a veces media hora por día, la pelotuda."
+  },
+  {
+   "key": "corazon",
+   "text": "El corazón le pesa más de diez kilos, porque tiene que mandar sangre hasta allá arriba, el muy gil."
+  },
+  {
+   "key": "nace",
+   "text": "Y cuando nace, se cae de casi dos metros de altura al piso. Bienvenida al mundo, nabo."
+  },
+  {
+   "key": "cierre",
+   "text": "Y aun así anda re cheta, mirándote desde arriba, como diciendo: ¿qué mirás, salame?"
+  }
+ ],
+ "keywords": [
+  "cuello",
+  "perro",
+  "verde",
+  "vértebras",
+  "siete",
+  "veinte",
+  "centímetros",
+  "lengua",
+  "medio",
+  "metro",
+  "negra",
+  "sol",
+  "dormir",
+  "exámenes",
+  "media",
+  "hora",
+  "corazón",
+  "diez",
+  "kilos",
+  "sangre",
+  "nace",
+  "dos",
+  "metros",
+  "cheta",
+  "arriba"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "forra"
+  },
+  {
+   "tipo": "boom",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "siete"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "negra"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "media"
+  },
+  {
+   "tipo": "boom",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "diez"
+  },
+  {
+   "tipo": "boom_grande",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "piso"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "salame"
+  }
+ ]
+}
