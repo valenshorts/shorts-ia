@@ -1,0 +1,240 @@
+{
+ "id": "124",
+ "title": "El ornitorrinco (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Al ornitorrinco lo armaron con las sobras de otros bichos, y se nota, la puta madre."
+  },
+  {
+   "key": "partes",
+   "text": "Pico de pato, cola de castor y patas de nutria. Un rejunte de mierda que encima funciona, el hijo de puta."
+  },
+  {
+   "key": "huevos",
+   "text": "Es un mamífero, pero pone huevos, el muy forro. Y como no tiene pezones, la leche la transpira por la panza. Un asco, boludo."
+  },
+  {
+   "key": "veneno",
+   "text": "El macho tiene espolones con veneno en las patas de atrás. No te mata, pero el dolor te dura semanas, la concha de la lora."
+  },
+  {
+   "key": "estomago",
+   "text": "Y no tiene estómago. La comida le va directo del esófago al intestino, sin escalas, el muy turro."
+  },
+  {
+   "key": "electro",
+   "text": "Caza con los ojos cerrados: el pico detecta la electricidad de los músculos de sus presas. Un detector con patas, el pelotudo."
+  },
+  {
+   "key": "brilla",
+   "text": "Y con luz ultravioleta brilla de color verde azulado. Como si no fuera lo bastante raro, el boludo encima es fluorescente."
+  },
+  {
+   "key": "cierre",
+   "text": "Así que la próxima vez que te sientas raro, acordate: hay un pato venenoso que pone huevos y brilla. Vos estás bien, gil."
+  }
+ ],
+ "keywords": [
+  "ornitorrinco",
+  "sobras",
+  "pato",
+  "castor",
+  "nutria",
+  "funciona",
+  "mamífero",
+  "huevos",
+  "leche",
+  "panza",
+  "espolones",
+  "veneno",
+  "semanas",
+  "estómago",
+  "intestino",
+  "escalas",
+  "ojos",
+  "cerrados",
+  "electricidad",
+  "ultravioleta",
+  "verde",
+  "fluorescente",
+  "raro",
+  "venenoso",
+  "bien"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ],
+  [
+   "soretes",
+   "s*retes"
+  ],
+  [
+   "sorete",
+   "s*rete"
+  ],
+  [
+   "cagando",
+   "c*gando"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "sobras"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "castor"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.4,
+   "palabra": "huevos"
+  },
+  {
+   "tipo": "boom",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "veneno"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "directo"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "electricidad"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 6,
+   "gain": 0.6,
+   "palabra": "brilla"
+  },
+  {
+   "tipo": "campana",
+   "escena": 7,
+   "gain": 0.7,
+   "palabra": "bien"
+  }
+ ]
+}

@@ -1,0 +1,238 @@
+{
+ "id": "123",
+ "title": "El panda (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Este hijo de puta en blanco y negro tiene dientes y tripas de carnívoro, y el muy pelotudo decidió comer pasto. Bambú, para ser exactos."
+  },
+  {
+   "key": "digiere",
+   "text": "Y de todo el bambú que traga, digiere apenas un veinte por ciento. El resto lo caga entero, la concha de su madre."
+  },
+  {
+   "key": "come",
+   "text": "Así que se la pasa morfando hasta dieciséis horas por día, como un boludo, para no cagarse de hambre."
+  },
+  {
+   "key": "caca",
+   "text": "Y caga unas cuarenta veces por día. Cuarenta. Es una fábrica de soretes con cara de peluche."
+  },
+  {
+   "key": "pulgar",
+   "text": "Para agarrar las cañas tiene un pulgar trucho: un hueso de la muñeca que le creció de más. Hasta el dedo es chanta, el forro."
+  },
+  {
+   "key": "celo",
+   "text": "La hembra puede quedar preñada apenas dos o tres días al año. Y el macho se los pierde por estar comiendo, el muy gil."
+  },
+  {
+   "key": "cria",
+   "text": "Encima la cría nace pesando unos cien gramos, novecientas veces menos que la madre. Parece un chorizo rosado, pobre mierdita."
+  },
+  {
+   "key": "cierre",
+   "text": "Y aun así, medio mundo lo ama. ¿Por qué? Porque es lindo. Ser lindo te salva de todo, la puta madre."
+  }
+ ],
+ "keywords": [
+  "carnívoro",
+  "bambú",
+  "veinte",
+  "ciento",
+  "entero",
+  "dieciséis",
+  "horas",
+  "hambre",
+  "cuarenta",
+  "peluche",
+  "pulgar",
+  "muñeca",
+  "dos",
+  "tres",
+  "año",
+  "comiendo",
+  "cien",
+  "gramos",
+  "novecientas",
+  "rosado",
+  "lindo",
+  "salva"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ],
+  [
+   "soretes",
+   "s*retes"
+  ],
+  [
+   "sorete",
+   "s*rete"
+  ],
+  [
+   "cagando",
+   "c*gando"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "carnívoro"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "veinte"
+  },
+  {
+   "tipo": "clics",
+   "escena": 2,
+   "gain": 0.35,
+   "palabra": "dieciséis",
+   "hasta": "hambre"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "cuarenta"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "pulgar"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "pierde"
+  },
+  {
+   "tipo": "subida",
+   "escena": 6,
+   "gain": 0.4,
+   "palabra": "cien"
+  },
+  {
+   "tipo": "campana",
+   "escena": 7,
+   "gain": 0.7,
+   "palabra": "lindo"
+  }
+ ]
+}
