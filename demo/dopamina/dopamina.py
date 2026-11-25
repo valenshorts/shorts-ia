@@ -143,6 +143,14 @@ def main():
     clips = folder / "clips"; clips.mkdir(exist_ok=True)
     work = (ROOT / "work_dopamina" / name); work.mkdir(parents=True, exist_ok=True)
     segs = plan["segmentos"]
+    if any("t" not in s for s in segs):  # cortes repartidos parejo dentro de cada escena de la voz
+        por = {}
+        for s in segs:
+            por.setdefault(s["escena"], []).append(s)
+        for e, lst in por.items():
+            a, b = tl["scenes"][e]["a"], tl["scenes"][e]["b"]
+            for k, s in enumerate(lst):
+                s["t"] = 0.0 if e == 0 and k == 0 else round(a + k * (b - a) / len(lst), 3)
     hechos = generar(plan, clips, fake)
     log(f"{hechos}/{len(segs)} clips de IA listos")
     if hechos < len(segs):
