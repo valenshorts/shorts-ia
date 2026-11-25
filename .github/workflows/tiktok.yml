@@ -6,6 +6,8 @@ name: TikTok
 # A mano: Run workflow. "code" = código de autorización de TikTok (solo para conectar la cuenta).
 on:
   schedule:
+    - cron: "40 12 * * *"   # 09:40 AR (desde el 25/11 YouTube sube 5 por día)
+    - cron: "10 15 * * *"   # 12:10 AR
     - cron: "40 17 * * *"
     - cron: "10 21 * * *"
     - cron: "45 0 * * *"
@@ -89,7 +91,7 @@ jobs:
           from pathlib import Path
           found = {}
           for f in sorted(Path("dl").rglob("short_*.mp4"), key=lambda p: int(p.relative_to("dl").parts[0])):  # gana la corrida más nueva
-              found[re.search(r"short_(\d+)", f.name).group(1)] = f
+              found[re.search(r"short_(\d+[a-z]?)\.mp4", f.name).group(1)] = f  # con letra: 097b, 112b
           done = json.loads(Path("done.json").read_text(encoding="utf-8"))
           tt = json.loads(Path("tt_done.json").read_text(encoding="utf-8")) if Path("tt_done.json").exists() else {}
           want = [v.strip().zfill(3) for v in os.environ.get("VIDEOS", "").split(",") if v.strip()]
