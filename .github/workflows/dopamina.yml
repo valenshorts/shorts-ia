@@ -10,6 +10,10 @@ on:
         description: "Carpeta en demo/dopamina (ej: gallina)"
         required: true
         default: "gallina"
+      publicar:
+        description: "Vacío = solo prueba. Con un id (ej: 112b) copia el video a manual/<id>.mp4 y el Short diario lo sube"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -60,6 +64,14 @@ jobs:
           HF_TOKEN_10: ${{ secrets.HF_TOKEN_10 }}
         run: python demo/dopamina/dopamina.py "${{ github.event.inputs.carpeta }}"
 
+      - name: Pasar a la cola (solo si se pidió un id)
+        if: github.event.inputs.publicar != ''
+        run: |
+          V="demo/dopamina/${{ github.event.inputs.carpeta }}/video.mp4"
+          ffmpeg -hide_banner -i "$V" -vf "freezedetect=n=0.002:d=0.7,blackdetect=d=0.2" -an -f null - 2>&1 | grep -E "freeze_start|black_start" > /tmp/qa.txt || true
+          if [ -s /tmp/qa.txt ]; then echo "::error::tiene tramos quietos o negros: no se publica"; cat /tmp/qa.txt; exit 1; fi
+          mkdir -p manual && cp "$V" "manual/${{ github.event.inputs.publicar }}.mp4" && echo "En cola: manual/${{ github.event.inputs.publicar }}.mp4"
+
       - name: Guardar en el repo (solo demo/dopamina y la voz de la idea)
         if: always()
         run: |
@@ -68,6 +80,7 @@ jobs:
           git add demo/dopamina/ 2>/dev/null || true
           BASE=$(python3 -c "import json;print(json.load(open('demo/dopamina/${{ github.event.inputs.carpeta }}/plan.json'))['base'])")
           git add "demo/manual/$BASE/" 2>/dev/null || true
+          [ -n "${{ github.event.inputs.publicar }}" ] && git add manual/ 2>/dev/null || true
           git commit -m "Prueba dopamina: ${{ github.event.inputs.carpeta }}" || echo "nada para guardar"
           for i in 1 2 3 4; do
             if git pull --rebase && git push; then exit 0; fi
