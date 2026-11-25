@@ -1,5 +1,34 @@
 [
   {
+    "id": "112",
+    "title": "El pulpo tiene tres corazones y nueve cerebros",
+    "yt_title": "El pulpo es el bicho más raro del océano 🐙",
+    "narration": "El pulpo tiene tres corazones, sangre azul y nueve cerebros. Cuando nada, el corazón principal se le para, por eso prefiere caminar. Su sangre es azul porque usa cobre en vez de hierro. Y tiene un cerebro en la cabeza y uno en cada brazo: cada brazo piensa solo.",
+    "scenes": [
+      {
+        "image": "an orange cartoon octopus on the ocean floor"
+      },
+      {
+        "image": "an octopus with three glowing hearts"
+      },
+      {
+        "image": "an octopus with a brain in each arm"
+      }
+    ],
+    "tags": [
+      "animales",
+      "pulpo",
+      "oceano"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "tres corazones",
+      "nueve cerebros"
+    ],
+    "question": "¿Sabías que el pulpo tenía tres corazones? 🐙",
+    "nota": "Versión puteada (prueba de formato). Hecho con el motor del plugin (demo/plugin/pulpo), voz de demo/manual/pulpo_puteado. El título y la descripción van limpios."
+  },
+  {
     "id": "001",
     "title": "¿Por qué las ventanas de los aviones son redondas?",
     "narration": "Las ventanas de los aviones son redondas, y la razón da miedo. En 1954, dos aviones Comet, los primeros jets de pasajeros del mundo, se partieron en pleno vuelo. Los ingenieros metieron un avión entero en un tanque de agua y lo inflaron y desinflaron miles de veces, hasta que se rajó. La grieta había empezado en una esquina. Una forma cuadrada junta toda la fuerza en las puntas. Un círculo la reparte. Por eso hoy ninguna ventana de avión tiene esquinas.",
