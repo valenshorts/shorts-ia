@@ -1,0 +1,216 @@
+{
+ "id": "122",
+ "title": "El hipopótamo (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Este gordo parece un peluche, pero es de los bichos más peligrosos de África, el muy hijo de puta."
+  },
+  {
+   "key": "nada",
+   "text": "El hipopótamo no sabe nadar. Ni un poco. Camina por el fondo del río, el muy pelotudo, y sale a respirar."
+  },
+  {
+   "key": "duerme",
+   "text": "Aguanta unos cinco minutos abajo del agua, y sale a respirar hasta dormido, sin despertarse, el muy turro."
+  },
+  {
+   "key": "sudor",
+   "text": "Y transpira un líquido rojo que le hace de protector solar y de antibiótico. Protector propio, la concha de la lora."
+  },
+  {
+   "key": "corre",
+   "text": "Pesa como dos autos, pero corre más rápido que vos, gil: unos treinta kilómetros por hora."
+  },
+  {
+   "key": "caca",
+   "text": "Y para marcar territorio caga mientras mueve la cola como un ventilador. Lo tira para todos lados, el muy cerdo."
+  },
+  {
+   "key": "cierre",
+   "text": "Así que si ves uno en un safari, no te acerques a sacarle una foto, nabo. Corré, la puta madre."
+  }
+ ],
+ "keywords": [
+  "peluche",
+  "peligrosos",
+  "áfrica",
+  "hipopótamo",
+  "nadar",
+  "fondo",
+  "río",
+  "respirar",
+  "cinco",
+  "minutos",
+  "dormido",
+  "rojo",
+  "protector",
+  "solar",
+  "antibiótico",
+  "autos",
+  "treinta",
+  "kilómetros",
+  "territorio",
+  "ventilador",
+  "safari",
+  "foto",
+  "corré"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "peligrosos"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "fondo"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.4,
+   "palabra": "respirar"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "protector"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "corre"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "ventilador"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "corré"
+  }
+ ]
+}
