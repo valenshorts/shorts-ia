@@ -627,7 +627,7 @@ def extras(yt, vid, idea, comment=True):
 
 # ---------------------------------------------------------------- Ideas nuevas solas
 IDEA_PROMPT = """Eres el guionista del canal de YouTube Shorts "El Porqué de Todo": datos curiosos explicados en 30 segundos.
-Escribe {n} ideas NUEVAS en español rioplatense de Argentina, como habla un pibe de Buenos Aires: con voseo (vos tenés, sabés, comés, mirá, imaginate; nunca tú/tienes/sabes) y palabras argentinas (frutilla, banana, ananá, palta, ají picante, auto, manejar). Natural y canchero pero sin malas palabras. Temas distintos a estos ya usados:
+Escribe {n} ideas NUEVAS en español rioplatense de Argentina, como habla un pibe de Buenos Aires: con voseo (vos tenés, sabés, comés, mirá, imaginate; nunca tú/tienes/sabes) y palabras argentinas (frutilla, banana, ananá, palta, ají picante, auto, manejar). Natural, canchero y gracioso: metele uno o dos chistes por video, pero sin malas palabras. Temas distintos a estos ya usados:
 {used}
 
 Reglas:
@@ -636,7 +636,7 @@ Reglas:
 - Nunca empezar explicando ("Cuando cortás...", "La lluvia va..."). Los ganchos que mejor funcionan en el canal: una contradicción ("Un clavo de acero se hunde, pero un barco de miles de toneladas flota") o algo que todos vivieron con un giro ("Se te arrugan los dedos en el agua. Parece que absorben agua, pero no").
 - La última frase es un final "wow".
 - Narración de 70 a 85 palabras, frases cortas y fáciles de decir en voz alta. Números escritos en letras.
-- Lo que mejor funciona en el canal: espacio, ciencia y física, cuerpo humano, inventos, comida y mitos falsos, con algo que todos vivieron. NO escribas ideas de animales: en el canal casi nadie las ve.
+- El canal es de TODOS los temas (espacio, ciencia, cuerpo humano, historia, comida, tecnología, inventos, deportes, lugares, dinero, animales, vida cotidiana): mezclá temas distintos, con algo que todos vivieron.
 - "yt_title" lleva una cifra concreta ("10 veces", "el doble", "68 años") o una contradicción clara.
 - 5 escenas: "image" en inglés describiendo una imagen 3D estilo animación, y las 5 llevan "motion" en inglés (movimiento simple de 4 segundos).
 - "motion" realista y chico: describe solo cómo se mueve lo que YA está en esa imagen (algo que respira, se balancea o fluye) y la cámara despacio. Nunca nombres en "motion" cosas que no aparecen en la escena, ni siquiera para decir que no se muevan. Los objetos grandes no viajan por la imagen: se quedan en su lugar.
