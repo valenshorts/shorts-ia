@@ -65,11 +65,6 @@
     "youtube_id": "ZFQJoDt97G8",
     "date": "2026-10-29"
   },
-  "017": {
-    "title": "¿Hace mal tronarse los dedos?",
-    "youtube_id": "PTJWFZ8nXpw",
-    "date": "2026-10-31"
-  },
   "018": {
     "title": "¿Por qué explotan las palomitas de maíz?",
     "youtube_id": "f3p_wDvcEZo",
@@ -346,8 +341,7 @@
     "youtube_id": "Zk4ohDnsMTo",
     "date": "2026-11-25",
     "style": "cine",
-    "publish_at": "2026-11-25T21:00:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-25T21:00:00Z"
   },
   "109": {
     "title": "El matcha se cultiva a la sombra",
@@ -424,6 +418,14 @@
     "date": "2026-11-26",
     "style": "manual",
     "publish_at": "2026-11-27T00:30:00Z",
+    "comment_pending": true
+  },
+  "017": {
+    "title": "¿Hace mal tronarse los dedos?",
+    "youtube_id": "6nXpSr7_03Q",
+    "date": "2026-11-27",
+    "style": "cine",
+    "publish_at": "2026-11-27T12:30:00Z",
     "comment_pending": true
   }
 }
