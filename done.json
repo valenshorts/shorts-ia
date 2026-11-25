@@ -65,11 +65,6 @@
     "youtube_id": "ZFQJoDt97G8",
     "date": "2026-10-29"
   },
-  "016": {
-    "title": "Los delfines duermen con medio cerebro",
-    "youtube_id": "5N_kZpdNnto",
-    "date": "2026-10-30"
-  },
   "017": {
     "title": "¿Hace mal tronarse los dedos?",
     "youtube_id": "PTJWFZ8nXpw",
@@ -376,7 +371,14 @@
     "youtube_id": "yyc8b5MP25A",
     "date": "2026-11-24",
     "style": "manual",
-    "publish_at": "2026-11-25T00:30:00Z",
+    "publish_at": "2026-11-25T00:30:00Z"
+  },
+  "016": {
+    "title": "Los delfines duermen con medio cerebro",
+    "youtube_id": "TsLKIsudlJk",
+    "date": "2026-11-26",
+    "style": "cine",
+    "publish_at": "2026-11-26T17:30:00Z",
     "comment_pending": true
   }
 }
