@@ -1,0 +1,27 @@
+{
+ "id": "901",
+ "title": "El pulpo (versión puteada, prueba)",
+ "nota": "Prueba de guion con puteadas. Solo para demo/dopamina/pulpo: NO se publica.",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {"key": "hook", "text": "El pulpo es el hijo de puta más raro de todo el puto océano, boludo."},
+  {"key": "corazones", "text": "Tiene tres corazones. ¡Tres, la concha de su madre! Y vos con uno solo ya no das más."},
+  {"key": "nadar", "text": "Y cuando nada, el corazón principal se le para. Se le apaga, al muy pelotudo. Por eso prefiere caminar."},
+  {"key": "sangre", "text": "La sangre la tiene azul, como un puto rey, porque usa cobre en vez de hierro."},
+  {"key": "cerebros", "text": "Y encima tiene nueve cerebros, boludo: uno en la cabeza y uno en cada puto brazo."},
+  {"key": "brazos", "text": "Cada brazo piensa solo. Le cortás uno y se sigue moviendo y agarrando cosas, el hijo de remil puta."},
+  {"key": "cierre", "text": "Nueve cerebros y tres corazones. Y vos no te acordás dónde dejaste las llaves, forro."}
+ ],
+ "keywords": ["puta", "puto", "boludo", "concha", "pelotudo", "remil", "forro", "pulpo", "raro", "tres", "corazones", "para", "apaga", "caminar", "azul", "rey", "cobre", "nueve", "cerebros", "brazo", "solo", "llaves"],
+ "caption_replace": [],
+ "sfx": [
+  {"tipo": "boom", "escena": 0, "gain": 0.5, "palabra": "puto"},
+  {"tipo": "boom_grande", "escena": 1, "gain": 0.5, "palabra": "concha"},
+  {"tipo": "bajada", "escena": 2, "gain": 0.5, "palabra": "apaga"},
+  {"tipo": "brillo", "escena": 3, "gain": 0.5, "palabra": "azul"},
+  {"tipo": "subida", "escena": 4, "gain": 0.5, "palabra": "cerebros"},
+  {"tipo": "boom", "escena": 5, "gain": 0.5, "palabra": "remil"},
+  {"tipo": "campana", "escena": 6, "gain": 0.7, "palabra": "forro"}
+ ]
+}
