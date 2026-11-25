@@ -84,7 +84,7 @@
       G.ellipse(ctx, CX, 1340, 380, 90, { fill: '#C8A070', lw: 6, seed: 1160 });
       platy(ctx, CX - 170, 1150, 1.2 * pop(t, a, 0.5), t, { mood: t > ev.forro ? 'smug' : 'happy' });
       for (let i = 0; i < 2; i++) { const s = pop(t, ev.huevos + i * 0.2, 0.4); if (s > 0) { ctx.save(); ctx.translate(700 + i * 110, 1310); ctx.scale(s, s); G.ellipse(ctx, 0, 0, 42, 54, { fill: '#FFF4D8', lw: 5, seed: 1161 + i }); ctx.restore(); } }
-      if (t > ev.leche - 0.2) for (let i = 0; i < 8; i++) { const p = ((t - ev.leche) * 0.8 + i / 8) % 1; G.ellipse(ctx, 330 + (i * 53) % 220, 1250 + p * 120, 9, 12, { fill: '#fff', lw: 3, seed: 1163 + i, alpha: 1 - p }); }
+      if (t > ev.leche - 0.2) for (let i = 0; i < 8; i++) { const p = ((t - ev.leche + 0.2) * 0.8 + i / 8) % 1; G.ellipse(ctx, 330 + (i * 53) % 220, 1250 + p * 120, 9, 12, { fill: '#fff', lw: 3, seed: 1163 + i, alpha: 1 - p }); }
       C.pill(ctx, t, ev.mamifero, 'mamífero', 280, 760, '#7FD4FF');
       C.pill(ctx, t, ev.huevos, 'pone huevos', 760, 760, '#FFD22E');
       C.pill(ctx, t, ev.panza, 'leche por la panza', CX, 1580, '#fff');
@@ -123,7 +123,7 @@
       creek(ctx, t, true);
       const sx = lerp(120, 380, clamp((t - a) / 4));
       platy(ctx, sx, 1120, 1.1 * pop(t, a, 0.5), t, { swim: true, eyes: t > ev.ojos - 0.2 ? 'closed' : 'open' });
-      if (t > ev.electricidad - 0.2) { for (let i = 0; i < 4; i++) { const p = ((t - ev.electricidad) * 0.9 + i / 4) % 1;
+      if (t > ev.electricidad - 0.2) { for (let i = 0; i < 4; i++) { const p = ((t - ev.electricidad + 0.2) * 0.9 + i / 4) % 1;
           ctx.save(); ctx.globalAlpha = 1 - p; ctx.strokeStyle = '#FFE14A'; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(sx + 470, 1100, 40 + p * 300, -0.7, 0.7); ctx.stroke(); ctx.restore(); }
         ctx.save(); ctx.translate(960, 1100);
         G.ellipse(ctx, 0, 0, 50, 22, { fill: '#FF8A6A', lw: 5, seed: 1180 });
