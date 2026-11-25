@@ -3,7 +3,7 @@
  "title": "Tu cuerpo (versión puteada)",
  "nota": "Formato puteador exagerado, tema no animal. Subtítulos censurados con asterisco (caption_replace).",
  "pause": 0.15,
- "tail": 0.8,
+ "tail": 0.3,
  "scenes": [
   {
    "key": "hook",
@@ -27,7 +27,7 @@
   },
   {
    "key": "cierre",
-   "text": "Y tu cerebro pesa el dos por ciento del cuerpo, pero se morfa el veinte por ciento de la energía. Todo para que lo uses mirando videos de mierda como este. Seguí, boludo, seguí."
+   "text": "Tu cerebro pesa el dos por ciento del cuerpo y se morfa el veinte por ciento de la energía, para mirar videos de mierda como este. Seguí, boludo."
   }
  ],
  "keywords": [
