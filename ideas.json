@@ -29,30 +29,6 @@
     "nota": "Versión puteada (prueba de formato). Hecho con el motor del plugin (demo/plugin/pulpo), voz de demo/manual/pulpo_puteado. El título y la descripción van limpios."
   },
   {
-    "id": "112b",
-    "title": "El pulpo tiene tres corazones y nueve cerebros (versión IA)",
-    "yt_title": "Este bicho tiene 3 corazones y sangre azul 🐙",
-    "narration": "El pulpo tiene tres corazones, sangre azul y nueve cerebros. Cuando nada, el corazón principal se le para, por eso prefiere caminar. Su sangre es azul porque usa cobre en vez de hierro. Y tiene un cerebro en la cabeza y uno en cada brazo: cada brazo piensa solo.",
-    "scenes": [
-      {
-        "image": "an orange octopus on the ocean floor"
-      }
-    ],
-    "tags": [
-      "animales",
-      "pulpo",
-      "oceano"
-    ],
-    "playlist": "Animales increíbles",
-    "highlight": [
-      "tres corazones",
-      "nueve cerebros"
-    ],
-    "question": "¿Cuál te parece más raro: los 3 corazones o los 9 cerebros? 🐙",
-    "desde": "2026-11-27",
-    "nota": "Misma idea que 112, versión con clips de IA de Hugging Face (demo/dopamina/pulpo). Prueba A/B."
-  },
-  {
     "id": "113",
     "title": "La cucaracha vive una semana sin cabeza",
     "yt_title": "Este bicho vive una semana SIN CABEZA 🪳",
@@ -73,7 +49,7 @@
       "una semana"
     ],
     "question": "¿Le tenés asco o miedo a las cucarachas? 🪳",
-    "desde": "2026-11-26",
+    "desde": "2026-11-25",
     "nota": "Formato puteador, motor del plugin (demo/plugin/cucaracha)."
   },
   {
@@ -97,8 +73,104 @@
       "una vez por semana"
     ],
     "question": "¿Vos sos más perezoso que este bicho? 🦥",
-    "desde": "2026-11-28",
+    "desde": "2026-11-26",
     "nota": "Formato puteador, motor del plugin (demo/plugin/perezoso)."
+  },
+  {
+    "id": "115",
+    "title": "El wombat hace caca en forma de cubo",
+    "yt_title": "Este animal hace caca en forma de CUBO 🟫",
+    "narration": "El wombat hace caca en forma de cubo. Cada noche deja entre ochenta y cien, y el final de su intestino las va moldeando. Las apila arriba de las piedras para marcar territorio y, como son cuadradas, no ruedan.",
+    "scenes": [
+      {
+        "image": "a cartoon wombat in the australian outback"
+      }
+    ],
+    "tags": [
+      "animales",
+      "wombat",
+      "australia"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "cubo",
+      "no ruedan"
+    ],
+    "question": "¿Sabías que existía la caca cuadrada? 😂",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/wombat).",
+    "desde": "2026-11-26"
+  },
+  {
+    "id": "116",
+    "title": "El ajolote se regenera",
+    "yt_title": "Le cortás una pata y le crece otra nueva 🦎",
+    "narration": "El ajolote puede regenerar una pata entera, con huesos y todo. También repara partes del corazón, de la médula y del cerebro. Nunca termina de crecer y hoy está en peligro de extinción por la contaminación del lago donde vive.",
+    "scenes": [
+      {
+        "image": "a cute pink axolotl underwater"
+      }
+    ],
+    "tags": [
+      "animales",
+      "ajolote",
+      "mexico"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "regenerar",
+      "cerebro"
+    ],
+    "question": "¿Te gustaría tener el superpoder del ajolote? 🦎",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/ajolote).",
+    "desde": "2026-11-27"
+  },
+  {
+    "id": "117",
+    "title": "El colibrí vive acelerado",
+    "yt_title": "Su corazón late más de 1.000 veces por minuto 🐦",
+    "narration": "El corazón del colibrí late más de mil veces por minuto y mueve las alas unas cincuenta veces por segundo. Es el único pájaro que vuela para atrás, tiene que comer cada pocos minutos y a la noche se apaga para ahorrar energía.",
+    "scenes": [
+      {
+        "image": "a hummingbird next to a red flower"
+      }
+    ],
+    "tags": [
+      "animales",
+      "colibri",
+      "pajaros"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "mil veces",
+      "para atrás"
+    ],
+    "question": "¿Viste alguna vez un colibrí en persona? 🐦",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/colibri).",
+    "desde": "2026-11-27"
+  },
+  {
+    "id": "112b",
+    "title": "El pulpo tiene tres corazones y nueve cerebros (versión IA)",
+    "yt_title": "Este bicho tiene 3 corazones y sangre azul 🐙",
+    "narration": "El pulpo tiene tres corazones, sangre azul y nueve cerebros. Cuando nada, el corazón principal se le para, por eso prefiere caminar. Su sangre es azul porque usa cobre en vez de hierro. Y tiene un cerebro en la cabeza y uno en cada brazo: cada brazo piensa solo.",
+    "scenes": [
+      {
+        "image": "an orange octopus on the ocean floor"
+      }
+    ],
+    "tags": [
+      "animales",
+      "pulpo",
+      "oceano"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "tres corazones",
+      "nueve cerebros"
+    ],
+    "question": "¿Cuál te parece más raro: los 3 corazones o los 9 cerebros? 🐙",
+    "desde": "2026-11-28",
+    "nota": "Misma idea que 112, versión con clips de IA de Hugging Face (demo/dopamina/pulpo). Prueba A/B."
   },
   {
     "id": "001",
