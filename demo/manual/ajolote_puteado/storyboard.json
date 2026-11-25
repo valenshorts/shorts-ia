@@ -1,0 +1,191 @@
+{
+ "id": "116",
+ "title": "El ajolote se regenera (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Mirá a este salame. Parece un Pokémon trucho, pero es real, boludo."
+  },
+  {
+   "key": "quien",
+   "text": "Es el ajolote, vive en México y tiene un superpoder que ni Marvel se animó a inventar."
+  },
+  {
+   "key": "pata",
+   "text": "Le cortás una pata y le crece otra nueva. Entera, con huesos y todo, la concha de la lora."
+  },
+  {
+   "key": "organos",
+   "text": "Y no solo patas: se arregla pedazos del corazón, de la médula y hasta del cerebro, el muy turro."
+  },
+  {
+   "key": "bebe",
+   "text": "Encima nunca termina de crecer: se queda toda la vida con cara de bebé, como un nabo eterno."
+  },
+  {
+   "key": "peligro",
+   "text": "¿Y sabés qué es lo peor? Está en peligro de extinción, porque le cagamos el lago donde vive."
+  },
+  {
+   "key": "cierre",
+   "text": "El bicho que se arregla solo, y nosotros lo estamos haciendo mierda. Qué pelotudos que somos."
+  }
+ ],
+ "keywords": [
+  "salame",
+  "pokémon",
+  "real",
+  "ajolote",
+  "méxico",
+  "superpoder",
+  "pata",
+  "nueva",
+  "huesos",
+  "corazón",
+  "médula",
+  "cerebro",
+  "bebé",
+  "eterno",
+  "extinción",
+  "lago"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "brillo",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "pokémon"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "cortás"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "crece"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "cerebro"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "extinción"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "pelotudos"
+  }
+ ]
+}
