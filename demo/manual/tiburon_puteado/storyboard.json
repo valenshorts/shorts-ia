@@ -1,0 +1,213 @@
+{
+ "id": "120",
+ "title": "El tiburón de Groenlandia (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Atenti, porque este bicho nació antes que tu bisabuelo y sigue nadando, el muy ortiva."
+  },
+  {
+   "key": "edad",
+   "text": "El tiburón de Groenlandia puede vivir unos cuatrocientos años. ¡Cuatrocientos, la concha de la lora!"
+  },
+  {
+   "key": "crece",
+   "text": "Crece un centímetro por año, el muy rata, y recién tiene crías pasados los cien años."
+  },
+  {
+   "key": "lento",
+   "text": "Y nada más lento que un jubilado en la cola del banco: como un kilómetro por hora, el pelotudo."
+  },
+  {
+   "key": "ojo",
+   "text": "Encima muchos tienen un parásito colgando del ojo y casi no ven nada, los pobres giles."
+  },
+  {
+   "key": "carne",
+   "text": "¿Y comerlo? Su carne cruda es tóxica. En Islandia la dejan pudrir meses y se la morfan igual, los muy enfermos."
+  },
+  {
+   "key": "cierre",
+   "text": "Cuatro siglos de vida, medio ciego y lento como la mierda. Y aun así te va a enterrar, salame."
+  }
+ ],
+ "keywords": [
+  "bisabuelo",
+  "nadando",
+  "groenlandia",
+  "cuatrocientos",
+  "años",
+  "centímetro",
+  "cien",
+  "lento",
+  "jubilado",
+  "banco",
+  "kilómetro",
+  "parásito",
+  "ojo",
+  "tóxica",
+  "islandia",
+  "pudrir",
+  "meses",
+  "siglos",
+  "ciego",
+  "enterrar"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "bisabuelo"
+  },
+  {
+   "tipo": "boom_grande",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "concha"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.4,
+   "palabra": "crece"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "lento"
+  },
+  {
+   "tipo": "grave",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "parásito"
+  },
+  {
+   "tipo": "boom",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "tóxica"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "salame"
+  }
+ ]
+}
