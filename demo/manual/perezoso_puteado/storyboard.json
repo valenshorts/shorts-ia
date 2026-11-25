@@ -1,0 +1,169 @@
+{
+ "id": "114",
+ "title": "El perezoso (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "El perezoso es el hijo de puta más vago de toda la selva, boludo."
+  },
+  {
+   "key": "algas",
+   "text": "Es tan lento que le crecen algas en el pelo. Literalmente se pone verde, el pelotudo."
+  },
+  {
+   "key": "digiere",
+   "text": "Tarda casi un mes en digerir una hoja. ¡Un mes, la concha de su madre!"
+  },
+  {
+   "key": "baja",
+   "text": "Y baja del árbol una sola vez por semana. ¿Para qué? Para cagar."
+  },
+  {
+   "key": "peso",
+   "text": "En una sola cagada puede perder un tercio de su peso, el muy hijo de puta."
+  },
+  {
+   "key": "nada",
+   "text": "Y encima nada mejor de lo que camina: aguanta la respiración cuarenta minutos bajo el agua."
+  },
+  {
+   "key": "cierre",
+   "text": "Así que la próxima vez que te digan vago, deciles que sos un perezoso, forro."
+  }
+ ],
+ "keywords": [
+  "perezoso",
+  "vago",
+  "selva",
+  "lento",
+  "algas",
+  "verde",
+  "mes",
+  "digerir",
+  "hoja",
+  "semana",
+  "tercio",
+  "peso",
+  "nada",
+  "cuarenta",
+  "minutos",
+  "agua"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "vago"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "verde"
+  },
+  {
+   "tipo": "boom_grande",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "concha"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "cagar"
+  },
+  {
+   "tipo": "boom",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "tercio"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "nada"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "forro"
+  }
+ ]
+}
