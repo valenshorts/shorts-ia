@@ -221,6 +221,78 @@
     "desde": "2026-11-29"
   },
   {
+    "id": "120",
+    "title": "El tiburón de Groenlandia vive 400 años",
+    "yt_title": "Este tiburón puede vivir 400 años 🦈",
+    "narration": "El tiburón de Groenlandia puede vivir unos cuatrocientos años. Crece un centímetro por año, tiene crías pasados los cien años y nada a un kilómetro por hora. Muchos tienen un parásito en el ojo y su carne cruda es tóxica.",
+    "scenes": [
+      {
+        "image": "a greenland shark in icy water"
+      }
+    ],
+    "tags": [
+      "animales",
+      "tiburon",
+      "oceano"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "cuatrocientos años",
+      "un centímetro"
+    ],
+    "question": "¿Te gustaría vivir 400 años? 🦈",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/tiburon).",
+    "desde": "2026-11-29"
+  },
+  {
+    "id": "121",
+    "title": "La pulga salta 100 veces su tamaño",
+    "yt_title": "Este bicho salta 100 veces su tamaño 🦗",
+    "narration": "La pulga puede saltar unas cien veces su tamaño, como si vos pasaras por arriba de un edificio de cincuenta pisos. Usa un resorte de goma en el cuerpo, puede aguantar meses sin comer y una hembra pone hasta cincuenta huevos por día.",
+    "scenes": [
+      {
+        "image": "a cartoon flea jumping"
+      }
+    ],
+    "tags": [
+      "animales",
+      "pulga",
+      "insectos"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "cien veces",
+      "cincuenta pisos"
+    ],
+    "question": "¿Tu perro tuvo pulgas alguna vez? 🐶",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/pulga).",
+    "desde": "2026-11-30"
+  },
+  {
+    "id": "122",
+    "title": "El hipopótamo no sabe nadar",
+    "yt_title": "El hipopótamo no sabe nadar 🦛",
+    "narration": "El hipopótamo no sabe nadar: camina por el fondo del río y sale a respirar, hasta dormido. Transpira un líquido rojo que le sirve de protector solar y antibiótico, pesa como dos autos y corre unos treinta kilómetros por hora.",
+    "scenes": [
+      {
+        "image": "a cartoon hippo in a river"
+      }
+    ],
+    "tags": [
+      "animales",
+      "hipopotamo",
+      "africa"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "no sabe nadar",
+      "protector solar"
+    ],
+    "question": "¿Sabías que el hipopótamo no sabe nadar? 🦛",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/hipopotamo).",
+    "desde": "2026-11-30"
+  },
+  {
     "id": "001",
     "title": "¿Por qué las ventanas de los aviones son redondas?",
     "narration": "Las ventanas de los aviones son redondas, y la razón da miedo. En 1954, dos aviones Comet, los primeros jets de pasajeros del mundo, se partieron en pleno vuelo. Los ingenieros metieron un avión entero en un tanque de agua y lo inflaron y desinflaron miles de veces, hasta que se rajó. La grieta había empezado en una esquina. Una forma cuadrada junta toda la fuerza en las puntas. Un círculo la reparte. Por eso hoy ninguna ventana de avión tiene esquinas.",
