@@ -103,8 +103,8 @@
         const dir = i % 2 ? 1 : -1, fx = CX + dir * (300 + p * 700), fy = 760 + i * 150;
         G.ellipse(ctx, fx, fy, 50, 28, { fill: ['#FFD22E', '#5FD0FF', '#FF8AB0'][i % 3], lw: 4, seed: 120 + i }); G.poly(ctx, [[fx - dir * 45, fy], [fx - dir * 90, fy - 30], [fx - dir * 90, fy + 30]], { fill: ['#FFD22E', '#5FD0FF', '#FF8AB0'][i % 3], lw: 4, seed: 130 + i }); }
       ctx.restore();
-      C.pill(ctx, t, ev.raro, 'el más raro del océano', CX, 650, '#FFD22E');
-      return ['El pulpo es', 'el hijo de *puta* más raro'];
+      C.pill(ctx, t, ev.puta, 'hijo de p*ta', CX, 650, '#FFD22E');
+      return ['El pulpo es', 'el bicho más *raro* del océano'];
     },
     function corazones(ctx, t, a) {
       sea(ctx, t, '#2A0E2E', '#7A2A4A', false);
@@ -204,7 +204,7 @@
         G.ellipse(ctx, shx, shy, 48, 40, { fill: '#F7D9A8', lw: 5, seed: 270 }); G.line(ctx, [[shx - 30, shy], [shx, shy - 25], [shx + 25, shy + 5], [shx, shy + 15]], { lw: 5, seed: 271 });
         C.pill(ctx, t, ev.sigue, 'sigue solo', 760, 1060, '#3FE07A');
       }
-      if (mad) C.pill(ctx, t, ev.remil, 'hijo de remil', CX, 700, '#ff3a3a');
+      if (mad) C.pill(ctx, t, ev.remil, 'hijo de remil p*ta', CX, 700, '#ff3a3a');
       return ['Cada brazo', 'piensa *solo*'];
     },
     function cierre(ctx, t, a) {
@@ -220,7 +220,7 @@
         C.person(ctx, 790, 1330, 1.05 * p, { eyes: 'worried', mouth: 'o', brows: 'worried', look, style: { shirt: '#FFD22E' } });
         for (let i = 0; i < 3; i++) C.text(ctx, '?', 690 + i * 100, 860 - Math.abs(Math.sin(t * 3 + i)) * 40, { size: 80 * p, color: '#fff', stroke: '#0b1030', strokeW: 8 });
         const kk = out(t, ev.llaves, 0.4); if (kk > 0) keys(ctx, lerp(1150, 960, kk), 1500 + Math.sin(t * 2) * 10, 1, t * 0.5); }
-      if (forro) C.text(ctx, '¡FORRO!', CX, 760, { size: 150 * pop(t, ev.forro, 0.35), color: '#FFD22E', stroke: '#0b1030', strokeW: 16 });
+      if (forro) C.text(ctx, '¡F*RRO!', CX, 760, { size: 150 * pop(t, ev.forro, 0.35), color: '#FFD22E', stroke: '#0b1030', strokeW: 16 });
       return left ? ['Y vos', 'no encontrás las *llaves*'] : ['Nueve cerebros', 'y *tres* corazones'];
     },
   ]);
