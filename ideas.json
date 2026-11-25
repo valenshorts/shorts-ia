@@ -173,6 +173,54 @@
     "nota": "Misma idea que 112, versión con clips de IA de Hugging Face (demo/dopamina/pulpo). Prueba A/B."
   },
   {
+    "id": "118",
+    "title": "La jirafa tiene las mismas vértebras que vos",
+    "yt_title": "La jirafa tiene las mismas vértebras en el cuello que vos 🦒",
+    "narration": "La jirafa tiene siete vértebras en el cuello, igual que vos, pero cada una mide más de veinte centímetros. Su lengua mide casi medio metro y es negra, duerme muy poco, su corazón pesa más de diez kilos y al nacer cae de casi dos metros.",
+    "scenes": [
+      {
+        "image": "a cartoon giraffe in the savanna"
+      }
+    ],
+    "tags": [
+      "animales",
+      "jirafa",
+      "africa"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "siete",
+      "medio metro"
+    ],
+    "question": "¿Cuánto dormís vos por día? 🦒",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/jirafa).",
+    "desde": "2026-11-28"
+  },
+  {
+    "id": "119",
+    "title": "El caracol tiene miles de dientes",
+    "yt_title": "Este bicho tiene más dientes que toda tu familia 🐌",
+    "narration": "El caracol tiene miles de dientes diminutos en la lengua, ordenados en filas como un rallador, y le crecen nuevos todo el tiempo. Tarda unos quince minutos en hacer un metro, puede dormir meses y su baba lo protege hasta del filo de una navaja.",
+    "scenes": [
+      {
+        "image": "a cartoon snail in a garden"
+      }
+    ],
+    "tags": [
+      "animales",
+      "caracol",
+      "naturaleza"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "miles de dientes",
+      "navaja"
+    ],
+    "question": "¿Te dan asco los caracoles? 🐌",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/caracol).",
+    "desde": "2026-11-29"
+  },
+  {
     "id": "001",
     "title": "¿Por qué las ventanas de los aviones son redondas?",
     "narration": "Las ventanas de los aviones son redondas, y la razón da miedo. En 1954, dos aviones Comet, los primeros jets de pasajeros del mundo, se partieron en pleno vuelo. Los ingenieros metieron un avión entero en un tanque de agua y lo inflaron y desinflaron miles de veces, hasta que se rajó. La grieta había empezado en una esquina. Una forma cuadrada junta toda la fuerza en las puntas. Un círculo la reparte. Por eso hoy ninguna ventana de avión tiene esquinas.",
