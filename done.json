@@ -427,5 +427,13 @@
     "style": "cine",
     "publish_at": "2026-11-27T12:30:00Z",
     "comment_pending": true
+  },
+  "116": {
+    "title": "El ajolote se regenera",
+    "youtube_id": "fxOuPK96eKc",
+    "date": "2026-11-27",
+    "style": "manual",
+    "publish_at": "2026-11-27T15:00:00Z",
+    "comment_pending": true
   }
 }
