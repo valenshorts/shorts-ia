@@ -1,0 +1,216 @@
+{
+ "id": "121",
+ "title": "La pulga (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "¿Ves esta mierdita? Es más chica que una lenteja y salta como un atleta olímpico, la hija de remil."
+  },
+  {
+   "key": "salto",
+   "text": "La pulga puede saltar unas cien veces su tamaño, la reconcha de su madre."
+  },
+  {
+   "key": "vos",
+   "text": "Si vos saltaras así, pasarías por arriba de un edificio de cincuenta pisos, boludo."
+  },
+  {
+   "key": "resorte",
+   "text": "Y no salta solo con músculos: tiene un resorte de goma en el cuerpo que carga y suelta de golpe, la muy turra."
+  },
+  {
+   "key": "espera",
+   "text": "Encima puede aguantar meses sin comer, esperando que pases vos, gil, para chuparte la sangre."
+  },
+  {
+   "key": "huevos",
+   "text": "Y una hembra pone hasta cincuenta huevos por día. Te descuidás y tenés un ejército, pelotudo."
+  },
+  {
+   "key": "cierre",
+   "text": "Así que si tu perro se rasca, no es joda: tenés una banda de atletas forros viviendo en tu casa."
+  }
+ ],
+ "keywords": [
+  "lenteja",
+  "atleta",
+  "olímpico",
+  "pulga",
+  "cien",
+  "veces",
+  "tamaño",
+  "edificio",
+  "cincuenta",
+  "pisos",
+  "resorte",
+  "goma",
+  "golpe",
+  "meses",
+  "sangre",
+  "hembra",
+  "huevos",
+  "ejército",
+  "perro",
+  "rasca",
+  "atletas"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "olímpico"
+  },
+  {
+   "tipo": "subida",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "saltar"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "arriba"
+  },
+  {
+   "tipo": "boom",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "golpe"
+  },
+  {
+   "tipo": "grave",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "sangre"
+  },
+  {
+   "tipo": "clics",
+   "escena": 5,
+   "gain": 0.35,
+   "palabra": "cincuenta",
+   "hasta": "día",
+   "n": 8
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "casa"
+  }
+ ]
+}
