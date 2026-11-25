@@ -6,6 +6,8 @@ name: Solo Instagram
 on:
   schedule:
     # 20-25 min después de cada horario de YouTube (14:30, 18:00 y 21:30 AR): 14:50, 18:20 y 21:55 AR (en UTC).
+    - cron: "50 12 * * *"   # 09:50 AR (desde el 25/11 YouTube sube 5 por día)
+    - cron: "20 15 * * *"   # 12:20 AR
     - cron: "50 17 * * *"
     - cron: "20 21 * * *"
     - cron: "55 0 * * *"
@@ -77,7 +79,7 @@ jobs:
           from pathlib import Path
           found = {}
           for f in sorted(Path("dl").rglob("short_*.mp4"), key=lambda p: int(p.relative_to("dl").parts[0])):  # gana la corrida más nueva
-              found[re.search(r"short_(\d+)", f.name).group(1)] = f
+              found[re.search(r"short_(\d+[a-z]?)\.mp4", f.name).group(1)] = f  # con letra: 097b, 112b
           done = json.loads(Path("done.json").read_text(encoding="utf-8"))
           igp = Path("ig_done.json")
           ig = json.loads(igp.read_text(encoding="utf-8")) if igp.exists() else {}
