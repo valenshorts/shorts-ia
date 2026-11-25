@@ -53,6 +53,54 @@
     "nota": "Misma idea que 112, versión con clips de IA de Hugging Face (demo/dopamina/pulpo). Prueba A/B."
   },
   {
+    "id": "113",
+    "title": "La cucaracha vive una semana sin cabeza",
+    "yt_title": "Este bicho vive una semana SIN CABEZA 🪳",
+    "narration": "La cucaracha puede vivir una semana sin cabeza. Se muere de sed, porque sin boca no puede tomar agua. Respira por agujeritos que tiene en el cuerpo, aguanta la respiración cuarenta minutos y está en la Tierra hace trescientos millones de años.",
+    "scenes": [
+      {
+        "image": "a cartoon cockroach on a kitchen floor"
+      }
+    ],
+    "tags": [
+      "animales",
+      "cucaracha",
+      "insectos"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "sin cabeza",
+      "una semana"
+    ],
+    "question": "¿Le tenés asco o miedo a las cucarachas? 🪳",
+    "desde": "2026-11-26",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/cucaracha)."
+  },
+  {
+    "id": "114",
+    "title": "El perezoso baja del árbol una vez por semana",
+    "yt_title": "Este animal baja del árbol solo para ir al baño 🦥",
+    "narration": "El perezoso es tan lento que le crecen algas en el pelo. Tarda casi un mes en digerir una hoja y baja del árbol una vez por semana para ir al baño, donde puede perder un tercio de su peso. Y nada mejor de lo que camina.",
+    "scenes": [
+      {
+        "image": "a cartoon sloth hanging from a branch"
+      }
+    ],
+    "tags": [
+      "animales",
+      "perezoso",
+      "selva"
+    ],
+    "playlist": "Animales increíbles",
+    "highlight": [
+      "un mes",
+      "una vez por semana"
+    ],
+    "question": "¿Vos sos más perezoso que este bicho? 🦥",
+    "desde": "2026-11-28",
+    "nota": "Formato puteador, motor del plugin (demo/plugin/perezoso)."
+  },
+  {
     "id": "001",
     "title": "¿Por qué las ventanas de los aviones son redondas?",
     "narration": "Las ventanas de los aviones son redondas, y la razón da miedo. En 1954, dos aviones Comet, los primeros jets de pasajeros del mundo, se partieron en pleno vuelo. Los ingenieros metieron un avión entero en un tanque de agua y lo inflaron y desinflaron miles de veces, hasta que se rajó. La grieta había empezado en una esquina. Una forma cuadrada junta toda la fuerza en las puntas. Un círculo la reparte. Por eso hoy ninguna ventana de avión tiene esquinas.",
