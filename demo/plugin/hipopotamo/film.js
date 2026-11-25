@@ -93,7 +93,7 @@
       if (run) { C.person(ctx, lerp(500, 1150, k), 1350, 0.8, { pose: 'run', eyes: 'wide', mouth: 'open', style: { shirt: '#19B8B2' } });
         for (let i = 0; i < 6; i++) G.line(ctx, [[lerp(250, 900, k) - 250 - i * 50, 1120 + i * 15], [lerp(250, 900, k) - 380 - i * 50, 1120 + i * 15]], { color: 'rgba(255,255,255,0.7)', lw: 6, seed: 780 + i }); }
       C.count(ctx, t, ev.treinta - 0.2, 30, CX, 780, { suf: ' KM/H', size: 120 });
-      return ['Pesa como *dos autos*', 'y corre más que vos'];
+      return ['Pesa como dos autos', 'y corre *más que vos*'];
     },
     function caca(ctx, t, a) {
       river(ctx, t);
