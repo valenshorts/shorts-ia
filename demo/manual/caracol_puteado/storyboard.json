@@ -1,0 +1,199 @@
+{
+ "id": "119",
+ "title": "El caracol (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Escuchame una cosa, chabón: este baboso tiene más dientes que toda tu familia junta."
+  },
+  {
+   "key": "dientes",
+   "text": "El caracol tiene miles de dientitos en la lengua, en filas, como un rallador, el muy forro."
+  },
+  {
+   "key": "crecen",
+   "text": "Y los va gastando y le crecen nuevos todo el tiempo. Ni el dentista le cobra, la reconcha de su madre."
+  },
+  {
+   "key": "lento",
+   "text": "Encima es lentísimo: tarda como un cuarto de hora en hacer un metro, el muy pelotudo."
+  },
+  {
+   "key": "duerme",
+   "text": "¿Y si hace mucho calor? Se encierra en la casita y se tira a dormir. Meses, boludo. Algunos, hasta años."
+  },
+  {
+   "key": "baba",
+   "text": "Y camina sobre su propia baba, que lo protege tanto que puede pasar por el filo de una navaja sin cortarse, el hijo de mil."
+  },
+  {
+   "key": "cierre",
+   "text": "Así que la próxima vez que te digan baboso, agradecé, gil. Es un elogio, la puta madre."
+  }
+ ],
+ "keywords": [
+  "dientes",
+  "familia",
+  "caracol",
+  "miles",
+  "lengua",
+  "filas",
+  "rallador",
+  "nuevos",
+  "dentista",
+  "lentísimo",
+  "cuarto",
+  "hora",
+  "metro",
+  "casita",
+  "dormir",
+  "meses",
+  "años",
+  "baba",
+  "navaja",
+  "cortarse",
+  "baboso",
+  "elogio"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "dientes"
+  },
+  {
+   "tipo": "clics",
+   "escena": 1,
+   "gain": 0.35,
+   "palabra": "miles",
+   "hasta": "rallador",
+   "n": 8
+  },
+  {
+   "tipo": "brillo",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "nuevos"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "dormir"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "navaja"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "madre"
+  }
+ ]
+}
