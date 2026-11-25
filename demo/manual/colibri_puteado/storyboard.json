@@ -1,0 +1,201 @@
+{
+ "id": "117",
+ "title": "El colibrí vive acelerado (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "¿Viste cuando tomás tres cafés y quedás re manija? Bueno, el colibrí vive así todo el puto día."
+  },
+  {
+   "key": "corazon",
+   "text": "El corazón le late más de mil veces por minuto. ¡Mil! El tuyo late setenta, tranqui, como un jubilado."
+  },
+  {
+   "key": "alas",
+   "text": "Y mueve las alas unas cincuenta veces por segundo. Por eso zumban, los muy hijos de mil."
+  },
+  {
+   "key": "atras",
+   "text": "Es el único pájaro que vuela para atrás. Marcha atrás, como un Fiat seiscientos, boludo."
+  },
+  {
+   "key": "come",
+   "text": "Pero tanto quilombo le sale caro: tiene que comer cada diez minutos, el muy angurriento."
+  },
+  {
+   "key": "noche",
+   "text": "Y a la noche, para no cagarse de hambre, se apaga: baja la temperatura y el corazón, como si se muriera un rato."
+  },
+  {
+   "key": "cierre",
+   "text": "Al otro día se despierta y arranca de nuevo a mil. Un enfermo de mierda, te juro."
+  }
+ ],
+ "keywords": [
+  "cafés",
+  "manija",
+  "colibrí",
+  "corazón",
+  "mil",
+  "setenta",
+  "jubilado",
+  "alas",
+  "cincuenta",
+  "segundo",
+  "zumban",
+  "atrás",
+  "fiat",
+  "diez",
+  "minutos",
+  "noche",
+  "apaga",
+  "temperatura"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "colibrí"
+  },
+  {
+   "tipo": "clics",
+   "escena": 1,
+   "gain": 0.35,
+   "palabra": "corazón",
+   "hasta": "setenta",
+   "n": 10
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "zumban"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "atrás"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "apaga"
+  },
+  {
+   "tipo": "subida",
+   "escena": 6,
+   "gain": 0.5,
+   "palabra": "arranca"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "juro"
+  }
+ ]
+}
