@@ -1,0 +1,226 @@
+{
+ "id": "125",
+ "title": "Tu cuerpo (versión puteada)",
+ "nota": "Formato puteador exagerado, tema no animal. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Escuchame, pedazo de pelotudo: tu cuerpo es una máquina de hacer boludeces y vos ni te enterás, la concha de tu madre."
+  },
+  {
+   "key": "altura",
+   "text": "A la mañana medís un centímetro más que a la noche: en el día se te aplasta la columna y terminás más petiso, forro."
+  },
+  {
+   "key": "huesos",
+   "text": "Naciste con trescientos huesos y ahora tenés doscientos seis. Se te fueron soldando. Perdiste casi cien, hijo de puta, y ni un velorio les hiciste."
+  },
+  {
+   "key": "pedos",
+   "text": "Te tirás unos quince pedos por día. Y no me digas que vos no, mentiroso de mierda, que hasta dormido largás, cochino del orto."
+  },
+  {
+   "key": "ojos",
+   "text": "Parpadeás tanto que pasás como el diez por ciento del día con los ojos cerrados, sin ver un carajo, pelotudo."
+  },
+  {
+   "key": "cierre",
+   "text": "Y tu cerebro pesa el dos por ciento del cuerpo, pero se morfa el veinte por ciento de la energía. Todo para que lo uses mirando videos de mierda como este. Seguí, boludo, seguí."
+  }
+ ],
+ "keywords": [
+  "cuerpo",
+  "máquina",
+  "mañana",
+  "centímetro",
+  "noche",
+  "columna",
+  "petiso",
+  "trescientos",
+  "doscientos",
+  "seis",
+  "cien",
+  "velorio",
+  "quince",
+  "dormido",
+  "diez",
+  "ciento",
+  "cerrados",
+  "cerebro",
+  "dos",
+  "veinte",
+  "energía",
+  "seguí"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ],
+  [
+   "soretes",
+   "s*retes"
+  ],
+  [
+   "sorete",
+   "s*rete"
+  ],
+  [
+   "cagando",
+   "c*gando"
+  ],
+  [
+   "boludeces",
+   "b*ludeces"
+  ],
+  [
+   "pedos",
+   "p*dos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "concha"
+  },
+  {
+   "tipo": "subida",
+   "escena": 1,
+   "gain": 0.4,
+   "palabra": "centímetro"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "cien"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "quince"
+  },
+  {
+   "tipo": "clics",
+   "escena": 4,
+   "gain": 0.35,
+   "palabra": "parpadeás",
+   "hasta": "cerrados"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.7,
+   "palabra": "seguí"
+  }
+ ]
+}

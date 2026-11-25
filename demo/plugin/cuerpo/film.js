@@ -8,9 +8,7 @@
     trescientos: cue(2, 'trescientos'), doscientos: cue(2, 'doscientos'), soldando: cue(2, 'soldando'), cien: cue(2, 'cien'), velorio: cue(2, 'velorio'),
     quince: cue(3, 'quince'), mentiroso: cue(3, 'mentiroso'), dormido: cue(3, 'dormido'), orto: cue(3, 'orto'),
     parpadeas: cue(4, 'parpadeás'), diez: cue(4, 'diez'), cerrados: cue(4, 'cerrados'), carajo: cue(4, 'carajo'),
-    acido: cue(5, 'ácido'), capa: cue(5, 'capa'), arregla: cue(5, 'arregla'), porquerias: cue(5, 'porquerías'),
-    treinta: cue(6, 'treinta'), pedacitos: cue(6, 'pedacitos'), salero: cue(6, 'salero'), puta: cue(6, 'puta'),
-    cerebro: cue(7, 'cerebro'), dos: cue(7, 'dos'), veinte: cue(7, 'veinte'), videos: cue(7, 'videos'), segui: cue(7, 'seguí'),
+    cerebro: cue(5, 'cerebro'), dos: cue(5, 'dos'), veinte: cue(5, 'veinte'), videos: cue(5, 'videos'), segui: cue(5, 'seguí'),
   };
   const shake = (t, t0, amp = 22, d = 0.45) => { const k = clamp(1 - (t - t0) / d); return t >= t0 && k > 0 ? [Math.sin(t * 70) * amp * k, Math.cos(t * 61) * amp * k] : [0, 0]; };
   const room = (ctx, top = '#FFE7C2', bot = '#FFF6E6') => {
@@ -102,35 +100,6 @@
       C.pill(ctx, t, ev.cerrados, 'ojos cerrados', CX, 1360, '#7FD4FF');
       BIG(ctx, t, ev.carajo, 'NI UN C*RAJO', CX, 1780, '#fff', 90);
       return ['Parpadeando pasás', 'el *10 %* ciego'];
-    },
-    function estomago(ctx, t, a) {
-      C.bg(ctx, '#FFD8C8', '#FFF0E4');
-      ctx.save(); ctx.translate(CX, 1100); const s = pop(t, a, 0.5); ctx.scale(s, s);
-      G.ellipse(ctx, 0, 0, 330, 260, { fill: '#FF9AAE', lw: 9, seed: 1350 });
-      const lvl = out(t, ev.acido - 0.2, 0.8);
-      if (lvl > 0) { ctx.save(); ctx.beginPath(); ctx.ellipse(0, 0, 300, 230, 0, 0, 7); ctx.clip();
-        ctx.fillStyle = '#9AE04A'; ctx.fillRect(-320, 230 - 230 * lvl, 640, 460);
-        for (let i = 0; i < 10; i++) { const p = (Math.max(0, t - a) * 0.7 + i / 10) % 1; ctx.globalAlpha = 1 - p; ctx.strokeStyle = '#E8FFC8'; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(-240 + i * 52, 200 - p * 200 * lvl, 10 + (i % 3) * 5, 0, 7); ctx.stroke(); }
-        ctx.restore(); }
-      if (t > ev.capa - 0.2) { const p = out(t, ev.capa - 0.2, 0.8); ctx.save(); ctx.globalAlpha = p; ctx.strokeStyle = '#FFD22E'; ctx.lineWidth = 16; ctx.setLineDash([30, 18]); ctx.lineDashOffset = -t * 60; ctx.beginPath(); ctx.ellipse(0, 0, 318, 248, 0, 0, Math.PI * 2 * p); ctx.stroke(); ctx.restore(); }
-      ctx.restore();
-      if (t > ev.porquerias - 0.2) for (let i = 0; i < 4; i++) { const p = clamp((t - ev.porquerias + 0.2 - i * 0.25) / 0.8); if (p <= 0) continue;
-        G.ellipse(ctx, lerp(150 + i * 250, CX, p), lerp(560, 1000, p), 34, 26, { fill: ['#C8803A', '#E8C84A', '#8A5A3A', '#E8324A'][i], lw: 5, seed: 1360 + i }); }
-      C.pill(ctx, t, ev.acido, 'ácido', 280, 720, '#9AE04A');
-      C.pill(ctx, t, ev.capa, 'capa nueva', 800, 720, '#FFD22E');
-      BIG(ctx, t, ev.arregla, 'SE ARREGLA SOLO', CX, 1640, '#fff', 90);
-      return ['Tu estómago', 'se *comería solo*'];
-    },
-    function piel(ctx, t, a) {
-      room(ctx, '#E4F0FF', '#F8FBFF');
-      const x = lerp(160, 900, clamp((t - a) / 5));
-      for (let i = 0; i < 60; i++) { const age = (i / 60) * 5, px = lerp(160, 900, clamp((t - a - age) / 5)); if (t - a < age) continue;
-        const dy = Math.min(1, age * 0.4) * 200; G.ellipse(ctx, px + ((i * 37) % 60) - 30, 1300 + dy + ((i * 53) % 80), 6, 5, { fill: '#E8D0B0', lw: 2, seed: 1370 + (i % 9), alpha: 0.9 }); }
-      C.person(ctx, x, 1560, 1.5 * pop(t, a, 0.5), { pose: 'walk', eyes: 'happy', mouth: 'smile', style: { shirt: '#3E6FB0' } });
-      C.count(ctx, t, ev.treinta - 0.2, 30000, CX, 760, { suf: '/MIN', size: 110 });
-      C.pill(ctx, t, ev.pedacitos, 'pedacitos tuyos', CX, 900, '#E8D0B0');
-      BIG(ctx, t, ev.salero, 'SALERO DE MUGRE', CX, 1780, '#fff', 86);
-      return ['Largás piel', '*muerta* sin parar'];
     },
     function cierre(ctx, t, a) {
       C.bg(ctx, '#2A1A4A', '#0E0A22');
