@@ -1,0 +1,194 @@
+{
+ "id": "115",
+ "title": "El wombat caga cubos (versión puteada)",
+ "nota": "Formato puteador. Subtítulos censurados con asterisco (caption_replace).",
+ "pause": 0.15,
+ "tail": 0.8,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Agarrate, porque este gordito caga cubos. Cubos, boludo. Como dados."
+  },
+  {
+   "key": "quien",
+   "text": "Se llama wombat, vive en Australia y tiene cara de no romper un plato, el muy chanta."
+  },
+  {
+   "key": "cuantas",
+   "text": "Pero cada noche larga entre ochenta y cien caquitas cuadradas, el muy cagón."
+  },
+  {
+   "key": "porque",
+   "text": "¿Y por qué cuadradas? Porque el final del intestino aprieta más fuerte en unas partes que en otras, y las va moldeando."
+  },
+  {
+   "key": "apila",
+   "text": "Y no las tira en cualquier lado, eh: las apila arriba de las piedras para marcar territorio."
+  },
+  {
+   "key": "ruedan",
+   "text": "Como son cuadradas, no ruedan. Ni en pedo se le caen, la reconcha de la lora."
+  },
+  {
+   "key": "cierre",
+   "text": "O sea: el tipo inventó el Lego con el orto. Y vos no podés armar un mueble, gil."
+  }
+ ],
+ "keywords": [
+  "cubos",
+  "dados",
+  "wombat",
+  "australia",
+  "plato",
+  "ochenta",
+  "cien",
+  "cuadradas",
+  "intestino",
+  "aprieta",
+  "moldeando",
+  "apila",
+  "piedras",
+  "territorio",
+  "ruedan",
+  "lego",
+  "mueble"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "cubos"
+  },
+  {
+   "tipo": "clics",
+   "escena": 2,
+   "gain": 0.4,
+   "palabra": "ochenta",
+   "hasta": "cuadradas",
+   "n": 6
+  },
+  {
+   "tipo": "subida",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "aprieta"
+  },
+  {
+   "tipo": "boom",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "apila"
+  },
+  {
+   "tipo": "boom_grande",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "reconcha"
+  },
+  {
+   "tipo": "campana",
+   "escena": 6,
+   "gain": 0.7,
+   "palabra": "gil"
+  }
+ ]
+}
