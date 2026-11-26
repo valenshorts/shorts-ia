@@ -442,5 +442,21 @@
     "style": "manual",
     "publish_at": "2026-11-27T17:30:00Z",
     "comment_pending": true
+  },
+  "047": {
+    "title": "La frutilla no es una baya, la banana sí",
+    "youtube_id": "7t5qKYy-bKE",
+    "date": "2026-11-27",
+    "style": "manual",
+    "publish_at": "2026-11-27T21:00:00Z",
+    "comment_pending": true
+  },
+  "050": {
+    "title": "Por qué se pone la piel de gallina",
+    "youtube_id": "Z-WvwUAlELI",
+    "date": "2026-11-27",
+    "style": "manual",
+    "publish_at": "2026-11-28T00:30:00Z",
+    "comment_pending": true
   }
 }
