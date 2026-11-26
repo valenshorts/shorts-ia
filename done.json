@@ -348,8 +348,7 @@
     "youtube_id": "ro76rV151Bw",
     "date": "2026-11-25",
     "style": "cine",
-    "publish_at": "2026-11-26T00:30:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-26T00:30:00Z"
   },
   "011": {
     "title": "¿Para qué tienen rayas las cebras?",
@@ -434,6 +433,14 @@
     "date": "2026-11-27",
     "style": "manual",
     "publish_at": "2026-11-27T15:00:00Z",
+    "comment_pending": true
+  },
+  "117": {
+    "title": "El colibrí vive acelerado",
+    "youtube_id": "e2oR9lfESpU",
+    "date": "2026-11-27",
+    "style": "manual",
+    "publish_at": "2026-11-27T17:30:00Z",
     "comment_pending": true
   }
 }
