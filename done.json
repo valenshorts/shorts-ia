@@ -405,8 +405,7 @@
     "youtube_id": "zJpbfYAkf10",
     "date": "2026-11-26",
     "style": "manual",
-    "publish_at": "2026-11-26T21:00:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-26T21:00:00Z"
   },
   "038": {
     "title": "Por qué se te tapan los oídos en el avión",
@@ -454,6 +453,14 @@
     "date": "2026-11-27",
     "style": "manual",
     "publish_at": "2026-11-28T00:30:00Z",
+    "comment_pending": true
+  },
+  "112b": {
+    "title": "El pulpo tiene tres corazones y nueve cerebros (versión IA)",
+    "youtube_id": "qANmSNgwOag",
+    "date": "2026-11-28",
+    "style": "manual",
+    "publish_at": "2026-11-28T12:30:00Z",
     "comment_pending": true
   }
 }
