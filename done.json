@@ -412,8 +412,7 @@
     "youtube_id": "2qEjLGRDnfc",
     "date": "2026-11-26",
     "style": "manual",
-    "publish_at": "2026-11-27T00:30:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-27T00:30:00Z"
   },
   "017": {
     "title": "¿Hace mal tronarse los dedos?",
@@ -469,6 +468,14 @@
     "date": "2026-11-28",
     "style": "manual",
     "publish_at": "2026-11-28T15:00:00Z",
+    "comment_pending": true
+  },
+  "105b": {
+    "title": "Un monje dentro de una estatua de Buda",
+    "youtube_id": "l7kW0E6a9Y0",
+    "date": "2026-11-28",
+    "style": "manual",
+    "publish_at": "2026-11-28T17:30:00Z",
     "comment_pending": true
   }
 }
