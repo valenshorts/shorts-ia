@@ -440,8 +440,7 @@
     "youtube_id": "7t5qKYy-bKE",
     "date": "2026-11-27",
     "style": "manual",
-    "publish_at": "2026-11-27T21:00:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-27T21:00:00Z"
   },
   "050": {
     "title": "Por qué se pone la piel de gallina",
@@ -489,6 +488,14 @@
     "date": "2026-11-28",
     "style": "manual",
     "publish_at": "2026-11-29T00:30:00Z",
+    "comment_pending": true
+  },
+  "119": {
+    "title": "El caracol tiene miles de dientes",
+    "youtube_id": "FNFdJ7_mHTc",
+    "date": "2026-11-29",
+    "style": "manual",
+    "publish_at": "2026-11-29T12:30:00Z",
     "comment_pending": true
   }
 }
