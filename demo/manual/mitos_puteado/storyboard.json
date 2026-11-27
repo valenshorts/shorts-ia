@@ -1,0 +1,231 @@
+{
+ "id": "129",
+ "title": "Mitos que te creíste (versión puteada)",
+ "nota": "Puteador para TikTok: insultos más livianos (sin puta/concha/mierda). Subtítulos censurados.",
+ "pause": 0.15,
+ "tail": 0.3,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Atención, gil: hay cosas que te creíste toda la vida y son mentira. Vamos una por una."
+  },
+  {
+   "key": "cerebro",
+   "text": "No usás solo el diez por ciento del cerebro. Usás todo, aunque no parezca, salame."
+  },
+  {
+   "key": "chicle",
+   "text": "Si te tragás un chicle, no se queda siete años en la panza. Sale en unos días, como todo, boludo."
+  },
+  {
+   "key": "murcielago",
+   "text": "Los murciélagos no son ciegos. Ven, y encima usan el eco para ubicarse. Ven mejor que vos sin anteojos, nabo."
+  },
+  {
+   "key": "rayo",
+   "text": "Y el rayo sí cae dos veces en el mismo lugar. Al Empire State le caen unos veinte por año, tarado."
+  },
+  {
+   "key": "cierre",
+   "text": "Así que dejá de repetir giladas en la mesa, pelotudo. Mandáselo al que se las sabe todas."
+  }
+ ],
+ "keywords": [
+  "mentira",
+  "diez",
+  "ciento",
+  "cerebro",
+  "todo",
+  "chicle",
+  "siete",
+  "años",
+  "días",
+  "murciélagos",
+  "ciegos",
+  "eco",
+  "anteojos",
+  "rayo",
+  "dos",
+  "veces",
+  "empire",
+  "veinte",
+  "giladas",
+  "mandáselo"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ],
+  [
+   "soretes",
+   "s*retes"
+  ],
+  [
+   "sorete",
+   "s*rete"
+  ],
+  [
+   "cagando",
+   "c*gando"
+  ],
+  [
+   "boludeces",
+   "b*ludeces"
+  ],
+  [
+   "pedos",
+   "p*dos"
+  ],
+  [
+   "carajo",
+   "c*rajo"
+  ],
+  [
+   "boludos",
+   "b*ludos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "mentira"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "cerebro"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "chicle"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "murciélagos"
+  },
+  {
+   "tipo": "boom",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "rayo"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "todas"
+  }
+ ]
+}

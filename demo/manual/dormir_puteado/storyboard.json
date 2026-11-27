@@ -1,0 +1,232 @@
+{
+ "id": "131",
+ "title": "Dormir (versión puteada)",
+ "nota": "Puteador para TikTok: insultos más livianos (sin puta/concha/mierda). Subtítulos censurados.",
+ "pause": 0.15,
+ "tail": 0.3,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Pensá esto, salame: te vas a pasar un tercio de tu vida durmiendo. Unos veinticinco años en la cama, boludo."
+  },
+  {
+   "key": "suenios",
+   "text": "Y unos seis de esos años los pasás soñando. Seis años de películas que te olvidás al toque, nabo."
+  },
+  {
+   "key": "limpia",
+   "text": "Mientras dormís, el cerebro limpia la basura que juntó en el día. Literal: lava, gil."
+  },
+  {
+   "key": "sin",
+   "text": "Si no dormís, a los pocos días empezás a ver cosas que no existen. Como tu sueldo, tarado."
+  },
+  {
+   "key": "tiron",
+   "text": "Y ese tirón que sentís cuando te estás por dormir, como que te caés, tiene nombre: espasmo hípnico. Le pasa a casi todos, otario."
+  },
+  {
+   "key": "cierre",
+   "text": "Así que andá a dormir, pelotudo. Pero después de ver otro video."
+  }
+ ],
+ "keywords": [
+  "tercio",
+  "vida",
+  "durmiendo",
+  "veinticinco",
+  "años",
+  "cama",
+  "seis",
+  "soñando",
+  "películas",
+  "cerebro",
+  "limpia",
+  "basura",
+  "lava",
+  "existen",
+  "sueldo",
+  "tirón",
+  "caés",
+  "espasmo",
+  "hípnico",
+  "dormir",
+  "video"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ],
+  [
+   "soretes",
+   "s*retes"
+  ],
+  [
+   "sorete",
+   "s*rete"
+  ],
+  [
+   "cagando",
+   "c*gando"
+  ],
+  [
+   "boludeces",
+   "b*ludeces"
+  ],
+  [
+   "pedos",
+   "p*dos"
+  ],
+  [
+   "carajo",
+   "c*rajo"
+  ],
+  [
+   "boludos",
+   "b*ludos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "tercio"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "soñando"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "limpia"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "existen"
+  },
+  {
+   "tipo": "boom",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "caés"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "video"
+  }
+ ]
+}

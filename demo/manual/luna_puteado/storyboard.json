@@ -1,0 +1,228 @@
+{
+ "id": "130",
+ "title": "La Luna (versión puteada)",
+ "nota": "Puteador para TikTok: insultos más livianos (sin puta/concha/mierda). Subtítulos censurados.",
+ "pause": 0.15,
+ "tail": 0.3,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Escuchame, nabo: la Luna se está yendo. Se aleja de la Tierra todos los años, la muy ortiva."
+  },
+  {
+   "key": "cm",
+   "text": "Se aleja unos cuatro centímetros por año. Más o menos lo que te crecen las uñas, boludo."
+  },
+  {
+   "key": "laser",
+   "text": "Lo sabemos porque los astronautas dejaron espejos allá arriba, y les tiramos un láser. Ciencia de verdad, gil."
+  },
+  {
+   "key": "dias",
+   "text": "Y como se aleja, los días se alargan de a poquito. Cuando había dinosaurios, el día duraba menos, salame."
+  },
+  {
+   "key": "cara",
+   "text": "Y siempre te muestra la misma cara: el lado de atrás no lo ves nunca. Tímida, como vos en un boliche, tarado."
+  },
+  {
+   "key": "cierre",
+   "text": "Tranqui, que para que se note falta muchísimo. Igual que para que ordenes tu pieza, pelotudo."
+  }
+ ],
+ "keywords": [
+  "luna",
+  "aleja",
+  "tierra",
+  "cuatro",
+  "centímetros",
+  "año",
+  "uñas",
+  "astronautas",
+  "espejos",
+  "láser",
+  "días",
+  "alargan",
+  "dinosaurios",
+  "cara",
+  "atrás",
+  "boliche",
+  "pieza"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ],
+  [
+   "soretes",
+   "s*retes"
+  ],
+  [
+   "sorete",
+   "s*rete"
+  ],
+  [
+   "cagando",
+   "c*gando"
+  ],
+  [
+   "boludeces",
+   "b*ludeces"
+  ],
+  [
+   "pedos",
+   "p*dos"
+  ],
+  [
+   "carajo",
+   "c*rajo"
+  ],
+  [
+   "boludos",
+   "b*ludos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "whoosh",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "yendo"
+  },
+  {
+   "tipo": "subida",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "centímetros"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "láser"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "dinosaurios"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "cara"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "pieza"
+  }
+ ]
+}

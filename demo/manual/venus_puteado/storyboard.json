@@ -1,0 +1,227 @@
+{
+ "id": "126",
+ "title": "Venus (versión puteada)",
+ "nota": "Puteador para TikTok: insultos más livianos (sin puta/concha/mierda). Subtítulos censurados.",
+ "pause": 0.15,
+ "tail": 0.3,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Escuchame, salame: en Venus un día dura más que un año. Sí, leíste bien, gil."
+  },
+  {
+   "key": "dia",
+   "text": "Venus tarda doscientos cuarenta y tres días en dar una vuelta sobre sí mismo. Más lento que vos un lunes, nabo."
+  },
+  {
+   "key": "anio",
+   "text": "Pero da la vuelta al Sol en doscientos veinticinco. O sea, el año se termina antes que el día, pelotudo."
+  },
+  {
+   "key": "reves",
+   "text": "Y encima gira al revés: allá el Sol sale por el oeste. Planeta contrera, como tu tío en Navidad."
+  },
+  {
+   "key": "calor",
+   "text": "Hace unos cuatrocientos sesenta y cinco grados. Más caliente que Mercurio, que está más cerca del Sol. Un horno, boludo."
+  },
+  {
+   "key": "cierre",
+   "text": "Así que si te quejás de que el día no te alcanza, mudate a Venus, tarado. Ah, no, te cocinás."
+  }
+ ],
+ "keywords": [
+  "venus",
+  "día",
+  "año",
+  "doscientos",
+  "cuarenta",
+  "tres",
+  "veinticinco",
+  "revés",
+  "oeste",
+  "cuatrocientos",
+  "sesenta",
+  "cinco",
+  "grados",
+  "mercurio",
+  "horno",
+  "mudate"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ],
+  [
+   "soretes",
+   "s*retes"
+  ],
+  [
+   "sorete",
+   "s*rete"
+  ],
+  [
+   "cagando",
+   "c*gando"
+  ],
+  [
+   "boludeces",
+   "b*ludeces"
+  ],
+  [
+   "pedos",
+   "p*dos"
+  ],
+  [
+   "carajo",
+   "c*rajo"
+  ],
+  [
+   "boludos",
+   "b*ludos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "año"
+  },
+  {
+   "tipo": "subida",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "vuelta"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "sol"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "revés"
+  },
+  {
+   "tipo": "boom",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "grados"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "cocinás"
+  }
+ ]
+}

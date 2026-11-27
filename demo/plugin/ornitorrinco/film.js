@@ -72,11 +72,11 @@
       creek(ctx, t);
       platy(ctx, CX - 110, 1080, 1.3 * pop(t, a, 0.5), t, {});
       const ar = (x0, y0, x1, y1, t0) => { if (t < t0) return; const p = out(t, t0, 0.35); G.line(ctx, [[x0, y0], [lerp(x0, x1, p), lerp(y0, y1, p)]], { color: '#0b1030', lw: 7, seed: 1150 + x0 }); };
-      ar(900, 860, 900, 1030, ev.pato); ar(180, 860, 160, 1060, ev.castor); ar(620, 1550, 620, 1340, ev.nutria);
+      ar(900, 860, 900, 1030, ev.pato); ar(180, 860, 160, 1060, ev.castor); ar(560, 900, 560, 905, ev.nutria);
       C.pill(ctx, t, ev.pato, 'pato', 900, 820, '#FFD22E');
       C.pill(ctx, t, ev.castor, 'castor', 180, 820, '#C8A050');
-      C.pill(ctx, t, ev.nutria, 'nutria', 620, 1590, '#7FD4FF');
-      if (t > ev.funciona) C.text(ctx, 'Y FUNCIONA', CX, 1780, { size: 100 * pop(t, ev.funciona, 0.35), color: '#FFD22E', stroke: '#0b1030', strokeW: 12 });
+      C.pill(ctx, t, ev.nutria, 'nutria', 540, 880, '#7FD4FF');
+      if (t > ev.funciona) C.text(ctx, 'Y FUNCIONA', CX, 680, { size: 100 * pop(t, ev.funciona, 0.35), color: '#FFD22E', stroke: '#0b1030', strokeW: 12 });
       return ['Pico de pato,', 'cola de *castor*'];
     },
     function huevos(ctx, t, a) {
@@ -87,8 +87,8 @@
       if (t > ev.leche - 0.2) for (let i = 0; i < 8; i++) { const p = ((t - ev.leche + 0.2) * 0.8 + i / 8) % 1; G.ellipse(ctx, 330 + (i * 53) % 220, 1250 + p * 120, 9, 12, { fill: '#fff', lw: 3, seed: 1163 + i, alpha: 1 - p }); }
       C.pill(ctx, t, ev.mamifero, 'mamífero', 280, 760, '#7FD4FF');
       C.pill(ctx, t, ev.huevos, 'pone huevos', 760, 760, '#FFD22E');
-      C.pill(ctx, t, ev.panza, 'leche por la panza', CX, 1580, '#fff');
-      if (t > ev.asco) C.text(ctx, 'UN ASCO', CX, 980, { size: 100 * pop(t, ev.asco, 0.35), color: '#3FE07A', stroke: '#0b1030', strokeW: 12 });
+      C.pill(ctx, t, ev.panza, 'leche por la panza', CX, 880, '#fff');
+      if (t > ev.asco) C.text(ctx, 'UN ASCO', CX, 1010, { size: 100 * pop(t, ev.asco, 0.35), color: '#3FE07A', stroke: '#0b1030', strokeW: 12 });
       return ['Es mamífero', 'pero *pone huevos*'];
     },
     function veneno(ctx, t, a) {
@@ -115,8 +115,8 @@
       if (t > ev.esofago - 0.2) { const p = clamp((t - ev.esofago + 0.2) / 1.8), seg = p * (pts.length - 1), i = Math.min(pts.length - 2, Math.floor(seg)), f = seg - i;
         G.ellipse(ctx, lerp(pts[i][0], pts[i + 1][0], f), lerp(pts[i][1], pts[i + 1][1], f), 26, 22, { fill: '#6A9A3A', lw: 4, seed: 1175 }); }
       C.pill(ctx, t, ev.esofago, 'esófago', 300, 700, '#7FD4FF');
-      C.pill(ctx, t, ev.intestino, 'intestino', 300, 1500, '#FFD22E');
-      C.pill(ctx, t, ev.escalas, 'sin escalas', 800, 1600, '#E8324A');
+      C.pill(ctx, t, ev.intestino, 'intestino', 850, 1180, '#FFD22E');
+      C.pill(ctx, t, ev.escalas, 'sin escalas', 850, 1300, '#E8324A');
       return ['No tiene', '*estómago*'];
     },
     function electro(ctx, t, a) {
@@ -139,7 +139,7 @@
       if (uv) { C.glow(ctx, CX, 1150, 600, '63,240,200', 0.35 + 0.1 * Math.sin(t * 4)); G.rays(ctx, CX, 1150, { n: 18, r0: 320, r1: 1300, color: '#8A4AFF', lw: 10, alpha: 0.3, spin: t * 0.3 }); }
       platy(ctx, CX - 110, 1100, 1.35 * pop(t, a, 0.5), t, { glow: t > ev.brilla - 0.1 });
       C.pill(ctx, t, ev.ultravioleta, 'luz ultravioleta', CX, 760, '#8A4AFF');
-      if (t > ev.fluorescente) C.text(ctx, 'FLUORESCENTE', CX, 1600, { size: 100 * pop(t, ev.fluorescente, 0.35), color: GLOW, stroke: '#0b1030', strokeW: 12 });
+      if (t > ev.fluorescente) C.text(ctx, 'FLUORESCENTE', CX, 880, { size: 100 * pop(t, ev.fluorescente, 0.35), color: GLOW, stroke: '#0b1030', strokeW: 12 });
       return ['Con luz ultravioleta', '*brilla*'];
     },
     function cierre(ctx, t, a) {

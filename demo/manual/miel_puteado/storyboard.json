@@ -1,0 +1,233 @@
+{
+ "id": "128",
+ "title": "La miel (versión puteada)",
+ "nota": "Puteador para TikTok: insultos más livianos (sin puta/concha/mierda). Subtítulos censurados.",
+ "pause": 0.15,
+ "tail": 0.3,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Mirá vos, otario: la miel no se pudre nunca. Nunca, boludo."
+  },
+  {
+   "key": "tumba",
+   "text": "En tumbas de Egipto encontraron miel de unos tres mil años. Y seguía comible. Más que lo que tenés en la heladera, nabo."
+  },
+  {
+   "key": "bacterias",
+   "text": "Tiene tan poquita agua y es tan ácida que las bacterias se mueren ahí adentro. Entran y fueron, las muy giles."
+  },
+  {
+   "key": "enzima",
+   "text": "Encima las abejas le meten una enzima que fabrica un poquito de agua oxigenada. Desinfectante natural, tarado."
+  },
+  {
+   "key": "flores",
+   "text": "Para juntar medio kilo, las abejas visitan unos dos millones de flores. Y vos no podés ni ir al súper, salame."
+  },
+  {
+   "key": "cierre",
+   "text": "Y si se te pone dura, no está podrida: cristalizó. La calentás un poco y listo. No la tires, pelotudo."
+  }
+ ],
+ "keywords": [
+  "miel",
+  "pudre",
+  "nunca",
+  "egipto",
+  "tres",
+  "mil",
+  "años",
+  "comible",
+  "heladera",
+  "agua",
+  "ácida",
+  "bacterias",
+  "enzima",
+  "oxigenada",
+  "desinfectante",
+  "medio",
+  "kilo",
+  "dos",
+  "millones",
+  "flores",
+  "súper",
+  "cristalizó"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ],
+  [
+   "soretes",
+   "s*retes"
+  ],
+  [
+   "sorete",
+   "s*rete"
+  ],
+  [
+   "cagando",
+   "c*gando"
+  ],
+  [
+   "boludeces",
+   "b*ludeces"
+  ],
+  [
+   "pedos",
+   "p*dos"
+  ],
+  [
+   "carajo",
+   "c*rajo"
+  ],
+  [
+   "boludos",
+   "b*ludos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "nunca"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "comible"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "mueren"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "oxigenada"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "flores"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "tires"
+  }
+ ]
+}

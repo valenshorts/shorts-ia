@@ -25,10 +25,29 @@
     ctx.fillStyle = g; ctx.fillRect(x - r, y - r, 2 * r, 2 * r);
   };
   // texto con la letra del canal (para números o carteles dibujados dentro de la escena)
+  // margen de seguridad: nada de texto pegado al borde (la cámara hace zoom ~6% y TikTok tapa los costados)
+  const SAFE = 80;
+  C.SAFE = SAFE;
+  // pasa una caja (centro x, ancho) a coordenadas de pantalla y la mete adentro del cuadro
+  const fitX = (ctx, x, y, w) => {
+    const m = C._base ? C._base.inverse().multiply(ctx.getTransform()) : ctx.getTransform();
+    const k = Math.abs(m.a) || 1, sx = m.a * x + m.c * y + m.e, sw = w * k, maxW = W - 2 * SAFE;
+    const shrink = sw > maxW ? maxW / sw : 1, half = sw * shrink / 2;
+    const cx = clamp(sx, SAFE + half, W - SAFE - half);
+    return { x: (cx - m.c * y - m.e) / m.a, shrink };
+  };
   C.text = (ctx, str, x, y, o = {}) => {
-    ctx.save(); font(ctx, o.size || 60, o.w || 900); ctx.fillStyle = o.color || '#fff'; ctx.textAlign = o.align || 'center';
+    ctx.save(); let size = o.size || 60; font(ctx, size, o.w || 900); ctx.fillStyle = o.color || '#fff';
+    const align = o.align || 'center'; ctx.textAlign = align;
     ctx.textBaseline = o.base || 'alphabetic'; ctx.globalAlpha = o.alpha === undefined ? 1 : o.alpha;
     if (o.ls) ctx.letterSpacing = o.ls + 'px';
+    // si no entra en el cuadro, achica la letra y la corre para adentro (en coordenadas de pantalla)
+    const pad = o.stroke ? (o.strokeW || 10) : 0;
+    let w = ctx.measureText(str).width + pad;
+    const off = align === 'center' ? 0 : align === 'left' ? w / 2 : -w / 2;
+    let f = fitX(ctx, x + off, y, w);
+    if (f.shrink < 1) { size *= f.shrink; font(ctx, size, o.w || 900); w = ctx.measureText(str).width + pad; }
+    x = f.x - (align === 'center' ? 0 : align === 'left' ? w / 2 : -w / 2);
     if (o.shadow !== false) { ctx.shadowColor = 'rgba(0,0,0,0.45)'; ctx.shadowBlur = 16; ctx.shadowOffsetY = 4; }
     if (o.stroke) { ctx.lineWidth = o.strokeW || 10; ctx.strokeStyle = o.stroke; ctx.lineJoin = 'round'; ctx.strokeText(str, x, y); }
     ctx.fillText(str, x, y); ctx.restore();
@@ -37,7 +56,9 @@
   C.pill = (ctx, t, t0, text, x, y, border) => {
     const p = clamp((t - t0) / 0.3); if (p <= 0) return;
     ctx.save(); ctx.globalAlpha = p; font(ctx, 32, 800); ctx.letterSpacing = '2px';
-    const s = text.toUpperCase(), w = ctx.measureText(s).width + 44, h = 54;
+    const s = text.toUpperCase(); let w = ctx.measureText(s).width + 44; const h = 54;
+    const f = fitX(ctx, x, y, w); if (f.shrink < 1) { font(ctx, 32 * f.shrink, 800); w = ctx.measureText(s).width + 44 * f.shrink; }
+    x = f.x;
     ctx.translate(x, y); ctx.scale(0.8 + 0.2 * ease.outBack(p, 2), 0.8 + 0.2 * ease.outBack(p, 2));
     ctx.fillStyle = 'rgba(8,13,43,0.85)'; ctx.strokeStyle = border || TEAL; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.roundRect(-w / 2, -h / 2, w, h, 27); ctx.fill(); ctx.stroke();
@@ -87,10 +108,11 @@
     if (p <= 0) return;
     ctx.save(); ctx.globalAlpha = p; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
     font(ctx, 40, 800); ctx.fillStyle = TEAL; ctx.letterSpacing = '3px'; ctx.fillText(kick.toUpperCase(), CX, 214 + dy); ctx.letterSpacing = '0px';
-    font(ctx, 96, 900);
+    let hs = 96; font(ctx, hs, 900);
+    { const longest = Math.max(...h1.toUpperCase().replace(/\*/g, '').split(' ').map((w) => ctx.measureText(w).width)); if (longest > 900) { hs = 96 * 900 / longest; font(ctx, hs, 900); } }
     const words = h1.toUpperCase().split(' ').map((w) => ({ w: w.replace(/\*/g, ''), y: /\*/.test(w) }));
     const lines = [[]]; let lw = 0; const sp = ctx.measureText(' ').width;
-    for (const w of words) { const ww = ctx.measureText(w.w).width; if (lines[lines.length - 1].length && lw + sp + ww > 960) { lines.push([]); lw = 0; } lines[lines.length - 1].push({ ...w, ww }); lw += (lw ? sp : 0) + ww; }
+    for (const w of words) { const ww = ctx.measureText(w.w).width; if (lines[lines.length - 1].length && lw + sp + ww > 900) { lines.push([]); lw = 0; } lines[lines.length - 1].push({ ...w, ww }); lw += (lw ? sp : 0) + ww; }
     lines.forEach((ln, li) => {
       const tw = ln.reduce((s, w) => s + w.ww, 0) + sp * (ln.length - 1); let x = CX - tw / 2; const y = 308 + li * 94 + dy;
       ctx.textAlign = 'left'; ctx.shadowColor = 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 24; ctx.shadowOffsetY = 6;
@@ -116,6 +138,7 @@
   C.film = (scenes, opts = {}) => {
     Studio.film({
       draw(ctx, t) {
+        C._base = ctx.getTransform();
         let i = 0; for (let k = 0; k < sc.length; k++) if (t >= sc[k].a) i = k;
         const s = sc[i], d = clamp((t - s.a) / (s.b - s.a)), z = 1 + (opts.zoom ?? 0.06) * ease.inOutQuad(d);
         ctx.save();

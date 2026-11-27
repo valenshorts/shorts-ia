@@ -1,0 +1,227 @@
+{
+ "id": "127",
+ "title": "Cleopatra (versión puteada)",
+ "nota": "Puteador para TikTok: insultos más livianos (sin puta/concha/mierda). Subtítulos censurados.",
+ "pause": 0.15,
+ "tail": 0.3,
+ "scenes": [
+  {
+   "key": "hook",
+   "text": "Agarrate, bobo: Cleopatra vivió más cerca de vos que de las pirámides de Egipto."
+  },
+  {
+   "key": "piramide",
+   "text": "La Gran Pirámide se terminó hace unos cuatro mil quinientos años. Cleopatra nació unos dos mil quinientos años después. Una banda, gil."
+  },
+  {
+   "key": "hoy",
+   "text": "Y de Cleopatra a hoy pasaron unos dos mil cien años. O sea, para ella las pirámides ya eran re viejas, salame."
+  },
+  {
+   "key": "turistas",
+   "text": "Las pirámides ya eran una atracción turística para los griegos y los romanos. Turistas mirando piedras, los muy nabos."
+  },
+  {
+   "key": "idioma",
+   "text": "Y Cleopatra era de una familia de origen griego que gobernó casi trescientos años. Ella fue la primera en aprender egipcio. Trescientos años sin aprender el idioma, los muy vagos."
+  },
+  {
+   "key": "cierre",
+   "text": "Así que la próxima vez que digas que algo es viejísimo, acordate de esto, pelotudo."
+  }
+ ],
+ "keywords": [
+  "cleopatra",
+  "pirámides",
+  "egipto",
+  "pirámide",
+  "cuatro",
+  "mil",
+  "quinientos",
+  "dos",
+  "cien",
+  "griegos",
+  "romanos",
+  "turística",
+  "trescientos",
+  "egipcio",
+  "idioma",
+  "viejísimo"
+ ],
+ "caption_replace": [
+  [
+   "puta",
+   "p*ta"
+  ],
+  [
+   "puto",
+   "p*to"
+  ],
+  [
+   "putas",
+   "p*tas"
+  ],
+  [
+   "putos",
+   "p*tos"
+  ],
+  [
+   "boludo",
+   "b*ludo"
+  ],
+  [
+   "boluda",
+   "b*luda"
+  ],
+  [
+   "concha",
+   "c*ncha"
+  ],
+  [
+   "pelotudo",
+   "pel*tudo"
+  ],
+  [
+   "pelotuda",
+   "pel*tuda"
+  ],
+  [
+   "forro",
+   "f*rro"
+  ],
+  [
+   "forra",
+   "f*rra"
+  ],
+  [
+   "turra",
+   "t*rra"
+  ],
+  [
+   "turro",
+   "t*rro"
+  ],
+  [
+   "cagar",
+   "c*gar"
+  ],
+  [
+   "cagada",
+   "c*gada"
+  ],
+  [
+   "huevo",
+   "h*evo"
+  ],
+  [
+   "mierda",
+   "m*erda"
+  ],
+  [
+   "reconcha",
+   "rec*ncha"
+  ],
+  [
+   "orto",
+   "o*to"
+  ],
+  [
+   "pedo",
+   "p*do"
+  ],
+  [
+   "cagón",
+   "c*gón"
+  ],
+  [
+   "cagamos",
+   "c*gamos"
+  ],
+  [
+   "cagarse",
+   "c*garse"
+  ],
+  [
+   "pelotudos",
+   "pel*tudos"
+  ],
+  [
+   "mierdita",
+   "m*erdita"
+  ],
+  [
+   "forros",
+   "f*rros"
+  ],
+  [
+   "caga",
+   "c*ga"
+  ],
+  [
+   "soretes",
+   "s*retes"
+  ],
+  [
+   "sorete",
+   "s*rete"
+  ],
+  [
+   "cagando",
+   "c*gando"
+  ],
+  [
+   "boludeces",
+   "b*ludeces"
+  ],
+  [
+   "pedos",
+   "p*dos"
+  ],
+  [
+   "carajo",
+   "c*rajo"
+  ],
+  [
+   "boludos",
+   "b*ludos"
+  ]
+ ],
+ "sfx": [
+  {
+   "tipo": "boom",
+   "escena": 0,
+   "gain": 0.5,
+   "palabra": "pirámides"
+  },
+  {
+   "tipo": "whoosh",
+   "escena": 1,
+   "gain": 0.5,
+   "palabra": "después"
+  },
+  {
+   "tipo": "subida",
+   "escena": 2,
+   "gain": 0.5,
+   "palabra": "cien"
+  },
+  {
+   "tipo": "brillo",
+   "escena": 3,
+   "gain": 0.5,
+   "palabra": "turística"
+  },
+  {
+   "tipo": "bajada",
+   "escena": 4,
+   "gain": 0.5,
+   "palabra": "egipcio"
+  },
+  {
+   "tipo": "campana",
+   "escena": 5,
+   "gain": 0.5,
+   "palabra": "esto"
+  }
+ ]
+}

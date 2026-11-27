@@ -117,7 +117,7 @@
       for (let i = 0; i < n; i++) { const c = i % 10, r = Math.floor(i / 10); poo(ctx, 110 + c * 95 + (r % 2) * 40, 1600 - r * 70, 0.6, 960 + (i % 9) * 3); }
       panda(ctx, CX, 1080, 0.8 * pop(t, a, 0.5), t, { mood: 'smug', blush: t > ev.peluche });
       C.count(ctx, t, ev.cuarenta - 0.2, 40, CX, 680, { suf: ' VECES', size: 110 });
-      if (t > ev.fabrica) C.text(ctx, 'FÁBRICA', CX, 1780, { size: 110 * pop(t, ev.fabrica, 0.35), color: '#fff', stroke: '#0b1030', strokeW: 12 });
+      if (t > ev.fabrica) C.text(ctx, 'FÁBRICA', CX, 1340, { size: 110 * pop(t, ev.fabrica, 0.35), color: '#fff', stroke: '#0b1030', strokeW: 12 });
       return ['Va al baño', '*40 veces* por día'];
     },
     function pulgar(ctx, t, a) {
@@ -133,7 +133,7 @@
       ctx.restore();
       bamboo(ctx, 900, 1600, 700 * out(t, a, 0.6), 981);
       C.pill(ctx, t, ev.pulgar, 'pulgar trucho', 300, 760, '#FFD22E');
-      C.pill(ctx, t, ev.muneca, 'hueso de la muñeca', 640, 1560, '#7FD4FF');
+      C.pill(ctx, t, ev.muneca, 'hueso de la muñeca', 760, 860, '#7FD4FF');
       return ['Tiene un', '*pulgar trucho*'];
     },
     function celo(ctx, t, a) {
@@ -146,31 +146,31 @@
         G.rrect(ctx, -300 + c * 46, -90 + r * 66, 36, 50, 8, { fill: hot && t > ev.dos - 0.1 ? '#FFD22E' : '#E4E8F0', lw: 3, seed: 992 + (i % 7) }); }
       ctx.restore();
       const ign = t > ev.macho - 0.2;
-      panda(ctx, 330, 1420, 0.6, t, { chew: ign, mood: ign ? 'dumb' : 'happy' });
-      panda(ctx, 780, 1440, 0.55, t, { blush: true, mood: t > ev.gil ? 'angry' : 'happy' });
-      if (!ign && t > ev.dos) G.heart(ctx, 780, 1080 + Math.sin(t * 3) * 15, 1.6, { fill: '#FF6A8A' });
-      if (t > ev.gil) C.text(ctx, '¡GIL!', 780, 1060, { size: 110 * pop(t, ev.gil, 0.35), color: '#FFD22E', stroke: '#0b1030', strokeW: 12 });
+      panda(ctx, 330, 1250, 0.6, t, { chew: ign, mood: ign ? 'dumb' : 'happy' });
+      panda(ctx, 780, 1260, 0.55, t, { blush: true, mood: t > ev.gil ? 'angry' : 'happy' });
+      if (!ign && t > ev.dos) G.heart(ctx, 780, 930 + Math.sin(t * 3) * 15, 1.6, { fill: '#FF6A8A' });
+      if (t > ev.gil) C.text(ctx, '¡GIL!', 780, 920, { size: 110 * pop(t, ev.gil, 0.35), color: '#FFD22E', stroke: '#0b1030', strokeW: 12 });
       return ['Dos o tres días', '*al año*'];
     },
     function cria(ctx, t, a) {
       forest(ctx, t);
       panda(ctx, 360, 1200, 0.95 * pop(t, a, 0.5), t, { mood: 'happy' });
       const bs = pop(t, ev.cien - 0.3, 0.4);
-      if (bs > 0) { ctx.save(); ctx.translate(800, 1460); ctx.scale(bs, bs);
+      if (bs > 0) { ctx.save(); ctx.translate(800, 1170); ctx.scale(bs, bs);
         G.ellipse(ctx, 0, 0, 70, 34, { fill: '#FFB3C6', lw: 5, seed: 1000 }); G.ellipse(ctx, 55, -6, 30, 26, { fill: '#FFB3C6', lw: 5, seed: 1001 });
         G.line(ctx, [[58, -12], [72, -12]], { lw: 4, seed: 1002 }); ctx.restore(); }
-      C.count(ctx, t, ev.cien - 0.2, 100, 800, 1320, { suf: ' G', size: 100 });
+      C.count(ctx, t, ev.cien - 0.2, 100, 800, 1030, { suf: ' G', size: 100 });
       C.count(ctx, t, ev.novecientas - 0.2, 900, 780, 760, { pre: '÷', size: 120 });
-      C.pill(ctx, t, ev.chorizo, 'chorizo rosado', 800, 1600, '#FF8AB0');
+      C.pill(ctx, t, ev.chorizo, 'chorizo rosado', 800, 1290, '#FF8AB0');
       return ['La cría pesa', '*100 gramos*'];
     },
     function cierre(ctx, t, a) {
       C.bg(ctx, '#FFD0E0', '#FFF2D8');
       if (t > ev.lindo - 0.1) G.rays(ctx, CX, 1100, { n: 18, r0: 300, r1: 1300, color: '#FFD22E', lw: 10, alpha: 0.25, spin: t * 0.4 });
       for (let i = 0; i < 14; i++) { const p = ((t - a) * 0.25 + i / 14) % 1; G.heart(ctx, (i * 151) % 1080, 500 + p * 1400, 1 + (i % 3) * 0.4, { fill: i % 2 ? '#FF6A8A' : '#FF9AB4', seed: 1010 + i }); }
-      panda(ctx, CX, 1180, 1.05 * pop(t, a, 0.5), t, { blush: true, wink: t > ev.lindo, mood: 'happy' });
-      C.pill(ctx, t, ev.ama, 'medio mundo lo ama', CX, 700, '#FF8AB0');
-      if (t > ev.salva - 0.05) C.text(ctx, 'SER LINDO SALVA', CX, 1640, { size: 96 * pop(t, ev.salva, 0.35), color: '#FFD22E', stroke: '#0b1030', strokeW: 14 });
+      panda(ctx, CX, 1230, 0.85 * pop(t, a, 0.5), t, { blush: true, wink: t > ev.lindo, mood: 'happy' });
+      C.pill(ctx, t, ev.ama, 'medio mundo lo ama', CX, 640, '#FF8AB0');
+      if (t > ev.salva - 0.05) C.text(ctx, 'SER LINDO SALVA', CX, 800, { size: 96 * pop(t, ev.salva, 0.35), color: '#FFD22E', stroke: '#0b1030', strokeW: 14 });
       return ['Ser lindo', 'te *salva de todo*'];
     },
   ]);

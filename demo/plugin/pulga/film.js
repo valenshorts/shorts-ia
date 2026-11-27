@@ -88,7 +88,7 @@
       const cx = CX - 120, cy = 1080 - 300 * go, comp = go > 0 ? 1 : (1 - sq * 0.6);
       const pts = []; for (let k = 0; k <= 14; k++) pts.push([cx + (k % 2 ? 40 : -40), cy - 100 * comp + k * (200 * comp / 14)]);
       G.line(ctx, pts, { color: '#FFD22E', lw: 12, seed: 900 });
-      C.pill(ctx, t, ev.resorte, 'resorte de goma', CX, 1380, '#FFD22E');
+      C.pill(ctx, t, ev.resorte, 'resorte de goma', CX, 1300, '#FFD22E');
       if (t > ev.golpe) C.text(ctx, '¡PUM!', CX + 260, 820, { size: 120 * pop(t, ev.golpe, 0.3), color: '#fff', stroke: '#0b1030', strokeW: 12 });
       return ['No salta con músculos', 'tiene un *resorte*'];
     },

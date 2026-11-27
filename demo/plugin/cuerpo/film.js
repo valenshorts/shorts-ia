@@ -35,28 +35,27 @@
       ctx.save(); ctx.translate(sx, sy);
       if (t > ev.concha - 0.1) G.rays(ctx, CX, 1100, { n: 20, r0: 300, r1: 1300, color: '#E8324A', lw: 12, alpha: 0.28, spin: t * 0.5 });
       const dumb = t > ev.pelotudo - 0.1;
-      C.person(ctx, CX, 1560, 1.8 * (0.6 + 0.4 * pop(t, a, 0.5)), { pose: 'stand', eyes: dumb ? 'wide' : 'happy', mouth: dumb ? 'o' : 'smile', style: { shirt: '#3E6FB0' } });
-      if (t > ev.maquina - 0.2) for (let i = 0; i < 3; i++) { ctx.save(); ctx.translate([170, 910, 540][i], [1000, 1000, 640][i]); ctx.rotate((t - a) * (i % 2 ? -2 : 2));
+      C.person(ctx, CX, 1360, 1.3 * (0.6 + 0.4 * pop(t, a, 0.5)), { pose: 'stand', eyes: dumb ? 'wide' : 'happy', mouth: dumb ? 'o' : 'smile', style: { shirt: '#3E6FB0' } });
+      if (t > ev.maquina - 0.2) for (let i = 0; i < 3; i++) { ctx.save(); ctx.translate([170, 910, 910][i], [1000, 1000, 760][i]); ctx.rotate((t - a) * (i % 2 ? -2 : 2));
         for (let k = 0; k < 8; k++) { ctx.save(); ctx.rotate(k * Math.PI / 4); G.rrect(ctx, -14, -75, 28, 30, 6, { fill: '#9AA4B8', lw: 4, seed: 1210 + k }); ctx.restore(); }
         G.ellipse(ctx, 0, 0, 55, 55, { fill: '#9AA4B8', lw: 5, seed: 1219 }); G.ellipse(ctx, 0, 0, 18, 18, { fill: '#5A6478', lw: 4, seed: 1220 }); ctx.restore(); }
       ctx.restore();
-      C.pill(ctx, t, ev.pelotudo, 'pedazo de pel*tudo', CX, 640, '#E8324A');
-      BIG(ctx, t, ev.concha, '¡ESCUCHAME!', CX, 1760, '#FFD22E', 110);
-      return ['Tu cuerpo es', 'una *máquina loca*'];
+      C.pill(ctx, t, ev.pelotudo, 'pedazo de pel*tudo', CX, 620, '#E8324A');
+            return ['Tu cuerpo es', 'una *máquina loca*'];
     },
     function altura(ctx, t, a) {
       C.bg(ctx, '#FFD9A0', '#2A2E5A');
-      G.ellipse(ctx, 270, 620, 70, 70, { fill: '#FFE07A', lw: 5, seed: 1230 });
-      G.ellipse(ctx, 810, 620, 60, 60, { fill: '#F4F0E0', lw: 5, seed: 1231 }); G.ellipse(ctx, 840, 600, 50, 50, { fill: '#5A5E8A', lw: 0, seed: 1232 });
+      G.ellipse(ctx, 130, 560, 60, 60, { fill: '#FFE07A', lw: 5, seed: 1230 });
+      G.ellipse(ctx, 950, 560, 50, 50, { fill: '#F4F0E0', lw: 5, seed: 1231 }); G.ellipse(ctx, 975, 545, 42, 42, { fill: '#5A5E8A', lw: 0, seed: 1232 });
       G.line(ctx, [[CX, 560], [CX, 1700]], { color: 'rgba(255,255,255,0.6)', lw: 5, seed: 1233 });
       const grow = out(t, ev.centimetro - 0.2, 0.6), shr = out(t, ev.columna - 0.2, 0.6);
-      C.person(ctx, 270, 1600, 1.5 * pop(t, a, 0.5) * (1 + 0.07 * grow), { pose: 'stand', eyes: 'happy', mouth: 'grin', style: { shirt: '#FFB03A' } });
-      C.person(ctx, 810, 1600, 1.5 * pop(t, ev.noche - 0.3, 0.5) * (1 - 0.05 * shr), { pose: 'stand', eyes: 'worried', mouth: t > ev.forro ? 'wavy' : 'flat', style: { shirt: '#3E4FB0' } });
-      if (grow > 0) { G.line(ctx, [[150, 960 - 40 * grow], [390, 960 - 40 * grow]], { color: '#FFD22E', lw: 8, seed: 1234 }); }
-      C.count(ctx, t, ev.centimetro - 0.2, 1, 270, 830, { pre: '+', suf: ' CM', size: 100 });
-      C.pill(ctx, t, ev.manana, 'a la mañana', 270, 710, '#FFD22E');
-      C.pill(ctx, t, ev.noche, 'a la noche', 810, 710, '#7FD4FF');
-      BIG(ctx, t, ev.forro, 'PETISO', 810, 1780, '#fff', 100);
+      C.person(ctx, 270, 1370, 1.25 * pop(t, a, 0.5) * (1 + 0.07 * grow), { pose: 'stand', eyes: 'happy', mouth: 'grin', style: { shirt: '#FFB03A' } });
+      C.person(ctx, 810, 1370, 1.25 * pop(t, ev.noche - 0.3, 0.5) * (1 - 0.05 * shr), { pose: 'stand', eyes: 'worried', mouth: t > ev.forro ? 'wavy' : 'flat', style: { shirt: '#3E4FB0' } });
+      if (grow > 0) { G.line(ctx, [[160, 742 - 30 * grow], [380, 742 - 30 * grow]], { color: '#FFD22E', lw: 8, seed: 1234 }); }
+      C.count(ctx, t, ev.centimetro - 0.2, 1, 270, 700, { pre: '+', suf: ' CM', size: 100 });
+      C.pill(ctx, t, ev.manana, 'a la mañana', 270, 600, '#FFD22E');
+      C.pill(ctx, t, ev.noche, 'a la noche', 810, 600, '#7FD4FF');
+      BIG(ctx, t, ev.forro, 'PETISO', 810, 700, '#fff', 90);
       return ['A la mañana', 'sos *más alto*'];
     },
     function huesos(ctx, t, a) {
@@ -66,21 +65,21 @@
         bone(ctx, 140 + (i % 6) * 160, 900 + Math.floor(i / 6) * 150 + fall * 900, 0.9 * pop(t, a + i * 0.03, 0.4), (i * 0.7) + fall * 3, 1240 + i * 3); }
       if (t < ev.doscientos - 0.2) C.count(ctx, t, ev.trescientos - 0.2, 300, CX, 760, { size: 130 });
       else C.count(ctx, t, ev.doscientos - 0.2, 206, CX, 760, { size: 130, color: '#7FD4FF' });
-      if (t > ev.velorio - 0.2) { const s = pop(t, ev.velorio - 0.2, 0.4); ctx.save(); ctx.translate(CX, 1620); ctx.scale(s, s);
+      if (t > ev.velorio - 0.2) { const s = pop(t, ev.velorio - 0.2, 0.4); ctx.save(); ctx.translate(CX, 1310); ctx.scale(s * 0.8, s * 0.8);
         G.rrect(ctx, -110, -170, 220, 240, 100, { fill: '#9AA4B8', lw: 7, seed: 1300 }); C.text(ctx, 'RIP', 0, -50, { size: 70, color: '#3A4258', shadow: false }); ctx.restore(); }
-      C.pill(ctx, t, ev.soldando, 'se soldaron', 300, 1500, '#FFD22E');
+      C.pill(ctx, t, ev.soldando, 'se soldaron', 270, 840, '#FFD22E');
       return ['Naciste con', '*300 huesos*'];
     },
     function pedos(ctx, t, a) {
       const night = t > ev.dormido - 0.2;
       if (night) C.bg(ctx, '#1A2050', '#0A0E2A'); else room(ctx, '#DFF2FF', '#F6FBFF');
-      if (night) { G.rrect(ctx, 120, 1300, 840, 160, 30, { fill: '#E8E4F4', lw: 6, seed: 1310 }); C.person(ctx, 520, 1330, 1.2, { pose: 'floor', eyes: 'sleep', mouth: 'sleep', style: { shirt: '#7A5AB0' } }); }
-      else C.person(ctx, 520, 1560, 1.8 * pop(t, a, 0.5), { pose: 'stand', eyes: t > ev.mentiroso ? 'worried' : 'happy', mouth: t > ev.mentiroso ? 'wavy' : 'smirk', style: { shirt: '#19B8B2' } });
+      if (night) { G.rrect(ctx, 120, 1130, 840, 160, 30, { fill: '#E8E4F4', lw: 6, seed: 1310 }); C.person(ctx, 520, 1160, 1.2, { pose: 'floor', eyes: 'sleep', mouth: 'sleep', style: { shirt: '#7A5AB0' } }); }
+      else C.person(ctx, 520, 1360, 1.3 * pop(t, a, 0.5), { pose: 'stand', eyes: t > ev.mentiroso ? 'worried' : 'happy', mouth: t > ev.mentiroso ? 'wavy' : 'smirk', style: { shirt: '#19B8B2' } });
       if (t > ev.quince - 0.3) for (let i = 0; i < 5; i++) { const p = ((Math.max(0, t - ev.quince + 0.3)) * 0.6 + i / 5) % 1;
-        cloud(ctx, (night ? 300 : 330) - p * 160, (night ? 1250 : 1250) - p * 380, 0.8 + p * 1.2, 0.9 * (1 - p), 1320 + i * 5); }
+        cloud(ctx, (night ? 300 : 360) - p * 160, (night ? 1100 : 1180) - p * 380, 0.8 + p * 1.2, 0.9 * (1 - p), 1320 + i * 5); }
       C.count(ctx, t, ev.quince - 0.2, 15, CX, 700, { suf: ' POR DÍA', size: 96 });
       BIG(ctx, t, ev.mentiroso, 'MENTIROSO', CX, 920, '#fff', 100);
-      if (night) BIG(ctx, t, ev.orto, 'COCHINO', CX, 1700, '#A8D86A', 110);
+      if (night) BIG(ctx, t, ev.orto, 'COCHINO', CX, 1040, '#A8D86A', 100);
       return ['Largás gases', '*15 veces* por día'];
     },
     function ojos(ctx, t, a) {
@@ -97,8 +96,8 @@
         ctx.fillStyle = '#fff'; ctx.strokeStyle = '#0b1030'; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(0, 0, 90, 0, 7); ctx.fill(); ctx.stroke();
         ctx.fillStyle = '#E8324A'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, 90, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * 0.1 * p); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore(); }
       C.count(ctx, t, ev.diez - 0.2, 10, 380, 740, { suf: ' %', size: 130 });
-      C.pill(ctx, t, ev.cerrados, 'ojos cerrados', CX, 1360, '#7FD4FF');
-      BIG(ctx, t, ev.carajo, 'NI UN C*RAJO', CX, 1780, '#fff', 90);
+      if (t < ev.carajo) C.pill(ctx, t, ev.cerrados, 'ojos cerrados', CX, 1330, '#7FD4FF');
+      BIG(ctx, t, ev.carajo, 'NI UN C*RAJO', CX, 1350, '#fff', 90);
       return ['Parpadeando pasás', 'el *10 %* ciego'];
     },
     function cierre(ctx, t, a) {
@@ -116,14 +115,14 @@
         C.count(ctx, t, ev.dos - 0.2, 2, CX, 680, { suf: ' % DEL PESO', size: 80, color: '#7FD4FF' });
         C.count(ctx, t, ev.veinte - 0.2, 20, CX, 800, { suf: ' % DE ENERGÍA', size: 80 });
       } else {
-        C.person(ctx, CX, 1520, 1.7, { pose: 'sit', eyes: 'focus', mouth: 'o', style: { shirt: '#3E6FB0' } });
-        ctx.save(); ctx.translate(CX + 160, 1180); ctx.rotate(-0.15);
+        C.person(ctx, CX, 1340, 1.4, { pose: 'sit', eyes: 'focus', mouth: 'o', style: { shirt: '#3E6FB0' } });
+        ctx.save(); ctx.translate(CX + 140, 1060); ctx.rotate(-0.15);
         G.rrect(ctx, -70, -120, 140, 240, 22, { fill: '#222', lw: 6, seed: 1420 }); G.rrect(ctx, -58, -104, 116, 208, 14, { fill: '#5FB8FF', lw: 0, seed: 1421 });
         C.text(ctx, '▶', 0, 20, { size: 60, color: '#fff', shadow: false }); ctx.restore();
-        C.glow(ctx, CX + 160, 1180, 300, '95,184,255', 0.35);
+        C.glow(ctx, CX + 140, 1060, 300, '95,184,255', 0.35);
       }
       if (t > ev.segui - 0.1) G.rays(ctx, CX, 1100, { n: 18, r0: 300, r1: 1300, color: '#FFD22E', lw: 10, alpha: 0.2, spin: t * 0.4 });
-      BIG(ctx, t, ev.segui, 'SEGUÍ, B*LUDO', CX, 1760, '#FFD22E', 100);
+      BIG(ctx, t, ev.segui, 'SEGUÍ, B*LUDO', CX, 720, '#FFD22E', 100);
       return ['Tu cerebro', 'se chupa el *20 %*'];
     },
   ]);

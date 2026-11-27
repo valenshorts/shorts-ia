@@ -60,14 +60,14 @@
     function nada(ctx, t, a) {
       river(ctx, t, true);
       const p = clamp((t - a) / 5), up = t > ev.respirar - 0.4 ? out(t, ev.respirar - 0.4, 0.8) : 0;
-      hippo(ctx, lerp(200, 640, p), lerp(1520, 1000, up), 0.9 * pop(t, a, 0.5), t, { run: up < 0.5 });
+      hippo(ctx, lerp(200, 640, p), lerp(1230, 950, up), 0.9 * pop(t, a, 0.5), t, { run: up < 0.5 });
       if (t > ev.nadar && t < ev.fondo + 0.5) { ctx.save(); ctx.translate(820, 760); G.ellipse(ctx, 0, 0, 80, 80, { fill: '#fff', lw: 6, seed: 760 }); C.text(ctx, 'NADAR', 0, 14, { size: 34, color: '#0b1030', shadow: false }); G.line(ctx, [[-60, -60], [60, 60]], { color: '#E8324A', lw: 14, seed: 761 }); ctx.restore(); }
       C.pill(ctx, t, ev.fondo, 'camina por el fondo', CX, 1250, '#7FD4FF');
       return ['El hipopótamo', '*no sabe nadar*'];
     },
     function duerme(ctx, t, a) {
       river(ctx, t, true);
-      const cyc = ((t - a) * 0.5) % 1, yy = cyc < 0.7 ? 1450 : lerp(1450, 1000, Math.sin((cyc - 0.7) / 0.3 * Math.PI));
+      const cyc = ((t - a) * 0.5) % 1, yy = cyc < 0.7 ? 1230 : lerp(1230, 930, Math.sin((cyc - 0.7) / 0.3 * Math.PI));
       hippo(ctx, CX - 60, yy, 0.95 * pop(t, a, 0.5), t, { sleep: t > ev.dormido - 0.3 });
       if (t > ev.dormido - 0.3) for (let i = 0; i < 3; i++) { const p = (t * 0.6 + i / 3) % 1; C.text(ctx, 'Z', 760 + p * 80, yy - 200 - p * 160, { size: 40 + 40 * p, color: '#fff', alpha: 1 - p, stroke: '#0b1030', strokeW: 6 }); }
       C.count(ctx, t, ev.cinco - 0.2, 5, 820, 760, { suf: ' MIN', size: 120 });
