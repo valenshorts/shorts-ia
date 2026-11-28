@@ -447,8 +447,7 @@
     "youtube_id": "Z-WvwUAlELI",
     "date": "2026-11-27",
     "style": "manual",
-    "publish_at": "2026-11-28T00:30:00Z",
-    "comment_pending": true
+    "publish_at": "2026-11-28T00:30:00Z"
   },
   "112b": {
     "title": "El pulpo tiene tres corazones y nueve cerebros (versión IA)",
@@ -504,6 +503,14 @@
     "date": "2026-11-29",
     "style": "manual",
     "publish_at": "2026-11-29T15:00:00Z",
+    "comment_pending": true
+  },
+  "056": {
+    "title": "Por qué pica el ají",
+    "youtube_id": "qWFV5NRm230",
+    "date": "2026-11-29",
+    "style": "manual",
+    "publish_at": "2026-11-29T17:30:00Z",
     "comment_pending": true
   }
 }
